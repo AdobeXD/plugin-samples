@@ -7,14 +7,34 @@ or Artboard), while others are leaf nodes (e.g. a Rectangle or Text node).
 You can modify properties on any scenenodes within the current _edit context_, and add leaf nodes to the current edit context, but
 you cannot make structural changes directly to the scenegraph tree. Instead, use [commands](commands.md).
 
+Typically, you access scenegraph nodes via the [`selection`](selection.md) argument that is passed to your plugin command, or by
+traversing the entire document tree using the [`root`](#RootNode) argument that is passed to your plugin command.
+
 **Example**  
 ```js
-if (node.isContainer) {
+function myCommand(selection) {
+    var node = selection.items[0];
+
+    console.log("The selected node is a: " + node.constructor.name);
+
+    // Print out types of all child nodes (if any)
     node.children.forEach(function (childNode, i) {
         console.log("Child " + i + " is a " + childNode.constructor.name);
     });
-} else {
-    console.log("This is a leaf node.");
+}
+```
+
+To create new scenenodes, load this `scenegraph` module directly and use the node constructor functions:
+
+**Example**  
+```js
+var scenegraph = require("scenegraph");
+function myCommand(selection) {
+    var newShape = new scenegraph.Rectangle();
+    newShape.width = 100;
+    newShape.height = 50;
+    newShape.fill = new Color("red");
+    selection.insertionParent.addChild(newShape);
 }
 ```
 
@@ -54,10 +74,10 @@ if (node.isContainer) {
 ## Typedefs
 
 <dl>
-<dt>**Point** : <code>!{x:number, y:number}</code></dt>
-<dd></dd>
-<dt>**Bounds** : <code>!{x:number, y:number, width:number, height:number}</code></dt>
-<dd></dd>
+<dt><a name="Point"></a>**Point** : </dt><dd><code>!{x:number, y:number}</code></dd>
+
+<dt><a name="Bounds"></a>**Bounds** : </dt><dd><code>!{x:number, y:number, width:number, height:number}</code></dd>
+
 </dl>
 
 <a name="SceneNode"></a>
@@ -70,22 +90,22 @@ Base class of all scenegraph nodes. Nodes will always be an instance of some _su
 * *[SceneNode](#SceneNode)*
     * *[.guid](#SceneNode+guid) : <code>string</code>*
     * *[.parent](#SceneNode+parent) : [<code>SceneNode</code>](#SceneNode)*
-    * *[.children](#SceneNode+children) : <code>SceneNodeList</code>*
+    * *[.children](#SceneNode+children) : <code>!SceneNodeList</code>*
     * *[.isInArtworkTree](#SceneNode+isInArtworkTree) : <code>boolean</code>*
     * *[.isContainer](#SceneNode+isContainer) : <code>boolean</code>*
     * *[.selected](#SceneNode+selected) : <code>boolean</code>*
     * *[.visible](#SceneNode+visible) : <code>boolean</code>*
     * *[.opacity](#SceneNode+opacity) : <code>number</code>*
-    * *[.transform](#SceneNode+transform) : <code>Matrix</code>*
-    * *[.translation](#SceneNode+translation) : <code>Object</code>*
+    * *[.transform](#SceneNode+transform) : <code>!Matrix</code>*
+    * *[.translation](#SceneNode+translation) : <code>!{x:number, y:number}</code>*
     * *[.rotation](#SceneNode+rotation) : <code>number</code>*
-    * *[.globalBounds](#SceneNode+globalBounds) : [<code>Bounds</code>](#Bounds)*
-    * *[.localBounds](#SceneNode+localBounds) : [<code>Bounds</code>](#Bounds)*
-    * *[.boundsInParent](#SceneNode+boundsInParent) : [<code>Bounds</code>](#Bounds)*
-    * *[.topLeftInParent](#SceneNode+topLeftInParent) : [<code>Point</code>](#Point)*
-    * *[.localCenterPoint](#SceneNode+localCenterPoint) : [<code>Point</code>](#Point)*
-    * *[.globalDrawBounds](#SceneNode+globalDrawBounds) : [<code>Bounds</code>](#Bounds)*
-    * *[.localDrawBounds](#SceneNode+localDrawBounds) : [<code>Bounds</code>](#Bounds)*
+    * *[.globalBounds](#SceneNode+globalBounds) : \![<code>Bounds</code>](#Bounds)*
+    * *[.localBounds](#SceneNode+localBounds) : \![<code>Bounds</code>](#Bounds)*
+    * *[.boundsInParent](#SceneNode+boundsInParent) : \![<code>Bounds</code>](#Bounds)*
+    * *[.topLeftInParent](#SceneNode+topLeftInParent) : \![<code>Point</code>](#Point)*
+    * *[.localCenterPoint](#SceneNode+localCenterPoint) : \![<code>Point</code>](#Point)*
+    * *[.globalDrawBounds](#SceneNode+globalDrawBounds) : \![<code>Bounds</code>](#Bounds)*
+    * *[.localDrawBounds](#SceneNode+localDrawBounds) : \![<code>Bounds</code>](#Bounds)*
     * *[.name](#SceneNode+name) : <code>string</code>*
     * *[.hasCustomName](#SceneNode+hasCustomName) : <code>boolean</code>*
     * *[.locked](#SceneNode+locked) : <code>boolean</code>*
@@ -123,8 +143,13 @@ Returns the parent node. Null if this is the root node, or a freshly constructed
 
 <a name="SceneNode+children"></a>
 
-### *sceneNode.children : <code>SceneNodeList</code>*
-Returns a list of this node's children. List is length 0 if the node has no children. The first child is lowest in the z order.This list is not an Array object, but has a number of Array-like methods for convenience. The list is immutable. Use[removeFromParent](#SceneNode+removeFromParent) and [Group#addChild](Group#addChild) to add/remove child nodes.
+### *sceneNode.children : <code>\![SceneNodeList](SceneNodeList.md)</code>*
+Returns a list of this node's children. List is length 0 if the node has no children. The first child is lowest in the z order.
+
+This list is _not an Array_, so you must use `at(i)` instead of `[i]` to access children by index. It has a number of Array-like
+methods such as `forEach()` for convenience, however.
+
+The list is immutable. Use [removeFromParent](#SceneNode+removeFromParent) and [addChild](#Group+addChild) to add/remove child nodes.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -132,6 +157,8 @@ Returns a list of this node's children. List is length 0 if the node has no chil
 ```js
 var node = ...;
 console.log("Node has " + node.children.length + " children");
+console.log("First child: " + node.children.at(0));  // do not use `[0]` - it will not work!
+
 node.children.forEach(function (childNode, i) {
     console.log("Child " + i + " is a " + childNode.constructor.name);
 });
@@ -190,7 +217,7 @@ False if this node has been hidden by the user (eyeball toggle in Layers panel).
 
 <a name="SceneNode+transform"></a>
 
-### *sceneNode.transform : <code>Matrix</code>*
+### *sceneNode.transform : <code>!Matrix</code>*
 Affine transform matrix that converts from the node's _local coordinate space_ to its parent's coordinate space. The matrix never hasskew or scale components, and if this node is an Artboard the matrix never has rotation either. Rather than working with the raw matrixdirectly, it may be easier to use methods such as [placeInParentCoordinates](#SceneNode+placeInParentCoordinates) or [rotateAround](#SceneNode+rotateAround).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
@@ -211,7 +238,7 @@ Affine transform matrix that converts from the node's _local coordinate space_ t
 
 <a name="SceneNode+translation"></a>
 
-### *sceneNode.translation : <code>Object</code>*
+### *sceneNode.translation : <code>!{x:number, y:number}</code>*
 The translate component of this node's [transform](#SceneNode+transform)
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
@@ -237,7 +264,7 @@ The rotation component of this node's [transform](#SceneNode+transform)
 
 <a name="SceneNode+globalBounds"></a>
 
-### *sceneNode.globalBounds : [<code>Bounds</code>](#Bounds)*
+### *sceneNode.globalBounds : \![<code>Bounds</code>](#Bounds)*
 The node's _path bounds_ in document-global coordinate space (represented by a bounding box aligned with global X/Y axes). Path boundsmatch the selection outline seen in the XD, but exclude some visual parts of the node (outer stroke, drop shadow / blur, etc.).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
@@ -253,7 +280,7 @@ The node's _path bounds_ in document-global coordinate space (represented by a b
 
 <a name="SceneNode+localBounds"></a>
 
-### *sceneNode.localBounds : [<code>Bounds</code>](#Bounds)*
+### *sceneNode.localBounds : \![<code>Bounds</code>](#Bounds)*
 The node's _path bounds_ in its own local coordinate space. This coordinate space may be rotated and translated relative to theparent's coordinate space. Path bounds match the selection outline seen in XD, but exclude some visual parts of the node (outerstroke, drop shadow / blur, etc.).The visual top-left of a node's path bounds is located at (localBounds.x, localBounds.y). This value is _not_ necessarily (0,0) inthe local coordinate space: for example, a text node's baseline is at Y=0 in local coordinates, so the top of the text has anegative Y value.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
@@ -269,7 +296,7 @@ The node's _path bounds_ in its own local coordinate space. This coordinate spac
 
 <a name="SceneNode+boundsInParent"></a>
 
-### *sceneNode.boundsInParent : [<code>Bounds</code>](#Bounds)*
+### *sceneNode.boundsInParent : \![<code>Bounds</code>](#Bounds)*
 The node's _path bounds_ in its parent's coordinate space (represented by a bounding box aligned with the parent's X/Y axes - so ifthe node has rotation, the top-left of the node is not necessarily located at the top-left of boundsInParent). Path bounds match theselection outline seen in XD, but exclude some visual parts of the node (outer stroke, drop shadow / blur, etc.).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
@@ -285,7 +312,7 @@ The node's _path bounds_ in its parent's coordinate space (represented by a boun
 
 <a name="SceneNode+topLeftInParent"></a>
 
-### *sceneNode.topLeftInParent : [<code>Point</code>](#Point)*
+### *sceneNode.topLeftInParent : \![<code>Point</code>](#Point)*
 The position of the node's upper-left corner (localBounds.x, localBounds.y) in its parent's coordinate space.This is a shortcut for `node.transform.transformPoint({x: node.localBounds.x, y: node.localBounds.y})`
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
@@ -300,7 +327,7 @@ The position of the node's upper-left corner (localBounds.x, localBounds.y) in i
 
 <a name="SceneNode+localCenterPoint"></a>
 
-### *sceneNode.localCenterPoint : [<code>Point</code>](#Point)*
+### *sceneNode.localCenterPoint : \![<code>Point</code>](#Point)*
 The position of the node's centerpoint in its own local coordinate space. Useful as an argument to [rotateAround](#SceneNode+rotateAround).This is a shortcut for `{x: localBounds.x + localBounds.width/2, y: localBounds.y + localBounds.height/2})`
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
@@ -311,7 +338,7 @@ The position of the node's centerpoint in its own local coordinate space. Useful
 
 <a name="SceneNode+globalDrawBounds"></a>
 
-### *sceneNode.globalDrawBounds : [<code>Bounds</code>](#Bounds)*
+### *sceneNode.globalDrawBounds : \![<code>Bounds</code>](#Bounds)*
 The node's _draw bounds_ in document-global coordinate space. Draw bounds are larger than the selection outline seen in XD,including outer stroke, drop shadow / blur, etc. - every visible pixel of the node is encompassed by these bounds. This matchesthe image dimensions if the node is exported as a PNG/JPEG bitmap.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
@@ -326,7 +353,7 @@ The node's _draw bounds_ in document-global coordinate space. Draw bounds are la
 
 <a name="SceneNode+localDrawBounds"></a>
 
-### *sceneNode.localDrawBounds : [<code>Bounds</code>](#Bounds)*
+### *sceneNode.localDrawBounds : \![<code>Bounds</code>](#Bounds)*
 The node's _draw bounds_ in its own local coordinate space. Draw bounds are larger than the selection outline seen in XD,including outer stroke, drop shadow / blur, etc. - every visible pixel of the node is encompassed by these bounds.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
@@ -436,8 +463,8 @@ any rotation on this node, etc.).
 
 | Param | Type | Description |
 | --- | --- | --- |
-| localPoint | [<code>Point</code>](#Point) | Point in this node's local coordinate space to align with parentPoint |
-| parentPoint | [<code>Point</code>](#Point) | Point in this node's parent's coordinate space to move localPoint to |
+| localPoint | \![<code>Point</code>](#Point) | Point in this node's local coordinate space to align with parentPoint |
+| parentPoint | \![<code>Point</code>](#Point) | Point in this node's parent's coordinate space to move localPoint to |
 
 **Example**  
 ```js
@@ -529,7 +556,7 @@ You can determine whether a group is masked by checking the `mask` property.
     * [.addChildAfter(node, relativeTo)](#Group+addChildAfter)
     * [.addChildBefore(node, relativeTo)](#Group+addChildBefore)
     * [.removeAllChildren()](#Group+removeAllChildren)
-    * [.mask](#Group+mask) : [<code>SceneNode</code>](#SceneNode)
+    * [.mask](#Group+mask) : ?[<code>SceneNode</code>](#SceneNode)
 
 * * *
 
@@ -543,8 +570,8 @@ use [commands](commands).
 
 | Param | Type | Description |
 | --- | --- | --- |
-| node | <code>SceneNode</code> | Child to add |
-| index | <code>number</code> | Optional: index to insert child at. Child is appended to end of children list (top of z order) otherwise. |
+| node | <code>!SceneNode</code> | Child to add |
+| index | <code>?number</code> | Optional: index to insert child at. Child is appended to end of children list (top of z order) otherwise. |
 
 
 * * *
@@ -558,8 +585,8 @@ Inserts a child node after the given reference node.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| node | <code>SceneNode</code> | Child to add |
-| relativeTo | <code>SceneNode</code> | New child is added immediately after this existing child |
+| node | <code>!SceneNode</code> | Child to add |
+| relativeTo | <code>!SceneNode</code> | New child is added immediately after this existing child |
 
 
 * * *
@@ -573,8 +600,8 @@ Inserts a child node before the given reference node.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| node | <code>SceneNode</code> | Child to add |
-| relativeTo | <code>SceneNode</code> | New child is added immediately before this existing child |
+| node | <code>!SceneNode</code> | Child to add |
+| relativeTo | <code>!SceneNode</code> | New child is added immediately before this existing child |
 
 
 * * *
@@ -591,7 +618,7 @@ Removes all children from this code. Equivlanent to calling removeFromParent() o
 
 <a name="Group+mask"></a>
 
-### group.mask : [<code>SceneNode</code>](#SceneNode)
+### group.mask : ?[<code>SceneNode</code>](#SceneNode)
 The mask shape applied to this group, if any. This object is also present in the group's `children` list. Though it hasno direct visual appearance of its own, the mask affects the entire groups's appearance by clipping all its other content.
 
 **Kind**: instance property of [<code>Group</code>](#Group)  
@@ -608,19 +635,19 @@ Base class for nodes that have a stroke and/or fill. This includes leaf nodes su
 which is a container node.
 
 * *[GraphicNode](#GraphicNode)*
-    * *[.fill](#GraphicNode+fill) : <code>Color</code> \| <code>LinearGradientFill</code> \| <code>RadialGradientFill</code> \| <code>BitmapFill</code>*
+    * *[.fill](#GraphicNode+fill) : ?<code>Color</code> \| <code>LinearGradientFill</code> \| <code>RadialGradientFill</code> \| <code>BitmapFill</code>*
     * *[.fillEnabled](#GraphicNode+fillEnabled) : <code>boolean</code>*
-    * *[.stroke](#GraphicNode+stroke) : <code>Color</code>*
+    * *[.stroke](#GraphicNode+stroke) : <code>?Color</code>*
     * *[.strokeEnabled](#GraphicNode+strokeEnabled) : <code>boolean</code>*
     * *[.strokeWidth](#GraphicNode+strokeWidth) : <code>number</code>*
     * *[.strokePosition](#GraphicNode+strokePosition) : <code>string</code>*
     * *[.strokeEndCaps](#GraphicNode+strokeEndCaps) : <code>string</code>*
     * *[.strokeJoins](#GraphicNode+strokeJoins) : <code>string</code>*
     * *[.strokeMiterLimit](#GraphicNode+strokeMiterLimit) : <code>number</code>*
-    * *[.strokeDashArray](#GraphicNode+strokeDashArray) : <code>Array</code>*
+    * *[.strokeDashArray](#GraphicNode+strokeDashArray) : <code>!Array</code>*
     * *[.strokeDashOffset](#GraphicNode+strokeDashOffset) : <code>number</code>*
-    * *[.shadow](#GraphicNode+shadow) : <code>Shadow</code>*
-    * *[.blur](#GraphicNode+blur) : <code>Blur</code>*
+    * *[.shadow](#GraphicNode+shadow) : <code>?Shadow</code>*
+    * *[.blur](#GraphicNode+blur) : <code>?Blur</code>*
     * *[.hasLinkedGraphicFill](#GraphicNode+hasLinkedGraphicFill) : <code>boolean</code>*
 
 
@@ -629,7 +656,7 @@ which is a container node.
 
 <a name="GraphicNode+fill"></a>
 
-### *graphicNode.fill : <code>Color</code> \| <code>LinearGradientFill</code> \| <code>RadialGradientFill</code> \| <code>BitmapFill</code>*
+### *graphicNode.fill : ?<code>Color</code> \| <code>LinearGradientFill</code> \| <code>RadialGradientFill</code> \| <code>BitmapFill</code>*
 The fill applied to this shape, if any. If there is no fill applied, this property may be null _or_ `fillEnabled` may be false.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
@@ -651,7 +678,7 @@ If false, the `fill` is not rendered. The user can toggle this via a checkbox in
 
 <a name="GraphicNode+stroke"></a>
 
-### *graphicNode.stroke : <code>Color</code>*
+### *graphicNode.stroke : <code>?Color</code>*
 The stroke color applied to this shape, if any. If there is no stroke applied, this property may be null _or_ `strokeEnabled` may be false.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
@@ -716,7 +743,7 @@ How sharp corners in the shape are rendered: GraphicNode.STROKE_JOIN_BEVEL, STRO
 
 <a name="GraphicNode+strokeDashArray"></a>
 
-### *graphicNode.strokeDashArray : <code>Array</code>*
+### *graphicNode.strokeDashArray : <code>!Array</code>*
 Empty array indicates a solid stroke. If non-empty, values represent the lengths of rendered and blank segments of thestroke's dash pattern.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
@@ -734,7 +761,7 @@ Ignored unless `strokeDashArray` is non-empty.
 
 <a name="GraphicNode+shadow"></a>
 
-### *graphicNode.shadow : <code>Shadow</code>*
+### *graphicNode.shadow : <code>?Shadow</code>*
 The node's dropshadow, if any. If there is no shadow applied, this property may be null _or_ `shadow.visible` may be false.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
@@ -743,7 +770,7 @@ The node's dropshadow, if any. If there is no shadow applied, this property may 
 
 <a name="GraphicNode+blur"></a>
 
-### *graphicNode.blur : <code>Blur</code>*
+### *graphicNode.blur : <code>?Blur</code>*
 The node's object blur or background blur settings, if applicable. If there is no blur effect applied, this property may be null_or_ `blur.visible` may be false.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
@@ -776,7 +803,7 @@ Rectangle leaf node shape.
     * [.bottomLeftCornerRadius](#Rectangle+bottomLeftCornerRadius) : <code>number</code>
     * [.hasRoundedCorners](#Rectangle+hasRoundedCorners) : <code>boolean</code>
     * [.setAllCornerRadii(radius)](#Rectangle+setAllCornerRadii)
-    * [.getEffectiveCornerRadii()](#Rectangle+getEffectiveCornerRadii) ⇒ <code>Array</code>
+    * [.getEffectiveCornerRadii()](#Rectangle+getEffectiveCornerRadii) ⇒ <code>!Array</code>
 
 
 * * *
@@ -849,7 +876,7 @@ Set the rounding radius of all four corners of the Rectangle to the same value.
 
 <a name="Rectangle+getEffectiveCornerRadii"></a>
 
-### rectangle.getEffectiveCornerRadii() ⇒ <code>Array</code>
+### rectangle.getEffectiveCornerRadii() ⇒ <code>!Array</code>
 The actual corner radius that is rendered may be capped by the size of the rectangle. Returns the actual radius that
 is currently in effect, which may be smaller than the `*CornerRadius` values as a result.
 
@@ -874,7 +901,7 @@ similar if a node is changed to no longer overlap an Artboard.
 * [Artboard](#Artboard)
     * [.width](#Artboard+width) : <code>number</code>
     * [.height](#Artboard+height) : <code>number</code>
-    * [.viewportHeight](#Artboard+viewportHeight) : <code>number</code>
+    * [.viewportHeight](#Artboard+viewportHeight) : <code>?number</code>
     * [.addChild(node, index)](#Group+addChild)
     * [.addChildAfter(node, relativeTo)](#Group+addChildAfter)
     * [.addChildBefore(node, relativeTo)](#Group+addChildBefore)
@@ -902,7 +929,7 @@ For scrollable Artboards, this is the total height encompassing all content - no
 
 <a name="Artboard+viewportHeight"></a>
 
-### artboard.viewportHeight : <code>number</code>
+### artboard.viewportHeight : <code>?number</code>
 If Artboard is scrollable, this is the height of the viewport (e.g. mobile device screen size). Null if Artboard isn't scrollable.
 
 **Kind**: instance property of [<code>Artboard</code>](#Artboard)  
@@ -957,8 +984,8 @@ True if the Ellipse is a circle (i.e., has a 1:1 aspect ratio).
 Line leaf node shape.
 
 * [Line](#Line)
-    * [.start](#Line+start) : [<code>Point</code>](#Point)
-    * [.end](#Line+end) : [<code>Point</code>](#Point)
+    * [.start](#Line+start) : \![<code>Point</code>](#Point)
+    * [.end](#Line+end) : \![<code>Point</code>](#Point)
     * [.setStartEnd(startX, startY, endX, endY)](#Line+setStartEnd)
 
 
@@ -966,7 +993,7 @@ Line leaf node shape.
 
 <a name="Line+start"></a>
 
-### line.start : [<code>Point</code>](#Point)
+### line.start : \![<code>Point</code>](#Point)
 Start point of the Line in local coordinate space.TEMP: To change the start point, use [setStartEnd](#Line+setStartEnd).
 
 **Kind**: instance property of [<code>Line</code>](#Line)  
@@ -976,7 +1003,7 @@ Start point of the Line in local coordinate space.TEMP: To change the start poin
 
 <a name="Line+end"></a>
 
-### line.end : [<code>Point</code>](#Point)
+### line.end : \![<code>Point</code>](#Point)
 Endpoint of the Line in local coordinate space.TEMP: To change the endpoint, use [setStartEnd](#Line+setStartEnd).
 
 **Kind**: instance property of [<code>Line</code>](#Line)  
@@ -1062,11 +1089,11 @@ Text leaf node shape.
 
 * [Text](#Text)
     * [.text](#Text+text) : <code>string</code>
-    * [.styleRanges](#Text+styleRanges) : <code>Array</code>
+    * [.styleRanges](#Text+styleRanges) : <code>!Array</code>
     * [.flipY](#Text+flipY) : <code>boolean</code>
     * [.textAlign](#Text+textAlign) : <code>string</code>
     * [.lineSpacing](#Text+lineSpacing) : <code>number</code>
-    * [.areaBox](#Text+areaBox) : <code>Object</code>
+    * [.areaBox](#Text+areaBox) : <code>!{width:number, height:number}</code>
     * [.clippedByArea](#Text+clippedByArea) : <code>boolean</code>
 
 
@@ -1083,7 +1110,7 @@ The plaintext content of the node, including any hard line breaks but excluding 
 
 <a name="Text+styleRanges"></a>
 
-### text.styleRanges : <code>Array</code>
+### text.styleRanges : <code>!Array</code>
 Array of text ranges and their character style settings.(TODO: document this better)
 
 **Kind**: instance property of [<code>Text</code>](#Text)  
@@ -1117,7 +1144,7 @@ Horizontal alignment: Text.ALIGN_LEFT, ALIGN_CENTER, or ALIGN_RIGHT. This settin
 
 <a name="Text+areaBox"></a>
 
-### text.areaBox : <code>Object</code>
+### text.areaBox : <code>!{width:number, height:number}</code>
 Null for point text. For area text, specifies the size of the rectangle within which text is wrapped and clipped.
 
 **Kind**: instance property of [<code>Text</code>](#Text)  
@@ -1179,7 +1206,7 @@ determines how may cells are visible (new cells are automatically generated as n
     * [.rows](#RepeatGrid+rows) : <code>number</code>
     * [.paddingX](#RepeatGrid+paddingX) : <code>number</code>
     * [.paddingY](#RepeatGrid+paddingY) : <code>number</code>
-    * [.cellSize](#RepeatGrid+cellSize) : <code>Object</code>
+    * [.cellSize](#RepeatGrid+cellSize) : <code>!{width: number, height: number}</code>
     * [.addChild(node, index)](#Group+addChild)
     * [.addChildAfter(node, relativeTo)](#Group+addChildAfter)
     * [.addChildBefore(node, relativeTo)](#Group+addChildBefore)
@@ -1244,7 +1271,7 @@ Vertical spacing between grid cells/rows
 
 <a name="RepeatGrid+cellSize"></a>
 
-### repeatGrid.cellSize : <code>Object</code>
+### repeatGrid.cellSize : <code>!{width: number, height: number}</code>
 The size of each grid cell. The size of each cell's content can vary slightly due to text overrides; the cell size is always set tothe width of the widest cell content and the height of the tallest cell content.
 
 **Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)  

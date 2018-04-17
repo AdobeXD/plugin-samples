@@ -4,6 +4,14 @@
 The `selection` object represents the currently selected set of nodes in the UI. You can set the selection to use it as input
 for [commands](commands.md), or to determine what is left selected for the user when your plugin's edit operation completes.
 
+The current selection state is passed to your _command handler function_ as an argument:
+```js
+function myCommand(selection, documentRoot) {
+    console.log(selection.items.length + " items are selected");
+}
+return { commands: { myCommandId: myCommand } };
+```
+
 The selection can only contain items within the current _edit context_:
 - If the user has drilled down into a container node, the container is the current edit context and only its immediate children
   can be selected.
@@ -20,20 +28,20 @@ command.
 **Kind**: object  
 
 * [selection](#selection)
-    * [.items](#selection+items) : <code>Array.&lt;SceneNode&gt;</code>
-    * [.itemsIncludingLocked](#selection+itemsIncludingLocked) : <code>Array.&lt;SceneNode&gt;</code>
+    * [.items](#selection+items) : <code>!Array.&lt;!SceneNode&gt;</code>
+    * [.itemsIncludingLocked](#selection+itemsIncludingLocked) : <code>!Array.&lt;!SceneNode&gt;</code>
     * [.hasArtwork](#selection+hasArtwork) : <code>boolean</code>
     * [.hasArtboards](#selection+hasArtboards) : <code>boolean</code>
-    * [.editContext](#selection+editContext) : <code>SceneNode</code>
-    * [.insertionParent](#selection+insertionParent) : <code>SceneNode</code>
-    * [.focusedArtboard](#selection+focusedArtboard) : <code>Artboard</code>
+    * [.editContext](#selection+editContext) : <code>!SceneNode</code>
+    * [.insertionParent](#selection+insertionParent) : <code>!SceneNode</code>
+    * [.focusedArtboard](#selection+focusedArtboard) : <code>?Artboard</code>
 
 
 * * *
 
 <a name="selection+items"></a>
 
-### selection.items : <code>Array.&lt;SceneNode&gt;</code>
+### selection.items : <code>!Array.&lt;!SceneNode&gt;</code>
 Array representing the current selection. Empty array if nothing is selected (never null). Never includes locked nodes.As a convenience, the setter also accepts a single node or null as valid input. However, the getter always returns an array.If the user selects nodes one-by-one, by Shift-clicking, this array lists the nodes in the order they were added to the selection.
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
@@ -49,7 +57,7 @@ selection.items = null;       // deselect all (convenience)
 
 <a name="selection+itemsIncludingLocked"></a>
 
-### selection.itemsIncludingLocked : <code>Array.&lt;SceneNode&gt;</code>
+### selection.itemsIncludingLocked : <code>!Array.&lt;!SceneNode&gt;</code>
 Array representing the current selection *plus* any locked items that the last selection gesture attempted to select.
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
@@ -85,7 +93,7 @@ True if the selection isn’t empty, and consists of Artboards. Never true at th
 
 <a name="selection+editContext"></a>
 
-### selection.editContext : <code>SceneNode</code>
+### selection.editContext : <code>!SceneNode</code>
 The context in which selection and edit operations must occur. If the user hasn't drilled into any container node, this value is thedocument root, and its scope includes all immediate children of the pasteboard (including Artboards), *and* all immediate children ofall those Artboards.
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
@@ -95,7 +103,7 @@ The context in which selection and edit operations must occur. If the user hasn'
 
 <a name="selection+insertionParent"></a>
 
-### selection.insertionParent : <code>SceneNode</code>
+### selection.insertionParent : <code>!SceneNode</code>
 The preferred parent to insert newly added content into. Takes into account the current edit context as well as the "focused artboard"if in the root context.
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
@@ -105,7 +113,7 @@ The preferred parent to insert newly added content into. Takes into account the 
 
 <a name="selection+focusedArtboard"></a>
 
-### selection.focusedArtboard : <code>Artboard</code>
+### selection.focusedArtboard : <code>?Artboard</code>
 The artboard the user is currently most focused on (via recent selection or edit operations). May be null, for example if no artboardsexist or if the user just deleted an artboard.
 
 **Kind**: instance property of [<code>selection</code>](#selection)  

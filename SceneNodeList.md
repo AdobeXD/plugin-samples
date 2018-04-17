@@ -1,8 +1,12 @@
 <a name="SceneNodeList"></a>
 
 ## SceneNodeList
-Represents the children of a scenenode. _Not_ an Array, but offers several Array-like APIs for convenience. Ordered from lowest
-z order to highest.
+Represents the children of a scenenode. Typically accessed via the [SceneNode.children](scenegraph.md#SceneNode+children) property.
+
+This is _not an Array_, so you must use [`at(i)`](#SceneNodeList+at) instead of `[i]` to access children by index. It has a
+number of Array-like methods such as [forEach](#SceneNodeList+forEach) for convenience, however.
+
+Ordered from lowest z order to highest.
 
 **Kind**: class  
 
@@ -16,7 +20,7 @@ node.children.forEach(function (childNode, i) {
 });
 ```
 
-**See**: [SceneNode#children](SceneNode#children)  
+**See**: [SceneNode.children](scenegraph.md#SceneNode+children)  
 
 * [SceneNodeList](#SceneNodeList)
     * [.length](#SceneNodeList+length) : <code>number</code>
@@ -49,8 +53,8 @@ Iterate all children in the list.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| callback | <code>function</code> | Callback, passed each child node and its index. |
-| thisArg | <code>Object</code> | Optional value for `this` when executing the callback. |
+| callback | <code>!function(!SceneNode, number)</code> | Callback, passed each child node and its index. |
+| thisArg | <code>?Object</code> | Optional value for `this` when executing the callback. |
 
 
 * * *
@@ -64,8 +68,8 @@ Iterate all children in the list, in reverse order (highest z order to lowest).
 
 | Param | Type | Description |
 | --- | --- | --- |
-| callback | <code>function</code> | Callback, passed each child node and its index. |
-| thisArg | <code>Object</code> | Optional value for `this` when executing the callback. |
+| callback | <code>!function(!SceneNode, number)</code> | Callback, passed each child node and its index. |
+| thisArg | <code>?Object</code> | Optional value for `this` when executing the callback. |
 
 
 * * *
@@ -79,8 +83,8 @@ Iterates all children and returns an array of just the children that passed the 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| callback | <code>function</code> | Filter function, passed each child node and its index. |
-| thisArg | <code>Object</code> | Optional value for `this` when executing the callback. |
+| callback | <code>!function(!SceneNode, number): boolean</code> | Filter function, passed each child node and its index. |
+| thisArg | <code>?Object</code> | Optional value for `this` when executing the callback. |
 
 
 * * *
@@ -94,8 +98,8 @@ Iterates all children and returns an array of the map function's result value fo
 
 | Param | Type | Description |
 | --- | --- | --- |
-| callback | <code>function</code> | Map function, passed each child node and its index. |
-| thisArg | <code>Object</code> | Optional value for `this` when executing the callback. |
+| callback | <code>!function(!SceneNode, number): *</code> | Map function, passed each child node and its index. |
+| thisArg | <code>?Object</code> | Optional value for `this` when executing the callback. |
 
 
 * * *
@@ -110,8 +114,8 @@ Iterates children until the test returns true for at least one child.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| callback | <code>function</code> | Test function, passed each child node and its index. |
-| thisArg | <code>Object</code> | Optional value for `this` when executing the callback. |
+| callback | <code>!function(!SceneNode, number): boolean</code> | Test function, passed each child node and its index. |
+| thisArg | <code>?Object</code> | Optional value for `this` when executing the callback. |
 
 
 * * *
@@ -120,7 +124,12 @@ Iterates children until the test returns true for at least one child.
 
 ### sceneNodeList.at() ⇒ <code>SceneNode</code>
 **Kind**: instance method of [<code>SceneNodeList</code>](#SceneNodeList)  
-**Returns**: <code>SceneNode</code> - Child node at the specified index in the list, or null if index is out of bounds.  
+**Returns**: <code>?SceneNode</code> - Child node at the specified index in the list, or null if index is out of bounds.  
+
+| Param | Type |
+| --- | --- |
+| index | <code>number</code> |
+
 
 * * *
 
