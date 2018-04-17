@@ -2,7 +2,7 @@
 
 ## commands
 You can make structural changes to the scenegraph, and perform other complex operations, by programmatically invoking the same
-commands that are exposed to users in XD's UI. These methods do not take arguments. Instead, set the selection to the objects you
+commands that are exposed to users in XD's UI. These methods do not take arguments. Instead, set the [selection](selection.md) to the objects you
 want the command to target, then invoke the command:
 
 **Example**  

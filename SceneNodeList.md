@@ -4,7 +4,18 @@
 Represents the children of a scenenode. _Not_ an Array, but offers several Array-like APIs for convenience. Ordered from lowest
 z order to highest.
 
-**Kind**: global class  
+**Kind**: class  
+
+**Example**
+```js
+var node = ...;
+console.log("Node has " + node.children.length + " children");
+console.log("First child: " + node.children.at(0));  // do not use `[0]` - it will not work!
+node.children.forEach(function (childNode, i) {
+    ...
+});
+```
+
 **See**: [SceneNode#children](SceneNode#children)  
 
 * [SceneNodeList](#SceneNodeList)

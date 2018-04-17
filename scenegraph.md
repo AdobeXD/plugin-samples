@@ -1,3 +1,23 @@
+<a name="module_scenegraph"></a>
+
+## scenegraph
+The scenegraph is a node tree which represents the structure of the XD document. Some scenenodes may contain children (e.g. a Group
+or Artboard), while others are leaf nodes (e.g. a Rectangle or Text node).
+
+You can modify properties on any scenenodes within the current _edit context_, and add leaf nodes to the current edit context, but
+you cannot make structural changes directly to the scenegraph tree. Instead, use [commands](commands.md).
+
+**Example**  
+```js
+if (node.isContainer) {
+    node.children.forEach(function (childNode, i) {
+        console.log("Child " + i + " is a " + childNode.constructor.name);
+    });
+} else {
+    console.log("This is a leaf node.");
+}
+```
+
 ## Classes
 
 <dl>
@@ -31,33 +51,23 @@
 <dd></dd>
 </dl>
 
-## Objects
-
-<dl>
-<dt><a href="#scenegraph">scenegraph</a> : <code>object</code></dt>
-<dd><p>The scenegraph is a node tree which represents the structure of the XD document. Some scenenodes may contain children (e.g. a Group
-or Artboard), while others are leaf nodes (e.g. a Rectangle or Text node).</p>
-<p>You can modify properties on any scenenodes within the current <em>edit context</em>, and add leaf nodes to the current edit context, but
-you cannot make structural changes directly to the scenegraph tree. Instead, use <a href="commands">commands</a>.</p>
-</dd>
-</dl>
-
 ## Typedefs
 
 <dl>
-<dt><a href="#Point">Point</a> : <code>Object</code></dt>
+<dt>**Point** : <code>!{x:number, y:number}</code></dt>
 <dd></dd>
-<dt><a href="#Bounds">Bounds</a> : <code>Object</code></dt>
+<dt>**Bounds** : <code>!{x:number, y:number, width:number, height:number}</code></dt>
 <dd></dd>
 </dl>
 
 <a name="SceneNode"></a>
 
 ## *SceneNode*
-**Kind**: global abstract class  
+**Kind**: abstract class  
+
+Base class of all scenegraph nodes. Nodes will always be an instance of some _subclass_ of SceneNode.
 
 * *[SceneNode](#SceneNode)*
-    * *[new SceneNode()](#new_SceneNode_new)*
     * *[.guid](#SceneNode+guid) : <code>string</code>*
     * *[.parent](#SceneNode+parent) : [<code>SceneNode</code>](#SceneNode)*
     * *[.children](#SceneNode+children) : <code>SceneNodeList</code>*
@@ -91,14 +101,6 @@ you cannot make structural changes directly to the scenegraph tree. Instead, use
 
 * * *
 
-<a name="new_SceneNode_new"></a>
-
-### *new SceneNode()*
-Base class of all scenegraph nodes. Nodes will always be an instance of some _subclass_ of SceneNode.
-
-
-* * *
-
 <a name="SceneNode+guid"></a>
 
 ### *sceneNode.guid : <code>string</code>*
@@ -122,7 +124,7 @@ Returns the parent node. Null if this is the root node, or a freshly constructed
 <a name="SceneNode+children"></a>
 
 ### *sceneNode.children : <code>SceneNodeList</code>*
-Returns a list of this node's children. List is length 0 if the node has no children. The first child is lowest in the z order.This list is not an Array object, but has a number of Array-like methods for convenience. The list is immutable. Use[SceneNode#removeFromParent()](SceneNode#removeFromParent()) and [Group#addChild()](Group#addChild()) to add/remove child nodes.
+Returns a list of this node's children. List is length 0 if the node has no children. The first child is lowest in the z order.This list is not an Array object, but has a number of Array-like methods for convenience. The list is immutable. Use[removeFromParent](#SceneNode+removeFromParent) and [Group#addChild](Group#addChild) to add/remove child nodes.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -160,7 +162,7 @@ True if this node is a type that is capable of having children (e.g. an Artboard
 <a name="SceneNode+selected"></a>
 
 ### *sceneNode.selected : <code>boolean</code>*
-True if this node is part of the current selection. To change which nodes are selected, use [selection](selection).
+True if this node is part of the current selection. To change which nodes are selected, use [selection](selection.md).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -189,7 +191,7 @@ False if this node has been hidden by the user (eyeball toggle in Layers panel).
 <a name="SceneNode+transform"></a>
 
 ### *sceneNode.transform : <code>Matrix</code>*
-Affine transform matrix that converts from the node's _local coordinate space_ to its parent's coordinate space. The matrix never hasskew or scale components, and if this node is an Artboard the matrix never has rotation either. Rather than working with the raw matrixdirectly, it may be easier to use methods such as [SceneNode#placeInParentCoordinates()](SceneNode#placeInParentCoordinates()) or [SceneNode#rotateAround()](SceneNode#rotateAround()).
+Affine transform matrix that converts from the node's _local coordinate space_ to its parent's coordinate space. The matrix never hasskew or scale components, and if this node is an Artboard the matrix never has rotation either. Rather than working with the raw matrixdirectly, it may be easier to use methods such as [placeInParentCoordinates](#SceneNode+placeInParentCoordinates) or [rotateAround](#SceneNode+rotateAround).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **See**
@@ -299,7 +301,7 @@ The position of the node's upper-left corner (localBounds.x, localBounds.y) in i
 <a name="SceneNode+localCenterPoint"></a>
 
 ### *sceneNode.localCenterPoint : [<code>Point</code>](#Point)*
-The position of the node's centerpoint in its own local coordinate space. Useful as an argument to [SceneNode#rotateAround()](SceneNode#rotateAround()).This is a shortcut for `{x: localBounds.x + localBounds.width/2, y: localBounds.y + localBounds.height/2})`
+The position of the node's centerpoint in its own local coordinate space. Useful as an argument to [rotateAround](#SceneNode+rotateAround).This is a shortcut for `{x: localBounds.x + localBounds.width/2, y: localBounds.y + localBounds.height/2})`
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -412,7 +414,7 @@ moving the node along its own local X/Y axes).
 **Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
 **See**
 
-- [SceneNode#placeInParentCoordinates()](SceneNode#placeInParentCoordinates())
+- [placeInParentCoordinates](#SceneNode+placeInParentCoordinates)
 - [translation](#SceneNode+translation)
 
 
@@ -496,16 +498,18 @@ node.resize(originalBounds.width * 2, originalBounds.height);
 <a name="RootNode"></a>
 
 ## RootNode
-**Kind**: global class  
+**Kind**: class  
 
-* * *
-
-<a name="new_RootNode_new"></a>
-
-### new RootNode()
 Class representing the root node of the document. All Artboards are children of this node, as well as any pasteboard content that
 does not lie within an Artboard. Artboards must be grouped contiguously at the bottom of this node's z order. The root node has no
 visual appearance of its own.
+
+* [RootNode](#RootNode)
+    * [.addChild(node, index)](#Group+addChild)
+    * [.addChildAfter(node, relativeTo)](#Group+addChildAfter)
+    * [.addChildBefore(node, relativeTo)](#Group+addChildBefore)
+    * [.removeAllChildren()](#Group+removeAllChildren)
+
 
 
 * * *
@@ -513,22 +517,74 @@ visual appearance of its own.
 <a name="Group"></a>
 
 ## Group
-**Kind**: global class  
+**Kind**: class  
 
-* [Group](#Group)
-    * [new Group()](#new_Group_new)
-    * [.mask](#Group+mask) : [<code>SceneNode</code>](#SceneNode)
-
-
-* * *
-
-<a name="new_Group_new"></a>
-
-### new Group()
 Group nodes represent two types of simple containers in XD:
 - Plain groups, created by the _Object > Group_ command
 - Masked groups, created by the _Object > Mask With Shape_ command
 You can determine whether a group is masked by checking the `mask` property.
+
+* [Group](#Group)
+    * [.addChild(node, index)](#Group+addChild)
+    * [.addChildAfter(node, relativeTo)](#Group+addChildAfter)
+    * [.addChildBefore(node, relativeTo)](#Group+addChildBefore)
+    * [.removeAllChildren()](#Group+removeAllChildren)
+    * [.mask](#Group+mask) : [<code>SceneNode</code>](#SceneNode)
+
+* * *
+
+<a name="Group+addChild"></a>
+
+#### group.addChild(node, index)
+Adds a child node to this container node. You can only add leaf nodes this way; to create structured subtrees of content,
+use [commands](commands).
+
+**Kind**: instance method of [<code>Group</code>](#Group) and other container nodes
+
+| Param | Type | Description |
+| --- | --- | --- |
+| node | <code>SceneNode</code> | Child to add |
+| index | <code>number</code> | Optional: index to insert child at. Child is appended to end of children list (top of z order) otherwise. |
+
+
+* * *
+
+<a name="Group+addChildAfter"></a>
+
+#### group.addChildAfter(node, relativeTo)
+Inserts a child node after the given reference node.
+
+**Kind**: instance method of [<code>Group</code>](#Group) and other container nodes
+
+| Param | Type | Description |
+| --- | --- | --- |
+| node | <code>SceneNode</code> | Child to add |
+| relativeTo | <code>SceneNode</code> | New child is added immediately after this existing child |
+
+
+* * *
+
+<a name="Group+addChildBefore"></a>
+
+#### group.addChildBefore(node, relativeTo)
+Inserts a child node before the given reference node.
+
+**Kind**: instance method of [<code>Group</code>](#Group) and other container nodes
+
+| Param | Type | Description |
+| --- | --- | --- |
+| node | <code>SceneNode</code> | Child to add |
+| relativeTo | <code>SceneNode</code> | New child is added immediately before this existing child |
+
+
+* * *
+
+<a name="Group+removeAllChildren"></a>
+
+#### group.removeAllChildren()
+Removes all children from this code. Equivlanent to calling removeFromParent() on each child in turn, but faster.
+
+**Kind**: instance method of [<code>Group</code>](#Group) and other container nodes
 
 
 * * *
@@ -546,10 +602,12 @@ The mask shape applied to this group, if any. This object is also present in the
 <a name="GraphicNode"></a>
 
 ## *GraphicNode*
-**Kind**: global abstract class  
+**Kind**: abstract class  
+
+Base class for nodes that have a stroke and/or fill. This includes leaf nodes such as Rectangle, as well as BooleanGroup
+which is a container node.
 
 * *[GraphicNode](#GraphicNode)*
-    * *[new GraphicNode()](#new_GraphicNode_new)*
     * *[.fill](#GraphicNode+fill) : <code>Color</code> \| <code>LinearGradientFill</code> \| <code>RadialGradientFill</code> \| <code>BitmapFill</code>*
     * *[.fillEnabled](#GraphicNode+fillEnabled) : <code>boolean</code>*
     * *[.stroke](#GraphicNode+stroke) : <code>Color</code>*
@@ -565,14 +623,6 @@ The mask shape applied to this group, if any. This object is also present in the
     * *[.blur](#GraphicNode+blur) : <code>Blur</code>*
     * *[.hasLinkedGraphicFill](#GraphicNode+hasLinkedGraphicFill) : <code>boolean</code>*
 
-
-* * *
-
-<a name="new_GraphicNode_new"></a>
-
-### *new GraphicNode()*
-Base class for nodes that have a stroke and/or fill. This includes leaf nodes such as Rectangle, as well as BooleanGroup
-which is a container node.
 
 
 * * *
@@ -713,10 +763,11 @@ True if the node's image fill comes from a link to an external resource, such as
 <a name="Rectangle"></a>
 
 ## Rectangle
-**Kind**: global class  
+**Kind**: class  
+
+Rectangle leaf node shape.
 
 * [Rectangle](#Rectangle)
-    * [new Rectangle()](#new_Rectangle_new)
     * [.width](#Rectangle+width) : <code>number</code>
     * [.height](#Rectangle+height) : <code>number</code>
     * [.topLeftCornerRadius](#Rectangle+topLeftCornerRadius) : <code>number</code>
@@ -726,14 +777,6 @@ True if the node's image fill comes from a link to an external resource, such as
     * [.hasRoundedCorners](#Rectangle+hasRoundedCorners) : <code>boolean</code>
     * [.setAllCornerRadii(radius)](#Rectangle+setAllCornerRadii)
     * [.getEffectiveCornerRadii()](#Rectangle+getEffectiveCornerRadii) ⇒ <code>Array</code>
-
-
-* * *
-
-<a name="new_Rectangle_new"></a>
-
-### new Rectangle()
-Rectangle leaf node shape.
 
 
 * * *
@@ -818,20 +861,8 @@ is currently in effect, which may be smaller than the `*CornerRadius` values as 
 <a name="Artboard"></a>
 
 ## Artboard
-**Kind**: global class  
+**Kind**: class  
 
-* [Artboard](#Artboard)
-    * [new Artboard()](#new_Artboard_new)
-    * [.width](#Artboard+width) : <code>number</code>
-    * [.height](#Artboard+height) : <code>number</code>
-    * [.viewportHeight](#Artboard+viewportHeight) : <code>number</code>
-
-
-* * *
-
-<a name="new_Artboard_new"></a>
-
-### new Artboard()
 Artboard container node. All Artboards must be children of the root node (they cannot be nested), and they must be placed below all
 pasteboard content in the z order.
 
@@ -839,6 +870,15 @@ Artboards can have a background fill, but the stroke, shadow, and blur settings 
 
 If a node is changed to overlap an Artboard, it will automatically become a child of the artboard when the operation finishes, and
 similar if a node is changed to no longer overlap an Artboard.
+
+* [Artboard](#Artboard)
+    * [.width](#Artboard+width) : <code>number</code>
+    * [.height](#Artboard+height) : <code>number</code>
+    * [.viewportHeight](#Artboard+viewportHeight) : <code>number</code>
+    * [.addChild(node, index)](#Group+addChild)
+    * [.addChildAfter(node, relativeTo)](#Group+addChildAfter)
+    * [.addChildBefore(node, relativeTo)](#Group+addChildBefore)
+    * [.removeAllChildren()](#Group+removeAllChildren)
 
 
 * * *
@@ -873,21 +913,14 @@ If Artboard is scrollable, this is the height of the viewport (e.g. mobile devic
 <a name="Ellipse"></a>
 
 ## Ellipse
-**Kind**: global class  
+**Kind**: class  
+
+Ellipse leaf node shape.
 
 * [Ellipse](#Ellipse)
-    * [new Ellipse()](#new_Ellipse_new)
     * [.radiusX](#Ellipse+radiusX) : <code>number</code>
     * [.radiusY](#Ellipse+radiusY) : <code>number</code>
     * [.isCircle](#Ellipse+isCircle) : <code>boolean</code>
-
-
-* * *
-
-<a name="new_Ellipse_new"></a>
-
-### new Ellipse()
-Ellipse leaf node shape.
 
 
 * * *
@@ -919,21 +952,14 @@ True if the Ellipse is a circle (i.e., has a 1:1 aspect ratio).
 <a name="Line"></a>
 
 ## Line
-**Kind**: global class  
+**Kind**: class  
+
+Line leaf node shape.
 
 * [Line](#Line)
-    * [new Line()](#new_Line_new)
     * [.start](#Line+start) : [<code>Point</code>](#Point)
     * [.end](#Line+end) : [<code>Point</code>](#Point)
     * [.setStartEnd(startX, startY, endX, endY)](#Line+setStartEnd)
-
-
-* * *
-
-<a name="new_Line_new"></a>
-
-### new Line()
-Line leaf node shape.
 
 
 * * *
@@ -980,19 +1006,12 @@ passed this setter, even though the line's visual bounds and appearance are the 
 <a name="Path"></a>
 
 ## Path
-**Kind**: global class  
+**Kind**: class  
+
+Arbitrary vector Path leaf node shape.
 
 * [Path](#Path)
-    * [new Path()](#new_Path_new)
     * [.pathData](#Path+pathData) : <code>string</code>
-
-
-* * *
-
-<a name="new_Path_new"></a>
-
-### new Path()
-Arbitrary vector Path leaf node shape.
 
 
 * * *
@@ -1009,20 +1028,17 @@ Representation of the path outline in SVG `<path>` syntax. Unlike other node typ
 <a name="BooleanGroup"></a>
 
 ## BooleanGroup
-**Kind**: global class  
+**Kind**: class  
 
-* [BooleanGroup](#BooleanGroup)
-    * [new BooleanGroup()](#new_BooleanGroup_new)
-    * [.pathOp](#BooleanGroup+pathOp) : <code>string</code>
-
-
-* * *
-
-<a name="new_BooleanGroup_new"></a>
-
-### new BooleanGroup()
 BooleanGroup container node - although it has fill/stroke/etc. properties like a leaf shape node, it is a container
 with children. Its visual appearance is determined by a nondestructive boolean operation on its childrens' paths.
+
+* [BooleanGroup](#BooleanGroup)
+    * [.pathOp](#BooleanGroup+pathOp) : <code>string</code>
+    * [.addChild(node, index)](#Group+addChild)
+    * [.addChildAfter(node, relativeTo)](#Group+addChildAfter)
+    * [.addChildBefore(node, relativeTo)](#Group+addChildBefore)
+    * [.removeAllChildren()](#Group+removeAllChildren)
 
 
 * * *
@@ -1040,10 +1056,11 @@ Which boolean operation is used to generate the path: BooleanGroup.PATH_OP_ADD, 
 <a name="Text"></a>
 
 ## Text
-**Kind**: global class  
+**Kind**: class  
+
+Text leaf node shape.
 
 * [Text](#Text)
-    * [new Text()](#new_Text_new)
     * [.text](#Text+text) : <code>string</code>
     * [.styleRanges](#Text+styleRanges) : <code>Array</code>
     * [.flipY](#Text+flipY) : <code>boolean</code>
@@ -1051,14 +1068,6 @@ Which boolean operation is used to generate the path: BooleanGroup.PATH_OP_ADD, 
     * [.lineSpacing](#Text+lineSpacing) : <code>number</code>
     * [.areaBox](#Text+areaBox) : <code>Object</code>
     * [.clippedByArea](#Text+clippedByArea) : <code>boolean</code>
-
-
-* * *
-
-<a name="new_Text_new"></a>
-
-### new Text()
-Text leaf node shape.
 
 
 * * *
@@ -1129,20 +1138,17 @@ Always false for point text. For area text, true if the text does not fit in the
 <a name="SymbolInstance"></a>
 
 ## SymbolInstance
-**Kind**: global class  
+**Kind**: class  
 
-* [SymbolInstance](#SymbolInstance)
-    * [new SymbolInstance()](#new_SymbolInstance_new)
-    * [.symbolId](#SymbolInstance+symbolId) : <code>string</code>
-
-
-* * *
-
-<a name="new_SymbolInstance_new"></a>
-
-### new SymbolInstance()
 Container node representing one instance of a Symbol. Changes within a symbol instance are automatically synced to all other
 instances of the symbol, with certain exceptions (called "overrides").
+
+* [SymbolInstance](#SymbolInstance)
+    * [.symbolId](#SymbolInstance+symbolId) : <code>string</code>
+    * [.addChild(node, index)](#Group+addChild)
+    * [.addChildAfter(node, relativeTo)](#Group+addChildAfter)
+    * [.addChildBefore(node, relativeTo)](#Group+addChildBefore)
+    * [.removeAllChildren()](#Group+removeAllChildren)
 
 
 * * *
@@ -1160,10 +1166,13 @@ An identifier unique within this document that is shared by all instances of the
 <a name="RepeatGrid"></a>
 
 ## RepeatGrid
-**Kind**: global class  
+**Kind**: class  
+
+Repeat Grid container node containing multiple grid cells, each one a child Group. Changes within one cell are automatically synced
+to all the other cells, with certain exceptioned (called "overrides"). A Repeat Grid also defines a rectangular clipping mask which
+determines how may cells are visible (new cells are automatically generated as needed if the Repeat Grid is resized larger).
 
 * [RepeatGrid](#RepeatGrid)
-    * [new RepeatGrid()](#new_RepeatGrid_new)
     * [.width](#RepeatGrid+width) : <code>number</code>
     * [.height](#RepeatGrid+height) : <code>number</code>
     * [.columns](#RepeatGrid+columns) : <code>number</code>
@@ -1171,16 +1180,10 @@ An identifier unique within this document that is shared by all instances of the
     * [.paddingX](#RepeatGrid+paddingX) : <code>number</code>
     * [.paddingY](#RepeatGrid+paddingY) : <code>number</code>
     * [.cellSize](#RepeatGrid+cellSize) : <code>Object</code>
-
-
-* * *
-
-<a name="new_RepeatGrid_new"></a>
-
-### new RepeatGrid()
-Repeat Grid container node containing multiple grid cells, each one a child Group. Changes within one cell are automatically synced
-to all the other cells, with certain exceptioned (called "overrides"). A Repeat Grid also defines a rectangular clipping mask which
-determines how may cells are visible (new cells are automatically generated as needed if the Repeat Grid is resized larger).
+    * [.addChild(node, index)](#Group+addChild)
+    * [.addChildAfter(node, relativeTo)](#Group+addChildAfter)
+    * [.addChildBefore(node, relativeTo)](#Group+addChildBefore)
+    * [.removeAllChildren()](#Group+removeAllChildren)
 
 
 * * *
@@ -1251,53 +1254,8 @@ The size of each grid cell. The size of each cell's content can vary slightly du
 <a name="LinkedGraphic"></a>
 
 ## LinkedGraphic
-**Kind**: global class  
+**Kind**: class  
 
-* * *
-
-<a name="new_LinkedGraphic_new"></a>
-
-### new LinkedGraphic()
 Container node whose content is linked to an external resource, such as Creative Cloud Libraries. It cannot be edited except by first
 ungrouping it, breaking this link.
-
-
-* * *
-
-<a name="scenegraph"></a>
-
-## scenegraph : <code>object</code>
-The scenegraph is a node tree which represents the structure of the XD document. Some scenenodes may contain children (e.g. a Group
-or Artboard), while others are leaf nodes (e.g. a Rectangle or Text node).
-
-You can modify properties on any scenenodes within the current _edit context_, and add leaf nodes to the current edit context, but
-you cannot make structural changes directly to the scenegraph tree. Instead, use [commands](commands).
-
-**Kind**: global namespace  
-**Example**  
-```js
-if (node.isContainer) {
-    node.children.forEach(function (childNode, i) {
-        console.log("Child " + i + " is a " + childNode.constructor.name);
-    });
-} else {
-    console.log("This is a leaf node.");
-}
-```
-
-* * *
-
-<a name="Point"></a>
-
-## Point : <code>Object</code>
-**Kind**: global typedef  
-
-* * *
-
-<a name="Bounds"></a>
-
-## Bounds : <code>Object</code>
-**Kind**: global typedef  
-
-* * *
 

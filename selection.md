@@ -2,7 +2,7 @@
 
 ## selection
 The `selection` object represents the currently selected set of nodes in the UI. You can set the selection to use it as input
-for [commands](commands), or to determine what is left selected for the user when your plugin's edit operation completes.
+for [commands](commands.md), or to determine what is left selected for the user when your plugin's edit operation completes.
 
 The selection can only contain items within the current _edit context_:
 - If the user has drilled down into a container node, the container is the current edit context and only its immediate children
@@ -17,7 +17,7 @@ Items that are _locked_ cannot be in the selection. If the user or your plugin a
 automatically filtered into a separate list ([itemsIncludingLocked](#selection+itemsIncludingLocked)) which is generally only used by the Unlock
 command.
 
-**Kind**: global class  
+**Kind**: object  
 
 * [selection](#selection)
     * [.items](#selection+items) : <code>Array.&lt;SceneNode&gt;</code>
