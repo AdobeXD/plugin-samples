@@ -193,7 +193,7 @@ True if this node is part of the current selection. To change which nodes are se
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
-**See**: [selection](selection)  
+**See**: [selection](selection.md)  
 
 * * *
 
@@ -551,6 +551,10 @@ Group nodes represent two types of simple containers in XD:
 - Masked groups, created by the _Object > Mask With Shape_ command
 You can determine whether a group is masked by checking the `mask` property.
 
+Groups and other containers cannot be created directly using scenenode constructors, since you can't add a populated Group to the
+scenegraph (you can't add subtrees all at once) nor can you add an empty Group and then add children to it (can't add nodes outside
+the scope of the current _edit context_). Instead, to create Groups and other nested structures, use [commands](commands.md).
+ 
 * [Group](#Group)
     * [.addChild(node, index)](#Group+addChild)
     * [.addChildAfter(node, relativeTo)](#Group+addChildAfter)
@@ -564,7 +568,7 @@ You can determine whether a group is masked by checking the `mask` property.
 
 #### group.addChild(node, index)
 Adds a child node to this container node. You can only add leaf nodes this way; to create structured subtrees of content,
-use [commands](commands).
+use [commands](commands.md).
 
 **Kind**: instance method of [<code>Group</code>](#Group) and other container nodes
 

@@ -37,6 +37,21 @@ Wrap the selected objects in a Group, leaving the Group selected afterward. Equi
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
 
+**Example**  
+```js
+var shape1 = new Rectangle();
+// ...configure Rectangle size & appearance...
+var label = new Text();
+// ...configure Text content & appearance...
+
+// Place inside a Group: add both nodes to the current edit context, select them, then run the group() command
+selection.insertionParent.addChild(shape1);
+selection.insertionParent.addChild(label);
+selection.items = [shape1, label];
+commands.group();
+var group = selection.items[0];
+```
+
 * * *
 
 <a name="module_commands.ungroup"></a>
@@ -55,6 +70,23 @@ Creates a masked Group from the selected objects, using the object that is highe
 The mask shape must be a leaf node or Boolean Group. Equivalent to _Object > Mask With Shape_.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
+
+**Example**  
+```js
+var shape1 = new Rectangle(),
+    shape2 = new Ellipse();
+// ...configure shapes' size & appearance...
+var maskShape = new Ellipse();
+// ...configure mask shape's size...
+
+// Create a Masked Group: add all nodes to the current edit context, select them, then run the createMaskGroup() command
+selection.insertionParent.addChild(shape1);
+selection.insertionParent.addChild(shape2);
+selection.insertionParent.addChild(maskShape);  // added last: topmost in Z order
+selection.items = [shape1, shape2, maskShape];  // order here does not matter
+commands.createMaskGroup();
+var maskedGroup = selection.items[0];
+```
 
 * * *
 
