@@ -33,7 +33,7 @@ commands.createMaskGroup();
 <a name="module_commands.group"></a>
 
 ### commands.group()
-Wrap the selected objects in a Group, leaving the Group selected afterward. Equivalent to _Object > Group_ in the UI.
+Wrap the selected objects in a [Group](scenegraph.md#Group), leaving the Group selected afterward. Equivalent to _Object > Group_ in the UI.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
 
@@ -66,8 +66,8 @@ Ungroups any of the selected objects are ungroupable containers (Groups, Symbols
 <a name="module_commands.createMaskGroup"></a>
 
 ### commands.createMaskGroup()
-Creates a masked Group from the selected objects, using the object that is highest in the z-order as the mask shape.
-The mask shape must be a leaf node or Boolean Group. Equivalent to _Object > Mask With Shape_.
+Creates a masked [Group](scenegraph.md#Group) from the selected objects, using the object that is highest in the z-order as the mask shape.
+The mask shape must be a leaf node or [Boolean Group](scenegraph.md#BooleanGroup). Equivalent to _Object > Mask With Shape_.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
 
@@ -93,8 +93,8 @@ var maskedGroup = selection.items[0];
 <a name="module_commands.convertToPath"></a>
 
 ### commands.convertToPath()
-Converts each selected object to a Path with the exact same visual appearance. Only applies to leaf nodes and Boolean Groups.
-Equivalent to _Object > Path > Convert to Path_.
+Converts each selected object to a [Path](scenegraph.md#Path) with the exact same visual appearance. Only applies to leaf nodes and
+[Boolean Groups](scenegraph.md#BooleanGroup). Equivalent to _Object > Path > Convert to Path_.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
 
@@ -171,7 +171,7 @@ Flips the object vertically. Some objects such as Symbols cannot be flipped. Equ
 <a name="module_commands.createSymbol"></a>
 
 ### commands.createSymbol()
-Convert the selected objects to a new Symbol. Equivalent to _Object > Make Symbol_.
+Convert the selected objects to a new [Symbol](scenegraph.md#SymbolInstance). Equivalent to _Object > Make Symbol_.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
 
@@ -180,7 +180,7 @@ Convert the selected objects to a new Symbol. Equivalent to _Object > Make Symbo
 <a name="module_commands.createRepeatGrid"></a>
 
 ### commands.createRepeatGrid()
-Convert the selected objects to a new Repeat Grid. Equivalent to _Object > Make Repeat Grid_.
+Convert the selected objects to a new [Repeat Grid](scenegraph.md#RepeatGrid). Equivalent to _Object > Make Repeat Grid_.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
 

@@ -41,7 +41,7 @@ command.
 
 <a name="selection+items"></a>
 
-### selection.items : <code>!Array.&lt;!SceneNode&gt;</code>
+### selection.items : <code>!Array&lt;\![SceneNode](scenegraph.md#SceneNode)&gt;</code>
 Array representing the current selection. Empty array if nothing is selected (never null). Never includes locked nodes.As a convenience, the setter also accepts a single node or null as valid input. However, the getter always returns an array.If the user selects nodes one-by-one, by Shift-clicking, this array lists the nodes in the order they were added to the selection.
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
@@ -57,7 +57,7 @@ selection.items = null;       // deselect all (convenience)
 
 <a name="selection+itemsIncludingLocked"></a>
 
-### selection.itemsIncludingLocked : <code>!Array.&lt;!SceneNode&gt;</code>
+### selection.itemsIncludingLocked : <code>!Array&lt;\![SceneNode](scenegraph.md#SceneNode)&gt;</code>
 Array representing the current selection *plus* any locked items that the last selection gesture attempted to select.
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
@@ -74,7 +74,7 @@ console.log("There are " + numLockedSelected + " locked nodes 'sort of' currentl
 <a name="selection+hasArtwork"></a>
 
 ### selection.hasArtwork : <code>boolean</code>
-True if the selection isn’t empty, and consists of non-Artboards. Never true at the same time as [hasArtboards](#selection+hasArtboards).
+True if the selection isn’t empty, and consists of one or more non-Artboards. Never true at the same time as [hasArtboards](#selection+hasArtboards).
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
 **Read only**: true  
@@ -84,7 +84,7 @@ True if the selection isn’t empty, and consists of non-Artboards. Never true a
 <a name="selection+hasArtboards"></a>
 
 ### selection.hasArtboards : <code>boolean</code>
-True if the selection isn’t empty, and consists of Artboards. Never true at the same time as [hasArtwork](#selection+hasArtwork).
+True if the selection isn’t empty, and consists of one or more Artboards. Never true at the same time as [hasArtwork](#selection+hasArtwork).
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
 **Read only**: true  
@@ -93,7 +93,7 @@ True if the selection isn’t empty, and consists of Artboards. Never true at th
 
 <a name="selection+editContext"></a>
 
-### selection.editContext : <code>!SceneNode</code>
+### selection.editContext : <code>\![SceneNode](scenegraph.md#SceneNode)</code>
 The context in which selection and edit operations must occur. If the user hasn't drilled into any container node, this value is thedocument root, and its scope includes all immediate children of the pasteboard (including Artboards), *and* all immediate children ofall those Artboards.
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
@@ -103,7 +103,7 @@ The context in which selection and edit operations must occur. If the user hasn'
 
 <a name="selection+insertionParent"></a>
 
-### selection.insertionParent : <code>!SceneNode</code>
+### selection.insertionParent : <code>\![SceneNode](scenegraph.md#SceneNode)</code>
 The preferred parent to insert newly added content into. Takes into account the current edit context as well as the "focused artboard"if in the root context.
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
@@ -113,7 +113,7 @@ The preferred parent to insert newly added content into. Takes into account the 
 
 <a name="selection+focusedArtboard"></a>
 
-### selection.focusedArtboard : <code>?Artboard</code>
+### selection.focusedArtboard : <code>?[Artboard](scenegraph.md#Artboard)</code>
 The artboard the user is currently most focused on (via recent selection or edit operations). May be null, for example if no artboardsexist or if the user just deleted an artboard.
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
