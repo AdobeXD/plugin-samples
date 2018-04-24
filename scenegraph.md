@@ -124,7 +124,7 @@ Base class of all scenegraph nodes. Nodes will always be an instance of some _su
 <a name="SceneNode+guid"></a>
 
 ### *sceneNode.guid : <code>string</code>*
-Returns a unique identifier for this node that stays the same when the file is closed & reopened, or if the node is moved to adifferent part of the document. Cut-Paste will result in a new guid, however.
+Returns a unique identifier for this node that stays the same when the file is closed & reopened, or if the node is moved to a different part of the document. Cut-Paste will result in a new guid, however.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -200,7 +200,7 @@ True if this node is part of the current selection. To change which nodes are se
 <a name="SceneNode+visible"></a>
 
 ### *sceneNode.visible : <code>boolean</code>*
-False if this node has been hidden by the user (eyeball toggle in Layers panel). If true, the node may still be invisible forother reasons: a parent or grandparent has visible=false, the node has opacity=0%, the node is clipped by a mask, etc.
+False if this node has been hidden by the user (eyeball toggle in Layers panel). If true, the node may still be invisible for other reasons: a parent or grandparent has visible=false, the node has opacity=0%, the node is clipped by a mask, etc.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 
@@ -209,7 +209,7 @@ False if this node has been hidden by the user (eyeball toggle in Layers panel).
 <a name="SceneNode+opacity"></a>
 
 ### *sceneNode.opacity : <code>number</code>*
-(0.0-1.0)Node's opacity setting. The overall visual opacity seen on canvas is determined by combining this value with the opacity of thenode's entire parent chain, as well as the opacity settings of its fill/stroke properties if this is a leaf node.
+(0.0-1.0)Node's opacity setting. The overall visual opacity seen on canvas is determined by combining this value with the opacity of the node's entire parent chain, as well as the opacity settings of its fill/stroke properties if this is a leaf node.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 
@@ -218,7 +218,7 @@ False if this node has been hidden by the user (eyeball toggle in Layers panel).
 <a name="SceneNode+transform"></a>
 
 ### *sceneNode.transform : <code>!Matrix</code>*
-Affine transform matrix that converts from the node's _local coordinate space_ to its parent's coordinate space. The matrix never hasskew or scale components, and if this node is an Artboard the matrix never has rotation either. Rather than working with the raw matrixdirectly, it may be easier to use methods such as [placeInParentCoordinates](#SceneNode+placeInParentCoordinates) or [rotateAround](#SceneNode+rotateAround).
+Affine transform matrix that converts from the node's _local coordinate space_ to its parent's coordinate space. The matrix never has skew or scale components, and if this node is an Artboard the matrix never has rotation either. Rather than working with the raw matrix directly, it may be easier to use methods such as [placeInParentCoordinates](#SceneNode+placeInParentCoordinates) or [rotateAround](#SceneNode+rotateAround).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **See**
@@ -265,7 +265,7 @@ The rotation component of this node's [transform](#SceneNode+transform)
 <a name="SceneNode+globalBounds"></a>
 
 ### *sceneNode.globalBounds : \![<code>Bounds</code>](#Bounds)*
-The node's _path bounds_ in document-global coordinate space (represented by a bounding box aligned with global X/Y axes). Path boundsmatch the selection outline seen in the XD, but exclude some visual parts of the node (outer stroke, drop shadow / blur, etc.).
+The node's _path bounds_ in document-global coordinate space (represented by a bounding box aligned with global X/Y axes). Path bounds match the selection outline seen in the XD, but exclude some visual parts of the node (outer stroke, drop shadow / blur, etc.).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -281,7 +281,9 @@ The node's _path bounds_ in document-global coordinate space (represented by a b
 <a name="SceneNode+localBounds"></a>
 
 ### *sceneNode.localBounds : \![<code>Bounds</code>](#Bounds)*
-The node's _path bounds_ in its own local coordinate space. This coordinate space may be rotated and translated relative to theparent's coordinate space. Path bounds match the selection outline seen in XD, but exclude some visual parts of the node (outerstroke, drop shadow / blur, etc.).The visual top-left of a node's path bounds is located at (localBounds.x, localBounds.y). This value is _not_ necessarily (0,0) inthe local coordinate space: for example, a text node's baseline is at Y=0 in local coordinates, so the top of the text has anegative Y value.
+The node's _path bounds_ in its own local coordinate space. This coordinate space may be rotated and translated relative to the parent's coordinate space. Path bounds match the selection outline seen in XD, but exclude some visual parts of the node (outerstroke, drop shadow / blur, etc.).
+
+The visual top-left of a node's path bounds is located at (localBounds.x, localBounds.y). This value is _not_ necessarily (0,0) in the local coordinate space: for example, a text node's baseline is at Y=0 in local coordinates, so the top of the text has a negative Y value.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -297,7 +299,7 @@ The node's _path bounds_ in its own local coordinate space. This coordinate spac
 <a name="SceneNode+boundsInParent"></a>
 
 ### *sceneNode.boundsInParent : \![<code>Bounds</code>](#Bounds)*
-The node's _path bounds_ in its parent's coordinate space (represented by a bounding box aligned with the parent's X/Y axes - so ifthe node has rotation, the top-left of the node is not necessarily located at the top-left of boundsInParent). Path bounds match theselection outline seen in XD, but exclude some visual parts of the node (outer stroke, drop shadow / blur, etc.).
+The node's _path bounds_ in its parent's coordinate space (represented by a bounding box aligned with the parent's X/Y axes - so if the node has rotation, the top-left of the node is not necessarily located at the top-left of boundsInParent). Path bounds match the selection outline seen in XD, but exclude some visual parts of the node (outer stroke, drop shadow / blur, etc.).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -313,7 +315,8 @@ The node's _path bounds_ in its parent's coordinate space (represented by a boun
 <a name="SceneNode+topLeftInParent"></a>
 
 ### *sceneNode.topLeftInParent : \![<code>Point</code>](#Point)*
-The position of the node's upper-left corner (localBounds.x, localBounds.y) in its parent's coordinate space.This is a shortcut for `node.transform.transformPoint({x: node.localBounds.x, y: node.localBounds.y})`
+The position of the node's upper-left corner (localBounds.x, localBounds.y) in its parent's coordinate space.
+This is a shortcut for `node.transform.transformPoint({x: node.localBounds.x, y: node.localBounds.y})`
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -328,7 +331,8 @@ The position of the node's upper-left corner (localBounds.x, localBounds.y) in i
 <a name="SceneNode+localCenterPoint"></a>
 
 ### *sceneNode.localCenterPoint : \![<code>Point</code>](#Point)*
-The position of the node's centerpoint in its own local coordinate space. Useful as an argument to [rotateAround](#SceneNode+rotateAround).This is a shortcut for `{x: localBounds.x + localBounds.width/2, y: localBounds.y + localBounds.height/2})`
+The position of the node's centerpoint in its own local coordinate space. Useful as an argument to [rotateAround](#SceneNode+rotateAround).
+This is a shortcut for `{x: localBounds.x + localBounds.width/2, y: localBounds.y + localBounds.height/2})`
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -339,7 +343,7 @@ The position of the node's centerpoint in its own local coordinate space. Useful
 <a name="SceneNode+globalDrawBounds"></a>
 
 ### *sceneNode.globalDrawBounds : \![<code>Bounds</code>](#Bounds)*
-The node's _draw bounds_ in document-global coordinate space. Draw bounds are larger than the selection outline seen in XD,including outer stroke, drop shadow / blur, etc. - every visible pixel of the node is encompassed by these bounds. This matchesthe image dimensions if the node is exported as a PNG/JPEG bitmap.
+The node's _draw bounds_ in document-global coordinate space. Draw bounds are larger than the selection outline seen in XD, including outer stroke, drop shadow / blur, etc. - every visible pixel of the node is encompassed by these bounds. This matches the image dimensions if the node is exported as a PNG/JPEG bitmap.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -354,7 +358,7 @@ The node's _draw bounds_ in document-global coordinate space. Draw bounds are la
 <a name="SceneNode+localDrawBounds"></a>
 
 ### *sceneNode.localDrawBounds : \![<code>Bounds</code>](#Bounds)*
-The node's _draw bounds_ in its own local coordinate space. Draw bounds are larger than the selection outline seen in XD,including outer stroke, drop shadow / blur, etc. - every visible pixel of the node is encompassed by these bounds.
+The node's _draw bounds_ in its own local coordinate space. Draw bounds are larger than the selection outline seen in XD, including outer stroke, drop shadow / blur, etc. - every visible pixel of the node is encompassed by these bounds.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -378,7 +382,7 @@ Node name as seen in the Layers panel. Also used as filename during Export.
 <a name="SceneNode+hasCustomName"></a>
 
 ### *sceneNode.hasCustomName : <code>boolean</code>*
-True if [name](#SceneNode+name) has been explicitly set to a specific value. False if node has a generic, auto-generated name(e.g. "Rectangle 5").
+True if [name](#SceneNode+name) has been explicitly set to a specific value. False if node has a generic, auto-generated name (e.g. "Rectangle 5").
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -623,7 +627,7 @@ Removes all children from this code. Equivlanent to calling removeFromParent() o
 <a name="Group+mask"></a>
 
 ### group.mask : ?[<code>SceneNode</code>](#SceneNode)
-The mask shape applied to this group, if any. This object is also present in the group's `children` list. Though it hasno direct visual appearance of its own, the mask affects the entire groups's appearance by clipping all its other content.
+The mask shape applied to this group, if any. This object is also present in the group's `children` list. Though it has no direct visual appearance of its own, the mask affects the entire groups's appearance by clipping all its other content.
 
 **Kind**: instance property of [<code>Group</code>](#Group)  
 **Read only**: true  
@@ -723,7 +727,7 @@ Position of the stroke relative to the shape's path outline: GraphicNode.INNER_S
 <a name="GraphicNode+strokeEndCaps"></a>
 
 ### *graphicNode.strokeEndCaps : <code>string</code>*
-For Lines and non-closed Paths, how the dangling ends of the stroke are rendered: GraphicNode.STROKE_CAP_NONE, STROKE_CAP_SQUARE,or STROKE_CAP_ROUND.
+For Lines and non-closed Paths, how the dangling ends of the stroke are rendered: GraphicNode.STROKE_CAP_NONE, STROKE_CAP_SQUARE, or STROKE_CAP_ROUND.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 
@@ -748,7 +752,7 @@ How sharp corners in the shape are rendered: GraphicNode.STROKE_JOIN_BEVEL, STRO
 <a name="GraphicNode+strokeDashArray"></a>
 
 ### *graphicNode.strokeDashArray : <code>!Array</code>*
-Empty array indicates a solid stroke. If non-empty, values represent the lengths of rendered and blank segments of thestroke's dash pattern.
+Empty array indicates a solid stroke. If non-empty, values represent the lengths of rendered and blank segments of the stroke's dash pattern.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 
@@ -775,7 +779,7 @@ The node's dropshadow, if any. If there is no shadow applied, this property may 
 <a name="GraphicNode+blur"></a>
 
 ### *graphicNode.blur : <code>?Blur</code>*
-The node's object blur or background blur settings, if applicable. If there is no blur effect applied, this property may be null_or_ `blur.visible` may be false.
+The node's object blur or background blur settings, if applicable. If there is no blur effect applied, this property may be null _or_ `blur.visible` may be false.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 
@@ -1077,7 +1081,7 @@ with children. Its visual appearance is determined by a nondestructive boolean o
 <a name="BooleanGroup+pathOp"></a>
 
 ### booleanGroup.pathOp : <code>string</code>
-Which boolean operation is used to generate the path: BooleanGroup.PATH_OP_ADD, PATH_OP_SUBTRACT, PATH_OP_INTERSECT, orPATH_OP_EXCLUDE_OVERLAP.
+Which boolean operation is used to generate the path: BooleanGroup.PATH_OP_ADD, PATH_OP_SUBTRACT, PATH_OP_INTERSECT, or PATH_OP_EXCLUDE_OVERLAP.
 
 **Kind**: instance property of [<code>BooleanGroup</code>](#BooleanGroup)  
 **Read only**: true  
@@ -1133,7 +1137,7 @@ If true, the text is drawn upside down.
 <a name="Text+textAlign"></a>
 
 ### text.textAlign : <code>string</code>
-Horizontal alignment: Text.ALIGN_LEFT, ALIGN_CENTER, or ALIGN_RIGHT. This setting affects the layout of multiline text, and it alsoaffects what direction text grows when edited on canvas.
+Horizontal alignment: Text.ALIGN_LEFT, ALIGN_CENTER, or ALIGN_RIGHT. This setting affects the layout of multiline text, and it also affects what direction text grows when edited on canvas.
 
 **Kind**: instance property of [<code>Text</code>](#Text)  
 
@@ -1222,7 +1226,7 @@ determines how may cells are visible (new cells are automatically generated as n
 <a name="RepeatGrid+width"></a>
 
 ### repeatGrid.width : <code>number</code>
-Defines size of the RepeatGrid. Cells are created and destroyed as necessary to fill the current size. Cells that only partially fitwill be clipped.
+Defines size of the RepeatGrid. Cells are created and destroyed as necessary to fill the current size. Cells that only partially fit will be clipped.
 
 **Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)  
 
@@ -1231,7 +1235,7 @@ Defines size of the RepeatGrid. Cells are created and destroyed as necessary to 
 <a name="RepeatGrid+height"></a>
 
 ### repeatGrid.height : <code>number</code>
-Defines size of the RepeatGrid. Cells are created and destroyed as necessary to fill the current size. Cells that only partially fitwill be clipped.
+Defines size of the RepeatGrid. Cells are created and destroyed as necessary to fill the current size. Cells that only partially fit will be clipped.
 
 **Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)  
 
@@ -1276,7 +1280,7 @@ Vertical spacing between grid cells/rows
 <a name="RepeatGrid+cellSize"></a>
 
 ### repeatGrid.cellSize : <code>!{width: number, height: number}</code>
-The size of each grid cell. The size of each cell's content can vary slightly due to text overrides; the cell size is always set tothe width of the widest cell content and the height of the tallest cell content.
+The size of each grid cell. The size of each cell's content can vary slightly due to text overrides; the cell size is always set to the width of the widest cell content and the height of the tallest cell content.
 
 **Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)  
 
