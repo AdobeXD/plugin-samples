@@ -74,9 +74,9 @@ function myCommand(selection) {
 ## Typedefs
 
 <dl>
-<dt><a name="Point"></a>**Point** : </dt><dd><code>!{x:number, y:number}</code></dd>
+<dt><a name="Point"></a> Point : </dt><dd><code>!{x:number, y:number}</code></dd>
 
-<dt><a name="Bounds"></a>**Bounds** : </dt><dd><code>!{x:number, y:number, width:number, height:number}</code></dd>
+<dt><a name="Bounds"></a> Bounds : </dt><dd><code>!{x:number, y:number, width:number, height:number}</code></dd>
 
 </dl>
 
@@ -219,6 +219,8 @@ False if this node has been hidden by the user (eyeball toggle in Layers panel).
 
 ### *sceneNode.transform : <code>!Matrix</code>*
 Affine transform matrix that converts from the node's _local coordinate space_ to its parent's coordinate space. The matrix never has skew or scale components, and if this node is an Artboard the matrix never has rotation either. Rather than working with the raw matrix directly, it may be easier to use methods such as [placeInParentCoordinates](#SceneNode+placeInParentCoordinates) or [rotateAround](#SceneNode+rotateAround).
+
+Returns a fresh Matrix each time, so this can be mutated by the caller without interfering with anything. Mutating the returned Matrix does not change the node's transform - only invoking the 'transform' setter changes the node.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **See**
