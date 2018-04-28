@@ -35,7 +35,7 @@ $ cd com.adobe.xd.hello-world
 
 ## Create your plugin's manifest
 
-Adobe XD requires that your plugin have a manifest named `xdplugin.json`. The structure looks like this:
+Adobe XD requires that your plugin have a manifest named `xdplugin.json`. Our example looks like this:
 
 ```json
 {
@@ -55,24 +55,7 @@ Adobe XD requires that your plugin have a manifest named `xdplugin.json`. The st
 }
 ```
 
-Let's go over each entry in this file.
-
-key path | description
----------|------------
-`id`     | This is a unique identifier for your plugin. It's common to use reverse domain notation. The behavior is undefined if two plugins have the same identifier.
-`name`   | Human-readable name of the plugin. Note that this isn't currently visible anywhere.
-`host`   | Used to ensure compatibility with certain hosts.
-`host.app` | Indicates with which host apps this plugin is compatible. In this case, you should always use `XD` here so that Adobe XD picks up the plugin.
-`host.minVersion` | Indicates the minimum version of the host app that can run this plugin.
-`uiEntryPoints` | Allows you to define menu items that can launch your plugin.
-
-`uiEntryPoints` is actually an array, so you can have multiple menu items. In our case, though, we'll just use the one. Let's go over what each item means:
-
-key | description
-----|----------------
-`type` | This indicates the entry point type. Right now Adobe XD only supports `menu` entry points.
-`label` | The label to use within the `Plugins` menu.
-`commandId` | The identifier to use when executing exported plugin code. This identifier needs to be unique to the plugin (but doesn't need to be globally unique). It can be whatever you like, but it makes sense to succinctly describe what the command will do.
+For more about what each entry means, [see the manifest documentation](../reference/manifest.md).
 
 ## Create your plugin's code
 
@@ -114,11 +97,11 @@ return { // [5]
 
 Great -- we've written a plugin -- how do we invoke it? If you haven't already, go ahead and launch XD and open a new document. Then navigate to **Plugins | Say hello**.
 
-![Plugin Menu](./menu.png)
+![Plugin Menu](./getting-started/menu.png)
 
 Once you click the menu item, "Hello" should appear in your XD canvas.
 
-![Nothing Happened](./nothing-happened.png)
+![Nothing Happened](./getting-started/nothing-happened.png)
 
 Oh... wait. That didn't go exactly to plan. Where's "Hello" at? Is something wrong? Let's figure out how to debug, so we can see what's going on.
 
@@ -130,7 +113,7 @@ Adobe XD will log errors from your plugin to a log file. Anything your plugin lo
 
 The easiest way to view the console output from your plugin is to open `Console.app`. You can then search for `Adobe XD` in the `Search` field. You can also search for anything else you might be logging.
 
-![Console app](console-app-filter.png)
+![Console app](./getting-started/console-app-filter.png)
 
 ### Windows
 
@@ -160,13 +143,13 @@ Next, hit the `x` key. This will reload all the plugins in the document _and_ ex
 
 Now you should see some more information in the log:
 
-![Console results](console-app-results.png)
+![Console results](./getting-started/console-app-results.png)
 
 Clearly our plugin is executing -- otherwise we wouldn't see our logs in the output. Perhaps the plugin is executing, but the results aren't what we expected.
 
 If we select everything in the document, we'll find that this is indeed the case:
 
-![It rendered offscreen](rendered-offscreen.png)
+![It rendered offscreen](./getting-started/rendered-offscreen.png)
 
 At this point we know what happened -- the text is rendered outside of the artboard, and so it doesn't render. Let's instruct the text element to move inside the canvas by modifying our `sayHello` function one more time:
 
@@ -188,7 +171,7 @@ function sayHello(selection) {
 
 Next, press `x` again, and you should see the following:
 
-![It worked](on-canvas.png)
+![It worked](./getting-started/on-canvas.png)
 
 ## Iterating on your plugin
 
