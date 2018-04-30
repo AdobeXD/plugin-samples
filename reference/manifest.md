@@ -35,4 +35,6 @@ key | description
 ----|----------------
 `type` | This indicates the entry point type. Right now Adobe XD only supports `menu` entry points.
 `label` | The label for this menu item.
-`commandId` | Identifier that links the menu item to a function in your plugin's JavaScript code (see [Menu item handlers](../index.md#Menu-item-handlers). This identifier needs to be unique within your plugin (but doesn't need to be globally unique). It can be whatever you like, but it makes sense to succinctly describe what the command will do.
+`commandId` | Identifier that links the menu item to a function in your plugin's JavaScript code (see [Menu item handlers](../index.md#menu-item-handlers). This identifier needs to be unique within your plugin (but doesn't need to be globally unique). It can be whatever you like, but it makes sense to succinctly describe what the command will do.
+
+If you specify multiple menu items, they'll appear in the UI in the same order as they're listed in the `uiEntryPoints` array.

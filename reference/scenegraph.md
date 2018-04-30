@@ -220,9 +220,9 @@ Affine transform matrix that converts from the node's _local coordinate space_ t
 
 Returns a fresh Matrix each time, so this can be mutated by the caller without interfering with anything. Mutating the returned Matrix does not change the node's transform - only invoking the 'transform' setter changes the node.
 To modify an existing transform, always be sure to re-invoke ths `transform` setter rather than just changing the Matrix object's properties inline.
-See ["Properties with object values"](README.md#Properties-with-object-values).
+See ["Properties with object values"](../index.md#object-value-properties).
 
-For an overview of node transforms & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+For an overview of node transforms & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **See**
@@ -244,9 +244,10 @@ For an overview of node transforms & coordinate systems, see [Coordinate spaces]
 
 ### *sceneNode.translation : <code>!{x:number, y:number}</code>*
 The translate component of this node's [transform](#SceneNode+transform). Since translation is applied after any rotation in
-the transform Matrix, translation occurs along the parent's X/Y axes, not the node's own local X/Y axes.
+the transform Matrix, translation occurs along the parent's X/Y axes, not the node's own local X/Y axes. This is equivalent to
+the `e` & `f` fields in the transform Matrix.
 
-For an overview of node positioning & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+For an overview of node positioning & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **See**
@@ -263,7 +264,7 @@ For an overview of node positioning & coordinate systems, see [Coordinate spaces
 ### *sceneNode.rotation : <code>number</code>*
 The rotation component of this node's [transform](#SceneNode+transform), in clockwise degrees.
 
-For an overview of node transforms & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+For an overview of node transforms & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -276,7 +277,7 @@ For an overview of node transforms & coordinate systems, see [Coordinate spaces]
 ### *sceneNode.globalBounds : \![<code>Bounds</code>](#Bounds)*
 The node's _path bounds_ in document-global coordinate space (represented by a bounding box aligned with global X/Y axes). Path bounds match the selection outline seen in the XD, but exclude some visual parts of the node (outer stroke, drop shadow / blur, etc.).
 
-For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -296,7 +297,7 @@ The node's _path bounds_ in its own local coordinate space. This coordinate spac
 
 The visual top-left of a node's path bounds is located at (localBounds.x, localBounds.y). This value is _not_ necessarily (0,0) in the local coordinate space: for example, a text node's baseline is at Y=0 in local coordinates, so the top of the text has a negative Y value.
 
-For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -313,7 +314,7 @@ For an overview of node bounding boxes & coordinate systems, see [Coordinate spa
 ### *sceneNode.boundsInParent : \![<code>Bounds</code>](#Bounds)*
 The node's _path bounds_ in its parent's coordinate space (represented by a bounding box aligned with the parent's X/Y axes - so if the node has rotation, the top-left of the node is not necessarily located at the top-left of boundsInParent). Path bounds match the selection outline seen in XD, but exclude some visual parts of the node (outer stroke, drop shadow / blur, etc.).
 
-For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -333,7 +334,7 @@ The position of the node's upper-left corner (localBounds.x, localBounds.y) in i
 rotated, this is not the same as the top-left corner of boundsInParent.
 This is a shortcut for `node.transform.transformPoint({x: node.localBounds.x, y: node.localBounds.y})`
 
-For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -351,7 +352,7 @@ For an overview of node bounding boxes & coordinate systems, see [Coordinate spa
 The position of the node's centerpoint in its own local coordinate space. Useful as an argument to [rotateAround](#SceneNode+rotateAround).
 This is a shortcut for `{x: localBounds.x + localBounds.width/2, y: localBounds.y + localBounds.height/2})`
 
-For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -364,7 +365,7 @@ For an overview of node bounding boxes & coordinate systems, see [Coordinate spa
 ### *sceneNode.globalDrawBounds : \![<code>Bounds</code>](#Bounds)*
 The node's _draw bounds_ in document-global coordinate space. Draw bounds are larger than the selection outline seen in XD, including outer stroke, drop shadow / blur, etc. - every visible pixel of the node is encompassed by these bounds. This matches the image dimensions if the node is exported as a PNG/JPEG bitmap.
 
-For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -438,7 +439,7 @@ Move the node by the given number of pixels along the parent's X/Y axes (if this
 moving the node along its own local X/Y axes). This is equivalent to modifying the value returned by 'translation' and then
 setting it back.
 
-For an overview of node positioning & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+For an overview of node positioning & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
 
 **Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
 **See**
@@ -461,7 +462,7 @@ For an overview of node positioning & coordinate systems, see [Coordinate spaces
 Move the node so the given point in its local coordinates is placed at the given point in its parent's coordinates (taking into account
 any rotation on this node, etc.).
 
-For an overview of node positioning & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+For an overview of node positioning & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
 
 **Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
 
@@ -475,7 +476,7 @@ For an overview of node positioning & coordinate systems, see [Coordinate spaces
 // Place this node's top-left corner at the centerpoint of its parent
 var parentCenter = node.parent.localCenterPoint;  // parent's center in parent's coordinates
 var nodeBounds = node.localBounds;  // node's bounds in its own local coordinates
-var nodeTopLeft = {x: nodeBounds.x, nodeBounds. y};  // node's top left corner in its own local coordinates
+var nodeTopLeft = {x: nodeBounds.x, y: nodeBounds.y};  // node's top left corner in its own local coordinates
 node.placeInParentCoordinates(nodeTopLeft, parentCenter);
 ```
 
@@ -487,7 +488,7 @@ node.placeInParentCoordinates(nodeTopLeft, parentCenter);
 Rotate the node clockwise by the given number of degrees around the given point in the plugin's local coordinate space. If this node
 already has nonzero rotation, this operation _adds_ to its existing angle.
 
-For an overview of node transforms & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+For an overview of node transforms & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
 
 **Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
 **See**: [rotation](#SceneNode+rotation)  
@@ -661,10 +662,10 @@ The mask shape applied to this group, if any. This object is also present in the
 
 ## *GraphicNode*
 **Kind**: abstract class  
-**Extends**: [<code>SceneNode</code>](#SceneNode)
 
 Base class for nodes that have a stroke and/or fill. This includes leaf nodes such as Rectangle, as well as BooleanGroup
-which is a container node.
+which is a container node. If you create a shape node, it will not be visible unless you explicitly give it either a stroke
+or a fill.
 
 * *[GraphicNode](#GraphicNode)*
     * *[.fill](#GraphicNode+fill) : ?<code>Color</code> \| <code>LinearGradientFill</code> \| <code>RadialGradientFill</code> \| <code>BitmapFill</code>*
@@ -690,7 +691,10 @@ which is a container node.
 <a name="GraphicNode+fill"></a>
 
 ### *graphicNode.fill : ?<code>Color</code> \| <code>LinearGradientFill</code> \| <code>RadialGradientFill</code> \| <code>BitmapFill</code>*
-The fill applied to this shape, if any. If there is no fill applied, this property may be null _or_ `fillEnabled` may be false.
+The fill applied to this shape, if any. If this property is null _or_ `fillEnabled` is false, no fill is drawn.
+Freshly created nodes have no fill by default.
+
+For Line objects, fill is ignored. For Text objects, _only_ solid Color fill values are allowed.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 **Example**  
@@ -699,7 +703,7 @@ ellipse.fill = new Color("red");
 ```
 
 To modify an existing fill, always be sure to re-invoke ths `fill` setter rather than just changing the fill object's properties inline.
-See ["Properties with object values"](README.md#Properties-with-object-values).
+See ["Properties with object values"](../index.md#object-value-properties).
 
 **Known issue:** When modifying a _gradient fill_ object specifically, you must clone the gradient returned by the getter before modifying
 it, to avoid issues with Undo history.
@@ -718,7 +722,8 @@ If false, the `fill` is not rendered. The user can toggle this via a checkbox in
 <a name="GraphicNode+stroke"></a>
 
 ### *graphicNode.stroke : <code>?Color</code>*
-The stroke color applied to this shape, if any. If there is no stroke applied, this property may be null _or_ `strokeEnabled` may be false.
+The stroke color applied to this shape, if any. If this property is null _or_ `strokeEnabled` is false, no stroke is drawn.
+Freshly created nodes have no stroke by default. Artboard objects ignore stroke settings.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 **Example**  
@@ -727,7 +732,7 @@ ellipse.stroke = new Color("red");
 ```
 
 To modify an existing stroke, always be sure to re-invoke ths `stroke` setter rather than just changing the Color object's properties inline.
-See ["Properties with object values"](README.md#Properties-with-object-values).
+See ["Properties with object values"](../index.md#object-value-properties).
 
 * * *
 
@@ -844,7 +849,17 @@ True if the node's image fill comes from a link to an external resource, such as
 ## Rectangle
 **Kind**: class  
 
-Rectangle leaf node shape.
+Rectangle leaf node shape. Like all shape nodes, has no fill or stroke by default unless you set one.
+
+**Example**
+```js
+var rect = new Rectangle();
+rect.width = 100;
+rect.height = 25;
+rect.fill = new Color("red");
+selection.insertionParent.addChild(rect);
+selection.items = [rect];
+```
 
 * [Rectangle](#Rectangle)
     * [.width](#Rectangle+width) : <code>number</code>
@@ -1139,7 +1154,8 @@ Which boolean operation is used to generate the path: BooleanGroup.PATH_OP_ADD, 
 ## Text
 **Kind**: class  
 
-Text leaf node shape.
+Text leaf node shape. Text can have a fill and/or stroke, but only a solid-color fill is allowed (gradient or image
+will will be rejected).
 
 There are two types of Text nodes:
 - Point Text - Expands to fit the full width of the text content. Only uses multiple lines if the text content contains hard line
