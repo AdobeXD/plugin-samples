@@ -44,12 +44,14 @@ var shape1 = new Rectangle();
 var label = new Text();
 // ...configure Text content & appearance...
 
-// Place inside a Group: add both nodes to the current edit context, select them, then run the group() command
+// Add both nodes to the current edit context first
 selection.insertionParent.addChild(shape1);
 selection.insertionParent.addChild(label);
+
+// Select both shapes, then run the group() command
 selection.items = [shape1, label];
 commands.group();
-var group = selection.items[0];
+var group = selection.items[0];  // the new Group node is what's selected afterward
 ```
 
 * * *

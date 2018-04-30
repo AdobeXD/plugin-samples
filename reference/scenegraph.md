@@ -105,13 +105,11 @@ Base class of all scenegraph nodes. Nodes will always be an instance of some _su
     * *[.topLeftInParent](#SceneNode+topLeftInParent) : \![<code>Point</code>](#Point)*
     * *[.localCenterPoint](#SceneNode+localCenterPoint) : \![<code>Point</code>](#Point)*
     * *[.globalDrawBounds](#SceneNode+globalDrawBounds) : \![<code>Bounds</code>](#Bounds)*
-    * *[.localDrawBounds](#SceneNode+localDrawBounds) : \![<code>Bounds</code>](#Bounds)*
     * *[.name](#SceneNode+name) : <code>string</code>*
     * *[.hasCustomName](#SceneNode+hasCustomName) : <code>boolean</code>*
     * *[.locked](#SceneNode+locked) : <code>boolean</code>*
     * *[.markedForExport](#SceneNode+markedForExport) : <code>boolean</code>*
     * *[.hasLinkedContent](#SceneNode+hasLinkedContent) : <code>boolean</code>*
-    * *[.pathData](#SceneNode+pathData) : <code>string</code>*
     * *[.removeFromParent()](#SceneNode+removeFromParent)*
     * *[.moveInParentCoordinates(deltaX, deltaY)](#SceneNode+moveInParentCoordinates)*
     * *[.placeInParentCoordinates(localPoint, parentPoint)](#SceneNode+placeInParentCoordinates)*
@@ -221,6 +219,10 @@ False if this node has been hidden by the user (eyeball toggle in Layers panel).
 Affine transform matrix that converts from the node's _local coordinate space_ to its parent's coordinate space. The matrix never has skew or scale components, and if this node is an Artboard the matrix never has rotation either. Rather than working with the raw matrix directly, it may be easier to use methods such as [placeInParentCoordinates](#SceneNode+placeInParentCoordinates) or [rotateAround](#SceneNode+rotateAround).
 
 Returns a fresh Matrix each time, so this can be mutated by the caller without interfering with anything. Mutating the returned Matrix does not change the node's transform - only invoking the 'transform' setter changes the node.
+To modify an existing transform, always be sure to re-invoke ths `transform` setter rather than just changing the Matrix object's properties inline.
+See ["Properties with object values"](README.md#Properties-with-object-values).
+
+For an overview of node transforms & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **See**
@@ -241,7 +243,10 @@ Returns a fresh Matrix each time, so this can be mutated by the caller without i
 <a name="SceneNode+translation"></a>
 
 ### *sceneNode.translation : <code>!{x:number, y:number}</code>*
-The translate component of this node's [transform](#SceneNode+transform)
+The translate component of this node's [transform](#SceneNode+transform). Since translation is applied after any rotation in
+the transform Matrix, translation occurs along the parent's X/Y axes, not the node's own local X/Y axes.
+
+For an overview of node positioning & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **See**
@@ -256,7 +261,9 @@ The translate component of this node's [transform](#SceneNode+transform)
 <a name="SceneNode+rotation"></a>
 
 ### *sceneNode.rotation : <code>number</code>*
-The rotation component of this node's [transform](#SceneNode+transform)
+The rotation component of this node's [transform](#SceneNode+transform), in clockwise degrees.
+
+For an overview of node transforms & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -268,6 +275,8 @@ The rotation component of this node's [transform](#SceneNode+transform)
 
 ### *sceneNode.globalBounds : \![<code>Bounds</code>](#Bounds)*
 The node's _path bounds_ in document-global coordinate space (represented by a bounding box aligned with global X/Y axes). Path bounds match the selection outline seen in the XD, but exclude some visual parts of the node (outer stroke, drop shadow / blur, etc.).
+
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -287,11 +296,12 @@ The node's _path bounds_ in its own local coordinate space. This coordinate spac
 
 The visual top-left of a node's path bounds is located at (localBounds.x, localBounds.y). This value is _not_ necessarily (0,0) in the local coordinate space: for example, a text node's baseline is at Y=0 in local coordinates, so the top of the text has a negative Y value.
 
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
 **See**
 
-- [localDrawBounds](#SceneNode+localDrawBounds)
 - [globalBounds](#SceneNode+globalBounds)
 - [boundsInParent](#SceneNode+boundsInParent)
 
@@ -302,6 +312,8 @@ The visual top-left of a node's path bounds is located at (localBounds.x, localB
 
 ### *sceneNode.boundsInParent : \![<code>Bounds</code>](#Bounds)*
 The node's _path bounds_ in its parent's coordinate space (represented by a bounding box aligned with the parent's X/Y axes - so if the node has rotation, the top-left of the node is not necessarily located at the top-left of boundsInParent). Path bounds match the selection outline seen in XD, but exclude some visual parts of the node (outer stroke, drop shadow / blur, etc.).
+
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -317,8 +329,11 @@ The node's _path bounds_ in its parent's coordinate space (represented by a boun
 <a name="SceneNode+topLeftInParent"></a>
 
 ### *sceneNode.topLeftInParent : \![<code>Point</code>](#Point)*
-The position of the node's upper-left corner (localBounds.x, localBounds.y) in its parent's coordinate space.
+The position of the node's upper-left corner (localBounds.x, localBounds.y) in its parent's coordinate space. If the node is
+rotated, this is not the same as the top-left corner of boundsInParent.
 This is a shortcut for `node.transform.transformPoint({x: node.localBounds.x, y: node.localBounds.y})`
+
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -336,6 +351,8 @@ This is a shortcut for `node.transform.transformPoint({x: node.localBounds.x, y:
 The position of the node's centerpoint in its own local coordinate space. Useful as an argument to [rotateAround](#SceneNode+rotateAround).
 This is a shortcut for `{x: localBounds.x + localBounds.width/2, y: localBounds.y + localBounds.height/2})`
 
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
 **See**: [localBounds](#SceneNode+localBounds)  
@@ -347,27 +364,13 @@ This is a shortcut for `{x: localBounds.x + localBounds.width/2, y: localBounds.
 ### *sceneNode.globalDrawBounds : \![<code>Bounds</code>](#Bounds)*
 The node's _draw bounds_ in document-global coordinate space. Draw bounds are larger than the selection outline seen in XD, including outer stroke, drop shadow / blur, etc. - every visible pixel of the node is encompassed by these bounds. This matches the image dimensions if the node is exported as a PNG/JPEG bitmap.
 
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
 **See**
 
 - [globalBounds](#SceneNode+globalBounds)
-- [localDrawBounds](#SceneNode+localDrawBounds)
-
-
-* * *
-
-<a name="SceneNode+localDrawBounds"></a>
-
-### *sceneNode.localDrawBounds : \![<code>Bounds</code>](#Bounds)*
-The node's _draw bounds_ in its own local coordinate space. Draw bounds are larger than the selection outline seen in XD, including outer stroke, drop shadow / blur, etc. - every visible pixel of the node is encompassed by these bounds.
-
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
-**See**
-
-- [localBounds](#SceneNode+localBounds)
-- [globalDrawBounds](#SceneNode+globalDrawBounds)
 
 
 * * *
@@ -419,16 +422,6 @@ True if the node's appearance comes from a link to an external resource, such as
 
 * * *
 
-<a name="SceneNode+pathData"></a>
-
-### *sceneNode.pathData : <code>string</code>*
-Returns a representation of the node's outline in SVG `<path>` syntax.
-
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
-
-* * *
-
 <a name="SceneNode+removeFromParent"></a>
 
 ### *sceneNode.removeFromParent()*
@@ -442,7 +435,10 @@ Remove this node from its parent, effectively deleting it from the document.
 
 ### *sceneNode.moveInParentCoordinates(deltaX, deltaY)*
 Move the node by the given number of pixels along the parent's X/Y axes (if this node has no rotation, this is identical to
-moving the node along its own local X/Y axes).
+moving the node along its own local X/Y axes). This is equivalent to modifying the value returned by 'translation' and then
+setting it back.
+
+For an overview of node positioning & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
 
 **Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
 **See**
@@ -465,6 +461,8 @@ moving the node along its own local X/Y axes).
 Move the node so the given point in its local coordinates is placed at the given point in its parent's coordinates (taking into account
 any rotation on this node, etc.).
 
+For an overview of node positioning & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
+
 **Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
 
 | Param | Type | Description |
@@ -486,8 +484,10 @@ node.placeInParentCoordinates(nodeTopLeft, parentCenter);
 <a name="SceneNode+rotateAround"></a>
 
 ### *sceneNode.rotateAround(deltaAngle, localPoint)*
-Rotate the node by given number of degrees around the given point. If this node already has nonzero rotation, this operation
-_adds_ to its existing angle.
+Rotate the node clockwise by the given number of degrees around the given point in the plugin's local coordinate space. If this node
+already has nonzero rotation, this operation _adds_ to its existing angle.
+
+For an overview of node transforms & coordinate systems, see [Coordinate spaces](README#Coordinate-spaces).
 
 **Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
 **See**: [rotation](#SceneNode+rotation)  
@@ -499,8 +499,12 @@ _adds_ to its existing angle.
 
 **Example**  
 ```js
-// Rotate the node 45 degrees around its centerpoint
+// Rotate the node 45 degrees clockwise around its centerpoint
 node.rotateAround(45, node.localCenterPoint);
+
+// Ignoring the node's previous angle, set its rotation to exactly 180 degrees
+var rotationDelta = 180 - node.rotation;
+node.rotateAround(rotationDelta, node.localCenterPoint);
 ```
 
 * * *
@@ -560,7 +564,24 @@ You can determine whether a group is masked by checking the `mask` property.
 Groups and other containers cannot be created directly using scenenode constructors, since you can't add a populated Group to the
 scenegraph (you can't add subtrees all at once) nor can you add an empty Group and then add children to it (can't add nodes outside
 the scope of the current _edit context_). Instead, to create Groups and other nested structures, use [commands](commands.md).
- 
+
+**Example**  
+```js
+var commands = require("commands");
+
+var shape1 = ...,
+    shape2 = ...;
+
+// Add both nodes to the current edit context first
+selection.insertionParent.addChild(shape1);
+selection.insertionParent.addChild(shape2);
+
+// Select both shapes, then run the Group command
+selection.items = [shape1, shape2];
+commands.group();
+var group = selection.items[0];  // the new Group node is what's selected afterward
+```
+
 * [Group](#Group)
     * [.addChild(node, index)](#Group+addChild)
     * [.addChildAfter(node, relativeTo)](#Group+addChildAfter)
@@ -619,7 +640,7 @@ Inserts a child node before the given reference node.
 <a name="Group+removeAllChildren"></a>
 
 #### group.removeAllChildren()
-Removes all children from this code. Equivlanent to calling removeFromParent() on each child in turn, but faster.
+Removes all children from this node. Equivalent to calling removeFromParent() on each child in turn, but faster.
 
 **Kind**: instance method of [<code>Group</code>](#Group) and other container nodes
 
@@ -640,6 +661,7 @@ The mask shape applied to this group, if any. This object is also present in the
 
 ## *GraphicNode*
 **Kind**: abstract class  
+**Extends**: [<code>SceneNode</code>](#SceneNode)
 
 Base class for nodes that have a stroke and/or fill. This includes leaf nodes such as Rectangle, as well as BooleanGroup
 which is a container node.
@@ -658,6 +680,7 @@ which is a container node.
     * *[.strokeDashOffset](#GraphicNode+strokeDashOffset) : <code>number</code>*
     * *[.shadow](#GraphicNode+shadow) : <code>?Shadow</code>*
     * *[.blur](#GraphicNode+blur) : <code>?Blur</code>*
+    * *[.pathData](#GraphicNode+pathData) : <code>string</code>*
     * *[.hasLinkedGraphicFill](#GraphicNode+hasLinkedGraphicFill) : <code>boolean</code>*
 
 
@@ -674,6 +697,12 @@ The fill applied to this shape, if any. If there is no fill applied, this proper
 ```js
 ellipse.fill = new Color("red");
 ```
+
+To modify an existing fill, always be sure to re-invoke ths `fill` setter rather than just changing the fill object's properties inline.
+See ["Properties with object values"](README.md#Properties-with-object-values).
+
+**Known issue:** When modifying a _gradient fill_ object specifically, you must clone the gradient returned by the getter before modifying
+it, to avoid issues with Undo history.
 
 * * *
 
@@ -696,6 +725,9 @@ The stroke color applied to this shape, if any. If there is no stroke applied, t
 ```js
 ellipse.stroke = new Color("red");
 ```
+
+To modify an existing stroke, always be sure to re-invoke ths `stroke` setter rather than just changing the Color object's properties inline.
+See ["Properties with object values"](README.md#Properties-with-object-values).
 
 * * *
 
@@ -784,6 +816,16 @@ The node's dropshadow, if any. If there is no shadow applied, this property may 
 The node's object blur or background blur settings, if applicable. If there is no blur effect applied, this property may be null _or_ `blur.visible` may be false.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
+
+* * *
+
+<a name="GraphicNode+pathData"></a>
+
+### *graphicNode.pathData : <code>string</code>*
+Returns a representation of the node's outline in SVG `<path>` syntax.
+
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
+**Read only**: true  
 
 * * *
 
@@ -1047,6 +1089,8 @@ passed this setter, even though the line's visual bounds and appearance are the 
 
 Arbitrary vector Path leaf node shape.
 
+The path may not start at (0,0) in local coordinates, for example if it starts with a move ("M") segment.
+
 * [Path](#Path)
     * [.pathData](#Path+pathData) : <code>string</code>
 
@@ -1068,7 +1112,7 @@ Representation of the path outline in SVG `<path>` syntax. Unlike other node typ
 **Kind**: class  
 
 BooleanGroup container node - although it has fill/stroke/etc. properties like a leaf shape node, it is a container
-with children. Its visual appearance is determined by a nondestructive boolean operation on its childrens' paths.
+with children. Its visual appearance is determined by a nondestructive boolean operation on its children's paths.
 
 * [BooleanGroup](#BooleanGroup)
     * [.pathOp](#BooleanGroup+pathOp) : <code>string</code>
@@ -1097,13 +1141,24 @@ Which boolean operation is used to generate the path: BooleanGroup.PATH_OP_ADD, 
 
 Text leaf node shape.
 
+There are two types of Text nodes:
+- Point Text - Expands to fit the full width of the text content. Only uses multiple lines if the text content contains hard line
+  breaks ("\n").
+- Area Text - Fixed width and height. Text is automatically wrapped (soft line wrapping) to fit the width. If it does not fit the
+  height, any remaining text is clipped.
+Check whether [<code>areaBox</code>](#Text+areaBox) is null to determine the type of a Text node.
+
+The baseline of a Point Text node is at Y=0 in its own local coordinate system. Horizontally, local X=0 is the _anchor point_ that the
+text grows from / shrinks toward when edited. This anchor depends on the justification: for example, if the text is centered, X=0 is
+the horizontal centerpoint of the text.
+
 * [Text](#Text)
     * [.text](#Text+text) : <code>string</code>
     * [.styleRanges](#Text+styleRanges) : <code>!Array</code>
     * [.flipY](#Text+flipY) : <code>boolean</code>
     * [.textAlign](#Text+textAlign) : <code>string</code>
     * [.lineSpacing](#Text+lineSpacing) : <code>number</code>
-    * [.areaBox](#Text+areaBox) : <code>!{width:number, height:number}</code>
+    * [.areaBox](#Text+areaBox) : <code>?{width:number, height:number}</code>
     * [.clippedByArea](#Text+clippedByArea) : <code>boolean</code>
 
 
@@ -1154,7 +1209,7 @@ Horizontal alignment: Text.ALIGN_LEFT, ALIGN_CENTER, or ALIGN_RIGHT. This settin
 
 <a name="Text+areaBox"></a>
 
-### text.areaBox : <code>!{width:number, height:number}</code>
+### text.areaBox : <code>?{width:number, height:number}</code>
 Null for point text. For area text, specifies the size of the rectangle within which text is wrapped and clipped.
 
 **Kind**: instance property of [<code>Text</code>](#Text)  
