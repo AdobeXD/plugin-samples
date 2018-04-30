@@ -11,7 +11,7 @@ Platform | Path
 macOS    | `~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/`  (note: ~/Library, not /Library)
 Windows  |  `C:\Users\%USERNAME%\AppData\Local\Packages\Adobe.CC.XD.Prerelease_adky2gkssdxte\LocalState\`
 
-Navigate to the above path, and if there _isn't_ a folder that already exists with the name of `plugins`, go ahead and create it.
+Navigate to the above path, and if there _isn't_ a folder that already exists with the name `plugins`, go ahead and create it.
 
 ```bash
 $ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/
@@ -20,9 +20,9 @@ $ mkdir plugins
 
 ## Create your plugin scaffold
 
-Adobe XD only requires your plugin to have two files:
+Adobe XD plugins require two files:
 
-* `xdplugin.json` is your plugin's **manifest**. This file includes information about the plugin, such as its name, the menu item(s) it should use, and so on.
+* `xdplugin.json` is your plugin's **manifest**. This file includes information about the plugin, such as its name, the menu item(s) it adds to XD, and so on.
 * `main.json` is your plugin's **code**. This file contains your JavaScript code that implements the logic for your plugin.
 
 These two files (and any others you need) are stored within a folder. Each plugin gets its own folder, so the folder names need to be unique.
@@ -49,7 +49,7 @@ Adobe XD requires that your plugin have a manifest named `xdplugin.json`. Our ex
         {
             "type": "menu",
             "label": "Say hello",
-            "commandId": "sayHello"
+            "commandId": "helloCommand"
         }
     ]
 }
@@ -78,20 +78,20 @@ function sayHello(selection) { // [2]
 
 return { // [5]
     commands: {
-        sayHello
+        helloCommand: sayHello
     }
 }
 ```
 
-1. In this line, we get references to the `Text` and `Color` classes from XD's `scenegraph` module. There are several other classes that you can obtain as well, but remember to get a reference before using them anywhere else in your code.
+1. In this line, we get references to the `Text` and `Color` classes from XD's `scenegraph` module. There are several different [API modules you can load using `require()`](./index.md#apis).
 
-2. Next we define our function. Notice here how it has the same name as when exported in #5.
+2. Next we define our handler function, which will respond to the "Say Hello" menu command.
 
 3. In this line we create a new `Text` object. The following lines assign various properties and styles to the text.
 
-4. Here we add the object to the scene graph. It should show up at the (0, 0) coordinates, so if you don't see it, try zooming out or panning until you do.
+4. Here we add the `Text` object to the scenegraph. It should show up at the (0, 0) coordinates, so if you don't see it, try zooming out or panning until you do.
 
-5. The final part of `main.js` is to export the commands that are valid. Notice here that the exported function's name matches the name in the `xdplugin.json` manifest.
+5. The final part of `main.js` is to export the handles functions in a map that links them to the command ID(s) defined in your manifest earlier. The command ID (part to the left of the `:` here must match the IDs in your manifest exactly.
 
 ## Invoke your plugin
 
@@ -107,7 +107,7 @@ Oh... wait. That didn't go exactly to plan. Where's "Hello" at? Is something wro
 
 ## Viewing Plugin Logs
 
-Adobe XD will log errors from your plugin to a log file. Anything your plugin logs via `console.log` will also be written to the same log file. How you access the log file is dependent upon the platform.
+Adobe XD will log errors from your plugin to a log file. Anything your plugin logs via `console.log` will also be written to the same log file. How you access the log file depends on your platform.
 
 ### macOS
 
@@ -139,7 +139,7 @@ function sayHello(selection) {
 }
 ```
 
-Next, hit the `x` key. This will reload all the plugins in the document _and_ execute your last command. (Note: don't use any modifiers when pressing this key.)
+Next, hit the `x` key (without any modifiers like Shift or Cmd). This shortcut will reload all the plugins in the document _and_ execute your last command.
 
 Now you should see some more information in the log:
 
@@ -151,7 +151,7 @@ If we select everything in the document, we'll find that this is indeed the case
 
 ![It rendered offscreen](./getting-started/rendered-offscreen.png)
 
-At this point we know what happened -- the text is rendered outside of the artboard, and so it doesn't render. Let's instruct the text element to move inside the canvas by modifying our `sayHello` function one more time:
+At this point we know what happened -- the text is rendered outside of the artboard, and so it doesn't render. Let's instruct the text element to move inside the artboard by modifying our `sayHello` function one more time:
 
 
 ```js
@@ -184,8 +184,10 @@ You've already seen that you can press `x` to reload your plugin code and execut
 Note that you will have to quit and relaunch Adobe XD in the following scenarios:
 
 * If you add a new plugin, XD won't see it until next launch
-* Manifests are read only at start, so changes to your manifest won't be reflected until the next launch
+* If you modify the JSON manifest, XD won't see it until next launch
 
 ## Congratulations!
 
 You've built your first plugin with Adobe XD!
+
+To continue, [read more about core concepts in XD plugins](../index.md#concepts) or read the [full API reference](../index.md#apis).

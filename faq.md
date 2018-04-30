@@ -16,10 +16,12 @@ Not yet. `XMLHttpRequest`, `Websocket`s, and `fetch` are coming soon.
 
 ### Can I render any user interface?
 
-Not yet. A simple API will be provided soon that you can use to render your user interface. However, there are ways around this:
+Not yet. APIs for UI will be provided in a future release. There are several workarounds in the meantime:
 
-* Parse layer and object names as input
-* Generate objects on the canvas as output
+* User enters configuration in layer/object names, plugin parses this as input
+* User enters input into a text object on canvas, plugin reads this text content
+* Generate text objects on the canvas as output
+* Copy text to the clipboard in lieu of exporting data to a text file
 
 ## Document-specific
 
@@ -37,7 +39,7 @@ Not currently -- your plugin can only execute whenever the user invokes it from 
 
 ### Can I perform animations on the canvas?
 
-No; plugins execute synchronously. That is to say that only the final output would be visible to the end user.
+No; plugins execute synchronously, so only the final state of the document is visible to the user when the plugin finishes executing.
 
 ## JavaScript-related
 
@@ -49,13 +51,7 @@ Not at this time. `require` can only be used to import modules provided by Adobe
 
 Yes. This means you can use `Array#map`, `Array#reduce`, and numerous other language features introduced with ES5.
 
-You _should_ avoid anything asynchronous at this point, which includes the following:
-
-* `setTimeout` and friends
-
-These will be enabled in a future release.
-
-### What ES2015+ features can I use?
+### What ES2015+ (ES6) features can I use?
 
 The JavaScript VM does support most of ES2015 and beyond. You can use features such as:
 
@@ -67,13 +63,7 @@ The JavaScript VM does support most of ES2015 and beyond. You can use features s
 * Spread and Rest (`...`)
 * Arrow functions
 
-You _should_ avoid anything asynchronous at this point, which includes the following:
-
-* `setTimeout` and friends
-* Promises
-* `async` and `await`
-
-These will be enabled in a future release.
+You _cannot_ use any asynchronous language features at this point (see next question).
 
 ### Can I use asynchronous code?
 
@@ -83,25 +73,11 @@ Not at this time. You should avoid the following:
 * Promises
 * `async` and `await`
 
-## Debugging
+## Troubleshooting
 
-### My plugin generated an error, but didn't make any changes to the document.
+### My plugin doesn't seem to be making any changes to the document.
 
-When plugins cause an error, anything they already did to the document is rolled back. Plugin actions are atomic -- failure will revert the entire operation.
-
-## Workflow
-
-### How can I quickly reload the document's plugin code?
-
-Press the `q` key (no modifiers).
-
-### How can I quickly reload the document's plugin code _and_ execute the last command?
-
-Press the `x` key (no modifiers).
-
-### How can I quickly repeat the last command?
-
-Press the `d` key (no modifiers).
+When plugins cause an error, any changes made during that edit operation are rolled back. Plugin actions are atomic -- failure will revert the entire operation.
 
 ### I changed my plugin's manifest, but Adobe XD didn't see the change.
 
@@ -109,4 +85,4 @@ You'll need to restart Adobe XD when making changes to your plugin's manifest.
 
 ### I added a new plugin to Adobe XD, but it doesn't show in the **Plugins** menu.
 
-Make sure you restart Adobe XD whenever you add new plugins, as these are detected only on startup. Also make sure that your plugin's [manifest](./reference/manifest.md) is correct. If there are any errors, those will be visible in the output log.
+You'll need to restart Adobe XD when adding a new plugin. Also check the [output log](./guides/getting-started.md#Viewing-Plugin-Logs) to ensure there aren't any errors in your plugin's [manifest](./reference/manifest.md).
