@@ -23,6 +23,10 @@ Not yet. APIs for UI will be provided in a future release. There are several wor
 * Generate text objects on the canvas as output
 * Copy text to the clipboard in lieu of exporting data to a text file
 
+### Can I use npm packages or Node APIs?
+
+Not currently. If you’re finding that to be an obstacle, please provide details in your feedback.
+
 ## Document-specific
 
 ### Can I modify the document outside the current edit context?
