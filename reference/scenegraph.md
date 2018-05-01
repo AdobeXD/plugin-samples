@@ -4,8 +4,10 @@
 The scenegraph is a node tree which represents the structure of the XD document. Some scenenodes may contain children (e.g. a Group
 or Artboard), while others are leaf nodes (e.g. a Rectangle or Text node).
 
-You can modify properties on any scenenodes within the current _edit context_, and add leaf nodes to the current edit context, but
-you cannot make structural changes directly to the scenegraph tree. Instead, use [commands](commands.md).
+![example of scenegraph tree](../images/scenegraphExample.png)
+
+You can modify properties on any scenenodes within the current [_edit context_](../index.md#edit-contexts), and add leaf nodes to the current
+edit context, but you cannot make structural changes directly to the scenegraph tree. Instead, use [commands](commands.md).
 
 Typically, you access scenegraph nodes via the [`selection`](selection.md) argument that is passed to your plugin command, or by
 traversing the entire document tree using the [`root`](#RootNode) argument that is passed to your plugin command.
@@ -38,38 +40,23 @@ function myCommand(selection) {
 }
 ```
 
-## Classes
 
-<dl>
-<dt><a href="#SceneNode">SceneNode</a></dt>
-<dd></dd>
-<dt><a href="#RootNode">RootNode</a></dt>
-<dd></dd>
-<dt><a href="#Group">Group</a></dt>
-<dd></dd>
-<dt><a href="#GraphicNode">GraphicNode</a></dt>
-<dd></dd>
-<dt><a href="#Rectangle">Rectangle</a></dt>
-<dd></dd>
-<dt><a href="#Artboard">Artboard</a></dt>
-<dd></dd>
-<dt><a href="#Ellipse">Ellipse</a></dt>
-<dd></dd>
-<dt><a href="#Line">Line</a></dt>
-<dd></dd>
-<dt><a href="#Path">Path</a></dt>
-<dd></dd>
-<dt><a href="#BooleanGroup">BooleanGroup</a></dt>
-<dd></dd>
-<dt><a href="#Text">Text</a></dt>
-<dd></dd>
-<dt><a href="#SymbolInstance">SymbolInstance</a></dt>
-<dd></dd>
-<dt><a href="#RepeatGrid">RepeatGrid</a></dt>
-<dd></dd>
-<dt><a href="#LinkedGraphic">LinkedGraphic</a></dt>
-<dd></dd>
-</dl>
+## Class hierarchy
+
+* [SceneNode](#SceneNode)
+    * [GraphicNode](#GraphicNode)
+        * [Artboard](#Artboard)
+        * [Rectangle](#Rectangle)
+        * [Ellipse](#Ellipse)
+        * [Line](#Line)
+        * [Path](#Path)
+            * [BooleanGroup](#BooleanGroup)
+        * [Text](#Text)
+    * [Group](#Group)
+    * [SymbolInstance](#SymbolInstance)
+    * [RepeatGrid](#RepeatGrid)
+    * [LinkedGraphic](#LinkedGraphic)
+    * [RootNode](#RootNode)
 
 ## Typedefs
 
@@ -724,6 +711,10 @@ If false, the `fill` is not rendered. The user can toggle this via a checkbox in
 ### *graphicNode.stroke : <code>?Color</code>*
 The stroke color applied to this shape, if any. If this property is null _or_ `strokeEnabled` is false, no stroke is drawn.
 Freshly created nodes have no stroke by default. Artboard objects ignore stroke settings.
+
+Depending on the [`strokeWidth`](#GraphicNode+strokeWidth) and [`strokePosition`](#GraphicNode+strokePosition), the path outline
+of a node may need to be positioned on fractional pixels in order for the stroke itself to be crisply aligned to the pixel grid.
+For example, if a horizontal line uses a 1px center stroke, the line's Y should end in .5 to keep the stroke on-pixel.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 **Example**  

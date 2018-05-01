@@ -108,6 +108,8 @@ only to access build-in XD APIs.
 The XD document is represented as a hierarchical tree of nodes called the **scenegraph**. Some scenenodes may contain children (e.g. a
 Group or Artboard), while others are leaf nodes (e.g. a Rectangle or Text node).
 
+![example of scenegraph tree](images/scenegraphExample.png)
+
 Typically, you access scenegraph nodes via the [`selection`](./reference/selection.md) argument that is passed to your plugin command.
 
 You can modify properties on any scenenodes within the _current edit context_ (see below), and you can add leaf nodes to the edit
@@ -143,15 +145,33 @@ If a plugin breaks any of these rules, its entire edit operation will be reverte
 <a name="coordinate-spaces"></a>
 ##### Coordinate spaces
 
+Sizes and distances in XD are specified in DPI-independent pixels, equivalent to pixels on a 1x display. This is similar to the "CSS
+pixels" used in web design.
+
 Each layer of the scenegraph tree can apply a _transform_ (rotation and/or translation), creating a hierarchy of nested _coordinate
 spaces_. Due to rotation, the X and Y axes of different coordinate spaces might point in different directions. Take the example of
 a rotated rectangle that is inside an artboard:
 
 ![diagram of coordinate spaces](images/coordSpaces.png)
 
-Note: The top-left corner of a node is not always located at (0,0) in its own local coordinate space. Use `localBounds` to get the true top-left
+The top-left corner of a node is not always located at (0,0) in its own local coordinate space. Use `localBounds` to get the true top-left
 of a node. For example, the baseline of a [Point Text node](./reference/scenegraph.md#Text) is at Y=0 in its local coordinates, so its
 upper-left corner is at a negative Y value. Similarly, centered or right-aligned text will start at a negative X value in local coordinates.
+
+The top-left corner of a node is not always located at (0,0) in its own local coordinate space. Use [`localBounds`](./reference/scenegraph.md#SceneNode+localBounds)
+to get the true top-left of a node. Here are some examples of nodes where the local origin is not the node's visual top-left corner:
+
+![examples of localBounds origin](images/localOrigin.png)
+
+Typically, when discussing the bounds of a node we are referring to the bounds of its _path outline_ &ndash; the hairline "spine" that its fill
+fits within and that the thickness of its stroke is anchored to. Nodes may have visible pixels that extend _outside_ the path outline bounds.
+For example, a center or outside stroke protrudes beyond the path outline, as does the dropshadow and parts of the "Object Blur" effect:
+
+![examples of path bounds vs. draw bounds](images/pathBounds.png)
+
+If you need a bounding box that encompasses _all_ visible pixels of an object, use [`globalDrawBounds`](./reference/scenegraph.md#SceneNode+globalDrawBounds).
+The draw bounds are the bounds used when exporting a bitmap image, for example. However, in most other cases (including align/snapping), XD uses the
+path outline bounds.
 
 <a name="object-value-properties"></a>
 ##### Properties with object values
