@@ -282,7 +282,7 @@ For an overview of node bounding boxes & coordinate systems, see [Coordinate spa
 ### *sceneNode.localBounds : \![<code>Bounds</code>](#Bounds)*
 The node's _path bounds_ in its own local coordinate space. This coordinate space may be rotated and translated relative to the parent's coordinate space. Path bounds match the selection outline seen in XD, but exclude some visual parts of the node (outerstroke, drop shadow / blur, etc.).
 
-The visual top-left of a node's path bounds is located at (localBounds.x, localBounds.y). This value is _not_ necessarily (0,0) in the local coordinate space: for example, a text node's baseline is at Y=0 in local coordinates, so the top of the text has a negative Y value.
+The visual top-left of a node's path bounds is located at (localBounds.x, localBounds.y). This value is _not_ necessarily (0,0) in the local coordinate space: for example, a text node's baseline is at y=0 in local coordinates, so the top of the text has a negative y value.
 
 For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
 
@@ -545,8 +545,8 @@ visual appearance of its own.
 **Kind**: class  
 
 Group nodes represent two types of simple containers in XD:
-- Plain groups, created by the _Object > Group_ command
-- Masked groups, created by the _Object > Mask With Shape_ command
+- Plain Groups, created by the _Object > Group_ command
+- Masked Groups, created by the _Object > Mask With Shape_ command
 You can determine whether a group is masked by checking the `mask` property.
 
 Groups and other containers cannot be created directly using scenenode constructors, since you can't add a populated Group to the
@@ -643,6 +643,12 @@ The mask shape applied to this group, if any. This object is also present in the
 **Kind**: instance property of [<code>Group</code>](#Group)  
 **Read only**: true  
 
+**Example**
+```js
+var group = ...;
+console.log("Type of group is: " + (group.mask ? "Masked Group" : "Plain Group"));
+```
+
 * * *
 
 <a name="GraphicNode"></a>
@@ -678,6 +684,8 @@ or a fill.
 <a name="GraphicNode+fill"></a>
 
 ### *graphicNode.fill : ?<code>Color</code> \| <code>LinearGradientFill</code> \| <code>RadialGradientFill</code> \| <code>BitmapFill</code>*
+**Default**: `null`
+
 The fill applied to this shape, if any. If this property is null _or_ `fillEnabled` is false, no fill is drawn.
 Freshly created nodes have no fill by default.
 
@@ -689,7 +697,7 @@ For Line objects, fill is ignored. For Text objects, _only_ solid Color fill val
 ellipse.fill = new Color("red");
 ```
 
-To modify an existing fill, always be sure to re-invoke ths `fill` setter rather than just changing the fill object's properties inline.
+To modify an existing fill, always be sure to re-invoke the `fill` setter rather than just changing the fill object's properties inline.
 See ["Properties with object values"](../index.md#object-value-properties).
 
 **Known issue:** When modifying a _gradient fill_ object specifically, you must clone the gradient returned by the getter before modifying
@@ -700,6 +708,8 @@ it, to avoid issues with Undo history.
 <a name="GraphicNode+fillEnabled"></a>
 
 ### *graphicNode.fillEnabled : <code>boolean</code>*
+**Default**: `true`
+
 If false, the `fill` is not rendered. The user can toggle this via a checkbox in the Properties panel.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
@@ -709,12 +719,14 @@ If false, the `fill` is not rendered. The user can toggle this via a checkbox in
 <a name="GraphicNode+stroke"></a>
 
 ### *graphicNode.stroke : <code>?Color</code>*
+**Default**: `null`
+
 The stroke color applied to this shape, if any. If this property is null _or_ `strokeEnabled` is false, no stroke is drawn.
 Freshly created nodes have no stroke by default. Artboard objects ignore stroke settings.
 
 Depending on the [`strokeWidth`](#GraphicNode+strokeWidth) and [`strokePosition`](#GraphicNode+strokePosition), the path outline
 of a node may need to be positioned on fractional pixels in order for the stroke itself to be crisply aligned to the pixel grid.
-For example, if a horizontal line uses a 1px center stroke, the line's Y should end in .5 to keep the stroke on-pixel.
+For example, if a horizontal line uses a 1px center stroke, the line's y should end in .5 to keep the stroke on-pixel.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 **Example**  
@@ -722,7 +734,7 @@ For example, if a horizontal line uses a 1px center stroke, the line's Y should 
 ellipse.stroke = new Color("red");
 ```
 
-To modify an existing stroke, always be sure to re-invoke ths `stroke` setter rather than just changing the Color object's properties inline.
+To modify an existing stroke, always be sure to re-invoke the `stroke` setter rather than just changing the Color object's properties inline.
 See ["Properties with object values"](../index.md#object-value-properties).
 
 * * *
@@ -730,6 +742,8 @@ See ["Properties with object values"](../index.md#object-value-properties).
 <a name="GraphicNode+strokeEnabled"></a>
 
 ### *graphicNode.strokeEnabled : <code>boolean</code>*
+**Default**: `false`
+
 If false, the `stroke` is not rendered. The user can toggle this via a checkbox in the Properties panel.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
@@ -738,7 +752,9 @@ If false, the `stroke` is not rendered. The user can toggle this via a checkbox 
 
 <a name="GraphicNode+strokeWidth"></a>
 
-### *graphicNode.strokeWidth : <code>number</code>*
+### *graphicNode.strokeWidth : <code>number</code>* &gt;= 0
+**Default**: `1.0`
+
 Thickness in pixels of the stroke.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
@@ -748,6 +764,8 @@ Thickness in pixels of the stroke.
 <a name="GraphicNode+strokePosition"></a>
 
 ### *graphicNode.strokePosition : <code>string</code>*
+**Default**: `CENTER_STROKE`
+
 Position of the stroke relative to the shape's path outline: GraphicNode.INNER_STROKE, OUTER_STROKE, or CENTER_STROKE.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
@@ -757,6 +775,8 @@ Position of the stroke relative to the shape's path outline: GraphicNode.INNER_S
 <a name="GraphicNode+strokeEndCaps"></a>
 
 ### *graphicNode.strokeEndCaps : <code>string</code>*
+**Default**: `STROKE_CAP_SQUARE`
+
 For Lines and non-closed Paths, how the dangling ends of the stroke are rendered: GraphicNode.STROKE_CAP_NONE, STROKE_CAP_SQUARE, or STROKE_CAP_ROUND.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
@@ -766,6 +786,8 @@ For Lines and non-closed Paths, how the dangling ends of the stroke are rendered
 <a name="GraphicNode+strokeJoins"></a>
 
 ### *graphicNode.strokeJoins : <code>string</code>*
+**Default**: `STROKE_JOIN_MITER`
+
 How sharp corners in the shape are rendered: GraphicNode.STROKE_JOIN_BEVEL, STROKE_JOIN_ROUND, or STROKE_JOIN_MITER.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
@@ -774,7 +796,9 @@ How sharp corners in the shape are rendered: GraphicNode.STROKE_JOIN_BEVEL, STRO
 
 <a name="GraphicNode+strokeMiterLimit"></a>
 
-### *graphicNode.strokeMiterLimit : <code>number</code>*
+### *graphicNode.strokeMiterLimit : <code>number</code>* &gt;= 0
+**Default**: `4`
+
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 
 * * *
@@ -782,7 +806,14 @@ How sharp corners in the shape are rendered: GraphicNode.STROKE_JOIN_BEVEL, STRO
 <a name="GraphicNode+strokeDashArray"></a>
 
 ### *graphicNode.strokeDashArray : <code>!Array</code>*
-Empty array indicates a solid stroke. If non-empty, values represent the lengths of rendered and blank segments of the stroke's dash pattern.
+**Default**: `[]`
+
+Empty array indicates a solid stroke. If non-empty, values represent the lengths of rendered and blank segments of the
+stroke's dash pattern, repeated along the length of the stroke. The first value is the length of the first solid segment.
+If the array is odd length, the items are copied to double the array length. For example, `[3]` produces the same effect
+as `[3, 3]`.
+
+The appearance of each segment's start/end follows the [strokeEndCaps](#GraphicNode#strokeEndCaps) setting.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 
@@ -791,7 +822,9 @@ Empty array indicates a solid stroke. If non-empty, values represent the lengths
 <a name="GraphicNode+strokeDashOffset"></a>
 
 ### *graphicNode.strokeDashOffset : <code>number</code>*
-Ignored unless `strokeDashArray` is non-empty.
+**Default**: `0`
+
+Ignored unless `strokeDashArray` is non-empty. Shifts the "phase" of the repeating dash pattern along the length of the stroke.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 
@@ -800,6 +833,8 @@ Ignored unless `strokeDashArray` is non-empty.
 <a name="GraphicNode+shadow"></a>
 
 ### *graphicNode.shadow : <code>?Shadow</code>*
+**Default**: `null`
+
 The node's dropshadow, if any. If there is no shadow applied, this property may be null _or_ `shadow.visible` may be false.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
@@ -809,6 +844,8 @@ The node's dropshadow, if any. If there is no shadow applied, this property may 
 <a name="GraphicNode+blur"></a>
 
 ### *graphicNode.blur : <code>?Blur</code>*
+**Default**: `null`
+
 The node's object blur or background blur settings, if applicable. If there is no blur effect applied, this property may be null _or_ `blur.visible` may be false.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
@@ -818,7 +855,8 @@ The node's object blur or background blur settings, if applicable. If there is n
 <a name="GraphicNode+pathData"></a>
 
 ### *graphicNode.pathData : <code>string</code>*
-Returns a representation of the node's outline in SVG `<path>` syntax.
+Returns a representation of the node's outline in SVG `<path>` syntax. Note that only nodes with [strokePosition](#GraphicNode#strokePosition) ==
+`GraphicNode.CENTER_STROKE` can be faithfully rendered in actual SVG using the exact pathData shown here.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 **Read only**: true  
@@ -868,42 +906,50 @@ selection.items = [rect];
 
 <a name="Rectangle+width"></a>
 
-### rectangle.width : <code>number</code>
+### rectangle.width : <code>number</code> &gt; 0
 **Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
 
 * * *
 
 <a name="Rectangle+height"></a>
 
-### rectangle.height : <code>number</code>
+### rectangle.height : <code>number</code> &gt; 0
 **Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
 
 * * *
 
 <a name="Rectangle+topLeftCornerRadius"></a>
 
-### rectangle.topLeftCornerRadius : <code>number</code>
+### rectangle.topLeftCornerRadius : <code>number</code> &gt;= 0
+**Default**: `0`
+
 **Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
 
 * * *
 
 <a name="Rectangle+topRightCornerRadius"></a>
 
-### rectangle.topRightCornerRadius : <code>number</code>
+### rectangle.topRightCornerRadius : <code>number</code> &gt;= 0
+**Default**: `0`
+
 **Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
 
 * * *
 
 <a name="Rectangle+bottomRightCornerRadius"></a>
 
-### rectangle.bottomRightCornerRadius : <code>number</code>
+### rectangle.bottomRightCornerRadius : <code>number</code> &gt;= 0
+**Default**: `0`
+
 **Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
 
 * * *
 
 <a name="Rectangle+bottomLeftCornerRadius"></a>
 
-### rectangle.bottomLeftCornerRadius : <code>number</code>
+### rectangle.bottomLeftCornerRadius : <code>number</code> &gt;= 0
+**Default**: `0`
+
 **Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
 
 * * *
@@ -970,14 +1016,14 @@ similar if a node is changed to no longer overlap an Artboard.
 
 <a name="Artboard+width"></a>
 
-### artboard.width : <code>number</code>
+### artboard.width : <code>number</code> &gt; 0
 **Kind**: instance property of [<code>Artboard</code>](#Artboard)  
 
 * * *
 
 <a name="Artboard+height"></a>
 
-### artboard.height : <code>number</code>
+### artboard.height : <code>number</code> &gt; 0
 For scrollable Artboards, this is the total height encompassing all content - not just the viewport size (i.e. screen height).
 
 **Kind**: instance property of [<code>Artboard</code>](#Artboard)  
@@ -1106,7 +1152,8 @@ The path may not start at (0,0) in local coordinates, for example if it starts w
 <a name="Path+pathData"></a>
 
 ### path.pathData : <code>string</code>
-Representation of the path outline in SVG `<path>` syntax. Unlike other node types, pathData is writable here.
+Representation of the path outline in SVG `<path>` syntax. Unlike other node types, pathData is writable here. Syntax is
+automatically normalized, so the getter may return a slightly different string than what you passed to the setter.
 
 **Kind**: instance property of [<code>Path</code>](#Path)  
 
@@ -1118,7 +1165,9 @@ Representation of the path outline in SVG `<path>` syntax. Unlike other node typ
 **Kind**: class  
 
 BooleanGroup container node - although it has fill/stroke/etc. properties like a leaf shape node, it is a container
-with children. Its visual appearance is determined by a nondestructive boolean operation on its children's paths.
+with children. Its visual appearance is determined by generating a path via a nondestructive boolean operation on all
+its children's paths.
+
 
 * [BooleanGroup](#BooleanGroup)
     * [.pathOp](#BooleanGroup+pathOp) : <code>string</code>
@@ -1155,13 +1204,16 @@ There are two types of Text nodes:
   height, any remaining text is clipped.
 Check whether [<code>areaBox</code>](#Text+areaBox) is null to determine the type of a Text node.
 
-The baseline of a Point Text node is at Y=0 in its own local coordinate system. Horizontally, local X=0 is the _anchor point_ that the
-text grows from / shrinks toward when edited. This anchor depends on the justification: for example, if the text is centered, X=0 is
+The baseline of a Point Text node is at y=0 in its own local coordinate system. Horizontally, local x=0 is the _anchor point_ that the
+text grows from / shrinks toward when edited. This anchor depends on the justification: for example, if the text is centered, x=0 is
 the horizontal centerpoint of the text.
+
+The bounds reported for a Text object leave enough space for descenders, uppercase letters, and accent marks, even if the current
+string does not contain any of those characters. This makes aligning text based on its bounds behave more consistently.
 
 * [Text](#Text)
     * [.text](#Text+text) : <code>string</code>
-    * [.styleRanges](#Text+styleRanges) : <code>!Array</code>
+    * [.styleRanges](#Text+styleRanges) : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:!Color, charSpacing:number, underline:boolean}&gt;</code>
     * [.flipY](#Text+flipY) : <code>boolean</code>
     * [.textAlign](#Text+textAlign) : <code>string</code>
     * [.lineSpacing](#Text+lineSpacing) : <code>number</code>
@@ -1176,14 +1228,22 @@ the horizontal centerpoint of the text.
 ### text.text : <code>string</code>
 The plaintext content of the node, including any hard line breaks but excluding soft line wrap breaks.
 
+Setting text does not change styleRanges, so styles aligned with the old text's string indices will continue to be applied to
+the new string's indices unless you explicitly change styleRanges as well.
+
 **Kind**: instance property of [<code>Text</code>](#Text)  
 
 * * *
 
 <a name="Text+styleRanges"></a>
 
-### text.styleRanges : <code>!Array</code>
-Array of text ranges and their character style settings.(TODO: document this better)
+### text.styleRanges : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:!Color, charSpacing:number, underline:boolean}&gt;</code>
+Array of text ranges and their character style settings. Each range covers a set number of characters in the text content. Ranges
+are contiguous, with each one starting immediately after the previous one. Any characters past the end of the last range use the
+same style as the last range.
+
+When _setting_ styleRanges, any fields missing from a given range default to the existing values from the *last* range in the old
+value of styleRanges. The styleRanges _getter_ always returns fully realized range objects with all fields specified.
 
 **Kind**: instance property of [<code>Text</code>](#Text)  
 
@@ -1209,7 +1269,15 @@ Horizontal alignment: Text.ALIGN_LEFT, ALIGN_CENTER, or ALIGN_RIGHT. This settin
 
 <a name="Text+lineSpacing"></a>
 
-### text.lineSpacing : <code>number</code>
+### text.lineSpacing : <code>number</code> &gt; 0, or 0 for default spacing
+Distance between baselines in mutliline text, in document pixels. The special value 0 causes XD to use the default line spacing
+defined by the font given the current font size & style.
+
+This property is not automatically adjusted when fontSize changes, if line spacing is not set to 0, the line spacing will stay
+fixed while the font size changes, shifting the spacing's proportional relationship to font size. If the value is 0, then the
+rendered line spacing will change to match the new font size, since 0 means the spacing is dynamically calculated from the current
+font settings.
+
 **Kind**: instance property of [<code>Text</code>](#Text)  
 
 * * *
@@ -1268,7 +1336,7 @@ An identifier unique within this document that is shared by all instances of the
 **Kind**: class  
 
 Repeat Grid container node containing multiple grid cells, each one a child Group. Changes within one cell are automatically synced
-to all the other cells, with certain exceptioned (called "overrides"). A Repeat Grid also defines a rectangular clipping mask which
+to all the other cells, with certain exceptions (called "overrides"). A Repeat Grid also defines a rectangular clipping mask which
 determines how may cells are visible (new cells are automatically generated as needed if the Repeat Grid is resized larger).
 
 * [RepeatGrid](#RepeatGrid)
