@@ -50,7 +50,7 @@ function myCommand(selection) {
         * [Ellipse](#Ellipse)
         * [Line](#Line)
         * [Path](#Path)
-            * [BooleanGroup](#BooleanGroup)
+        * [BooleanGroup](#BooleanGroup)
         * [Text](#Text)
     * [Group](#Group)
     * [SymbolInstance](#SymbolInstance)
@@ -93,14 +93,14 @@ Base class of all scenegraph nodes. Nodes will always be an instance of some _su
     * *[.localCenterPoint](#SceneNode+localCenterPoint) : \![<code>Point</code>](#Point)*
     * *[.globalDrawBounds](#SceneNode+globalDrawBounds) : \![<code>Bounds</code>](#Bounds)*
     * *[.name](#SceneNode+name) : <code>string</code>*
-    * *[.hasCustomName](#SceneNode+hasCustomName) : <code>boolean</code>*
+    * *[.hasDefaultName](#SceneNode+hasDefaultName) : <code>boolean</code>*
     * *[.locked](#SceneNode+locked) : <code>boolean</code>*
     * *[.markedForExport](#SceneNode+markedForExport) : <code>boolean</code>*
     * *[.hasLinkedContent](#SceneNode+hasLinkedContent) : <code>boolean</code>*
     * *[.removeFromParent()](#SceneNode+removeFromParent)*
     * *[.moveInParentCoordinates(deltaX, deltaY)](#SceneNode+moveInParentCoordinates)*
-    * *[.placeInParentCoordinates(localPoint, parentPoint)](#SceneNode+placeInParentCoordinates)*
-    * *[.rotateAround(deltaAngle, localPoint)](#SceneNode+rotateAround)*
+    * *[.placeInParentCoordinates(registrationPoint, parentPoint)](#SceneNode+placeInParentCoordinates)*
+    * *[.rotateAround(deltaAngle, rotationCenter)](#SceneNode+rotateAround)*
     * *[.resize(width, height)](#SceneNode+resize)*
 
 
@@ -164,7 +164,7 @@ True if the node's parent chain connects back to the document root node.
 <a name="SceneNode+isContainer"></a>
 
 ### *sceneNode.isContainer : <code>boolean</code>*
-True if this node is a type that is capable of having children (e.g. an Artboard, Group, Boolean Group, etc.).
+True if this node is a type that could have children (e.g. an Artboard, Group, Boolean Group, etc.).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -206,7 +206,7 @@ False if this node has been hidden by the user (eyeball toggle in Layers panel).
 Affine transform matrix that converts from the node's _local coordinate space_ to its parent's coordinate space. The matrix never has skew or scale components, and if this node is an Artboard the matrix never has rotation either. Rather than working with the raw matrix directly, it may be easier to use methods such as [placeInParentCoordinates](#SceneNode+placeInParentCoordinates) or [rotateAround](#SceneNode+rotateAround).
 
 Returns a fresh Matrix each time, so this can be mutated by the caller without interfering with anything. Mutating the returned Matrix does not change the node's transform - only invoking the 'transform' setter changes the node.
-To modify an existing transform, always be sure to re-invoke ths `transform` setter rather than just changing the Matrix object's properties inline.
+To modify an existing transform, always be sure to re-invoke the `transform` setter rather than just changing the Matrix object's properties inline.
 See ["Properties with object values"](../index.md#object-value-properties).
 
 For an overview of node transforms & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
@@ -372,10 +372,10 @@ Node name as seen in the Layers panel. Also used as filename during Export.
 
 * * *
 
-<a name="SceneNode+hasCustomName"></a>
+<a name="SceneNode+hasDefaultName"></a>
 
-### *sceneNode.hasCustomName : <code>boolean</code>*
-True if [name](#SceneNode+name) has been explicitly set to a specific value. False if node has a generic, auto-generated name (e.g. "Rectangle 5").
+### *sceneNode.hasDefaultName : <code>boolean</code>*
+True if [name](#SceneNode+name) is a generic, auto-generated string (e.g. "Rectangle 5"). False if name has been explicitly set.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -445,7 +445,7 @@ For an overview of node positioning & coordinate systems, see [Coordinate spaces
 
 <a name="SceneNode+placeInParentCoordinates"></a>
 
-### *sceneNode.placeInParentCoordinates(localPoint, parentPoint)*
+### *sceneNode.placeInParentCoordinates(registrationPoint, parentPoint)*
 Move the node so the given point in its local coordinates is placed at the given point in its parent's coordinates (taking into account
 any rotation on this node, etc.).
 
@@ -455,8 +455,8 @@ For an overview of node positioning & coordinate systems, see [Coordinate spaces
 
 | Param | Type | Description |
 | --- | --- | --- |
-| localPoint | \![<code>Point</code>](#Point) | Point in this node's local coordinate space to align with parentPoint |
-| parentPoint | \![<code>Point</code>](#Point) | Point in this node's parent's coordinate space to move localPoint to |
+| registrationPoint | \![<code>Point</code>](#Point) | Point in this node's local coordinate space to align with parentPoint |
+| parentPoint | \![<code>Point</code>](#Point) | Point in this node's parent's coordinate space to move registrationPoint to |
 
 **Example**  
 ```js
@@ -471,7 +471,7 @@ node.placeInParentCoordinates(nodeTopLeft, parentCenter);
 
 <a name="SceneNode+rotateAround"></a>
 
-### *sceneNode.rotateAround(deltaAngle, localPoint)*
+### *sceneNode.rotateAround(deltaAngle, rotationCenter)*
 Rotate the node clockwise by the given number of degrees around the given point in the plugin's local coordinate space. If this node
 already has nonzero rotation, this operation _adds_ to its existing angle.
 
@@ -483,7 +483,7 @@ For an overview of node transforms & coordinate systems, see [Coordinate spaces]
 | Param | Type | Description |
 | --- | --- | --- |
 | deltaAngle | <code>number</code> | In degrees. |
-| localPoint | [<code>Point</code>](#Point) |  |
+| rotationCenter | [<code>Point</code>](#Point) | Point to rotate around, in node's local coordinates. |
 
 **Example**  
 ```js
@@ -670,7 +670,7 @@ or a fill.
     * *[.strokeEndCaps](#GraphicNode+strokeEndCaps) : <code>string</code>*
     * *[.strokeJoins](#GraphicNode+strokeJoins) : <code>string</code>*
     * *[.strokeMiterLimit](#GraphicNode+strokeMiterLimit) : <code>number</code>*
-    * *[.strokeDashArray](#GraphicNode+strokeDashArray) : <code>!Array</code>*
+    * *[.strokeDashArray](#GraphicNode+strokeDashArray) : <code>!Array&lt;number&gt;</code>*
     * *[.strokeDashOffset](#GraphicNode+strokeDashOffset) : <code>number</code>*
     * *[.shadow](#GraphicNode+shadow) : <code>?Shadow</code>*
     * *[.blur](#GraphicNode+blur) : <code>?Blur</code>*
@@ -764,7 +764,7 @@ Thickness in pixels of the stroke.
 <a name="GraphicNode+strokePosition"></a>
 
 ### *graphicNode.strokePosition : <code>string</code>*
-**Default**: `CENTER_STROKE`
+**Default**: `CENTER_STROKE` for most shapes, `INNER_STROKE` for Rectangle & Ellipse
 
 Position of the stroke relative to the shape's path outline: GraphicNode.INNER_STROKE, OUTER_STROKE, or CENTER_STROKE.
 
@@ -805,7 +805,7 @@ How sharp corners in the shape are rendered: GraphicNode.STROKE_JOIN_BEVEL, STRO
 
 <a name="GraphicNode+strokeDashArray"></a>
 
-### *graphicNode.strokeDashArray : <code>!Array</code>*
+### *graphicNode.strokeDashArray : <code>!Array&lt;number&gt;</code>*
 **Default**: `[]`
 
 Empty array indicates a solid stroke. If non-empty, values represent the lengths of rendered and blank segments of the
@@ -878,7 +878,7 @@ True if the node's image fill comes from a link to an external resource, such as
 ## Rectangle
 **Kind**: class  
 
-Rectangle leaf node shape. Like all shape nodes, has no fill or stroke by default unless you set one.
+Rectangle leaf node shape, with or without rounded corners. Like all shape nodes, has no fill or stroke by default unless you set one.
 
 **Example**
 ```js
@@ -893,13 +893,9 @@ selection.items = [rect];
 * [Rectangle](#Rectangle)
     * [.width](#Rectangle+width) : <code>number</code>
     * [.height](#Rectangle+height) : <code>number</code>
-    * [.topLeftCornerRadius](#Rectangle+topLeftCornerRadius) : <code>number</code>
-    * [.topRightCornerRadius](#Rectangle+topRightCornerRadius) : <code>number</code>
-    * [.bottomRightCornerRadius](#Rectangle+bottomRightCornerRadius) : <code>number</code>
-    * [.bottomLeftCornerRadius](#Rectangle+bottomLeftCornerRadius) : <code>number</code>
-    * [.hasRoundedCorners](#Rectangle+hasRoundedCorners) : <code>boolean</code>
+    * [.cornerRadii](#Rectangle+cornerRadii) : <code>!{topLeft:number, topRight:number, bottomRight:number, bottomLeft:number}</code>
     * [.setAllCornerRadii(radius)](#Rectangle+setAllCornerRadii)
-    * [.getEffectiveCornerRadii()](#Rectangle+getEffectiveCornerRadii) ⇒ <code>!Array</code>
+    * [.effectiveCornerRadii](#Rectangle+effectiveCornerRadii) : <code>!{topLeft:number, topRight:number, bottomRight:number, bottomLeft:number}</code>
 
 
 * * *
@@ -918,37 +914,12 @@ selection.items = [rect];
 
 * * *
 
-<a name="Rectangle+topLeftCornerRadius"></a>
+<a name="Rectangle+cornerRadii"></a>
 
-### rectangle.topLeftCornerRadius : <code>number</code> &gt;= 0
-**Default**: `0`
+### rectangle.cornerRadii : <code>!{topLeft:number, topRight:number, bottomRight:number, bottomLeft:number}</code> (all numbers >= 0)
+**Default**: `{topLeft:0, topRight:0, bottomRight:0, bottomLeft:0}`
 
-**Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
-
-* * *
-
-<a name="Rectangle+topRightCornerRadius"></a>
-
-### rectangle.topRightCornerRadius : <code>number</code> &gt;= 0
-**Default**: `0`
-
-**Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
-
-* * *
-
-<a name="Rectangle+bottomRightCornerRadius"></a>
-
-### rectangle.bottomRightCornerRadius : <code>number</code> &gt;= 0
-**Default**: `0`
-
-**Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
-
-* * *
-
-<a name="Rectangle+bottomLeftCornerRadius"></a>
-
-### rectangle.bottomLeftCornerRadius : <code>number</code> &gt;= 0
-**Default**: `0`
+To set all corners to the same value, use [<code>setAllCornerRadii</code>](#Rectangle+setAllCornerRadii).
 
 **Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
 
@@ -957,7 +928,7 @@ selection.items = [rect];
 <a name="Rectangle+hasRoundedCorners"></a>
 
 ### rectangle.hasRoundedCorners : <code>boolean</code>
-True if any of the Rectangle's four corners is rounded off (corner radius > 0).
+True if any of the Rectangle's four corners is rounded (corner radius > 0).
 
 **Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
 **Read only**: true  
@@ -968,6 +939,7 @@ True if any of the Rectangle's four corners is rounded off (corner radius > 0).
 
 ### rectangle.setAllCornerRadii(radius)
 Set the rounding radius of all four corners of the Rectangle to the same value.
+To set the corners to different radius values, use [<code>cornerRadii</code>](#Rectangle+cornerRadii).
 
 **Kind**: instance method of [<code>Rectangle</code>](#Rectangle)  
 
@@ -978,14 +950,13 @@ Set the rounding radius of all four corners of the Rectangle to the same value.
 
 * * *
 
-<a name="Rectangle+getEffectiveCornerRadii"></a>
+<a name="Rectangle+effectiveCornerRadii"></a>
 
-### rectangle.getEffectiveCornerRadii() ⇒ <code>!Array</code>
-The actual corner radius that is rendered may be capped by the size of the rectangle. Returns the actual radius that
-is currently in effect, which may be smaller than the `*CornerRadius` values as a result.
+### rectangle.effectiveCornerRadii : <code>!{topLeft:number, topRight:number, bottomRight:number, bottomLeft:number}</code>
+The actual corner radius that is rendered may be capped by the size of the rectangle. Returns the actual radii that
+are currently in effect, which may be smaller than the `cornerRadii` values as a result.
 
-**Kind**: instance method of [<code>Rectangle</code>](#Rectangle)  
-**Returns**: <code>Array</code> - Radius values in CSS clockwise order: [top left, top right, bottom right, bottom left]  
+**Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
 
 * * *
 
@@ -997,7 +968,8 @@ is currently in effect, which may be smaller than the `*CornerRadius` values as 
 Artboard container node. All Artboards must be children of the root node (they cannot be nested), and they must be placed below all
 pasteboard content in the z order.
 
-Artboards can have a background fill, but the stroke, shadow, and blur settings are all ignored.
+Artboards can have a background fill, but the stroke, shadow, and blur settings are all ignored. Artboards cannot be locked or hidden,
+or have opacity < 100%.
 
 If a node is changed to overlap an Artboard, it will automatically become a child of the artboard when the operation finishes, and
 similar if a node is changed to no longer overlap an Artboard.
@@ -1226,6 +1198,8 @@ string does not contain any of those characters. This makes aligning text based 
 <a name="Text+text"></a>
 
 ### text.text : <code>string</code>
+**Default**: `" "` (a single space character)
+
 The plaintext content of the node, including any hard line breaks but excluding soft line wrap breaks.
 
 Setting text does not change styleRanges, so styles aligned with the old text's string indices will continue to be applied to
@@ -1270,7 +1244,7 @@ Horizontal alignment: Text.ALIGN_LEFT, ALIGN_CENTER, or ALIGN_RIGHT. This settin
 <a name="Text+lineSpacing"></a>
 
 ### text.lineSpacing : <code>number</code> &gt; 0, or 0 for default spacing
-Distance between baselines in mutliline text, in document pixels. The special value 0 causes XD to use the default line spacing
+Distance between baselines in multiline text, in document pixels. The special value 0 causes XD to use the default line spacing
 defined by the font given the current font size & style.
 
 This property is not automatically adjusted when fontSize changes, if line spacing is not set to 0, the line spacing will stay
@@ -1342,8 +1316,8 @@ determines how may cells are visible (new cells are automatically generated as n
 * [RepeatGrid](#RepeatGrid)
     * [.width](#RepeatGrid+width) : <code>number</code>
     * [.height](#RepeatGrid+height) : <code>number</code>
-    * [.columns](#RepeatGrid+columns) : <code>number</code>
-    * [.rows](#RepeatGrid+rows) : <code>number</code>
+    * [.numColumns](#RepeatGrid+numColumns) : <code>number</code>
+    * [.numRows](#RepeatGrid+numRows) : <code>number</code>
     * [.paddingX](#RepeatGrid+paddingX) : <code>number</code>
     * [.paddingY](#RepeatGrid+paddingY) : <code>number</code>
     * [.cellSize](#RepeatGrid+cellSize) : <code>!{width: number, height: number}</code>
@@ -1373,18 +1347,18 @@ Defines size of the RepeatGrid. Cells are created and destroyed as necessary to 
 
 * * *
 
-<a name="RepeatGrid+columns"></a>
+<a name="RepeatGrid+numColumns"></a>
 
-### repeatGrid.columns : <code>number</code>
+### repeatGrid.numColumns : <code>number</code>
 Number of grid columns
 
 **Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)  
 
 * * *
 
-<a name="RepeatGrid+rows"></a>
+<a name="RepeatGrid+numRows"></a>
 
-### repeatGrid.rows : <code>number</code>
+### repeatGrid.numRows : <code>number</code>
 Number of grid rows
 
 **Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)  
