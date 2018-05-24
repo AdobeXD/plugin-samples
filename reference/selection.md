@@ -28,8 +28,8 @@ command.
 **Kind**: object  
 
 * [selection](#selection)
-    * [.items](#selection+items) : <code>!Array.&lt;!SceneNode&gt;</code>
-    * [.itemsIncludingLocked](#selection+itemsIncludingLocked) : <code>!Array.&lt;!SceneNode&gt;</code>
+    * [.items](#selection+items) : <code>!Array&lt;!SceneNode&gt;</code>
+    * [.itemsIncludingLocked](#selection+itemsIncludingLocked) : <code>!Array&lt;!SceneNode&gt;</code>
     * [.hasArtwork](#selection+hasArtwork) : <code>boolean</code>
     * [.hasArtboards](#selection+hasArtboards) : <code>boolean</code>
     * [.editContext](#selection+editContext) : <code>!SceneNode</code>
@@ -48,6 +48,9 @@ As a convenience, the setter also accepts a single node or null as valid input. 
 
 If the user selects nodes one-by-one, by Shift-clicking, this array lists the nodes in the order they were added to the selection.
 
+Returns a fresh array each time, so this can be mutated by the caller without interfering with anything. Mutating the array
+does not change the selection - only invoking the 'items' setter changes selection.
+
 **Kind**: instance property of [<code>selection</code>](#selection)  
 **Example**  
 ```js
@@ -62,7 +65,7 @@ selection.items = null;       // deselect all (convenience)
 <a name="selection+itemsIncludingLocked"></a>
 
 ### selection.itemsIncludingLocked : <code>!Array&lt;\![SceneNode](scenegraph.md#SceneNode)&gt;</code>
-Array representing the current selection *plus* any locked items that the last selection gesture attempted to select.
+Array representing the current selection *plus* any locked items that the user has attempted to select.
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
 **Read only**: true  
@@ -78,7 +81,7 @@ console.log("There are " + numLockedSelected + " locked nodes 'sort of' currentl
 <a name="selection+hasArtwork"></a>
 
 ### selection.hasArtwork : <code>boolean</code>
-True if the selection isn’t empty, and consists of one or more non-Artboards. Never true at the same time as [hasArtboards](#selection+hasArtboards).
+True if the selection isn’t empty and consists of one or more non-Artboards. Never true at the same time as [hasArtboards](#selection+hasArtboards).
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
 **Read only**: true  
@@ -88,7 +91,7 @@ True if the selection isn’t empty, and consists of one or more non-Artboards. 
 <a name="selection+hasArtboards"></a>
 
 ### selection.hasArtboards : <code>boolean</code>
-True if the selection isn’t empty, and consists of one or more Artboards. Never true at the same time as [hasArtwork](#selection+hasArtwork).
+True if the selection isn’t empty and consists of one or more Artboards. Never true at the same time as [hasArtwork](#selection+hasArtwork).
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
 **Read only**: true  

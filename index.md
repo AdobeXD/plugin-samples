@@ -8,6 +8,8 @@ Adobe XD plugins provide a way for developers to extend XD functionality. Plugin
 
 **To begin, read the [Getting Started guide](./guides/getting-started.md).** Then return here for more information & detailed API documentation.
 
+Plugins are written in JavaScript.
+
 - [Plugin Structure](#structure)
 - [API Modules](#apis)
 - [Core Concepts](#concepts)
@@ -16,6 +18,7 @@ Adobe XD plugins provide a way for developers to extend XD functionality. Plugin
     - [Coordinate spaces](#coordinate-spaces)
     - [Properties with object values](#object-value-properties)
     - [Asynchronous code](#async)
+    - [Automatic cleanups](#cleanups)
 
 <br>
 
@@ -207,3 +210,13 @@ node.fill = gradient;
 
 **Known issue:** All plugin code must execute synchronously for now. Please do not use Promises or the `async` keyword in any of your
 code. Otherwise, XD will stop working correctly.
+
+<a name="cleanups"></a>
+##### Automatic cleanups
+
+To make writing your plugin simpler, XD performs a number of automated cleanups after each plugin command finishes:
+
+* **Artboard reparenting** - If a node is changed to overlap an Artboard, it will automatically become a child of the artboard when the command finishes,
+  and vice versa if a node no longer overlaps an Artboard.
+* **Selection** - Deleted nodes are removed from the selection when the command finishes.
+* **Empty containers** - If deleting node(s) has caused the parent container to become empty, it is automatically deleted as well after the command finishes.
