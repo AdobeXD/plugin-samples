@@ -22,10 +22,17 @@ commands.createMaskGroup();
     * [.bringForward()](#module_commands.bringForward)
     * [.sendToBack()](#module_commands.sendToBack)
     * [.sendBackward()](#module_commands.sendBackward)
+    * [.alignLeft()](#module_commands.alignLeft)
+    * [.alignRight()](#module_commands.alignRight)
+    * [.alignHorizontalCenter()](#module_commands.alignHorizontalCenter)
+    * [.alignTop()](#module_commands.alignTop)
+    * [.alignBottom()](#module_commands.alignBottom)
+    * [.alignVerticalCenter()](#module_commands.alignVerticalCenter)
+    * [.distributeHorizontal()](#module_commands.distributeHorizontal)
+    * [.distributeVertical()](#module_commands.distributeVertical)
+    * [.alignToPixelGrid()](#module_commands.alignToPixelGrid)
     * [.flipHorizontal()](#module_commands.flipHorizontal)
     * [.flipVertical()](#module_commands.flipVertical)
-    * [.createSymbol()](#module_commands.createSymbol)
-    * [.createRepeatGrid()](#module_commands.createRepeatGrid)
 
 
 * * *
@@ -33,7 +40,8 @@ commands.createMaskGroup();
 <a name="module_commands.group"></a>
 
 ### commands.group()
-Wrap the selected objects in a [Group](scenegraph.md#Group), leaving the Group selected afterward. Equivalent to _Object > Group_ in the UI.
+Wraps the selected objects in a [Group](scenegraph.md#Group), leaving the Group selected afterward. Equivalent to _Object >
+Group_ in the UI.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
 
@@ -59,7 +67,8 @@ var group = selection.items[0];  // the new Group node is what's selected afterw
 <a name="module_commands.ungroup"></a>
 
 ### commands.ungroup()
-Ungroups any of the selected objects are ungroupable containers (Groups, Symbols, Repeat Grids, etc.). Equivalent to _Object > Ungroup_.
+Ungroups any of the selected objects that are ungroupable containers (Groups, Symbols, Repeat Grids, etc.). Equivalent to
+_Object > Ungroup_.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
 
@@ -68,8 +77,9 @@ Ungroups any of the selected objects are ungroupable containers (Groups, Symbols
 <a name="module_commands.createMaskGroup"></a>
 
 ### commands.createMaskGroup()
-Creates a masked [Group](scenegraph.md#Group) from the selected objects, using the object that is highest in the z-order as the mask shape.
-The mask shape must be a leaf node or [Boolean Group](scenegraph.md#BooleanGroup). Equivalent to _Object > Mask With Shape_.
+Creates a masked [Group](scenegraph.md#Group) from the selected objects, using the object that is highest in the z order as
+the mask shape. The mask shape must be a leaf node or [Boolean Group](scenegraph.md#BooleanGroup). Equivalent to
+_Object > Mask With Shape_.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
 
@@ -84,8 +94,8 @@ var maskShape = new Ellipse();
 // Create a Masked Group: add all nodes to the current edit context, select them, then run the createMaskGroup() command
 selection.insertionParent.addChild(shape1);
 selection.insertionParent.addChild(shape2);
-selection.insertionParent.addChild(maskShape);  // added last: topmost in Z order
-selection.items = [shape1, shape2, maskShape];  // order here does not matter
+selection.insertionParent.addChild(maskShape);  // added last: topmost in z order
+selection.items = [shape1, shape2, maskShape];  // order of selection array does not matter
 commands.createMaskGroup();
 var maskedGroup = selection.items[0];
 ```
@@ -95,8 +105,8 @@ var maskedGroup = selection.items[0];
 <a name="module_commands.convertToPath"></a>
 
 ### commands.convertToPath()
-Converts each selected object to a [Path](scenegraph.md#Path) with the exact same visual appearance. Only applies to leaf nodes and
-[Boolean Groups](scenegraph.md#BooleanGroup). Equivalent to _Object > Path > Convert to Path_.
+Converts each selected object to a [Path](scenegraph.md#Path) with the exact same visual appearance. Only applies to leaf
+nodes and [Boolean Groups](scenegraph.md#BooleanGroup). Equivalent to _Object > Path > Convert to Path_.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
 
@@ -106,10 +116,12 @@ Converts each selected object to a [Path](scenegraph.md#Path) with the exact sam
 
 ### commands.duplicate()
 Duplicates all selected objects, leaving the duplicates selected afterward.
-* If the objects are artboards, the duplicates are positioned to not overlap any more artboards, and are placed at the top of the
-  artboard z order.
-* If normal objects, each duplicate is in the exact same position as the original, and just above it in the z order (duplicates will
-  not be contiguous in the z order if the originals were not).
+* If the objects are artboards, the duplicates are positioned to not overlap any more artboards, and are placed at the top
+  of the artboard z order.
+* If normal objects, each duplicate is in the exact same position as the original, and just above it in the z order
+  (duplicates of a multiple selection will not be contiguous in the z order if the originals were not).
+
+Interactions triggered from the selected objects are only duplicated if the user is currently in the Prototype workspace.
 Equivalent to _Edit > Duplicate_.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
@@ -128,7 +140,7 @@ Brings selected objects to the front of the z order. Equivalent to _Object > Arr
 <a name="module_commands.bringForward"></a>
 
 ### commands.bringForward()
-Bring each selected object one step closer to the front of the z order. Equivalent to _Object > Arrange > Bring Forward_.
+Brings each selected object one step closer to the front of the z order. Equivalent to _Object > Arrange > Bring Forward_.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
 
@@ -146,7 +158,89 @@ Sends selected objects to the back of the z order. Equivalent to _Object > Arran
 <a name="module_commands.sendBackward"></a>
 
 ### commands.sendBackward()
-Bring each selected object one step closer to the back of the z order. Equivalent to _Object > Arrange > Send Backward_.
+Sends each selected object one step closer to the back of the z order. Equivalent to _Object > Arrange > Send Backward_.
+
+**Kind**: static method of [<code>commands</code>](#module_commands)  
+
+* * *
+
+<a name="module_commands.alignLeft"></a>
+
+### commands.alignLeft()
+Aligns all selected objects flush left. Equivalent to _Object > Align > Left_.
+
+**Kind**: static method of [<code>commands</code>](#module_commands)  
+
+* * *
+
+<a name="module_commands.alignRight"></a>
+
+### commands.alignRight()
+Aligns all selected objects flush right. Equivalent to _Object > Align > Right_.
+
+**Kind**: static method of [<code>commands</code>](#module_commands)  
+
+* * *
+
+<a name="module_commands.alignHorizontalCenter"></a>
+
+### commands.alignHorizontalCenter()
+Aligns all selected objects along their horizontal centerlines. Equivalent to _Object > Align > Center (Horizontally)_.
+
+**Kind**: static method of [<code>commands</code>](#module_commands)  
+
+* * *
+
+<a name="module_commands.alignTop"></a>
+
+### commands.alignTop()
+Aligns all selected objects flush top. Equivalent to _Object > Align > Top_.
+
+**Kind**: static method of [<code>commands</code>](#module_commands)  
+
+* * *
+
+<a name="module_commands.alignBottom"></a>
+
+### commands.alignBottom()
+Aligns all selected objects flush bottom. Equivalent to _Object > Align > Bottom_.
+
+**Kind**: static method of [<code>commands</code>](#module_commands)  
+
+* * *
+
+<a name="module_commands.alignVerticalCenter"></a>
+
+### commands.alignVerticalCenter()
+Aligns all selected objects along their vertical centerlines. Equivalent to _Object > Align > Center (Vertically)_.
+
+**Kind**: static method of [<code>commands</code>](#module_commands)  
+
+* * *
+
+<a name="module_commands.distributeHorizontal"></a>
+
+### commands.distributeHorizontal()
+Distributes all selected objects evenly along the X axis. Equivalent to _Object > Distribute > Horizontally_.
+
+**Kind**: static method of [<code>commands</code>](#module_commands)  
+
+* * *
+
+<a name="module_commands.distributeVertical"></a>
+
+### commands.distributeVertical()
+Distributes all selected objects evenly along the Y axis. Equivalent to _Object > Distribute > Vertically_.
+
+**Kind**: static method of [<code>commands</code>](#module_commands)  
+
+* * *
+
+<a name="module_commands.alignToPixelGrid"></a>
+
+### commands.alignToPixelGrid()
+Shifts all selected objects and their content so they align crisply with the pixel grid. Equivalent to _Object > Align to
+Pixel Grid_.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
 
@@ -167,24 +261,3 @@ Flips the object horizontally. Some objects such as Symbols cannot be flipped. E
 Flips the object vertically. Some objects such as Symbols cannot be flipped. Equivalent to _Object > Flip > Vertically_.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
-
-* * *
-
-<a name="module_commands.createSymbol"></a>
-
-### commands.createSymbol()
-Convert the selected objects to a new [Symbol](scenegraph.md#SymbolInstance). Equivalent to _Object > Make Symbol_.
-
-**Kind**: static method of [<code>commands</code>](#module_commands)  
-
-* * *
-
-<a name="module_commands.createRepeatGrid"></a>
-
-### commands.createRepeatGrid()
-Convert the selected objects to a new [Repeat Grid](scenegraph.md#RepeatGrid). Equivalent to _Object > Make Repeat Grid_.
-
-**Kind**: static method of [<code>commands</code>](#module_commands)  
-
-* * *
-

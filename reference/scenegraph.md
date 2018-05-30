@@ -553,10 +553,14 @@ Groups and other containers cannot be created directly using scenenode construct
 scenegraph (you can't add subtrees all at once) nor can you add an empty Group and then add children to it (can't add nodes outside
 the scope of the current _edit context_). Instead, to create Groups and other nested structures, use [commands](commands.md).
 
+In a Mask Group, the mask shape is included in the group's `children` list, at the top of the z order. It is not visible - only its
+path outline is used, for clipping the group.
+
 **Example**  
 ```js
 var commands = require("commands");
 
+// Newly created shape nodes
 var shape1 = ...,
     shape2 = ...;
 
@@ -567,7 +571,7 @@ selection.insertionParent.addChild(shape2);
 // Select both shapes, then run the Group command
 selection.items = [shape1, shape2];
 commands.group();
-var group = selection.items[0];  // the new Group node is what's selected afterward
+var group = selection.items[0];  // selection has been set to the new Group node afterward
 ```
 
 * [Group](#Group)
@@ -648,6 +652,8 @@ The mask shape applied to this group, if any. This object is also present in the
 var group = ...;
 console.log("Type of group is: " + (group.mask ? "Masked Group" : "Plain Group"));
 ```
+
+To create a Masked Group, use [commands.createMaskedGroup](commands.md#module_commands.createMaskedGroup) instead of [commands.group](commands.md#module_commands.group).
 
 * * *
 
@@ -972,7 +978,8 @@ Artboards can have a background fill, but the stroke, shadow, and blur settings 
 or have opacity < 100%.
 
 If a node is changed to overlap an Artboard, it will automatically become a child of the artboard when the operation finishes, and
-similar if a node is changed to no longer overlap an Artboard.
+similar if a node is changed to no longer overlap an Artboard. It is not possible to have a node overlapping an Artboard that does
+not become a child of the artboard, or vice versa, a node that falls entirely outside an Artboard's bounds but remains its child.
 
 * [Artboard](#Artboard)
     * [.width](#Artboard+width) : <code>number</code>
@@ -1140,6 +1147,8 @@ BooleanGroup container node - although it has fill/stroke/etc. properties like a
 with children. Its visual appearance is determined by generating a path via a nondestructive boolean operation on all
 its children's paths.
 
+It is not currently possible for plugins to *create* a new BooleanGroup node, aside from using [commands.duplicate](commands.md#module_commands.duplicate)
+to clone existing BooleanGroups.
 
 * [BooleanGroup](#BooleanGroup)
     * [.pathOp](#BooleanGroup+pathOp) : <code>string</code>
@@ -1284,6 +1293,9 @@ Always false for point text. For area text, true if the text does not fit in the
 Container node representing one instance of a Symbol. Changes within a symbol instance are automatically synced to all other
 instances of the symbol, with certain exceptions (called "overrides").
 
+It is not currently possible for plugins to *create* a new Symbol definition or a new SymbolInstance node, aside from using
+[commands.duplicate](commands.md#module_commands.duplicate) to clone existing SymbolInstances.
+
 * [SymbolInstance](#SymbolInstance)
     * [.symbolId](#SymbolInstance+symbolId) : <code>string</code>
     * [.addChild(node, index)](#Group+addChild)
@@ -1312,6 +1324,9 @@ An identifier unique within this document that is shared by all instances of the
 Repeat Grid container node containing multiple grid cells, each one a child Group. Changes within one cell are automatically synced
 to all the other cells, with certain exceptions (called "overrides"). A Repeat Grid also defines a rectangular clipping mask which
 determines how may cells are visible (new cells are automatically generated as needed if the Repeat Grid is resized larger).
+
+It is not currently possible for plugins to *create* a new RepeatGrid node, aside from using [commands.duplicate](commands.md#module_commands.duplicate)
+to clone existing RepeatGrids.
 
 * [RepeatGrid](#RepeatGrid)
     * [.width](#RepeatGrid+width) : <code>number</code>
