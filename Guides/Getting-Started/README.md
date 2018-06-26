@@ -107,7 +107,7 @@ Great – we’ve written a plugin – how do we invoke it? If you haven’t alr
 
 Once you click the menu item, “Hello” should appear in your XD canvas.
 
-![Nothing Happened](./getting-started/nothing-happened.png)
+![Nothing Happened](../../.meta/readme-assets/nothing-happened.png)
 
 Oh… wait. That didn’t go exactly to plan. Where’s “Hello” at? Is something wrong? Let’s figure out how to debug, so we can see what’s going on.
 
@@ -119,7 +119,7 @@ Adobe XD will log errors from your plugin to a log file. Anything your plugin lo
 
 The easiest way to view the console output from your plugin is to open `Console.app`. You can then search for `Adobe XD` in the `Search` field. You can also search for anything else you might be logging.
 
-![Console app](./getting-started/console-app-filter.png)
+![Console app](../../.meta/readme-assets/console-app-filter.png)
 
 #### Windows
 
@@ -148,13 +148,13 @@ Next, hit the `x` key (without any modifiers like Shift or Cmd). This shortcut w
 
 Now you should see some more information in the log:
 
-![Console results](./getting-started/console-app-results.png)
+![Console results](../../.meta/readme-assets/console-app-results.png)
 
 Clearly our plugin is executing – otherwise we wouldn’t see our logs in the output. Perhaps the plugin is executing, but the results aren’t what we expected.
 
 If we select everything in the document, we’ll find that this is indeed the case:
 
-![It rendered offscreen](./getting-started/rendered-offscreen.png)
+![It rendered offscreen](../../.meta/readme-assets/rendered-offscreen.png)
 
 At this point we know what happened – the text is rendered outside of the artboard, and so it doesn’t render. Let’s instruct the text element to move inside the artboard by modifying our `sayHello` function one more time:
 
@@ -174,7 +174,7 @@ At this point we know what happened – the text is rendered outside of the artb
 
 Next, press `x` again, and you should see the following:
 
-![It worked](./getting-started/on-canvas.png)
+![It worked](../../.meta/readme-assets/on-canvas.png)
 
 ### Iterate on your plugin
 
