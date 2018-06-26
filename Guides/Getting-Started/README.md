@@ -15,10 +15,10 @@ Basic knowledge of HTML, CSS, and JavaScript.
 
 Adobe XD loads plugins from a `plugins` folder in specific storage location:
 
-| Platform        | Path           |
-| ------------- |:-------------|
-| macOS     | `~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/` (note: ~/Library, not /Library) |
-| Windows  | `C:\Users\%USERNAME%\AppData\Local\Packages\Adobe.CC.XD.Prerelease_adky2gkssdxte\LocalState\`  | 
+| Platform      | Path          |
+| ------------- |:-------------:|
+| MacOS         | `~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/` (note: `~/Library`, not `/Library`) |
+| Windows       | `C:\Users\%USERNAME%\AppData\Local\Packages\Adobe.CC.XD.Prerelease_adky2gkssdxte\LocalState\`       |
 
 Navigate to the above path, and if there _isn’t_ a folder that already exists with the name `plugins`, go ahead and create it.
 ```
