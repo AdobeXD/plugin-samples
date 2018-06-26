@@ -1,0 +1,15 @@
+{
+    "id": "com.adobe.xd.helloWorld",
+    "name": "Hello World sample plugin",
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Say hello",
+            "commandId": "helloCommand"
+        }
+    ]
+}

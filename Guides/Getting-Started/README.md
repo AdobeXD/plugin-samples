@@ -2,7 +2,16 @@
 
 Let’s walk through the process of how you can create an Adobe XD plugin. This plugin is pretty simple to start, but you should be able to follow the instructions to create just more complex plugins as well.
 
-## Identify where your plugins are located
+## Technology Used
+- References: (reference to XD docs)[references/selection.md]
+- Libraries/Frameworks/APIs: None
+
+## Prerequisites
+Basic knowledge of HTML, CSS, and JavaScript.
+
+## Development Steps
+
+### 1. Identify where your plugins are located
 
 Adobe XD loads plugins from a `plugins` folder in specific storage location:
 | Platform        | Path           |
@@ -16,7 +25,7 @@ Navigate to the above path, and if there _isn’t_ a folder that already exists 
     $ mkdir plugins
 ```
 
-## Create your plugin scaffold
+### 2. Create your plugin scaffold
 
 Adobe XD plugins require two files:
 
@@ -31,7 +40,7 @@ These two files (and any others you need) are stored within a folder. Each plugi
     $ cd com.adobe.xd.hello-world
 ``` 
 
-## Create your plugin’s manifest
+### 3. Create your plugin’s manifest
 
 Adobe XD requires that your plugin have a manifest named `xdplugin.json`. Our example looks like this:
 
@@ -54,7 +63,7 @@ Adobe XD requires that your plugin have a manifest named `xdplugin.json`. Our ex
 
 For more about what each entry means, [see the manifest documentation](../reference/manifest.html).
 
-## Create your plugin’s code
+### 4. Create your plugin’s code
 
 Next, we need to create the code for our plugin. This lives in a file named `main.js`.
 
@@ -90,7 +99,7 @@ Next, we need to create the code for our plugin. This lives in a file named `mai
 5.  The final part of `main.js` is to export the handles functions in a map that links them to the command ID(s) defined in your manifest earlier. The command ID (part to the left of the `:` here must match the IDs in your manifest exactly.
     
 
-## Invoke your plugin
+### 5. Invoke your plugin
 
 Great – we’ve written a plugin – how do we invoke it? If you haven’t already, go ahead and launch XD and open a new document. Then navigate to **Plugins | Say hello**.
 
@@ -102,21 +111,21 @@ Once you click the menu item, “Hello” should appear in your XD canvas.
 
 Oh… wait. That didn’t go exactly to plan. Where’s “Hello” at? Is something wrong? Let’s figure out how to debug, so we can see what’s going on.
 
-## Viewing Plugin Logs
+### 6. View Plugin Logs
 
 Adobe XD will log errors from your plugin to a log file. Anything your plugin logs via `console.log` will also be written to the same log file. How you access the log file depends on your platform.
 
-### macOS
+#### macOS
 
 The easiest way to view the console output from your plugin is to open `Console.app`. You can then search for `Adobe XD` in the `Search` field. You can also search for anything else you might be logging.
 
 ![Console app](./getting-started/console-app-filter.png)
 
-### Windows
+#### Windows
 
 You’ll need to open the log file at `C:\Users\%USERNAME%\AppData\Local\Packages\Adobe.CC.XD.Prerelease_adky2gkssdxte\LocalState\AdobeXD.log`. How you want to view the output is up to you, but it’s suggested that you use `tail` if you use Git Bash, or you can use the [PowerShell equivalent](https://stackoverflow.com/questions/187587/a-windows-equivalent-of-the-unix-tail-command/188126#188126).
 
-## Debugging our plugin
+### Debug your plugin
 
 Knowing this, let’s add a couple of `console.log` statements to our `sayHello` function. Modify it so that it looks like the following:
 
@@ -167,7 +176,7 @@ Next, press `x` again, and you should see the following:
 
 ![It worked](./getting-started/on-canvas.png)
 
-## Iterating on your plugin
+### Iterate on your plugin
 
 You’ve already seen that you can press `x` to reload your plugin code and execute the previous command. There are additional shortcuts that you may find useful:
 
@@ -180,9 +189,15 @@ Note that you will have to quit and relaunch Adobe XD in the following scenarios
 *   If you add a new plugin, XD won’t see it until next launch
 *   If you modify the JSON manifest, XD won’t see it until next launch
 
-Congratulations!
-----------------
+### Congratulations!
 
 You’ve built your first plugin with Adobe XD!
 
+## Next Steps
+
 To continue, [read more about core concepts in XD plugins](../index.md#concepts) or read the [full API reference](../index.md#apis).
+
+## Other Resources
+- [Title](link)
+- [Title](link)
+
