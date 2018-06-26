@@ -3,7 +3,7 @@
 Let’s walk through the process of how you can create an Adobe XD plugin. This plugin is pretty simple to start, but you should be able to follow the instructions to create just more complex plugins as well.
 
 ## Technology Used
-- References: (reference to XD docs)[references/selection.md]
+- References: (reference to XD docs)[]
 - Libraries/Frameworks/APIs: None
 
 ## Prerequisites
@@ -61,7 +61,7 @@ Adobe XD requires that your plugin have a manifest named `xdplugin.json`. Our ex
     }
     
 
-For more about what each entry means, [see the manifest documentation](../reference/manifest.html).
+For more about what each entry means, [see the manifest documentation]().
 
 ### 4. Create your plugin’s code
 
@@ -88,7 +88,7 @@ Next, we need to create the code for our plugin. This lives in a file named `mai
     }
     
 
-1.  In this line, we get references to the `Text` and `Color` classes from XD’s `scenegraph` module. There are several different [API modules you can load using `require()`](./index.md#apis).
+1.  In this line, we get references to the `Text` and `Color` classes from XD’s `scenegraph` module. There are several different [API modules you can load using `require()`]().
     
 2.  Next we define our handler function, which will respond to the “Say Hello” menu command.
     
@@ -103,7 +103,7 @@ Next, we need to create the code for our plugin. This lives in a file named `mai
 
 Great – we’ve written a plugin – how do we invoke it? If you haven’t already, go ahead and launch XD and open a new document. Then navigate to **Plugins | Say hello**.
 
-![Plugin Menu](./getting-started/menu.png)
+![Plugin Menu](../../.meta/readme-assets/menu.png)
 
 Once you click the menu item, “Hello” should appear in your XD canvas.
 
