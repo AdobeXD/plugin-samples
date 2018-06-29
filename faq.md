@@ -12,7 +12,7 @@ Not yet. That feature will be coming in a future release.
 
 ### Can I communicate with remote servers?
 
-Not yet. `XMLHttpRequest`, `Websocket`s, and `fetch` are coming soon.
+Yes! `XMLHttpRequest`, `Websocket`s, and `fetch` are available now.
 
 ### Can I render any user interface?
 
