@@ -8,6 +8,8 @@ Adobe XD plugins provide a way for developers to extend XD functionality. Plugin
 
 **To begin, read the [Getting Started guide](./guides/getting-started.md).** Then return here for more information & detailed API documentation.
 
+**To see what has changed, review [What Changed](./guides/what-changed.md).**
+
 Plugins are written in JavaScript.
 
 - [Plugin Structure](#structure)
