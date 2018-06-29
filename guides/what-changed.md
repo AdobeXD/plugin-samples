@@ -12,7 +12,7 @@ Win: Plugins->Developer Console
 
 ## Reloading Plugins
 
-We have replaced the previuous 3 keyboard shortcut options with a new `Reload Plugins` command. The new command reloads all plugins found in the plugins folder, even newly added plugins. You can invoke plugin reload from the Plugins menu or by the new keyboard shortcuts.
+We have replaced the previous 3 keyboard shortcut options with a new `Reload Plugins` command. The new command reloads all plugins found in the plugins folder, even newly added plugins. You can invoke plugin reload from the Plugins menu or by the new keyboard shortcuts.
 ```
 Mac: Plugins->Development->Reload Plugins (Shift-Cmd-R)
 Win: Plugins->Reload Plugins (Ctrl-Alt-E)
@@ -22,8 +22,8 @@ Win: Plugins->Reload Plugins (Ctrl-Alt-E)
 
 These are high level API changes made in this release. Specific API details are available in the reference section of the documentation.
 
-## File and Netork
-File and Network APIs are now available. To protect the scenegraph any asynchronous file or network API must be called after all scenegraph APIs are invoked. Trying to call into a Scenegraph API after an asynchronous call will fail. 
+## File and Network
+File and Network APIs are now available. To protect the scenegraph any asynchronous file or network API must be called after all scenegraph APIs are invoked. Trying to call into a scenegraph API after an asynchronous call will fail. 
 
 ## Commands
 Added
@@ -51,7 +51,7 @@ localDrawBounds
 ```
 Replaced
 ```
-hasCusotmName
+hasCustomName
 ``` 
 with
 ```
