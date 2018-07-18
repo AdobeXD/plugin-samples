@@ -1,6 +1,6 @@
 {
-    "id": "com.adobe.xd.helloWorld",
-    "name": "Hello World sample plugin",
+    "id": "com.adobe.xd.gettingstarted",
+    "name": "getting started sample plugin",
     "host": {
         "app": "XD",
         "minVersion": "8.0"

@@ -1,0 +1,15 @@
+{
+    "id": "com.adobe.xd.import",
+    "name": "Import plugin",
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "load text via File I/O",
+            "commandId": "loadText"
+        }
+    ]
+}
