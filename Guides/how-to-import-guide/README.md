@@ -1,9 +1,8 @@
-# How to import a local file
-
-Description
+# How to import a file
+This sample describes how an XD plugin can invoke the default file picker and display the text extracted from the file chosen by user.
 
 <!-- Image or GIF if necessary -->
-![PLUGINNAME]()
+<!-- ![PLUGINNAME]() -->
 
 <!-- doctoc command config: -->
 <!-- $ doctoc ./readme.md --title "## Contents" --entryprefix 1. --gitlab --maxlevel 3 -->
@@ -12,11 +11,11 @@ Description
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 ## Technology Used
-- References: (XD File I/O)[references/selection.md]
+- References: [XD File I/O](references/selection.md)
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- (Getting Started Guide)[../getting-started-guide]
+- [Getting Started Guide](../getting-started-guide)
 
 ## Development Steps
 
