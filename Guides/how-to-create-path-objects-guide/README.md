@@ -79,7 +79,7 @@ draw(100, 5, 7, "purple");
 Note that start radian and end radian of each wedge is intentially configured to make a piechart all together.
 
 ![Results](../../.meta/readme-assets/pie-chart.png){:height="50%" width="50%"}
-<img src="../../.meta/readme-assets/pie-chart.png" width="100" height="100">
+<img src="../../.meta/readme-assets/pie-chart.png" width="50%" height="50%">
 
 ## Next Steps
 
