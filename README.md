@@ -1,7 +1,5 @@
+![XD](.meta/readme-assets/adobe-xd-log.png?raw=true)
 # Welcome to XD Plugin Guides and Samples page!
-
-<img src=".meta/readme-assets/adobe-xd-log.png" width="50%" height="50%">
-
 Are a problem solver? Do you know what JavaScript is? Do you want to extend Adobe XD? If so, this page is the right place for you. You can easily get started building an Adobe XD plugin by reading guides and learning from existing sample plugins.
 
 
