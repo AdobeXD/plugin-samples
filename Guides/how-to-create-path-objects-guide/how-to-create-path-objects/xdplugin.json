@@ -1,0 +1,15 @@
+{
+    "id": "com.adobe.xd.wedges",
+    "name": "Draw Wedges",
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Draw Wedges",
+            "commandId": "drawWedges"
+        }
+    ]
+}
