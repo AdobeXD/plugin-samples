@@ -51,6 +51,7 @@ Since XD's File I/O is an async method which uses `await`, your function needs t
 const [aFile] = await fs.getFileForOpening();
 ```
 This will invoke the default file chooser on user's machine
+
 <img src="../../.meta/readme-assets/filepicker.png" width="50%" height="50%">
 
 ### 5. Read the content
