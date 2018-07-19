@@ -51,7 +51,8 @@ Since XD's File I/O is an async method which uses `await`, your function needs t
 const [aFile] = await fs.getFileForOpening();
 ```
 This will invoke the default file chooser on user's machine
-![File Picker](../../.meta/readme-assets/filepicker.png)
+
+<img src="../../.meta/readme-assets/filepicker.png" width="50%" height="50%">
 
 ### 5. Read the content
 ```
@@ -80,7 +81,7 @@ text.moveInParentCoordinates(100, 100);
 ```
 Note that `moveInParentCoordinates` method is used to move the text inside the artboard.
 
-![Results](../../.meta/readme-assets/displayed-results.png)
+<img src="../../.meta/readme-assets/displayed-results.png" width="50%" height="50%">
 
 ## Next Steps
 
