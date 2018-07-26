@@ -1,0 +1,15 @@
+{
+    "id": "com.adobe.xd.lines",
+    "name": "Lines plugin",
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Draw lines",
+            "commandId": "drawLines"
+        }
+    ]
+}
