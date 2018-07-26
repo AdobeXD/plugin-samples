@@ -73,7 +73,7 @@ It looks the function is running... maybe there is another problem.
 
 Oops, the fill color was `#FFFFFF` - white, and so is our background.
 
-## Next Steps
+<!-- ## Next Steps
 
 Next, try out some of our other guides:
 
@@ -83,4 +83,4 @@ Next, try out some of our other guides:
 ## Other Resources
 
 - [Title](link)
-- [Title](link)
+- [Title](link) -->
