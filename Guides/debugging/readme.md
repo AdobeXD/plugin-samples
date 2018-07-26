@@ -38,7 +38,7 @@ Win: Plugins->Reload Plugins (Ctrl-Alt-E)
 
 If there are any errors blocking the plugin from running, they will appear in the Developer Console on reload.
 
-![reload-plugins](.meta/readme-assets/reload-plugins.png)
+![reload-plugins](/.meta/readme-assets/reload-plugins.png)
 
 ### 3. Try adding `console.log` messages to your code
 
