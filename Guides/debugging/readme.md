@@ -4,21 +4,17 @@ In this guide, you will learn to debug your Adobe XD plugin.
 
 <!-- Image or GIF if necessary -->
 
-![cosole-message](readme-assets/console-log-display.png)
-
 <!-- doctoc command config: -->
 <!-- $ doctoc ./readme.md --title "## Contents" --entryprefix 1. --gitlab --maxlevel 3 -->
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-
 ## Prerequisites
 
 - Basic knowledge of JavaScript.
 - At least one plugin installed.
-- You have read the [Getting Started Guide](https://git.corp.adobe.com/finnegan/xd-guides-samples/tree/simpler/Guides/Getting-Started)<sup>1</sup>.
-<sup>1</sup> Fix this link later. 
+- You have read the [Getting Started Guide](https://github.com/AdobeXD/Plugin-Guides/tree/master/Guides/getting-started-guide)
 
 ### 1. Open the Developer Console.
 
@@ -40,56 +36,42 @@ Mac: Plugins->Development->Reload Plugins (Shift-Cmd-R)
 Win: Plugins->Reload Plugins (Ctrl-Alt-E)
 ```
 
-### 3. Add console.log messages to your code
+If there are any errors blocking the plugin from running, they will appear in the Developer Console on reload.
 
-Try running the `text-maker` plugin from the Plugin menu. In the Developer Console you can see the `console.log` messages are being displayed correctly:
+![reload-plugins](./Plugin-Guides/.meta/readme-assets/reload-plugins.png)
 
-![Console.log messages appear in the Developer Console within XD](readme-assets/console-log-display.png)
+### 3. Try adding `console.log` messages to your code
 
-### 5. Don't see what you're looking for?
-
-This example adapted from the [Getting Started Guide](https://git.corp.adobe.com/finnegan/xd-guides-samples/tree/simpler/Guides/Getting-Started)<sup>1</sup> does not appear to be creating the "Hello!" text as expected:
-
-```javascript
-function sayHello(selection) { 
-    const el = new Text();
-    el.text = "Hello!";
-    el.styleRanges = [
-        {
-            length: el.text.length,
-            fill: new Color("#FFFFFF")
-        }
-    ];
-    selection.insertionParent.addChild(el);
-    el.moveInParentCoordinates(100, 100);
-}
-```
+The example code below adapted from the [Getting Started Guide](https://github.com/AdobeXD/Plugin-Guides/tree/master/Guides/getting-started-guide) does not appear to be creating the "Hello!" text as expected.
 
 Let's try adding a start message and an end message into `sayHello()` to double check that the code is working:
 
 ```javascript
-function sayHello(selection) { 
-    console.log("sayHello started!");
-    const el = new Text();
-    el.text = "Hello!";
-    el.styleRanges = [
-        {
-            length: el.text.length,
-            fill: new Color("#FFFFFF")
-        }
-    ];
-    selection.insertionParent.addChild(el);
-    el.moveInParentCoordinates(100, 100);
-    console.log("sayHello ran to the end!");
+function sayHello(selection) {
+  console.log("sayHello started!");
+  const el = new Text();
+  el.text = "Hello!";
+  el.styleRanges = [
+    {
+      length: el.text.length,
+      fill: new Color("#FFFFFF")
+    }
+  ];
+  selection.insertionParent.addChild(el);
+  el.moveInParentCoordinates(100, 100);
+  console.log("sayHello ran to the end!");
 }
-
 ```
 
 Your console.log messages should appear in the Developer console:
 
+![start-message](./Plugin-Guides/.meta/readme-assets/start-message.png)
 
+It looks the function is running... maybe there is another problem.
 
-### 6. Try creating a custom tag for your messages.
+![wrong-color](./Plugin-Guides/.meta/readme-assets/wrong-color.png)
+
+Oops, the fill color was `#FFFFFF` - white, and so is our background.
 
 ## Next Steps
 
