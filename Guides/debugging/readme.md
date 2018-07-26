@@ -63,7 +63,7 @@ function sayHello(selection) {
 }
 ```
 
-Your console.log messages should appear in the Developer console:
+Your `console.log` messages should appear in the Developer console:
 
 ![start-message](/.meta/readme-assets/start-message.png)
 
@@ -71,7 +71,7 @@ It looks the function is running... maybe there is another problem.
 
 ![wrong-color](/.meta/readme-assets/wrong-color.png)
 
-Oops, the fill color was `#FFFFFF` - white, and so is our background.
+Oops, the fill color was `#FFFFFF`, which is white, and so is our background.
 
 <!-- ## Next Steps
 
