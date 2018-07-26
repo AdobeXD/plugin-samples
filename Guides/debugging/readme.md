@@ -38,7 +38,7 @@ Win: Plugins->Reload Plugins (Ctrl-Alt-E)
 
 If there are any errors blocking the plugin from running, they will appear in the Developer Console on reload.
 
-![reload-plugins](./Plugin-Guides/.meta/readme-assets/reload-plugins.png)
+![reload-plugins](.meta/readme-assets/reload-plugins.png)
 
 ### 3. Try adding `console.log` messages to your code
 
@@ -65,11 +65,11 @@ function sayHello(selection) {
 
 Your console.log messages should appear in the Developer console:
 
-![start-message](./Plugin-Guides/.meta/readme-assets/start-message.png)
+![start-message](.meta/readme-assets/start-message.png)
 
 It looks the function is running... maybe there is another problem.
 
-![wrong-color](./Plugin-Guides/.meta/readme-assets/wrong-color.png)
+![wrong-color](.meta/readme-assets/wrong-color.png)
 
 Oops, the fill color was `#FFFFFF` - white, and so is our background.
 
