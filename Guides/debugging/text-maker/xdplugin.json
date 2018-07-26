@@ -1,0 +1,17 @@
+{
+    "id": "demo.textMaker",
+    "name": "Text Maker",
+
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Text Maker",
+            "commandId": "textMaker"
+        }
+    ]
+}
