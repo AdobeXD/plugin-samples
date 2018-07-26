@@ -13,11 +13,11 @@ Adobe XD plugins provide a way for developers to extend XD functionality. Plugin
 
 
 ## Where to start?
-1. To begin, read the [Getting Started guide](Guides/Getting-Started/)
-1. Then visit the [Reference Documentation]() for more information & detailed API documentation
-1. If you need more help, we have a few, select [Samples]() for you to take a look at.
+1. To begin, read the [Getting Started guide](Guides/getting-started-guide/) and take a look at [other guides](Guides)
+1. Then visit the [Reference Documentation](https://github.com/AdobeXD/Plugin-Reference) for more information & detailed API documentation
+1. If you need more help, we have a few, select [Samples](https://github.com/AdobeXD/Plugin-Samples) for you to take a look at.
 
 ## What's next?
-- [XD Plugin Forum]()
-- [Adobe Exchange]()
+- [XD Plugin Forum](ms.adobeprerelease.com/newxdprerelease/categories/xdplugindev)
+- [Adobe Exchange](https://www.adobeexchange.com/)
 - [How to package and distribute your plugin]()
