@@ -1,0 +1,15 @@
+{
+    "id": "com.adobe.xd.oauth",
+    "name": "Oauth plugin",
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Launch OAuth",
+            "commandId": "launchOAuth"
+        }
+    ]
+}
