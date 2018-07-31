@@ -32,7 +32,7 @@ async function menuCommand(selection) {
 }
 ```
 
-See the [File I/O API Reference](./reference/file-IO.md) for more information about creating, reading, and writing files.
+See the [File I/O API Reference](../reference/file-IO.md) for more information about creating, reading, and writing files.
 
 ## Known Issues
 
