@@ -5,7 +5,7 @@ The following has changed in this release.
 ## Breaking Changes
 
 * `xdplugin.json` has been renamed to `manifest.json`.
-* `manifest.json` requires a `version` key with the plugin version in `x.y` or `x.y.z` form.
+* `manifest.json` requires a `version` key with the plugin version in `x.y.z` form.
 
 ## Networking APIs
 
