@@ -25,7 +25,6 @@ influence what is rendered on the design canvas (plugins cannot display any UI y
     - [Edit context rules](#edit-contexts)
     - [Coordinate spaces & units](#coordinate-spaces)
     - [Properties with object values](#object-value-properties)
-    - [Asynchronous code](#async)
     - [Automatic cleanups](#cleanups)
 
 <br>
@@ -233,12 +232,6 @@ gradient.startX = 0.0;
 gradient.startY = 1.0;
 node.fill = gradient;
 ```
-
-<a name="async"></a>
-##### Asynchronous code
-
-**Known issue:** All plugin code must execute synchronously for now. Please do not use Promises or the `async` keyword in any of your
-code. Otherwise, XD will stop working correctly.
 
 <a name="cleanups"></a>
 ##### Automatic cleanups

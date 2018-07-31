@@ -4,7 +4,7 @@
 
 ### Can I read or write to persistent storage?
 
-Not yet. That feature is coming in a future release.
+You can write to temporary storage or to user-picked files and folders. The ability to write data to a plugin-specific folder without user mediation
 
 ### Can I store any user preferences?
 
@@ -12,7 +12,7 @@ Not yet. That feature will be coming in a future release.
 
 ### Can I communicate with remote servers?
 
-Yes! `XMLHttpRequest`, `Websocket`s, and `fetch` are available now.
+Yes! `XMLHttpRequest`, `Websocket`s, and `fetch` are available now on both macOS and Windows (UWP).
 
 ### Can I render any user interface?
 
@@ -66,16 +66,8 @@ The JavaScript VM does support most of ES2015 and beyond. You can use features s
 * Default parameters
 * Spread and Rest (`...`)
 * Arrow functions
-
-You _cannot_ use any asynchronous language features at this point (see next question).
-
-### Can I use asynchronous code?
-
-Not at this time. You should avoid the following:
-
-* `setTimeout` and friends
+* Asynchronous functions (`async / await`)
 * Promises
-* `async` and `await`
 
 ## Troubleshooting
 
