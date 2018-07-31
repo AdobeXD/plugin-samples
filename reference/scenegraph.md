@@ -174,7 +174,7 @@ True if this node is a type that could have children (e.g. an Artboard, Group, B
 <a name="SceneNode+selected"></a>
 
 ### *sceneNode.selected : <code>boolean</code>*
-True if this node is part of the current selection. To change which nodes are selected, use [selection](selection.md).
+True if this node is part of the current selection. To get a list of *all* selected nodes or change which nodes are selected, use [selection](selection.md).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -204,6 +204,9 @@ False if this node has been hidden by the user (eyeball toggle in Layers panel).
 
 ### *sceneNode.transform : <code>!Matrix</code>*
 Affine transform matrix that converts from the node's _local coordinate space_ to its parent's coordinate space. The matrix never has skew or scale components, and if this node is an Artboard the matrix never has rotation either. Rather than working with the raw matrix directly, it may be easier to use methods such as [placeInParentCoordinates](#SceneNode+placeInParentCoordinates) or [rotateAround](#SceneNode+rotateAround).
+
+To resize or mirror a node, use [SceneNode.resize](#SceneNode+resize) or [commands.flipHorizontal](./commands.md#module_commands.flipHorizontal) / [commands.flipVertical](./commands.md#module_commands.flipVertical),
+respectively.
 
 Returns a fresh Matrix each time, so this can be mutated by the caller without interfering with anything. Mutating the returned Matrix does not change the node's transform - only invoking the 'transform' setter changes the node.
 To modify an existing transform, always be sure to re-invoke the `transform` setter rather than just changing the Matrix object's properties inline.
@@ -501,8 +504,10 @@ node.rotateAround(rotationDelta, node.localCenterPoint);
 
 ### *sceneNode.resize(width, height)*
 Attempts to change localBounds.width & height to match the specified sizes. This operation may not succeed,
-since some nodes are not resizable. Resizing one dimension may affect the other, if the node's aspect ratio
-is locked.
+since some nodes are not resizable.
+
+_Note:_ Currenty this does not respect the "aspect ratio lock" setting in XD's Properties panel. This may be
+changed/fixed later.
 
 **Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
 
@@ -642,7 +647,7 @@ Removes all children from this node. Equivalent to calling removeFromParent() on
 <a name="Group+mask"></a>
 
 ### group.mask : ?[<code>SceneNode</code>](#SceneNode)
-The mask shape applied to this group, if any. This object is also present in the group's `children` list. Though it has no direct visual appearance of its own, the mask affects the entire groups's appearance by clipping all its other content.
+The mask shape applied to this group, if any. This object is also present in the group's `children` list. Though it has no direct visual appearance of its own, the mask affects the entire group's appearance by clipping all its other content.
 
 **Kind**: instance property of [<code>Group</code>](#Group)  
 **Read only**: true  
