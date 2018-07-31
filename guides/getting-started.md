@@ -143,7 +143,7 @@ function sayHello(selection) {
 }
 ```
 
-To force XD to reload plugins either select `Reload Plugins` from the Plugins menu or use the keyboard short (Mac: Shift-Cmd-R, Win: Ctrl-Alt-E).
+To force XD to reload plugins select `Reload Plugins` from the Plugins menu, or use its keyboard shortcut (Mac: Cmd-Shift-R, Win: Ctrl-Shift-R).
 
 Now you should see some more information in the log:
 

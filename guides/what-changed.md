@@ -12,10 +12,10 @@ Win: Plugins->Developer Console
 
 ## Reloading Plugins
 
-We have replaced the previous 3 keyboard shortcut options with a new `Reload Plugins` command. The new command reloads all plugins found in the plugins folder, even newly added plugins. You can invoke plugin reload from the Plugins menu or by the new keyboard shortcuts.
+We have replaced the previous 3 keyboard shortcut options with a new `Reload Plugins` command. The new command reloads all plugins found in the plugins folder, even newly added plugins. You can invoke plugin reload from the Plugins menu or via keyboard shortcuts:
 ```
-Mac: Plugins->Development->Reload Plugins (Shift-Cmd-R)
-Win: Plugins->Reload Plugins (Ctrl-Alt-E)
+Mac: Plugins > Development > Reload Plugins (Cmd-Shift-R)
+Win: Plugins > Reload Plugins (Ctrl-Shift-R)
 ```
 
 ## APIs
