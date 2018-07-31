@@ -28,7 +28,13 @@ async function menuCommand(selection) {
     shape.width = 100;
     shape.height = 100;
     shape.fill = new Color(contents);
-    selection.insertionParent.addChild(shape);.
+    selection.insertionParent.addChild(shape);
+}
+
+return {
+    commands: {
+        menuCommand
+    }
 }
 ```
 
