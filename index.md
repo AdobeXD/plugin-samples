@@ -28,7 +28,7 @@ Plugins are written in JavaScript.
 ## Anatomy of a Plugin
 An XD plugin consists of a folder containing two files:
 
-* `xdplugin.json` - Metadata describing the plugin and which menu items it exposes
+* `manifest.json` - Metadata describing the plugin and which menu items it exposes
 * `main.js` - JavaScript source code (a plugin cannot be split into multiple JS files _yet_)
 
 Plugin folders are located in XD's platform-specific [plugins location](./reference/plugin-location.md).

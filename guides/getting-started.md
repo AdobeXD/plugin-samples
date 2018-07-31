@@ -22,7 +22,7 @@ $ mkdir plugins
 
 Adobe XD plugins require two files:
 
-* `xdplugin.json` is your plugin's **manifest**. This file includes information about the plugin, such as its name, the menu item(s) it adds to XD, and so on.
+* `manifest.json` is your plugin's **manifest**. This file includes information about the plugin, such as its name, the menu item(s) it adds to XD, and so on.
 * `main.json` is your plugin's **code**. This file contains your JavaScript code that implements the logic for your plugin.
 
 These two files (and any others you need) are stored within a folder. Each plugin gets its own folder, so the folder names need to be unique.
@@ -35,7 +35,7 @@ $ cd com.adobe.xd.hello-world
 
 ## Create your plugin's manifest
 
-Adobe XD requires that your plugin have a manifest named `xdplugin.json`. Our example looks like this:
+Adobe XD requires that your plugin have a manifest named `manifest.json`. Our example looks like this:
 
 ```json
 {

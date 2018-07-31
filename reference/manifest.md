@@ -1,6 +1,6 @@
 # Plugin manifest
 
-Adobe XD expects plugins to have an `xdplugin.json` manifest that looks like the following:
+Adobe XD expects plugins to have an `manifest.json` manifest that looks like the following:
 
 ```json
 {
