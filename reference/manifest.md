@@ -21,14 +21,16 @@ Adobe XD expects plugins to have an `manifest.json` manifest that looks like the
 }
 ```
 
+Fields are required unless otherwise noted.
+
 key path | description
 ---------|------------
 `id`     | This is a unique identifier for your plugin. It's common to use reverse domain notation. The behavior is undefined if two plugins have the same identifier.
 `name`   | Human-readable name of the plugin. Note that this isn't visible to the user _yet_.
-`version`| Version number of the plugin in `x.y` or `x.y.z` format. This is required for plugins to load.
+`version`| Version number of the plugin in `x.y` or `x.y.z` format.
 `host.app` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `XD`).
 `host.minVersion` | Indicates the minimum required version of Adobe XD that can run this plugin.
-`host.maxVersion` | Optional. Indicates the maximum version of XD that can run this plugin.
+`host.maxVersion` | _Optional._ Indicates the maximum version of XD that can run this plugin.
 `uiEntryPoints` | Defines a list of commands that appear in the Plugins menu.
 
 `uiEntryPoints` is an array of the following structure:

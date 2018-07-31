@@ -15,7 +15,7 @@ Networking APIs now work correctly on Windows (UWP).
 
 In order to access the scenegraph asynchronously, your menu handler must return a `Promise`. Until the promise has been resolved, the scenegraph can be manipulated asynchronously. Should the promise be rejected, any changes to the scenegraph will be undone, just as if an error were thrown from synchronous code.
 
-> _**Important caveat:**_ In this build, when a plugin command runs asynchronously, _you should not interact with XD at all_ via mouse or keyboard until your plugin code is completely done executing. Doing so could freeze XD, break Undo, or corrupt the document. In the future, XD will block the UI to ensure other actions can't interfere with your plugin in mid-operation.
+_**Important caveat:**_ In this build, when a plugin command runs asynchronously, _you should not interact with XD at all_ via mouse or keyboard until your plugin code is completely done executing. Doing so could freeze XD, break Undo, or corrupt the document. In the future, XD will block the UI to ensure other actions can't interfere with your plugin in mid-operation.
 
 For example:
 
@@ -49,7 +49,9 @@ See the [File I/O API Reference](../reference/file-IO.md) for more information a
 
 ---
 
-# Focus Group Release 2
+# _Previous Build:_ Focus Group Release 2
+
+_Note: some of the release notes here may be obsoleted by changes in the newer release(s) above._
 
 We modified some of the APIs, added an in-app console log view and replaced the plugin reload mechanism.
 

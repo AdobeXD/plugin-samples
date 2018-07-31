@@ -13,6 +13,8 @@ The Network I/O subsystem mimics the standards found on the web. The following A
 
 The entire web socket API is supported, _except_ for extensions handling.
 
+_**Known issue:** web sockets cannot connect to `wss://` URLs yet. You can only connect to insecure `ws://` URLs._
+
 ## XMLHttpRequest Support
 
 Most of the XHR API surface is supported, including:
