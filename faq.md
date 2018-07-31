@@ -4,7 +4,7 @@
 
 ### Can I read or write to persistent storage?
 
-You can write to temporary storage or to user-picked files and folders. The ability to write data to a plugin-specific folder without user mediation
+You can write to temporary storage or to user-picked files and folders. The ability to write data to a plugin-specific folder without user mediation is coming in a future release.
 
 ### Can I store any user preferences?
 

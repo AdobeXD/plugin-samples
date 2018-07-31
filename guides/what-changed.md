@@ -5,7 +5,7 @@ The following has changed in this release.
 ## Breaking Changes
 
 * `xdplugin.json` has been renamed to `manifest.json`.
-* `manifest.json` requires a `version` key with the plugin version in `x.y.z` form.
+* `manifest.json` requires a `version` key with the plugin version in `x.y` or `x.y.z` form.
 
 ## Networking APIs
 
@@ -15,19 +15,21 @@ Networking APIs now work correctly on Windows (UWP).
 
 In order to access the scenegraph asynchronously, your menu handler must return a `Promise`. Until the promise has been resolved, the scenegraph can be manipulated asynchronously. Should the promise be rejected, any changes to the scenegraph will be undone, just as if an error were thrown from synchronous code.
 
+> _**Important caveat:**_ In this build, when a plugin command runs asynchronously, _you should not interact with XD at all_ via mouse or keyboard until your plugin code is completely done executing. Doing so could freeze XD, break Undo, or corrupt the document. In the future, XD will block the UI to ensure other actions can't interfere with your plugin in mid-operation.
+
 For example:
 
 ```js
 const fs = require("localFileSystem").localFileSystem;
-const { Rectangle } = require("scenegraph");
+const { Rectangle, Color } = require("scenegraph");
 
 async function menuCommand(selection) {
     const [file] = await fs.getFileForOpening();
-    const contents = await file.read();
+    const colorValue = await file.read(); // read the CSS or named color from a user's file
     const shape = new Rectangle();
     shape.width = 100;
     shape.height = 100;
-    shape.fill = new Color(contents);
+    shape.fill = new Color(colorValue); // and create a rectangle with the color in the file
     selection.insertionParent.addChild(shape);
 }
 
@@ -42,7 +44,7 @@ See the [File I/O API Reference](../reference/file-IO.md) for more information a
 
 ## Known Issues
 
-* Note that Websockets do not currently work with SSL (wss://). This is planned for a future release.
+* Note that Websockets do not currently work with SSL (`wss://`). This is planned for a future release.
 * The developer console currently logs a lot of information unrelated to plugins. This will be fixed in a future release.
 
 ---
