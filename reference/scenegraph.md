@@ -10,7 +10,7 @@ You can modify properties on any scenenodes within the current [_edit context_](
 edit context, but you cannot make structural changes directly to the scenegraph tree. Instead, use [commands](commands.md).
 
 Typically, you access scenegraph nodes via the [`selection`](selection.md) argument that is passed to your plugin command, or by
-traversing the entire document tree using the [`root`](#RootNode) argument that is passed to your plugin command.
+traversing the entire document tree using the [`documentRoot`](#RootNode) argument that is passed to your plugin command.
 
 **Example**  
 ```js

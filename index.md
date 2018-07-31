@@ -10,14 +10,20 @@ Adobe XD plugins provide a way for developers to extend XD functionality. Plugin
 
 **To see what has changed, review [What Changed](./guides/what-changed.md).**
 
-Plugins are written in JavaScript.
+Plugins are written in JavaScript. You can use most JavaScript features supported by modern web browsers, including ES5 and ES2015 (aka ES6) language features.
+
+Your plugins are not running inside a browser engine, however: instead your JavaScript code interacts with XD's [document model](#scenegraph) to
+influence what is rendered on the design canvas (plugins cannot display any UI yet, but this will be possible soon).
 
 - [Plugin Structure](#structure)
-- [API Modules](#apis)
+    - [JSON manifest](#manifest)
+    - [Menu command handlers](#menu-item-handlers)
+    - [Accessing APIs](#accessing-apis)
+- [Available APIs](#apis)
 - [Core Concepts](#concepts)
     - [Scenegraph](#scenegraph)
     - [Edit context rules](#edit-contexts)
-    - [Coordinate spaces](#coordinate-spaces)
+    - [Coordinate spaces & units](#coordinate-spaces)
     - [Properties with object values](#object-value-properties)
     - [Asynchronous code](#async)
     - [Automatic cleanups](#cleanups)
@@ -25,11 +31,12 @@ Plugins are written in JavaScript.
 <br>
 
 <a name="structure"></a>
-## Anatomy of a Plugin
-An XD plugin consists of a folder containing two files:
+## Plugin Structure
+An XD plugin consists of a folder containing the following files:
 
 * `manifest.json` - Metadata describing the plugin and which menu items it exposes
 * `main.js` - JavaScript source code (a plugin cannot be split into multiple JS files _yet_)
+* Any data files you need to include with your plugin (you can read these files using [File APIs](./reference/file-IO.md))
 
 Plugin folders are located in XD's platform-specific [plugins location](./reference/plugin-location.md).
 
@@ -52,12 +59,12 @@ The declaration for a single menu item looks like this:
 See [detailed manifest documentation](./reference/manifest.md) for more.
 
 <a name="menu-item-handlers"></a>
-#### Menu item handlers
+#### Menu command handlers
 
 Your `main.js` file returns a map linking each commandId (from the manifest) to a _handler function_:
 
 ```js
-function sayHello(selection, root) {
+function sayHello(selection, documentRoot) {
     console.log("Hello, world!");
 }
 
@@ -70,19 +77,35 @@ return {
 
 The command handler is passed two contextual arguments:
 * The current [selection](./reference/selection.md) state
-* The root node of the [scenegraph](./reference/scenegraph.md) (document structure), which the selected objects lie within
+* The root node of the entire document content (see [scenegraph](./reference/scenegraph.md))
 
-#### Accessing API modules
+A command handler can either complete _synchronously_, as in the example above, or it can _return a Promise_ and finish its work _asynchronously_, like this example using [file IO](./reference/file-IO.md):
 
-Some objects are passed directly to your command handler function (see above). Other APIs must be loaded by your
-plugin using `require()` (see below).
+```js
+function sayHello(selection, documentRoot) {
+    return fs.getFileForSaving().then(file => {
+        return file.write("Hello, world!");
+    });
+}
+```
+
+_**Important caveat:**_ In this build, when a plugin command runs asynchronously, _you should not interact with XD at all_ via mouse or keyboard until your
+plugin code is completely done executing. Doing so could freeze XD, break Undo, or corrupt the document. In the future, XD will block the UI to ensure other
+actions can't interfere with your plugin in mid-operation.
+
+<a name="accessing-apis"></a>
+#### Accessing APIs
+
+See [Available APIs](#apis) below for a listing of different APIs and how to access them. Most APIs are loaded using `require()`,
+but a few can be accessed directly as globals, and some key API objects are passed directly to your command handler function
+([see above](#menu-item-handlers)).
 
 Note: you cannot _yet_ use `require()` to load your own JS code that is provided by your plugin. It is currently used
-only to access build-in XD APIs.
+only to access built-in XD APIs.
 
 
 <a name="apis"></a>
-## API Modules
+## Available APIs
 
 #### Principal API modules
 
@@ -90,12 +113,16 @@ only to access build-in XD APIs.
     * This object is passed as an argument to your command handler function (see above)
 * [scenegraph](./reference/scenegraph.md) - APIs available on document nodes
     * Normally you can use these APIs by simply accessing the arguments passed to your command's handler function
-      (`selection` and `root`).
+      (`selection` and `documentRoot`).
     * To create _new_ nodes in the document, load this module explicitly to access the constructor functions:
       <br>`var Rectangle = require("scenegraph").Rectangle;`
       <br>`var node = new Rectangle();`
 * [commands](./reference/commands.md) - Invoke commands to change the document structure and other complex operations.
     * Load this module explicitly: `var commands = require("commands");`
+* [fs](./reference/file-IO.md) - Read and write files on disk
+    * Load this module explicitly: `var fs = require("localFileSystem").localFileSystem;`
+* [Network](./reference/network-IO.md) - Use browser-style `XMLHttpRequest`, `fetch()`, and `WebSocket` APIs to access the network.
+    * These APIs are in the global namespace, so you can use them without any `require()` statements
 * [clipboard](./reference/clipboard.md) - Copy text to the clipboard.
     * Load this module explicitly: `var clipboard = require("clipboard");`
 
@@ -148,7 +175,7 @@ structural changes by scripting XD commands:
 If a plugin breaks any of these rules, its entire edit operation will be reverted to protect the user's document from corruption.
 
 <a name="coordinate-spaces"></a>
-##### Coordinate spaces
+##### Coordinate spaces & units
 
 Sizes and distances in XD are specified in DPI-independent pixels, equivalent to pixels on a 1x display. This is similar to the "CSS
 pixels" used in web design.
@@ -222,3 +249,6 @@ To make writing your plugin simpler, XD performs a number of automated cleanups 
   and vice versa if a node no longer overlaps an Artboard.
 * **Selection** - Deleted nodes are removed from the selection when the command finishes.
 * **Empty containers** - If deleting node(s) has caused the parent container to become empty, it is automatically deleted as well after the command finishes.
+* **Symbol / Repeat Grid syncing** - Most changes you make inside a Symbol are automatically mirrored to all other copies of that Symbol, and most changes you
+  make inside a Repat Grid cell are automatically mirrored to all its other cells. The only exceptions are certain properties such as text and images which XD
+  permits to vary between Symbol instances or grid cells.

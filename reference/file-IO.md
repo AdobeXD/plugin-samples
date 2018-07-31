@@ -39,7 +39,7 @@ You can create a file too:
 
 ```js
 const newFile = await tempFolder.createEntry("tempfile.txt", {overwrite: true});
-newFile.write("Hellok world!");
+newFile.write("Hello, world!");
 ```
 
 ## Classes
