@@ -16,13 +16,12 @@ After setting up the sample, you will have an XD plugin and a separate node serv
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Contents
 
-1. [GitHub](#github)
 1. [Technology Used](#technology-used)
 1. [Prerequisites](#prerequisites)
 1. [Configuration](#configuration)
-    1. [Install Node.js packages](#install-nodejs-packages)
-    1. [Enter your Adobe API credentials](#enter-your-adobe-api-credentials)
-1. [Usage](#usage)
+1. [Development Steps](#development-steps)
+1. [Next Steps](#next-steps)
+1. [Other Resources](#other-resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
