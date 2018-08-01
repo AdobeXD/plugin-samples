@@ -12,9 +12,13 @@ Issues and pull requests in this repo are accepted for _exactly 2 types of thing
 1. Issues/PRs for the guides contained within this repo.
 1. Issues/PRs for the samples contained within this repo.
 
-If you have issues or pull requests related to anything else, including CEP itself, please visit the related repo.
+If you have issues or pull requests related to anything else, including XD itself, please visit the related repo or support site.
 
 If you intend to make a major change or new contribution, please raise an issue first to discuss with us.
+
+> **IMPORTANT**
+>
+> When submitting a new guide, you must add it to [`SUMMARY.md`](./SUMMARY.md) in order for the documentation rendering to be updated. Failure to do so will result in your guide not being visible in the public documentation.
 
 
 ## Code Of Conduct
