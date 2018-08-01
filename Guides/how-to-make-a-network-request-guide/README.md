@@ -1,9 +1,8 @@
-# Title
+# How to request information from a remote server
 
-Description
+Adobe XD plugins can make [network requests](#TODO) using [`XMLHttpRequest`](#TODO) and [`fetch`](#TODO). Plugins can also use the [`Websocket`](#TODO) API as well, but that is beyond the scope of this guide.
 
-<!-- Image or GIF if necessary -->
-![PLUGINNAME]()
+In this guide, we'll create a plugin that can request information from a remote server using `fetch`.
 
 <!-- doctoc command config: -->
 <!-- $ doctoc ./readme.md --title "## Contents" --entryprefix 1. --gitlab --maxlevel 2 -->
@@ -13,10 +12,8 @@ Description
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Technology Used
-- References: (reference to docs)[references/selection.md]
-- Libraries/Frameworks/APIs:
-    - Adobe-specific: [name](link)
-    - External: [library name](link)
+- References:
+    - [fetch](#TODO)
 
 ## Prerequisites
 Basic knowledge of HTML, CSS, and JavaScript.
