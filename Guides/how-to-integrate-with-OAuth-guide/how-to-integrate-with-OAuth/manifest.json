@@ -1,6 +1,7 @@
 {
     "id": "com.adobe.xd.oauth",
     "name": "Oauth plugin",
+    "version": "0.0.1",
     "host": {
         "app": "XD",
         "minVersion": "8.0"

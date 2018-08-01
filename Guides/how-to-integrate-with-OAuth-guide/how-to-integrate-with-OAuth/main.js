@@ -1,42 +1,69 @@
 const { Text, Color } = require("scenegraph");
-const fs = require("localFileSystem").localFileSystem;
-const publicUrl = "https://476322de.ngrok.io"
+const publicUrl = "https://176d0d74.ngrok.io"
+let accessToken;
 
-function launchOAuth() {
-	const idRequest = new XMLHttpRequest();
-	idRequest.responseType = 'json';
-	idRequest.timeout = 6000;
-	idRequest.onload = function (e2) {
-		var json = idRequest.response;
+async function launchOAuth(selection) {
+	// Retrieve he access token if it doesn't exist already
+	if (!accessToken) {
+		const rid = await xhrRequest(`${publicUrl}/getRequestId`, 'GET')
+			.then(response => {
+				return response.id;
+			})
 
-		// open the native browser
-		// openUri(`${publicUrl}/login?requestId=${json.id}`)
+		// Here is where I need to insert the openUrl API once it becomes available
 
-		function checkCredentials(url) {
-			// Poll to get the credentials
-			const tokenRequest = new XMLHttpRequest();
-			tokenRequest.responseType = 'json';
-			tokenRequest.timeout = 6000;
-			tokenRequest.onload = function (e2) {
-				var json2 = tokenRequest.response;
-				console.log(json2)
-			}
-			tokenRequest.ontimeout = function () {
-				console.log("polling..")
-				checkCredentials(url)
-			}
-			tokenRequest.open('GET', `${publicUrl}/getCredentials?requestId=${json.id}`, true);
-			tokenRequest.send();
+		accessToken = await xhrRequest(`${publicUrl}/getCredentials?requestId=${rid}`, 'GET')
+			.then(tokenResponse => {
+				return tokenResponse.accessToken;
+			})
+	}
+
+	// Retrieve the current user's dropbox profile using the access toekn received from OAuth
+	const dropboxProfileUrl = `https://api.dropboxapi.com/2/users/get_current_account?authorization=Bearer%20${accessToken}`;
+	const dropboxProfile = await xhrRequest(dropboxProfileUrl, 'POST');
+
+	// Create a text element with the profile JSON
+	const text = new Text();
+	text.text = JSON.stringify(dropboxProfile);
+	text.styleRanges = [
+		{
+			length: text.text.length,
+			fill: new Color("#0000ff"),
+			fontSize: 10
 		}
-		checkCredentials(`${publicUrl}/getCredentials?requestId=${json.id}`)
+	];
+	selection.insertionParent.addChild(text);
+	text.moveInParentCoordinates(100, 100);
+}
 
-
-	}
-	idRequest.ontimeout = function () {
-		console.log("timedout")
-	}
-	idRequest.open('GET', `${publicUrl}/getRequestId`, true);
-	idRequest.send();
+// XHR helper function
+function xhrRequest(url, method) {
+	return new Promise((resolve, reject) => {
+		const req = new XMLHttpRequest();
+		req.timeout = 6000;
+		req.onload = () => {
+			if (req.status === 200) {
+				try {
+					resolve(req.response);
+				} catch (err) {
+					reject(`Couldn't parse response. ${err.message}, ${req.response}`);
+				}
+			} else {
+				reject(`Request had an error: ${req.status}`);
+			}
+		}
+		req.ontimeout = () => {
+			console.log("polling..")
+			resolve(xhrRequest(url, method))
+		}
+		req.onerror = (err) => {
+			console.log(err)
+			reject(err)
+		}
+		req.open(method, url, true);
+		req.responseType = 'json';
+		req.send();
+	});
 }
 
 return {
