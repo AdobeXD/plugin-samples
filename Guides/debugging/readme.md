@@ -73,14 +73,20 @@ It looks the function is running... maybe there is another problem.
 
 Oops, the fill color was `#FFFFFF`, which is white, and so is our background.
 
-<!-- ## Next Steps
+You can verify this with a console.log message:
 
-Next, try out some of our other guides:
+```javascript
+console.log("el fill color =" + el.fill);
+```
 
-- [Some other guide](some-other-guide)
-- [Some other guide](some-other-guide)
+## Next Steps
+
+Ready for more? Try out some of our other guides:
+
+- [How do display an image](/Guides/how-to-display-an-image)
+- [How to style text](Plugin-Guides/tree/master/Guides/how-to-style-text-guide)
 
 ## Other Resources
 
 - [Title](link)
-- [Title](link) -->
+- [Title](link)
