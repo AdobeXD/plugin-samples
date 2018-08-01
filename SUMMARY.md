@@ -6,6 +6,7 @@
 * [Debugging Plugins](./Guides/debugging/README.md)
 
 ## Working with Content
+* [How to draw lines](./Guides/how-to-draw-lines-guide/README.md)
 * [How to work with paths](./Guides/how-to-create-path-objects-guide/README.md)
 * [Working with the SceneNode list](./Guides/working-with-scenenodelist-guide/README.md)
 * [How to style text](./Guides/how-to-style-text-guide/README.md)
