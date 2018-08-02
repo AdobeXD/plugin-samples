@@ -27,6 +27,6 @@ function createPieChartHandlerFunction(selection) {
 
 return {
     commands: {
-        helloCommand: createPieChartHandlerFunction
+        "createPieChartCommand": createPieChartHandlerFunction
     }
 }
