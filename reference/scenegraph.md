@@ -1197,6 +1197,8 @@ the horizontal centerpoint of the text.
 The bounds reported for a Text object leave enough space for descenders, uppercase letters, and accent marks, even if the current
 string does not contain any of those characters. This makes aligning text based on its bounds behave more consistently.
 
+**Known issue:** It is not currently possible to write a plugin that creates an Area Text object.  Support for that feature will be added soon.
+
 * [Text](#Text)
     * [.text](#Text+text) : <code>string</code>
     * [.styleRanges](#Text+styleRanges) : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:!Color, charSpacing:number, underline:boolean}&gt;</code>
@@ -1419,4 +1421,3 @@ The size of each grid cell. The size of each cell's content can vary slightly du
 
 Container node whose content is linked to an external resource, such as Creative Cloud Libraries. It cannot be edited except by first
 ungrouping it, breaking this link.
-
