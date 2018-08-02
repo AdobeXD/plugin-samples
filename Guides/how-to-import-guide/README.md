@@ -63,7 +63,7 @@ Edit the manifest file for your plugin:
 In the main.js file, link the commandId to a handler function
 
 ```js
-function insertTextFromFileHandler(selection) {
+async function insertTextFromFileHandler(selection) {
     // The body of this function is added later
 }
 
@@ -90,14 +90,14 @@ This example uses File I/O to import a file from user's local drive, so we need 
 
 ### 4. Create an asynchronous handler function
 ```js
-async function loadTextHandlerFunction(selection) { // [1]
-    const [aFile] = await fs.getFileForOpening();   // [2]
-    if (!aFile)                                     // [3]
+async function insertTextFromFileHandler(selection) { // [1]
+    const [aFile] = await fs.getFileForOpening();     // [2]
+    if (!aFile)                                       // [3]
 	return;
 	
-    const contents = await aFile.read();            // [4]
+    const contents = await aFile.read();              // [4]
 
-    const text = new Text();                        // [5] 
+    const text = new Text();                          // [5] 
     text.text = contents;
     text.styleRanges = [{
         length: contents.length,
