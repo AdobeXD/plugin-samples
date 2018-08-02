@@ -14,7 +14,6 @@ In this guide, you will learn to debug your Adobe XD plugin.
 1. [Prerequisites](#prerequisites)
 1. [Debugging Steps](#debugging-steps)
 1. [Next Steps](#next-steps)
-1. [Other Resources](#other-resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
