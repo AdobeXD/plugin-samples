@@ -1,16 +1,16 @@
 {
-    "id": "com.adobe.xd.wedges",
-    "name": "Draw Wedges",
+    "id": "com.adobe.xd.createPieChart",
+    "name": "Create Pie Chart sample plugin",
     "host": {
         "app": "XD",
         "minVersion": "8.0"
     },
-    "version": "0.0.1",
+    "version": "1.0.0",
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Draw Wedges",
-            "commandId": "drawWedges"
+            "label": "Create Pie Chart",
+            "commandId": "createPieChartCommand"
         }
     ]
 }

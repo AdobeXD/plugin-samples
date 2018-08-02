@@ -14,7 +14,7 @@ function randomColor() {
     return color;
 }
 
-function drawLines(selection) {
+function createLinesHandlerFunction(selection) {
     let lines = [];
     lineData.forEach(data => {
         const line = new Line();
@@ -35,5 +35,7 @@ function drawLines(selection) {
 }
 
 return {
-    commands: { drawLines }
-};
+    commands: {
+        "createLinesCommand": createLinesHandlerFunction
+    }
+}

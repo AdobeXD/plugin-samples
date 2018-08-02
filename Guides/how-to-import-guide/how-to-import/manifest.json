@@ -1,16 +1,16 @@
 {
-    "id": "com.adobe.xd.import",
-    "name": "Import plugin",
+    "id": "com.adobe.xd.insertTextFromFile",
+    "name": "Insert Text from File",
     "host": {
         "app": "XD",
         "minVersion": "8.0"
     },
-    "version": "0.0.1",
+    "version": "1.0.0",
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "load text via File I/O",
-            "commandId": "loadText"
+            "label": "Insert Text From File",
+            "commandId": "insertTextFromFileCommand"
         }
     ]
 }

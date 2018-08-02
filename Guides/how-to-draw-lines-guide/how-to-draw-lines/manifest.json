@@ -1,16 +1,16 @@
 {
-    "id": "com.adobe.xd.lines",
-    "name": "Lines plugin",
+    "id": "com.adobe.xd.createLines",
+    "name": "Create Lines sample plugin",
     "host": {
         "app": "XD",
         "minVersion": "8.0"
     },
-    "version": "0.0.1",
+    "version": "1.0.0",
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Draw lines",
-            "commandId": "drawLines"
+            "label": "Create lines",
+            "commandId": "createLinesCommand"
         }
     ]
 }

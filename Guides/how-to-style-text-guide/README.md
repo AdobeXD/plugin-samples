@@ -71,7 +71,7 @@ function createStyledTextHandlerFunction(selection) {
 
 return {
     commands: {
-        createStyledTextCommand: createStyledTextHandlerFunction
+        "createStyledTextCommand": createStyledTextHandlerFunction
     }
 }
 ```

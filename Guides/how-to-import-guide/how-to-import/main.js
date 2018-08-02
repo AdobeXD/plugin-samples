@@ -1,22 +1,26 @@
 const { Text, Color } = require("scenegraph");
 const fs = require("localFileSystem").localFileSystem;
 
-async function loadText(selection) {
-	const [aFile] = await fs.getFileForOpening();
-	const contents = await aFile.read();
-	const text = new Text();
-	text.text = contents;
-	text.styleRanges = [
-		{
-			length: text.text.length,
-			fill: new Color("#0000ff"),
-			fontSize: 40
-		}
-	];
-	selection.insertionParent.addChild(text);
-	text.moveInParentCoordinates(100, 100);
+async function insertTextFromFileHandler(selection) {
+    const [aFile] = await fs.getFileForOpening();
+    if (!aFile)
+	return;
+	
+    const contents = await aFile.read();
+	
+    const text = new Text();
+    text.text = contents;
+    text.styleRanges = [{
+        length: contents.length,
+        fill: new Color("#0000ff"),
+        fontSize: 12
+    }];
+    selection.insertionParent.addChild(text);
+    text.moveInParentCoordinates(10, 30);
 }
 
 return {
-	commands: { loadText }
-};
+    commands: {
+        "insertTextFromFileCommand": insertTextFromFileHandler
+    }
+}

@@ -1,8 +1,8 @@
-# Draw wedges
+# Create a pie chart
 
-This sample demonstrates how to draw wedge shapes using path objects.
+This sample demonstrates how to create shapes using path objects.
 
 ## Usage
 
-1. Run "Plugins > Draw Wedges"
-1. 4 wedges creating a pie chart appear in the XD artboard
+1. Run "Plugins > Create Pie Chart"
+2. A pie chart appears in the XD artboard
