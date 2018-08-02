@@ -55,7 +55,7 @@ function createRainbowTextHandlerFunction(selection) {
 
 return {
     commands: {
-        "createRedTextCommand": "createRedTextHandlerFunction",
-        "createRainbowTextCommand": "createRainbowTextHandlerFunction"
+        "createRedTextCommand": createRedTextHandlerFunction,
+        "createRainbowTextCommand": createRainbowTextHandlerFunction
     }
 };
