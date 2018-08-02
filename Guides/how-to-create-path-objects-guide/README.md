@@ -25,13 +25,13 @@ This sample demonstrates how to create path objects in XD.  The path objects are
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
 - Basic knowledge of [Paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths)
-- [Getting Started Guide](../getting-started-guide)
+- [Getting Started Guide](/Guides/getting-started-guide)
 
 ## Development Steps
 
 ### 1.  Create plugin scaffold
 
-As described in the [Getting Started Guide](../getting-started-guide), create the directory for your plugin:
+As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
 
 ```
 $ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
@@ -140,10 +140,6 @@ Ater saving all your changes, reload the plugin in XD and invoke it.  The result
 
 ## Next Steps
 
-Description
+Ready for more? Take a look at other guides:
 
-- [How to debug](how-to-debug)
-
-## Other Resources
-- [Title](link)
-- [Title](link)
+- [Guides](/Guides)
