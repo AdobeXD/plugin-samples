@@ -69,7 +69,7 @@ async function insertTextFromFileHandler(selection) {
 
 return {
     commands: {
-        insertTextFromFileCommand: insertTextFromFileHandler
+        "insertTextFromFileCommand": insertTextFromFileHandler
     }
 }
 ```
