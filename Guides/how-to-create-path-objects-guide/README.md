@@ -70,7 +70,7 @@ function createPieChartHandlerFunction(selection) {
 
 return {
     commands: {
-        createPieChartCommand: createPieChartHandlerFunction
+        "createPieChartCommand": createPieChartHandlerFunction
     }
 }
 ```
