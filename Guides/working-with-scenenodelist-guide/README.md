@@ -10,6 +10,14 @@ Description
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Contents
+
+1. [Technology Used](#technology-used)
+1. [Prerequisites](#prerequisites)
+1. [Development Steps](#development-steps)
+1. [Next Steps](#next-steps)
+1. [Other Resources](#other-resources)
+
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Technology Used

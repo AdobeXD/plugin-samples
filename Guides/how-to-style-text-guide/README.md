@@ -9,11 +9,10 @@ Creating styled text in Adobe XD is easy! In this guide, we'll show you how to c
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Contents
 
-- [Technology Used](#technology-used)
-- [Prerequisites](#prerequisites)
-- [Development Steps](#development-steps)
-- [Next Steps](#next-steps)
-- [Other Resources](#other-resources)
+1. [Technology Used](#technology-used)
+1. [Prerequisites](#prerequisites)
+1. [Development Steps](#development-steps)
+1. [Next Steps](#next-steps)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -175,7 +174,3 @@ Description
 
 - [How to debug](how-to-debug)
 - [Investigate the style properties that are available](https://adobe-xd.gitbook.io/plugin-api-reference/scenegraph-reference/scenegraph#text-styleranges-array)
-
-## Other Resources
-- [Title](link)
-- [Title](link)
