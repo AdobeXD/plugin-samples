@@ -1,6 +1,6 @@
 const { Text, Color } = require("scenegraph");
 
-function addRedText(selection) {
+function createRedTextHandlerFunction(selection) {
 
     // create a new Text node
     const node = new Text();
@@ -20,38 +20,42 @@ function addRedText(selection) {
     selection.insertionParent.addChild(node);
 
     // position te text node
-    node.moveInParentCoordinates(100, 100);
+    node.moveInParentCoordinates(20, 50);
 }
 
-function addRainbowText(selection) {
+function createRainbowTextHandlerFunction(selection) {
 
     const node = new Text();
-
-    const colors = [
-        "red", "orange", "yellow",
-        "green", "blue", "indigo",
-        "violet"
+    
+    const textData = [
+    	{text: "This ", color: "red"},
+    	{text: "is ",   color: "orange"},
+    	{text: "some ", color: "yellow"},
+    	{text: "ra",    color: "green"},
+    	{text: "in",    color: "blue"},
+    	{text: "bow ",  color: "indigo"},
+    	{text: "text",  color: "violet"}
     ];
-
-    node.text = colors.map(color => color.toUpperCase()).join(" ");
-
+    
+    node.text = textData.map(item => item.text).join("");
+    
     // styleRange is an array of styles, and `length`
     // determines how far into the text each style applies.
     // A length of 1 means the style applies to one
     // character.
-    node.styleRanges = colors.map(color => ({
-        length: color.length + 1, // includes the space
-        fill: new Color(color), // color understands color names
+    node.styleRanges = textData.map(item => ({
+        length: item.text.length,
+        fill: new Color(item.color),
         fontSize: 24
     }));
 
     selection.insertionParent.addChild(node);
-    node.moveInParentCoordinates(100, 100);
+    node.moveInParentCoordinates(20, 50);
 }
 
 return {
     commands: {
-        addRedText,
-        addRainbowText
+        "createRedTextCommand": "createRedTextHandlerFunction",
+        "createRainbowTextCommand": "createRainbowTextHandlerFunction"
     }
 };
