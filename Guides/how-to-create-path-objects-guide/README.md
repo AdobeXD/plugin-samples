@@ -88,18 +88,19 @@ const { Path, Color } = require("scenegraph");
 
 ```
 function pointOnCircle(radius, angle) {
-    const xcoord = radius * Math.cos(angle);
-    const ycoord = radius * Math.sin(angle);
+    const radians = angle * 2. * Math.PI / 360.;
+    const xcoord = radius * Math.cos(radians);
+    const ycoord = radius * Math.sin(radians);
     return xcoord + "," + ycoord;
 }
 ```
 
-The angle must be expressed in radians.
+The angle is expressed in degrees.  It must be converted to radians before passing it to the sine and cosine functions.
 
 ### 3. Create a helper function that adds a single pie wedge to the scene graph
 
 ```
-function addWedge(selection, radius, startAngle, endAngle, color) { // [1]
+function createWedge(selection, radius, startAngle, endAngle, color) { // [1]
     const startPt = pointOnCircle(radius, startAngle);
     const endPt = pointOnCircle(radius, endAngle);
     const pathData = `M0,0 L${startPt} A${radius},${radius},0,0,1,${endPt} L0,0`; // [2]
@@ -112,22 +113,21 @@ function addWedge(selection, radius, startAngle, endAngle, color) { // [1]
 ```
 
 1. This function accepts five parameters - the current selection in the scene graph (`selection`), the pie chart radius (`chartRadius`), start radian of the wedge (`startAngle`), end radian of the wedge (`endAngle`), and color of the wedge (`color`)
-2. Based on these paramenters, `pathData` is constructed. The pen is moved to the origin, a line is drawn to the start point, an arc is drawn to the end point, and then a line is drawn back to the origin.  For more information on how to write path data, please refer to [Paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths)
+2. Based on these paramenters, `pathData` is constructed. The pen is moved to the origin, a line is drawn to the first point on the edge of the circle, an arc is drawn to the second point on the edge of the circle, and then a line is drawn back to the origin.  For more information on how to create path data, please refer to [Paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths)
 3. Create a new instance of `Path`
 4. Set `pathData`
 5. Set the color of the path object
-6. Move the path object so the coordinates of the top left of the pie chart are `0,0`
-7. Insert the path object into the artboard
+6. Move the path object down and to the right by `radius` units.  As a result, the pie chart will appear with its top left corner positioned at `0,0`.
+7. Insert the path object into the currently-selected artboard
 
 ### 4. Create the main handler function, which creates four wedges
 
 ```
 function createPieChartHandlerFunction(selection) {
-    const angle = 2 * Math.PI / 8;
-    addWedge(selection, 100, 0, 2*angle, "red");
-    addWedge(selection, 100, 2*angle, 3*angle, "blue");
-    addWedge(selection, 100, 3*angle, 5*angle, "yellow");
-    addWedge(selection, 100, 5*angle, 8*angle, "purple");
+    createWedge(selection, 100, 0, 90, "red");
+    createWedge(selection, 100, 90, 135, "blue");
+    createWedge(selection, 100, 135, 225, "yellow");
+    createWedge(selection, 100, 225, 360, "purple");
 }
 ```
 Note that the end angle of each wedge matches the start angle of the next wedge.  As a result, the wedges fit together to create a complete pie chart.
