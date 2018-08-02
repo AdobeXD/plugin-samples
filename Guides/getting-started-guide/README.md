@@ -138,4 +138,4 @@ You’ve built your first plugin with Adobe XD!
 
 ## Next Steps
 
-To continue, Read the [full API reference](https://github.com/AdobeXD/Plugin-Reference) or [other guides](https://github.com/AdobeXD/Plugin-Guides).
+To continue, Read the [full API reference](https://github.com/AdobeXD/Plugin-Reference) or [other guides](/Guides).
