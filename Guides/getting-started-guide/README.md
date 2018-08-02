@@ -2,6 +2,20 @@
 
 Let’s walk through the process of how you can create an Adobe XD plugin. This plugin is pretty simple to start, but you should be able to follow the instructions to create just more complex plugins as well.
 
+<!-- doctoc command config: -->
+<!-- $ doctoc ./readme.md --title "## Contents" --entryprefix 1. --gitlab --maxlevel 2 -->
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Contents
+
+1. [Technology Used](#technology-used)
+1. [Prerequisites](#prerequisites)
+1. [Development Steps](#development-steps)
+1. [Next Steps](#next-steps)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Technology Used
 - References: [reference to XD docs](https://github.com/AdobeXD/Plugin-Reference/tree/master/reference)
 - Libraries/Frameworks/APIs: None
@@ -116,7 +130,7 @@ If you haven’t already done so, go ahead and launch XD and open a new document
 
 Alternatively, if XD was already running, then select **Plugins | Development | Reload Plugins**.
 
-![It worked](../../.meta/readme-assets/on-canvas.png)
+![It worked](/.meta/readme-assets/on-canvas.png)
 
 ### Congratulations!
 

@@ -5,16 +5,26 @@ In this guide, you will learn to debug your Adobe XD plugin.
 <!-- Image or GIF if necessary -->
 
 <!-- doctoc command config: -->
-<!-- $ doctoc ./readme.md --title "## Contents" --entryprefix 1. --gitlab --maxlevel 3 -->
+<!-- $ doctoc ./readme.md --title "## Contents" --entryprefix 1. --gitlab --maxlevel 2 -->
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Contents
+
+1. [Prerequisites](#prerequisites)
+1. [Debugging Steps](#debugging-steps)
+1. [Next Steps](#next-steps)
+1. [Other Resources](#other-resources)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Prerequisites
 
 - Basic knowledge of JavaScript.
 - At least one plugin installed.
 - You have read the [Getting Started Guide](https://github.com/AdobeXD/Plugin-Guides/tree/master/Guides/getting-started-guide)
+
+## Debugging Steps
 
 ### 1. Open the Developer Console.
 
@@ -81,12 +91,6 @@ console.log("el fill color =" + el.fill);
 
 ## Next Steps
 
-Ready for more? Try out some of our other guides:
+Ready for more? Take a look at other guides:
 
-- [How do display an image](/Guides/how-to-display-an-image)
-- [How to style text](Plugin-Guides/tree/master/Guides/how-to-style-text-guide)
-
-## Other Resources
-
-- [Title](link)
-- [Title](link)
+- [Guides](/Guides)
