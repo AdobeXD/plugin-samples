@@ -19,5 +19,4 @@ Adobe XD plugins provide a way for developers to extend XD functionality. Plugin
 
 ## What's next?
 - [XD Plugin Forum](https://forums.adobeprerelease.com/newxdprerelease/categories/xdplugindev)
-- [Adobe Exchange](https://www.adobeexchange.com/)
 - [How to package and distribute your plugin]()

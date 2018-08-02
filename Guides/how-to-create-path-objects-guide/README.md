@@ -1,5 +1,5 @@
 # How to Create Path Objects
-This sample demonstrates how to create path objects in XD by showing how to draw wedge shapes.
+This sample demonstrates how to create path objects in XD.  The path objects are used to construct a pie chart.
 
 <!-- Image or GIF if necessary -->
 <!-- ![PLUGINNAME]() -->
@@ -29,54 +29,112 @@ This sample demonstrates how to create path objects in XD by showing how to draw
 
 ## Development Steps
 
-### 1.  Get references to the `Path` and `Color` classes from XD’s `scenegraph` module
+### 1.  Create plugin scaffold
+
+As described in the [Getting Started Guide](../getting-started-guide), create the directory for your plugin:
+
+```
+$ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
+$ mkdir com.adobe.xd.createPieChart
+$ cd com.adobe.xd.createPieChart
+$ touch manifest.json
+$ touch main.js
+``` 
+
+Edit the manifest file for your plugin:
+
+```
+{
+    "id": "com.adobe.xd.createPieChart",
+    "name": "Create Pie Chart sample plugin",
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+    "version": "1.0.0",
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Create Pie Chart",
+            "commandId": "createPieChartCommand"
+        }
+    ]
+}
+```
+
+In the main.js file, link the commandId to a handler function
+
+```
+function createPieChartHandlerFunction(selection) {
+    // The body of this function is added later
+}
+
+return {
+    commands: {
+        createPieChartCommand: createPieChartHandlerFunction
+    }
+}
+```
+
+The remaining steps in this guide describe additional edits to the main.js file.
+
+### 2.  Get references to the `Path` and `Color` classes from XD’s `scenegraph` module
 ```
 const { Path, Color } = require("scenegraph");
 ```
 `Path` and `Color` classes are imported and ready to be used.
 
-### 2. Create the main function, `drawWedges`
+### 3. Create a helper function to calculate the coordinates of a point on a circle
 
 ```
-function drawWedges(selection) {
-    ...
+function pointOnCircle(radius, angle) {
+    const radians = angle * 2. * Math.PI / 360.;
+    const xcoord = radius * Math.cos(radians);
+    const ycoord = radius * Math.sin(radians);
+    return xcoord + "," + ycoord;
 }
 ```
-Note that `selection` parameter will be used inside the function.
 
-### 3. Create a helper function to calculate the coordinates
-```
-const coords = (radius, radian) => (radius * Math.cos(radian)) + "," + (radius * Math.sin(radian));
-```
-`coords` function takes `radius` and `radian` as paramters and return the corresponding x,y coordinates.
+The angle is expressed in degrees.  It must be converted to radians before passing it to the sine and cosine functions.
 
-### 4. Create another helper function to draw paths
+### 3. Create a helper function that adds a single pie wedge to the scene graph
+
 ```
-const draw = (chartRadius, startAngleRadian, endAngleRadian, wedgeColor) => { // [1]
-    const pathData = `M0,0 L${coords(chartRadius, startAngleRadian)} A${chartRadius},${chartRadius},0,0,1,${coords(chartRadius, endAngleRadian)} L0,0`; // [2]
-    const piece = new Path(); // [3]
-    piece.pathData = pathData; // [4]
-    piece.fill = new Color(wedgeColor); // [5]
-    piece.translation = { x: chartRadius, y: chartRadius };  // [6]
-    selection.insertionParent.addChild(piece); // [7]
+function createWedge(selection, radius, startAngle, endAngle, color) { // [1]
+    const startPt = pointOnCircle(radius, startAngle);
+    const endPt = pointOnCircle(radius, endAngle);
+    const pathData = `M0,0 L${startPt} A${radius},${radius},0,0,1,${endPt} L0,0`; // [2]
+    const wedge = new Path(); // [3]
+    wedge.pathData = pathData; // [4]
+    wedge.fill = new Color(color); // [5]
+    wedge.translation = {x: radius, y: radius};  // [6]
+    selection.insertionParent.addChild(wedge); // [7]
 }
 ```
-1. This function accepts four parameters - the pie chart radius (`chartRadius`), start radian of the wedge (`startAngleRadian`), end radian of the wedge (`endAngleRadian`), and color of the wedge (`wedgeColor`)
-2. Based on these paramenters, `pathData` is constructed. For more information on how to write path data, please refer to [Paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths)
+
+1. This function accepts five parameters - the current selection in the scene graph (`selection`), the pie chart radius (`chartRadius`), start radian of the wedge (`startAngle`), end radian of the wedge (`endAngle`), and color of the wedge (`color`)
+2. Based on these paramenters, `pathData` is constructed. The pen is moved to the origin, a line is drawn to the first point on the edge of the circle, an arc is drawn to the second point on the edge of the circle, and then a line is drawn back to the origin.  For more information on how to create path data, please refer to [Paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths)
 3. Create a new instance of `Path`
 4. Set `pathData`
 5. Set the color of the path object
-6. Move the path object so the coordinates of the top left of the wedge is `0,0`
-7. Insert the object into the artboard
+6. Move the path object down and to the right by `radius` units.  As a result, the pie chart will appear with its top left corner positioned at `0,0`.
+7. Insert the path object into the currently-selected artboard
 
-### 5. Draw four wedges
+### 4. Create the main handler function, which creates four wedges
+
 ```
-draw(100, 0, 2, "red");
-draw(100, 2, 3, "blue");
-draw(100, 3, 5, "yellow");
-draw(100, 5, 7, "purple");
+function createPieChartHandlerFunction(selection) {
+    createWedge(selection, 100, 0, 90, "red");
+    createWedge(selection, 100, 90, 135, "blue");
+    createWedge(selection, 100, 135, 225, "yellow");
+    createWedge(selection, 100, 225, 360, "purple");
+}
 ```
-Note that start radian and end radian of each wedge is intentially configured to make a piechart all together.
+Note that the end angle of each wedge matches the start angle of the next wedge.  As a result, the wedges fit together to create a complete pie chart.
+
+### 5. Execute the plugin
+
+Ater saving all your changes, reload the plugin in XD and invoke it.  The result should be similar to the following:
 
 <img src="../../.meta/readme-assets/pie-chart.png" width="50%" height="50%">
 

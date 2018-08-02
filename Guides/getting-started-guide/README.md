@@ -30,22 +30,22 @@ Navigate to the above path, and if there _isn’t_ a folder that already exists 
 
 Adobe XD plugins require two files:
 
-*   `xdplugin.json` is your plugin’s **manifest**. This file includes information about the plugin, such as its name, the menu item(s) it adds to XD, and so on.
+*   `manifest.json` is your plugin’s **manifest**. This file includes information about the plugin, such as its name, the menu item(s) it adds to XD, and so on.
 *   `main.js` is your plugin’s **code**. This file contains your JavaScript code that implements the logic for your plugin.
 
-These two files (and any others you need) are stored within a folder. Each plugin gets its own folder, so the folder names need to be unique.
+These two files (and any others you need) are stored within a folder. Each plugin gets its own folder, so the folder names need to be unique.  By convention, the name of the folder is usually the same as the id of the plugin (for more information about plugin ids, see the description of the manifest file, below). 
 
 ```
     $ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
-    $ mkdir com.adobe.xd.hello-world
-    $ cd com.adobe.xd.hello-world
+    $ mkdir com.adobe.xd.helloWorld
+    $ cd com.adobe.xd.helloWorld
     $ touch xdplugin.json
     $ touch main.js
 ``` 
 
 ### 3. Create your plugin’s manifest
 
-Adobe XD requires that your plugin have a manifest named `xdplugin.json`. Our example looks like this:
+Adobe XD requires that your plugin have a manifest named `manifest.json`. Our example looks like this:
 
     {
         "id": "com.adobe.xd.helloWorld",
@@ -54,6 +54,7 @@ Adobe XD requires that your plugin have a manifest named `xdplugin.json`. Our ex
             "app": "XD",
             "minVersion": "8.0"
         },
+        "version": "1.0.0",
         "uiEntryPoints": [
             {
                 "type": "menu",
@@ -66,13 +67,15 @@ Adobe XD requires that your plugin have a manifest named `xdplugin.json`. Our ex
 
 For more about what each entry means, [see the manifest documentation](https://github.com/AdobeXD/Plugin-Reference/blob/master/reference/manifest.md).
 
+The value of the `commandId` property may be any string.  In the next section, we will see how that string is associated with the code for our plugin.
+
 ### 4. Create your plugin’s code
 
 Next, we need to create the code for our plugin. This lives in a file named `main.js`.
 
     const {Text, Color} = require("scenegraph"); // [1]
     
-    function sayHello(selection) { // [2]
+    function helloHandlerFunction(selection) { // [2]
         const el = new Text(); // [3]
         el.text = "Hello!";
         el.styleRanges = [
@@ -87,27 +90,31 @@ Next, we need to create the code for our plugin. This lives in a file named `mai
     
     return { // [6]
         commands: {
-            helloCommand: sayHello
+            helloCommand: helloHandlerFunction
         }
     }
     
 
 1.  In this line, we get references to the `Text` and `Color` classes from XD’s `scenegraph` module. There are several different [API modules you can load using `require()`](https://github.com/AdobeXD/Plugin-Reference/tree/master/reference).
     
-2.  Next we define our handler function, which will respond to the “Say Hello” menu command.
+2.  Next we define our handler function. The handler function will be invoked when the user selects the “Say Hello” menu command.  The binding between that menu command and this handler function is further described below.
     
 3.  In this line we create a new `Text` object. The following lines assign various properties and styles to the text.
     
 4.  Here we add the `Text` object to the scenegraph. It should show up at the (0, 0) coordinates, so if you don’t see it, try zooming out or panning until you do.
 
-5.  We need to bring the added text into the artboard by moving it by using the scenenode method, [moveInParentCoordinatres](https://github.com/AdobeXD/Plugin-Reference/blob/master/reference/scenegraph.md#scenenodemoveinparentcoordinatesdeltax-deltay). Without this, the text would have been rendered outside of the artboard.
+5.  We bring the added text into the artboard by moving it by using the scenenode method, [moveInParentCoordinatres](https://github.com/AdobeXD/Plugin-Reference/blob/master/reference/scenegraph.md#scenenodemoveinparentcoordinatesdeltax-deltay). Without this, the text would have been rendered outside of the artboard.
 
-6.  The final part of `main.js` is to export the handles functions in a map that links them to the command ID(s) defined in your manifest earlier. The command ID (part to the left of the `:` here must match the IDs in your manifest exactly.
+6.  The final part of `main.js` is to export a map object, which associates the JavaScript handler function with the commandId property declared in the manifest earlier.  The command ID (the part to the left of the `:` here) must match the commandId value declared in your manifest exactly.
     
 
 ### 5. Invoke your plugin
 
-Great – we’ve written a plugin – how do we invoke it? If you haven’t already, go ahead and launch XD and open a new document. Then navigate to **Plugins | Say hello**.
+Great – we’ve written a plugin – how do we invoke it? 
+
+If you haven’t already done so, go ahead and launch XD and open a new document. Then navigate to **Plugins | Say hello**.
+
+Alternatively, if XD was already running, then select **Plugins | Development | Reload Plugins**.
 
 ![It worked](../../.meta/readme-assets/on-canvas.png)
 
@@ -118,8 +125,3 @@ You’ve built your first plugin with Adobe XD!
 ## Next Steps
 
 To continue, Read the [full API reference](https://github.com/AdobeXD/Plugin-Reference) or [other guides](https://github.com/AdobeXD/Plugin-Guides).
-
-## Other Resources
-- [Title](link)
-- [Title](link)
-
