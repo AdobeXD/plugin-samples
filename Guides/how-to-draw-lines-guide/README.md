@@ -1,6 +1,6 @@
-# How to Draw Lines
+# How to add lines to the user's document
 
-This sample demonstrates how to draw lines in XD.
+This sample demonstrates how to create a plugin that adds colored lines to the user's document.
 
 <!-- Image or GIF if necessary -->
 <!-- ![PLUGINNAME]() -->
@@ -36,44 +36,44 @@ This sample demonstrates how to draw lines in XD.
 As described in the [Getting Started Guide](../getting-started-guide), create the directory for your plugin:
 
 ```
-    $ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
-    $ mkdir com.adobe.xd.drawLines
-    $ cd com.adobe.xd.drawLines
-    $ touch manifest.json
-    $ touch main.js
+$ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
+$ mkdir com.adobe.xd.createLines
+$ cd com.adobe.xd.createLines
+$ touch manifest.json
+$ touch main.js
 ``` 
 
 Edit the manifest file for your plugin:
 
 ```
-    {
-        "id": "com.adobe.xd.drawLines",
-        "name": "Draw Lines sample plugin",
-        "host": {
-            "app": "XD",
-            "minVersion": "8.0"
-        },
-        "version": "1.0.0",
-        "uiEntryPoints": [
-            {
-                "type": "menu",
-                "label": "Draw lines",
-                "commandId": "drawLinesCommand"
-            }
-        ]
-    }
+{
+    "id": "com.adobe.xd.createLines",
+    "name": "Create Lines sample plugin",
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+    "version": "1.0.0",
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Create lines",
+            "commandId": "createLinesCommand"
+        }
+    ]
+}
 ```
 
 In the main.js file, link the commandId to a handler function
 
 ```
-function drawLinesHandlerFunction(selection) {
+function createLinesHandlerFunction(selection) {
     // The body of this function is added later
 }
 
 return {
     commands: {
-        drawLinesCommand: drawLinesHandlerFunction
+        createLinesCommand: createLinesHandlerFunction
     }
 }
 ```
@@ -113,9 +113,9 @@ const lineData = [
 ```
 Note that, in this example, the subsequent line's `startX` and `startY` match the former line's `endX` and `endY`. This ensures lines are connected to each other. Feel free to modifiy the data as you wish. 
 
-### 6. Create the main function, `drawLinesHandlerFunction`
+### 6. Create the main function, `createLinesHandlerFunction`
 ```
-function drawLinesHandlerFunction(selection) { // [1]
+function createLinesHandlerFunction(selection) { // [1]
     let lines = []; // [2]
     lineData.forEach(data => { // [3]
         const line = new Line(); //[4]
