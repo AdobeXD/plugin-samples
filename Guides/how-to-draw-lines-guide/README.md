@@ -72,7 +72,7 @@ function createLinesHandlerFunction(selection) {
 
 return {
     commands: {
-        createLinesCommand: createLinesHandlerFunction
+        "createLinesCommand": createLinesHandlerFunction
     }
 }
 ```
