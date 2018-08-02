@@ -11,12 +11,12 @@
         {
             "type": "menu",
             "label": "Add Red Text",
-            "commandId": "addRedText"
+            "commandId": "createRedTextCommand"
         },
         {
             "type": "menu",
             "label": "Add Rainbow Text",
-            "commandId": "addRainbowText"
+            "commandId": "createRainbowTextCommand"
         }
     ]
 }
