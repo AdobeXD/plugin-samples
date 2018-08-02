@@ -9,18 +9,10 @@ Creating styled text in Adobe XD is easy! In this guide, we'll show you how to c
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Contents
 
-<<<<<<< HEAD
 1. [Technology Used](#technology-used)
 1. [Prerequisites](#prerequisites)
 1. [Development Steps](#development-steps)
 1. [Next Steps](#next-steps)
-=======
-- [Technology Used](#technology-used)
-- [Prerequisites](#prerequisites)
-- [Development Steps](#development-steps)
-- [Next Steps](#next-steps)
-- [Other Resources](#other-resources)
->>>>>>> 94b37bc7933291a159b8d230277c4e607ecc149e
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
