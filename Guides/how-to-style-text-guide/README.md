@@ -112,7 +112,7 @@ function createStyledTextHandlerFunction(selection) {
 
 Here are a few things to notice about the `styleRanges` property, which is set in step 3:
 * `styleRanges` is an array of objects; you can have more than one style for a text node.
-* Each style is given a `length` which determines the characters to which the style is applied. Specifying the length of our text string ensures that the color is applied to the entire text node.
+* Each style is given a `length` which determines the number of characters to which the style is applied. Specifying the length of our text string ensures that the color is applied to the entire text node.
 * Text color is specified by the `fill` property. We're using a CSS color which equates to red.
 * The size of the text is specified by `fontSize`.
 
