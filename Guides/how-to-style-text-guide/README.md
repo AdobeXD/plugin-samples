@@ -9,18 +9,12 @@ Creating styled text in Adobe XD is easy! In this guide, we'll show you how to c
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+## Contents
 
-- [Technology Used](#technology-used)
-- [Prerequisites](#prerequisites)
-- [Development Steps](#development-steps)
-    - [1. Import Node Types from the SceneGraph API](#1-import-node-types-from-the-scenegraph-api)
-    - [2. Creating a Text Node](#2-creating-a-text-node)
-    - [3. Create a style range](#3-create-a-style-range)
-    - [4. Add the text node to the scenegraph](#4-add-the-text-node-to-the-scenegraph)
-    - [5. Multiple styles](#5-multiple-styles)
-- [Next Steps](#next-steps)
-- [Other Resources](#other-resources)
+1. [Technology Used](#technology-used)
+1. [Prerequisites](#prerequisites)
+1. [Development Steps](#development-steps)
+1. [Next Steps](#next-steps)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -144,7 +138,3 @@ Description
 
 - [How to debug](how-to-debug)
 - [Investigate the style properties that are available](https://adobe-xd.gitbook.io/plugin-api-reference/scenegraph-reference/scenegraph#text-styleranges-array)
-
-## Other Resources
-- [Title](link)
-- [Title](link)
