@@ -100,7 +100,7 @@ function createStyledTextHandlerFunction(selection) {
     }];
     
     selection.insertionParent.addChild(node); // [4]
-    node.moveInParentCoordinates(20, 50);   // [5]
+    node.moveInParentCoordinates(20, 50);     // [5]
 }
 ```
 
