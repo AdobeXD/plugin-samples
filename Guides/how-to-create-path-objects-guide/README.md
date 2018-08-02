@@ -1,5 +1,5 @@
 # How to Create Path Objects
-This sample demonstrates how to create path objects in XD by showing how to draw wedge shapes.
+This sample demonstrates how to create path objects in XD.  The path objects are used to construct a pie chart.
 
 <!-- Image or GIF if necessary -->
 <!-- ![PLUGINNAME]() -->
@@ -35,8 +35,8 @@ As described in the [Getting Started Guide](../getting-started-guide), create th
 
 ```
 $ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
-$ mkdir com.adobe.xd.drawPieChart
-$ cd com.adobe.xd.drawPieChart
+$ mkdir com.adobe.xd.createPieChart
+$ cd com.adobe.xd.createPieChart
 $ touch manifest.json
 $ touch main.js
 ``` 
@@ -45,8 +45,8 @@ Edit the manifest file for your plugin:
 
 ```
 {
-    "id": "com.adobe.xd.drawPieChart",
-    "name": "Draw Pie Chart sample plugin",
+    "id": "com.adobe.xd.createPieChart",
+    "name": "Create Pie Chart sample plugin",
     "host": {
         "app": "XD",
         "minVersion": "8.0"
@@ -55,8 +55,8 @@ Edit the manifest file for your plugin:
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Draw Pie Chart",
-            "commandId": "drawPieChartCommand"
+            "label": "Create Pie Chart",
+            "commandId": "createPieChartCommand"
         }
     ]
 }
@@ -65,13 +65,13 @@ Edit the manifest file for your plugin:
 In the main.js file, link the commandId to a handler function
 
 ```
-function drawPieChartHandlerFunction(selection) {
+function createPieChartHandlerFunction(selection) {
     // The body of this function is added later
 }
 
 return {
     commands: {
-        drawPieChartCommand: drawPieChartHandlerFunction
+        createPieChartCommand: createPieChartHandlerFunction
     }
 }
 ```
@@ -119,10 +119,10 @@ function addWedge(selection, radius, startAngle, endAngle, color) { // [1]
 6. Move the path object so the coordinates of the top left of the pie chart are `0,0`
 7. Insert the path object into the artboard
 
-### 4. Create the main handler function, which draws four wedges
+### 4. Create the main handler function, which creates four wedges
 
 ```
-function drawPieChartHandlerFunction(selection) {
+function createPieChartHandlerFunction(selection) {
     const angle = 2 * Math.PI / 8;
     addWedge(selection, 100, 0, 2*angle, "red");
     addWedge(selection, 100, 2*angle, 3*angle, "blue");
