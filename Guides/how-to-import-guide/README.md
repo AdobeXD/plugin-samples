@@ -89,23 +89,23 @@ const fs = require("localFileSystem").localFileSystem;
 This example uses File I/O to import a file from user's local drive, so we need to require XD's `localFileSystem` module.
 
 ### 4. Create an asynchronous handler function
-```
+```js
 async function loadTextHandlerFunction(selection) { // [1]
-	const [aFile] = await fs.getFileForOpening();   // [2]
-	if (!aFile)                                     // [3]
-		return;
+    const [aFile] = await fs.getFileForOpening();   // [2]
+    if (!aFile)                                     // [3]
+	return;
 	
-	const contents = await aFile.read();            // [4]
-    
-	const text = new Text();                        // [5] 
-	text.text = contents;
-	text.styleRanges = [{
-		length: contents.length,
-		fill: new Color("#0000ff"),
-		fontSize: 12
-	}];
-	selection.insertionParent.addChild(text);
-	text.moveInParentCoordinates(10, 30);
+    const contents = await aFile.read();            // [4]
+
+    const text = new Text();                        // [5] 
+    text.text = contents;
+    text.styleRanges = [{
+        length: contents.length,
+        fill: new Color("#0000ff"),
+        fontSize: 12
+    }];
+    selection.insertionParent.addChild(text);
+    text.moveInParentCoordinates(10, 30);
 }
 ```
 
