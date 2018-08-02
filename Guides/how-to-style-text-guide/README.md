@@ -106,13 +106,15 @@ function createStyledTextHandlerFunction(selection) {
 
 1. The first step is to create the `Text` object, which will be added to the scenegraph later.
 2. The `Text` object is populated with the string of text to be displayed.
-3. A style range is created, which sets the color to be red and the font size to be 24.  There are a few things you should notice about this step:
-..* `styleRanges` is an array of objects; you can have more than one style for a text node.
-..* Each style is given a `length` which determines the characters to which the style is applied. Specifying the length of our text string ensures that the color is applied to the entire text node.
-..* Text color is specified by the `fill` property. We're using a CSS color which equates to red.
-..* The size of the text is specified by `fontSize`.
+3. A style range is created, which sets the color to be red and the font size to be 24.  
 4. The Text object is added to the scenegraph as a child of the currrently-selected artboard.
 5. The Text object is moved to a different position relative to the artboard's coordinate system.
+
+Here are a few things to notice about the `styleRanges` property, which is set in step 3:
+* `styleRanges` is an array of objects; you can have more than one style for a text node.
+* Each style is given a `length` which determines the characters to which the style is applied. Specifying the length of our text string ensures that the color is applied to the entire text node.
+* Text color is specified by the `fill` property. We're using a CSS color which equates to red.
+* The size of the text is specified by `fontSize`.
 
 ### 4. Test the plugin
 
@@ -153,12 +155,8 @@ function createStyledTextHandlerFunction(selection) {
 
 1. Just like before, we start by creating a `Text` node.
 2. This data structure stores the text to be displayed, as well as the color to use for each fragment of text.
-3. Just as before, we set `node.text` equal to the text to be displayed.  This time, the text string is created by concatenating together all the `text` values contained in the `textData` array.
-..* The `Array#map` function converts each item in the `textData` array to the string that is to be displayed.
-..* The `Array#join` function concatenates those strings together.
-4. In this step, we build the array of styles, applying each style to a few characters of the text string.  We use `Array#map` again, this time converting each item in the `textData` array into a style object.
-..* The `length` of each style is equal to the length of the text string contained in one element of the `textData` array.
-..* The `color` of each style is equal to the color value contained in one element of the `textData` array.
+3. Just as before, we set `node.text` equal to the text to be displayed.  This time, the text string is created by concatenating together all the `text` values contained in the `textData` array. The `Array#map` function converts each item in the `textData` array to the string that is to be displayed. The `Array#join` function concatenates those strings together.
+4. In this step, we build the array of styles, applying each style to a few characters of the text string.  We use `Array#map` again, this time converting each item in the `textData` array into a style object. The `length` of each style is equal to the length of the text string contained in one element of the `textData` array. The `color` of each style is equal to the color value contained in one element of the `textData` array.
 5. Finally, we add the `Text` object to the scenegraph, just as before.
 
 > **Tip:**
