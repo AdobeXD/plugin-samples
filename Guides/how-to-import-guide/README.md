@@ -111,15 +111,15 @@ async function insertTextFromFileHandler(selection) { // [1]
 
 1. This example uses XD's asynchronous Filo I/O APIs, so the handler function must be declared as an async method.
 2. A file picker dialog is displayed, and the function waits for the user to select a file.  See below for more detail.
-3. If aFile is undefined (because the user did not select a file), then plugin execution is aborted.
-4. The contents of the file is read, and it is returned as a string.
+3. If `aFile` is undefined (because the user did not select a file), then plugin execution is aborted.
+4. The contents of the file is read, and it is returned as a string.  See below for more detail.
 5. The contents of the string is added to a `Text` object, and the `Text` object is added to the currently-selected artboard.  For more information, see [How to create styled text](/Guides/how-to-style-text-guide)
 
 Line [2] uses a number of modern Javascript constructs.  It is executed as follows:
 * First,`fs.getFileForOpening()` function returns a `Promise` object.  
 * Next, the `await` keyword causes this asynchronous function to pause until the `Promise` is fulfilled. 
 * If the user selects a file, then the `Promise` is fulfiled. The value of the `await` expression is that of the fulfilled promise, which is an `Array` containing one `File` object.
-* If the user clicks closes the file picker dialog without selecting a file, then the promise is also fulfilled. The value of the await expression is that of the fulfilled promise, which is an empty array.
+* If the user closes the file picker dialog without selecting a file, then the promise is also fulfilled. The value of the `await` expression is that of the fulfilled promise, which is an empty array.
 * Using the "destructuring assignment" syntax, the first element of the array is assigned to `aFile`.  If the array is empty (because the user did not select a file), then `aFile` is set to `undefined`.
 
 Line [4] is also an asynchronous operation:
