@@ -16,7 +16,6 @@ This sample demonstrates how to create a plugin that adds colored lines to the u
 1. [Prerequisites](#prerequisites)
 1. [Development Steps](#development-steps)
 1. [Next Steps](#next-steps)
-1. [Other Resources](#other-resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -152,14 +151,10 @@ function createLinesHandlerFunction(selection) { // [1]
 
 After saving all of your changes, reload the plugin in XD and invoke it.  The result should be similar to the following:
 
-<img src="../../.meta/readme-assets/lines.png" width="50%" height="50%">
+<img src="/.meta/readme-assets/lines.png" width="50%" height="50%">
 
 ## Next Steps
 
-Description
+Ready for more? Take a look at other guides:
 
-- [How to debug](how-to-debug)
-
-## Other Resources
-- [Title](link)
-- [Title](link)
+- [Guides](/Guides)

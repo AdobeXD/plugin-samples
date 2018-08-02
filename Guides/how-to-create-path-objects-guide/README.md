@@ -15,7 +15,6 @@ This sample demonstrates how to create path objects in XD.  The path objects are
 1. [Prerequisites](#prerequisites)
 1. [Development Steps](#development-steps)
 1. [Next Steps](#next-steps)
-1. [Other Resources](#other-resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
