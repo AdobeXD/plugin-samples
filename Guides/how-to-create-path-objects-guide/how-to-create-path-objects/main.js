@@ -1,29 +1,32 @@
-const { Path, Color } = require("scenegraph");
-const commands = require("commands");
+const {Path, Color} = require("scenegraph");
 
-function drawWedges(selection) {
+function pointOnCircle(radius, angle) {
+    const radians = angle * 2. * Math.PI / 360.;
+    const xcoord = radius * Math.cos(radians);
+    const ycoord = radius * Math.sin(radians);
+    return xcoord + "," + ycoord;
+}
 
-    // helper function to calculate the coordinates
-    const coords = (radius, radian) => (radius * Math.cos(radian)) + "," + (radius * Math.sin(radian));
+function createWedge(selection, radius, startAngle, endAngle, color) {
+    const startPt = pointOnCircle(radius, startAngle);
+    const endPt = pointOnCircle(radius, endAngle);
+    const pathData = `M0,0 L${startPt} A${radius},${radius},0,0,1,${endPt} L0,0`;
+    const wedge = new Path();
+    wedge.pathData = pathData;
+    wedge.fill = new Color(color);
+    wedge.translation = {x: radius, y: radius};
+    selection.insertionParent.addChild(wedge);
+}
 
-    // helper function to draw each wedge
-    const draw = (chartRadius, startAngleRadian, endAngleRadian, wedgeColor) => {
-        const pathData = `M0,0 L${coords(chartRadius, startAngleRadian)} A${chartRadius},${chartRadius},0,0,1,${coords(chartRadius, endAngleRadian)} L0,0`;
-        const piece = new Path();
-        piece.pathData = pathData;
-        piece.fill = new Color(wedgeColor);
-        piece.translation = { x: chartRadius, y: chartRadius };  // move so top left of chart is 0,0 instead of center
-        selection.insertionParent.addChild(piece);
-    }
-
-    draw(100, 0, 2, "red");
-    draw(100, 2, 3, "blue");
-    draw(100, 3, 5, "yellow");
-    draw(100, 5, 7, "purple");
+function createPieChartHandlerFunction(selection) {
+    createWedge(selection, 100, 0, 90, "red");
+    createWedge(selection, 100, 90, 135, "blue");
+    createWedge(selection, 100, 135, 225, "yellow");
+    createWedge(selection, 100, 225, 360, "purple");
 }
 
 return {
     commands: {
-        drawWedges
+        helloCommand: createPieChartHandlerFunction
     }
-};
+}
