@@ -2,9 +2,11 @@
 
 Adobe XD plugins provide a way for developers to extend XD functionality. Plugins can manipulate objects on canvas and alter their properties.
 
-*   **Change the properties of objects.** Plugins can change border, fill, opacity, and other object properties without direct user interaction.
-*   **Add and remove items on canvas.** Your plugin can add rectangles, paths, text, and other shapes to the canvas. Using paths, almost any two-dimensional object can be created.
-*   **Automate and extend user actions.** Plugins can automate repetitive actions and free users to focus on content.
+- **Change the properties of objects.** Plugins can change border, fill, opacity, and other object properties without direct user interaction.
+- **Add and remove items on canvas.** Your plugin can add rectangles, paths, text, and other shapes to the canvas. Using paths, almost any two-dimensional object can be created.
+- **Automate and extend user actions.** Plugins can automate repetitive actions and free users to focus on content.
+- **Bring in user's files.** Plugins can load files from user's local drive.
+- **Connect to other sources on the web.** Plugins can make network requests.
 
 **To begin, read the [Getting Started guide](./guides/getting-started.md).** Then return here for more information & detailed API documentation.
 
@@ -12,8 +14,8 @@ Adobe XD plugins provide a way for developers to extend XD functionality. Plugin
 
 Plugins are written in JavaScript. You can use most JavaScript features supported by modern web browsers, including ES5 and ES2015 (aka ES6) language features.
 
-Your plugins are not running inside a browser engine, however: instead your JavaScript code interacts with XD's [document model](#scenegraph) to
-influence what is rendered on the design canvas (plugins cannot display any UI yet, but this will be possible soon).
+Your plugins are not running inside a browser engine, however. Instead, your JavaScript code interacts with XD's [document model](#scenegraph) to
+influence what is rendered on the design canvas. Plugins cannot display any UI yet, but this will be possible soon.
 
 - [Plugin Structure](#structure)
     - [JSON manifest](#manifest)
