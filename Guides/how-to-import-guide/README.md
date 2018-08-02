@@ -15,7 +15,6 @@ This sample describes how an XD plugin can invoke the default file picker and di
 1. [Prerequisites](#prerequisites)
 1. [Development Steps](#development-steps)
 1. [Next Steps](#next-steps)
-1. [Other Resources](#other-resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -52,7 +51,7 @@ const [aFile] = await fs.getFileForOpening();
 ```
 This will invoke the default file chooser on user's machine
 
-<img src="../../.meta/readme-assets/filepicker.png" width="50%" height="50%">
+<img src="/.meta/readme-assets/filepicker.png" width="50%" height="50%">
 
 ### 5. Read the content
 ```
@@ -81,14 +80,10 @@ text.moveInParentCoordinates(100, 100);
 ```
 Note that `moveInParentCoordinates` method is used to move the text inside the artboard.
 
-<img src="../../.meta/readme-assets/displayed-results.png" width="50%" height="50%">
+<img src="/.meta/readme-assets/displayed-results.png" width="50%" height="50%">
 
 ## Next Steps
 
-Description
+Ready for more? Take a look at other guides:
 
-- [How to debug](how-to-debug)
-
-## Other Resources
-- [Title](link)
-- [Title](link)
+- [Guides](/Guides)
