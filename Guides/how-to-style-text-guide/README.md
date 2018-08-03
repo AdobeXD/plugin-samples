@@ -43,7 +43,7 @@ $ touch main.js
 
 Edit the manifest file for your plugin:
 
-```
+```js
 {
     "id": "com.adobe.xd.createStyledText",
     "name": "Create Styled Text sample plugin",
@@ -64,16 +64,16 @@ Edit the manifest file for your plugin:
 
 In the main.js file, link the commandId to a handler function
 
-```
+```js
 function createStyledTextHandlerFunction(selection) {
     // The body of this function is added later
 }
 
-return {
+module.exports = { 
     commands: {
         "createStyledTextCommand": createStyledTextHandlerFunction
     }
-}
+};
 ```
 
 The remaining steps in this guide describe additional edits to the main.js file.
@@ -125,7 +125,7 @@ If you reload the pluign and execute it, you should see the following result:
 
 Now, let's change the code to use multiple styles.  As indicated earlier, the `styleRanges` property takes an _array_ of objects. This means we can have more than one style in a text node. Let's use that to our advantage and create a text node that displays the classical colors of the rainbow.
 
-```
+```js
 function createStyledTextHandlerFunction(selection) {
     const node = new Text();                               // [1]
     
