@@ -15,15 +15,14 @@
 ## Working with I/O
 * [How to read a file](./Guides/how-to-import-guide/README.md)
 * [How to integrate with OAuth](./Guides/how-to-integrate-with-OAuth-guide/readme.md)
-* [How to get a file's native path](./Guides/how-to-get-a-files-native-path/README.md)
 * [How to make a simple network request](./Guides/how-to-make-a-network-request-guide/README.md)
 * [How to connect to a websocket server](./Guides/how-to-connect-to-a-websocket-server/README.md)
 
 ## Building User Interfaces
-* [Asking the user for confirmation](./Guides/how-to-ask-user-for-confirmation/README.md)
-* [Using single-line text editors](./Guides/using-single-line-text-editors/README.md)
+* [Asking the user for confirmation](./Guides/how-to-ask-user-for-confirmation-guide/README.md)
+* [Using single-line text editors](./Guides/how-to-use-single-line-text-ui-guide/README.md)
 * [How to display a dropdown list](./Guides/how-to-display-a-dropdown-list/README.md)
-* [How to display an image](./Guides/how-to-display-an-image/README.md)
+* [How to display an image](./Guides/how-to-display-an-image-guide/README.md)
 
 ## Community
 * [Code of Conduct](./CODE_OF_CONDUCT.md)
