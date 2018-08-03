@@ -19,7 +19,9 @@
 * [How to connect to a websocket server](./Guides/how-to-connect-to-a-websocket-server/README.md)
 
 ## Building User Interfaces
-* [Asking the user for confirmation](./Guides/how-to-ask-user-for-confirmation-guide/README.md)
+* Asking user for confirmation
+	* [With document.createElement](./Guides/how-to-ask-user-for-confirmation-guide/README.md)
+	* [With HTML](./Guides/how-to-ask-user-for-confirmation-guide/README_HTML.md)
 * [Using single-line text editors](./Guides/how-to-use-single-line-text-ui-guide/README.md)
 * [How to display a dropdown list](./Guides/how-to-display-a-dropdown-list/README.md)
 * [How to display an image](./Guides/how-to-display-an-image-guide/README.md)
