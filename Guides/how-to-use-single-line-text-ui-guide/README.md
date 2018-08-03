@@ -1,4 +1,4 @@
-# How to read the contents of a file
+# How to use single line text UI
 This sample describes how an XD plugin can invoke the default file picker and display the text extracted from the file chosen by user.
 
 <!-- Image or GIF if necessary -->
