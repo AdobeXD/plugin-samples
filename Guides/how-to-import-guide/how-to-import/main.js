@@ -1,13 +1,13 @@
 const { Text, Color } = require("scenegraph");
-const fs = require("localFileSystem").localFileSystem;
+const fs = require("uxp").storage.localFileSystem;
 
 async function insertTextFromFileHandler(selection) {
     const [aFile] = await fs.getFileForOpening();
     if (!aFile)
-	return;
-	
+        return;
+
     const contents = await aFile.read();
-	
+
     const text = new Text();
     text.text = contents;
     text.styleRanges = [{
@@ -19,8 +19,8 @@ async function insertTextFromFileHandler(selection) {
     text.moveInParentCoordinates(10, 30);
 }
 
-return {
+module.exports = {
     commands: {
         "insertTextFromFileCommand": insertTextFromFileHandler
     }
-}
+};

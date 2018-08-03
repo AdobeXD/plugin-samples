@@ -42,7 +42,7 @@ $ touch main.js
 
 Edit the manifest file for your plugin:
 
-```
+```js
 {
     "id": "com.adobe.xd.createPieChart",
     "name": "Create Pie Chart sample plugin",
@@ -63,16 +63,16 @@ Edit the manifest file for your plugin:
 
 In the main.js file, link the commandId to a handler function
 
-```
+```js
 function createPieChartHandlerFunction(selection) {
     // The body of this function is added later
 }
 
-return {
+module.exports = { 
     commands: {
         "createPieChartCommand": createPieChartHandlerFunction
     }
-}
+};
 ```
 
 The remaining steps in this guide describe additional edits to the main.js file.

@@ -44,7 +44,7 @@ $ touch main.js
 
 Edit the manifest file for your plugin:
 
-```
+```js
 {
     "id": "com.adobe.xd.createLines",
     "name": "Create Lines sample plugin",
@@ -65,16 +65,16 @@ Edit the manifest file for your plugin:
 
 In the main.js file, link the commandId to a handler function
 
-```
+```js
 function createLinesHandlerFunction(selection) {
     // The body of this function is added later
 }
 
-return {
+module.exports = { 
     commands: {
         "createLinesCommand": createLinesHandlerFunction
     }
-}
+};
 ```
 
 The remaining steps in this guide describe additional edits to the main.js file.
@@ -92,7 +92,7 @@ const commands = require("commands");
 `commands` class is imported and ready to be used.
 
 ### 4. Create a helper function, `randomColor`
-```
+```js
 function randomColor() {
     const hexValues = ['00', '33', '66', '99', 'CC', 'FF'];
     const color = "#" + Array.from({ length: 3 }, _ => hexValues[Math.floor(Math.random() * hexValues.length)]).join("");
@@ -102,7 +102,7 @@ function randomColor() {
 This function returns a web-friendly color hex value.
 
 ### 5. Create line data 
-```
+```js
 const lineData = [
     { startX: 100, startY: 110, endX: 210, endY: 233 },
     { startX: 210, startY: 233, endX: 320, endY: 156 },
@@ -113,7 +113,7 @@ const lineData = [
 Note that, in this example, the subsequent line's `startX` and `startY` match the former line's `endX` and `endY`. This ensures lines are connected to each other. Feel free to modifiy the data as you wish. 
 
 ### 6. Create the main function, `createLinesHandlerFunction`
-```
+```js
 function createLinesHandlerFunction(selection) { // [1]
     let lines = []; // [2]
     lineData.forEach(data => { // [3]
