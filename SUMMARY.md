@@ -3,7 +3,7 @@
 ## Getting Started
 * [Introduction](README.md)
 * [Getting Started](./Guides/getting-started-guide/README.md)
-* [Debugging Plugins](./Guides/debugging-guide/README.md)
+* [Debugging Plugins](./Guides/debugging-guide/readme.md)
 
 ## Working with Content
 * [How to draw lines](./Guides/how-to-draw-lines-guide/README.md)
@@ -14,7 +14,7 @@
 
 ## Working with I/O
 * [How to read a file](./Guides/how-to-import-guide/README.md)
-* [How to integrate with OAuth](./Guides/how-to-integrate-with-OAuth-guide/README.md)
+* [How to integrate with OAuth](./Guides/how-to-integrate-with-OAuth-guide/readme.md)
 * [How to get a file's native path](./Guides/how-to-get-a-files-native-path/README.md)
 * [How to make a simple network request](./Guides/how-to-make-a-network-request-guide/README.md)
 * [How to connect to a websocket server](./Guides/how-to-connect-to-a-websocket-server/README.md)
