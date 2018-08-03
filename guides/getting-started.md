@@ -77,10 +77,9 @@ function helloHandlerFunction(selection) { // [2]
         }
     ];
     selection.insertionParent.addChild(el); // [4]
-    el.moveInParentCoordinates(100, 100); // [5]
 }
     
-return { // [6]
+return { // [5]
     commands: {
         "helloCommand": helloHandlerFunction
     }
@@ -95,9 +94,7 @@ return { // [6]
 
 4. Here we add the `Text` object to the scenegraph. It should show up at the (0, 0) coordinates, so if you don't see it, try zooming out or panning until you do.
 
-5.  We bring the added text into the artboard by moving it by using the scenenode method, [moveInParentCoordinatres](https://github.com/AdobeXD/Plugin-Reference/blob/master/reference/scenegraph.md#scenenodemoveinparentcoordinatesdeltax-deltay). Without this, the text would have been rendered outside of the artboard.
-
-6.  The final part of `main.js` is to export a map object, which associates the JavaScript handler function with the commandId property declared in the manifest earlier.  The command ID (the part to the left of the `:` here) must match the commandId value declared in your manifest exactly.
+5.  The final part of `main.js` is to export a map object, which associates the JavaScript handler function with the commandId property declared in the manifest earlier.  The command ID (the part to the left of the `:` here) must match the commandId value declared in your manifest exactly.
 
 ## Invoke your plugin
 
