@@ -1,5 +1,5 @@
-# How to display an image
-This sample describes how an XD plugin can invoke the default file picker and generate an export rendition of the selected Artboard.
+# How to show an image in the modal UI
+This sample shows how to add an image in the modal UI.
 
 <!-- Image or GIF if necessary -->
 <!-- ![PLUGINNAME]() -->
@@ -19,7 +19,6 @@ This sample describes how an XD plugin can invoke the default file picker and ge
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Technology Used
-- References: [XD Export Renditions API](TBD)
 - References: [XD User Interface Concepts](https://adobe-xd.gitbook.io/plugin-api-reference/user-interface/ui-concepts)
 
 ## Prerequisites
@@ -35,18 +34,18 @@ As described in the [Getting Started Guide](/Guides/getting-started-guide), crea
 
 ```
 $ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
-$ mkdir com.adobe.exportrendition
-$ cd com.adobe.exportrendition
+$ mkdir com.adobe.displayimage
+$ cd com.adobe.displayimage
 $ touch manifest.json
 $ touch main.js
 ``` 
 
 Edit the manifest file for your plugin:
 
-```json
+```
 {
-    "id": "com.adobe.exportrendition",
-    "name": "Export Rendition Plugin",
+    "id": "com.adobe.displayimage",
+    "name": "Native Path Plugin",
     "version": "0.0.1",
     "main": "main.js",
     "host": {
@@ -56,8 +55,8 @@ Edit the manifest file for your plugin:
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Export Rendition",
-            "commandId": "exportRendition"
+            "label": "Display Image in UI",
+            "commandId": "displayImage"
         }
     ]
 }
@@ -66,111 +65,94 @@ Edit the manifest file for your plugin:
 In the `main.js` file, link the commandId to the main function
 
 ```js
-async function exportRendition(selection) {
-    if (selection.items.length > 0) {
+async function displayImage(selection) {
     // The body of this function is added later
-    }
 }
 
 module.exports = {
     commands: {
-        exportRenditionㅏ
+        displayImage
     }
 };
 ```
-Since this sample requries user to select an object, we use an `if` statement to check if there is an XD object selected.
+
 The remaining steps in this guide describe additional edits to the `main.js` file.
 
-### 2.  Get references to the `application` module and `localFileSystem` class of `uxp` module
+### 1. Create a container and set width/height/padding
 ```js
-const application = require("application");
-const fs = require("uxp").storage.localFileSystem;
+let container = document.createElement("div"); // [1]
+container.style.minWidth = 400; // [2]
+container.style.minHeight = 500;
+container.style.padding = 20;
 ```
-These modules are required to invoke the file picker and export renditions.
+1. Just like HTML DOM APIs, you can use `document.createElement` method to create UI objects
+2. Elements have the `style` property which contains metrics properties you can set
 
-### 3. Use `fs` to invoke the file picker
+### 2. Add a title
 ```js
-const file = await fs.getFileForSaving();
-```
-This will invoke the default file picker for user to choose the save directory and filename.
-
-### 4. Set the renditions object
-```js
-const renditions = [{
-    node: selection.items[0], // [1]
-    fileToken: file, // [2]
-    type: "png", // [3]
-    scale: 2 // [4]
-}];
-```
-1. `selection.items[0]` refers to the first selected item
-2. Set the `fileToken` property as the file variable created in step #3
-3. Set the `type` property as `png`
-4. Set the desired scale of the exported rendition
-
-### 5. Create renditions
-```js
-application.createRenditions(renditions) // [1]
-    .then(results => { // [2]
-        ...
-    })
-    .catch(error => {
-        console.log(error);
-    })
-```
-1. `application` module has `createRenditions` method which creates renditions based on the configuration object (set in step #4) in the parameter
-2. `createRenditions` method returns a promise object which can be chained witth `.then` and `.catch`
-
-### 6. Create a UI dialog inside `.then`
-```js
-// create the dialog
-let dialog = document.createElement("dialog"); // [1]
-
-// main container
-let container = document.createElement("div"); // [2]
-container.style.minWidth = 400;
-container.style.padding = 40;
-
-// add content
-let title = document.createElement("h3"); // [3]
-title.style.padding = 20;
-title.textContent = `PNG Rendition has been saved at ${file.nativePath}`;
+// add title
+let title = document.createElement("h1"); // [1]
+title.textContent = "Displaying an image";
+title.style.padding = 40;
 container.appendChild(title);
+```
+1. Create a text element and append it to the container
 
-// close button
-let closeButton = document.createElement("button"); // [4]
-closeButton.textContent = "Got it!";
-container.appendChild(closeButton);
+### 3. Add an image
+```js
+let img = document.createElement("img"); // [1]
+img.src = "portrait.png" // [2]
+img.style.padding = 30; // [3]
+img.style.height = "100%"
+img.style.display = "block";
+img.style.margin = "auto";
+img.style.width = "100%";
+container.appendChild(img);
+```
+1. Create an image element
+2. Set the `src` property to a local image
+3. Set the stlye properties to center the image
 
-closeButton.onclick = (e) => { // [5]
+### 4. Create an exit point
+```js
+let closeButton = document.createElement("button"); // [1]
+closeButton.textContent = "OK!"; // [2]
+closeButton.style.padding = 50;
+closeButton.style.margin = 50;
+closeButton.onclick = (e) => { // [3]
     dialog.close();
 }
-
-document.body.appendChild(dialog); // [6]
-dialog.appendChild(container); 
-dialog.showModal()
+container.appendChild(closeButton); // [4]
 ```
-Just like HTML DOM APIs, you can use `document.createElement` method to create UI objects. Elements have the `style` property which contains metrics properties you can set
+1. Create a button element
+2. Add the text and style the button
+3. Listen to the click event and close the dialog
+4. Append the button to the container
+
+### 5. Create a dialog and add the container 
+```js
+let dialog = document.createElement("dialog"); // [1]
+dialog.appendChild(container); // [2]
+```
 1. The `dialog` element is the modal window that pops down in XD
-2. Create a container `div` element
-3. Create a `h3` element to let the user know where the rendition has been saved
-4. You need at least one exit point. Create a close button and add it to the container
-5. Create a listener for the click event and close the dialog
-6. Attache the dialog to the document, addd the contianer, and use `showModal` method to show the modal
+2. Add the container created in the previous steps to `dialog`
+
+### 6. Create the main function
+```js
+function displayImage(selection) {
+    //  add the dialog to the main document
+    document.body.appendChild(dialog); // [1]
+    dialog.showModal() // [2]
+}
+```
+1. Append the dialog in the document
+2. `.showModal` method shows the dialog (modal) in XD
 
 ### 7. Test the plugin
 
-Make sure to select an item (artboard) in XD and execute the plugin command:
+If you reload the plugin and execute it, you should see a modal window like this one:
 
-<img src="/.meta/readme-assets/export-rendition-execute.png" width="50%" height="50%">
-
-You should see a modal window like this one:
-
-<img src="/.meta/readme-assets/export-rendition-pick-file.png" width="50%" height="50%">
-
-The rendition will be saved at the specified location:
-
-<img src="/.meta/readme-assets/export-rendition-complete.png" width="50%" height="50%">
+<img src="/.meta/readme-assets/display-image.png" width="50%" height="50%">
 
 ## Next Steps
 
