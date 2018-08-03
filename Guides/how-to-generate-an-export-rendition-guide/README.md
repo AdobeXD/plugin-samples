@@ -1,4 +1,4 @@
-# How to use generate an export rendition
+# How to generate an export rendition
 This sample describes how an XD plugin can invoke the default file picker and generate an export rendition of the selected Artboard.
 
 <!-- Image or GIF if necessary -->
