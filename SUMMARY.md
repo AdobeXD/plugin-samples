@@ -10,7 +10,7 @@
 * [How to work with paths](./Guides/how-to-create-path-objects-guide/README.md)
 * [How to style text](./Guides/how-to-style-text-guide/README.md)
 * [Working with the SceneNode list](./Guides/working-with-scenenodelist-guide/README.md)
-* [How to generate an export rendition](./Guides/how-to-generate-an-export-rendition/README.md)
+* [How to generate an export rendition](./Guides/how-to-generate-an-export-rendition-guide/README.md)
 
 ## Working with I/O
 * [How to read a file](./Guides/how-to-import-guide/README.md)
