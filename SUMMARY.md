@@ -25,6 +25,7 @@
 * [Using single-line text editors](./Guides/how-to-use-single-line-text-ui-guide/README.md)
 * [How to display a dropdown list](./Guides/how-to-display-a-dropdown-list/README.md)
 * [How to display an image](./Guides/how-to-display-an-image-guide/README.md)
+* [How to package a plugin](./Guides/how-to-package-a-plugin/README.md)
 
 ## Community
 * [Code of Conduct](./CODE_OF_CONDUCT.md)
