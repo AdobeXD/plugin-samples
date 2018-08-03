@@ -127,7 +127,7 @@ Line [4] is also an asynchronous operation:
 * Next, the `await` keyword causes this asynchronous function to pause until the `Promise` is fulfiled.
 * When the contents of the file has been read, the `Promise` is filfilled.  The value of the `await` expression is that of the fulfilled promise, which is a string containing the contents of the file.
 
-### 5 Test the plugin
+### 5. Test the plugin
 
 If you reload the plugin and execute it, you should see a file chooser like this one:
 
