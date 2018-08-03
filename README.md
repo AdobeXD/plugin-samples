@@ -187,12 +187,11 @@ a rotated rectangle that is inside an artboard:
 
 ![diagram of coordinate spaces](images/coordSpaces.png)
 
-The top-left corner of a node is not always located at (0,0) in its own local coordinate space. Use `localBounds` to get the true top-left
-of a node. For example, the baseline of a [Point Text node](./reference/scenegraph.md#Text) is at Y=0 in its local coordinates, so its
+The top-left corner of a node is not always located at (0,0) in its own local coordinate space. Use [`localBounds`](./reference/scenegraph.md#SceneNode+localBounds)
+to get the true top-left of a node. For example, the baseline of a [Point Text node](./reference/scenegraph.md#Text) is at Y=0 in its local coordinates, so its
 upper-left corner is at a negative Y value. Similarly, centered or right-aligned text will start at a negative X value in local coordinates.
 
-The top-left corner of a node is not always located at (0,0) in its own local coordinate space. Use [`localBounds`](./reference/scenegraph.md#SceneNode+localBounds)
-to get the true top-left of a node. Here are some examples of nodes where the local origin is not the node's visual top-left corner:
+Here are some examples of nodes where the local origin is not the node's visual top-left corner:
 
 ![examples of localBounds origin](images/localOrigin.png)
 
