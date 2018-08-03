@@ -10,7 +10,8 @@ async function launchOAuth(selection) {
 				return response.id;
 			})
 
-		// Here is where I need to insert the openUrl API once it becomes available
+		// opens the url in the default browser
+		require("uxp").shell.openExternal(`${publicUrl}/login?requestId=${rid}`)
 
 		accessToken = await xhrRequest(`${publicUrl}/getCredentials?requestId=${rid}`, 'GET')
 			.then(tokenResponse => {
