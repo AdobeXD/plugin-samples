@@ -118,9 +118,9 @@ only to access built-in XD APIs.
     * To create _new_ nodes in the document, load this module explicitly to access the constructor functions:
       <br>`var Rectangle = require("scenegraph").Rectangle;`
       <br>`var node = new Rectangle();`
-* [commands](./reference/commands.md) - Invoke commands to change the document structure and other complex operations.
+* [commands](./reference/commands.md) - Invoke commands to change the document structure and perform other complex operations.
     * Load this module explicitly: `var commands = require("commands");`
-* [fs](./reference/file-IO.md) - Read and write files on disk
+* [localFileSystem](./reference/file-IO.md) - Read and write files on disk
     * Load this module explicitly: `var fs = require("localFileSystem").localFileSystem;`
 * [Network](./reference/network-IO.md) - Use browser-style `XMLHttpRequest`, `fetch()`, and `WebSocket` APIs to access the network.
     * These APIs are in the global namespace, so you can use them without any `require()` statements
