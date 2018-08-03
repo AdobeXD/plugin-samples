@@ -66,6 +66,8 @@ function xhrRequest(url, method) {
 	});
 }
 
-return {
-	commands: { launchOAuth }
+module.exports = {
+	commands: {
+		launchOAuth
+	}
 };

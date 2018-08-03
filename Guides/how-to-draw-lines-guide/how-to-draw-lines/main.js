@@ -34,8 +34,8 @@ function createLinesHandlerFunction(selection) {
     commands.group()
 }
 
-return {
+module.exports = {
     commands: {
         "createLinesCommand": createLinesHandlerFunction
     }
-}
+};

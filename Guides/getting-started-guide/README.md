@@ -60,24 +60,24 @@ These two files (and any others you need) are stored within a folder. Each plugi
 ### 3. Create your plugin’s manifest
 
 Adobe XD requires that your plugin have a manifest named `manifest.json`. Our example looks like this:
-
-    {
-        "id": "com.adobe.xd.helloWorld",
-        "name": "Hello World sample plugin",
-        "host": {
-            "app": "XD",
-            "minVersion": "8.0"
-        },
-        "version": "1.0.0",
-        "uiEntryPoints": [
-            {
-                "type": "menu",
-                "label": "Say hello",
-                "commandId": "helloCommand"
-            }
-        ]
-    }
-    
+```json
+{
+    "id": "com.adobe.xd.helloWorld",
+    "name": "Hello World sample plugin",
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+    "version": "1.0.0",
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Say hello",
+            "commandId": "helloCommand"
+        }
+    ]
+}
+``` 
 
 For more about what each entry means, [see the manifest documentation](https://github.com/AdobeXD/Plugin-Reference/blob/master/reference/manifest.md).
 
@@ -86,28 +86,28 @@ The value of the `commandId` property may be any string.  In the next section, w
 ### 4. Create your plugin’s code
 
 Next, we need to create the code for our plugin. This lives in a file named `main.js`.
+```js
+const {Text, Color} = require("scenegraph"); // [1]
 
-    const {Text, Color} = require("scenegraph"); // [1]
-    
-    function helloHandlerFunction(selection) { // [2]
-        const el = new Text(); // [3]
-        el.text = "Hello!";
-        el.styleRanges = [
-            {
-                length: el.text.length,
-                fill: new Color("#FF0000")
-            }
-        ];
-        selection.insertionParent.addChild(el); // [4]
-        el.moveInParentCoordinates(100, 100); // [5]
-    }
-    
-    return { // [6]
-        commands: {
-            helloCommand: helloHandlerFunction
+function helloHandlerFunction(selection) { // [2]
+    const el = new Text(); // [3]
+    el.text = "Hello!";
+    el.styleRanges = [
+        {
+            length: el.text.length,
+            fill: new Color("#FF0000")
         }
+    ];
+    selection.insertionParent.addChild(el); // [4]
+    el.moveInParentCoordinates(100, 100); // [5]
+}
+
+module.exports = { // [6]
+    commands: {
+        helloCommand: helloHandlerFunction
     }
-    
+};
+``` 
 
 1.  In this line, we get references to the `Text` and `Color` classes from XD’s `scenegraph` module. There are several different [API modules you can load using `require()`](https://github.com/AdobeXD/Plugin-Reference/tree/master/reference).
     

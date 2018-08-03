@@ -41,7 +41,7 @@ $ touch main.js
 
 Edit the manifest file for your plugin:
 
-```
+```js
 {
     "id": "com.adobe.xd.insertTextFromFile",
     "name": "Insert Text from File",
@@ -67,11 +67,11 @@ async function insertTextFromFileHandler(selection) {
     // The body of this function is added later
 }
 
-return {
+module.exports = { 
     commands: {
         "insertTextFromFileCommand": insertTextFromFileHandler
     }
-}
+};
 ```
 
 The remaining steps in this guide describe additional edits to the main.js file.
@@ -84,7 +84,7 @@ const { Text, Color } = require("scenegraph");
 
 ### 3. Import XD's `localFileSystem` module
 ```js
-const fs = require("localFileSystem").localFileSystem;
+const fs = require("uxp").storage.localFileSystem;
 ```
 This example uses File I/O to import a file from user's local drive, so we need to require XD's `localFileSystem` module.
 

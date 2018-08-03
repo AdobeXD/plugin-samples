@@ -1,4 +1,4 @@
-const {Path, Color} = require("scenegraph");
+const { Path, Color } = require("scenegraph");
 
 function pointOnCircle(radius, angle) {
     const radians = angle * 2. * Math.PI / 360.;
@@ -14,7 +14,7 @@ function createWedge(selection, radius, startAngle, endAngle, color) {
     const wedge = new Path();
     wedge.pathData = pathData;
     wedge.fill = new Color(color);
-    wedge.translation = {x: radius, y: radius};
+    wedge.translation = { x: radius, y: radius };
     selection.insertionParent.addChild(wedge);
 }
 
@@ -25,8 +25,8 @@ function createPieChartHandlerFunction(selection) {
     createWedge(selection, 100, 225, 360, "purple");
 }
 
-return {
+module.exports = {
     commands: {
         "createPieChartCommand": createPieChartHandlerFunction
     }
-}
+};
