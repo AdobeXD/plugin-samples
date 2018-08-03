@@ -14,15 +14,6 @@ Not yet. That feature will be coming in a future release.
 
 Yes! `XMLHttpRequest`, `Websocket`s, and `fetch` are available now on both macOS and Windows (UWP).
 
-### Can I render any user interface?
-
-Not yet. APIs for UI will be provided in a future release. There are several workarounds in the meantime:
-
-* User enters configuration in layer/object names, plugin parses this as input
-* User enters input into a text object on canvas, plugin reads this text content
-* Generate text objects on the canvas as output
-* Copy text to the clipboard in lieu of exporting data to a text file
-
 ### Can I use npm packages or Node APIs?
 
 Not currently. If you’re finding that to be an obstacle, please provide details in your feedback.
