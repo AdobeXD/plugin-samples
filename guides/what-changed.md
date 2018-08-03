@@ -23,7 +23,7 @@ For example:
 const fs = require("localFileSystem").localFileSystem;
 const { Rectangle, Color } = require("scenegraph");
 
-async function menuCommand(selection) {
+async function addColoredSquareHandler(selection) {
     const [file] = await fs.getFileForOpening();
     const colorValue = await file.read(); // read the CSS or named color from a user's file
     const shape = new Rectangle();
@@ -35,7 +35,7 @@ async function menuCommand(selection) {
 
 return {
     commands: {
-        menuCommand
+        "addColoredSquareCommand": addColoredSquareHandler
     }
 }
 ```
