@@ -1,0 +1,18 @@
+{
+    "id": "demo.userConfirmation",
+    "name": "How to show user confirmation sample plugin",
+    "version": "0.0.1",
+
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Ask User",
+            "commandId": "showDialog"
+        }
+    ]
+}
