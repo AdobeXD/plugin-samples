@@ -58,6 +58,8 @@ Adobe XD requires that your plugin have a manifest named `manifest.json`. Our ex
 
 For more about what each entry means, [see the manifest documentation](../reference/manifest.md).
 
+The value of the commandId property may be any string. In the next section, we will see how that string is associated with the code for our plugin.
+
 ## Create your plugin's code
 
 Next, we need to create the code for our plugin. This lives in a file named `main.js`.
@@ -65,7 +67,7 @@ Next, we need to create the code for our plugin. This lives in a file named `mai
 ```js
 const {Text, Color} = require("scenegraph"); // [1]
 
-function sayHello(selection) { // [2]
+function helloHandlerFunction(selection) { // [2]
     const el = new Text(); // [3]
     el.text = "Hello!";
     el.styleRanges = [
@@ -75,24 +77,27 @@ function sayHello(selection) { // [2]
         }
     ];
     selection.insertionParent.addChild(el); // [4]
+    el.moveInParentCoordinates(100, 100); // [5]
 }
-
-return { // [5]
+    
+return { // [6]
     commands: {
-        helloCommand: sayHello
+        "helloCommand": helloHandlerFunction
     }
 }
 ```
 
 1. In this line, we get references to the `Text` and `Color` classes from XD's `scenegraph` module. There are several different [API modules you can load using `require()`](./index.md#apis).
 
-2. Next we define our handler function, which will respond to the "Say Hello" menu command.
+2. Next we define our handler function. The handler function will be invoked when the user selects the “Say Hello” menu command. The binding between that menu command and this handler function is further described below.
 
 3. In this line we create a new `Text` object. The following lines assign various properties and styles to the text.
 
 4. Here we add the `Text` object to the scenegraph. It should show up at the (0, 0) coordinates, so if you don't see it, try zooming out or panning until you do.
 
-5. The final part of `main.js` is to export the handles functions in a map that links them to the command ID(s) defined in your manifest earlier. The command ID (part to the left of the `:` here must match the IDs in your manifest exactly.
+5.  We bring the added text into the artboard by moving it by using the scenenode method, [moveInParentCoordinatres](https://github.com/AdobeXD/Plugin-Reference/blob/master/reference/scenegraph.md#scenenodemoveinparentcoordinatesdeltax-deltay). Without this, the text would have been rendered outside of the artboard.
+
+6.  The final part of `main.js` is to export a map object, which associates the JavaScript handler function with the commandId property declared in the manifest earlier.  The command ID (the part to the left of the `:` here) must match the commandId value declared in your manifest exactly.
 
 ## Invoke your plugin
 
