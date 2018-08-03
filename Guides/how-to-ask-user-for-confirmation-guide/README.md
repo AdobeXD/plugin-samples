@@ -1,6 +1,6 @@
 # Asking the user for confirmation
 
-This sample demonstrates how to build a user confirmation dialog in XD.
+This sample demonstrates how to build a user confirmation dialog in XD. The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Guides/tree/master/Guides/how-to-ask-user-for-confirmation-guide/how-to-ask-user-for-confirmation).
 
 <!-- Image or GIF if necessary -->
 <!--![PLUGINNAME]() -->
@@ -12,11 +12,22 @@ This sample demonstrates how to build a user confirmation dialog in XD.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Contents
 
-1. [Technology Used](#technology-used)
-1. [Prerequisites](#prerequisites)
-1. [Development Steps](#development-steps)
-1. [Next Steps](#next-steps)
-1. [Other Resources](#other-resources)
+- [Technology Used](#technology-used)
+- [Prerequisites](#prerequisites)
+- [Development Steps](#development-steps)
+  - [1. Create the dialog.](#1-create-the-dialog)
+  - [2. Create the form and set its properties.](#2-create-the-form-and-set-its-properties)
+  - [3. Create the heading to show up on the form.](#3-create-the-heading-to-show-up-on-the-form)
+  - [4. Append the heading to the form container.](#4-append-the-heading-to-the-form-container)
+  - [5. Create the footer.](#5-create-the-footer)
+  - [6. Create a helper function to create buttons](#6-create-a-helper-function-to-create-buttons)
+  - [7. Create the buttons using the helper function](#7-create-the-buttons-using-the-helper-function)
+  - [8. Append the buttons to the footer.](#8-append-the-buttons-to-the-footer)
+  - [9. Append the footer to the form container.](#9-append-the-footer-to-the-form-container)
+  - [10. Append the form container to the dialog created in the first step.](#10-append-the-form-container-to-the-dialog-created-in-the-first-step)
+  - [11. Append the dialog to the document body.](#11-append-the-dialog-to-the-document-body)
+- [Next Steps](#next-steps)
+- [Other Resources](#other-resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
