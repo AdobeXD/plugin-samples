@@ -15,10 +15,10 @@ return {
 ```
 
 The command handler is passed two contextual arguments:
-* The current [selection](./reference/selection.md) state
-* The root node of the entire document content (see [scenegraph](./reference/scenegraph.md))
+* The current [selection](../selection.md) state
+* The root node of the entire document content (see [scenegraph](../scenegraph.md))
 
-A command handler can either complete _synchronously_, as in the example above, or it can _return a Promise_ and finish its work _asynchronously_, like this example using [file IO](./reference/file-IO.md):
+A command handler can either complete _synchronously_, as in the example above, or it can _return a Promise_ and finish its work _asynchronously_, like this example using [file IO](../uxp/using-file-apis.md):
 
 ```js
 function sayHello(selection, documentRoot) {

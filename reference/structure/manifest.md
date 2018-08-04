@@ -13,4 +13,4 @@ The declaration for a single menu item looks like this:
     }
 ```
 
-See [detailed manifest documentation](./reference/manifest.md) for more.
+See [detailed manifest documentation](../manifest.md) for more.
