@@ -15,6 +15,31 @@ async function launchOAuth(selection) {
 
 		accessToken = await xhrRequest(`${publicUrl}/getCredentials?requestId=${rid}`, 'GET')
 			.then(tokenResponse => {
+				// create the dialog
+				let dialog = document.createElement("dialog");
+
+				// main container
+				let container = document.createElement("div");
+				container.style.minWidth = 400;
+				container.style.padding = 40;
+
+				// add content
+				let title = document.createElement("h3");
+				title.style.padding = 20;
+				title.textContent = `XD and Dropbox are now connected`;
+				container.appendChild(title);
+
+				// close button
+				let closeButton = document.createElement("button");
+				closeButton.textContent = "Got it!";
+				container.appendChild(closeButton);
+				closeButton.onclick = (e) => {
+					dialog.close();
+				}
+
+				document.body.appendChild(dialog);
+				dialog.appendChild(container);
+				dialog.showModal()
 				return tokenResponse.accessToken;
 			})
 	}
