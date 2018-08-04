@@ -1,0 +1,16 @@
+{
+    "id": "com.adobe.xd.insertTextFromFile",
+    "name": "Insert Text from File",
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+    "version": "1.0.0",
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Insert Text From File",
+            "commandId": "insertTextFromFileCommand"
+        }
+    ]
+}

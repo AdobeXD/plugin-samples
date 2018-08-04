@@ -1,0 +1,17 @@
+{
+    "id": "0000000000000002",
+    "name": "Hello HTML Plugin",
+    "version": "0.0.1",
+    "main": "main.js",
+    "host": {
+        "app": "XD",
+        "minVersion": "10.0.10.24"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Hello HTML",
+            "commandId": "menuCommand"
+        }
+    ]
+}

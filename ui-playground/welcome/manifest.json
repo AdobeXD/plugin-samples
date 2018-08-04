@@ -1,0 +1,17 @@
+{
+    "name": "UXP React Playground",
+    "id": "com.adobe.uxp.react.playground",
+     "version": "0.0.1",
+    "main": "main.js",
+    "host": {
+        "app": "XD",
+        "minVersion": "10.0.10.24"
+    },
+    "uiEntryPoints": [
+         {
+            "type": "welcome",
+            "panelId": "onShowPlayground"
+         }
+     ]
+ }
+
