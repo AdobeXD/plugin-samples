@@ -284,8 +284,7 @@ Just like HTML DOM APIs, you can use `document.createElement` method to create U
 5. Create a listener for the click event and close the dialog
 6. Attache the dialog to the document, addd the contianer, and use `showModal` method to show the modal
 
-
-### 9. Make an API call to Dropbox
+### 10. Make an API call to Dropbox
 ```javascript
 const dropboxProfileUrl = `https://api.dropboxapi.com/2/users/get_current_account?authorization=Bearer%20${accessToken}`; // [1]
 const dropboxProfile = await xhrRequest(dropboxProfileUrl, 'POST'); // [2]
