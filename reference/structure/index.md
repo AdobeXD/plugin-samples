@@ -1,6 +1,6 @@
 # Plugin Structure
 
-- [Plugin Structure](./overview)
-- [JSON manifest](./manifest)
-- [Menu command handlers](./handlers)
-- [Accessing APIs](./accessing-apis)
+- [Plugin Structure](./overview.md)
+- [JSON manifest](./manifest.md)
+- [Menu command handlers](./handlers.md)
+- [Accessing APIs](./accessing-apis.md)

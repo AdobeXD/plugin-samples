@@ -1,7 +1,7 @@
 # Core XD Concepts
 
-- [Scenegraph](./scenegraph)
-- [Edit context rules](./edit-context)
-- [Coordinate spaces & units](./coordinate-spaces-and-units)
-- [Properties with object values](./properties-with-object-values)
-- [Automatic cleanups](./automatic-cleanups)
+- [Scenegraph](./scenegraph.md)
+- [Edit context rules](./edit-context.md)
+- [Coordinate spaces & units](./coordinate-spaces-and-units.md)
+- [Properties with object values](./properties-with-object-values.md)
+- [Automatic cleanups](./automatic-cleanups.md)

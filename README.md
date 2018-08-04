@@ -16,21 +16,6 @@ Adobe XD plugins provide a way for developers to extend XD functionality. Plugin
 - **Enable plugin configuration through dialogs.** Plugins can create dialogs with various UI controls in order to allow user input.
 
 ## Where to start?
-1. To begin, read the [Getting Started guide](Guides/getting-started-guide/) and take a look at [other guides](Guides)
-1. Then visit the [Reference Documentation](https://github.com/AdobeXD/Plugin-Reference) for more information & detailed API documentation
+1. To begin, read the [Getting Started guide](https://adobe-xd.gitbook.io/plugin-guides/getting-started/getting-started-guide) and take a look at [other guides](https://adobe-xd.gitbook.io/plugin-guides)
+1. Read up on [the structure of a plugin](./reference/structure/index.md), some [Adobe XD core concepts](./reference/core/index.md), and then dig into the reference itself.
 1. If you need more help, we have a few, select [Samples](https://github.com/AdobeXD/Plugin-Samples) for you to take a look at.
-Adobe XD
-
-
-
-- [Plugin Structure](#structure)
-    - [JSON manifest](#manifest)
-    - [Menu command handlers](#menu-item-handlers)
-    - [Accessing APIs](#accessing-apis)
-- [Available APIs](#apis)
-- [Core Concepts](#concepts)
-    - [Scenegraph](#scenegraph)
-    - [Edit context rules](#edit-contexts)
-    - [Coordinate spaces & units](#coordinate-spaces)
-    - [Properties with object values](#object-value-properties)
-    - [Automatic cleanups](#cleanups)
