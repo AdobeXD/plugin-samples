@@ -8,8 +8,10 @@ Adobe XD plugins provide a way for developers to extend XD functionality. Plugin
 - **Change the properties of objects.** Plugins can change border, fill, opacity, and other object properties without direct user interaction.
 - **Add and remove items on canvas.** Your plugin can add rectangles, paths, text, and other shapes to the canvas. Using paths, almost any two-dimensional object can be created.
 - **Automate and extend user actions.** Plugins can automate repetitive actions and free users to focus on content.
-- **Bring in user's files.** Plugins can load files from user's local drive.
+- **Support various file operations.** Plugins can load files from user's local drive, and also save files back.
 - **Connect to other sources on the web.** Plugins can make network requests.
+- **Enable plugin configuration through dialogs.** Plugins can create dialogs with various UI controls in order to allow user input. 
+
 
 
 ## Where to start?
