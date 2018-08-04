@@ -246,7 +246,45 @@ accessToken = await xhrRequest(`${publicUrl}/getCredentials?requestId=${rid}`, '
 ```
 As noted in step #4, the `xhrRequest` helper function is designed to poll the server if the initial request is not responded in 6000 miliseconds. Once the user completes the OAuth workflow in the browser, polling should stop and this request should be returned with the access token.
 
-### 9. Make an API call to Dropbox
+
+### 9. Show a dialog indicating the token has been received
+```javascript
+// create the dialog
+let dialog = document.createElement("dialog"); // [1]
+
+// main container
+let container = document.createElement("div"); // [2]
+container.style.minWidth = 400;
+container.style.padding = 40;
+
+// add content
+let title = document.createElement("h3"); // [3]
+title.style.padding = 20;
+title.textContent = `XD and Dropbox are now connected`;
+container.appendChild(title);
+
+// close button
+let closeButton = document.createElement("button"); // [4]
+closeButton.textContent = "Got it!";
+container.appendChild(closeButton);
+
+closeButton.onclick = (e) => { // [5]
+    dialog.close();
+}
+
+document.body.appendChild(dialog); // [6]
+dialog.appendChild(container); 
+dialog.showModal()
+```
+Just like HTML DOM APIs, you can use `document.createElement` method to create UI objects. Elements have the `style` property which contains metrics properties you can set
+1. The `dialog` element is the modal window that pops down in XD
+2. Create a container `div` element
+3. Create a `h3` element to let the user know the auth workflow has been completed
+4. You need at least one exit point. Create a close button and add it to the container
+5. Create a listener for the click event and close the dialog
+6. Attache the dialog to the document, addd the contianer, and use `showModal` method to show the modal
+
+### 10. Make an API call to Dropbox
 ```javascript
 const dropboxProfileUrl = `https://api.dropboxapi.com/2/users/get_current_account?authorization=Bearer%20${accessToken}`; // [1]
 const dropboxProfile = await xhrRequest(dropboxProfileUrl, 'POST'); // [2]
