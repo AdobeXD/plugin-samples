@@ -1,6 +1,6 @@
 # Introduction
 
-![XD](.gitbook/assets/adobe-xd-log.png)
+![XD](../.gitbook/assets/adobe-xd-log.png)
 
 ## Welcome to XD Plugin Guides and Samples site!
 
@@ -19,12 +19,12 @@ Adobe XD plugins provide a way for developers to extend XD functionality. Plugin
 
 ### Where to start?
 
-1. To begin, read the [Getting Started guide](getting-started/getting-started-guide.md) and take a look at [other guides](https://github.com/AdobeXD/Plugin-Guides/tree/da75225a16f420921e9a7b975aa807420e5e24ce/Guides/README.md).
-2. Then visit the [Reference Documentation](https://github.com/AdobeXD/Plugin-Reference) for more information & detailed API documentation.
+1. To begin, read the [Getting Started guide](getting-started-guide.md) and take a look at [other guides](https://github.com/AdobeXD/Plugin-Guides/tree/2d9ccbfb0d863bea69dadcc420a962c539c46156/Guides/README.md)
+2. Then visit the [Reference Documentation](https://github.com/AdobeXD/Plugin-Reference) for more information & detailed API documentation
 3. If you need more help, we have a few, select [Samples](https://github.com/AdobeXD/Plugin-Samples) for you to take a look at.
 
 ### What's next?
 
 * [XD Plugin Forum](https://forums.adobeprerelease.com/newxdprerelease/categories/xdplugindev)
-* [How to package and distribute your plugin](./)
+* [How to package and distribute your plugin](readme.md)
 
