@@ -1,13 +1,20 @@
 const $ = sel => document.querySelector(sel);
 
-async function menuCommand() {
+function createDialog(id = "dialog") {
+    const sel = `#${id}`;
+    let dialog = document.querySelector(sel);
+    if (dialog) {
+        console.log("Reusing old dialog");
+        return dialog;
+    }
+
     document.body.innerHTML = `
 <style>
-    #myDialog form {
+    ${sel} form {
         width: 300px;
     }
 </style>
-<dialog id="myDialog">
+<dialog id="${id}">
     <form method="dialog">
         <h1>Hello!</h1>
         <label>
@@ -16,17 +23,35 @@ async function menuCommand() {
         </label>
         <footer>
             <button id="cancel">Cancel</button>
-            <button id="ok" uxp-variant="cta">OK</button>
+            <button type="submit" id="ok" uxp-variant="cta">OK</button>
         </footer>
     </form>
 </dialog>
 `;
 
-    const [dialog, form, cancel, ok, name] = ["#myDialog", "#myDialog form", "#cancel", "#ok", "#name"].map(s => $(s));
+    dialog = document.querySelector(sel);
 
-    cancel.addEventListener("click", () => { dialog.close(); });
-    ok.addEventListener("click", () => { dialog.close(name.value); });
-    //form.addEventListener("submit", () => { dialog.close(name.value); });
+    const [form, cancel, ok, name] = [`${sel} form`, "#cancel", "#ok", "#name"].map(s => $(s));
+
+    const submit = () => {
+        dialog.close(name.value);
+    }
+
+    cancel.addEventListener("click", () => {
+         dialog.close();
+    });
+    ok.addEventListener("click", e => {
+        submit();
+        e.preventDefault();
+    });
+    form.onsubmit = submit;
+
+    return dialog;
+}
+
+async function menuCommand() {
+
+    const dialog = createDialog();
 
     try {
         const r = await dialog.showModal();
@@ -34,9 +59,7 @@ async function menuCommand() {
             console.log(`Your name is ${r}`);
         }
     } catch (err) {
-        // cancelled with ESC
-    } finally {
-        dialog.remove();
+        console.log("ESC dismissed dialog");
     }
 }
 
