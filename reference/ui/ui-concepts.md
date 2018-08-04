@@ -36,13 +36,18 @@ Modal Dialogs are constructed using the following HTML5 DOM elements:
 * `dialog` (wraps the entire modal dialog)
     * `form method="dialog"` (wraps the dialog _contents_ and _buttons_)
         * `h1` (the heading)
-        * `p` (the content)
+        * `p`, `div`, `input type="text"`, etc. (the content)
         * `footer` (the footer, which contains the buttons)
 
 If you were to inspect the structure in a browser, you'd see something that looks like this:
 
 ```html
-<dialog id="myDialog">
+<style>
+    #dialog form {
+        width: 300px;
+    }
+</style>
+<dialog id="dialog">
     <form method="dialog">
         <h1>Hello!</h1>
         <label>
@@ -51,16 +56,16 @@ If you were to inspect the structure in a browser, you'd see something that look
         </label>
         <footer>
             <button id="cancel">Cancel</button>
-            <button id="ok" uxp-variant="cta">OK</button>
+            <button type="submit" id="ok" uxp-variant="cta">OK</button>
         </footer>
     </form>
 </dialog>
 ```
 
-You can use any number of libraries or frameworks to create the above structure, but at the lowest level you can create a dialog using the following code:
+To create the above DOM structure you can use various libraries or frameworks, as long as they all work with `document.createElement` and the HTML5 DOM API surface. This means you can _technically_ write code like this:
 
 ```js
-function show() {
+function createDialog() {
     const dialog = document.createElement("dialog");
 
     const form = document.createElement("form");
@@ -83,9 +88,44 @@ function show() {
     dialog.appendChild(form);
     document.appendChild(dialog);
 
-    return dialog.showModal();
+    return dialog;
 }
 ```
+
+... but that gets tedious quickly. If you aren't using a framework or library, you can do something like this instead:
+
+```js
+    document.body.innerHTML = `
+<style>
+    #dialog form {
+        width: 300px;
+    }
+</style>
+<dialog id="#dialog">
+    <form method="dialog">
+        <h1>Hello!</h1>
+        <label>
+            <span>What's your name?</span>
+            <input uxp-quiet="true" type="text" id="name" placeholder="Your name"/>
+        </label>
+        <footer>
+            <button id="cancel">Cancel</button>
+            <button type="submit" id="ok" uxp-variant="cta">OK</button>
+        </footer>
+    </form>
+</dialog>
+`;
+```
+
+**Note**: The syntax above is using modern JavaScript's template literals, which allow for multi-line strings. This greatly simplifies using HTML!
+
+### Known Issues
+
+* You should be very careful when injecting HTML in this manner. It's tempting to use interpolation (`${variable}`) to inject content into this HTML, but doing so could allow untrusted content to pollute your user interface. You should always populate your interface separately by looking up elements and using `textContent` or `value` as appropriate.
+
+* Inline styles are not applied, hence the `<style />` section at the top of the string.
+
+* Event handlers and scripts are not parsed.
 
 ## Dialog Buttons
 
@@ -123,9 +163,23 @@ Dialogs can be dismissed in the following ways:
 You can listen for the _default_ gesture (typically [ENTER]) by registering for the `submit` event on the `form`:
 
 ```js
-form.addEventListener("submit", () => {
-    dialog.close("ENTER");
-});
+function onsubmit() {
+    dialog.close(document.getElementById("name").value);
+}
+form.onsubmit = onsubmit;
+```
+
+You should also register a `click` handler for your "OK" and "Cancel" buttons:
+
+```js
+const cancelButton = document.querySelector("#cancel");
+cancelButton.addEventListener("click", () => dialog.close());
+
+const okButton = document.querySelector("#ok");
+okButton.addEventListener("click", e => {
+    onsubmit();
+    e.preventDefault();
+}
 ```
 
 You can listen for the dialog's dismissal using the `close` event on the dialog:
@@ -135,3 +189,9 @@ dialog.addEventListener("close", () => {
     // dialog is closed at this point
 });
 ```
+
+## Preventing Dialog Dismissal
+
+You can, in some cases, prevent a dialog dismissal. If the form calls `preventDefault` on the `submit` event, the dialog will fail to dismiss.
+
+However it is important to remember that you cannot cancel a dismissal triggered by the ESC gesture.
