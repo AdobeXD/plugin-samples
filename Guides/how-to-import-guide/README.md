@@ -1,5 +1,5 @@
 # How to read the contents of a file
-This sample describes how an XD plugin can invoke the default file picker and display the text extracted from the file chosen by user.
+This sample describes how an XD plugin can invoke the default file picker and display the text extracted from the file chosen by user. The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Guides/tree/master/Guides/how-to-import-guide).
 
 <!-- Image or GIF if necessary -->
 <!-- ![PLUGINNAME]() -->

@@ -1,6 +1,6 @@
 # How to add lines to the user's document
 
-This sample demonstrates how to create a plugin that adds colored lines to the user's document.
+This sample demonstrates how to create a plugin that adds colored lines to the user's document. The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Guides/tree/master/Guides/how-to-draw-lines-guide).
 
 <!-- Image or GIF if necessary -->
 <!-- ![PLUGINNAME]() -->
