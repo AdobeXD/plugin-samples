@@ -191,7 +191,7 @@ app.get('/getRequestId', function (req, res) {
 
 ### 7. Open the default browser with the URL pointing to your server
 ```javascript
-something.openUrl(`${publicUrl}/login?requestId=${rid}`)
+require("uxp").shell.openExternal(`${publicUrl}/login?requestId=${rid}`)
 ```
 This will open the browser with the url pointing to an endpoint in your server. Let's take a look at the code on the server side.
 
