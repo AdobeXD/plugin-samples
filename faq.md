@@ -4,11 +4,11 @@
 
 ### Can I read or write to persistent storage?
 
-You can write to temporary storage or to user-picked files and folders. The ability to write data to a plugin-specific folder without user mediation is coming in a future release.
+You can write to temporary storage or to user-picked files and folders. You can also write to your plugin's data folder without user mediation.
 
 ### Can I store any user preferences?
 
-Not yet. That feature will be coming in a future release.
+You can use the plugin data folder to store files, including user preferences.
 
 ### Can I communicate with remote servers?
 
@@ -16,7 +16,9 @@ Yes! `XMLHttpRequest`, `Websocket`s, and `fetch` are available now on both macOS
 
 ### Can I use npm packages or Node APIs?
 
-Not currently. If you’re finding that to be an obstacle, please provide details in your feedback.
+You may be able to use some npm packages without modification, but chances are good that you'll need to use webpack or rollup in order to generate a bundle.
+
+Node APIs themselves are not supported.
 
 ## Document-specific
 
@@ -40,7 +42,7 @@ No; plugins execute synchronously, so only the final state of the document is vi
 
 ### Can I use `require` to import additional files?
 
-Not at this time. `require` can only be used to import modules provided by Adobe XD.
+Yes. Note that `require` file resolution does _not_ align with Node-style resolution. You can only require files in your plugin directory, and there's no lookup in a `package.json` should it exist.
 
 ### Can I use ES5 features?
 
@@ -72,4 +74,4 @@ You'll need to restart Adobe XD when making changes to your plugin's manifest.
 
 ### I added a new plugin to Adobe XD, but it doesn't show in the **Plugins** menu.
 
-You'll need to restart Adobe XD when adding a new plugin. Also check the [output log](./guides/getting-started.md#Viewing-Plugin-Logs) to ensure there aren't any errors in your plugin's [manifest](./reference/manifest.md).
+You'll need to restart Adobe XD when adding a new plugin. Also check the [output log](https://adobe-xd.gitbook.io/plugin-guides/getting-started/debugging-guide#1-open-the-developer-console) to ensure there aren't any errors in your plugin's [manifest](./reference/manifest.md).
