@@ -1,0 +1,16 @@
+{
+    "id": "com.adobe.demo.pixabay",
+    "name": "Pixabay Stock Search",
+    "version": "0.0.1",
+    "host": {
+        "app": "XD",
+        "minVersion": "10.0.10.24"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Stock Photo Search",
+            "commandId": "menuCommand"
+        }
+    ]
+}
