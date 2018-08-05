@@ -174,3 +174,4 @@ Description
 
 - [How to debug](how-to-debug)
 - [Investigate the style properties that are available](https://adobe-xd.gitbook.io/plugin-api-reference/scenegraph-reference/scenegraph#text-styleranges-array)
+- [Other samples](https://github.com/AdobeXD/Plugin-Samples)

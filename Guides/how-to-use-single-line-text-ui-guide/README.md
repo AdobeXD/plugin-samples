@@ -183,3 +183,4 @@ If you type in your name, the text should be added to the currently-selected or 
 Ready for more? Take a look at other guides:
 
 - [Guides](/Guides)
+- [Other samples](https://github.com/AdobeXD/Plugin-Samples)

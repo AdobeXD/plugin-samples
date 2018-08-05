@@ -142,3 +142,4 @@ If you select a file containing text, the text should be added to the currently-
 Ready for more? Take a look at other guides:
 
 - [Guides](/Guides)
+- [Other samples](https://github.com/AdobeXD/Plugin-Samples)

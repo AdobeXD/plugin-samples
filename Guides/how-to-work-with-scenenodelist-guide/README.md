@@ -173,3 +173,4 @@ Then, run the second command, "Filter and Color"
 Ready for more? Take a look at other guides:
 
 - [Guides](/Guides)
+- [Other samples](https://github.com/AdobeXD/Plugin-Samples)

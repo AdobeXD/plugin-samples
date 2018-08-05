@@ -142,3 +142,4 @@ Ater saving all your changes, reload the plugin in XD and invoke it.  The result
 Ready for more? Take a look at other guides:
 
 - [Guides](/Guides)
+- [Other samples](https://github.com/AdobeXD/Plugin-Samples)

@@ -159,3 +159,4 @@ If you reload the plugin and execute it, you should see a modal window like this
 Ready for more? Take a look at other guides:
 
 - [Guides](/Guides)
+- [Other samples](https://github.com/AdobeXD/Plugin-Samples)
