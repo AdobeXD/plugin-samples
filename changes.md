@@ -45,7 +45,7 @@ require("uxp").shell.openExternal("https://www.google.com");
 
 ## User Interface
 
-Read about [the user interface options here!](./reference/ui/ui-concepts.md) and then [dig into the UI reference](./reference/ui) [and UXP reference](./reference/uxp).
+Read about [the user interface options here!](./reference/ui/ui-concepts.md) and then [dig into the UI reference](./reference/ui/index.md) [and UXP reference](./reference/uxp/index.md).
 
 ## Known Issues
 
