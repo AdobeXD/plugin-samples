@@ -1,7 +1,6 @@
+## HTMLLabelElement
+**Signature:** HTMLLabelElement ⇐ [`HTMLElement`](#htmlelement)
 
-<a name="htmllabelelement" id="htmllabelelement"></a>
-
-## HTMLLabelElement ⇐ [`HTMLElement`](#htmlelement)
 **Kind**: global class  
 **Extends**: [`HTMLElement`](#htmlelement)  
 **Access**: public  
@@ -57,14 +56,14 @@
     * [.setAttribute(name, value)](#element-setattribute)
     * [.removeAttribute(name)](#element-removeattribute)
     * [.hasAttribute(name)](#element-hasattribute) ⇒ `boolean`
-    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `\*`
+    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `*`
     * [.setAttributeNode(newAttr)](#element-setattributenode)
     * [.removeAttributeNode(oldAttr)](#element-removeattributenode)
     * [.getElementsByClassName(name)](#element-getelementsbyclassname) ⇒ [`NodeList`](#nodelist)
     * [.getElementsByTagName(name)](#element-getelementsbytagname) ⇒ [`NodeList`](#nodelist)
     * [.querySelector(selector)](#element-queryselector) ⇒ [`Element`](#element)
     * [.querySelectorAll(selector)](#element-queryselectorall) ⇒ [`NodeList`](#nodelist)
-    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `\*`
+    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `*`
     * [.insertAdjacentHTML(position, value)](#element-insertadjacenthtml)
     * [.insertAdjacentElement(position, node)](#element-insertadjacentelement) ⇒ [`Node`](#node)
     * [.insertAdjacentText(position, text)](#element-insertadjacenttext)
@@ -82,285 +81,238 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
+### new HTMLLabelElement
+**Signature:** new HTMLLabelElement(document, nodeName, namespaceURI)
 
-<a name="new-htmllabelelement-new" id="new-htmllabelelement-new"></a>
-
-### new HTMLLabelElement(document, nodeName, namespaceURI)
 Creates an instance of HTMLLabelElement.
 
 
 | Param | Type |
 | --- | --- |
-| document | `\*` | 
-| nodeName | `\*` | 
-| namespaceURI | `\*` | 
+| document | `*` | 
+| nodeName | `*` | 
+| namespaceURI | `*` | 
 
+### htmlLabelElement.control
+**Signature:** htmlLabelElement.control : [`HTMLElement`](#htmlelement)
 
-<a name="htmllabelelement-control" id="htmllabelelement-control"></a>
-
-### htmlLabelElement.control : [`HTMLElement`](#htmlelement)
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.nodeName
+**Signature:** htmlLabelElement.nodeName : `string`
 
-<a name="element-nodename" id="element-nodename"></a>
-
-### htmlLabelElement.nodeName : `string`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.localName
+**Signature:** htmlLabelElement.localName : `string`
 
-<a name="element-localname" id="element-localname"></a>
-
-### htmlLabelElement.localName : `string`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.tagName
+**Signature:** htmlLabelElement.tagName : `string`
 
-<a name="element-tagname" id="element-tagname"></a>
-
-### htmlLabelElement.tagName : `string`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.nodeType
+**Signature:** htmlLabelElement.nodeType : `number`
 
-<a name="element-nodetype" id="element-nodetype"></a>
-
-### htmlLabelElement.nodeType : `number`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.namespaceURI
+**Signature:** htmlLabelElement.namespaceURI : `string`
 
-<a name="element-namespaceuri" id="element-namespaceuri"></a>
-
-### htmlLabelElement.namespaceURI : `string`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.id
+**Signature:** htmlLabelElement.id : `string`
 
-<a name="element-id" id="element-id"></a>
-
-### htmlLabelElement.id : `string`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
+### htmlLabelElement.className
+**Signature:** htmlLabelElement.className : `string`
 
-<a name="element-classname" id="element-classname"></a>
-
-### htmlLabelElement.className : `string`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
+### htmlLabelElement.attributes
+**Signature:** htmlLabelElement.attributes : [`NamedNodeMap`](#namednodemap)
 
-<a name="element-attributes" id="element-attributes"></a>
-
-### htmlLabelElement.attributes : [`NamedNodeMap`](#namednodemap)
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.style
+**Signature:** htmlLabelElement.style : `Style`
 
-<a name="element-style" id="element-style"></a>
-
-### htmlLabelElement.style : `Style`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.clientLeft
+**Signature:** htmlLabelElement.clientLeft : `number`
 
-<a name="element-clientleft" id="element-clientleft"></a>
-
-### htmlLabelElement.clientLeft : `number`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.clientTop
+**Signature:** htmlLabelElement.clientTop : `number`
 
-<a name="element-clienttop" id="element-clienttop"></a>
-
-### htmlLabelElement.clientTop : `number`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.clientWidth
+**Signature:** htmlLabelElement.clientWidth : `number`
 
-<a name="element-clientwidth" id="element-clientwidth"></a>
-
-### htmlLabelElement.clientWidth : `number`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.clientHeight
+**Signature:** htmlLabelElement.clientHeight : `number`
 
-<a name="element-clientheight" id="element-clientheight"></a>
-
-### htmlLabelElement.clientHeight : `number`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.offsetLeft
+**Signature:** htmlLabelElement.offsetLeft : `number`
 
-<a name="element-offsetleft" id="element-offsetleft"></a>
-
-### htmlLabelElement.offsetLeft : `number`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.offsetTop
+**Signature:** htmlLabelElement.offsetTop : `number`
 
-<a name="element-offsettop" id="element-offsettop"></a>
-
-### htmlLabelElement.offsetTop : `number`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.offsetWidth
+**Signature:** htmlLabelElement.offsetWidth : `number`
 
-<a name="element-offsetwidth" id="element-offsetwidth"></a>
-
-### htmlLabelElement.offsetWidth : `number`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.offsetHeight
+**Signature:** htmlLabelElement.offsetHeight : `number`
 
-<a name="element-offsetheight" id="element-offsetheight"></a>
-
-### htmlLabelElement.offsetHeight : `number`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.scrollLeft
+**Signature:** htmlLabelElement.scrollLeft : `number`
 
-<a name="element-scrollleft" id="element-scrollleft"></a>
-
-### htmlLabelElement.scrollLeft : `number`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
+### htmlLabelElement.scrollTop
+**Signature:** htmlLabelElement.scrollTop : `number`
 
-<a name="element-scrolltop" id="element-scrolltop"></a>
-
-### htmlLabelElement.scrollTop : `number`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
+### htmlLabelElement.scrollWidth
+**Signature:** htmlLabelElement.scrollWidth : `number`
 
-<a name="element-scrollwidth" id="element-scrollwidth"></a>
-
-### htmlLabelElement.scrollWidth : `number`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.scrollHeight
+**Signature:** htmlLabelElement.scrollHeight : `number`
 
-<a name="element-scrollheight" id="element-scrollheight"></a>
-
-### htmlLabelElement.scrollHeight : `number`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.disabled
+**Signature:** htmlLabelElement.disabled : `boolean`
 
-<a name="element-disabled" id="element-disabled"></a>
-
-### htmlLabelElement.disabled : `boolean`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
+### htmlLabelElement.innerHTML
+**Signature:** htmlLabelElement.innerHTML : `string`
 
-<a name="element-innerhtml" id="element-innerhtml"></a>
-
-### htmlLabelElement.innerHTML : `string`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
+### htmlLabelElement.outerHTML
+**Signature:** htmlLabelElement.outerHTML : `string`
 
-<a name="element-outerhtml" id="element-outerhtml"></a>
-
-### htmlLabelElement.outerHTML : `string`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
-
-<a name="node-contenteditable" id="node-contenteditable"></a>
-
 ### htmlLabelElement.contentEditable
+**Signature:** htmlLabelElement.contentEditable
+
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.isConnected
+**Signature:** htmlLabelElement.isConnected : `boolean`
 
-<a name="node-isconnected" id="node-isconnected"></a>
-
-### htmlLabelElement.isConnected : `boolean`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.parentNode
+**Signature:** htmlLabelElement.parentNode : [`Node`](#node)
 
-<a name="node-parentnode" id="node-parentnode"></a>
-
-### htmlLabelElement.parentNode : [`Node`](#node)
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.firstChild
+**Signature:** htmlLabelElement.firstChild : [`Node`](#node)
 
-<a name="node-firstchild" id="node-firstchild"></a>
-
-### htmlLabelElement.firstChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.lastChild
+**Signature:** htmlLabelElement.lastChild : [`Node`](#node)
 
-<a name="node-lastchild" id="node-lastchild"></a>
-
-### htmlLabelElement.lastChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.previousSibling
+**Signature:** htmlLabelElement.previousSibling : [`Node`](#node)
 
-<a name="node-previoussibling" id="node-previoussibling"></a>
-
-### htmlLabelElement.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.nextSibling
+**Signature:** htmlLabelElement.nextSibling : [`Node`](#node)
 
-<a name="node-nextsibling" id="node-nextsibling"></a>
-
-### htmlLabelElement.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.firstElementChild
+**Signature:** htmlLabelElement.firstElementChild : [`Node`](#node)
 
-<a name="node-firstelementchild" id="node-firstelementchild"></a>
-
-### htmlLabelElement.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.lastElementChild
+**Signature:** htmlLabelElement.lastElementChild : [`Node`](#node)
 
-<a name="node-lastelementchild" id="node-lastelementchild"></a>
-
-### htmlLabelElement.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.previousElementSibling
+**Signature:** htmlLabelElement.previousElementSibling : [`Node`](#node)
 
-<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
-
-### htmlLabelElement.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.nextElementSibling
+**Signature:** htmlLabelElement.nextElementSibling : [`Node`](#node)
 
-<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
-
-### htmlLabelElement.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.textContent
+**Signature:** htmlLabelElement.textContent : `string`
 
-<a name="node-textcontent" id="node-textcontent"></a>
-
-### htmlLabelElement.textContent : `string`
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
+### htmlLabelElement.childNodes
+**Signature:** htmlLabelElement.childNodes : [`NodeList`](#nodelist)
 
-<a name="node-childnodes" id="node-childnodes"></a>
-
-### htmlLabelElement.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
-
-<a name="node-ownerdocument" id="node-ownerdocument"></a>
-
 ### htmlLabelElement.ownerDocument
+**Signature:** htmlLabelElement.ownerDocument
+
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
-
-<a name="node-offsetparent" id="node-offsetparent"></a>
-
 ### htmlLabelElement.offsetParent
+**Signature:** htmlLabelElement.offsetParent
+
 **Kind**: instance property of [`HTMLLabelElement`](#htmllabelelement)  
 **Read only**: true  
+### htmlLabelElement.scrollIntoView
+**Signature:** htmlLabelElement.scrollIntoView()
 
-<a name="element-scrollintoview" id="element-scrollintoview"></a>
-
-### htmlLabelElement.scrollIntoView()
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
+### htmlLabelElement.scrollIntoViewIfNeeded
+**Signature:** htmlLabelElement.scrollIntoViewIfNeeded()
 
-<a name="element-scrollintoviewifneeded" id="element-scrollintoviewifneeded"></a>
-
-### htmlLabelElement.scrollIntoViewIfNeeded()
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
+### htmlLabelElement.focus
+**Signature:** htmlLabelElement.focus()
 
-<a name="element-focus" id="element-focus"></a>
-
-### htmlLabelElement.focus()
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
+### htmlLabelElement.blur
+**Signature:** htmlLabelElement.blur()
 
-<a name="element-blur" id="element-blur"></a>
-
-### htmlLabelElement.blur()
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
+### htmlLabelElement.getAttribute
+**Signature:** htmlLabelElement.getAttribute(name) ⇒ `string`
 
-<a name="element-getattribute" id="element-getattribute"></a>
-
-### htmlLabelElement.getAttribute(name) ⇒ `string`
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlLabelElement.setAttribute
+**Signature:** htmlLabelElement.setAttribute(name, value)
 
-<a name="element-setattribute" id="element-setattribute"></a>
-
-### htmlLabelElement.setAttribute(name, value)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
@@ -368,105 +320,94 @@ Creates an instance of HTMLLabelElement.
 | name | `string` | 
 | value | `string` | 
 
+### htmlLabelElement.removeAttribute
+**Signature:** htmlLabelElement.removeAttribute(name)
 
-<a name="element-removeattribute" id="element-removeattribute"></a>
-
-### htmlLabelElement.removeAttribute(name)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlLabelElement.hasAttribute
+**Signature:** htmlLabelElement.hasAttribute(name) ⇒ `boolean`
 
-<a name="element-hasattribute" id="element-hasattribute"></a>
-
-### htmlLabelElement.hasAttribute(name) ⇒ `boolean`
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlLabelElement.getAttributeNode
+**Signature:** htmlLabelElement.getAttributeNode(name) ⇒ `*`
 
-<a name="element-getattributenode" id="element-getattributenode"></a>
-
-### htmlLabelElement.getAttributeNode(name) ⇒ `\*`
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlLabelElement.setAttributeNode
+**Signature:** htmlLabelElement.setAttributeNode(newAttr)
 
-<a name="element-setattributenode" id="element-setattributenode"></a>
-
-### htmlLabelElement.setAttributeNode(newAttr)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
-| newAttr | `\*` | 
+| newAttr | `*` | 
 
+### htmlLabelElement.removeAttributeNode
+**Signature:** htmlLabelElement.removeAttributeNode(oldAttr)
 
-<a name="element-removeattributenode" id="element-removeattributenode"></a>
-
-### htmlLabelElement.removeAttributeNode(oldAttr)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
-| oldAttr | `\*` | 
+| oldAttr | `*` | 
 
+### htmlLabelElement.getElementsByClassName
+**Signature:** htmlLabelElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-getelementsbyclassname" id="element-getelementsbyclassname"></a>
-
-### htmlLabelElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
-**Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
-
-| Param | Type |
-| --- | --- |
-| name | `string` | 
-
-
-<a name="element-getelementsbytagname" id="element-getelementsbytagname"></a>
-
-### htmlLabelElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlLabelElement.getElementsByTagName
+**Signature:** htmlLabelElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-queryselector" id="element-queryselector"></a>
+**Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
-### htmlLabelElement.querySelector(selector) ⇒ [`Element`](#element)
+| Param | Type |
+| --- | --- |
+| name | `string` | 
+
+### htmlLabelElement.querySelector
+**Signature:** htmlLabelElement.querySelector(selector) ⇒ [`Element`](#element)
+
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
+### htmlLabelElement.querySelectorAll
+**Signature:** htmlLabelElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-queryselectorall" id="element-queryselectorall"></a>
-
-### htmlLabelElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
+### htmlLabelElement.getBoundingClientRect
+**Signature:** htmlLabelElement.getBoundingClientRect() ⇒ `*`
 
-<a name="element-getboundingclientrect" id="element-getboundingclientrect"></a>
-
-### htmlLabelElement.getBoundingClientRect() ⇒ `\*`
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
+### htmlLabelElement.insertAdjacentHTML
+**Signature:** htmlLabelElement.insertAdjacentHTML(position, value)
 
-<a name="element-insertadjacenthtml" id="element-insertadjacenthtml"></a>
-
-### htmlLabelElement.insertAdjacentHTML(position, value)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
@@ -474,57 +415,51 @@ Creates an instance of HTMLLabelElement.
 | position |  | 
 | value | `string` | 
 
+### htmlLabelElement.insertAdjacentElement
+**Signature:** htmlLabelElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 
-<a name="element-insertadjacentelement" id="element-insertadjacentelement"></a>
-
-### htmlLabelElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `\*` | 
-| node | `\*` | 
+| position | `*` | 
+| node | `*` | 
 
+### htmlLabelElement.insertAdjacentText
+**Signature:** htmlLabelElement.insertAdjacentText(position, text)
 
-<a name="element-insertadjacenttext" id="element-insertadjacenttext"></a>
-
-### htmlLabelElement.insertAdjacentText(position, text)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `\*` | 
-| text | `\*` | 
+| position | `*` | 
+| text | `*` | 
 
+### htmlLabelElement.hasChildNodes
+**Signature:** htmlLabelElement.hasChildNodes() ⇒ `boolean`
 
-<a name="node-haschildnodes" id="node-haschildnodes"></a>
-
-### htmlLabelElement.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
+### htmlLabelElement.cloneNode
+**Signature:** htmlLabelElement.cloneNode(deep) ⇒ [`Node`](#node)
 
-<a name="node-clonenode" id="node-clonenode"></a>
-
-### htmlLabelElement.cloneNode(deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
 | deep | `boolean` | 
 
+### htmlLabelElement.appendChild
+**Signature:** htmlLabelElement.appendChild(child) ⇒ [`Node`](#node)
 
-<a name="node-appendchild" id="node-appendchild"></a>
-
-### htmlLabelElement.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### htmlLabelElement.insertBefore
+**Signature:** htmlLabelElement.insertBefore(child, before) ⇒ [`Node`](#node)
 
-<a name="node-insertbefore" id="node-insertbefore"></a>
-
-### htmlLabelElement.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
@@ -532,10 +467,9 @@ Creates an instance of HTMLLabelElement.
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
+### htmlLabelElement.replaceChild
+**Signature:** htmlLabelElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
-<a name="node-replacechild" id="node-replacechild"></a>
-
-### htmlLabelElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
@@ -543,82 +477,74 @@ Creates an instance of HTMLLabelElement.
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
+### htmlLabelElement.removeChild
+**Signature:** htmlLabelElement.removeChild(child) ⇒ [`Node`](#node)
 
-<a name="node-removechild" id="node-removechild"></a>
-
-### htmlLabelElement.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### htmlLabelElement.remove
+**Signature:** htmlLabelElement.remove()
 
-<a name="node-remove" id="node-remove"></a>
-
-### htmlLabelElement.remove()
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
+### htmlLabelElement.before
+**Signature:** htmlLabelElement.before(...nodes)
 
-<a name="node-before" id="node-before"></a>
-
-### htmlLabelElement.before(...nodes)
-**Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
-
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
-
-
-<a name="node-after" id="node-after"></a>
-
-### htmlLabelElement.after(...nodes)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### htmlLabelElement.after
+**Signature:** htmlLabelElement.after(...nodes)
 
-<a name="node-replacewith" id="node-replacewith"></a>
-
-### htmlLabelElement.replaceWith(...nodes)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### htmlLabelElement.replaceWith
+**Signature:** htmlLabelElement.replaceWith(...nodes)
 
-<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+**Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
-### htmlLabelElement.addEventListener(eventName, callback, [capture])
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+### htmlLabelElement.addEventListener
+**Signature:** htmlLabelElement.addEventListener(eventName, callback, [capture])
+
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### htmlLabelElement.removeEventListener
+**Signature:** htmlLabelElement.removeEventListener(eventName, callback, [capture])
 
-<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
-
-### htmlLabelElement.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### htmlLabelElement.dispatchEvent
+**Signature:** htmlLabelElement.dispatchEvent(event)
 
-<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
-
-### htmlLabelElement.dispatchEvent(event)
 **Kind**: instance method of [`HTMLLabelElement`](#htmllabelelement)  
 
 | Param | Type |
 | --- | --- |
-| event | `\*` | 
+| event | `*` | 
 

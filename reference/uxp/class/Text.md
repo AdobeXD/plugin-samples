@@ -1,7 +1,6 @@
+## Text
+**Signature:** Text ⇐ [`CharacterData`](#characterdata)
 
-<a name="text" id="text"></a>
-
-## Text ⇐ [`CharacterData`](#characterdata)
 **Kind**: global class  
 **Extends**: [`CharacterData`](#characterdata)  
 **Access**: public  
@@ -49,168 +48,143 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
+### new Text
+**Signature:** new Text(document, textContent)
 
-<a name="new-text-new" id="new-text-new"></a>
-
-### new Text(document, textContent)
 Creates an instance of Text.
 
 
 | Param | Type |
 | --- | --- |
-| document | `\*` | 
-| textContent | `\*` | 
+| document | `*` | 
+| textContent | `*` | 
 
+### text.nodeName
+**Signature:** text.nodeName : `string`
 
-<a name="text-nodename" id="text-nodename"></a>
-
-### text.nodeName : `string`
 **Kind**: instance property of [`Text`](#text)  
 **Default**: <code>&quot;\&quot;#text\&quot;&quot;</code>  
 **Read only**: true  
+### text.nodeType
+**Signature:** text.nodeType : `number`
 
-<a name="text-nodetype" id="text-nodetype"></a>
-
-### text.nodeType : `number`
 **Kind**: instance property of [`Text`](#text)  
 **Default**: <code>Node.TEXT_NODE</code>  
 **Read only**: true  
+### text.data
+**Signature:** text.data : `string`
 
-<a name="characterdata-data" id="characterdata-data"></a>
-
-### text.data : `string`
 **Kind**: instance property of [`Text`](#text)  
+### text.textContent
+**Signature:** text.textContent : `string`
 
-<a name="characterdata-textcontent" id="characterdata-textcontent"></a>
-
-### text.textContent : `string`
 **Kind**: instance property of [`Text`](#text)  
+### text.nodeValue
+**Signature:** text.nodeValue : `string`
 
-<a name="characterdata-nodevalue" id="characterdata-nodevalue"></a>
-
-### text.nodeValue : `string`
 **Kind**: instance property of [`Text`](#text)  
+### text.length
+**Signature:** text.length : `number`
 
-<a name="characterdata-length" id="characterdata-length"></a>
-
-### text.length : `number`
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
-
-<a name="node-contenteditable" id="node-contenteditable"></a>
-
 ### text.contentEditable
+**Signature:** text.contentEditable
+
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
+### text.isConnected
+**Signature:** text.isConnected : `boolean`
 
-<a name="node-isconnected" id="node-isconnected"></a>
-
-### text.isConnected : `boolean`
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
+### text.parentNode
+**Signature:** text.parentNode : [`Node`](#node)
 
-<a name="node-parentnode" id="node-parentnode"></a>
-
-### text.parentNode : [`Node`](#node)
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
+### text.firstChild
+**Signature:** text.firstChild : [`Node`](#node)
 
-<a name="node-firstchild" id="node-firstchild"></a>
-
-### text.firstChild : [`Node`](#node)
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
+### text.lastChild
+**Signature:** text.lastChild : [`Node`](#node)
 
-<a name="node-lastchild" id="node-lastchild"></a>
-
-### text.lastChild : [`Node`](#node)
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
+### text.previousSibling
+**Signature:** text.previousSibling : [`Node`](#node)
 
-<a name="node-previoussibling" id="node-previoussibling"></a>
-
-### text.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
+### text.nextSibling
+**Signature:** text.nextSibling : [`Node`](#node)
 
-<a name="node-nextsibling" id="node-nextsibling"></a>
-
-### text.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
+### text.firstElementChild
+**Signature:** text.firstElementChild : [`Node`](#node)
 
-<a name="node-firstelementchild" id="node-firstelementchild"></a>
-
-### text.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
+### text.lastElementChild
+**Signature:** text.lastElementChild : [`Node`](#node)
 
-<a name="node-lastelementchild" id="node-lastelementchild"></a>
-
-### text.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
+### text.previousElementSibling
+**Signature:** text.previousElementSibling : [`Node`](#node)
 
-<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
-
-### text.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
+### text.nextElementSibling
+**Signature:** text.nextElementSibling : [`Node`](#node)
 
-<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
-
-### text.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
+### text.childNodes
+**Signature:** text.childNodes : [`NodeList`](#nodelist)
 
-<a name="node-childnodes" id="node-childnodes"></a>
-
-### text.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
-
-<a name="node-ownerdocument" id="node-ownerdocument"></a>
-
 ### text.ownerDocument
+**Signature:** text.ownerDocument
+
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
-
-<a name="node-attributes" id="node-attributes"></a>
-
 ### text.attributes
+**Signature:** text.attributes
+
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
-
-<a name="node-offsetparent" id="node-offsetparent"></a>
-
 ### text.offsetParent
+**Signature:** text.offsetParent
+
 **Kind**: instance property of [`Text`](#text)  
 **Read only**: true  
+### text.substringData
+**Signature:** text.substringData(offset, count) ⇒ `string`
 
-<a name="characterdata-substringdata" id="characterdata-substringdata"></a>
-
-### text.substringData(offset, count) ⇒ `string`
 **Kind**: instance method of [`Text`](#text)  
 
 | Param | Type |
 | --- | --- |
-| offset | `\*` | 
-| count | `\*` | 
+| offset | `*` | 
+| count | `*` | 
 
+### text.appendData
+**Signature:** text.appendData(arg)
 
-<a name="characterdata-appenddata" id="characterdata-appenddata"></a>
-
-### text.appendData(arg)
 **Kind**: instance method of [`Text`](#text)  
 
 | Param | Type |
 | --- | --- |
 | arg | `string` | 
 
+### text.insertData
+**Signature:** text.insertData(offset, arg)
 
-<a name="characterdata-insertdata" id="characterdata-insertdata"></a>
-
-### text.insertData(offset, arg)
 **Kind**: instance method of [`Text`](#text)  
 
 | Param | Type |
@@ -218,10 +192,9 @@ Creates an instance of Text.
 | offset | `number` | 
 | arg | `string` | 
 
+### text.deleteData
+**Signature:** text.deleteData(offset, count)
 
-<a name="characterdata-deletedata" id="characterdata-deletedata"></a>
-
-### text.deleteData(offset, count)
 **Kind**: instance method of [`Text`](#text)  
 
 | Param | Type |
@@ -229,10 +202,9 @@ Creates an instance of Text.
 | offset | `number` | 
 | count | `number` | 
 
+### text.replaceData
+**Signature:** text.replaceData(offset, count, arg)
 
-<a name="characterdata-replacedata" id="characterdata-replacedata"></a>
-
-### text.replaceData(offset, count, arg)
 **Kind**: instance method of [`Text`](#text)  
 
 | Param | Type |
@@ -241,35 +213,31 @@ Creates an instance of Text.
 | count | `number` | 
 | arg | `string` | 
 
+### text.hasChildNodes
+**Signature:** text.hasChildNodes() ⇒ `boolean`
 
-<a name="node-haschildnodes" id="node-haschildnodes"></a>
-
-### text.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`Text`](#text)  
+### text.cloneNode
+**Signature:** text.cloneNode(deep) ⇒ [`Node`](#node)
 
-<a name="node-clonenode" id="node-clonenode"></a>
-
-### text.cloneNode(deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Text`](#text)  
 
 | Param | Type |
 | --- | --- |
 | deep | `boolean` | 
 
+### text.appendChild
+**Signature:** text.appendChild(child) ⇒ [`Node`](#node)
 
-<a name="node-appendchild" id="node-appendchild"></a>
-
-### text.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Text`](#text)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### text.insertBefore
+**Signature:** text.insertBefore(child, before) ⇒ [`Node`](#node)
 
-<a name="node-insertbefore" id="node-insertbefore"></a>
-
-### text.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Text`](#text)  
 
 | Param | Type |
@@ -277,10 +245,9 @@ Creates an instance of Text.
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
+### text.replaceChild
+**Signature:** text.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
-<a name="node-replacechild" id="node-replacechild"></a>
-
-### text.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Text`](#text)  
 
 | Param | Type |
@@ -288,82 +255,74 @@ Creates an instance of Text.
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
+### text.removeChild
+**Signature:** text.removeChild(child) ⇒ [`Node`](#node)
 
-<a name="node-removechild" id="node-removechild"></a>
-
-### text.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Text`](#text)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### text.remove
+**Signature:** text.remove()
 
-<a name="node-remove" id="node-remove"></a>
-
-### text.remove()
 **Kind**: instance method of [`Text`](#text)  
+### text.before
+**Signature:** text.before(...nodes)
 
-<a name="node-before" id="node-before"></a>
-
-### text.before(...nodes)
-**Kind**: instance method of [`Text`](#text)  
-
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
-
-
-<a name="node-after" id="node-after"></a>
-
-### text.after(...nodes)
 **Kind**: instance method of [`Text`](#text)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### text.after
+**Signature:** text.after(...nodes)
 
-<a name="node-replacewith" id="node-replacewith"></a>
-
-### text.replaceWith(...nodes)
 **Kind**: instance method of [`Text`](#text)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### text.replaceWith
+**Signature:** text.replaceWith(...nodes)
 
-<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+**Kind**: instance method of [`Text`](#text)  
 
-### text.addEventListener(eventName, callback, [capture])
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+### text.addEventListener
+**Signature:** text.addEventListener(eventName, callback, [capture])
+
 **Kind**: instance method of [`Text`](#text)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### text.removeEventListener
+**Signature:** text.removeEventListener(eventName, callback, [capture])
 
-<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
-
-### text.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`Text`](#text)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### text.dispatchEvent
+**Signature:** text.dispatchEvent(event)
 
-<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
-
-### text.dispatchEvent(event)
 **Kind**: instance method of [`Text`](#text)  
 
 | Param | Type |
 | --- | --- |
-| event | `\*` | 
+| event | `*` | 
 

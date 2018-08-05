@@ -1,7 +1,6 @@
+## HTMLSelectElement
+**Signature:** HTMLSelectElement ⇐ [`HTMLElement`](#htmlelement)
 
-<a name="htmlselectelement" id="htmlselectelement"></a>
-
-## HTMLSelectElement ⇐ [`HTMLElement`](#htmlelement)
 **Kind**: global class  
 **Extends**: [`HTMLElement`](#htmlelement)  
 **Access**: public  
@@ -63,14 +62,14 @@
     * [.setAttribute(name, value)](#element-setattribute)
     * [.removeAttribute(name)](#element-removeattribute)
     * [.hasAttribute(name)](#element-hasattribute) ⇒ `boolean`
-    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `\*`
+    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `*`
     * [.setAttributeNode(newAttr)](#element-setattributenode)
     * [.removeAttributeNode(oldAttr)](#element-removeattributenode)
     * [.getElementsByClassName(name)](#element-getelementsbyclassname) ⇒ [`NodeList`](#nodelist)
     * [.getElementsByTagName(name)](#element-getelementsbytagname) ⇒ [`NodeList`](#nodelist)
     * [.querySelector(selector)](#element-queryselector) ⇒ [`Element`](#element)
     * [.querySelectorAll(selector)](#element-queryselectorall) ⇒ [`NodeList`](#nodelist)
-    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `\*`
+    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `*`
     * [.insertAdjacentHTML(position, value)](#element-insertadjacenthtml)
     * [.insertAdjacentElement(position, node)](#element-insertadjacentelement) ⇒ [`Node`](#node)
     * [.insertAdjacentText(position, text)](#element-insertadjacenttext)
@@ -88,319 +87,266 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
+### new HTMLSelectElement
+**Signature:** new HTMLSelectElement(document, nodeName, namespaceURI)
 
-<a name="new-htmlselectelement-new" id="new-htmlselectelement-new"></a>
-
-### new HTMLSelectElement(document, nodeName, namespaceURI)
 Creates an instance of HTMLSelectElement.
 
 
 | Param | Type |
 | --- | --- |
-| document | `\*` | 
-| nodeName | `\*` | 
-| namespaceURI | `\*` | 
+| document | `*` | 
+| nodeName | `*` | 
+| namespaceURI | `*` | 
 
+### htmlSelectElement.value
+**Signature:** htmlSelectElement.value : `string`
 
-<a name="htmlselectelement-value" id="htmlselectelement-value"></a>
-
-### htmlSelectElement.value : `string`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.selectedNode
+**Signature:** htmlSelectElement.selectedNode : [`Node`](#node)
 
-<a name="htmlselectelement-selectednode" id="htmlselectelement-selectednode"></a>
-
-### htmlSelectElement.selectedNode : [`Node`](#node)
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.selectedIndex
+**Signature:** htmlSelectElement.selectedIndex : `number`
 
-<a name="htmlselectelement-selectedindex" id="htmlselectelement-selectedindex"></a>
-
-### htmlSelectElement.selectedIndex : `number`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.selectedOptions
+**Signature:** htmlSelectElement.selectedOptions : [`Array.<Node>`](#node)
 
-<a name="htmlselectelement-selectedoptions" id="htmlselectelement-selectedoptions"></a>
-
-### htmlSelectElement.selectedOptions : [`Array.<Node>`](#node)
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.uxpVariant
+**Signature:** htmlSelectElement.uxpVariant : `string`
 
-<a name="htmlselectelement-uxpvariant" id="htmlselectelement-uxpvariant"></a>
-
-### htmlSelectElement.uxpVariant : `string`
 Variant
 
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.uxpQuiet
+**Signature:** htmlSelectElement.uxpQuiet : `string`
 
-<a name="htmlselectelement-uxpquiet" id="htmlselectelement-uxpquiet"></a>
-
-### htmlSelectElement.uxpQuiet : `string`
 Determines if control renders quietly
 
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.options
+**Signature:** htmlSelectElement.options : [`NodeList`](#nodelist)
 
-<a name="htmlselectelement-options" id="htmlselectelement-options"></a>
-
-### htmlSelectElement.options : [`NodeList`](#nodelist)
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.nodeName
+**Signature:** htmlSelectElement.nodeName : `string`
 
-<a name="element-nodename" id="element-nodename"></a>
-
-### htmlSelectElement.nodeName : `string`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.localName
+**Signature:** htmlSelectElement.localName : `string`
 
-<a name="element-localname" id="element-localname"></a>
-
-### htmlSelectElement.localName : `string`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.tagName
+**Signature:** htmlSelectElement.tagName : `string`
 
-<a name="element-tagname" id="element-tagname"></a>
-
-### htmlSelectElement.tagName : `string`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.nodeType
+**Signature:** htmlSelectElement.nodeType : `number`
 
-<a name="element-nodetype" id="element-nodetype"></a>
-
-### htmlSelectElement.nodeType : `number`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.namespaceURI
+**Signature:** htmlSelectElement.namespaceURI : `string`
 
-<a name="element-namespaceuri" id="element-namespaceuri"></a>
-
-### htmlSelectElement.namespaceURI : `string`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.id
+**Signature:** htmlSelectElement.id : `string`
 
-<a name="element-id" id="element-id"></a>
-
-### htmlSelectElement.id : `string`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.className
+**Signature:** htmlSelectElement.className : `string`
 
-<a name="element-classname" id="element-classname"></a>
-
-### htmlSelectElement.className : `string`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.attributes
+**Signature:** htmlSelectElement.attributes : [`NamedNodeMap`](#namednodemap)
 
-<a name="element-attributes" id="element-attributes"></a>
-
-### htmlSelectElement.attributes : [`NamedNodeMap`](#namednodemap)
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.style
+**Signature:** htmlSelectElement.style : `Style`
 
-<a name="element-style" id="element-style"></a>
-
-### htmlSelectElement.style : `Style`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.clientLeft
+**Signature:** htmlSelectElement.clientLeft : `number`
 
-<a name="element-clientleft" id="element-clientleft"></a>
-
-### htmlSelectElement.clientLeft : `number`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.clientTop
+**Signature:** htmlSelectElement.clientTop : `number`
 
-<a name="element-clienttop" id="element-clienttop"></a>
-
-### htmlSelectElement.clientTop : `number`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.clientWidth
+**Signature:** htmlSelectElement.clientWidth : `number`
 
-<a name="element-clientwidth" id="element-clientwidth"></a>
-
-### htmlSelectElement.clientWidth : `number`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.clientHeight
+**Signature:** htmlSelectElement.clientHeight : `number`
 
-<a name="element-clientheight" id="element-clientheight"></a>
-
-### htmlSelectElement.clientHeight : `number`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.offsetLeft
+**Signature:** htmlSelectElement.offsetLeft : `number`
 
-<a name="element-offsetleft" id="element-offsetleft"></a>
-
-### htmlSelectElement.offsetLeft : `number`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.offsetTop
+**Signature:** htmlSelectElement.offsetTop : `number`
 
-<a name="element-offsettop" id="element-offsettop"></a>
-
-### htmlSelectElement.offsetTop : `number`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.offsetWidth
+**Signature:** htmlSelectElement.offsetWidth : `number`
 
-<a name="element-offsetwidth" id="element-offsetwidth"></a>
-
-### htmlSelectElement.offsetWidth : `number`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.offsetHeight
+**Signature:** htmlSelectElement.offsetHeight : `number`
 
-<a name="element-offsetheight" id="element-offsetheight"></a>
-
-### htmlSelectElement.offsetHeight : `number`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.scrollLeft
+**Signature:** htmlSelectElement.scrollLeft : `number`
 
-<a name="element-scrollleft" id="element-scrollleft"></a>
-
-### htmlSelectElement.scrollLeft : `number`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.scrollTop
+**Signature:** htmlSelectElement.scrollTop : `number`
 
-<a name="element-scrolltop" id="element-scrolltop"></a>
-
-### htmlSelectElement.scrollTop : `number`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.scrollWidth
+**Signature:** htmlSelectElement.scrollWidth : `number`
 
-<a name="element-scrollwidth" id="element-scrollwidth"></a>
-
-### htmlSelectElement.scrollWidth : `number`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.scrollHeight
+**Signature:** htmlSelectElement.scrollHeight : `number`
 
-<a name="element-scrollheight" id="element-scrollheight"></a>
-
-### htmlSelectElement.scrollHeight : `number`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.disabled
+**Signature:** htmlSelectElement.disabled : `boolean`
 
-<a name="element-disabled" id="element-disabled"></a>
-
-### htmlSelectElement.disabled : `boolean`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.innerHTML
+**Signature:** htmlSelectElement.innerHTML : `string`
 
-<a name="element-innerhtml" id="element-innerhtml"></a>
-
-### htmlSelectElement.innerHTML : `string`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.outerHTML
+**Signature:** htmlSelectElement.outerHTML : `string`
 
-<a name="element-outerhtml" id="element-outerhtml"></a>
-
-### htmlSelectElement.outerHTML : `string`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
-
-<a name="node-contenteditable" id="node-contenteditable"></a>
-
 ### htmlSelectElement.contentEditable
+**Signature:** htmlSelectElement.contentEditable
+
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.isConnected
+**Signature:** htmlSelectElement.isConnected : `boolean`
 
-<a name="node-isconnected" id="node-isconnected"></a>
-
-### htmlSelectElement.isConnected : `boolean`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.parentNode
+**Signature:** htmlSelectElement.parentNode : [`Node`](#node)
 
-<a name="node-parentnode" id="node-parentnode"></a>
-
-### htmlSelectElement.parentNode : [`Node`](#node)
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.firstChild
+**Signature:** htmlSelectElement.firstChild : [`Node`](#node)
 
-<a name="node-firstchild" id="node-firstchild"></a>
-
-### htmlSelectElement.firstChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.lastChild
+**Signature:** htmlSelectElement.lastChild : [`Node`](#node)
 
-<a name="node-lastchild" id="node-lastchild"></a>
-
-### htmlSelectElement.lastChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.previousSibling
+**Signature:** htmlSelectElement.previousSibling : [`Node`](#node)
 
-<a name="node-previoussibling" id="node-previoussibling"></a>
-
-### htmlSelectElement.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.nextSibling
+**Signature:** htmlSelectElement.nextSibling : [`Node`](#node)
 
-<a name="node-nextsibling" id="node-nextsibling"></a>
-
-### htmlSelectElement.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.firstElementChild
+**Signature:** htmlSelectElement.firstElementChild : [`Node`](#node)
 
-<a name="node-firstelementchild" id="node-firstelementchild"></a>
-
-### htmlSelectElement.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.lastElementChild
+**Signature:** htmlSelectElement.lastElementChild : [`Node`](#node)
 
-<a name="node-lastelementchild" id="node-lastelementchild"></a>
-
-### htmlSelectElement.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.previousElementSibling
+**Signature:** htmlSelectElement.previousElementSibling : [`Node`](#node)
 
-<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
-
-### htmlSelectElement.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.nextElementSibling
+**Signature:** htmlSelectElement.nextElementSibling : [`Node`](#node)
 
-<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
-
-### htmlSelectElement.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.textContent
+**Signature:** htmlSelectElement.textContent : `string`
 
-<a name="node-textcontent" id="node-textcontent"></a>
-
-### htmlSelectElement.textContent : `string`
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.childNodes
+**Signature:** htmlSelectElement.childNodes : [`NodeList`](#nodelist)
 
-<a name="node-childnodes" id="node-childnodes"></a>
-
-### htmlSelectElement.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
-
-<a name="node-ownerdocument" id="node-ownerdocument"></a>
-
 ### htmlSelectElement.ownerDocument
+**Signature:** htmlSelectElement.ownerDocument
+
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
-
-<a name="node-offsetparent" id="node-offsetparent"></a>
-
 ### htmlSelectElement.offsetParent
+**Signature:** htmlSelectElement.offsetParent
+
 **Kind**: instance property of [`HTMLSelectElement`](#htmlselectelement)  
 **Read only**: true  
+### htmlSelectElement.scrollIntoView
+**Signature:** htmlSelectElement.scrollIntoView()
 
-<a name="element-scrollintoview" id="element-scrollintoview"></a>
-
-### htmlSelectElement.scrollIntoView()
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.scrollIntoViewIfNeeded
+**Signature:** htmlSelectElement.scrollIntoViewIfNeeded()
 
-<a name="element-scrollintoviewifneeded" id="element-scrollintoviewifneeded"></a>
-
-### htmlSelectElement.scrollIntoViewIfNeeded()
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.focus
+**Signature:** htmlSelectElement.focus()
 
-<a name="element-focus" id="element-focus"></a>
-
-### htmlSelectElement.focus()
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.blur
+**Signature:** htmlSelectElement.blur()
 
-<a name="element-blur" id="element-blur"></a>
-
-### htmlSelectElement.blur()
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.getAttribute
+**Signature:** htmlSelectElement.getAttribute(name) ⇒ `string`
 
-<a name="element-getattribute" id="element-getattribute"></a>
-
-### htmlSelectElement.getAttribute(name) ⇒ `string`
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlSelectElement.setAttribute
+**Signature:** htmlSelectElement.setAttribute(name, value)
 
-<a name="element-setattribute" id="element-setattribute"></a>
-
-### htmlSelectElement.setAttribute(name, value)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
@@ -408,105 +354,94 @@ Determines if control renders quietly
 | name | `string` | 
 | value | `string` | 
 
+### htmlSelectElement.removeAttribute
+**Signature:** htmlSelectElement.removeAttribute(name)
 
-<a name="element-removeattribute" id="element-removeattribute"></a>
-
-### htmlSelectElement.removeAttribute(name)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlSelectElement.hasAttribute
+**Signature:** htmlSelectElement.hasAttribute(name) ⇒ `boolean`
 
-<a name="element-hasattribute" id="element-hasattribute"></a>
-
-### htmlSelectElement.hasAttribute(name) ⇒ `boolean`
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlSelectElement.getAttributeNode
+**Signature:** htmlSelectElement.getAttributeNode(name) ⇒ `*`
 
-<a name="element-getattributenode" id="element-getattributenode"></a>
-
-### htmlSelectElement.getAttributeNode(name) ⇒ `\*`
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlSelectElement.setAttributeNode
+**Signature:** htmlSelectElement.setAttributeNode(newAttr)
 
-<a name="element-setattributenode" id="element-setattributenode"></a>
-
-### htmlSelectElement.setAttributeNode(newAttr)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
-| newAttr | `\*` | 
+| newAttr | `*` | 
 
+### htmlSelectElement.removeAttributeNode
+**Signature:** htmlSelectElement.removeAttributeNode(oldAttr)
 
-<a name="element-removeattributenode" id="element-removeattributenode"></a>
-
-### htmlSelectElement.removeAttributeNode(oldAttr)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
-| oldAttr | `\*` | 
+| oldAttr | `*` | 
 
+### htmlSelectElement.getElementsByClassName
+**Signature:** htmlSelectElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-getelementsbyclassname" id="element-getelementsbyclassname"></a>
-
-### htmlSelectElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
-**Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
-
-| Param | Type |
-| --- | --- |
-| name | `string` | 
-
-
-<a name="element-getelementsbytagname" id="element-getelementsbytagname"></a>
-
-### htmlSelectElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlSelectElement.getElementsByTagName
+**Signature:** htmlSelectElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-queryselector" id="element-queryselector"></a>
+**Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
-### htmlSelectElement.querySelector(selector) ⇒ [`Element`](#element)
+| Param | Type |
+| --- | --- |
+| name | `string` | 
+
+### htmlSelectElement.querySelector
+**Signature:** htmlSelectElement.querySelector(selector) ⇒ [`Element`](#element)
+
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
+### htmlSelectElement.querySelectorAll
+**Signature:** htmlSelectElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-queryselectorall" id="element-queryselectorall"></a>
-
-### htmlSelectElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
+### htmlSelectElement.getBoundingClientRect
+**Signature:** htmlSelectElement.getBoundingClientRect() ⇒ `*`
 
-<a name="element-getboundingclientrect" id="element-getboundingclientrect"></a>
-
-### htmlSelectElement.getBoundingClientRect() ⇒ `\*`
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.insertAdjacentHTML
+**Signature:** htmlSelectElement.insertAdjacentHTML(position, value)
 
-<a name="element-insertadjacenthtml" id="element-insertadjacenthtml"></a>
-
-### htmlSelectElement.insertAdjacentHTML(position, value)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
@@ -514,57 +449,51 @@ Determines if control renders quietly
 | position |  | 
 | value | `string` | 
 
+### htmlSelectElement.insertAdjacentElement
+**Signature:** htmlSelectElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 
-<a name="element-insertadjacentelement" id="element-insertadjacentelement"></a>
-
-### htmlSelectElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `\*` | 
-| node | `\*` | 
+| position | `*` | 
+| node | `*` | 
 
+### htmlSelectElement.insertAdjacentText
+**Signature:** htmlSelectElement.insertAdjacentText(position, text)
 
-<a name="element-insertadjacenttext" id="element-insertadjacenttext"></a>
-
-### htmlSelectElement.insertAdjacentText(position, text)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `\*` | 
-| text | `\*` | 
+| position | `*` | 
+| text | `*` | 
 
+### htmlSelectElement.hasChildNodes
+**Signature:** htmlSelectElement.hasChildNodes() ⇒ `boolean`
 
-<a name="node-haschildnodes" id="node-haschildnodes"></a>
-
-### htmlSelectElement.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.cloneNode
+**Signature:** htmlSelectElement.cloneNode(deep) ⇒ [`Node`](#node)
 
-<a name="node-clonenode" id="node-clonenode"></a>
-
-### htmlSelectElement.cloneNode(deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
 | deep | `boolean` | 
 
+### htmlSelectElement.appendChild
+**Signature:** htmlSelectElement.appendChild(child) ⇒ [`Node`](#node)
 
-<a name="node-appendchild" id="node-appendchild"></a>
-
-### htmlSelectElement.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### htmlSelectElement.insertBefore
+**Signature:** htmlSelectElement.insertBefore(child, before) ⇒ [`Node`](#node)
 
-<a name="node-insertbefore" id="node-insertbefore"></a>
-
-### htmlSelectElement.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
@@ -572,10 +501,9 @@ Determines if control renders quietly
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
+### htmlSelectElement.replaceChild
+**Signature:** htmlSelectElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
-<a name="node-replacechild" id="node-replacechild"></a>
-
-### htmlSelectElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
@@ -583,82 +511,74 @@ Determines if control renders quietly
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
+### htmlSelectElement.removeChild
+**Signature:** htmlSelectElement.removeChild(child) ⇒ [`Node`](#node)
 
-<a name="node-removechild" id="node-removechild"></a>
-
-### htmlSelectElement.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### htmlSelectElement.remove
+**Signature:** htmlSelectElement.remove()
 
-<a name="node-remove" id="node-remove"></a>
-
-### htmlSelectElement.remove()
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
+### htmlSelectElement.before
+**Signature:** htmlSelectElement.before(...nodes)
 
-<a name="node-before" id="node-before"></a>
-
-### htmlSelectElement.before(...nodes)
-**Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
-
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
-
-
-<a name="node-after" id="node-after"></a>
-
-### htmlSelectElement.after(...nodes)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### htmlSelectElement.after
+**Signature:** htmlSelectElement.after(...nodes)
 
-<a name="node-replacewith" id="node-replacewith"></a>
-
-### htmlSelectElement.replaceWith(...nodes)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### htmlSelectElement.replaceWith
+**Signature:** htmlSelectElement.replaceWith(...nodes)
 
-<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+**Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
-### htmlSelectElement.addEventListener(eventName, callback, [capture])
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+### htmlSelectElement.addEventListener
+**Signature:** htmlSelectElement.addEventListener(eventName, callback, [capture])
+
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### htmlSelectElement.removeEventListener
+**Signature:** htmlSelectElement.removeEventListener(eventName, callback, [capture])
 
-<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
-
-### htmlSelectElement.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### htmlSelectElement.dispatchEvent
+**Signature:** htmlSelectElement.dispatchEvent(event)
 
-<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
-
-### htmlSelectElement.dispatchEvent(event)
 **Kind**: instance method of [`HTMLSelectElement`](#htmlselectelement)  
 
 | Param | Type |
 | --- | --- |
-| event | `\*` | 
+| event | `*` | 
 

@@ -1,8 +1,7 @@
+## global.fetch
+**Signature:** global.fetch(input, [init]) ⇒ `Promise.<Response>`
 
-<a name="module-global-fetch" id="module-global-fetch"></a>
-
-## global.fetch(input, [init]) ⇒ `Promise.<Response>`
-**Kind**: static method of [`global`](#module-global)  
+**Kind**: static method of [`global`](#)  
 **Returns**: `Promise.<Response>` - @see Response  
 **Throws**:
 
@@ -13,7 +12,7 @@
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| input | `string` \| `Request` |  | either the URL string to connect with or a Request object having the URL and the init option in the below. |
+| input | `string` | `Request` |  | either the URL string to connect with or a Request object having the URL and the init option in the below. |
 | [init] | `Object` |  | custom options for a HTTP request. |
 | [init.method] | `Object` | <code>&quot;GET&quot;</code> | the HTTP request method. |
 | [init.headers] | `Headers` |  | the HTTP request headers to add. |

@@ -1,7 +1,6 @@
+## DocumentFragment
+**Signature:** DocumentFragment ⇐ [`Node`](#node)
 
-<a name="documentfragment" id="documentfragment"></a>
-
-## DocumentFragment ⇐ [`Node`](#node)
 **Kind**: global class  
 **Extends**: [`Node`](#node)  
 **Access**: public  
@@ -38,130 +37,110 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
-
-<a name="node-contenteditable" id="node-contenteditable"></a>
-
 ### documentFragment.contentEditable
+**Signature:** documentFragment.contentEditable
+
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
 **Read only**: true  
+### documentFragment.isConnected
+**Signature:** documentFragment.isConnected : `boolean`
 
-<a name="node-isconnected" id="node-isconnected"></a>
-
-### documentFragment.isConnected : `boolean`
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
 **Read only**: true  
+### documentFragment.parentNode
+**Signature:** documentFragment.parentNode : [`Node`](#node)
 
-<a name="node-parentnode" id="node-parentnode"></a>
-
-### documentFragment.parentNode : [`Node`](#node)
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
 **Read only**: true  
+### documentFragment.firstChild
+**Signature:** documentFragment.firstChild : [`Node`](#node)
 
-<a name="node-firstchild" id="node-firstchild"></a>
-
-### documentFragment.firstChild : [`Node`](#node)
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
 **Read only**: true  
+### documentFragment.lastChild
+**Signature:** documentFragment.lastChild : [`Node`](#node)
 
-<a name="node-lastchild" id="node-lastchild"></a>
-
-### documentFragment.lastChild : [`Node`](#node)
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
 **Read only**: true  
+### documentFragment.previousSibling
+**Signature:** documentFragment.previousSibling : [`Node`](#node)
 
-<a name="node-previoussibling" id="node-previoussibling"></a>
-
-### documentFragment.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
 **Read only**: true  
+### documentFragment.nextSibling
+**Signature:** documentFragment.nextSibling : [`Node`](#node)
 
-<a name="node-nextsibling" id="node-nextsibling"></a>
-
-### documentFragment.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
 **Read only**: true  
+### documentFragment.firstElementChild
+**Signature:** documentFragment.firstElementChild : [`Node`](#node)
 
-<a name="node-firstelementchild" id="node-firstelementchild"></a>
-
-### documentFragment.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
 **Read only**: true  
+### documentFragment.lastElementChild
+**Signature:** documentFragment.lastElementChild : [`Node`](#node)
 
-<a name="node-lastelementchild" id="node-lastelementchild"></a>
-
-### documentFragment.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
 **Read only**: true  
+### documentFragment.previousElementSibling
+**Signature:** documentFragment.previousElementSibling : [`Node`](#node)
 
-<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
-
-### documentFragment.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
 **Read only**: true  
+### documentFragment.nextElementSibling
+**Signature:** documentFragment.nextElementSibling : [`Node`](#node)
 
-<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
-
-### documentFragment.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
 **Read only**: true  
+### documentFragment.textContent
+**Signature:** documentFragment.textContent : `string`
 
-<a name="node-textcontent" id="node-textcontent"></a>
-
-### documentFragment.textContent : `string`
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
+### documentFragment.childNodes
+**Signature:** documentFragment.childNodes : [`NodeList`](#nodelist)
 
-<a name="node-childnodes" id="node-childnodes"></a>
-
-### documentFragment.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
 **Read only**: true  
-
-<a name="node-ownerdocument" id="node-ownerdocument"></a>
-
 ### documentFragment.ownerDocument
+**Signature:** documentFragment.ownerDocument
+
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
 **Read only**: true  
-
-<a name="node-attributes" id="node-attributes"></a>
-
 ### documentFragment.attributes
+**Signature:** documentFragment.attributes
+
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
 **Read only**: true  
-
-<a name="node-offsetparent" id="node-offsetparent"></a>
-
 ### documentFragment.offsetParent
+**Signature:** documentFragment.offsetParent
+
 **Kind**: instance property of [`DocumentFragment`](#documentfragment)  
 **Read only**: true  
+### documentFragment.hasChildNodes
+**Signature:** documentFragment.hasChildNodes() ⇒ `boolean`
 
-<a name="node-haschildnodes" id="node-haschildnodes"></a>
-
-### documentFragment.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`DocumentFragment`](#documentfragment)  
+### documentFragment.cloneNode
+**Signature:** documentFragment.cloneNode(deep) ⇒ [`Node`](#node)
 
-<a name="node-clonenode" id="node-clonenode"></a>
-
-### documentFragment.cloneNode(deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`DocumentFragment`](#documentfragment)  
 
 | Param | Type |
 | --- | --- |
 | deep | `boolean` | 
 
+### documentFragment.appendChild
+**Signature:** documentFragment.appendChild(child) ⇒ [`Node`](#node)
 
-<a name="node-appendchild" id="node-appendchild"></a>
-
-### documentFragment.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`DocumentFragment`](#documentfragment)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### documentFragment.insertBefore
+**Signature:** documentFragment.insertBefore(child, before) ⇒ [`Node`](#node)
 
-<a name="node-insertbefore" id="node-insertbefore"></a>
-
-### documentFragment.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`DocumentFragment`](#documentfragment)  
 
 | Param | Type |
@@ -169,10 +148,9 @@
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
+### documentFragment.replaceChild
+**Signature:** documentFragment.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
-<a name="node-replacechild" id="node-replacechild"></a>
-
-### documentFragment.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`DocumentFragment`](#documentfragment)  
 
 | Param | Type |
@@ -180,82 +158,74 @@
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
+### documentFragment.removeChild
+**Signature:** documentFragment.removeChild(child) ⇒ [`Node`](#node)
 
-<a name="node-removechild" id="node-removechild"></a>
-
-### documentFragment.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`DocumentFragment`](#documentfragment)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### documentFragment.remove
+**Signature:** documentFragment.remove()
 
-<a name="node-remove" id="node-remove"></a>
-
-### documentFragment.remove()
 **Kind**: instance method of [`DocumentFragment`](#documentfragment)  
+### documentFragment.before
+**Signature:** documentFragment.before(...nodes)
 
-<a name="node-before" id="node-before"></a>
-
-### documentFragment.before(...nodes)
-**Kind**: instance method of [`DocumentFragment`](#documentfragment)  
-
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
-
-
-<a name="node-after" id="node-after"></a>
-
-### documentFragment.after(...nodes)
 **Kind**: instance method of [`DocumentFragment`](#documentfragment)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### documentFragment.after
+**Signature:** documentFragment.after(...nodes)
 
-<a name="node-replacewith" id="node-replacewith"></a>
-
-### documentFragment.replaceWith(...nodes)
 **Kind**: instance method of [`DocumentFragment`](#documentfragment)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### documentFragment.replaceWith
+**Signature:** documentFragment.replaceWith(...nodes)
 
-<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+**Kind**: instance method of [`DocumentFragment`](#documentfragment)  
 
-### documentFragment.addEventListener(eventName, callback, [capture])
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+### documentFragment.addEventListener
+**Signature:** documentFragment.addEventListener(eventName, callback, [capture])
+
 **Kind**: instance method of [`DocumentFragment`](#documentfragment)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### documentFragment.removeEventListener
+**Signature:** documentFragment.removeEventListener(eventName, callback, [capture])
 
-<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
-
-### documentFragment.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`DocumentFragment`](#documentfragment)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### documentFragment.dispatchEvent
+**Signature:** documentFragment.dispatchEvent(event)
 
-<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
-
-### documentFragment.dispatchEvent(event)
 **Kind**: instance method of [`DocumentFragment`](#documentfragment)  
 
 | Param | Type |
 | --- | --- |
-| event | `\*` | 
+| event | `*` | 
 

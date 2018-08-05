@@ -1,7 +1,6 @@
-
-<a name="event" id="event"></a>
-
 ## Event
+**Signature:** Event
+
 **Kind**: global class  
 **Access**: public  
 **See**: https://developer.mozilla.org/en-US/docs/Web/API/Event  
@@ -17,113 +16,96 @@
         * [.cancelable](#event-cancelable) : `boolean`
         * [.eventPhase](#event-eventphase)
         * [.defaultPrevented](#event-defaultprevented) : `boolean`
-        * [.returnValue](#event-returnvalue) : `\*`
+        * [.returnValue](#event-returnvalue) : `*`
         * [.preventDefault()](#event-preventdefault)
         * [.stopImmediatePropagation()](#event-stopimmediatepropagation)
         * [.stopPropagation()](#event-stoppropagation)
     * _static_
-        * [.NONE](#event-none)
-        * [.CAPTURING_PHASE](#event-capturing-phase)
-        * [.AT_TARGET](#event-at-target)
-        * [.BUBBLING_PHASE](#event-bubbling-phase)
+        * [.NONE](#eventnone)
+        * [.CAPTURING_PHASE](#eventcapturing-phase)
+        * [.AT_TARGET](#eventat-target)
+        * [.BUBBLING_PHASE](#eventbubbling-phase)
 
+### new Event
+**Signature:** new Event(eventType, eventInit)
 
-<a name="new-event-new" id="new-event-new"></a>
-
-### new Event(eventType, eventInit)
 Creates an instance of Event.
 
 
 | Param | Type |
 | --- | --- |
-| eventType | `\*` | 
-| eventInit | `\*` | 
-
-
-<a name="event-type" id="event-type"></a>
+| eventType | `*` | 
+| eventInit | `*` | 
 
 ### event.type
+**Signature:** event.type
+
 **Kind**: instance property of [`Event`](#event)  
 **Read only**: true  
+### event.isTrusted
+**Signature:** event.isTrusted : `boolean`
 
-<a name="event-istrusted" id="event-istrusted"></a>
-
-### event.isTrusted : `boolean`
 **Kind**: instance property of [`Event`](#event)  
 **Read only**: true  
+### event.target
+**Signature:** event.target : [`Node`](#node)
 
-<a name="event-target" id="event-target"></a>
-
-### event.target : [`Node`](#node)
 **Kind**: instance property of [`Event`](#event)  
 **Read only**: true  
+### event.currentTarget
+**Signature:** event.currentTarget : [`Node`](#node)
 
-<a name="event-currenttarget" id="event-currenttarget"></a>
-
-### event.currentTarget : [`Node`](#node)
 **Kind**: instance property of [`Event`](#event)  
 **Read only**: true  
+### event.bubbles
+**Signature:** event.bubbles : `boolean`
 
-<a name="event-bubbles" id="event-bubbles"></a>
-
-### event.bubbles : `boolean`
 **Kind**: instance property of [`Event`](#event)  
 **Read only**: true  
+### event.cancelable
+**Signature:** event.cancelable : `boolean`
 
-<a name="event-cancelable" id="event-cancelable"></a>
-
-### event.cancelable : `boolean`
 **Kind**: instance property of [`Event`](#event)  
 **Read only**: true  
-
-<a name="event-eventphase" id="event-eventphase"></a>
-
 ### event.eventPhase
+**Signature:** event.eventPhase
+
 **Kind**: instance property of [`Event`](#event)  
 **Read only**: true  
+### event.defaultPrevented
+**Signature:** event.defaultPrevented : `boolean`
 
-<a name="event-defaultprevented" id="event-defaultprevented"></a>
-
-### event.defaultPrevented : `boolean`
 **Kind**: instance property of [`Event`](#event)  
 **Read only**: true  
+### event.returnValue
+**Signature:** event.returnValue : `*`
 
-<a name="event-returnvalue" id="event-returnvalue"></a>
-
-### event.returnValue : `\*`
 **Kind**: instance property of [`Event`](#event)  
+### event.preventDefault
+**Signature:** event.preventDefault()
 
-<a name="event-preventdefault" id="event-preventdefault"></a>
-
-### event.preventDefault()
 **Kind**: instance method of [`Event`](#event)  
+### event.stopImmediatePropagation
+**Signature:** event.stopImmediatePropagation()
 
-<a name="event-stopimmediatepropagation" id="event-stopimmediatepropagation"></a>
-
-### event.stopImmediatePropagation()
 **Kind**: instance method of [`Event`](#event)  
+### event.stopPropagation
+**Signature:** event.stopPropagation()
 
-<a name="event-stoppropagation" id="event-stoppropagation"></a>
-
-### event.stopPropagation()
 **Kind**: instance method of [`Event`](#event)  
-
-<a name="event-none" id="event-none"></a>
-
 ### Event.NONE
+**Signature:** Event.NONE
+
 **Kind**: static property of [`Event`](#event)  
-
-<a name="event-capturing-phase" id="event-capturing-phase"></a>
-
 ### Event.CAPTURING_PHASE
+**Signature:** Event.CAPTURING_PHASE
+
 **Kind**: static property of [`Event`](#event)  
-
-<a name="event-at-target" id="event-at-target"></a>
-
 ### Event.AT_TARGET
+**Signature:** Event.AT_TARGET
+
 **Kind**: static property of [`Event`](#event)  
-
-<a name="event-bubbling-phase" id="event-bubbling-phase"></a>
-
 ### Event.BUBBLING_PHASE
+**Signature:** Event.BUBBLING_PHASE
+
 **Kind**: static property of [`Event`](#event)  

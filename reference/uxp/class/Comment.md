@@ -1,7 +1,6 @@
+## Comment
+**Signature:** Comment ⇐ [`Node`](#node)
 
-<a name="comment" id="comment"></a>
-
-## Comment ⇐ [`Node`](#node)
 **Kind**: global class  
 **Extends**: [`Node`](#node)  
 **Access**: public  
@@ -42,10 +41,9 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
+### new Comment
+**Signature:** new Comment(document, comment)
 
-<a name="new-comment-new" id="new-comment-new"></a>
-
-### new Comment(document, comment)
 Creates an instance of Comment.
 
 
@@ -54,148 +52,125 @@ Creates an instance of Comment.
 | document | [`Document`](#document) | 
 | comment | `string` | 
 
+### comment.nodeName
+**Signature:** comment.nodeName : `string`
 
-<a name="comment-nodename" id="comment-nodename"></a>
-
-### comment.nodeName : `string`
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
+### comment.nodeType
+**Signature:** comment.nodeType : `number`
 
-<a name="comment-nodetype" id="comment-nodetype"></a>
-
-### comment.nodeType : `number`
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
+### comment.nodeValue
+**Signature:** comment.nodeValue : `string`
 
-<a name="comment-nodevalue" id="comment-nodevalue"></a>
-
-### comment.nodeValue : `string`
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
-
-<a name="node-contenteditable" id="node-contenteditable"></a>
-
 ### comment.contentEditable
+**Signature:** comment.contentEditable
+
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
+### comment.isConnected
+**Signature:** comment.isConnected : `boolean`
 
-<a name="node-isconnected" id="node-isconnected"></a>
-
-### comment.isConnected : `boolean`
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
+### comment.parentNode
+**Signature:** comment.parentNode : [`Node`](#node)
 
-<a name="node-parentnode" id="node-parentnode"></a>
-
-### comment.parentNode : [`Node`](#node)
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
+### comment.firstChild
+**Signature:** comment.firstChild : [`Node`](#node)
 
-<a name="node-firstchild" id="node-firstchild"></a>
-
-### comment.firstChild : [`Node`](#node)
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
+### comment.lastChild
+**Signature:** comment.lastChild : [`Node`](#node)
 
-<a name="node-lastchild" id="node-lastchild"></a>
-
-### comment.lastChild : [`Node`](#node)
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
+### comment.previousSibling
+**Signature:** comment.previousSibling : [`Node`](#node)
 
-<a name="node-previoussibling" id="node-previoussibling"></a>
-
-### comment.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
+### comment.nextSibling
+**Signature:** comment.nextSibling : [`Node`](#node)
 
-<a name="node-nextsibling" id="node-nextsibling"></a>
-
-### comment.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
+### comment.firstElementChild
+**Signature:** comment.firstElementChild : [`Node`](#node)
 
-<a name="node-firstelementchild" id="node-firstelementchild"></a>
-
-### comment.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
+### comment.lastElementChild
+**Signature:** comment.lastElementChild : [`Node`](#node)
 
-<a name="node-lastelementchild" id="node-lastelementchild"></a>
-
-### comment.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
+### comment.previousElementSibling
+**Signature:** comment.previousElementSibling : [`Node`](#node)
 
-<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
-
-### comment.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
+### comment.nextElementSibling
+**Signature:** comment.nextElementSibling : [`Node`](#node)
 
-<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
-
-### comment.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
+### comment.textContent
+**Signature:** comment.textContent : `string`
 
-<a name="node-textcontent" id="node-textcontent"></a>
-
-### comment.textContent : `string`
 **Kind**: instance property of [`Comment`](#comment)  
+### comment.childNodes
+**Signature:** comment.childNodes : [`NodeList`](#nodelist)
 
-<a name="node-childnodes" id="node-childnodes"></a>
-
-### comment.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
-
-<a name="node-ownerdocument" id="node-ownerdocument"></a>
-
 ### comment.ownerDocument
+**Signature:** comment.ownerDocument
+
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
-
-<a name="node-attributes" id="node-attributes"></a>
-
 ### comment.attributes
+**Signature:** comment.attributes
+
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
-
-<a name="node-offsetparent" id="node-offsetparent"></a>
-
 ### comment.offsetParent
+**Signature:** comment.offsetParent
+
 **Kind**: instance property of [`Comment`](#comment)  
 **Read only**: true  
+### comment.hasChildNodes
+**Signature:** comment.hasChildNodes() ⇒ `boolean`
 
-<a name="node-haschildnodes" id="node-haschildnodes"></a>
-
-### comment.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`Comment`](#comment)  
+### comment.cloneNode
+**Signature:** comment.cloneNode(deep) ⇒ [`Node`](#node)
 
-<a name="node-clonenode" id="node-clonenode"></a>
-
-### comment.cloneNode(deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Comment`](#comment)  
 
 | Param | Type |
 | --- | --- |
 | deep | `boolean` | 
 
+### comment.appendChild
+**Signature:** comment.appendChild(child) ⇒ [`Node`](#node)
 
-<a name="node-appendchild" id="node-appendchild"></a>
-
-### comment.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Comment`](#comment)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### comment.insertBefore
+**Signature:** comment.insertBefore(child, before) ⇒ [`Node`](#node)
 
-<a name="node-insertbefore" id="node-insertbefore"></a>
-
-### comment.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Comment`](#comment)  
 
 | Param | Type |
@@ -203,10 +178,9 @@ Creates an instance of Comment.
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
+### comment.replaceChild
+**Signature:** comment.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
-<a name="node-replacechild" id="node-replacechild"></a>
-
-### comment.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Comment`](#comment)  
 
 | Param | Type |
@@ -214,82 +188,74 @@ Creates an instance of Comment.
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
+### comment.removeChild
+**Signature:** comment.removeChild(child) ⇒ [`Node`](#node)
 
-<a name="node-removechild" id="node-removechild"></a>
-
-### comment.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Comment`](#comment)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### comment.remove
+**Signature:** comment.remove()
 
-<a name="node-remove" id="node-remove"></a>
-
-### comment.remove()
 **Kind**: instance method of [`Comment`](#comment)  
+### comment.before
+**Signature:** comment.before(...nodes)
 
-<a name="node-before" id="node-before"></a>
-
-### comment.before(...nodes)
-**Kind**: instance method of [`Comment`](#comment)  
-
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
-
-
-<a name="node-after" id="node-after"></a>
-
-### comment.after(...nodes)
 **Kind**: instance method of [`Comment`](#comment)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### comment.after
+**Signature:** comment.after(...nodes)
 
-<a name="node-replacewith" id="node-replacewith"></a>
-
-### comment.replaceWith(...nodes)
 **Kind**: instance method of [`Comment`](#comment)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### comment.replaceWith
+**Signature:** comment.replaceWith(...nodes)
 
-<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+**Kind**: instance method of [`Comment`](#comment)  
 
-### comment.addEventListener(eventName, callback, [capture])
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+### comment.addEventListener
+**Signature:** comment.addEventListener(eventName, callback, [capture])
+
 **Kind**: instance method of [`Comment`](#comment)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### comment.removeEventListener
+**Signature:** comment.removeEventListener(eventName, callback, [capture])
 
-<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
-
-### comment.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`Comment`](#comment)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### comment.dispatchEvent
+**Signature:** comment.dispatchEvent(event)
 
-<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
-
-### comment.dispatchEvent(event)
 **Kind**: instance method of [`Comment`](#comment)  
 
 | Param | Type |
 | --- | --- |
-| event | `\*` | 
+| event | `*` | 
 

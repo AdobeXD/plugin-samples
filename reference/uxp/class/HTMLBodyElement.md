@@ -1,7 +1,6 @@
+## HTMLBodyElement
+**Signature:** HTMLBodyElement ⇐ [`HTMLElement`](#htmlelement)
 
-<a name="htmlbodyelement" id="htmlbodyelement"></a>
-
-## HTMLBodyElement ⇐ [`HTMLElement`](#htmlelement)
 **Kind**: global class  
 **Extends**: [`HTMLElement`](#htmlelement)  
 **Access**: public  
@@ -56,14 +55,14 @@
     * [.setAttribute(name, value)](#element-setattribute)
     * [.removeAttribute(name)](#element-removeattribute)
     * [.hasAttribute(name)](#element-hasattribute) ⇒ `boolean`
-    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `\*`
+    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `*`
     * [.setAttributeNode(newAttr)](#element-setattributenode)
     * [.removeAttributeNode(oldAttr)](#element-removeattributenode)
     * [.getElementsByClassName(name)](#element-getelementsbyclassname) ⇒ [`NodeList`](#nodelist)
     * [.getElementsByTagName(name)](#element-getelementsbytagname) ⇒ [`NodeList`](#nodelist)
     * [.querySelector(selector)](#element-queryselector) ⇒ [`Element`](#element)
     * [.querySelectorAll(selector)](#element-queryselectorall) ⇒ [`NodeList`](#nodelist)
-    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `\*`
+    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `*`
     * [.insertAdjacentHTML(position, value)](#element-insertadjacenthtml)
     * [.insertAdjacentElement(position, node)](#element-insertadjacentelement) ⇒ [`Node`](#node)
     * [.insertAdjacentText(position, text)](#element-insertadjacenttext)
@@ -81,279 +80,233 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
+### new HTMLBodyElement
+**Signature:** new HTMLBodyElement(document, nodeName, namespaceURI)
 
-<a name="new-htmlbodyelement-new" id="new-htmlbodyelement-new"></a>
-
-### new HTMLBodyElement(document, nodeName, namespaceURI)
 Creates an instance of HTMLBodyElement.
 
 
 | Param | Type |
 | --- | --- |
-| document | `\*` | 
-| nodeName | `\*` | 
-| namespaceURI | `\*` | 
+| document | `*` | 
+| nodeName | `*` | 
+| namespaceURI | `*` | 
 
+### htmlBodyElement.nodeName
+**Signature:** htmlBodyElement.nodeName : `string`
 
-<a name="element-nodename" id="element-nodename"></a>
-
-### htmlBodyElement.nodeName : `string`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.localName
+**Signature:** htmlBodyElement.localName : `string`
 
-<a name="element-localname" id="element-localname"></a>
-
-### htmlBodyElement.localName : `string`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.tagName
+**Signature:** htmlBodyElement.tagName : `string`
 
-<a name="element-tagname" id="element-tagname"></a>
-
-### htmlBodyElement.tagName : `string`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.nodeType
+**Signature:** htmlBodyElement.nodeType : `number`
 
-<a name="element-nodetype" id="element-nodetype"></a>
-
-### htmlBodyElement.nodeType : `number`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.namespaceURI
+**Signature:** htmlBodyElement.namespaceURI : `string`
 
-<a name="element-namespaceuri" id="element-namespaceuri"></a>
-
-### htmlBodyElement.namespaceURI : `string`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.id
+**Signature:** htmlBodyElement.id : `string`
 
-<a name="element-id" id="element-id"></a>
-
-### htmlBodyElement.id : `string`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
+### htmlBodyElement.className
+**Signature:** htmlBodyElement.className : `string`
 
-<a name="element-classname" id="element-classname"></a>
-
-### htmlBodyElement.className : `string`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
+### htmlBodyElement.attributes
+**Signature:** htmlBodyElement.attributes : [`NamedNodeMap`](#namednodemap)
 
-<a name="element-attributes" id="element-attributes"></a>
-
-### htmlBodyElement.attributes : [`NamedNodeMap`](#namednodemap)
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.style
+**Signature:** htmlBodyElement.style : `Style`
 
-<a name="element-style" id="element-style"></a>
-
-### htmlBodyElement.style : `Style`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.clientLeft
+**Signature:** htmlBodyElement.clientLeft : `number`
 
-<a name="element-clientleft" id="element-clientleft"></a>
-
-### htmlBodyElement.clientLeft : `number`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.clientTop
+**Signature:** htmlBodyElement.clientTop : `number`
 
-<a name="element-clienttop" id="element-clienttop"></a>
-
-### htmlBodyElement.clientTop : `number`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.clientWidth
+**Signature:** htmlBodyElement.clientWidth : `number`
 
-<a name="element-clientwidth" id="element-clientwidth"></a>
-
-### htmlBodyElement.clientWidth : `number`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.clientHeight
+**Signature:** htmlBodyElement.clientHeight : `number`
 
-<a name="element-clientheight" id="element-clientheight"></a>
-
-### htmlBodyElement.clientHeight : `number`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.offsetLeft
+**Signature:** htmlBodyElement.offsetLeft : `number`
 
-<a name="element-offsetleft" id="element-offsetleft"></a>
-
-### htmlBodyElement.offsetLeft : `number`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.offsetTop
+**Signature:** htmlBodyElement.offsetTop : `number`
 
-<a name="element-offsettop" id="element-offsettop"></a>
-
-### htmlBodyElement.offsetTop : `number`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.offsetWidth
+**Signature:** htmlBodyElement.offsetWidth : `number`
 
-<a name="element-offsetwidth" id="element-offsetwidth"></a>
-
-### htmlBodyElement.offsetWidth : `number`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.offsetHeight
+**Signature:** htmlBodyElement.offsetHeight : `number`
 
-<a name="element-offsetheight" id="element-offsetheight"></a>
-
-### htmlBodyElement.offsetHeight : `number`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.scrollLeft
+**Signature:** htmlBodyElement.scrollLeft : `number`
 
-<a name="element-scrollleft" id="element-scrollleft"></a>
-
-### htmlBodyElement.scrollLeft : `number`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
+### htmlBodyElement.scrollTop
+**Signature:** htmlBodyElement.scrollTop : `number`
 
-<a name="element-scrolltop" id="element-scrolltop"></a>
-
-### htmlBodyElement.scrollTop : `number`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
+### htmlBodyElement.scrollWidth
+**Signature:** htmlBodyElement.scrollWidth : `number`
 
-<a name="element-scrollwidth" id="element-scrollwidth"></a>
-
-### htmlBodyElement.scrollWidth : `number`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.scrollHeight
+**Signature:** htmlBodyElement.scrollHeight : `number`
 
-<a name="element-scrollheight" id="element-scrollheight"></a>
-
-### htmlBodyElement.scrollHeight : `number`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.disabled
+**Signature:** htmlBodyElement.disabled : `boolean`
 
-<a name="element-disabled" id="element-disabled"></a>
-
-### htmlBodyElement.disabled : `boolean`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
+### htmlBodyElement.innerHTML
+**Signature:** htmlBodyElement.innerHTML : `string`
 
-<a name="element-innerhtml" id="element-innerhtml"></a>
-
-### htmlBodyElement.innerHTML : `string`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
+### htmlBodyElement.outerHTML
+**Signature:** htmlBodyElement.outerHTML : `string`
 
-<a name="element-outerhtml" id="element-outerhtml"></a>
-
-### htmlBodyElement.outerHTML : `string`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
-
-<a name="node-contenteditable" id="node-contenteditable"></a>
-
 ### htmlBodyElement.contentEditable
+**Signature:** htmlBodyElement.contentEditable
+
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.isConnected
+**Signature:** htmlBodyElement.isConnected : `boolean`
 
-<a name="node-isconnected" id="node-isconnected"></a>
-
-### htmlBodyElement.isConnected : `boolean`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.parentNode
+**Signature:** htmlBodyElement.parentNode : [`Node`](#node)
 
-<a name="node-parentnode" id="node-parentnode"></a>
-
-### htmlBodyElement.parentNode : [`Node`](#node)
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.firstChild
+**Signature:** htmlBodyElement.firstChild : [`Node`](#node)
 
-<a name="node-firstchild" id="node-firstchild"></a>
-
-### htmlBodyElement.firstChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.lastChild
+**Signature:** htmlBodyElement.lastChild : [`Node`](#node)
 
-<a name="node-lastchild" id="node-lastchild"></a>
-
-### htmlBodyElement.lastChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.previousSibling
+**Signature:** htmlBodyElement.previousSibling : [`Node`](#node)
 
-<a name="node-previoussibling" id="node-previoussibling"></a>
-
-### htmlBodyElement.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.nextSibling
+**Signature:** htmlBodyElement.nextSibling : [`Node`](#node)
 
-<a name="node-nextsibling" id="node-nextsibling"></a>
-
-### htmlBodyElement.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.firstElementChild
+**Signature:** htmlBodyElement.firstElementChild : [`Node`](#node)
 
-<a name="node-firstelementchild" id="node-firstelementchild"></a>
-
-### htmlBodyElement.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.lastElementChild
+**Signature:** htmlBodyElement.lastElementChild : [`Node`](#node)
 
-<a name="node-lastelementchild" id="node-lastelementchild"></a>
-
-### htmlBodyElement.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.previousElementSibling
+**Signature:** htmlBodyElement.previousElementSibling : [`Node`](#node)
 
-<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
-
-### htmlBodyElement.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.nextElementSibling
+**Signature:** htmlBodyElement.nextElementSibling : [`Node`](#node)
 
-<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
-
-### htmlBodyElement.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.textContent
+**Signature:** htmlBodyElement.textContent : `string`
 
-<a name="node-textcontent" id="node-textcontent"></a>
-
-### htmlBodyElement.textContent : `string`
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
+### htmlBodyElement.childNodes
+**Signature:** htmlBodyElement.childNodes : [`NodeList`](#nodelist)
 
-<a name="node-childnodes" id="node-childnodes"></a>
-
-### htmlBodyElement.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
-
-<a name="node-ownerdocument" id="node-ownerdocument"></a>
-
 ### htmlBodyElement.ownerDocument
+**Signature:** htmlBodyElement.ownerDocument
+
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
-
-<a name="node-offsetparent" id="node-offsetparent"></a>
-
 ### htmlBodyElement.offsetParent
+**Signature:** htmlBodyElement.offsetParent
+
 **Kind**: instance property of [`HTMLBodyElement`](#htmlbodyelement)  
 **Read only**: true  
+### htmlBodyElement.scrollIntoView
+**Signature:** htmlBodyElement.scrollIntoView()
 
-<a name="element-scrollintoview" id="element-scrollintoview"></a>
-
-### htmlBodyElement.scrollIntoView()
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
+### htmlBodyElement.scrollIntoViewIfNeeded
+**Signature:** htmlBodyElement.scrollIntoViewIfNeeded()
 
-<a name="element-scrollintoviewifneeded" id="element-scrollintoviewifneeded"></a>
-
-### htmlBodyElement.scrollIntoViewIfNeeded()
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
+### htmlBodyElement.focus
+**Signature:** htmlBodyElement.focus()
 
-<a name="element-focus" id="element-focus"></a>
-
-### htmlBodyElement.focus()
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
+### htmlBodyElement.blur
+**Signature:** htmlBodyElement.blur()
 
-<a name="element-blur" id="element-blur"></a>
-
-### htmlBodyElement.blur()
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
+### htmlBodyElement.getAttribute
+**Signature:** htmlBodyElement.getAttribute(name) ⇒ `string`
 
-<a name="element-getattribute" id="element-getattribute"></a>
-
-### htmlBodyElement.getAttribute(name) ⇒ `string`
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlBodyElement.setAttribute
+**Signature:** htmlBodyElement.setAttribute(name, value)
 
-<a name="element-setattribute" id="element-setattribute"></a>
-
-### htmlBodyElement.setAttribute(name, value)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
@@ -361,105 +314,94 @@ Creates an instance of HTMLBodyElement.
 | name | `string` | 
 | value | `string` | 
 
+### htmlBodyElement.removeAttribute
+**Signature:** htmlBodyElement.removeAttribute(name)
 
-<a name="element-removeattribute" id="element-removeattribute"></a>
-
-### htmlBodyElement.removeAttribute(name)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlBodyElement.hasAttribute
+**Signature:** htmlBodyElement.hasAttribute(name) ⇒ `boolean`
 
-<a name="element-hasattribute" id="element-hasattribute"></a>
-
-### htmlBodyElement.hasAttribute(name) ⇒ `boolean`
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlBodyElement.getAttributeNode
+**Signature:** htmlBodyElement.getAttributeNode(name) ⇒ `*`
 
-<a name="element-getattributenode" id="element-getattributenode"></a>
-
-### htmlBodyElement.getAttributeNode(name) ⇒ `\*`
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlBodyElement.setAttributeNode
+**Signature:** htmlBodyElement.setAttributeNode(newAttr)
 
-<a name="element-setattributenode" id="element-setattributenode"></a>
-
-### htmlBodyElement.setAttributeNode(newAttr)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
-| newAttr | `\*` | 
+| newAttr | `*` | 
 
+### htmlBodyElement.removeAttributeNode
+**Signature:** htmlBodyElement.removeAttributeNode(oldAttr)
 
-<a name="element-removeattributenode" id="element-removeattributenode"></a>
-
-### htmlBodyElement.removeAttributeNode(oldAttr)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
-| oldAttr | `\*` | 
+| oldAttr | `*` | 
 
+### htmlBodyElement.getElementsByClassName
+**Signature:** htmlBodyElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-getelementsbyclassname" id="element-getelementsbyclassname"></a>
-
-### htmlBodyElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
-**Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
-
-| Param | Type |
-| --- | --- |
-| name | `string` | 
-
-
-<a name="element-getelementsbytagname" id="element-getelementsbytagname"></a>
-
-### htmlBodyElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlBodyElement.getElementsByTagName
+**Signature:** htmlBodyElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-queryselector" id="element-queryselector"></a>
+**Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
-### htmlBodyElement.querySelector(selector) ⇒ [`Element`](#element)
+| Param | Type |
+| --- | --- |
+| name | `string` | 
+
+### htmlBodyElement.querySelector
+**Signature:** htmlBodyElement.querySelector(selector) ⇒ [`Element`](#element)
+
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
+### htmlBodyElement.querySelectorAll
+**Signature:** htmlBodyElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-queryselectorall" id="element-queryselectorall"></a>
-
-### htmlBodyElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
+### htmlBodyElement.getBoundingClientRect
+**Signature:** htmlBodyElement.getBoundingClientRect() ⇒ `*`
 
-<a name="element-getboundingclientrect" id="element-getboundingclientrect"></a>
-
-### htmlBodyElement.getBoundingClientRect() ⇒ `\*`
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
+### htmlBodyElement.insertAdjacentHTML
+**Signature:** htmlBodyElement.insertAdjacentHTML(position, value)
 
-<a name="element-insertadjacenthtml" id="element-insertadjacenthtml"></a>
-
-### htmlBodyElement.insertAdjacentHTML(position, value)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
@@ -467,57 +409,51 @@ Creates an instance of HTMLBodyElement.
 | position |  | 
 | value | `string` | 
 
+### htmlBodyElement.insertAdjacentElement
+**Signature:** htmlBodyElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 
-<a name="element-insertadjacentelement" id="element-insertadjacentelement"></a>
-
-### htmlBodyElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `\*` | 
-| node | `\*` | 
+| position | `*` | 
+| node | `*` | 
 
+### htmlBodyElement.insertAdjacentText
+**Signature:** htmlBodyElement.insertAdjacentText(position, text)
 
-<a name="element-insertadjacenttext" id="element-insertadjacenttext"></a>
-
-### htmlBodyElement.insertAdjacentText(position, text)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `\*` | 
-| text | `\*` | 
+| position | `*` | 
+| text | `*` | 
 
+### htmlBodyElement.hasChildNodes
+**Signature:** htmlBodyElement.hasChildNodes() ⇒ `boolean`
 
-<a name="node-haschildnodes" id="node-haschildnodes"></a>
-
-### htmlBodyElement.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
+### htmlBodyElement.cloneNode
+**Signature:** htmlBodyElement.cloneNode(deep) ⇒ [`Node`](#node)
 
-<a name="node-clonenode" id="node-clonenode"></a>
-
-### htmlBodyElement.cloneNode(deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
 | deep | `boolean` | 
 
+### htmlBodyElement.appendChild
+**Signature:** htmlBodyElement.appendChild(child) ⇒ [`Node`](#node)
 
-<a name="node-appendchild" id="node-appendchild"></a>
-
-### htmlBodyElement.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### htmlBodyElement.insertBefore
+**Signature:** htmlBodyElement.insertBefore(child, before) ⇒ [`Node`](#node)
 
-<a name="node-insertbefore" id="node-insertbefore"></a>
-
-### htmlBodyElement.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
@@ -525,10 +461,9 @@ Creates an instance of HTMLBodyElement.
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
+### htmlBodyElement.replaceChild
+**Signature:** htmlBodyElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
-<a name="node-replacechild" id="node-replacechild"></a>
-
-### htmlBodyElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
@@ -536,82 +471,74 @@ Creates an instance of HTMLBodyElement.
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
+### htmlBodyElement.removeChild
+**Signature:** htmlBodyElement.removeChild(child) ⇒ [`Node`](#node)
 
-<a name="node-removechild" id="node-removechild"></a>
-
-### htmlBodyElement.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### htmlBodyElement.remove
+**Signature:** htmlBodyElement.remove()
 
-<a name="node-remove" id="node-remove"></a>
-
-### htmlBodyElement.remove()
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
+### htmlBodyElement.before
+**Signature:** htmlBodyElement.before(...nodes)
 
-<a name="node-before" id="node-before"></a>
-
-### htmlBodyElement.before(...nodes)
-**Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
-
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
-
-
-<a name="node-after" id="node-after"></a>
-
-### htmlBodyElement.after(...nodes)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### htmlBodyElement.after
+**Signature:** htmlBodyElement.after(...nodes)
 
-<a name="node-replacewith" id="node-replacewith"></a>
-
-### htmlBodyElement.replaceWith(...nodes)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### htmlBodyElement.replaceWith
+**Signature:** htmlBodyElement.replaceWith(...nodes)
 
-<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+**Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
-### htmlBodyElement.addEventListener(eventName, callback, [capture])
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+### htmlBodyElement.addEventListener
+**Signature:** htmlBodyElement.addEventListener(eventName, callback, [capture])
+
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### htmlBodyElement.removeEventListener
+**Signature:** htmlBodyElement.removeEventListener(eventName, callback, [capture])
 
-<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
-
-### htmlBodyElement.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### htmlBodyElement.dispatchEvent
+**Signature:** htmlBodyElement.dispatchEvent(event)
 
-<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
-
-### htmlBodyElement.dispatchEvent(event)
 **Kind**: instance method of [`HTMLBodyElement`](#htmlbodyelement)  
 
 | Param | Type |
 | --- | --- |
-| event | `\*` | 
+| event | `*` | 
 

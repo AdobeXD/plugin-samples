@@ -1,7 +1,6 @@
+## HTMLScriptElement
+**Signature:** HTMLScriptElement ⇐ [`HTMLElement`](#htmlelement)
 
-<a name="htmlscriptelement" id="htmlscriptelement"></a>
-
-## HTMLScriptElement ⇐ [`HTMLElement`](#htmlelement)
 **Kind**: global class  
 **Extends**: [`HTMLElement`](#htmlelement)  
 **Access**: public  
@@ -60,14 +59,14 @@
     * [.setAttribute(name, value)](#element-setattribute)
     * [.removeAttribute(name)](#element-removeattribute)
     * [.hasAttribute(name)](#element-hasattribute) ⇒ `boolean`
-    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `\*`
+    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `*`
     * [.setAttributeNode(newAttr)](#element-setattributenode)
     * [.removeAttributeNode(oldAttr)](#element-removeattributenode)
     * [.getElementsByClassName(name)](#element-getelementsbyclassname) ⇒ [`NodeList`](#nodelist)
     * [.getElementsByTagName(name)](#element-getelementsbytagname) ⇒ [`NodeList`](#nodelist)
     * [.querySelector(selector)](#element-queryselector) ⇒ [`Element`](#element)
     * [.querySelectorAll(selector)](#element-queryselectorall) ⇒ [`NodeList`](#nodelist)
-    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `\*`
+    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `*`
     * [.insertAdjacentHTML(position, value)](#element-insertadjacenthtml)
     * [.insertAdjacentElement(position, node)](#element-insertadjacentelement) ⇒ [`Node`](#node)
     * [.insertAdjacentText(position, text)](#element-insertadjacenttext)
@@ -85,300 +84,250 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
+### new HTMLScriptElement
+**Signature:** new HTMLScriptElement(document, nodeName, namespaceURI)
 
-<a name="new-htmlscriptelement-new" id="new-htmlscriptelement-new"></a>
-
-### new HTMLScriptElement(document, nodeName, namespaceURI)
 Creates an instance of HTMLScriptElement.
 
 
 | Param | Type |
 | --- | --- |
-| document | `\*` | 
-| nodeName | `\*` | 
-| namespaceURI | `\*` | 
+| document | `*` | 
+| nodeName | `*` | 
+| namespaceURI | `*` | 
 
+### htmlScriptElement.type
+**Signature:** htmlScriptElement.type : `string`
 
-<a name="htmlscriptelement-type" id="htmlscriptelement-type"></a>
-
-### htmlScriptElement.type : `string`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.src
+**Signature:** htmlScriptElement.src : `string`
 
-<a name="htmlscriptelement-src" id="htmlscriptelement-src"></a>
-
-### htmlScriptElement.src : `string`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.charset
+**Signature:** htmlScriptElement.charset : `string`
 
-<a name="htmlscriptelement-charset" id="htmlscriptelement-charset"></a>
-
-### htmlScriptElement.charset : `string`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.text
+**Signature:** htmlScriptElement.text : `string`
 
-<a name="htmlscriptelement-text" id="htmlscriptelement-text"></a>
-
-### htmlScriptElement.text : `string`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.nodeName
+**Signature:** htmlScriptElement.nodeName : `string`
 
-<a name="element-nodename" id="element-nodename"></a>
-
-### htmlScriptElement.nodeName : `string`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.localName
+**Signature:** htmlScriptElement.localName : `string`
 
-<a name="element-localname" id="element-localname"></a>
-
-### htmlScriptElement.localName : `string`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.tagName
+**Signature:** htmlScriptElement.tagName : `string`
 
-<a name="element-tagname" id="element-tagname"></a>
-
-### htmlScriptElement.tagName : `string`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.nodeType
+**Signature:** htmlScriptElement.nodeType : `number`
 
-<a name="element-nodetype" id="element-nodetype"></a>
-
-### htmlScriptElement.nodeType : `number`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.namespaceURI
+**Signature:** htmlScriptElement.namespaceURI : `string`
 
-<a name="element-namespaceuri" id="element-namespaceuri"></a>
-
-### htmlScriptElement.namespaceURI : `string`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.id
+**Signature:** htmlScriptElement.id : `string`
 
-<a name="element-id" id="element-id"></a>
-
-### htmlScriptElement.id : `string`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.className
+**Signature:** htmlScriptElement.className : `string`
 
-<a name="element-classname" id="element-classname"></a>
-
-### htmlScriptElement.className : `string`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.attributes
+**Signature:** htmlScriptElement.attributes : [`NamedNodeMap`](#namednodemap)
 
-<a name="element-attributes" id="element-attributes"></a>
-
-### htmlScriptElement.attributes : [`NamedNodeMap`](#namednodemap)
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.style
+**Signature:** htmlScriptElement.style : `Style`
 
-<a name="element-style" id="element-style"></a>
-
-### htmlScriptElement.style : `Style`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.clientLeft
+**Signature:** htmlScriptElement.clientLeft : `number`
 
-<a name="element-clientleft" id="element-clientleft"></a>
-
-### htmlScriptElement.clientLeft : `number`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.clientTop
+**Signature:** htmlScriptElement.clientTop : `number`
 
-<a name="element-clienttop" id="element-clienttop"></a>
-
-### htmlScriptElement.clientTop : `number`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.clientWidth
+**Signature:** htmlScriptElement.clientWidth : `number`
 
-<a name="element-clientwidth" id="element-clientwidth"></a>
-
-### htmlScriptElement.clientWidth : `number`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.clientHeight
+**Signature:** htmlScriptElement.clientHeight : `number`
 
-<a name="element-clientheight" id="element-clientheight"></a>
-
-### htmlScriptElement.clientHeight : `number`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.offsetLeft
+**Signature:** htmlScriptElement.offsetLeft : `number`
 
-<a name="element-offsetleft" id="element-offsetleft"></a>
-
-### htmlScriptElement.offsetLeft : `number`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.offsetTop
+**Signature:** htmlScriptElement.offsetTop : `number`
 
-<a name="element-offsettop" id="element-offsettop"></a>
-
-### htmlScriptElement.offsetTop : `number`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.offsetWidth
+**Signature:** htmlScriptElement.offsetWidth : `number`
 
-<a name="element-offsetwidth" id="element-offsetwidth"></a>
-
-### htmlScriptElement.offsetWidth : `number`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.offsetHeight
+**Signature:** htmlScriptElement.offsetHeight : `number`
 
-<a name="element-offsetheight" id="element-offsetheight"></a>
-
-### htmlScriptElement.offsetHeight : `number`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.scrollLeft
+**Signature:** htmlScriptElement.scrollLeft : `number`
 
-<a name="element-scrollleft" id="element-scrollleft"></a>
-
-### htmlScriptElement.scrollLeft : `number`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.scrollTop
+**Signature:** htmlScriptElement.scrollTop : `number`
 
-<a name="element-scrolltop" id="element-scrolltop"></a>
-
-### htmlScriptElement.scrollTop : `number`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.scrollWidth
+**Signature:** htmlScriptElement.scrollWidth : `number`
 
-<a name="element-scrollwidth" id="element-scrollwidth"></a>
-
-### htmlScriptElement.scrollWidth : `number`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.scrollHeight
+**Signature:** htmlScriptElement.scrollHeight : `number`
 
-<a name="element-scrollheight" id="element-scrollheight"></a>
-
-### htmlScriptElement.scrollHeight : `number`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.disabled
+**Signature:** htmlScriptElement.disabled : `boolean`
 
-<a name="element-disabled" id="element-disabled"></a>
-
-### htmlScriptElement.disabled : `boolean`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.innerHTML
+**Signature:** htmlScriptElement.innerHTML : `string`
 
-<a name="element-innerhtml" id="element-innerhtml"></a>
-
-### htmlScriptElement.innerHTML : `string`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.outerHTML
+**Signature:** htmlScriptElement.outerHTML : `string`
 
-<a name="element-outerhtml" id="element-outerhtml"></a>
-
-### htmlScriptElement.outerHTML : `string`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
-
-<a name="node-contenteditable" id="node-contenteditable"></a>
-
 ### htmlScriptElement.contentEditable
+**Signature:** htmlScriptElement.contentEditable
+
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.isConnected
+**Signature:** htmlScriptElement.isConnected : `boolean`
 
-<a name="node-isconnected" id="node-isconnected"></a>
-
-### htmlScriptElement.isConnected : `boolean`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.parentNode
+**Signature:** htmlScriptElement.parentNode : [`Node`](#node)
 
-<a name="node-parentnode" id="node-parentnode"></a>
-
-### htmlScriptElement.parentNode : [`Node`](#node)
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.firstChild
+**Signature:** htmlScriptElement.firstChild : [`Node`](#node)
 
-<a name="node-firstchild" id="node-firstchild"></a>
-
-### htmlScriptElement.firstChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.lastChild
+**Signature:** htmlScriptElement.lastChild : [`Node`](#node)
 
-<a name="node-lastchild" id="node-lastchild"></a>
-
-### htmlScriptElement.lastChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.previousSibling
+**Signature:** htmlScriptElement.previousSibling : [`Node`](#node)
 
-<a name="node-previoussibling" id="node-previoussibling"></a>
-
-### htmlScriptElement.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.nextSibling
+**Signature:** htmlScriptElement.nextSibling : [`Node`](#node)
 
-<a name="node-nextsibling" id="node-nextsibling"></a>
-
-### htmlScriptElement.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.firstElementChild
+**Signature:** htmlScriptElement.firstElementChild : [`Node`](#node)
 
-<a name="node-firstelementchild" id="node-firstelementchild"></a>
-
-### htmlScriptElement.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.lastElementChild
+**Signature:** htmlScriptElement.lastElementChild : [`Node`](#node)
 
-<a name="node-lastelementchild" id="node-lastelementchild"></a>
-
-### htmlScriptElement.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.previousElementSibling
+**Signature:** htmlScriptElement.previousElementSibling : [`Node`](#node)
 
-<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
-
-### htmlScriptElement.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.nextElementSibling
+**Signature:** htmlScriptElement.nextElementSibling : [`Node`](#node)
 
-<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
-
-### htmlScriptElement.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.textContent
+**Signature:** htmlScriptElement.textContent : `string`
 
-<a name="node-textcontent" id="node-textcontent"></a>
-
-### htmlScriptElement.textContent : `string`
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Overrides**: [`textContent`](#node-textcontent)  
+### htmlScriptElement.childNodes
+**Signature:** htmlScriptElement.childNodes : [`NodeList`](#nodelist)
 
-<a name="node-childnodes" id="node-childnodes"></a>
-
-### htmlScriptElement.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
-
-<a name="node-ownerdocument" id="node-ownerdocument"></a>
-
 ### htmlScriptElement.ownerDocument
+**Signature:** htmlScriptElement.ownerDocument
+
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
-
-<a name="node-offsetparent" id="node-offsetparent"></a>
-
 ### htmlScriptElement.offsetParent
+**Signature:** htmlScriptElement.offsetParent
+
 **Kind**: instance property of [`HTMLScriptElement`](#htmlscriptelement)  
 **Read only**: true  
+### htmlScriptElement.scrollIntoView
+**Signature:** htmlScriptElement.scrollIntoView()
 
-<a name="element-scrollintoview" id="element-scrollintoview"></a>
-
-### htmlScriptElement.scrollIntoView()
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.scrollIntoViewIfNeeded
+**Signature:** htmlScriptElement.scrollIntoViewIfNeeded()
 
-<a name="element-scrollintoviewifneeded" id="element-scrollintoviewifneeded"></a>
-
-### htmlScriptElement.scrollIntoViewIfNeeded()
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.focus
+**Signature:** htmlScriptElement.focus()
 
-<a name="element-focus" id="element-focus"></a>
-
-### htmlScriptElement.focus()
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.blur
+**Signature:** htmlScriptElement.blur()
 
-<a name="element-blur" id="element-blur"></a>
-
-### htmlScriptElement.blur()
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.getAttribute
+**Signature:** htmlScriptElement.getAttribute(name) ⇒ `string`
 
-<a name="element-getattribute" id="element-getattribute"></a>
-
-### htmlScriptElement.getAttribute(name) ⇒ `string`
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlScriptElement.setAttribute
+**Signature:** htmlScriptElement.setAttribute(name, value)
 
-<a name="element-setattribute" id="element-setattribute"></a>
-
-### htmlScriptElement.setAttribute(name, value)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
@@ -386,105 +335,94 @@ Creates an instance of HTMLScriptElement.
 | name | `string` | 
 | value | `string` | 
 
+### htmlScriptElement.removeAttribute
+**Signature:** htmlScriptElement.removeAttribute(name)
 
-<a name="element-removeattribute" id="element-removeattribute"></a>
-
-### htmlScriptElement.removeAttribute(name)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlScriptElement.hasAttribute
+**Signature:** htmlScriptElement.hasAttribute(name) ⇒ `boolean`
 
-<a name="element-hasattribute" id="element-hasattribute"></a>
-
-### htmlScriptElement.hasAttribute(name) ⇒ `boolean`
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlScriptElement.getAttributeNode
+**Signature:** htmlScriptElement.getAttributeNode(name) ⇒ `*`
 
-<a name="element-getattributenode" id="element-getattributenode"></a>
-
-### htmlScriptElement.getAttributeNode(name) ⇒ `\*`
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlScriptElement.setAttributeNode
+**Signature:** htmlScriptElement.setAttributeNode(newAttr)
 
-<a name="element-setattributenode" id="element-setattributenode"></a>
-
-### htmlScriptElement.setAttributeNode(newAttr)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
-| newAttr | `\*` | 
+| newAttr | `*` | 
 
+### htmlScriptElement.removeAttributeNode
+**Signature:** htmlScriptElement.removeAttributeNode(oldAttr)
 
-<a name="element-removeattributenode" id="element-removeattributenode"></a>
-
-### htmlScriptElement.removeAttributeNode(oldAttr)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
-| oldAttr | `\*` | 
+| oldAttr | `*` | 
 
+### htmlScriptElement.getElementsByClassName
+**Signature:** htmlScriptElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-getelementsbyclassname" id="element-getelementsbyclassname"></a>
-
-### htmlScriptElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
-**Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
-
-| Param | Type |
-| --- | --- |
-| name | `string` | 
-
-
-<a name="element-getelementsbytagname" id="element-getelementsbytagname"></a>
-
-### htmlScriptElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlScriptElement.getElementsByTagName
+**Signature:** htmlScriptElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-queryselector" id="element-queryselector"></a>
+**Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
-### htmlScriptElement.querySelector(selector) ⇒ [`Element`](#element)
+| Param | Type |
+| --- | --- |
+| name | `string` | 
+
+### htmlScriptElement.querySelector
+**Signature:** htmlScriptElement.querySelector(selector) ⇒ [`Element`](#element)
+
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
+### htmlScriptElement.querySelectorAll
+**Signature:** htmlScriptElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-queryselectorall" id="element-queryselectorall"></a>
-
-### htmlScriptElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
+### htmlScriptElement.getBoundingClientRect
+**Signature:** htmlScriptElement.getBoundingClientRect() ⇒ `*`
 
-<a name="element-getboundingclientrect" id="element-getboundingclientrect"></a>
-
-### htmlScriptElement.getBoundingClientRect() ⇒ `\*`
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.insertAdjacentHTML
+**Signature:** htmlScriptElement.insertAdjacentHTML(position, value)
 
-<a name="element-insertadjacenthtml" id="element-insertadjacenthtml"></a>
-
-### htmlScriptElement.insertAdjacentHTML(position, value)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
@@ -492,57 +430,51 @@ Creates an instance of HTMLScriptElement.
 | position |  | 
 | value | `string` | 
 
+### htmlScriptElement.insertAdjacentElement
+**Signature:** htmlScriptElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 
-<a name="element-insertadjacentelement" id="element-insertadjacentelement"></a>
-
-### htmlScriptElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `\*` | 
-| node | `\*` | 
+| position | `*` | 
+| node | `*` | 
 
+### htmlScriptElement.insertAdjacentText
+**Signature:** htmlScriptElement.insertAdjacentText(position, text)
 
-<a name="element-insertadjacenttext" id="element-insertadjacenttext"></a>
-
-### htmlScriptElement.insertAdjacentText(position, text)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `\*` | 
-| text | `\*` | 
+| position | `*` | 
+| text | `*` | 
 
+### htmlScriptElement.hasChildNodes
+**Signature:** htmlScriptElement.hasChildNodes() ⇒ `boolean`
 
-<a name="node-haschildnodes" id="node-haschildnodes"></a>
-
-### htmlScriptElement.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.cloneNode
+**Signature:** htmlScriptElement.cloneNode(deep) ⇒ [`Node`](#node)
 
-<a name="node-clonenode" id="node-clonenode"></a>
-
-### htmlScriptElement.cloneNode(deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
 | deep | `boolean` | 
 
+### htmlScriptElement.appendChild
+**Signature:** htmlScriptElement.appendChild(child) ⇒ [`Node`](#node)
 
-<a name="node-appendchild" id="node-appendchild"></a>
-
-### htmlScriptElement.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### htmlScriptElement.insertBefore
+**Signature:** htmlScriptElement.insertBefore(child, before) ⇒ [`Node`](#node)
 
-<a name="node-insertbefore" id="node-insertbefore"></a>
-
-### htmlScriptElement.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
@@ -550,10 +482,9 @@ Creates an instance of HTMLScriptElement.
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
+### htmlScriptElement.replaceChild
+**Signature:** htmlScriptElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
-<a name="node-replacechild" id="node-replacechild"></a>
-
-### htmlScriptElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
@@ -561,82 +492,74 @@ Creates an instance of HTMLScriptElement.
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
+### htmlScriptElement.removeChild
+**Signature:** htmlScriptElement.removeChild(child) ⇒ [`Node`](#node)
 
-<a name="node-removechild" id="node-removechild"></a>
-
-### htmlScriptElement.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### htmlScriptElement.remove
+**Signature:** htmlScriptElement.remove()
 
-<a name="node-remove" id="node-remove"></a>
-
-### htmlScriptElement.remove()
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
+### htmlScriptElement.before
+**Signature:** htmlScriptElement.before(...nodes)
 
-<a name="node-before" id="node-before"></a>
-
-### htmlScriptElement.before(...nodes)
-**Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
-
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
-
-
-<a name="node-after" id="node-after"></a>
-
-### htmlScriptElement.after(...nodes)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### htmlScriptElement.after
+**Signature:** htmlScriptElement.after(...nodes)
 
-<a name="node-replacewith" id="node-replacewith"></a>
-
-### htmlScriptElement.replaceWith(...nodes)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### htmlScriptElement.replaceWith
+**Signature:** htmlScriptElement.replaceWith(...nodes)
 
-<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+**Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
-### htmlScriptElement.addEventListener(eventName, callback, [capture])
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+### htmlScriptElement.addEventListener
+**Signature:** htmlScriptElement.addEventListener(eventName, callback, [capture])
+
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### htmlScriptElement.removeEventListener
+**Signature:** htmlScriptElement.removeEventListener(eventName, callback, [capture])
 
-<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
-
-### htmlScriptElement.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### htmlScriptElement.dispatchEvent
+**Signature:** htmlScriptElement.dispatchEvent(event)
 
-<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
-
-### htmlScriptElement.dispatchEvent(event)
 **Kind**: instance method of [`HTMLScriptElement`](#htmlscriptelement)  
 
 | Param | Type |
 | --- | --- |
-| event | `\*` | 
+| event | `*` | 
 

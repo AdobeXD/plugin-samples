@@ -1,7 +1,6 @@
+## HTMLProgressElement
+**Signature:** HTMLProgressElement ⇐ [`HTMLElement`](#htmlelement)
 
-<a name="htmlprogresselement" id="htmlprogresselement"></a>
-
-## HTMLProgressElement ⇐ [`HTMLElement`](#htmlelement)
 **Kind**: global class  
 **Extends**: [`HTMLElement`](#htmlelement)  
 **Access**: public  
@@ -59,14 +58,14 @@
     * [.setAttribute(name, value)](#element-setattribute)
     * [.removeAttribute(name)](#element-removeattribute)
     * [.hasAttribute(name)](#element-hasattribute) ⇒ `boolean`
-    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `\*`
+    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `*`
     * [.setAttributeNode(newAttr)](#element-setattributenode)
     * [.removeAttributeNode(oldAttr)](#element-removeattributenode)
     * [.getElementsByClassName(name)](#element-getelementsbyclassname) ⇒ [`NodeList`](#nodelist)
     * [.getElementsByTagName(name)](#element-getelementsbytagname) ⇒ [`NodeList`](#nodelist)
     * [.querySelector(selector)](#element-queryselector) ⇒ [`Element`](#element)
     * [.querySelectorAll(selector)](#element-queryselectorall) ⇒ [`NodeList`](#nodelist)
-    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `\*`
+    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `*`
     * [.insertAdjacentHTML(position, value)](#element-insertadjacenthtml)
     * [.insertAdjacentElement(position, node)](#element-insertadjacentelement) ⇒ [`Node`](#node)
     * [.insertAdjacentText(position, text)](#element-insertadjacenttext)
@@ -84,301 +83,252 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
+### new HTMLProgressElement
+**Signature:** new HTMLProgressElement(document, nodeName, namespaceURI)
 
-<a name="new-htmlprogresselement-new" id="new-htmlprogresselement-new"></a>
-
-### new HTMLProgressElement(document, nodeName, namespaceURI)
 Creates an instance of HTMLProgressElement.
 
 
 | Param | Type |
 | --- | --- |
-| document | `\*` | 
-| nodeName | `\*` | 
-| namespaceURI | `\*` | 
+| document | `*` | 
+| nodeName | `*` | 
+| namespaceURI | `*` | 
 
+### htmlProgressElement.max
+**Signature:** htmlProgressElement.max : `number`
 
-<a name="htmlprogresselement-max" id="htmlprogresselement-max"></a>
-
-### htmlProgressElement.max : `number`
 Maximum value for the progress bar
 
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.value
+**Signature:** htmlProgressElement.value : `number`
 
-<a name="htmlprogresselement-value" id="htmlprogresselement-value"></a>
-
-### htmlProgressElement.value : `number`
 Value of the progress bar
 
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.position
+**Signature:** htmlProgressElement.position : `number`
 
-<a name="htmlprogresselement-position" id="htmlprogresselement-position"></a>
-
-### htmlProgressElement.position : `number`
 Completion value of the progress bar
 
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.nodeName
+**Signature:** htmlProgressElement.nodeName : `string`
 
-<a name="element-nodename" id="element-nodename"></a>
-
-### htmlProgressElement.nodeName : `string`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.localName
+**Signature:** htmlProgressElement.localName : `string`
 
-<a name="element-localname" id="element-localname"></a>
-
-### htmlProgressElement.localName : `string`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.tagName
+**Signature:** htmlProgressElement.tagName : `string`
 
-<a name="element-tagname" id="element-tagname"></a>
-
-### htmlProgressElement.tagName : `string`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.nodeType
+**Signature:** htmlProgressElement.nodeType : `number`
 
-<a name="element-nodetype" id="element-nodetype"></a>
-
-### htmlProgressElement.nodeType : `number`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.namespaceURI
+**Signature:** htmlProgressElement.namespaceURI : `string`
 
-<a name="element-namespaceuri" id="element-namespaceuri"></a>
-
-### htmlProgressElement.namespaceURI : `string`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.id
+**Signature:** htmlProgressElement.id : `string`
 
-<a name="element-id" id="element-id"></a>
-
-### htmlProgressElement.id : `string`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.className
+**Signature:** htmlProgressElement.className : `string`
 
-<a name="element-classname" id="element-classname"></a>
-
-### htmlProgressElement.className : `string`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.attributes
+**Signature:** htmlProgressElement.attributes : [`NamedNodeMap`](#namednodemap)
 
-<a name="element-attributes" id="element-attributes"></a>
-
-### htmlProgressElement.attributes : [`NamedNodeMap`](#namednodemap)
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.style
+**Signature:** htmlProgressElement.style : `Style`
 
-<a name="element-style" id="element-style"></a>
-
-### htmlProgressElement.style : `Style`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.clientLeft
+**Signature:** htmlProgressElement.clientLeft : `number`
 
-<a name="element-clientleft" id="element-clientleft"></a>
-
-### htmlProgressElement.clientLeft : `number`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.clientTop
+**Signature:** htmlProgressElement.clientTop : `number`
 
-<a name="element-clienttop" id="element-clienttop"></a>
-
-### htmlProgressElement.clientTop : `number`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.clientWidth
+**Signature:** htmlProgressElement.clientWidth : `number`
 
-<a name="element-clientwidth" id="element-clientwidth"></a>
-
-### htmlProgressElement.clientWidth : `number`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.clientHeight
+**Signature:** htmlProgressElement.clientHeight : `number`
 
-<a name="element-clientheight" id="element-clientheight"></a>
-
-### htmlProgressElement.clientHeight : `number`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.offsetLeft
+**Signature:** htmlProgressElement.offsetLeft : `number`
 
-<a name="element-offsetleft" id="element-offsetleft"></a>
-
-### htmlProgressElement.offsetLeft : `number`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.offsetTop
+**Signature:** htmlProgressElement.offsetTop : `number`
 
-<a name="element-offsettop" id="element-offsettop"></a>
-
-### htmlProgressElement.offsetTop : `number`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.offsetWidth
+**Signature:** htmlProgressElement.offsetWidth : `number`
 
-<a name="element-offsetwidth" id="element-offsetwidth"></a>
-
-### htmlProgressElement.offsetWidth : `number`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.offsetHeight
+**Signature:** htmlProgressElement.offsetHeight : `number`
 
-<a name="element-offsetheight" id="element-offsetheight"></a>
-
-### htmlProgressElement.offsetHeight : `number`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.scrollLeft
+**Signature:** htmlProgressElement.scrollLeft : `number`
 
-<a name="element-scrollleft" id="element-scrollleft"></a>
-
-### htmlProgressElement.scrollLeft : `number`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.scrollTop
+**Signature:** htmlProgressElement.scrollTop : `number`
 
-<a name="element-scrolltop" id="element-scrolltop"></a>
-
-### htmlProgressElement.scrollTop : `number`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.scrollWidth
+**Signature:** htmlProgressElement.scrollWidth : `number`
 
-<a name="element-scrollwidth" id="element-scrollwidth"></a>
-
-### htmlProgressElement.scrollWidth : `number`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.scrollHeight
+**Signature:** htmlProgressElement.scrollHeight : `number`
 
-<a name="element-scrollheight" id="element-scrollheight"></a>
-
-### htmlProgressElement.scrollHeight : `number`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.disabled
+**Signature:** htmlProgressElement.disabled : `boolean`
 
-<a name="element-disabled" id="element-disabled"></a>
-
-### htmlProgressElement.disabled : `boolean`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.innerHTML
+**Signature:** htmlProgressElement.innerHTML : `string`
 
-<a name="element-innerhtml" id="element-innerhtml"></a>
-
-### htmlProgressElement.innerHTML : `string`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.outerHTML
+**Signature:** htmlProgressElement.outerHTML : `string`
 
-<a name="element-outerhtml" id="element-outerhtml"></a>
-
-### htmlProgressElement.outerHTML : `string`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
-
-<a name="node-contenteditable" id="node-contenteditable"></a>
-
 ### htmlProgressElement.contentEditable
+**Signature:** htmlProgressElement.contentEditable
+
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.isConnected
+**Signature:** htmlProgressElement.isConnected : `boolean`
 
-<a name="node-isconnected" id="node-isconnected"></a>
-
-### htmlProgressElement.isConnected : `boolean`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.parentNode
+**Signature:** htmlProgressElement.parentNode : [`Node`](#node)
 
-<a name="node-parentnode" id="node-parentnode"></a>
-
-### htmlProgressElement.parentNode : [`Node`](#node)
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.firstChild
+**Signature:** htmlProgressElement.firstChild : [`Node`](#node)
 
-<a name="node-firstchild" id="node-firstchild"></a>
-
-### htmlProgressElement.firstChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.lastChild
+**Signature:** htmlProgressElement.lastChild : [`Node`](#node)
 
-<a name="node-lastchild" id="node-lastchild"></a>
-
-### htmlProgressElement.lastChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.previousSibling
+**Signature:** htmlProgressElement.previousSibling : [`Node`](#node)
 
-<a name="node-previoussibling" id="node-previoussibling"></a>
-
-### htmlProgressElement.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.nextSibling
+**Signature:** htmlProgressElement.nextSibling : [`Node`](#node)
 
-<a name="node-nextsibling" id="node-nextsibling"></a>
-
-### htmlProgressElement.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.firstElementChild
+**Signature:** htmlProgressElement.firstElementChild : [`Node`](#node)
 
-<a name="node-firstelementchild" id="node-firstelementchild"></a>
-
-### htmlProgressElement.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.lastElementChild
+**Signature:** htmlProgressElement.lastElementChild : [`Node`](#node)
 
-<a name="node-lastelementchild" id="node-lastelementchild"></a>
-
-### htmlProgressElement.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.previousElementSibling
+**Signature:** htmlProgressElement.previousElementSibling : [`Node`](#node)
 
-<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
-
-### htmlProgressElement.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.nextElementSibling
+**Signature:** htmlProgressElement.nextElementSibling : [`Node`](#node)
 
-<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
-
-### htmlProgressElement.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.textContent
+**Signature:** htmlProgressElement.textContent : `string`
 
-<a name="node-textcontent" id="node-textcontent"></a>
-
-### htmlProgressElement.textContent : `string`
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.childNodes
+**Signature:** htmlProgressElement.childNodes : [`NodeList`](#nodelist)
 
-<a name="node-childnodes" id="node-childnodes"></a>
-
-### htmlProgressElement.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
-
-<a name="node-ownerdocument" id="node-ownerdocument"></a>
-
 ### htmlProgressElement.ownerDocument
+**Signature:** htmlProgressElement.ownerDocument
+
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
-
-<a name="node-offsetparent" id="node-offsetparent"></a>
-
 ### htmlProgressElement.offsetParent
+**Signature:** htmlProgressElement.offsetParent
+
 **Kind**: instance property of [`HTMLProgressElement`](#htmlprogresselement)  
 **Read only**: true  
+### htmlProgressElement.scrollIntoView
+**Signature:** htmlProgressElement.scrollIntoView()
 
-<a name="element-scrollintoview" id="element-scrollintoview"></a>
-
-### htmlProgressElement.scrollIntoView()
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.scrollIntoViewIfNeeded
+**Signature:** htmlProgressElement.scrollIntoViewIfNeeded()
 
-<a name="element-scrollintoviewifneeded" id="element-scrollintoviewifneeded"></a>
-
-### htmlProgressElement.scrollIntoViewIfNeeded()
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.focus
+**Signature:** htmlProgressElement.focus()
 
-<a name="element-focus" id="element-focus"></a>
-
-### htmlProgressElement.focus()
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.blur
+**Signature:** htmlProgressElement.blur()
 
-<a name="element-blur" id="element-blur"></a>
-
-### htmlProgressElement.blur()
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.getAttribute
+**Signature:** htmlProgressElement.getAttribute(name) ⇒ `string`
 
-<a name="element-getattribute" id="element-getattribute"></a>
-
-### htmlProgressElement.getAttribute(name) ⇒ `string`
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlProgressElement.setAttribute
+**Signature:** htmlProgressElement.setAttribute(name, value)
 
-<a name="element-setattribute" id="element-setattribute"></a>
-
-### htmlProgressElement.setAttribute(name, value)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
@@ -386,105 +336,94 @@ Completion value of the progress bar
 | name | `string` | 
 | value | `string` | 
 
+### htmlProgressElement.removeAttribute
+**Signature:** htmlProgressElement.removeAttribute(name)
 
-<a name="element-removeattribute" id="element-removeattribute"></a>
-
-### htmlProgressElement.removeAttribute(name)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlProgressElement.hasAttribute
+**Signature:** htmlProgressElement.hasAttribute(name) ⇒ `boolean`
 
-<a name="element-hasattribute" id="element-hasattribute"></a>
-
-### htmlProgressElement.hasAttribute(name) ⇒ `boolean`
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlProgressElement.getAttributeNode
+**Signature:** htmlProgressElement.getAttributeNode(name) ⇒ `*`
 
-<a name="element-getattributenode" id="element-getattributenode"></a>
-
-### htmlProgressElement.getAttributeNode(name) ⇒ `\*`
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlProgressElement.setAttributeNode
+**Signature:** htmlProgressElement.setAttributeNode(newAttr)
 
-<a name="element-setattributenode" id="element-setattributenode"></a>
-
-### htmlProgressElement.setAttributeNode(newAttr)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
-| newAttr | `\*` | 
+| newAttr | `*` | 
 
+### htmlProgressElement.removeAttributeNode
+**Signature:** htmlProgressElement.removeAttributeNode(oldAttr)
 
-<a name="element-removeattributenode" id="element-removeattributenode"></a>
-
-### htmlProgressElement.removeAttributeNode(oldAttr)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
-| oldAttr | `\*` | 
+| oldAttr | `*` | 
 
+### htmlProgressElement.getElementsByClassName
+**Signature:** htmlProgressElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-getelementsbyclassname" id="element-getelementsbyclassname"></a>
-
-### htmlProgressElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
-**Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
-
-| Param | Type |
-| --- | --- |
-| name | `string` | 
-
-
-<a name="element-getelementsbytagname" id="element-getelementsbytagname"></a>
-
-### htmlProgressElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlProgressElement.getElementsByTagName
+**Signature:** htmlProgressElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-queryselector" id="element-queryselector"></a>
+**Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
-### htmlProgressElement.querySelector(selector) ⇒ [`Element`](#element)
+| Param | Type |
+| --- | --- |
+| name | `string` | 
+
+### htmlProgressElement.querySelector
+**Signature:** htmlProgressElement.querySelector(selector) ⇒ [`Element`](#element)
+
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
+### htmlProgressElement.querySelectorAll
+**Signature:** htmlProgressElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-queryselectorall" id="element-queryselectorall"></a>
-
-### htmlProgressElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
+### htmlProgressElement.getBoundingClientRect
+**Signature:** htmlProgressElement.getBoundingClientRect() ⇒ `*`
 
-<a name="element-getboundingclientrect" id="element-getboundingclientrect"></a>
-
-### htmlProgressElement.getBoundingClientRect() ⇒ `\*`
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.insertAdjacentHTML
+**Signature:** htmlProgressElement.insertAdjacentHTML(position, value)
 
-<a name="element-insertadjacenthtml" id="element-insertadjacenthtml"></a>
-
-### htmlProgressElement.insertAdjacentHTML(position, value)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
@@ -492,57 +431,51 @@ Completion value of the progress bar
 | position |  | 
 | value | `string` | 
 
+### htmlProgressElement.insertAdjacentElement
+**Signature:** htmlProgressElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 
-<a name="element-insertadjacentelement" id="element-insertadjacentelement"></a>
-
-### htmlProgressElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
-| position | `\*` | 
-| node | `\*` | 
+| position | `*` | 
+| node | `*` | 
 
+### htmlProgressElement.insertAdjacentText
+**Signature:** htmlProgressElement.insertAdjacentText(position, text)
 
-<a name="element-insertadjacenttext" id="element-insertadjacenttext"></a>
-
-### htmlProgressElement.insertAdjacentText(position, text)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
-| position | `\*` | 
-| text | `\*` | 
+| position | `*` | 
+| text | `*` | 
 
+### htmlProgressElement.hasChildNodes
+**Signature:** htmlProgressElement.hasChildNodes() ⇒ `boolean`
 
-<a name="node-haschildnodes" id="node-haschildnodes"></a>
-
-### htmlProgressElement.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.cloneNode
+**Signature:** htmlProgressElement.cloneNode(deep) ⇒ [`Node`](#node)
 
-<a name="node-clonenode" id="node-clonenode"></a>
-
-### htmlProgressElement.cloneNode(deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
 | deep | `boolean` | 
 
+### htmlProgressElement.appendChild
+**Signature:** htmlProgressElement.appendChild(child) ⇒ [`Node`](#node)
 
-<a name="node-appendchild" id="node-appendchild"></a>
-
-### htmlProgressElement.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### htmlProgressElement.insertBefore
+**Signature:** htmlProgressElement.insertBefore(child, before) ⇒ [`Node`](#node)
 
-<a name="node-insertbefore" id="node-insertbefore"></a>
-
-### htmlProgressElement.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
@@ -550,10 +483,9 @@ Completion value of the progress bar
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
+### htmlProgressElement.replaceChild
+**Signature:** htmlProgressElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
-<a name="node-replacechild" id="node-replacechild"></a>
-
-### htmlProgressElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
@@ -561,82 +493,74 @@ Completion value of the progress bar
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
+### htmlProgressElement.removeChild
+**Signature:** htmlProgressElement.removeChild(child) ⇒ [`Node`](#node)
 
-<a name="node-removechild" id="node-removechild"></a>
-
-### htmlProgressElement.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### htmlProgressElement.remove
+**Signature:** htmlProgressElement.remove()
 
-<a name="node-remove" id="node-remove"></a>
-
-### htmlProgressElement.remove()
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
+### htmlProgressElement.before
+**Signature:** htmlProgressElement.before(...nodes)
 
-<a name="node-before" id="node-before"></a>
-
-### htmlProgressElement.before(...nodes)
-**Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
-
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
-
-
-<a name="node-after" id="node-after"></a>
-
-### htmlProgressElement.after(...nodes)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### htmlProgressElement.after
+**Signature:** htmlProgressElement.after(...nodes)
 
-<a name="node-replacewith" id="node-replacewith"></a>
-
-### htmlProgressElement.replaceWith(...nodes)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### htmlProgressElement.replaceWith
+**Signature:** htmlProgressElement.replaceWith(...nodes)
 
-<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+**Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
-### htmlProgressElement.addEventListener(eventName, callback, [capture])
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+### htmlProgressElement.addEventListener
+**Signature:** htmlProgressElement.addEventListener(eventName, callback, [capture])
+
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### htmlProgressElement.removeEventListener
+**Signature:** htmlProgressElement.removeEventListener(eventName, callback, [capture])
 
-<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
-
-### htmlProgressElement.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### htmlProgressElement.dispatchEvent
+**Signature:** htmlProgressElement.dispatchEvent(event)
 
-<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
-
-### htmlProgressElement.dispatchEvent(event)
 **Kind**: instance method of [`HTMLProgressElement`](#htmlprogresselement)  
 
 | Param | Type |
 | --- | --- |
-| event | `\*` | 
+| event | `*` | 
 

@@ -1,7 +1,6 @@
+## Document
+**Signature:** Document ⇐ [`Node`](#node)
 
-<a name="document" id="document"></a>
-
-## Document ⇐ [`Node`](#node)
 **Kind**: global class  
 **Extends**: [`Node`](#node)  
 **Access**: public  
@@ -60,171 +59,144 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
+### new Document
+**Signature:** new Document()
 
-<a name="new-document-new" id="new-document-new"></a>
-
-### new Document()
 Creates an instance of Document.
 
+### document.onLine
+**Signature:** document.onLine : `boolean`
 
-<a name="document-online" id="document-online"></a>
-
-### document.onLine : `boolean`
 Indicates if the computer is online
 
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.nodeName
+**Signature:** document.nodeName : `string`
 
-<a name="document-nodename" id="document-nodename"></a>
-
-### document.nodeName : `string`
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.nodeType
+**Signature:** document.nodeType : `number`
 
-<a name="document-nodetype" id="document-nodetype"></a>
-
-### document.nodeType : `number`
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.documentElement
+**Signature:** document.documentElement : [`Document`](#document)
 
-<a name="document-documentelement" id="document-documentelement"></a>
-
-### document.documentElement : [`Document`](#document)
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.head
+**Signature:** document.head : [`HTMLHeadElement`](#htmlheadelement)
 
-<a name="document-head" id="document-head"></a>
-
-### document.head : [`HTMLHeadElement`](#htmlheadelement)
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.body
+**Signature:** document.body : [`HTMLBodyElement`](#htmlbodyelement)
 
-<a name="document-body" id="document-body"></a>
-
-### document.body : [`HTMLBodyElement`](#htmlbodyelement)
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.clipboard
+**Signature:** document.clipboard : `Clippoard`
 
-<a name="document-clipboard" id="document-clipboard"></a>
-
-### document.clipboard : `Clippoard`
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.styleSheets
+**Signature:** document.styleSheets : `StyleSheetList`
 
-<a name="document-stylesheets" id="document-stylesheets"></a>
-
-### document.styleSheets : `StyleSheetList`
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
-
-<a name="node-contenteditable" id="node-contenteditable"></a>
-
 ### document.contentEditable
+**Signature:** document.contentEditable
+
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.isConnected
+**Signature:** document.isConnected : `boolean`
 
-<a name="node-isconnected" id="node-isconnected"></a>
-
-### document.isConnected : `boolean`
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.parentNode
+**Signature:** document.parentNode : [`Node`](#node)
 
-<a name="node-parentnode" id="node-parentnode"></a>
-
-### document.parentNode : [`Node`](#node)
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.firstChild
+**Signature:** document.firstChild : [`Node`](#node)
 
-<a name="node-firstchild" id="node-firstchild"></a>
-
-### document.firstChild : [`Node`](#node)
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.lastChild
+**Signature:** document.lastChild : [`Node`](#node)
 
-<a name="node-lastchild" id="node-lastchild"></a>
-
-### document.lastChild : [`Node`](#node)
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.previousSibling
+**Signature:** document.previousSibling : [`Node`](#node)
 
-<a name="node-previoussibling" id="node-previoussibling"></a>
-
-### document.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.nextSibling
+**Signature:** document.nextSibling : [`Node`](#node)
 
-<a name="node-nextsibling" id="node-nextsibling"></a>
-
-### document.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.firstElementChild
+**Signature:** document.firstElementChild : [`Node`](#node)
 
-<a name="node-firstelementchild" id="node-firstelementchild"></a>
-
-### document.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.lastElementChild
+**Signature:** document.lastElementChild : [`Node`](#node)
 
-<a name="node-lastelementchild" id="node-lastelementchild"></a>
-
-### document.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.previousElementSibling
+**Signature:** document.previousElementSibling : [`Node`](#node)
 
-<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
-
-### document.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.nextElementSibling
+**Signature:** document.nextElementSibling : [`Node`](#node)
 
-<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
-
-### document.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.textContent
+**Signature:** document.textContent : `string`
 
-<a name="node-textcontent" id="node-textcontent"></a>
-
-### document.textContent : `string`
 **Kind**: instance property of [`Document`](#document)  
+### document.childNodes
+**Signature:** document.childNodes : [`NodeList`](#nodelist)
 
-<a name="node-childnodes" id="node-childnodes"></a>
-
-### document.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
-
-<a name="node-ownerdocument" id="node-ownerdocument"></a>
-
 ### document.ownerDocument
+**Signature:** document.ownerDocument
+
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
-
-<a name="node-attributes" id="node-attributes"></a>
-
 ### document.attributes
+**Signature:** document.attributes
+
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
-
-<a name="node-offsetparent" id="node-offsetparent"></a>
-
 ### document.offsetParent
+**Signature:** document.offsetParent
+
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
+### document.createElement
+**Signature:** document.createElement(nodeName) ⇒ [`Element`](#element)
 
-<a name="document-createelement" id="document-createelement"></a>
-
-### document.createElement(nodeName) ⇒ [`Element`](#element)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
 | --- | --- |
 | nodeName | `string` | 
 
+### document.createElementNS
+**Signature:** document.createElementNS(ns, nodeName) ⇒ [`Element`](#element)
 
-<a name="document-createelementns" id="document-createelementns"></a>
-
-### document.createElementNS(ns, nodeName) ⇒ [`Element`](#element)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
@@ -232,45 +204,40 @@ Indicates if the computer is online
 | ns | `string` | 
 | nodeName | `string` | 
 
+### document.createAttribute
+**Signature:** document.createAttribute(nodeName) ⇒ [`Attr`](#attr)
 
-<a name="document-createattribute" id="document-createattribute"></a>
-
-### document.createAttribute(nodeName) ⇒ [`Attr`](#attr)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
 | --- | --- |
 | nodeName | `string` | 
 
+### document.createTextNode
+**Signature:** document.createTextNode([text]) ⇒ [`Text`](#text)
 
-<a name="document-createtextnode" id="document-createtextnode"></a>
-
-### document.createTextNode([text]) ⇒ [`Text`](#text)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type | Default |
 | --- | --- | --- |
 | [text] | `string` | <code>&quot;\&quot;\&quot;&quot;</code> | 
 
+### document.createComment
+**Signature:** document.createComment([comment]) ⇒ [`Comment`](#comment)
 
-<a name="document-createcomment" id="document-createcomment"></a>
-
-### document.createComment([comment]) ⇒ [`Comment`](#comment)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type | Default |
 | --- | --- | --- |
 | [comment] | `string` | <code>&quot;\&quot;\&quot;&quot;</code> | 
 
+### document.createDocumentFragment
+**Signature:** document.createDocumentFragment() ⇒ [`DocumentFragment`](#documentfragment)
 
-<a name="document-createdocumentfragment" id="document-createdocumentfragment"></a>
-
-### document.createDocumentFragment() ⇒ [`DocumentFragment`](#documentfragment)
 **Kind**: instance method of [`Document`](#document)  
+### document.cloneNode
+**Signature:** document.cloneNode(deep) ⇒ [`Document`](#document)
 
-<a name="document-clonenode" id="document-clonenode"></a>
-
-### document.cloneNode(deep) ⇒ [`Document`](#document)
 **Kind**: instance method of [`Document`](#document)  
 **Overrides**: [`cloneNode`](#node-clonenode)  
 
@@ -278,10 +245,9 @@ Indicates if the computer is online
 | --- | --- |
 | deep | `boolean` | 
 
+### document.adoptNode
+**Signature:** document.adoptNode(externalNode, deep) ⇒ [`Node`](#node)
 
-<a name="document-adoptnode" id="document-adoptnode"></a>
-
-### document.adoptNode(externalNode, deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
@@ -289,10 +255,9 @@ Indicates if the computer is online
 | externalNode | [`Node`](#node) | 
 | deep | `boolean` | 
 
+### document.importNode
+**Signature:** document.importNode(externalNode, deep) ⇒ [`Node`](#node)
 
-<a name="document-importnode" id="document-importnode"></a>
-
-### document.importNode(externalNode, deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
@@ -300,75 +265,67 @@ Indicates if the computer is online
 | externalNode | [`Node`](#node) | 
 | deep | `boolean` | 
 
+### document.querySelector
+**Signature:** document.querySelector(selector) ⇒ [`Node`](#node)
 
-<a name="document-queryselector" id="document-queryselector"></a>
-
-### document.querySelector(selector) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
+### document.querySelectorAll
+**Signature:** document.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 
-<a name="document-queryselectorall" id="document-queryselectorall"></a>
-
-### document.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
+### document.getElementsByClassName
+**Signature:** document.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 
-<a name="document-getelementsbyclassname" id="document-getelementsbyclassname"></a>
-
-### document.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### document.getElementsByTagName
+**Signature:** document.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
 
-<a name="document-getelementsbytagname" id="document-getelementsbytagname"></a>
-
-### document.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### document.getElementById
+**Signature:** document.getElementById(id) ⇒ [`Element`](#element)
 
-<a name="document-getelementbyid" id="document-getelementbyid"></a>
-
-### document.getElementById(id) ⇒ [`Element`](#element)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
 | --- | --- |
 | id | `string` | 
 
+### document.hasChildNodes
+**Signature:** document.hasChildNodes() ⇒ `boolean`
 
-<a name="node-haschildnodes" id="node-haschildnodes"></a>
-
-### document.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`Document`](#document)  
+### document.appendChild
+**Signature:** document.appendChild(child) ⇒ [`Node`](#node)
 
-<a name="node-appendchild" id="node-appendchild"></a>
-
-### document.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### document.insertBefore
+**Signature:** document.insertBefore(child, before) ⇒ [`Node`](#node)
 
-<a name="node-insertbefore" id="node-insertbefore"></a>
-
-### document.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
@@ -376,10 +333,9 @@ Indicates if the computer is online
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
+### document.replaceChild
+**Signature:** document.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
-<a name="node-replacechild" id="node-replacechild"></a>
-
-### document.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
@@ -387,82 +343,74 @@ Indicates if the computer is online
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
+### document.removeChild
+**Signature:** document.removeChild(child) ⇒ [`Node`](#node)
 
-<a name="node-removechild" id="node-removechild"></a>
-
-### document.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### document.remove
+**Signature:** document.remove()
 
-<a name="node-remove" id="node-remove"></a>
-
-### document.remove()
 **Kind**: instance method of [`Document`](#document)  
+### document.before
+**Signature:** document.before(...nodes)
 
-<a name="node-before" id="node-before"></a>
-
-### document.before(...nodes)
-**Kind**: instance method of [`Document`](#document)  
-
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
-
-
-<a name="node-after" id="node-after"></a>
-
-### document.after(...nodes)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### document.after
+**Signature:** document.after(...nodes)
 
-<a name="node-replacewith" id="node-replacewith"></a>
-
-### document.replaceWith(...nodes)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### document.replaceWith
+**Signature:** document.replaceWith(...nodes)
 
-<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+**Kind**: instance method of [`Document`](#document)  
 
-### document.addEventListener(eventName, callback, [capture])
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+### document.addEventListener
+**Signature:** document.addEventListener(eventName, callback, [capture])
+
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### document.removeEventListener
+**Signature:** document.removeEventListener(eventName, callback, [capture])
 
-<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
-
-### document.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### document.dispatchEvent
+**Signature:** document.dispatchEvent(event)
 
-<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
-
-### document.dispatchEvent(event)
 **Kind**: instance method of [`Document`](#document)  
 
 | Param | Type |
 | --- | --- |
-| event | `\*` | 
+| event | `*` | 
 

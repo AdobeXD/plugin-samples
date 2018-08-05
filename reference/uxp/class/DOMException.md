@@ -1,7 +1,6 @@
+## DOMException
+**Signature:** DOMException ⇐ `Error`
 
-<a name="domexception" id="domexception"></a>
-
-## DOMException ⇐ `Error`
 **Kind**: global class  
 **Extends**: `Error`  
 **Access**: public  

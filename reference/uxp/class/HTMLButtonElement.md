@@ -1,7 +1,6 @@
+## HTMLButtonElement
+**Signature:** HTMLButtonElement ⇐ [`HTMLElement`](#htmlelement)
 
-<a name="htmlbuttonelement" id="htmlbuttonelement"></a>
-
-## HTMLButtonElement ⇐ [`HTMLElement`](#htmlelement)
 **Kind**: global class  
 **Extends**: [`HTMLElement`](#htmlelement)  
 **Access**: public  
@@ -56,14 +55,14 @@
     * [.setAttribute(name, value)](#element-setattribute)
     * [.removeAttribute(name)](#element-removeattribute)
     * [.hasAttribute(name)](#element-hasattribute) ⇒ `boolean`
-    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `\*`
+    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `*`
     * [.setAttributeNode(newAttr)](#element-setattributenode)
     * [.removeAttributeNode(oldAttr)](#element-removeattributenode)
     * [.getElementsByClassName(name)](#element-getelementsbyclassname) ⇒ [`NodeList`](#nodelist)
     * [.getElementsByTagName(name)](#element-getelementsbytagname) ⇒ [`NodeList`](#nodelist)
     * [.querySelector(selector)](#element-queryselector) ⇒ [`Element`](#element)
     * [.querySelectorAll(selector)](#element-queryselectorall) ⇒ [`NodeList`](#nodelist)
-    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `\*`
+    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `*`
     * [.insertAdjacentHTML(position, value)](#element-insertadjacenthtml)
     * [.insertAdjacentElement(position, node)](#element-insertadjacentelement) ⇒ [`Node`](#node)
     * [.insertAdjacentText(position, text)](#element-insertadjacenttext)
@@ -81,10 +80,9 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
+### new HTMLButtonElement
+**Signature:** new HTMLButtonElement(document, nodeName, namespaceURI)
 
-<a name="new-htmlbuttonelement-new" id="new-htmlbuttonelement-new"></a>
-
-### new HTMLButtonElement(document, nodeName, namespaceURI)
 Creates an instance of HTMLButtonElement.
 
 
@@ -94,266 +92,221 @@ Creates an instance of HTMLButtonElement.
 | nodeName | `string` | 
 | namespaceURI | `string` | 
 
+### htmlButtonElement.nodeName
+**Signature:** htmlButtonElement.nodeName : `string`
 
-<a name="element-nodename" id="element-nodename"></a>
-
-### htmlButtonElement.nodeName : `string`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.localName
+**Signature:** htmlButtonElement.localName : `string`
 
-<a name="element-localname" id="element-localname"></a>
-
-### htmlButtonElement.localName : `string`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.tagName
+**Signature:** htmlButtonElement.tagName : `string`
 
-<a name="element-tagname" id="element-tagname"></a>
-
-### htmlButtonElement.tagName : `string`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.nodeType
+**Signature:** htmlButtonElement.nodeType : `number`
 
-<a name="element-nodetype" id="element-nodetype"></a>
-
-### htmlButtonElement.nodeType : `number`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.namespaceURI
+**Signature:** htmlButtonElement.namespaceURI : `string`
 
-<a name="element-namespaceuri" id="element-namespaceuri"></a>
-
-### htmlButtonElement.namespaceURI : `string`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.id
+**Signature:** htmlButtonElement.id : `string`
 
-<a name="element-id" id="element-id"></a>
-
-### htmlButtonElement.id : `string`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
+### htmlButtonElement.className
+**Signature:** htmlButtonElement.className : `string`
 
-<a name="element-classname" id="element-classname"></a>
-
-### htmlButtonElement.className : `string`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
+### htmlButtonElement.attributes
+**Signature:** htmlButtonElement.attributes : [`NamedNodeMap`](#namednodemap)
 
-<a name="element-attributes" id="element-attributes"></a>
-
-### htmlButtonElement.attributes : [`NamedNodeMap`](#namednodemap)
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.style
+**Signature:** htmlButtonElement.style : `Style`
 
-<a name="element-style" id="element-style"></a>
-
-### htmlButtonElement.style : `Style`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.clientLeft
+**Signature:** htmlButtonElement.clientLeft : `number`
 
-<a name="element-clientleft" id="element-clientleft"></a>
-
-### htmlButtonElement.clientLeft : `number`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.clientTop
+**Signature:** htmlButtonElement.clientTop : `number`
 
-<a name="element-clienttop" id="element-clienttop"></a>
-
-### htmlButtonElement.clientTop : `number`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.clientWidth
+**Signature:** htmlButtonElement.clientWidth : `number`
 
-<a name="element-clientwidth" id="element-clientwidth"></a>
-
-### htmlButtonElement.clientWidth : `number`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.clientHeight
+**Signature:** htmlButtonElement.clientHeight : `number`
 
-<a name="element-clientheight" id="element-clientheight"></a>
-
-### htmlButtonElement.clientHeight : `number`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.offsetLeft
+**Signature:** htmlButtonElement.offsetLeft : `number`
 
-<a name="element-offsetleft" id="element-offsetleft"></a>
-
-### htmlButtonElement.offsetLeft : `number`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.offsetTop
+**Signature:** htmlButtonElement.offsetTop : `number`
 
-<a name="element-offsettop" id="element-offsettop"></a>
-
-### htmlButtonElement.offsetTop : `number`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.offsetWidth
+**Signature:** htmlButtonElement.offsetWidth : `number`
 
-<a name="element-offsetwidth" id="element-offsetwidth"></a>
-
-### htmlButtonElement.offsetWidth : `number`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.offsetHeight
+**Signature:** htmlButtonElement.offsetHeight : `number`
 
-<a name="element-offsetheight" id="element-offsetheight"></a>
-
-### htmlButtonElement.offsetHeight : `number`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.scrollLeft
+**Signature:** htmlButtonElement.scrollLeft : `number`
 
-<a name="element-scrollleft" id="element-scrollleft"></a>
-
-### htmlButtonElement.scrollLeft : `number`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
+### htmlButtonElement.scrollTop
+**Signature:** htmlButtonElement.scrollTop : `number`
 
-<a name="element-scrolltop" id="element-scrolltop"></a>
-
-### htmlButtonElement.scrollTop : `number`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
+### htmlButtonElement.scrollWidth
+**Signature:** htmlButtonElement.scrollWidth : `number`
 
-<a name="element-scrollwidth" id="element-scrollwidth"></a>
-
-### htmlButtonElement.scrollWidth : `number`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.scrollHeight
+**Signature:** htmlButtonElement.scrollHeight : `number`
 
-<a name="element-scrollheight" id="element-scrollheight"></a>
-
-### htmlButtonElement.scrollHeight : `number`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.disabled
+**Signature:** htmlButtonElement.disabled : `boolean`
 
-<a name="element-disabled" id="element-disabled"></a>
-
-### htmlButtonElement.disabled : `boolean`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
+### htmlButtonElement.innerHTML
+**Signature:** htmlButtonElement.innerHTML : `string`
 
-<a name="element-innerhtml" id="element-innerhtml"></a>
-
-### htmlButtonElement.innerHTML : `string`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
+### htmlButtonElement.outerHTML
+**Signature:** htmlButtonElement.outerHTML : `string`
 
-<a name="element-outerhtml" id="element-outerhtml"></a>
-
-### htmlButtonElement.outerHTML : `string`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
-
-<a name="node-contenteditable" id="node-contenteditable"></a>
-
 ### htmlButtonElement.contentEditable
+**Signature:** htmlButtonElement.contentEditable
+
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.isConnected
+**Signature:** htmlButtonElement.isConnected : `boolean`
 
-<a name="node-isconnected" id="node-isconnected"></a>
-
-### htmlButtonElement.isConnected : `boolean`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.parentNode
+**Signature:** htmlButtonElement.parentNode : [`Node`](#node)
 
-<a name="node-parentnode" id="node-parentnode"></a>
-
-### htmlButtonElement.parentNode : [`Node`](#node)
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.firstChild
+**Signature:** htmlButtonElement.firstChild : [`Node`](#node)
 
-<a name="node-firstchild" id="node-firstchild"></a>
-
-### htmlButtonElement.firstChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.lastChild
+**Signature:** htmlButtonElement.lastChild : [`Node`](#node)
 
-<a name="node-lastchild" id="node-lastchild"></a>
-
-### htmlButtonElement.lastChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.previousSibling
+**Signature:** htmlButtonElement.previousSibling : [`Node`](#node)
 
-<a name="node-previoussibling" id="node-previoussibling"></a>
-
-### htmlButtonElement.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.nextSibling
+**Signature:** htmlButtonElement.nextSibling : [`Node`](#node)
 
-<a name="node-nextsibling" id="node-nextsibling"></a>
-
-### htmlButtonElement.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.firstElementChild
+**Signature:** htmlButtonElement.firstElementChild : [`Node`](#node)
 
-<a name="node-firstelementchild" id="node-firstelementchild"></a>
-
-### htmlButtonElement.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.lastElementChild
+**Signature:** htmlButtonElement.lastElementChild : [`Node`](#node)
 
-<a name="node-lastelementchild" id="node-lastelementchild"></a>
-
-### htmlButtonElement.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.previousElementSibling
+**Signature:** htmlButtonElement.previousElementSibling : [`Node`](#node)
 
-<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
-
-### htmlButtonElement.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.nextElementSibling
+**Signature:** htmlButtonElement.nextElementSibling : [`Node`](#node)
 
-<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
-
-### htmlButtonElement.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.textContent
+**Signature:** htmlButtonElement.textContent : `string`
 
-<a name="node-textcontent" id="node-textcontent"></a>
-
-### htmlButtonElement.textContent : `string`
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
+### htmlButtonElement.childNodes
+**Signature:** htmlButtonElement.childNodes : [`NodeList`](#nodelist)
 
-<a name="node-childnodes" id="node-childnodes"></a>
-
-### htmlButtonElement.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
-
-<a name="node-ownerdocument" id="node-ownerdocument"></a>
-
 ### htmlButtonElement.ownerDocument
+**Signature:** htmlButtonElement.ownerDocument
+
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
-
-<a name="node-offsetparent" id="node-offsetparent"></a>
-
 ### htmlButtonElement.offsetParent
+**Signature:** htmlButtonElement.offsetParent
+
 **Kind**: instance property of [`HTMLButtonElement`](#htmlbuttonelement)  
 **Read only**: true  
+### htmlButtonElement.scrollIntoView
+**Signature:** htmlButtonElement.scrollIntoView()
 
-<a name="element-scrollintoview" id="element-scrollintoview"></a>
-
-### htmlButtonElement.scrollIntoView()
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
+### htmlButtonElement.scrollIntoViewIfNeeded
+**Signature:** htmlButtonElement.scrollIntoViewIfNeeded()
 
-<a name="element-scrollintoviewifneeded" id="element-scrollintoviewifneeded"></a>
-
-### htmlButtonElement.scrollIntoViewIfNeeded()
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
+### htmlButtonElement.focus
+**Signature:** htmlButtonElement.focus()
 
-<a name="element-focus" id="element-focus"></a>
-
-### htmlButtonElement.focus()
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
+### htmlButtonElement.blur
+**Signature:** htmlButtonElement.blur()
 
-<a name="element-blur" id="element-blur"></a>
-
-### htmlButtonElement.blur()
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
+### htmlButtonElement.getAttribute
+**Signature:** htmlButtonElement.getAttribute(name) ⇒ `string`
 
-<a name="element-getattribute" id="element-getattribute"></a>
-
-### htmlButtonElement.getAttribute(name) ⇒ `string`
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlButtonElement.setAttribute
+**Signature:** htmlButtonElement.setAttribute(name, value)
 
-<a name="element-setattribute" id="element-setattribute"></a>
-
-### htmlButtonElement.setAttribute(name, value)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
@@ -361,105 +314,94 @@ Creates an instance of HTMLButtonElement.
 | name | `string` | 
 | value | `string` | 
 
+### htmlButtonElement.removeAttribute
+**Signature:** htmlButtonElement.removeAttribute(name)
 
-<a name="element-removeattribute" id="element-removeattribute"></a>
-
-### htmlButtonElement.removeAttribute(name)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlButtonElement.hasAttribute
+**Signature:** htmlButtonElement.hasAttribute(name) ⇒ `boolean`
 
-<a name="element-hasattribute" id="element-hasattribute"></a>
-
-### htmlButtonElement.hasAttribute(name) ⇒ `boolean`
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlButtonElement.getAttributeNode
+**Signature:** htmlButtonElement.getAttributeNode(name) ⇒ `*`
 
-<a name="element-getattributenode" id="element-getattributenode"></a>
-
-### htmlButtonElement.getAttributeNode(name) ⇒ `\*`
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlButtonElement.setAttributeNode
+**Signature:** htmlButtonElement.setAttributeNode(newAttr)
 
-<a name="element-setattributenode" id="element-setattributenode"></a>
-
-### htmlButtonElement.setAttributeNode(newAttr)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
-| newAttr | `\*` | 
+| newAttr | `*` | 
 
+### htmlButtonElement.removeAttributeNode
+**Signature:** htmlButtonElement.removeAttributeNode(oldAttr)
 
-<a name="element-removeattributenode" id="element-removeattributenode"></a>
-
-### htmlButtonElement.removeAttributeNode(oldAttr)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
-| oldAttr | `\*` | 
+| oldAttr | `*` | 
 
+### htmlButtonElement.getElementsByClassName
+**Signature:** htmlButtonElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-getelementsbyclassname" id="element-getelementsbyclassname"></a>
-
-### htmlButtonElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
-**Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
-
-| Param | Type |
-| --- | --- |
-| name | `string` | 
-
-
-<a name="element-getelementsbytagname" id="element-getelementsbytagname"></a>
-
-### htmlButtonElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
+### htmlButtonElement.getElementsByTagName
+**Signature:** htmlButtonElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-queryselector" id="element-queryselector"></a>
+**Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
-### htmlButtonElement.querySelector(selector) ⇒ [`Element`](#element)
+| Param | Type |
+| --- | --- |
+| name | `string` | 
+
+### htmlButtonElement.querySelector
+**Signature:** htmlButtonElement.querySelector(selector) ⇒ [`Element`](#element)
+
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
+### htmlButtonElement.querySelectorAll
+**Signature:** htmlButtonElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 
-<a name="element-queryselectorall" id="element-queryselectorall"></a>
-
-### htmlButtonElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
+### htmlButtonElement.getBoundingClientRect
+**Signature:** htmlButtonElement.getBoundingClientRect() ⇒ `*`
 
-<a name="element-getboundingclientrect" id="element-getboundingclientrect"></a>
-
-### htmlButtonElement.getBoundingClientRect() ⇒ `\*`
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
+### htmlButtonElement.insertAdjacentHTML
+**Signature:** htmlButtonElement.insertAdjacentHTML(position, value)
 
-<a name="element-insertadjacenthtml" id="element-insertadjacenthtml"></a>
-
-### htmlButtonElement.insertAdjacentHTML(position, value)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
@@ -467,57 +409,51 @@ Creates an instance of HTMLButtonElement.
 | position |  | 
 | value | `string` | 
 
+### htmlButtonElement.insertAdjacentElement
+**Signature:** htmlButtonElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 
-<a name="element-insertadjacentelement" id="element-insertadjacentelement"></a>
-
-### htmlButtonElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `\*` | 
-| node | `\*` | 
+| position | `*` | 
+| node | `*` | 
 
+### htmlButtonElement.insertAdjacentText
+**Signature:** htmlButtonElement.insertAdjacentText(position, text)
 
-<a name="element-insertadjacenttext" id="element-insertadjacenttext"></a>
-
-### htmlButtonElement.insertAdjacentText(position, text)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `\*` | 
-| text | `\*` | 
+| position | `*` | 
+| text | `*` | 
 
+### htmlButtonElement.hasChildNodes
+**Signature:** htmlButtonElement.hasChildNodes() ⇒ `boolean`
 
-<a name="node-haschildnodes" id="node-haschildnodes"></a>
-
-### htmlButtonElement.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
+### htmlButtonElement.cloneNode
+**Signature:** htmlButtonElement.cloneNode(deep) ⇒ [`Node`](#node)
 
-<a name="node-clonenode" id="node-clonenode"></a>
-
-### htmlButtonElement.cloneNode(deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
 | deep | `boolean` | 
 
+### htmlButtonElement.appendChild
+**Signature:** htmlButtonElement.appendChild(child) ⇒ [`Node`](#node)
 
-<a name="node-appendchild" id="node-appendchild"></a>
-
-### htmlButtonElement.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### htmlButtonElement.insertBefore
+**Signature:** htmlButtonElement.insertBefore(child, before) ⇒ [`Node`](#node)
 
-<a name="node-insertbefore" id="node-insertbefore"></a>
-
-### htmlButtonElement.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
@@ -525,10 +461,9 @@ Creates an instance of HTMLButtonElement.
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
+### htmlButtonElement.replaceChild
+**Signature:** htmlButtonElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
-<a name="node-replacechild" id="node-replacechild"></a>
-
-### htmlButtonElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
@@ -536,82 +471,74 @@ Creates an instance of HTMLButtonElement.
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
+### htmlButtonElement.removeChild
+**Signature:** htmlButtonElement.removeChild(child) ⇒ [`Node`](#node)
 
-<a name="node-removechild" id="node-removechild"></a>
-
-### htmlButtonElement.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
+### htmlButtonElement.remove
+**Signature:** htmlButtonElement.remove()
 
-<a name="node-remove" id="node-remove"></a>
-
-### htmlButtonElement.remove()
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
+### htmlButtonElement.before
+**Signature:** htmlButtonElement.before(...nodes)
 
-<a name="node-before" id="node-before"></a>
-
-### htmlButtonElement.before(...nodes)
-**Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
-
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
-
-
-<a name="node-after" id="node-after"></a>
-
-### htmlButtonElement.after(...nodes)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### htmlButtonElement.after
+**Signature:** htmlButtonElement.after(...nodes)
 
-<a name="node-replacewith" id="node-replacewith"></a>
-
-### htmlButtonElement.replaceWith(...nodes)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
+### htmlButtonElement.replaceWith
+**Signature:** htmlButtonElement.replaceWith(...nodes)
 
-<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+**Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
-### htmlButtonElement.addEventListener(eventName, callback, [capture])
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+### htmlButtonElement.addEventListener
+**Signature:** htmlButtonElement.addEventListener(eventName, callback, [capture])
+
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### htmlButtonElement.removeEventListener
+**Signature:** htmlButtonElement.removeEventListener(eventName, callback, [capture])
 
-<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
-
-### htmlButtonElement.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
+| eventName | `*` |  | 
+| callback | `*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
+### htmlButtonElement.dispatchEvent
+**Signature:** htmlButtonElement.dispatchEvent(event)
 
-<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
-
-### htmlButtonElement.dispatchEvent(event)
 **Kind**: instance method of [`HTMLButtonElement`](#htmlbuttonelement)  
 
 | Param | Type |
 | --- | --- |
-| event | `\*` | 
+| event | `*` | 
 

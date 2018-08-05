@@ -1,7 +1,6 @@
+## HTMLCollection
+**Signature:** HTMLCollection ⇐ [`NodeList`](#nodelist)
 
-<a name="htmlcollection" id="htmlcollection"></a>
-
-## HTMLCollection ⇐ [`NodeList`](#nodelist)
 **Kind**: global class  
 **Extends**: [`NodeList`](#nodelist)  
 **Access**: public  
@@ -15,44 +14,38 @@
     * [.entries()](#nodelist-entries)
     * [.forEach(callback)](#nodelist-foreach)
 
+### htmlCollection.length
+**Signature:** htmlCollection.length : `number`
 
-<a name="nodelist-length" id="nodelist-length"></a>
-
-### htmlCollection.length : `number`
 **Kind**: instance property of [`HTMLCollection`](#htmlcollection)  
 **Read only**: true  
+### htmlCollection.item
+**Signature:** htmlCollection.item(index) ⇒ [`Node`](#node)
 
-<a name="nodelist-item" id="nodelist-item"></a>
-
-### htmlCollection.item(index) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLCollection`](#htmlcollection)  
 
 | Param | Type |
 | --- | --- |
 | index | `number` | 
 
+### htmlCollection.keys
+**Signature:** htmlCollection.keys()
 
-<a name="nodelist-keys" id="nodelist-keys"></a>
-
-### htmlCollection.keys()
 **Kind**: instance method of [`HTMLCollection`](#htmlcollection)  
+### htmlCollection.values
+**Signature:** htmlCollection.values()
 
-<a name="nodelist-values" id="nodelist-values"></a>
-
-### htmlCollection.values()
 **Kind**: instance method of [`HTMLCollection`](#htmlcollection)  
+### htmlCollection.entries
+**Signature:** htmlCollection.entries()
 
-<a name="nodelist-entries" id="nodelist-entries"></a>
-
-### htmlCollection.entries()
 **Kind**: instance method of [`HTMLCollection`](#htmlcollection)  
+### htmlCollection.forEach
+**Signature:** htmlCollection.forEach(callback)
 
-<a name="nodelist-foreach" id="nodelist-foreach"></a>
-
-### htmlCollection.forEach(callback)
 **Kind**: instance method of [`HTMLCollection`](#htmlcollection)  
 
 | Param | Type |
 | --- | --- |
-| callback | `\*` | 
+| callback | `*` | 
 
