@@ -1,6 +1,6 @@
 ![XD](.meta/readme-assets/adobe-xd-log.png)
 
-# Welcome to XD Plugin Guides and Samples site!
+# Welcome to XD Plugin Guides site!
 Are a problem solver? Do you know what JavaScript is? Do you want to extend Adobe XD? If so, this page is the right place for you. You can easily get started building an Adobe XD plugin by reading guides and learning from existing sample plugins.
 
 ## What can you build?
@@ -12,8 +12,6 @@ Adobe XD plugins provide a way for developers to extend XD functionality. Plugin
 - **Connect to other sources on the web.** Plugins can make network requests.
 - **Enable plugin configuration through dialogs.** Plugins can create dialogs with various UI controls in order to allow user input. 
 
-
-
 ## Where to start?
 1. To begin, read the [Getting Started guide](Guides/getting-started-guide/) and take a look at [other guides](Guides)
 1. Then visit the [Reference Documentation](https://github.com/AdobeXD/Plugin-Reference) for more information & detailed API documentation
@@ -21,4 +19,4 @@ Adobe XD plugins provide a way for developers to extend XD functionality. Plugin
 
 ## What's next?
 - [XD Plugin Forum](https://forums.adobeprerelease.com/newxdprerelease/categories/xdplugindev)
-- [How to package and distribute your plugin]()
+- [Samples Repository](https://github.com/AdobeXD/Plugin-Samples)
