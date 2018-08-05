@@ -40,7 +40,7 @@ Fields are required unless otherwise noted.
 
 key path | description
 ---------|------------
-`id`     | This is a unique identifier for your plugin. It's common to use reverse domain notation. The behavior is undefined if two plugins have the same identifier.
+`id`     | This is a unique identifier for your plugin. **NOTE**: IDs are currently typically in reverse domain notation. This will be changing in the future, so don't get attached to your plugin ID.
 `name`   | Human-readable name of the plugin. Note that this isn't visible to the user _yet_.
 `version`| Version number of the plugin in `x.y.z` format.
 `host.app` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `XD`).

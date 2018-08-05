@@ -6,13 +6,46 @@ The following has changed in this release.
 
 * The File I/O APIs have moved to a new module. Use `require("uxp").storage.localFileSystem` to get access to the local file system provider.
 * Your plugins must now use the typical `module.exports` form to return commands. Instead of using `return`, just replace it with `module.exports = `.
-* If you want to render any UI controls in your plugins, you will need to be on macOS 10.12 or better, or
+* If you want to render any UI controls in your plugins, you will need to be on macOS 10.12 or better (or UWP).
 
 ## Export Renditions
 
-## User Interface
+For an example of using export renditions, [see this guide](https://adobe-xd.gitbook.io/plugin-guides/working-with-content/how-to-generate-an-export-rendition-guide).
 
 ## File I/O Improvements
+
+You can now obtain the native path of an entry:
+
+```js
+const pathOnDisk = someFileEntry.nativePath;
+```
+
+You can also request a file entry from a folder using a path-like string:
+
+```js
+const somefile = await (await getPluginFolder()).getEntry('path/to/some/file');
+```
+
+Plugins can now store persistent information in their own folder without user mediation.
+
+```js
+const fs = require("uxp").storage.localFileSystem;
+const dataFolder = await fs.getDataFolder();
+```
+
+For more, [see the full reference](./reference/uxp/module/storage.md).
+
+## Open External Browser
+
+You can now open the system browser by using a simple API:
+
+```js
+require("uxp").shell.openExternal("https://www.google.com");
+```
+
+## User Interface
+
+Read about [the user interface options here!](./reference/ui/ui-concepts.md) and then [dig into the UI reference](./reference/ui) [and UXP reference](./reference/uxp).
 
 ## Known Issues
 
