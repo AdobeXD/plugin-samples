@@ -12,45 +12,44 @@ The code below generates the following UI
 <img src="./assets/input-text.png" width="50%" height="50%">
 
 ### Supported attributes 
-	* id	
-	```html
-            <input type="text" id="name" />
-	```
-	* title	
-	```html
-            <input type="text" id="name" title="Hello World"/>
-	```
+* id	
+```html
+        <input type="text" id="name" />
+```
+* title	
+```html
+        <input type="text" id="name" title="Hello World"/>
+```
 
-	* place holder
-	```html
-            <input type="text" id="name" placeholder="Your name"/>
-	```
+* place holder
+```html
+        <input type="text" id="name" placeholder="Your name"/>
+```
 
-	* disabled
-	```html
-            <input type="text" id="name" disabled = "true"/>
-	```
-	
-	* value
-	```html
-            <input type="text" id="name" value="Your name"/>
-	```	
+* disabled
+```html
+        <input type="text" id="name" disabled = "true"/>
+```
 
-	* title
-	```html
-            <input type="text" id="name" title="Your title"/>
-	```	
-	
-	* readonly
-	```html
-            <input type="text" id="name" readonly="true"/>
-	```	
+* value
+```html
+        <input type="text" id="name" value="Your name"/>
+```	
 
-	* uxp-quiet
-	```html
-	   		 <input uxp-quiet="true" type="text" id="name" placeholder="Your name"/>
-	```
+* title
+```html
+        <input type="text" id="name" title="Your title"/>
+```	
 
+* readonly
+```html
+        <input type="text" id="name" readonly="true"/>
+```	
+
+* uxp-quiet
+```html
+   		 <input uxp-quiet="true" type="text" id="name" placeholder="Your name"/>
+```
 
 ## Type = checkbox
 
@@ -66,35 +65,35 @@ The code below generates the following UI
 <img src="./assets/input-checkbox.png" width="50%" height="50%">
 
 ### Supported attributes
-	* id	
-	```html
-            <input type="checkbox" id="name" />
-	```
+* id	
+```html
+        <input type="checkbox" id="name" />
+```
 
-	* title	
-	```html
-            <input type="checkbox" id="name" />
-	```
+* title	
+```html
+        <input type="checkbox" id="name" />
+```
 
-	* value
-	```html
-            <input type="checkbox" id="name" value="someValue"/>
-	```	
+* value
+```html
+        <input type="checkbox" id="name" value="someValue"/>
+```	
 
-	* checked	
-	```html
-            <input type="checkbox" id="name" value="someValue" checked/>
-	```
+* checked	
+```html
+        <input type="checkbox" id="name" value="someValue" checked/>
+```
 
-	* disabled	
-	```html
-            <input type="checkbox" id="name" value="someValue" disabled/>
-	```
+* disabled	
+```html
+        <input type="checkbox" id="name" value="someValue" disabled/>
+```
 
-	* indeterminate	
-	```html
-            <input type="checkbox" id="name" />
-	```
+* indeterminate	
+```html
+        <input type="checkbox" id="name" />
+```
 
 This value for this attribute can only be set in javascript like this:
 
@@ -119,40 +118,40 @@ The code below generates the following UI
 
 ### Supported attributes
 
-	* id	
-	```html
-            <input type="range" id="name" />
-	```
+* id	
+```html
+        <input type="range" id="name" />
+```
 
-	* title	
-	```html
-            <input type="range" id="name" title="someTitle" />
-	```
+* title	
+```html
+        <input type="range" id="name" title="someTitle" />
+```
 
-	* disabled
-	```html
-             <input type="range" id="name" disabled />
-	```	
+* disabled
+```html
+         <input type="range" id="name" disabled />
+```	
 
-	* min	
-	```html
-            <input type="range" id="name" min="10" />
-	```
+* min	
+```html
+        <input type="range" id="name" min="10" />
+```
 
-	* max	
-	```html
-             <input type="range" id="name" max="20" />
-	```
+* max	
+```html
+         <input type="range" id="name" max="20" />
+```
 
-	* step	
-	```html
-           <input type="range" id="name" step="2" />
-	```
+* step	
+```html
+       <input type="range" id="name" step="2" />
+```
 
-	* value	
-	```html
-          <input type="range" value="90" />
-	```
+* value	
+```html
+      <input type="range" value="90" />
+```
 
 
 ## Type = number
@@ -170,41 +169,41 @@ The code below generates the following UI
 
 ### Supported attributes
 
-	* id	
-	```html
-            <input type="number" id="name" />
-	```
-	* title	
-	```html
-            <input type="number" id="name" title="Hello World"/>
-	```
+* id	
+```html
+        <input type="number" id="name" />
+```
+* title	
+```html
+        <input type="number" id="name" title="Hello World"/>
+```
 
-	* place holder
-	```html
-            <input type="number" id="name" placeholder="Your name"/>
-	```
+* place holder
+```html
+        <input type="number" id="name" placeholder="Your name"/>
+```
 
-	* disabled
-	```html
-            <input type="number" id="name" disabled = "true"/>
-	```
-	
-	* value
-	```html
-            <input type="number" id="name" value="Your name"/>
-	```	
+* disabled
+```html
+        <input type="number" id="name" disabled = "true"/>
+```
 
-	* title
-	```html
-            <input type="number" id="name" title="Your title"/>
-	```	
-	
-	* readonly
-	```html
-            <input type="number" id="name" readonly="true"/>
-	```	
+* value
+```html
+        <input type="number" id="name" value="Your name"/>
+```	
 
-	* uxp-quiet
-	```html
-	   		 <input uxp-quiet="true" type="number" id="name" placeholder="Your name"/>
-	```
+* title
+```html
+        <input type="number" id="name" title="Your title"/>
+```	
+
+* readonly
+```html
+        <input type="number" id="name" readonly="true"/>
+```	
+
+* uxp-quiet
+```html
+   		 <input uxp-quiet="true" type="number" id="name" placeholder="Your name"/>
+```
