@@ -10,7 +10,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "(UI Sample 4) Trello",
+            "label": "UI Trello",
             "commandId": "menuCommand"
         }
     ]

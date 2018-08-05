@@ -27,7 +27,7 @@ let dialog =
             ),
             h("footer",
                 h("button", { uxpVariant: "primary", onclick(e) { dialog.close("Cancelled") } }, "Cancel"),
-                h("button", { uxpVariant: "cta", type:"submit" }, "Update Padding")
+                h("button", { uxpVariant: "cta", type:"submit", onclick(e){ onsubmit(); dialog.close(); e.preventDefault; } } , "Update Padding")
             )
         )
     )

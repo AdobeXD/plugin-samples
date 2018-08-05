@@ -10,7 +10,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "(UI Sample 2) Create Chart",
+            "label": "UI Create Chart",
             "commandId": "menuCommand"
         }
     ]

@@ -9,7 +9,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "(UI Sample 8) Hello React JSX",
+            "label": "UI Hello React JSX",
             "commandId": "menuCommand"
         }
     ]

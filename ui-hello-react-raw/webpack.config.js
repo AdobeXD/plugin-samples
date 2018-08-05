@@ -5,7 +5,5 @@ module.exports = {
         filename: 'main.js',
         libraryTarget: "commonjs2"
     },
-    optimization: {        
-        minimize: false
-    }
+    devtool: "none", // prevent webpack from using eval() on my module
 };

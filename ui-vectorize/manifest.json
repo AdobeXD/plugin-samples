@@ -9,7 +9,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "(UI Sample 1) Vectorize",
+            "label": "UI Vectorize",
             "commandId": "menuCommand"
         }
     ]

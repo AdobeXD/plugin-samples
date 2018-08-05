@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/main.jsx");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/main.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -20019,81 +20019,34 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./src/main.jsx":
-/*!**********************!*\
-  !*** ./src/main.jsx ***!
-  \**********************/
+/***/ "./src/main.js":
+/*!*********************!*\
+  !*** ./src/main.js ***!
+  \*********************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {//  temporary stubs required for React. These will not be required as soon as the XD environment provides setTimeout/clearTimeout
-global.setTimeout = function (fn) {
-    fn();
-};
-global.clearTimeout = function () {};
+/* WEBPACK VAR INJECTION */(function(global) {
+//  temporary stubs required for React. These will not be required as soon as the XD environment provides setTimeout/clearTimeout
+global.setTimeout = function(fn){ fn() }
+global.clearTimeout = function(){};
 
 let React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 let ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 
-class HelloForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { name: props.name || "" };
-        this.onInputChange = e => {
-            this.setState({ name: e.target.value });
-        };
-    }
-
-    render() {
-        return React.createElement(
-            "form",
-            { style: { width: 300 } },
-            React.createElement(
-                "h1",
-                null,
-                "React with JSX Components"
-            ),
-            React.createElement(
-                "label",
-                null,
-                React.createElement(
-                    "span",
-                    null,
-                    "What is your name?"
-                ),
-                React.createElement("input", { onChange: this.onInputChange })
-            ),
-            React.createElement(
-                "p",
-                null,
-                "Hello " + this.state.name
-            ),
-            React.createElement(
-                "footer",
-                null,
-                React.createElement(
-                    "button",
-                    { type: "submit" },
-                    "Done"
-                )
-            )
-        );
-    }
-}
-
-let dialog;
-function getDialog() {
-    if (dialog == null) {
-        dialog = document.createElement("dialog");
-        ReactDOM.render(React.createElement(HelloForm, { onSubmit: dialog.close.bind(dialog) }), dialog);
-    }
-    return dialog;
-}
+let dialog = ReactDOM.render(
+    React.createElement("dialog", {},
+        React.createElement("form", { style: { width: 200 } },
+            React.createElement("h1", {}, "Hello React Raw"),
+            React.createElement("p", {}, "Press ESC to exit.")
+        )
+    )
+    , document.body);
 
 module.exports = {
     commands: {
         menuCommand: function () {
-            document.appendChild(getDialog()).showModal();
+            dialog.showModal();
         }
     }
 };

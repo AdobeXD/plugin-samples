@@ -10,7 +10,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Stock Chart",
+            "label": "UI Stock Chart",
             "commandId": "stockChartHandler"
         }
     ]

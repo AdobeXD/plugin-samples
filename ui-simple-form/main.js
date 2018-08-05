@@ -57,8 +57,8 @@ let dialog =
                 h("input", { type: "range" })
             ),
             h("footer",
-                h("button", { onclick(e) { dialog.close() } }, "Cancel"),
-                h("button", { onclick(e) { dialog.close() } }, "Submit")
+                h("button", { uxpVariant: "primary", onclick(e) { dialog.close() } }, "Cancel"),
+                h("button", { uxpVariant: "cta", onclick(e) { dialog.close() } }, "Submit")
             )
         )
     )

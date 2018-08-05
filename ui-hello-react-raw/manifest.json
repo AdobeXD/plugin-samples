@@ -1,8 +1,7 @@
 {
-    "id": "0000000000000003",
-    "name": "Button Plugin",
+    "id": "com.adobe.helloreactraw",
+    "name": "Hello React",
     "version": "0.0.1",
-    "main": "main.js",
     "host": {
         "app": "XD",
         "minVersion": "10.0.10.24"
@@ -10,7 +9,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Buttons Galore",
+            "label": "UI Hello React Raw",
             "commandId": "menuCommand"
         }
     ]

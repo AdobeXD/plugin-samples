@@ -9,7 +9,8 @@ let ReactDOM = require("react-dom");
 let dialog = ReactDOM.render(
     React.createElement("dialog", {},
         React.createElement("form", { style: { width: 200 } },
-            React.createElement("h1", {}, "Hello React Raw")
+            React.createElement("h1", {}, "Hello React Raw"),
+            React.createElement("p", {}, "Press ESC to exit.")
         )
     )
     , document.body);

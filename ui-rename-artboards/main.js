@@ -71,7 +71,7 @@ let dialog =
             ),
             h("footer",
                 h("button", { uxpVariant: "primary", onclick(e) { dialog.close() } }, "Cancel"),
-                h("button", { uxpVariant: "cta", type: "submit" }, "Rename")
+                h("button", { uxpVariant: "cta", type: "submit", onclick(e){ onsubmit(); dialog.close(); e.preventDefault; } }, "Rename")
             )
         )
     )

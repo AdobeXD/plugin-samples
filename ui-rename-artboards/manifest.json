@@ -10,7 +10,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "(UI Sample 3) Rename Artboards",
+            "label": "UI Rename Artboards",
             "commandId": "menuCommand"
         }
     ]

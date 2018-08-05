@@ -10,7 +10,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "(UI Sample 5) Button Padding",
+            "label": "UI Button Padding",
             "commandId": "menuCommand"
         }
     ]

@@ -126,7 +126,7 @@ let dialog =
             ),
             h("footer",
                 h("button", { uxpVariant: "primary", onclick(e) { dialog.close() } }, "Cancel"),
-                h("button", { uxpVariant: "cta", type:"submit" }, "Add Selection to Card")
+                h("button", { uxpVariant: "cta", type:"submit", onclick(e) { onsubmit(); e.preventDefault() } }, "Add Selection to Card")
             )
         )
     )

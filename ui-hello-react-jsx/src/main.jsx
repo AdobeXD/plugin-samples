@@ -12,6 +12,9 @@ class HelloForm extends React.Component {
         this.onInputChange = (e) => {
             this.setState({ name: e.target.value })
         }
+        this.onDoneClick = (e) => {
+            this.props.dialog.close();
+        }
     }
 
     render() {
@@ -24,7 +27,7 @@ class HelloForm extends React.Component {
                 </label>
                 <p>{"Hello " + this.state.name}</p>
                 <footer>
-                    <button type="submit">Done</button>
+                    <button type="submit" onClick={this.onDoneClick}>Done</button>
                 </footer>
             </form>
         );
@@ -35,7 +38,7 @@ let dialog;
 function getDialog() {
     if (dialog == null) {
         dialog = document.createElement("dialog");
-        ReactDOM.render(<HelloForm onSubmit={dialog.close.bind(dialog)} />, dialog);
+        ReactDOM.render(<HelloForm dialog={dialog} />, dialog);
     }
     return dialog
 }

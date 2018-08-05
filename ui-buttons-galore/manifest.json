@@ -1,6 +1,6 @@
 {
-    "id": "com.adobe.simpleform",
-    "name": "Simple Form Plugin",
+    "id": "0000000000000003",
+    "name": "Button Plugin",
     "version": "0.0.1",
     "main": "main.js",
     "host": {
@@ -10,7 +10,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Simple Form",
+            "label": "UI Buttons Galore",
             "commandId": "menuCommand"
         }
     ]
