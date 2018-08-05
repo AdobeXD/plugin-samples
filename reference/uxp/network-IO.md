@@ -3,11 +3,14 @@
 The Network I/O subsystem mimics the standards found on the web. The following API surfaces are available:
 
 * Web Sockets
-    * MDN documentation: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+    * [UXP Documentation](./class/WebSocket.md)
+    * [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
 * XMLHttpRequest
-    * MDN documentation: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+    * [UXP Documentation](./class/XMLHttpRequest.md)
+    * [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 * Fetch
-    * MDN documentation: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+    * [UXP Documentation](./function/fetch.md)
+    * [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 
 ## Web Socket Support
 

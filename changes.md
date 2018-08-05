@@ -19,8 +19,12 @@ The following has changed in this release.
 * User Interface
   * Checkboxes on Windows take up too much space
   * Pressing ENTER doesn't submit the dialog form
-
-
+* Network I/O
+  * Web sockets cannot connect to `wss://` URLs yet. You can only connect to insecure `ws://` URLs.
+  * Web socket extensions are not supported
+  * Synchronous XHR is not supported
+  * Sending or receiving blobs using XHR is not supported
+  * `responseURL` is not supported on XHR
 
 ---
 
