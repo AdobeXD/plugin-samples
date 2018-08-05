@@ -118,7 +118,4 @@ document.body.appendChild(dialog);
 Description
 
 - [How to debug](how-to-debug)
-
-## Other Resources
-- [Title](link)
-- [Title](link)
+- [Other samples](https://github.com/AdobeXD/Plugin-Samples)

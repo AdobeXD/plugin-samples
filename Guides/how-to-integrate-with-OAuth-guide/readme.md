@@ -23,7 +23,6 @@ After setting up the sample, you will have an XD plugin and a separate node serv
 1. [Configuration](#configuration)
 1. [Development Steps](#development-steps)
 1. [Next Steps](#next-steps)
-1. [Other Resources](#other-resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -317,7 +316,4 @@ text.moveInParentCoordinates(100, 100); // [5]
 Description
 
 - [How to debug](how-to-debug)
-
-## Other Resources
-- [Title](link)
-- [Title](link)
+- [Other samples](https://github.com/AdobeXD/Plugin-Samples)
