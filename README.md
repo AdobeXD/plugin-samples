@@ -19,3 +19,10 @@ Adobe XD plugins provide a way for developers to extend XD functionality. Plugin
 1. To begin, read the [Getting Started guide](https://adobe-xd.gitbook.io/plugin-guides/getting-started/getting-started-guide) and take a look at [other guides](https://adobe-xd.gitbook.io/plugin-guides)
 1. Read up on [the structure of a plugin](./reference/structure/index.md), some [Adobe XD core concepts](./reference/core/index.md), and then dig into the reference itself.
 1. If you need more help, we have a few, select [Samples](https://github.com/AdobeXD/Plugin-Samples) for you to take a look at.
+
+## Known Issues
+
+* UI
+    * Text fields are limited to 150 characters.
+    * Dialogs on UWP have a fairly narrow maximum width.
+    * Dialogs don't yet submit on ENTER
