@@ -1,17 +1,17 @@
 # Input
 
-<input> type supportes different values for its attribute "type". Depending upon the value, it supports different attributes.
+`<input>` type supportes different values for its attribute "type". Depending upon the value, it supports different attributes.
 
 ## Type = text
 
-* Syntax
+### Syntax
 The code below generates the following UI
 ```html
    <input type="text" uxp-quiet="true" id="name" placeholder="Your name"/>
 ```
 <img src="./assets/input-text.png" width="50%" height="50%">
 
-* Supported attributes 
+### Supported attributes 
 	* id	
 	```html
             <input type="text" id="name" />
@@ -54,7 +54,7 @@ The code below generates the following UI
 
 ## Type = checkbox
 
-* Syntax
+### Syntax
 The code below generates the following UI
 ```html
         <label class = "row">
@@ -65,7 +65,7 @@ The code below generates the following UI
 
 <img src="./assets/input-checkbox.png" width="50%" height="50%">
 
-* Supported attributes
+### Supported attributes
 	* id	
 	```html
             <input type="checkbox" id="name" />
@@ -96,6 +96,8 @@ The code below generates the following UI
             <input type="checkbox" id="name" />
 	```
 
+This value for this attribute can only be set in javascript like this:
+
 	```
 		var input = document.getElementById("name");
 		 input.indeterminate = true;
@@ -104,7 +106,7 @@ The code below generates the following UI
 
 ## Type = range
 
-* Syntax
+### Syntax
 The code below generates the following UI
 ```html
         <label>
@@ -115,7 +117,7 @@ The code below generates the following UI
 
 <img src="./assets/input-range.png" width="50%" height="50%">
 
-* Supported attributes
+### Supported attributes
 
 	* id	
 	```html
@@ -155,7 +157,7 @@ The code below generates the following UI
 
 ## Type = number
 
-* Syntax
+### Syntax
 The code below generates the following UI
 ```html
         <label>
@@ -166,7 +168,7 @@ The code below generates the following UI
 
 <img src="./assets/input-number.png" width="50%" height="50%">
 
-* Supported attributes
+### Supported attributes
 
 	* id	
 	```html
