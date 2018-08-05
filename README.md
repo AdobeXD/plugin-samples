@@ -26,3 +26,4 @@ Recommended development setup:
 
 6. Launch plugins from the `Plugins` menu.
 
+Make sure to check out [XD Plugin Guides](https://adobe-xd.gitbook.io/plugin-guides/) and [XD Plugin References](https://adobe-xd.gitbook.io/plugin-api-reference).
