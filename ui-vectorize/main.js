@@ -37,7 +37,7 @@ let dialog =
             h("p", "This plugin will vectorize your entire project. Are you sure you'd like to continue?"),
             h("footer",
                 h("button", { uxpVariant: "primary", onclick(e) { dialog.close() } }, "Cancel"),
-                h("button", { uxpVariant: "cta", onclick(e) { dialog.close() } }, "Vectorize")
+                h("button", { uxpVariant: "cta", type:"submit", onclick(e) { dialog.close() } }, "Vectorize")
             )
         )
     )

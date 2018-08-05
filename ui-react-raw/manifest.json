@@ -1,0 +1,16 @@
+{
+    "id": "com.adobe.helloreactraw",
+    "name": "Hello React",
+    "version": "0.0.1",
+    "host": {
+        "app": "XD",
+        "minVersion": "10.0.10.24"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "(UI Sample 7) Hello React Raw",
+            "commandId": "menuCommand"
+        }
+    ]
+}

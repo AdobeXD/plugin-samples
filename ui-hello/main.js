@@ -1,9 +1,8 @@
 
 //  create the main container
-let container = document.createElement("div");
+let container = document.createElement("form");
 //  don't forget to set your desired width
-container.style.minWidth = 400;
-container.style.padding = 40;
+container.style.width = 400;
 
 //  add your content
 let hello = document.createElement("h1");

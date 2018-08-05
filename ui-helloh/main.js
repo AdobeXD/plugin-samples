@@ -37,7 +37,7 @@ let dialog =
             h("p", "This is a sample modal dialog in Adobe XD."),
             h("footer",
                 h("button", { uxpVariant:"primary", onclick() { dialog.close() } }, "Cancel"),
-                h("button", { uxpVariant:"cta", onclick() { dialog.close() } }, "Ok")
+                h("button", { uxpVariant:"cta", type:"submit", onclick() { dialog.close() } }, "Ok")
             )
         )
     )

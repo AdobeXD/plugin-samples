@@ -1,0 +1,16 @@
+{
+    "id": "com.adobe.buttonpaddinghyperscript",
+    "name": "Button Padding",
+    "version": "0.0.1",
+    "host": {
+        "app": "XD",
+        "minVersion": "10.0.10.24"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "(UI Sample 6) Button Padding Hyperscript",
+            "commandId": "menuCommand"
+        }
+    ]
+}
