@@ -129,8 +129,8 @@ We modified some of the APIs, added an in-app console log view and replaced the 
 
 We now have an in-app developer console that allows you to see errors and plugin generated logs while executing plugins. The console log is enabled from the Plugins menu.
 ```
-Mac: Plugins->Development->Developer Console
-Win: Plugins->Developer Console
+Mac: Plugins > Development > Developer Console
+Win: Plugins > Developer Console
 ```
 
 ## Reloading Plugins

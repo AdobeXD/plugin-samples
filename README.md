@@ -2,8 +2,9 @@
 
 Plugins are written in JavaScript. You can use most JavaScript features supported by modern web browsers, including ES5 and ES2015 (aka ES6) language features.
 
-Your plugins are not running inside a browser engine, however. Instead, your JavaScript code interacts with XD's [document model](./reference/core/scenegraph) to
-influence what is rendered on the design canvas.
+Your plugins are not running inside a browser engine, however: instead your JavaScript code interacts with XD's [document model](./reference/core/scenegraph) to
+influence what is rendered on the design canvas, and uses a _limited subset_ of HTML/CSS as an alias to create and control native UI elements that
+seamlessly blend with the look & feel of the rest of Adobe XD.
 
 ## What can you build?
 Adobe XD plugins provide a way for developers to extend XD functionality. Plugins can manipulate objects on canvas and alter their properties.
