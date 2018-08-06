@@ -9,7 +9,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Insert Text From File",
+            "label": "How to Import (Text From File)",
             "commandId": "insertTextFromFileCommand"
         }
     ]

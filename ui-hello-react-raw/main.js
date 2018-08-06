@@ -20031,22 +20031,33 @@ module.exports = g;
 global.setTimeout = function(fn){ fn() }
 global.clearTimeout = function(){};
 
-let React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-let ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+let dialog;
+function getDialog() {
+    if (dialog == null) {
 
-let dialog = ReactDOM.render(
-    React.createElement("dialog", {},
-        React.createElement("form", { style: { width: 200 } },
-            React.createElement("h1", {}, "Hello React Raw"),
-            React.createElement("p", {}, "Press ESC to exit.")
-        )
-    )
-    , document.body);
+        let React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+        let ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+        dialog = document.createElement("dialog");
+        ReactDOM.render(
+            React.createElement("form", { style: { width: 250 } },
+                React.createElement("h1", {}, "Hello React Raw"),
+                React.createElement("p", {}, "The sample was built with React.createElement requiring no JSX preprocessing."),
+                React.createElement("footer", {},
+                    React.createElement("button", { type: "submit", "uxp-variant": "cta", onClick(e) { dialog.close() } }, "Done")
+                )
+            ),
+            dialog
+        );
+
+    }
+    return dialog;
+}
 
 module.exports = {
     commands: {
         menuCommand: function () {
-            dialog.showModal();
+            document.body.appendChild(getDialog()).showModal();
         }
     }
 };

@@ -27,7 +27,7 @@ class HelloForm extends React.Component {
                 </label>
                 <p>{"Hello " + this.state.name}</p>
                 <footer>
-                    <button type="submit" onClick={this.onDoneClick}>Done</button>
+                    <button type="submit" uxp-variant="cta" onClick={this.onDoneClick}>Done</button>
                 </footer>
             </form>
         );

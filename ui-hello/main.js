@@ -1,35 +1,42 @@
 
-//  create the main container
-let container = document.createElement("form");
-//  don't forget to set your desired width
-container.style.width = 400;
+let dialog;
+//  lazy load the dialog
+function getDialog() {
+    if (dialog == null) {
+        //  create the dialog
+        dialog = document.createElement("dialog");
 
-//  add your content
-let hello = document.createElement("h1");
-hello.textContent = "Hello World";
-container.appendChild(hello);
+        //  create the form element
+        //  the form element has default styling and spacing
+        let form = document.createElement("form");
+        dialog.appendChild(form);
+        //  don't forget to set your desired width
+        form.style.width = 200;
 
-//  include at least one way to close the dialog
-let closeButton = document.createElement("button");
-closeButton.textContent = "Close";
-closeButton.onclick = (e) => dialog.close();
-container.appendChild(closeButton);
+        //  add your content
+        let hello = document.createElement("h1");
+        hello.textContent = "Hello World";
+        form.appendChild(hello);
 
-//  create the dialog
-let dialog = document.createElement("dialog");
-//  add our container to it
-dialog.appendChild(container);
-//  add the dialog to the main document
-document.body.appendChild(dialog);
+        //  create a footer to hold your form submit and cancel buttons
+        let footer = document.createElement("footer");
+        form.appendChild(footer)
+        //  include at least one way to close the dialog
+        let closeButton = document.createElement("button");
+        closeButton.uxpVariant = "cta";
+        closeButton.textContent = "Close";
+        closeButton.onclick = (e) => dialog.close();
+        footer.appendChild(closeButton);
+    }
+    return dialog;
+}
 
 //  this file is deliberately written in low level document.appendChild format.
-//  Once the default stylesheets are integrated then we will remove most style properties
-//  from this file and things should look decent.
 module.exports = {
     commands: {
         menuCommand: function () {
-            //  show the dialog
-            dialog.showModal();
+            //  attach the dialog to the body and show it
+            document.body.appendChild(getDialog()).showModal();
         }
     }
 };

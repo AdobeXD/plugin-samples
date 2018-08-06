@@ -9,12 +9,12 @@
   "uiEntryPoints": [
     {
       "type": "menu",
-      "label": "Ask User",
+      "label": "How to Ask User for Confirmation",
       "commandId": "menuCommand"
     },
     {
       "type": "menu",
-      "label": "Ask User in HTML",
+      "label": "How to Ask User for Confirmation with HTML",
       "commandId": "menuCommandHTML"
     }
   ]

@@ -1,9 +1,8 @@
 const { Text, Color } = require("scenegraph");
 
 // main container
-let container = document.createElement("div");
-container.style.minWidth = 400;
-container.style.padding = 40;
+let container = document.createElement("form");
+container.style.minWidth = 250;
 
 // add title
 let title = document.createElement("h1");
@@ -15,10 +14,14 @@ let textInput = document.createElement("input");
 textInput.style.padding = 20;
 container.appendChild(textInput);
 
+//  footer
+let footer = document.createElement("footer");
+container.appendChild(footer);
 //  close button
 let closeButton = document.createElement("button");
+closeButton.uxpVariant = "cta"
 closeButton.textContent = "Submit";
-container.appendChild(closeButton);
+footer.appendChild(closeButton);
 
 //  create the dialog
 let dialog = document.createElement("dialog");

@@ -10,7 +10,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Display Image in UI",
+            "label": "How to Display an Image",
             "commandId": "displayImage"
         }
     ]

@@ -10,12 +10,12 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Add Red Text",
+            "label": "How to Style Text (Red)",
             "commandId": "createRedTextCommand"
         },
         {
             "type": "menu",
-            "label": "Add Rainbow Text",
+            "label": "How to Style Text (Rainbow)",
             "commandId": "createRainbowTextCommand"
         }
     ]

@@ -9,7 +9,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Create Pie Chart",
+            "label": "How to Create Path Objects (Pie Chart)",
             "commandId": "createPieChartCommand"
         }
     ]

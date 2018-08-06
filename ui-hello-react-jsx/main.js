@@ -20076,7 +20076,7 @@ class HelloForm extends React.Component {
                 null,
                 React.createElement(
                     "button",
-                    { type: "submit", onClick: this.onDoneClick },
+                    { type: "submit", "uxp-variant": "cta", onClick: this.onDoneClick },
                     "Done"
                 )
             )

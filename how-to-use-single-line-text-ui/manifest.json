@@ -10,7 +10,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Single Line Text UI",
+            "label": "How to use Single Line Text UI",
             "commandId": "singleLine"
         }
     ]

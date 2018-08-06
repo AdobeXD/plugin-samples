@@ -9,7 +9,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Create lines",
+            "label": "How to Draw Lines",
             "commandId": "createLinesCommand"
         }
     ]

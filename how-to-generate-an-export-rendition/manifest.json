@@ -10,7 +10,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Export Rendition",
+            "label": "How to Generate an Export Rendition",
             "commandId": "exportRendition"
         }
     ]

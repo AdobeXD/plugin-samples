@@ -1,12 +1,6 @@
-global.setTimeout = (fn) => {
-    new Promise((resolve) => {
-        resolve(fn());
-    });
-}
-
-global.clearTimeout = (fn) => {
-
-}
+//  temporary shim until setTimeout is added to XD
+global.setTimeout = (fn) => { fn() }
+global.clearTimeout = (fn) => {}
 
 const $ = require("./jquery");
 

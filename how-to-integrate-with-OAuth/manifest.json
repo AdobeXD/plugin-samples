@@ -9,7 +9,7 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Launch OAuth",
+            "label": "How to Integrate with OAuth (Must run Server first)",
             "commandId": "launchOAuth"
         }
     ]
