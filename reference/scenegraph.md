@@ -67,6 +67,18 @@ function myCommand(selection) {
 
 </dl>
 
+## Related classes
+
+These classes are not scenenode types, but are used extensively in the scenegraph API:
+
+* [Color](Color.md) - Value object for `fill`, `stroke`, and other properties
+* [BitmapFill](BitmapFill.md) - Value object for `fill` property
+* [LinearGradientFill](LinearGradientFill.md) - Value object for `fill` property
+* [Matrix](Matrix.md) - Value object for `transform` property
+* [Shadow](Shadow.md) - Value object for `shadow` property
+* [Blur](Blur.md) - Value object for `blur` property
+
+
 <a name="SceneNode"></a>
 
 ## *SceneNode*
@@ -193,8 +205,8 @@ False if this node has been hidden by the user (eyeball toggle in Layers panel).
 
 <a name="SceneNode+opacity"></a>
 
-### *sceneNode.opacity : <code>number</code>*
-(0.0-1.0)Node's opacity setting. The overall visual opacity seen on canvas is determined by combining this value with the opacity of the node's entire parent chain, as well as the opacity settings of its fill/stroke properties if this is a leaf node.
+### *sceneNode.opacity : <code>number</code>* (0.0 - 1.0)
+Node's opacity setting. The overall visual opacity seen on canvas is determined by combining this value with the opacity of the node's entire parent chain, as well as the opacity settings of its fill/stroke properties if this is a leaf node.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 
@@ -202,7 +214,7 @@ False if this node has been hidden by the user (eyeball toggle in Layers panel).
 
 <a name="SceneNode+transform"></a>
 
-### *sceneNode.transform : <code>!Matrix</code>*
+### *sceneNode.transform : <code>\![Matrix](Matrix.md)</code>*
 Affine transform matrix that converts from the node's _local coordinate space_ to its parent's coordinate space. The matrix never has skew or scale components, and if this node is an Artboard the matrix never has rotation either. Rather than working with the raw matrix directly, it may be easier to use methods such as [placeInParentCoordinates](#SceneNode+placeInParentCoordinates) or [rotateAround](#SceneNode+rotateAround).
 
 To resize or mirror a node, use [SceneNode.resize](#SceneNode+resize) or [commands.flipHorizontal](./commands.md#module_commands.flipHorizontal) / [commands.flipVertical](./commands.md#module_commands.flipVertical),
@@ -694,7 +706,7 @@ or a fill.
 
 <a name="GraphicNode+fill"></a>
 
-### *graphicNode.fill : ?<code>Color</code> \| <code>LinearGradientFill</code> \| <code>RadialGradientFill</code> \| <code>BitmapFill</code>*
+### *graphicNode.fill : <code>?[Color](Color.md)</code> \| <code>[LinearGradientFill](LinearGradientFill.md)</code> \| <code>RadialGradientFill</code> \| <code>[BitmapFill](BitmapFill.md)</code>*
 **Default**: `null`
 
 The fill applied to this shape, if any. If this property is null _or_ `fillEnabled` is false, no fill is drawn.
@@ -729,7 +741,7 @@ If false, the `fill` is not rendered. The user can toggle this via a checkbox in
 
 <a name="GraphicNode+stroke"></a>
 
-### *graphicNode.stroke : <code>?Color</code>*
+### *graphicNode.stroke : <code>?[Color](Color.md)</code>*
 **Default**: `null`
 
 The stroke color applied to this shape, if any. If this property is null _or_ `strokeEnabled` is false, no stroke is drawn.
@@ -843,10 +855,10 @@ Ignored unless `strokeDashArray` is non-empty. Shifts the "phase" of the repeati
 
 <a name="GraphicNode+shadow"></a>
 
-### *graphicNode.shadow : <code>?Shadow</code>*
+### *graphicNode.shadow : <code>?[Shadow](Shadow.md)</code>*
 **Default**: `null`
 
-The node's dropshadow, if any. If there is no shadow applied, this property may be null _or_ `shadow.visible` may be false.
+The node's drop shadow, if any. If there is no shadow applied, this property may be null _or_ `shadow.visible` may be false.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 
@@ -854,7 +866,7 @@ The node's dropshadow, if any. If there is no shadow applied, this property may 
 
 <a name="GraphicNode+blur"></a>
 
-### *graphicNode.blur : <code>?Blur</code>*
+### *graphicNode.blur : <code>?[Blur](Blur.md)</code>*
 **Default**: `null`
 
 The node's object blur or background blur settings, if applicable. If there is no blur effect applied, this property may be null _or_ `blur.visible` may be false.
@@ -877,7 +889,8 @@ Returns a representation of the node's outline in SVG `<path>` syntax. Note that
 <a name="GraphicNode+hasLinkedGraphicFill"></a>
 
 ### *graphicNode.hasLinkedGraphicFill : <code>boolean</code>*
-True if the node's image fill comes from a link to an external resource, such as Creative Cloud Libraries.
+True if the node has an image fill that comes from a link to an external resource, such as Creative Cloud Libraries. Equivalent to the expression: <code>node.fill &&
+node.fill.linked</code>.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 **Read only**: true  
@@ -1197,8 +1210,6 @@ the horizontal centerpoint of the text.
 The bounds reported for a Text object leave enough space for descenders, uppercase letters, and accent marks, even if the current
 string does not contain any of those characters. This makes aligning text based on its bounds behave more consistently.
 
-**Known issue:** It is not currently possible to write a plugin that creates an Area Text object.  Support for that feature will be added soon.
-
 * [Text](#Text)
     * [.text](#Text+text) : <code>string</code>
     * [.styleRanges](#Text+styleRanges) : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:!Color, charSpacing:number, underline:boolean}&gt;</code>
@@ -1227,7 +1238,7 @@ the new string's indices unless you explicitly change styleRanges as well.
 
 <a name="Text+styleRanges"></a>
 
-### text.styleRanges : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:!Color, charSpacing:number, underline:boolean}&gt;</code>
+### text.styleRanges : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:\![Color](Color.md), charSpacing:number, underline:boolean}&gt;</code>
 Array of text ranges and their character style settings. Each range covers a set number of characters in the text content. Ranges
 are contiguous, with each one starting immediately after the previous one. Any characters past the end of the last range use the
 same style as the last range.
