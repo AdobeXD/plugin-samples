@@ -1,0 +1,16 @@
+{
+    "id": "com.adobe.datagridreact",
+    "name": "Hello React JSX",
+    "version": "0.0.1",
+    "host": {
+        "app": "XD",
+        "minVersion": "10.0.10.24"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "UI Datagrid React",
+            "commandId": "menuCommand"
+        }
+    ]
+}

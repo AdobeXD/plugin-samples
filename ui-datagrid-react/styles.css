@@ -1,0 +1,53 @@
+
+.DataGrid {
+    font-size: 16px;
+}
+
+.DataGrid .body {
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/* Header */
+.DataGrid > .row {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #EAEAEA
+}
+
+.body > .row:hover {
+    color: blue;
+}
+
+.row > span {
+    padding: 4px;
+}
+
+.row > span:nth-child(1) {
+    flex: 1 1 100px;
+}
+
+.row > span:nth-child(2) {
+    flex: 0 0 100px;
+}
+
+.row > span:nth-child(3) {
+    flex: 0 0 100px;
+}
+
+.row > span:nth-child(4) {
+    flex: 0 0 100px;
+}
+
+.row > span:nth-child(5) {
+    flex: 0 0 100px;
+}
+
+.row > span:nth-child(6) {
+    flex: 0 0 100px;
+}
