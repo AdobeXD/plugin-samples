@@ -20338,7 +20338,7 @@ module.exports = Stack;
 /*! exports provided: apikey, default */
 /***/ (function(module) {
 
-module.exports = {"apikey":"1904949-69f6ff7b3e5ad78c4a0ae2646"};
+module.exports = {"apikey":"YOUR-API_KEY_HERE"};
 
 /***/ }),
 
