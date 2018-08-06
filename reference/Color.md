@@ -9,7 +9,7 @@
     * [.r](#Color+r) : <code>number</code>
     * [.g](#Color+g) : <code>number</code>
     * [.b](#Color+b) : <code>number</code>
-    * [.toRgba()](#Color+toRgba)
+    * [.toRgba()](#Color+toRgba) ⇒ <code>!{r:number, g:number, b:number, a:number}</code>
     * [.toHex(forceSixDigits)](#Color+toHex) ⇒ <code>string</code>
     * [.clone()](#Color+clone) ⇒ <code>!Color</code>
 
