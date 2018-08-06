@@ -527,10 +527,10 @@ Multiple files can be returned if the `allowMultiple` option` is `true`.
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| options | `*` |  |  |
-| [options.initialDomain] | `Symbol` |  | the preferred initial location of the file picker. If not defined, the most recently used domain from a file picker is used instead. |
-| [options.types] | `Array.<string>` | <code>[&#x27;.*&#x27;]</code> | the allowed file types |
-| [options.allowMultiple] | `boolean` | <code>false</code> | if true, multiple files can be returned (as an array) |
+| options | ?Object |  |  |
+| [options.initialDomain] | `Symbol` |  | The preferred initial location of the file picker. If not defined, the most recently used domain from a file picker is used instead. See [list of predefined domains](#domains). |
+| [options.types] | `Array.<string>` | All allowed | The allowed file extensions, without any "`.`" or "`*.`" prefix. You can also use [predefined fileTypes](#filetypes) as a shortcut. |
+| [options.allowMultiple] | `boolean` | <code>false</code> | If true, multiple files can be returned (as an array). |
 
 **Example**  
 ```js

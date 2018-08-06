@@ -5,13 +5,28 @@
 ## BitmapFill
 **Kind**: class 
 
-TODO: add usage example!
+**Example**
+```js
+// User picks an image file
+const storage = require("uxp").storage;
+const fs = storage.localFileSystem;
+var pngImageFile = (await fs.getFileForOpening({ types: storage.fileTypes.images }))[0];
+
+// Create BitmapFill for this image
+const BitmapFill = require("scenegraph").BitmapFill;
+var imageFill = BitmapFill.create();
+imageFill.loadFromUIDorURL(null, pngImageFile.nativePath);
+
+// Set fill of first selected item
+selection.items[0].fill = imageFill;
+```
 
 * [BitmapFill](#BitmapFill)
     * _static_
         * [.create(properties)](#BitmapFill.create) ⇒ <code>!BitmapFill</code>
     * _instance_
         * [.cloneWithOverrides(properties)](#BitmapFill+cloneWithOverrides) ⇒ <code>!BitmapFill</code>
+        * [.loadFromUIDorURL(null, path)](#BitmapFill+loadFromUIDorURL) ⇒ <code>boolean</code>
         * [.loadBase64Image(dataURI)](#BitmapFill+loadBase64Image) ⇒ <code>boolean</code>
         * [.getBase64Representation()](#BitmapFill+getBase64Representation) ⇒ <code>string</code>
         * [.width](#BitmapFill+width) : <code>number</code>
@@ -36,9 +51,9 @@ You cannot yet load an image from a file on disk.
 **Kind**: static method of [<code>BitmapFill</code>](#BitmapFill)
 **Returns**: <code>!BitmapFill</code>
 
-| Param | Type |
-| --- | --- |
-| properties.scaleBehavior | <code>string</code> |
+| Param | Type | Description |
+| --- | --- | --- |
+| properties.scaleBehavior | <code>string</code> | Default is BitmapFill.SCALE_NORMAL |
 
 
 * * *
@@ -55,6 +70,28 @@ Any properties not specified in the <code>properties</code> argument are copied 
 | Param | Type |
 | --- | --- |
 | properties.scaleBehavior | <code>string</code> |
+
+
+* * *
+
+<a name="BitmapFill+loadFromUIDorURL"></a>
+
+### bitmapFill.loadFromUIDorURL(null, path) ⇒ <code>boolean</code>
+_**This is a temporary API.** The same capability will be exposed with a cleaner API in the future._
+
+Loads a file from disk and initializes this BitmapFill to display it. Despite the function name, you must pass this function a _local filesystem path_ - it does not
+support URLs from the network or even `file:` local URLs. Given a [<code>File</code>](./uxp/module/storage.md#file) object, use `file.nativePath` to get a local path
+suitable for use with this function.
+
+_Only call this method on a freshly-created "blank" BitmapFill_ (from [<code>create</code>](#BitmapFill.create)). _Do not call it_ on an existing BitmapFill or a clone of an existing fill.
+
+**Kind**: instance method of [<code>BitmapFill</code>](#BitmapFill)  
+**Returns**: <code>!BitmapFill</code>
+
+| Param | Type | Description |
+| --- | --- | --- |
+| ignored | null | First argument must be null. |
+| path | <code>string</code> | Local filesystem path to the image file. |
 
 
 * * *
