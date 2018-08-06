@@ -79,7 +79,7 @@ Adobe XD requires that your plugin have a manifest named `manifest.json`. Our ex
 }
 ``` 
 
-For more about what each entry means, [see the manifest documentation](https://github.com/AdobeXD/Plugin-Reference/blob/master/reference/manifest.md).
+For more about what each entry means, [see the manifest documentation](https://github.com/AdobeXD/Plugin-Reference/blob/master/reference/structure/manifest.md).
 
 The value of the `commandId` property may be any string.  In the next section, we will see how that string is associated with the code for our plugin.
 
