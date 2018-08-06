@@ -1,0 +1,16 @@
+{
+    "id": "com.adobe.hellovue",
+    "name": "Hello Vue",
+    "version": "0.0.1",
+    "host": {
+        "app": "XD",
+        "minVersion": "10.0.10.24"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "UI Hello Vue",
+            "commandId": "menuCommand"
+        }
+    ]
+}

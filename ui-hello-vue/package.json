@@ -1,0 +1,20 @@
+{
+  "name": "helllo_react_jsx",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "watch": "nodemon -w src -e js,vue -w webpack.config.js -x yarn build",
+    "build": "webpack --mode development"
+  },
+  "license": "none",
+  "private": true,
+  "devDependencies": {
+    "vue-loader": "^15.2.6",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "vue": "^2.5.17",
+    "vue-template-compiler": "^2.5.17"
+  }
+}
