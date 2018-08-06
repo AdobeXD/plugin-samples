@@ -30,6 +30,7 @@
 
 .row > span:nth-child(1) {
     flex: 1 1 100px;
+    font-weight: bold;
 }
 
 .row > span:nth-child(2) {
@@ -50,4 +51,5 @@
 
 .row > span:nth-child(6) {
     flex: 0 0 100px;
+    font-weight: bold;
 }
