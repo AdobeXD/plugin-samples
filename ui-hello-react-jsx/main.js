@@ -20051,6 +20051,7 @@ class HelloForm extends React.Component {
         return React.createElement(
             "form",
             { style: { width: 300 } },
+            React.createElement("link", { rel: "stylesheet", href: "./styles.css" }),
             React.createElement(
                 "h1",
                 null,

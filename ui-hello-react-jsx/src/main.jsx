@@ -20,6 +20,7 @@ class HelloForm extends React.Component {
     render() {
         return (
             <form style={{ width: 300 }}>
+                <link rel="stylesheet" href="./styles.css" />
                 <h1>React with JSX Components</h1>
                 <label>
                     <span>What is your name?</span>
