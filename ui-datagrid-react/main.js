@@ -20147,7 +20147,7 @@ function getDialog() {
 module.exports = {
     commands: {
         menuCommand: function () {
-            document.appendChild(getDialog()).showModal();
+            document.body.appendChild(getDialog()).showModal();
         }
     }
 };
