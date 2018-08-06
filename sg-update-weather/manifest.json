@@ -1,0 +1,19 @@
+{
+    "id": "com.adobe.xd.weather",
+    "name": "Update the weather",
+
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+
+    "version": "0.0.1",
+
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "SG - Update Weather",
+            "commandId": "updateWeather"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "pflynn.chartGenerator",
+    "name": "Pie & Bar Chart Generator sample plugin",
+
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+
+    "version": "0.0.1",
+
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "SG Create Bar Chart",
+            "commandId": "barChart"
+        },
+        {
+            "type": "menu",
+            "label": "SG Create Pie Chart",
+            "commandId": "pieChart"
+        }
+    ]
+}

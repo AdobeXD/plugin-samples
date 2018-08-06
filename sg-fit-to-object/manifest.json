@@ -1,0 +1,30 @@
+
+{
+    "id": "kwak.fit",
+    "name": "Fit to Object",
+
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+
+    "version": "0.0.1",
+
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "SG - Fit",
+            "commandId": "fitItem"
+        },
+        {
+            "type": "menu",
+            "label": "SG - Fit Clock",
+            "commandId": "rotatateClockFitItem"
+        },
+        {
+            "type": "menu",
+            "label": "SG - Fit Counter Clock",
+            "commandId": "rotateCounterClockFitItem"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "id": "wruby.dumb2",
+    "name": "Convert Rects to HTML",
+
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+
+    "version": "0.0.1",
+
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "SG - Rects To HTML",
+            "commandId": "rectsToHTML"
+        }
+    ]
+}

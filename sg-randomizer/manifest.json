@@ -1,0 +1,19 @@
+{
+    "id": "mesh.randomizer",
+    "name": "Random Clone sample plugin",
+
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+
+    "version": "0.0.1",
+
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "SG - Random Clone",
+            "commandId": "goRandomize"
+        }
+    ]
+}

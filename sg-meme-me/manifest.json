@@ -1,0 +1,19 @@
+{
+    "id": "demo.memeMe",
+    "name": "MemeMe sample plugin",
+
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+
+    "version": "0.0.1",
+
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "SG - Meme Me",
+            "commandId": "memeMe"
+        }
+    ]
+}

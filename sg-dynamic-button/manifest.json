@@ -1,0 +1,19 @@
+{
+    "id": "pflynn.dynamicButton",
+    "name": "\"Dynamic Button\" padding updater demo",
+
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+
+    "version" : "0.0.1",
+
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "SG - Update Button Padding",
+            "commandId": "updatePadding"
+        }
+    ]
+}
