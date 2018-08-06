@@ -32,9 +32,11 @@
 
 ## new Matrix(a, b, c, d, e, f)
 Creates a new transform matrix with the following structure:
+```
 | a c e |
 | b d f |
 | 0 0 1 |
+```
 Note: XD does not generally allow transform matrices with scale or shear (skew) components - only translate and rotate components are typically permitted.
 
 If no arguments, creates a new identity matrix by default.

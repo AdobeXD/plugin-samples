@@ -723,9 +723,6 @@ ellipse.fill = new Color("red");
 To modify an existing fill, always be sure to re-invoke the `fill` setter rather than just changing the fill object's properties inline.
 See ["Properties with object values"](../index.md#object-value-properties).
 
-**Known issue:** When modifying a _gradient fill_ object specifically, you must clone the gradient returned by the getter before modifying
-it, to avoid issues with Undo history.
-
 * * *
 
 <a name="GraphicNode+fillEnabled"></a>

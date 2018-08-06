@@ -14,14 +14,3 @@ node.fill = color;  // update fill in the scenegraph by kicking the node's sette
 // Wrong - document will not update:
 node.color.r = 0x80;
 ```
-
-**Known issue:** When modifying a _gradient fill_ object specifically, you must clone the gradient returned by the getter before modifying
-it, to avoid issues with Undo history:
-
-```js
-var gradient = node.fill;
-gradient = gradient.clone();  // important!
-gradient.startX = 0.0;
-gradient.startY = 1.0;
-node.fill = gradient;
-```

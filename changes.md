@@ -49,9 +49,13 @@ Read about [the user interface options here!](./reference/ui/ui-concepts.md).
 
 ## Known Issues
 
-* User Interface
+* Asynchronous operations
+  * When a plugin command runs asynchronously, _do not interact with XD at all_ via mouse or keyboard until your plugin code is completely done executing. Doing
+    so could freeze XD, break Undo, or corrupt the document. In the future, XD will block the UI to ensure other actions can't interfere with your plugin in mid-operation.
+* UI
+  * Text fields are limited to 150 characters.
+  * Dialog boxes on Windows have a fairly narrow maximum width.
   * Checkboxes on Windows take up too much space
-  * Pressing ENTER doesn't submit the dialog form
 * Network I/O
   * Web sockets cannot connect to `wss://` URLs yet. You can only connect to insecure `ws://` URLs.
   * Web socket extensions are not supported
@@ -62,7 +66,9 @@ Read about [the user interface options here!](./reference/ui/ui-concepts.md).
 ---
 
 
-# Focus Group Release 3
+# _Previous Build:_ Focus Group Release 3
+
+_Note: some of the release notes here may be obsoleted by changes in the newer release(s) above._
 
 The following has changed in this release.
 
