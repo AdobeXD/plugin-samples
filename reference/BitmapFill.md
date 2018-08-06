@@ -45,8 +45,8 @@ Create a new BitmapFill object with the given properties. These properties canno
 changed properties via [<code>cloneWithOverrides</code>](#BitmapFill+cloneWithOverrides). Any properties not specified in the <code>properties</code> argument are left
 at default values.
 
-After creating a BitmapFill with <code>create()</code>, you must call [<code>loadBase64Image</code>](#BitmapFill+loadBase64Image) to attach image data to the object.
-You cannot yet load an image from a file on disk.
+After creating a BitmapFill with <code>create()</code>, you must call [<code>loadFromUIDorURL</code>](#BitmapFill+loadFromUIDorURL) or
+[<code>loadBase64Image</code>](#BitmapFill+loadBase64Image) to attach image data to the object.
 
 **Kind**: static method of [<code>BitmapFill</code>](#BitmapFill)
 **Returns**: <code>!BitmapFill</code>
