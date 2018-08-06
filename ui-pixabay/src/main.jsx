@@ -8,18 +8,18 @@ let ReactDOM = require("react-dom");
 const App = require("./PixabayDemo.jsx");
 
 let dialog;
-function getDialog() {
+function getDialog(selection) {
     if (dialog == null) {
         dialog = document.createElement("dialog");
-        ReactDOM.render(<App dialog={dialog} />, dialog);
+        ReactDOM.render(<App dialog={dialog} selection={selection}/>, dialog);
     }
     return dialog;
 }
 
 module.exports = {
     commands: {
-        menuCommand: function () {
-            document.appendChild(getDialog()).showModal();
+        menuCommand: function (selection) {
+            return document.appendChild(getDialog(selection)).showModal();
         }
     }
 };
