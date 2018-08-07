@@ -10,15 +10,15 @@
 // User picks an image file
 const storage = require("uxp").storage;
 const fs = storage.localFileSystem;
-var pngImageFile = (await fs.getFileForOpening({ types: storage.fileTypes.images }))[0];
+var imageFile = (await fs.getFileForOpening({ types: storage.fileTypes.images }))[0];
 
 // Create BitmapFill for this image
 const BitmapFill = require("scenegraph").BitmapFill;
-var imageFill = BitmapFill.create();
-imageFill.loadFromUIDorURL(null, pngImageFile.nativePath);
+var bitmapFill = BitmapFill.create();
+bitmapFill.loadFromURL(imageFile.nativePath);
 
 // Set fill of first selected item
-selection.items[0].fill = imageFill;
+selection.items[0].fill = bitmapFill;
 ```
 
 * [BitmapFill](#BitmapFill)
@@ -26,7 +26,7 @@ selection.items[0].fill = imageFill;
         * [.create(properties)](#BitmapFill.create) ⇒ <code>!BitmapFill</code>
     * _instance_
         * [.cloneWithOverrides(properties)](#BitmapFill+cloneWithOverrides) ⇒ <code>!BitmapFill</code>
-        * [.loadFromUIDorURL(null, path)](#BitmapFill+loadFromUIDorURL) ⇒ <code>boolean</code>
+        * [.loadFromURL(path)](#BitmapFill+loadFromURL) ⇒ <code>boolean</code>
         * [.loadBase64Image(dataURI)](#BitmapFill+loadBase64Image) ⇒ <code>boolean</code>
         * [.getBase64Representation()](#BitmapFill+getBase64Representation) ⇒ <code>string</code>
         * [.width](#BitmapFill+width) : <code>number</code>
@@ -45,7 +45,7 @@ Create a new BitmapFill object with the given properties. These properties canno
 changed properties via [<code>cloneWithOverrides</code>](#BitmapFill+cloneWithOverrides). Any properties not specified in the <code>properties</code> argument are left
 at default values.
 
-After creating a BitmapFill with <code>create()</code>, you must call [<code>loadFromUIDorURL</code>](#BitmapFill+loadFromUIDorURL) or
+After creating a BitmapFill with <code>create()</code>, you must call [<code>loadFromURL</code>](#BitmapFill+loadFromURL) or
 [<code>loadBase64Image</code>](#BitmapFill+loadBase64Image) to attach image data to the object.
 
 **Kind**: static method of [<code>BitmapFill</code>](#BitmapFill)
@@ -74,9 +74,9 @@ Any properties not specified in the <code>properties</code> argument are copied 
 
 * * *
 
-<a name="BitmapFill+loadFromUIDorURL"></a>
+<a name="BitmapFill+loadFromURL"></a>
 
-### bitmapFill.loadFromUIDorURL(null, path) ⇒ <code>boolean</code>
+### bitmapFill.loadFromURL(path) ⇒ <code>boolean</code>
 _**This is a temporary API.** The same capability will be exposed with a cleaner API in the future._
 
 Loads a file from disk and initializes this BitmapFill to display it. Despite the function name, you must pass this function a _local filesystem path_ - it does not
@@ -90,7 +90,6 @@ _Only call this method on a freshly-created "blank" BitmapFill_ (from [<code>cre
 
 | Param | Type | Description |
 | --- | --- | --- |
-| ignored | null | First argument must be null. |
 | path | <code>string</code> | Local filesystem path to the image file. |
 
 
