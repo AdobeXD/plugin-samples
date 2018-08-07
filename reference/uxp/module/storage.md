@@ -416,7 +416,7 @@ to be a text file using UTF8 encoding.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | options | `any` |  |  |
-| [options.format] | `Symbol` | <code>formats.utf8</code> | The format of the file; see [utf8](utf8) and [blob](blob). |
+| [options.format] | `Symbol` | <code>formats.utf8</code> | The format of the file; see [formats.utf8](#formatsutf8) and [formats.binary](#formatsbinary). |
 
 **Example**  
 ```js
@@ -424,7 +424,7 @@ const text = await myNovel.read();
 ```
 **Example**  
 ```js
-const data = await myNovel.read({format: formats.blob});
+const data = await myNovel.read({format: formats.binary});
 ```
 #### file.write
 **Signature:** file.write(data, options)
@@ -443,7 +443,7 @@ is controlled via the `format` option, and defaults to UTF8.
 | --- | --- | --- | --- |
 | data | `string` | `ArrayBuffer` |  | the data to write to the file |
 | options | `any` |  |  |
-| [options.format] | `Symbol` | <code>formats.utf8</code> | the format of the file; see [utf8](utf8) and [blob](blob) |
+| [options.format] | `Symbol` | <code>formats.utf8</code> | the format of the file; see [formats.utf8](#formatsutf8) and [formats.binary](#formatsbinary) |
 | [options.append] | `boolean` | <code>false</code> | if `true`, the data is written to the end of the file |
 
 **Example**  
@@ -454,7 +454,7 @@ await myNovel.write("Cliches and tropes aside, it really was.", {append: true});
 **Example**  
 ```js
 const data = new ArrayBuffer();
-await aDataFile.write(data, {format: formats.blob});
+await aDataFile.write(data, {format: formats.binary});
 ```
 #### File.isFile
 **Signature:** File.isFile(entry) ⇒ `boolean`
@@ -534,7 +534,7 @@ Multiple files can be returned if the `allowMultiple` option` is `true`.
 
 **Example**  
 ```js
-const [file] = await fs.getFileForOpening({initialDomain : domains.userDocuments});
+const [file] = await fs.getFileForOpening({initialDomain: domains.userDocuments});
 if (!file) {
     // no file selected
     return;
@@ -571,7 +571,7 @@ should not be returned.
 
 **Example**  
 ```js
-const [file] = await fs.getFileForSaving({initialDomain = domains.userDocuments});
+const [file] = await fs.getFileForSaving({initialDomain: domains.userDocuments});
 if (!file) {
     // no file selected, or the user didn't want to overwrite one they did select
     return;
@@ -712,7 +712,7 @@ const myNovel = await aFolder.createEntry("mynovel.txt");
 ```
 **Example**  
 ```js
-const catImageCollection = await aFolder.createEntry("cats", {type = types.folder});
+const catImageCollection = await aFolder.createEntry("cats", {type: types.folder});
 ```
 #### folder.getEntry
 **Signature:** folder.getEntry(filePath) ⇒ `File` | `Folder`
