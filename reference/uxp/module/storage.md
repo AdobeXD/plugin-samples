@@ -534,7 +534,7 @@ Multiple files can be returned if the `allowMultiple` option` is `true`.
 
 **Example**  
 ```js
-const [file] = await fs.getFileForOpening({initialDomain = domains.userDocuments});
+const [file] = await fs.getFileForOpening({initialDomain : domains.userDocuments});
 if (!file) {
     // no file selected
     return;
