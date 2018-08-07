@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "watch": "nodemon -w src -e js,jsx -w webpack.config.js -x yarn build",
+    "watch": "nodemon -w src -e js,jsx,css -w webpack.config.js -x yarn build",
     "build": "webpack --mode development"
   },
   "license": "none",
@@ -16,7 +16,9 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-react-jsx": "^6.24.1",
+    "css-loader": "^1.0.0",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "style-loader": "^0.22.0"
   }
 }

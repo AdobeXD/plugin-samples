@@ -2,8 +2,9 @@
 global.setTimeout = function(fn){ fn() }
 global.clearTimeout = function(){};
 
-let React = require("react");
-let ReactDOM = require("react-dom");
+const style = require("./styles.css");
+const React = require("react");
+const ReactDOM = require("react-dom");
 
 class HelloForm extends React.Component {
     constructor(props) {
@@ -20,7 +21,6 @@ class HelloForm extends React.Component {
     render() {
         return (
             <form style={{ width: 300 }}>
-                <link rel="stylesheet" href="./styles.css" />
                 <h1>React with JSX Components</h1>
                 <label>
                     <span>What is your name?</span>
