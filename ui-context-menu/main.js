@@ -19,8 +19,7 @@ function getDialog() {
             h("menu", { style: { width: 200 } },
                 h("menuitem", { onclick: menuAction1, label: "Action" }),
                 h("menuitem", { onclick: menuAction2, label: "Another Action" }),
-                h("hr"), // not showing up yet, may need to add to internal stylesheet
-                h("menuitem", { onclick: menuAction3, label: "Separated Action" })
+                h("menuitem", { onclick: menuAction3, label: "Yet Another Action" })
             )
         );
 
