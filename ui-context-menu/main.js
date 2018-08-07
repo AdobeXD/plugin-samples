@@ -37,7 +37,7 @@ function getDialog() {
                     h("p", { onclick: showContextMenu }, "Click here for a context menu."),
                     h("footer",
                         h("button", { uxpVariant: "primary", onclick(e) { dialog.close("Cancelled") } }, "Cancel"),
-                        h("button", { uxpVariant: "cta", type:"submit", onclick(e) { onsubmit(); e.preventDefault(); } }, "Update Padding")
+                        h("button", { uxpVariant: "cta", type:"submit", onclick(e) { onsubmit(); e.preventDefault(); } }, "Done")
                     )
                 ),
                 //  the menu MUST be added to the DOM before usage.
