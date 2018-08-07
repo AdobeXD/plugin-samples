@@ -2,6 +2,7 @@
 global.setTimeout = function(fn){ fn() }
 global.clearTimeout = function(){};
 
+const styles = require("./styles.css");
 const Vue = require("vue").default;
 const hello = require("./hello.vue").default
 

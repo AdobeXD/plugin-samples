@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "watch": "nodemon -w src -e js,vue -w webpack.config.js -x yarn build",
+    "watch": "nodemon -w src -e js,vue,css -w webpack.config.js -x yarn build",
     "build": "webpack --mode development"
   },
   "license": "none",
@@ -14,6 +14,8 @@
     "webpack-cli": "^3.1.0"
   },
   "dependencies": {
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.22.0",
     "vue": "^2.5.17",
     "vue-template-compiler": "^2.5.17"
   }
