@@ -96,16 +96,16 @@ This will invoke the default file picker for user to choose the save directory a
 
 ### 4. Set the renditions object
 ```js
-const renditions = [{
+var renditions = [{
     node: selection.items[0], // [1]
-    fileToken: file, // [2]
-    type: "png", // [3]
+    outputFile: file, // [2]
+    type: application.RenditionType.PNG, // [3]
     scale: 2 // [4]
 }];
 ```
 1. `selection.items[0]` refers to the first selected item
-2. Set the `fileToken` property as the file variable created in step #3
-3. Set the `type` property as `png`
+2. Set the `outputFile` property as the file variable created in step #3
+3. Set the `type` property as `application.RenditionType.PNG`
 4. Set the desired scale of the exported rendition
 
 ### 5. Create renditions
