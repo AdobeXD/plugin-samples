@@ -5,10 +5,10 @@ async function exportRendition(selection) {
     if (selection.items.length > 0) {
         const file = await fs.getFileForSaving();
 
-        const renditions = [{
+        var renditions = [{
             node: selection.items[0],
-            fileToken: file,
-            type: "png",
+            outputFile: file,
+            type: application.RenditionType.PNG,
             scale: 2
         }];
 
