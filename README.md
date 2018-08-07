@@ -1,7 +1,7 @@
 ![XD](.meta/readme-assets/adobe-xd-log.png)
 
 # Welcome to XD Plugin Guides site!
-Are a problem solver? Do you know what JavaScript is? Do you want to extend Adobe XD? If so, this page is the right place for you. You can easily get started building an Adobe XD plugin by reading guides and learning from existing sample plugins.
+Are you a problem solver? Do you know what JavaScript is? Do you want to extend Adobe XD? If so, this page is the right place for you. You can easily get started building an Adobe XD plugin by reading guides and learning from existing sample plugins.
 
 ## What can you build?
 Adobe XD plugins provide a way for developers to extend XD functionality. Plugins can manipulate objects on canvas and alter their properties.
