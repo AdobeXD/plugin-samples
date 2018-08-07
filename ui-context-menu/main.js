@@ -17,10 +17,10 @@ function getDialog() {
         function menuAction3() { console.log("Action 3 Clicked") }
         let popupMenu = (
             h("menu", { style: { width: 200 } },
-                h("menuitem", { onclick: menuAction1 }, "Action"),
-                h("menuitem", { onclick: menuAction2 }, "Another Action"),
-                h("hr"),
-                h("menuitem", { onclick: menuAction3 }, "Separated Action")
+                h("menuitem", { onclick: menuAction1, label: "Action" }),
+                h("menuitem", { onclick: menuAction2, label: "Another Action" }),
+                h("hr"), // not showing up yet, may need to add to internal stylesheet
+                h("menuitem", { onclick: menuAction3, label: "Separated Action" })
             )
         );
 
@@ -41,6 +41,7 @@ function getDialog() {
                         h("button", { uxpVariant: "cta", type:"submit", onclick(e) { onsubmit(); e.preventDefault(); } }, "Update Padding")
                     )
                 ),
+                //  the menu MUST be added to the DOM before usage.
                 popupMenu
             )
         );
