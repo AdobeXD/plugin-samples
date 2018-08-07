@@ -9,7 +9,7 @@ The current selection state is passed to your _command handler function_ as an a
 function myCommand(selection, documentRoot) {
     console.log(selection.items.length + " items are selected");
 }
-return { commands: { myCommandId: myCommand } };
+module.exports.commands = { myCommandId: myCommand };
 ```
 
 The selection can only contain items within the current _edit context_:

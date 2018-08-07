@@ -7,10 +7,8 @@ function sayHello(selection, documentRoot) {
     console.log("Hello, world!");
 }
 
-return {
-    commands: {
-        helloCommand: sayHello
-    }
+module.exports.commands = {
+    helloCommand: sayHello
 };
 ```
 
