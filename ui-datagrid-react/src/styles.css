@@ -4,6 +4,9 @@
 }
 
 .DataGrid .body {
+    overflow: scroll;
+    flex: 0 0 200px;
+    height: 200px;
 }
 
 .row {

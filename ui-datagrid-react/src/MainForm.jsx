@@ -1,6 +1,7 @@
 const React = require("react");
 const ReactDOM = require("react-dom");
 const DataGrid = require("./DataGrid.jsx");
+const style = require("./styles.css");
 
 module.exports = class MainForm extends React.Component {
     constructor(props) {
@@ -14,7 +15,6 @@ module.exports = class MainForm extends React.Component {
     render() {
         return (
             <form style={{ width: 800, height: 360 }}>
-                <link rel="stylesheet" href="./styles.css" />
                 <h1>DataGrid with React</h1>
                 <DataGrid />
                 <footer>

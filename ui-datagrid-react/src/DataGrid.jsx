@@ -40,7 +40,7 @@ module.exports = class DataGrid extends React.Component {
         return (
             <div className="DataGrid">
                 { createRow(header) }
-                <div className="body" style={{ overflow:"scroll", flex: "0 0 200px", height: "200px" }}>
+                <div className="body">
                     { data.map(createRow) }
                 </div>
             </div>

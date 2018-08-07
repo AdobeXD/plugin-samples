@@ -17,6 +17,10 @@ module.exports = {
                         "transform-react-jsx"
                     ]
                 }
+            },
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"]
             }
         ]
     }

@@ -4,7 +4,6 @@ global.clearTimeout = function(){};
 
 let React = require("react");
 let ReactDOM = require("react-dom");
-
 let MainForm = require("./MainForm.jsx");
 
 let dialog;
