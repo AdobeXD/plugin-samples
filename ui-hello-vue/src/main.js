@@ -8,6 +8,7 @@ const styles = require("./styles.css");
 const Vue = require("vue").default;
 const hello = require("./hello.vue").default;
 
+const { Text, Color } = require("scenegraph");
 
 let dialog;
 function getDialog() {
