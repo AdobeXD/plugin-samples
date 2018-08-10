@@ -1,5 +1,6 @@
 /**
- * Inserts a red square at (0, 0) in the current artboard or edit context.
+ * Finds all text elements in the selection whose layer name is of the form "WX: <location>" and updates
+ * their text to display the current temperature (in Fahrenheit) at that location.
  */
 
 const { Text } = require("scenegraph");
@@ -84,28 +85,19 @@ function getAllOperableElements(selection) {
         .filter(text => text.name.startsWith('WX: '));
 }
 
-function getGuids(els) {
-    return els.map(el => el.guid);
-}
-
 async function updateWeather(selection) {
     const els = getAllOperableElements(selection);
-    const guids = getGuids(els);
+    if (!els.length) {
+        console.log("Create some text nodes with layer names of the form 'WX: <location>'");
+    }
 
     const locations = els.map(el => el.name.substr(4));
     const temps = await Promise.all(locations.map(location => fetchWeather(location)));
 
-    // double check that we still have the same items selected
-    const newEls = getAllOperableElements(selection);
-    const newGuids = getGuids(newEls);
-    if (guids.join(",") === newGuids.join(",")) {
-        els.forEach((el, idx) => {
-            const curTemp = temps[idx];
-            el.text = `${curTemp}°`;
-        });
-    } else {
-        console.log(`Couldn't update weather; selection changed.`);
-    }
+    els.forEach((el, idx) => {
+        const curTemp = temps[idx];
+        el.text = `${curTemp}°`;
+    });
 }
 
 module.exports = {
