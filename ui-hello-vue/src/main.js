@@ -1,10 +1,12 @@
 //  temporary stubs required for Vue. These will not be required as soon as the XD environment provides setTimeout/clearTimeout
-global.setTimeout = function(fn){ fn() }
-global.clearTimeout = function(){};
+global.setTimeout = function (fn) { fn() }
+global.clearTimeout = function () { };
 
 const styles = require("./styles.css");
 const Vue = require("vue").default;
 const hello = require("./hello.vue").default
+
+const { Text, Color } = require("scenegraph");
 
 let dialog;
 function getDialog() {
@@ -15,7 +17,7 @@ function getDialog() {
             el: "#container",
             components: { hello },
             render(h) {
-                return h(hello, { props: { dialog } } )
+                return h(hello, { props: { dialog } })
             }
         })
     }
