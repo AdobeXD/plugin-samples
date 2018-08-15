@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "watch": "nodemon -w src -e js,jsx -w webpack.config.js -x yarn build",
+    "watch": "nodemon -w src -e js,jsx,json,css -w webpack.config.js -x yarn build",
     "build": "webpack --mode development"
   },
   "license": "none",
   "private": true,
   "devDependencies": {
+    "css-loader": "^1.0.0",
+    "file-loader": "^1.1.11",
+    "style-loader": "^0.22.1",
     "webpack": "^4.16.4",
     "webpack-cli": "^3.1.0"
   },

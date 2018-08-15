@@ -1,39 +1,5 @@
 const React = require("react");
-const Stack = require("./Stack.jsx");
-
-const styles = {
-    cardWrapper: {
-        margin: 12,
-        borderRadius: 8,
-        backgroundColor: "#D0D0D0",
-        flexGrow: 0,
-        flexShrink: 0,
-        flexBasis: 200,
-        overflow: "hidden",
-    },
-
-    cardHero: {
-        borderTopLeftRadius: 6,
-        borderTopRightRadius: 6,
-        overflow: "hidden",
-
-        flexBasis: 0,
-        height: "66%",
-        backgroundColor: "#E0E0E0",
-    },
-
-    cardHeroImg:  {
-        margin: "auto",
-    },
-
-    selected: {
-        border:"2px solid blue",
-    },
-
-    unselected: {
-        border: "2px solid transparent",
-    }
-}
+const styles = require("./Card.css");
 
 const Card = ({
     selected = false,
@@ -41,14 +7,19 @@ const Card = ({
     width = 200,
     height = 150,
     children,
+    onInfoClick,
     ...rest
 } = {}) => {
     return (
         <div
-            style={Object.assign({}, { height, width }, styles.cardWrapper, selected ? styles.selected : styles.unselected)}
+            className={`${styles.cardWrapper} ${selected ? styles.selected : styles.unselected}`}
+            style={{ height, width }}
             {...rest}>
-            <div style={styles.cardHero} style={{ width: width - 4 }}>
-                <img style={Object.assign({}, styles.cardHeroImg, {height: 100})} src={src} />
+            <div className={styles.cardHero} style={{ width: width - 4 }}>
+                <img className={styles.cardHeroImg} style={{ height: height - 4 }} src={src} />
+                <button onClick={onInfoClick} className={styles.cardHeroInfo} uxp-variant="action">
+                    <img src="./assets/info.png" />
+                </button>
             </div>
             {children}
         </div>

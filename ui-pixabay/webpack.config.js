@@ -22,6 +22,15 @@ module.exports = {
                         "transform-object-rest-spread",
                     ]
                 }
+            },
+            {
+                test: /\.png$/,
+                exclude: /node_modules/,
+                loader: 'file-loader'
+            },
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"]
             }
         ]
     }
