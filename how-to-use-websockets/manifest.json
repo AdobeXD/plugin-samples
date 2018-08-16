@@ -1,6 +1,6 @@
 {
-    "id": "com.adobe.xd.socket",
-    "name": "Socket",
+    "id": "com.adobe.xd.websockets",
+    "name": "Websockets",
     "version": "0.0.1",
     "host": {
         "app": "XD",
@@ -9,8 +9,8 @@
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "How to use socket",
-            "commandId": "sendData"
+            "label": "How to use websockets",
+            "commandId": "connectWS"
         }
     ]
 }

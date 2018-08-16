@@ -3,32 +3,50 @@ const http = require('http');
 const webSocketsServerPort = 8888;
 
 const server = http.createServer(function (request, response) {
-    // process HTTP request. Since we're writing just WebSockets
-    // server we don't have to implement anything.
+
 });
 
 server.listen(webSocketsServerPort, function () {
-    console.log((new Date()) + " Server is listening on port "
-        + webSocketsServerPort);
+    console.log(`${(new Date())} Server is listening on port ${webSocketsServerPort}.`);
 });
 
 const WebSocketServer = require('websocket').server;
-wsServer = new WebSocketServer({
+const wsServer = new WebSocketServer({
     httpServer: server
 });
 
 // WebSocket server
 wsServer.on('request', function (request) {
-    console.log((new Date()) + ' Connection from origin '
-        + request.origin + '.');
+    console.log(`${(new Date())} Connection from origin ${request.origin}.`);
+
     let connection = request.accept(null, request.origin);
 
-    // This is the most important callback for us, we'll handle
+    connection.sendUTF(
+        JSON.stringify({ status: 'ongoing', message: `Server asks: what's your name?` })
+    );
+
     // all messages from users here.
     connection.on('message', function (message) {
         if (message.type === 'utf8') {
             // process WebSocket message
-            console.log('message received')
+            if (message.utf8Data.toLowerCase() === 'yes') {
+                connection.sendUTF(
+                    JSON.stringify({ status: 'done', message: `Server responded: Thanks, Enjoy!` })
+                );
+                connection.close();
+            } else if (message.utf8Data.toLowerCase() === 'no') {
+                connection.sendUTF(
+                    JSON.stringify({ status: 'done', message: `Server responded: Disconnecting...!` })
+                );
+                connection.close();
+            } else {
+                connection.sendUTF(
+                    JSON.stringify({ status: 'ongoing', message: `Server responded: hello ${message.utf8Data}, Do you like XD so far?` })
+                );
+            }
+        } else {
+            console.log('wrong message type')
+            connection.close()
         }
     });
 

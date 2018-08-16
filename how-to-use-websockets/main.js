@@ -1,13 +1,10 @@
-const { Text, Color } = require("scenegraph");
 
-// connection is opened and ready to use
 // main container
 let container = document.createElement("form");
 container.style.minWidth = 250;
 
 // add title
 let title = document.createElement("h1");
-title.textContent = "What's your name?";
 container.appendChild(title);
 
 // single line text input
@@ -27,60 +24,59 @@ footer.appendChild(closeButton);
 //  create the dialog
 let dialog = document.createElement("dialog");
 dialog.appendChild(container);
+document.body.appendChild(dialog);
 
-async function sendData() {
+async function connectWS() {
+    const connection = new WebSocket("ws://127.0.0.1:8888");
 
-    // Create WebSocket connection.
-    var connection = new WebSocket('ws://127.0.0.1:1337');
-    const uxp = require("uxp")
+    connection.onopen = async function () {
+        console.log("connection open");
+    };
 
-    // async function sendData() {
-    //     uxp.shell.openExternal(`http://localhost:8000`)
-    // }
+    connection.onmessage = async function (response) {
+        try {
+            // make sure input box is empty and displayed
+            textInput.value = "";
+            textInput.style.display = "block";
 
-    //  add the dialog to the main document
-    document.body.appendChild(dialog);
-    // Get user input from the text field
-    // const txt = await showDialog();
+            // handle incoming response
+            let json = JSON.parse(response.data);
+            if (json.status === "ongoing") {
+                title.textContent = json.message;
+                const txt = await showDialog();
+                connection.send(txt);
+            } else {
+                title.textContent = json.message;
+                textInput.style.display = "none";
+                closeButton.textContent = "OK";
+            }
+        } catch (e) {
+            console.log(`This does not look like a valid JSON: ${response.data}`);
+            return;
+        }
+    };
 
-    connection.onopen = function () {
-
-        console.log('connection open')
-        connection.send(txt);
-
+    connection.onclose = async function () {
+        console.log("connection closed");
     };
 
     connection.onerror = function (error) {
-        // an error occurred when sending/receiving data
-    };
-
-    connection.onmessage = function (message) {
-        // try to decode json (I assume that each message
-        // from server is json)
-        try {
-            var json = JSON.parse(message.data);
-            console.log(json)
-        } catch (e) {
-            console.log('This doesn\'t look like a valid JSON: ',
-                message.data);
-            return;
-        }
-        // handle incoming message
+        console.log("server error");
     };
 }
 
 function showDialog() {
     return new Promise((resolve, reject) => {
-        dialog.showModal()
+        dialog.showModal();
         closeButton.onclick = (e) => {
             dialog.close();
-            resolve(textInput.value)
+            resolve(textInput.value);
         }
     })
 }
 
 module.exports = {
     commands: {
-        sendData
+        connectWS
     }
 }
