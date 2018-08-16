@@ -1,5 +1,5 @@
 # How to use single line text UI
-This sample describes how an XD plugin can invoke the default file picker and display the text extracted from the file chosen by user. The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Guides/tree/master/Guides/how-to-use-single-line-text-ui-guide).
+This sample describes how an XD plugin can invoke the default file picker and display the text extracted from the file chosen by user. **The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-use-single-line-text-ui)**.
 
 <!-- Image or GIF if necessary -->
 <!-- ![PLUGINNAME]() -->
