@@ -1,6 +1,6 @@
 # Getting Started with XD Plugin Development
 
-Let’s walk through the process of how you can create an Adobe XD plugin. This plugin is pretty simple to start, but you should be able to follow the instructions to create just more complex plugins as well. The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Guides/tree/master/Guides/getting-started-guide).
+Let’s walk through the process of how you can create an Adobe XD plugin. This plugin is pretty simple to start, but you should be able to follow the instructions to create just more complex plugins as well. The plugin code can be found *[here](https://github.com/AdobeXD/Plugin-Samples/tree/master/getting-started)*.
 
 <!-- doctoc command config: -->
 <!-- $ doctoc ./readme.md --title "## Contents" --entryprefix 1. --gitlab --maxlevel 2 -->
