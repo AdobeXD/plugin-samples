@@ -8,11 +8,11 @@ This sample demonstrates how to use websockets to communicate with an exernal se
 ```
 cd chatServer && npm install
 ```
-1. Run the server
+2. Run the server
 ```
 npm start
 ```
-1. Run "Plugins > How to use socket"
-1. Answer the first question (your name)
-1. Answer the second question (yes/no)
+3. Run "Plugins > How to use socket"
+4. Answer the first question (your name)
+5. Answer the second question (yes/no)
 
