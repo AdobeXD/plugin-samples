@@ -12,7 +12,7 @@ cd chatServer && npm install
 ```
 npm start
 ```
-3. Run "Plugins > How to use socket"
+3. Run "Plugins > How to use websockets"
 4. Answer the first question (your name)
 5. Answer the second question (yes/no)
 
