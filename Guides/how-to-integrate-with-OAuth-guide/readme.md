@@ -1,6 +1,6 @@
 # How to Integrate with OAuth
 
-This sample app will show you how to implement the OAuth workflow with Dropbox API in Adobe XD. The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Guides/tree/master/Guides/how-to-integrate-with-OAuth-guide).
+This sample app will show you how to implement the OAuth workflow with Dropbox API in Adobe XD. **The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-integrate-with-OAuth)**.
 
 After setting up the sample, you will have an XD plugin and a separate node server. See below for the high level workflow:
 

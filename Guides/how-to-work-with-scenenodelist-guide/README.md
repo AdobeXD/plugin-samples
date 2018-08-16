@@ -1,5 +1,5 @@
 # How to work with ScenenodeList
-This sample demonstrates how to work with scenenode lists. The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Guides/tree/master/Guides/how-to-work-with-scenenodelist-guide).
+This sample demonstrates how to work with scenenode lists. **The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-work-with-scenenodelist)**.
 
 <!-- Image or GIF if necessary -->
 <!-- ![PLUGINNAME]() -->

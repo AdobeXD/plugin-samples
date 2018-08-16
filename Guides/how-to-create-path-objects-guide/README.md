@@ -1,5 +1,5 @@
 # How to Create Path Objects
-This sample demonstrates how to create path objects in XD.  The path objects are used to construct a pie chart. The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Guides/tree/master/Guides/how-to-create-path-objects-guide).
+This sample demonstrates how to create path objects in XD.  The path objects are used to construct a pie chart. **The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-create-path-objects)**.
 
 <!-- Image or GIF if necessary -->
 <!-- ![PLUGINNAME]() -->
