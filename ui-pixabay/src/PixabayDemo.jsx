@@ -280,7 +280,7 @@ class PixabayDemo extends React.Component {
                     ) : (
                         <div className="column">
                             {!apiKey ? (
-                                <div style={{display: "flex", flexDirection: "row"}}>
+                                <div>
                                     <p>Enter an API Key. You can get one from:</p>
                                     <a href="https://pixabay.com/en/service/about/api/">
                                         https://pixabay.com/en/service/about/api/

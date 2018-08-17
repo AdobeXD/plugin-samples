@@ -99,7 +99,7 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/li
 
 
 // module
-exports.push([module.i, "._2j24M_ZeRjkKI89mkm7WqF {\n    margin: 12px;\n    border-radius: 8px;\n    background-color: #EAEAEA;\n    flex: 0 0 200;\n    overflow: hidden;\n    position: relative;\n}\n\n._1dS3jI8kOi5EVVeLSY53_x {\n    border-top-left-radius: 6px;\n    border-top-right-radius: 6px;\n    overflow: hidden;\n    flex-basis: 150;\n}\n\n._27zR1ttvnBPF_9FEjGhlM5  {\n    margin: auto;\n}\n\n._3xiyLGWHMp4x_4Rm3qksEo {\n    border: 2px solid #1592E6;\n}\n\n._3O_5SmXxMooFw30B0ZVOlQ {\n    border: 2px solid transparent;\n}\n\n._2xhGoeO1JemKdLua6s96AS {\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    margin: 0; /* bug: if using default margins, changing visibility loses them and causes button to shift on selection */\n    display: none;\n}\n\n._2j24M_ZeRjkKI89mkm7WqF:hover ._2xhGoeO1JemKdLua6s96AS {\n    display: block;\n}", ""]);
+exports.push([module.i, "._2j24M_ZeRjkKI89mkm7WqF {\n    margin: 6px;\n    border-radius: 8px;\n    background-color: #EAEAEA;\n    flex: 0 0 200;\n    overflow: hidden;\n    position: relative;\n}\n\n._1dS3jI8kOi5EVVeLSY53_x {\n    border-top-left-radius: 6px;\n    border-top-right-radius: 6px;\n    overflow: hidden;\n    flex-basis: 150;\n}\n\n._27zR1ttvnBPF_9FEjGhlM5  {\n    margin: auto;\n}\n\n._3xiyLGWHMp4x_4Rm3qksEo {\n    border: 2px solid #1592E6;\n}\n\n._3O_5SmXxMooFw30B0ZVOlQ {\n    border: 2px solid transparent;\n}\n\n._2xhGoeO1JemKdLua6s96AS {\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    margin: 0; /* bug: if using default margins, changing visibility loses them and causes button to shift on selection */\n    display: none;\n}\n\n._2j24M_ZeRjkKI89mkm7WqF:hover ._2xhGoeO1JemKdLua6s96AS {\n    display: block;\n}", ""]);
 
 // exports
 exports.locals = {
@@ -21088,7 +21088,7 @@ class PixabayDemo extends React.Component {
                     { className: 'column' },
                     !apiKey ? React.createElement(
                         'div',
-                        { style: { display: "flex", flexDirection: "row" } },
+                        null,
                         React.createElement(
                             'p',
                             null,
