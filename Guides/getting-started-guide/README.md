@@ -64,7 +64,7 @@ Example:
     $ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
     $ mkdir com.adobe.xd.helloWorld
     $ cd com.adobe.xd.helloWorld
-    $ touch xdplugin.json
+    $ touch manifest.json
     $ touch main.js
 ``` 
 
