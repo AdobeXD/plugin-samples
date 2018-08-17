@@ -78,16 +78,24 @@ class TextFieldDemo {
             fontFamily: "system-ui"
         });
         textField.setAttribute("placeholder", uxpQuiet ? "uxpQuiet textField..." : "standard textField...");
-        textField.setAttribute("uxpQuiet", uxpQuiet);
+        textField.setAttribute("uxp-quiet", `${uxpQuiet}`);
 
         textField.addEventListener("change", this._handleTextFieldEvent.bind(this));
         textField.addEventListener("input", this._handleTextFieldEvent.bind(this));
+        textField.addEventListener("blur", this._handleTextFieldEvent.bind(this));
+        textField.addEventListener("focus", this._handleTextFieldEvent.bind(this));
+        textField.addEventListener("keydown", this._handleTextFieldEvent.bind(this));
+        textField.addEventListener("keyup", this._handleTextFieldEvent.bind(this)); // don't fire yet?
+        textField.addEventListener("keypress", this._handleTextFieldEvent.bind(this)); // don't fire yet?
 
         return textField;
     }
 
     _handleTextFieldEvent(ev) {
-        this._messageBar.textContent = "Received event (" + ev.type + " : " + ev.target.value + " )";
+        this._messageBar.textContent =
+            this._messageBar.textContent.split("\n")
+            .filter((_, idx, arr) => idx >= arr.length - 10)
+            .join("\n") + "\nReceived event (" + ev.type + "; value:" + ev.target.value + " )";
     }
 
     _createDisableCheck() {
