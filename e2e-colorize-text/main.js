@@ -390,7 +390,7 @@ function aboutPlugin() {
         "• Repeat: repeats a color pattern in a text node",
         "• Randomize: applies random colors to each character in a text node",
         "For more information, please see:",
-        "https://github.com/AdobeXD/Plugin-Samples/tree/master/sg-gradientize-text"
+        "https://github.com/AdobeXD/Plugin-Samples/tree/master/e2e-colorize-text"
     );
 }
 
