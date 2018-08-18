@@ -1,0 +1,39 @@
+{
+    "id": "com.adobe.example.87eb1e9bdd4a269f",
+    "author": "Kerri Shotts",
+    "name": "Colorize Text",
+    "host": {
+        "app": "XD",
+        "minVersion": "12.0.10.64"
+    },
+    "version": "1.0.0",
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Colorize Text",
+            "menuItems": [
+                {
+                    "type": "menu",
+                    "label": "Gradient",
+                    "commandId": "gradientize"
+                },
+                {
+                    "type": "menu",
+                    "label": "Repeat",
+                    "commandId": "repeatize"
+                },
+                {
+                    "type": "menu",
+                    "label": "Randomize",
+                    "commandId": "randomize"
+                },
+                {
+                    "type": "menu",
+                    "label": "About",
+                    "commandId": "aboutPlugin"
+                }
+            ]
+        }
+    ]
+}
+
