@@ -1,0 +1,23 @@
+{
+    "id": "com.adobe.demo.798a49caf1dd9369",
+    "author": "Kerri Shotts",
+    "name": "Adobe Stock Search",
+    "version": "1.0.0",
+    "host": {
+        "app": "XD",
+        "minVersion": "10.0.10.24"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Adobe Stock",
+            "menuItems": [
+                {
+                    "type": "menu",
+                    "label": "Search Adobe Stock...",
+                    "commandId": "search"
+                }
+            ]
+        }
+    ]
+}
