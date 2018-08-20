@@ -1,0 +1,16 @@
+{
+    "id": "com.adobe.xd.websockets",
+    "name": "Websockets",
+    "version": "0.0.1",
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "How to use websockets",
+            "commandId": "connectWS"
+        }
+    ]
+}

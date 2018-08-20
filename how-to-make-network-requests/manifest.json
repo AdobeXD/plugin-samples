@@ -1,0 +1,16 @@
+{
+    "id": "com.adobe.xd.networkio",
+    "name": "Network IO",
+    "version": "0.0.1",
+    "host": {
+        "app": "XD",
+        "minVersion": "8.0"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "How to make network requests",
+            "commandId": "applyImage"
+        }
+    ]
+}
