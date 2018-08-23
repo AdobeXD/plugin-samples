@@ -3,8 +3,20 @@ const Card = require('./Card');
 
 const styles = require('./StockSearch.css');
 
-const searchStock = require("./util/search");
-const fetchBinary = require("./util/fetchBinary");
+const searchStock = require('./util/search');
+const fetchBinary = require('./util/fetchBinary');
+
+const MAX_RESULTS = [
+    "20",
+    "50",
+    "75",
+    "100"
+];
+
+const VIEWS = {
+    LIST: 0,
+    GRID: 1,
+};
 
 const STATUS = {
     UNKNOWN: 0,
@@ -15,16 +27,17 @@ const STATUS = {
 };
 
 const initialState = {
-    search: "cats",
-    apikey: require("./apikey.json").apikey,
+    search: 'cats',
+    apikey: require('./apikey.json').apikey,
     showSettings: false,
     status: STATUS.UNKNOWN,
     progress: 0,
     results: [],
     selected: [],
-    msg: ''
+    msg: '',
+    viewMode: VIEWS.GRID,
+    maxResults: '20',
 };
-
 
 class StockSearch extends React.Component {
     constructor(props) {
@@ -41,6 +54,28 @@ class StockSearch extends React.Component {
         this.apiKeyChanged = this.apiKeyChanged.bind(this);
         this.toggleSettings = this.toggleSettings.bind(this);
         this.infoForImage = this.infoForImage.bind(this);
+        this.showGrid = this.showGrid.bind(this);
+        this.showList = this.showList.bind(this);
+        this.maxResultsChanged = this.maxResultsChanged.bind(this);
+    }
+
+    maxResultsChanged(e) {
+        const newValue = e.target.value;
+        this.setState(state => ({
+            maxResults: newValue
+        }), this.doSearch);
+    }
+
+    showGrid() {
+        this.setState(state => ({
+            viewMode: VIEWS.GRID,
+        }));
+    }
+
+    showList() {
+        this.setState(state => ({
+            viewMode: VIEWS.LIST,
+        }));
     }
 
     toggleSettings() {
@@ -50,7 +85,9 @@ class StockSearch extends React.Component {
     }
 
     async insertPhotos(e) {
-        e.preventDefault();
+        if (e) {
+            e.preventDefault();
+        }
 
         this.setState(state => ({
             status: STATUS.WORKING,
@@ -97,7 +134,6 @@ class StockSearch extends React.Component {
                 // clean up after ourselves
                 file.delete();
 
-                console.log(file.nativePath);
             } catch (err) {
                 console.log(err.message);
             }
@@ -113,9 +149,11 @@ class StockSearch extends React.Component {
     }
 
     doSearch(e) {
-        e.preventDefault(); // should never close dialog -- we're a search instead
+        if (e) {
+            e.preventDefault(); // should never close dialog -- we're a search instead
+        }
 
-        const { search, apikey } = this.state;
+        const { search, apikey, maxResults } = this.state;
         if (!search || !apikey) {
             return; // can't do anything
         }
@@ -126,18 +164,18 @@ class StockSearch extends React.Component {
             }),
             async () => {
                 try {
-                    const hits = await searchStock(search, { apikey });
+                    const hits = await searchStock(search, { apikey, limit: maxResults });
                     if (hits) {
                         this.setState(state => ({
                             status: hits.length > 0 ? STATUS.LOADED : STATUS.ERROR,
                             results: hits,
-                            msg: hits.length === 0 ? "No results found. Try another search." : ""
+                            msg: hits.length === 0 ? 'No results found. Try another search.' : '',
                         }));
                     } else {
                         this.setState(state => ({
                             status: STATUS.ERROR,
                             results: [],
-                            msg: "Didn't get back anything useful. Try another search?"
+                            msg: "Didn't get back anything useful. Try another search?",
                         }));
                     }
                 } catch (err) {
@@ -145,7 +183,9 @@ class StockSearch extends React.Component {
                     this.setState(state => ({
                         results: [],
                         status: STATUS.ERROR,
-                        msg: `The request encountered an error. Please check your API KEY and try again. The error was: ${err.message}`
+                        msg: `The request encountered an error. Please check your API KEY and try again. The error was: ${
+                            err.message
+                        }`,
                     }));
                 }
             }
@@ -179,15 +219,26 @@ class StockSearch extends React.Component {
     }
 
     infoForImage(idx) {
-        let {id, title} = this.state.results[idx];
-        title = title.replace(/[^A-Za-z0-9]/g,'-').toLowerCase();
+        let { id, title } = this.state.results[idx];
+        title = title.replace(/[^A-Za-z0-9]/g, '-').toLowerCase();
         const url = `https://stock.adobe.com/images/${title}/${id}`;
-        require("uxp").shell.openExternal(url);
+        require('uxp').shell.openExternal(url);
     }
 
     render() {
         const { dialog } = this.props;
-        const { search, status, results, selected, apikey, showSettings, progress, msg } = this.state;
+        const {
+            search,
+            status,
+            results,
+            selected,
+            apikey,
+            showSettings,
+            progress,
+            msg,
+            viewMode,
+            maxResults,
+        } = this.state;
 
         const canSearch = search && apikey;
         const canInsert = selected.length > 0 && status !== STATUS.WORKING;
@@ -236,22 +287,79 @@ class StockSearch extends React.Component {
                         <img src="./assets/search.png" />
                     </button>
                 </div>
-                <div className={styles.resultsWrapper}>
-                    {(status === STATUS.LOADED || status === STATUS.WORKING) ? (
-                        <div className={styles.results}>
-                            {results.map((result, idx) => (
-                                <Card
-                                    key={idx}
-                                    width={200}
-                                    height={150}
-                                    title={result.title}
-                                    src={result.thumbnail_url}
-                                    selected={selected.indexOf(idx) > -1}
-                                    onInfoClick={e => {this.infoForImage(idx); e.stopPropagation();}}
-                                    onClick={() => this.selectImage(idx)}
-                                />
-                            ))}
+                {(status === STATUS.LOADED || status === STATUS.WORKING) && (
+                    <div className={`${styles.resultsInfo} row nogrow margin`}>
+                        <label className="row">
+                        <span>Show: </span>
+                            <select onChange={this.maxResultsChanged} value={maxResults}
+                                    ref={el => el && (el.value = maxResults)}>
+                                {MAX_RESULTS.map(n =>
+                                    <option key={n} value={`${n}`}>{`${n}`}</option>
+                                )}
+                            </select>
+                        </label>
+                        <div className={styles.viewMode}>
+                            <button
+                                onClick={this.showList}
+                                uxp-variant="action"
+                                uxp-quiet="true"
+                                uxp-selected={viewMode === VIEWS.LIST ? 'true' : undefined}>
+                                <img src="assets/list.png" />
+                            </button>
+                            <button
+                                onClick={this.showGrid}
+                                uxp-variant="action"
+                                uxp-quiet="true"
+                                uxp-selected={viewMode === VIEWS.GRID ? 'true' : undefined}>
+                                <img src="assets/grid.png" />
+                            </button>
                         </div>
+                    </div>
+                )}
+                <div className={styles.resultsWrapper}>
+                    {status === STATUS.LOADED || status === STATUS.WORKING ? (
+                        viewMode === VIEWS.GRID ? (
+                            <div className={styles.results}>
+                                {results.map((result, idx) => (
+                                    <Card
+                                        key={idx}
+                                        width={200}
+                                        height={150}
+                                        title={result.title}
+                                        src={result.thumbnail_url}
+                                        selected={selected.indexOf(idx) > -1}
+                                        onInfoClick={e => {
+                                            this.infoForImage(idx);
+                                            e.stopPropagation();
+                                        }}
+                                        onClick={() => this.selectImage(idx)}
+                                    />
+                                ))}
+                            </div>
+                        ) : (
+                            <div className={styles.resultsList}>
+                                {results.map((result, idx) => (
+                                    <label key={idx} className={`row nogrow ${styles.resultRow}`}
+                                    >
+                                        <input type="checkbox" defaultChecked={selected.indexOf(idx) > -1}
+                                           ref={el => el && (el.onchange= () => this.selectImage(idx))}
+                                         />
+                                        <div className={styles.resultRowImageWrapper}>
+                                            <img src={result.thumbnail_url}/>
+                                        </div>
+                                        <span>{result.title}</span>
+                                        <button uxp-variant="action" uxp-quiet="true"
+                                         onClick={e => {
+                                            this.infoForImage(idx);
+                                            e.stopPropagation();
+                                         }}
+                                        >
+                                            <img src="assets/dots.png"/>
+                                        </button>
+                                    </label>
+                                ))}
+                            </div>
+                        )
                     ) : status === STATUS.LOADING ? (
                         <div>
                             <p>Loading...</p>
@@ -273,12 +381,11 @@ class StockSearch extends React.Component {
                     )}
                 </div>
                 <footer>
-                    {status === STATUS.WORKING && <div>{`${Math.floor(progress)}% complete...`}</div>}
+                    {status === STATUS.WORKING && (
+                        <div>{`${Math.floor(progress)}% complete...`}</div>
+                    )}
                     <button onClick={() => dialog.close()}>Cancel</button>
-                    <button
-                        disabled={!canInsert}
-                        onClick={this.insertPhotos}
-                        uxp-variant="cta">
+                    <button disabled={!canInsert} onClick={this.insertPhotos} uxp-variant="cta">
                         {status === STATUS.WORKING ? 'Downloading...' : 'Insert Selected...'}
                     </button>
                 </footer>

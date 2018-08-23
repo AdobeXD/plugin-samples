@@ -125,13 +125,18 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/li
 
 
 // module
-exports.push([module.i, "form {\n    width: 480px;\n    height: 500px;\n    display: flex;\n    flex-direction: column;\n}\n\nh1 {\n    display: flex;\n    justify-content: space-between;\n    flex: 0 0 auto;\n}\n\nh1 button {\n    margin: 0;\n    padding: 0;\n}\n\nfooter {\n    flex: 0 0 auto;\n    align-items: center;\n}\n\n.nogrow {\n    flex: 0 0 auto;\n}\n\n._2IjEllNvhPCUnpYAOkJFQh {\n    height: 26px;\n}\n\n.row {\n    align-items: center;\n}\n\n.row label span {\n    font-size: 100%;\n}\n\n._2HT8lTvUcQ6LPQnN8WrT0j {\n    overflow: scroll;\n    flex: 1 0 300;\n    height: 300px;\n    width: 480px;\n    display: flex;\n    flex-direction: column;\n}\n\n.pLVP6_H5pTUI0rcWyQJDp {\n    justify-content: center;\n    flex: 0 0 auto;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n}\n\nform a:hover {\n    color: red;\n}", ""]);
+exports.push([module.i, "form {\n    width: 480px;\n    height: 600px;\n    display: flex;\n    flex-direction: column;\n}\n\nh1 {\n    display: flex;\n    justify-content: space-between;\n    flex: 0 0 auto;\n}\n\nh1 button {\n    margin: 0;\n    padding: 0;\n}\n\nfooter {\n    flex: 0 0 auto;\n    align-items: center;\n}\n\n.nogrow {\n    flex: 0 0 auto;\n}\n\n.noshrink {\n    flex: 0 0 auto;\n}\n\n._2IjEllNvhPCUnpYAOkJFQh {\n    height: 26px;\n}\n\n.row {\n    align-items: center;\n}\n\n.row label span {\n    font-size: 100%;\n}\n\n._2HT8lTvUcQ6LPQnN8WrT0j {\n    overflow-y: scroll;\n    flex: 1 0 300;\n    height: 300px;\n    width: 480px;\n    display: flex;\n    flex-direction: column;\n}\n\n.pLVP6_H5pTUI0rcWyQJDp {\n    justify-content: center;\n    flex: 0 0 auto;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n}\n\n._1d0XHk1GMr1Lvl7P7JgsG2 {\n    flex: 0 0 auto;\n    display: flex;\n    flex-direction: column;\n}\n\n._3E02GysrjvqWb8VgnrhxFe {\n    flex-direction: row;\n    align-content: center;\n    border-radius: 4px;\n    background-color: #F5F5F5; /* without this, the checkboxes don't show up when we scroll! */\n}\n\n._2iLbwWCipJWNIqIvUW8VuK {\n    height: 32px;\n    width: 32px;\n    overflow: hidden;\n    display: flex;\n}\n\n._3E02GysrjvqWb8VgnrhxFe img {\n    height: 32px;\n    flex: 0 0 auto;\n    margin: auto auto;\n}\n\n._3E02GysrjvqWb8VgnrhxFe span {\n    flex: 1 1 auto;\n}\n\n._3E02GysrjvqWb8VgnrhxFe button {\n    display: none;\n}\n\n._3E02GysrjvqWb8VgnrhxFe:hover {\n    background-color: #EAEAEA;\n}\n\n._3E02GysrjvqWb8VgnrhxFe:hover button {\n    display: block;\n}\n\nform a:hover {\n    color: red;\n}\n\n.pDI_WWd7GR7YlsUI-KVUP {\n    margin: 0;\n    justify-content: flex-end;\n    height: 32px;\n}\n\n._3t-LxjIvOQI5RHzUFvtCFk {\n    display: flex;\n    flex-direction: row;\n    margin: 0;\n}\n\n._3t-LxjIvOQI5RHzUFvtCFk button {\n    margin: 0;\n}", ""]);
 
 // exports
 exports.locals = {
 	"logo": "_2IjEllNvhPCUnpYAOkJFQh",
 	"resultsWrapper": "_2HT8lTvUcQ6LPQnN8WrT0j",
-	"results": "pLVP6_H5pTUI0rcWyQJDp"
+	"results": "pLVP6_H5pTUI0rcWyQJDp",
+	"resultsList": "_1d0XHk1GMr1Lvl7P7JgsG2",
+	"resultRow": "_3E02GysrjvqWb8VgnrhxFe",
+	"resultRowImageWrapper": "_2iLbwWCipJWNIqIvUW8VuK",
+	"resultsInfo": "pDI_WWd7GR7YlsUI-KVUP",
+	"viewMode": "_3t-LxjIvOQI5RHzUFvtCFk"
 };
 
 /***/ }),
@@ -20786,6 +20791,13 @@ const styles = __webpack_require__(/*! ./StockSearch.css */ "./src/StockSearch.c
 const searchStock = __webpack_require__(/*! ./util/search */ "./src/util/search.js");
 const fetchBinary = __webpack_require__(/*! ./util/fetchBinary */ "./src/util/fetchBinary.js");
 
+const MAX_RESULTS = ["20", "50", "75", "100"];
+
+const VIEWS = {
+    LIST: 0,
+    GRID: 1
+};
+
 const STATUS = {
     UNKNOWN: 0,
     LOADING: 1,
@@ -20795,14 +20807,16 @@ const STATUS = {
 };
 
 const initialState = {
-    search: "cats",
+    search: 'cats',
     apikey: __webpack_require__(/*! ./apikey.json */ "./src/apikey.json").apikey,
     showSettings: false,
     status: STATUS.UNKNOWN,
     progress: 0,
     results: [],
     selected: [],
-    msg: ''
+    msg: '',
+    viewMode: VIEWS.GRID,
+    maxResults: '20'
 };
 
 class StockSearch extends React.Component {
@@ -20820,6 +20834,28 @@ class StockSearch extends React.Component {
         this.apiKeyChanged = this.apiKeyChanged.bind(this);
         this.toggleSettings = this.toggleSettings.bind(this);
         this.infoForImage = this.infoForImage.bind(this);
+        this.showGrid = this.showGrid.bind(this);
+        this.showList = this.showList.bind(this);
+        this.maxResultsChanged = this.maxResultsChanged.bind(this);
+    }
+
+    maxResultsChanged(e) {
+        const newValue = e.target.value;
+        this.setState(state => ({
+            maxResults: newValue
+        }), this.doSearch);
+    }
+
+    showGrid() {
+        this.setState(state => ({
+            viewMode: VIEWS.GRID
+        }));
+    }
+
+    showList() {
+        this.setState(state => ({
+            viewMode: VIEWS.LIST
+        }));
     }
 
     toggleSettings() {
@@ -20829,7 +20865,9 @@ class StockSearch extends React.Component {
     }
 
     async insertPhotos(e) {
-        e.preventDefault();
+        if (e) {
+            e.preventDefault();
+        }
 
         this.setState(state => ({
             status: STATUS.WORKING
@@ -20875,8 +20913,6 @@ class StockSearch extends React.Component {
 
                 // clean up after ourselves
                 file.delete();
-
-                console.log(file.nativePath);
             } catch (err) {
                 console.log(err.message);
             }
@@ -20892,9 +20928,11 @@ class StockSearch extends React.Component {
     }
 
     doSearch(e) {
-        e.preventDefault(); // should never close dialog -- we're a search instead
+        if (e) {
+            e.preventDefault(); // should never close dialog -- we're a search instead
+        }
 
-        const { search, apikey } = this.state;
+        const { search, apikey, maxResults } = this.state;
         if (!search || !apikey) {
             return; // can't do anything
         }
@@ -20903,12 +20941,12 @@ class StockSearch extends React.Component {
             selected: []
         }), async () => {
             try {
-                const hits = await searchStock(search, { apikey });
+                const hits = await searchStock(search, { apikey, limit: maxResults });
                 if (hits) {
                     this.setState(state => ({
                         status: hits.length > 0 ? STATUS.LOADED : STATUS.ERROR,
                         results: hits,
-                        msg: hits.length === 0 ? "No results found. Try another search." : ""
+                        msg: hits.length === 0 ? 'No results found. Try another search.' : ''
                     }));
                 } else {
                     this.setState(state => ({
@@ -20963,7 +21001,18 @@ class StockSearch extends React.Component {
 
     render() {
         const { dialog } = this.props;
-        const { search, status, results, selected, apikey, showSettings, progress, msg } = this.state;
+        const {
+            search,
+            status,
+            results,
+            selected,
+            apikey,
+            showSettings,
+            progress,
+            msg,
+            viewMode,
+            maxResults
+        } = this.state;
 
         const canSearch = search && apikey;
         const canInsert = selected.length > 0 && status !== STATUS.WORKING;
@@ -21035,10 +21084,55 @@ class StockSearch extends React.Component {
                     React.createElement('img', { src: './assets/search.png' })
                 )
             ),
+            (status === STATUS.LOADED || status === STATUS.WORKING) && React.createElement(
+                'div',
+                { className: `${styles.resultsInfo} row nogrow margin` },
+                React.createElement(
+                    'label',
+                    { className: 'row' },
+                    React.createElement(
+                        'span',
+                        null,
+                        'Show: '
+                    ),
+                    React.createElement(
+                        'select',
+                        { onChange: this.maxResultsChanged, value: maxResults,
+                            ref: el => el && (el.value = maxResults) },
+                        MAX_RESULTS.map(n => React.createElement(
+                            'option',
+                            { key: n, value: `${n}` },
+                            `${n}`
+                        ))
+                    )
+                ),
+                React.createElement(
+                    'div',
+                    { className: styles.viewMode },
+                    React.createElement(
+                        'button',
+                        {
+                            onClick: this.showList,
+                            'uxp-variant': 'action',
+                            'uxp-quiet': 'true',
+                            'uxp-selected': viewMode === VIEWS.LIST ? 'true' : undefined },
+                        React.createElement('img', { src: 'assets/list.png' })
+                    ),
+                    React.createElement(
+                        'button',
+                        {
+                            onClick: this.showGrid,
+                            'uxp-variant': 'action',
+                            'uxp-quiet': 'true',
+                            'uxp-selected': viewMode === VIEWS.GRID ? 'true' : undefined },
+                        React.createElement('img', { src: 'assets/grid.png' })
+                    )
+                )
+            ),
             React.createElement(
                 'div',
                 { className: styles.resultsWrapper },
-                status === STATUS.LOADED || status === STATUS.WORKING ? React.createElement(
+                status === STATUS.LOADED || status === STATUS.WORKING ? viewMode === VIEWS.GRID ? React.createElement(
                     'div',
                     { className: styles.results },
                     results.map((result, idx) => React.createElement(Card, {
@@ -21049,10 +21143,42 @@ class StockSearch extends React.Component {
                         src: result.thumbnail_url,
                         selected: selected.indexOf(idx) > -1,
                         onInfoClick: e => {
-                            this.infoForImage(idx);e.stopPropagation();
+                            this.infoForImage(idx);
+                            e.stopPropagation();
                         },
                         onClick: () => this.selectImage(idx)
                     }))
+                ) : React.createElement(
+                    'div',
+                    { className: styles.resultsList },
+                    results.map((result, idx) => React.createElement(
+                        'label',
+                        { key: idx, className: `row nogrow ${styles.resultRow}`
+                        },
+                        React.createElement('input', { type: 'checkbox', defaultChecked: selected.indexOf(idx) > -1,
+                            ref: el => el && (el.onchange = () => this.selectImage(idx))
+                        }),
+                        React.createElement(
+                            'div',
+                            { className: styles.resultRowImageWrapper },
+                            React.createElement('img', { src: result.thumbnail_url })
+                        ),
+                        React.createElement(
+                            'span',
+                            null,
+                            result.title
+                        ),
+                        React.createElement(
+                            'button',
+                            { 'uxp-variant': 'action', 'uxp-quiet': 'true',
+                                onClick: e => {
+                                    this.infoForImage(idx);
+                                    e.stopPropagation();
+                                }
+                            },
+                            React.createElement('img', { src: 'assets/dots.png' })
+                        )
+                    ))
                 ) : status === STATUS.LOADING ? React.createElement(
                     'div',
                     null,
@@ -21102,10 +21228,7 @@ class StockSearch extends React.Component {
                 ),
                 React.createElement(
                     'button',
-                    {
-                        disabled: !canInsert,
-                        onClick: this.insertPhotos,
-                        'uxp-variant': 'cta' },
+                    { disabled: !canInsert, onClick: this.insertPhotos, 'uxp-variant': 'cta' },
                     status === STATUS.WORKING ? 'Downloading...' : 'Insert Selected...'
                 )
             )
