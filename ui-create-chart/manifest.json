@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.createchart",
-    "name": "Create Chart",
+    "name": "(UI) Create Chart",
     "version": "0.0.1",
     "main": "main.js",
     "host": {

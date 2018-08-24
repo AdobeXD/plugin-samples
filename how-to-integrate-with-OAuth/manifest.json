@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.xd.oauth",
-    "name": "Oauth plugin",
+    "name": "(H2) Oauth plugin",
     "version": "0.0.1",
     "host": {
         "app": "XD",

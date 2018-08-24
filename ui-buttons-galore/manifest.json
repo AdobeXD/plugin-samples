@@ -1,6 +1,6 @@
 {
     "id": "0000000000000003",
-    "name": "Button Plugin",
+    "name": "(UI) Button Plugin",
     "version": "0.0.1",
     "main": "main.js",
     "host": {

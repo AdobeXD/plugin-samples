@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.buttonpaddinghyperscript",
-    "name": "Button Padding",
+    "name": "(UI) Button Padding",
     "version": "0.0.1",
     "host": {
         "app": "XD",

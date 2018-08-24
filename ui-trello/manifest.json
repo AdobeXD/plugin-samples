@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.trello",
-    "name": "Trello",
+    "name": "(UI) Trello",
     "version": "0.0.1",
     "main": "main.js",
     "host": {

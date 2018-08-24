@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.simpleform",
-    "name": "Simple Form Plugin",
+    "name": "(UI) Simple Form Plugin",
     "version": "0.0.1",
     "main": "main.js",
     "host": {

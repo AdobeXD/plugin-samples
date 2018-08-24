@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.xd.websockets",
-    "name": "Websockets",
+    "name": "(H2) Websockets",
     "version": "0.0.1",
     "host": {
         "app": "XD",

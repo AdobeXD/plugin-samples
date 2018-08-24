@@ -1,6 +1,6 @@
 {
     "id": "pflynn.chartGenerator",
-    "name": "Pie & Bar Chart Generator sample plugin",
+    "name": "(SG) Chart Generator sample plugin",
 
     "host": {
         "app": "XD",

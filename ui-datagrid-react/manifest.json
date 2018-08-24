@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.datagridreact",
-    "name": "Hello React JSX",
+    "name": "(UI) React Data Grid",
     "version": "0.0.1",
     "host": {
         "app": "XD",

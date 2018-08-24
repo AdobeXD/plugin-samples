@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.scenenodelist",
-    "name": "Filter and Color objects",
+    "name": "(H2) Filter and Color objects",
     "version": "0.0.1",
     "main": "main.js",
     "host": {

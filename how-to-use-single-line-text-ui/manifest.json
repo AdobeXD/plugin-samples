@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.singlelinetext",
-    "name": "Single Line Text",
+    "name": "(H2) Single Line Text",
     "version": "0.0.1",
     "main": "main.js",
     "host": {

@@ -1,6 +1,6 @@
 {
     "id": "0000000000000001",
-    "name": "Hello H Plugin",
+    "name": "(UI) Hello H Plugin",
     "version": "0.0.1",
     "main": "main.js",
     "host": {

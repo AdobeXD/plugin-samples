@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.xd.createLines",
-    "name": "Create Lines sample plugin",
+    "name": "(H2) Create Lines sample plugin",
     "host": {
         "app": "XD",
         "minVersion": "8.0"

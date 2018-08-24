@@ -1,7 +1,7 @@
 {
     "id": "com.adobe.example.87eb1e9bdd4a269f",
     "author": "Kerri Shotts",
-    "name": "Colorize Text",
+    "name": "(E2E) Colorize Text",
     "host": {
         "app": "XD",
         "minVersion": "12.0.10.64"

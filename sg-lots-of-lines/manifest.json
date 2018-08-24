@@ -1,0 +1,27 @@
+{
+    "id": "your.id.here",
+    "name": "(SG) Lots of Lines",
+    "host": {
+        "app": "XD",
+        "minVersion": "10.0.10.24"
+    },
+    "version": "0.0.1",
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "SG - Draw lots of lines",
+            "menuItems": [
+                {
+                    "type": "menu",
+                    "label": "Crossed Lines",
+                    "commandId": "crossedLines"
+                },
+                {
+                    "type": "menu",
+                    "label": "Hypnotic Lines",
+                    "commandId": "hypnoticLines"
+                }
+            ]
+        }
+    ]
+}

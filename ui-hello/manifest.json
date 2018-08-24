@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.hello",
-    "name": "Hello Plugin",
+    "name": "(UI) Hello Plugin",
     "version": "0.0.1",
     "main": "main.js",
     "host": {

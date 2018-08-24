@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.stockpick",
-    "name": "Pick Stock",
+    "name": "(E2E) Pick Stock",
     "version": "0.0.1",
     "main": "main.js",
     "host": {

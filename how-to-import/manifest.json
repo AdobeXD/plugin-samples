@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.xd.insertTextFromFile",
-    "name": "Insert Text from File",
+    "name": "(H2) Insert Text from File",
     "host": {
         "app": "XD",
         "minVersion": "8.0"

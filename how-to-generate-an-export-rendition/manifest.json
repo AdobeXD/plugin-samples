@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.exportrendition",
-    "name": "Export Rendition Plugin",
+    "name": "(H2) Export Rendition Plugin",
     "version": "0.0.1",
     "main": "main.js",
     "host": {

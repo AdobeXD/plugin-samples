@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.buttonpadding",
-    "name": "Button Padding",
+    "name": "(UI) Button Padding",
     "version": "0.0.1",
     "main": "main.js",
     "host": {

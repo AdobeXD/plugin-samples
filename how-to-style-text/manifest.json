@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.xd.sample.textstyle",
-    "name": "Text Style",
+    "name": "(H2) How to Style Text",
     "version": "0.0.1",
     "main": "main.js",
     "host": {

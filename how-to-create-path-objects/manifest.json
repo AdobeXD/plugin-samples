@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.xd.createPieChart",
-    "name": "Create Pie Chart sample plugin",
+    "name": "(H2) Create Pie Chart sample plugin",
     "host": {
         "app": "XD",
         "minVersion": "8.0"

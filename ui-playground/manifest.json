@@ -1,5 +1,5 @@
 {
-    "name": "UXP React Playground",
+    "name": "(UI) UXP React Playground",
     "id": "com.adobe.uxp.react.playground",
      "version": "0.0.1",
     "main": "main.js",
@@ -10,7 +10,7 @@
     "uiEntryPoints": [
          {
             "type": "menu",
-            "label": "Playground",
+            "label": "UI Playground",
             "commandId": "onShowDialog"
          }
      ]

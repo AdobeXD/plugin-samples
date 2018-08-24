@@ -1,6 +1,6 @@
 {
     "id": "com.adobe.displayimage",
-    "name": "Native Path Plugin",
+    "name": "(H2) How to display an image",
     "version": "0.0.1",
     "main": "main.js",
     "host": {

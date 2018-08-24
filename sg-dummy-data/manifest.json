@@ -1,6 +1,6 @@
 {
     "id": "pflynn.dummyData",
-    "name": "Basic Dummy Data Generator sample plugin",
+    "name": "(SG) Basic Dummy Data Generator sample plugin",
 
     "host": {
         "app": "XD",
