@@ -5,12 +5,29 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "book:install": "gitbook install . $@",
     "serve": "gitbook serve . $@"
   },
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "eslint": "^4.19.1"
+    "eslint": "^4.19.1",
+    "gitbook-plugin-anchorjs": "^2.0.1",
+    "gitbook-plugin-code": "^0.1.0",
+    "gitbook-plugin-codesandbox": "^0.1.1",
+    "gitbook-plugin-codetabs": "^1.0.0",
+    "gitbook-plugin-collapse": "^1.0.5",
+    "gitbook-plugin-dashing": "^0.3.0",
+    "gitbook-plugin-devops": "^1.0.3",
+    "gitbook-plugin-expandable-chapters-interactive": "^0.1.0",
+    "gitbook-plugin-github-buttons": "^3.0.0",
+    "gitbook-plugin-page-toc": "^1.1.0",
+    "gitbook-plugin-pretty-term": "^1.0.2",
+    "gitbook-plugin-prism": "^2.4.0",
+    "gitbook-plugin-recently-updated": "^1.0.1",
+    "gitbook-plugin-search-plus": "^1.0.3",
+    "gitbook-plugin-styled-blockquotes": "^1.1.4",
+    "gitbook-plugin-todo": "^0.1.3"
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "^13.0.0",

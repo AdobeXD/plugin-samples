@@ -1,0 +1,46 @@
+{
+    "plugins": [
+	"page-toc",
+	"anchorjs",
+	"collapse",
+	"pretty-term",
+	"code",
+	"dashing",
+	"todo",
+        "devops",
+        "expandable-chapters-interactive",
+        "styled-blockquotes",
+        "codetabs",
+        "recently-updated",
+        "github-buttons",
+        "prism",
+        "-highlight",
+	"-lunr",
+	"-search",
+	"search-plus"
+    ],
+    "pluginsConfig": {
+	"page-toc": {
+	     "selector": ".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4",
+	     "position": "before-first",
+	     "showByDefault": true
+	},
+        "github-buttons": {
+            "buttons": [
+                {
+                    "user": "AdobeXD",
+                    "repo": "Plugin-Docs",
+                    "type": "star",
+                    "size": "small"
+                },
+                {
+                    "user": "AdobeXD",
+                    "type": "follow",
+                    "width": "130",
+                    "count": false,
+                    "size": "small"
+                }
+            ]
+        }
+    }
+}
