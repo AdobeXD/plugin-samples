@@ -68,7 +68,7 @@ footer {
     flex-direction: row;
     align-content: center;
     border-radius: 4px;
-    /*background-color: #F5F5F5;*/ /* without this, the checkboxes don't show up when we scroll! */
+    background-color: #F5F5F5; /* without this, the checkboxes don't show up when we scroll! */
 }
 
 :local(.resultRowImageWrapper) {
