@@ -1,6 +1,7 @@
-## HTMLDialogElement
-**Signature:** HTMLDialogElement ⇐ [`HTMLElement`](#htmlelement)
 
+<a name="htmldialogelement" id="htmldialogelement"></a>
+
+## HTMLDialogElement ⇐ [`HTMLElement`](#htmlelement)
 **Kind**: global class  
 **Extends**: [`HTMLElement`](#htmlelement)  
 **Access**: public  
@@ -9,7 +10,7 @@
 * [HTMLDialogElement](#htmldialogelement) ⇐ [`HTMLElement`](#htmlelement)
     * [new HTMLDialogElement(document, nodeName, namespaceURI)](#new-htmldialogelement-new)
     * [.open](#htmldialogelement-open) : `boolean`
-    * [.returnValue](#htmldialogelement-returnvalue) : `*`
+    * [.returnValue](#htmldialogelement-returnvalue) : `\*`
     * [.nodeName](#element-nodename) : `string`
     * [.localName](#element-localname) : `string`
     * [.tagName](#element-tagname) : `string`
@@ -59,14 +60,14 @@
     * [.setAttribute(name, value)](#element-setattribute)
     * [.removeAttribute(name)](#element-removeattribute)
     * [.hasAttribute(name)](#element-hasattribute) ⇒ `boolean`
-    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `*`
+    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `\*`
     * [.setAttributeNode(newAttr)](#element-setattributenode)
     * [.removeAttributeNode(oldAttr)](#element-removeattributenode)
     * [.getElementsByClassName(name)](#element-getelementsbyclassname) ⇒ [`NodeList`](#nodelist)
     * [.getElementsByTagName(name)](#element-getelementsbytagname) ⇒ [`NodeList`](#nodelist)
     * [.querySelector(selector)](#element-queryselector) ⇒ [`Element`](#element)
     * [.querySelectorAll(selector)](#element-queryselectorall) ⇒ [`NodeList`](#nodelist)
-    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `*`
+    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `\*`
     * [.insertAdjacentHTML(position, value)](#element-insertadjacenthtml)
     * [.insertAdjacentElement(position, node)](#element-insertadjacentelement) ⇒ [`Node`](#node)
     * [.insertAdjacentText(position, text)](#element-insertadjacenttext)
@@ -84,260 +85,310 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
-### new HTMLDialogElement
-**Signature:** new HTMLDialogElement(document, nodeName, namespaceURI)
 
+<a name="new-htmldialogelement-new" id="new-htmldialogelement-new"></a>
+
+### new HTMLDialogElement(document, nodeName, namespaceURI)
 Creates an instance of HTMLDialogElement.
 
 
 | Param | Type |
 | --- | --- |
-| document | `*` | 
-| nodeName | `*` | 
-| namespaceURI | `*` | 
+| document | `\*` | 
+| nodeName | `\*` | 
+| namespaceURI | `\*` | 
 
-### htmlDialogElement.open
-**Signature:** htmlDialogElement.open : `boolean`
 
+<a name="htmldialogelement-open" id="htmldialogelement-open"></a>
+
+### htmlDialogElement.open : `boolean`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.returnValue
-**Signature:** htmlDialogElement.returnValue : `*`
 
+<a name="htmldialogelement-returnvalue" id="htmldialogelement-returnvalue"></a>
+
+### htmlDialogElement.returnValue : `\*`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
-### htmlDialogElement.nodeName
-**Signature:** htmlDialogElement.nodeName : `string`
 
-**Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
-**Read only**: true  
-### htmlDialogElement.localName
-**Signature:** htmlDialogElement.localName : `string`
+<a name="element-nodename" id="element-nodename"></a>
 
+### htmlDialogElement.nodeName : `string`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.tagName
-**Signature:** htmlDialogElement.tagName : `string`
 
+<a name="element-localname" id="element-localname"></a>
+
+### htmlDialogElement.localName : `string`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.nodeType
-**Signature:** htmlDialogElement.nodeType : `number`
 
+<a name="element-tagname" id="element-tagname"></a>
+
+### htmlDialogElement.tagName : `string`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.namespaceURI
-**Signature:** htmlDialogElement.namespaceURI : `string`
 
+<a name="element-nodetype" id="element-nodetype"></a>
+
+### htmlDialogElement.nodeType : `number`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.id
-**Signature:** htmlDialogElement.id : `string`
 
-**Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
-### htmlDialogElement.className
-**Signature:** htmlDialogElement.className : `string`
+<a name="element-namespaceuri" id="element-namespaceuri"></a>
 
-**Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
-### htmlDialogElement.attributes
-**Signature:** htmlDialogElement.attributes : [`NamedNodeMap`](#namednodemap)
-
+### htmlDialogElement.namespaceURI : `string`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.style
-**Signature:** htmlDialogElement.style : `Style`
 
+<a name="element-id" id="element-id"></a>
+
+### htmlDialogElement.id : `string`
+**Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
+
+<a name="element-classname" id="element-classname"></a>
+
+### htmlDialogElement.className : `string`
+**Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
+
+<a name="element-attributes" id="element-attributes"></a>
+
+### htmlDialogElement.attributes : [`NamedNodeMap`](#namednodemap)
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.clientLeft
-**Signature:** htmlDialogElement.clientLeft : `number`
 
+<a name="element-style" id="element-style"></a>
+
+### htmlDialogElement.style : `Style`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.clientTop
-**Signature:** htmlDialogElement.clientTop : `number`
 
+<a name="element-clientleft" id="element-clientleft"></a>
+
+### htmlDialogElement.clientLeft : `number`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.clientWidth
-**Signature:** htmlDialogElement.clientWidth : `number`
 
+<a name="element-clienttop" id="element-clienttop"></a>
+
+### htmlDialogElement.clientTop : `number`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.clientHeight
-**Signature:** htmlDialogElement.clientHeight : `number`
 
+<a name="element-clientwidth" id="element-clientwidth"></a>
+
+### htmlDialogElement.clientWidth : `number`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.offsetLeft
-**Signature:** htmlDialogElement.offsetLeft : `number`
 
+<a name="element-clientheight" id="element-clientheight"></a>
+
+### htmlDialogElement.clientHeight : `number`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.offsetTop
-**Signature:** htmlDialogElement.offsetTop : `number`
 
+<a name="element-offsetleft" id="element-offsetleft"></a>
+
+### htmlDialogElement.offsetLeft : `number`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.offsetWidth
-**Signature:** htmlDialogElement.offsetWidth : `number`
 
+<a name="element-offsettop" id="element-offsettop"></a>
+
+### htmlDialogElement.offsetTop : `number`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.offsetHeight
-**Signature:** htmlDialogElement.offsetHeight : `number`
 
+<a name="element-offsetwidth" id="element-offsetwidth"></a>
+
+### htmlDialogElement.offsetWidth : `number`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.scrollLeft
-**Signature:** htmlDialogElement.scrollLeft : `number`
 
-**Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
-### htmlDialogElement.scrollTop
-**Signature:** htmlDialogElement.scrollTop : `number`
+<a name="element-offsetheight" id="element-offsetheight"></a>
 
-**Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
-### htmlDialogElement.scrollWidth
-**Signature:** htmlDialogElement.scrollWidth : `number`
-
+### htmlDialogElement.offsetHeight : `number`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.scrollHeight
-**Signature:** htmlDialogElement.scrollHeight : `number`
 
+<a name="element-scrollleft" id="element-scrollleft"></a>
+
+### htmlDialogElement.scrollLeft : `number`
+**Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
+
+<a name="element-scrolltop" id="element-scrolltop"></a>
+
+### htmlDialogElement.scrollTop : `number`
+**Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
+
+<a name="element-scrollwidth" id="element-scrollwidth"></a>
+
+### htmlDialogElement.scrollWidth : `number`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.disabled
-**Signature:** htmlDialogElement.disabled : `boolean`
 
-**Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
-### htmlDialogElement.innerHTML
-**Signature:** htmlDialogElement.innerHTML : `string`
+<a name="element-scrollheight" id="element-scrollheight"></a>
 
+### htmlDialogElement.scrollHeight : `number`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
-### htmlDialogElement.outerHTML
-**Signature:** htmlDialogElement.outerHTML : `string`
+**Read only**: true  
 
+<a name="element-disabled" id="element-disabled"></a>
+
+### htmlDialogElement.disabled : `boolean`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
+
+<a name="element-innerhtml" id="element-innerhtml"></a>
+
+### htmlDialogElement.innerHTML : `string`
+**Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
+
+<a name="element-outerhtml" id="element-outerhtml"></a>
+
+### htmlDialogElement.outerHTML : `string`
+**Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
+
+<a name="node-contenteditable" id="node-contenteditable"></a>
+
 ### htmlDialogElement.contentEditable
-**Signature:** htmlDialogElement.contentEditable
-
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.isConnected
-**Signature:** htmlDialogElement.isConnected : `boolean`
 
+<a name="node-isconnected" id="node-isconnected"></a>
+
+### htmlDialogElement.isConnected : `boolean`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.parentNode
-**Signature:** htmlDialogElement.parentNode : [`Node`](#node)
 
+<a name="node-parentnode" id="node-parentnode"></a>
+
+### htmlDialogElement.parentNode : [`Node`](#node)
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.firstChild
-**Signature:** htmlDialogElement.firstChild : [`Node`](#node)
 
+<a name="node-firstchild" id="node-firstchild"></a>
+
+### htmlDialogElement.firstChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.lastChild
-**Signature:** htmlDialogElement.lastChild : [`Node`](#node)
 
+<a name="node-lastchild" id="node-lastchild"></a>
+
+### htmlDialogElement.lastChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.previousSibling
-**Signature:** htmlDialogElement.previousSibling : [`Node`](#node)
 
+<a name="node-previoussibling" id="node-previoussibling"></a>
+
+### htmlDialogElement.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.nextSibling
-**Signature:** htmlDialogElement.nextSibling : [`Node`](#node)
 
+<a name="node-nextsibling" id="node-nextsibling"></a>
+
+### htmlDialogElement.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.firstElementChild
-**Signature:** htmlDialogElement.firstElementChild : [`Node`](#node)
 
+<a name="node-firstelementchild" id="node-firstelementchild"></a>
+
+### htmlDialogElement.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.lastElementChild
-**Signature:** htmlDialogElement.lastElementChild : [`Node`](#node)
 
+<a name="node-lastelementchild" id="node-lastelementchild"></a>
+
+### htmlDialogElement.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.previousElementSibling
-**Signature:** htmlDialogElement.previousElementSibling : [`Node`](#node)
 
+<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
+
+### htmlDialogElement.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.nextElementSibling
-**Signature:** htmlDialogElement.nextElementSibling : [`Node`](#node)
 
+<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
+
+### htmlDialogElement.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.textContent
-**Signature:** htmlDialogElement.textContent : `string`
 
+<a name="node-textcontent" id="node-textcontent"></a>
+
+### htmlDialogElement.textContent : `string`
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
-### htmlDialogElement.childNodes
-**Signature:** htmlDialogElement.childNodes : [`NodeList`](#nodelist)
 
+<a name="node-childnodes" id="node-childnodes"></a>
+
+### htmlDialogElement.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
+
+<a name="node-ownerdocument" id="node-ownerdocument"></a>
+
 ### htmlDialogElement.ownerDocument
-**Signature:** htmlDialogElement.ownerDocument
-
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
+
+<a name="node-offsetparent" id="node-offsetparent"></a>
+
 ### htmlDialogElement.offsetParent
-**Signature:** htmlDialogElement.offsetParent
-
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 **Read only**: true  
-### htmlDialogElement.showModal
-**Signature:** htmlDialogElement.showModal() ⇒ `Promise`
 
+<a name="htmldialogelement-showmodal" id="htmldialogelement-showmodal"></a>
+
+### htmlDialogElement.showModal() ⇒ `Promise`
 Show the modal dialog.
 
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 **Returns**: `Promise` - A promise that resolves when the dialog is closed (**NSC**)  
-### htmlDialogElement.close
-**Signature:** htmlDialogElement.close([returnValue])
 
+<a name="htmldialogelement-close" id="htmldialogelement-close"></a>
+
+### htmlDialogElement.close([returnValue])
 Closes the dialog; setting the return value (optional)
 
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
-| [returnValue] | `*` | 
+| [returnValue] | `\*` | 
 
-### htmlDialogElement.scrollIntoView
-**Signature:** htmlDialogElement.scrollIntoView()
 
+<a name="element-scrollintoview" id="element-scrollintoview"></a>
+
+### htmlDialogElement.scrollIntoView()
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
-### htmlDialogElement.scrollIntoViewIfNeeded
-**Signature:** htmlDialogElement.scrollIntoViewIfNeeded()
 
+<a name="element-scrollintoviewifneeded" id="element-scrollintoviewifneeded"></a>
+
+### htmlDialogElement.scrollIntoViewIfNeeded()
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
-### htmlDialogElement.focus
-**Signature:** htmlDialogElement.focus()
 
+<a name="element-focus" id="element-focus"></a>
+
+### htmlDialogElement.focus()
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
-### htmlDialogElement.blur
-**Signature:** htmlDialogElement.blur()
 
+<a name="element-blur" id="element-blur"></a>
+
+### htmlDialogElement.blur()
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
-### htmlDialogElement.getAttribute
-**Signature:** htmlDialogElement.getAttribute(name) ⇒ `string`
 
+<a name="element-getattribute" id="element-getattribute"></a>
+
+### htmlDialogElement.getAttribute(name) ⇒ `string`
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlDialogElement.setAttribute
-**Signature:** htmlDialogElement.setAttribute(name, value)
 
+<a name="element-setattribute" id="element-setattribute"></a>
+
+### htmlDialogElement.setAttribute(name, value)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
@@ -345,94 +396,105 @@ Closes the dialog; setting the return value (optional)
 | name | `string` | 
 | value | `string` | 
 
-### htmlDialogElement.removeAttribute
-**Signature:** htmlDialogElement.removeAttribute(name)
 
+<a name="element-removeattribute" id="element-removeattribute"></a>
+
+### htmlDialogElement.removeAttribute(name)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlDialogElement.hasAttribute
-**Signature:** htmlDialogElement.hasAttribute(name) ⇒ `boolean`
 
+<a name="element-hasattribute" id="element-hasattribute"></a>
+
+### htmlDialogElement.hasAttribute(name) ⇒ `boolean`
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlDialogElement.getAttributeNode
-**Signature:** htmlDialogElement.getAttributeNode(name) ⇒ `*`
 
+<a name="element-getattributenode" id="element-getattributenode"></a>
+
+### htmlDialogElement.getAttributeNode(name) ⇒ `\*`
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlDialogElement.setAttributeNode
-**Signature:** htmlDialogElement.setAttributeNode(newAttr)
 
+<a name="element-setattributenode" id="element-setattributenode"></a>
+
+### htmlDialogElement.setAttributeNode(newAttr)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
-| newAttr | `*` | 
+| newAttr | `\*` | 
 
-### htmlDialogElement.removeAttributeNode
-**Signature:** htmlDialogElement.removeAttributeNode(oldAttr)
 
+<a name="element-removeattributenode" id="element-removeattributenode"></a>
+
+### htmlDialogElement.removeAttributeNode(oldAttr)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
-| oldAttr | `*` | 
+| oldAttr | `\*` | 
 
-### htmlDialogElement.getElementsByClassName
-**Signature:** htmlDialogElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 
-**Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
+<a name="element-getelementsbyclassname" id="element-getelementsbyclassname"></a>
 
-| Param | Type |
-| --- | --- |
-| name | `string` | 
-
-### htmlDialogElement.getElementsByTagName
-**Signature:** htmlDialogElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
-
+### htmlDialogElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlDialogElement.querySelector
-**Signature:** htmlDialogElement.querySelector(selector) ⇒ [`Element`](#element)
 
+<a name="element-getelementsbytagname" id="element-getelementsbytagname"></a>
+
+### htmlDialogElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
+**Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
+
+| Param | Type |
+| --- | --- |
+| name | `string` | 
+
+
+<a name="element-queryselector" id="element-queryselector"></a>
+
+### htmlDialogElement.querySelector(selector) ⇒ [`Element`](#element)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
-### htmlDialogElement.querySelectorAll
-**Signature:** htmlDialogElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 
+<a name="element-queryselectorall" id="element-queryselectorall"></a>
+
+### htmlDialogElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
-### htmlDialogElement.getBoundingClientRect
-**Signature:** htmlDialogElement.getBoundingClientRect() ⇒ `*`
 
+<a name="element-getboundingclientrect" id="element-getboundingclientrect"></a>
+
+### htmlDialogElement.getBoundingClientRect() ⇒ `\*`
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
-### htmlDialogElement.insertAdjacentHTML
-**Signature:** htmlDialogElement.insertAdjacentHTML(position, value)
 
+<a name="element-insertadjacenthtml" id="element-insertadjacenthtml"></a>
+
+### htmlDialogElement.insertAdjacentHTML(position, value)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
@@ -440,51 +502,57 @@ Closes the dialog; setting the return value (optional)
 | position |  | 
 | value | `string` | 
 
-### htmlDialogElement.insertAdjacentElement
-**Signature:** htmlDialogElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 
+<a name="element-insertadjacentelement" id="element-insertadjacentelement"></a>
+
+### htmlDialogElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `*` | 
-| node | `*` | 
+| position | `\*` | 
+| node | `\*` | 
 
-### htmlDialogElement.insertAdjacentText
-**Signature:** htmlDialogElement.insertAdjacentText(position, text)
 
+<a name="element-insertadjacenttext" id="element-insertadjacenttext"></a>
+
+### htmlDialogElement.insertAdjacentText(position, text)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `*` | 
-| text | `*` | 
+| position | `\*` | 
+| text | `\*` | 
 
-### htmlDialogElement.hasChildNodes
-**Signature:** htmlDialogElement.hasChildNodes() ⇒ `boolean`
 
+<a name="node-haschildnodes" id="node-haschildnodes"></a>
+
+### htmlDialogElement.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
-### htmlDialogElement.cloneNode
-**Signature:** htmlDialogElement.cloneNode(deep) ⇒ [`Node`](#node)
 
+<a name="node-clonenode" id="node-clonenode"></a>
+
+### htmlDialogElement.cloneNode(deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
 | deep | `boolean` | 
 
-### htmlDialogElement.appendChild
-**Signature:** htmlDialogElement.appendChild(child) ⇒ [`Node`](#node)
 
+<a name="node-appendchild" id="node-appendchild"></a>
+
+### htmlDialogElement.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
-### htmlDialogElement.insertBefore
-**Signature:** htmlDialogElement.insertBefore(child, before) ⇒ [`Node`](#node)
 
+<a name="node-insertbefore" id="node-insertbefore"></a>
+
+### htmlDialogElement.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
@@ -492,9 +560,10 @@ Closes the dialog; setting the return value (optional)
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
-### htmlDialogElement.replaceChild
-**Signature:** htmlDialogElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
+<a name="node-replacechild" id="node-replacechild"></a>
+
+### htmlDialogElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
@@ -502,74 +571,82 @@ Closes the dialog; setting the return value (optional)
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
-### htmlDialogElement.removeChild
-**Signature:** htmlDialogElement.removeChild(child) ⇒ [`Node`](#node)
 
+<a name="node-removechild" id="node-removechild"></a>
+
+### htmlDialogElement.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
-### htmlDialogElement.remove
-**Signature:** htmlDialogElement.remove()
 
-**Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
-### htmlDialogElement.before
-**Signature:** htmlDialogElement.before(...nodes)
+<a name="node-remove" id="node-remove"></a>
 
+### htmlDialogElement.remove()
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
+<a name="node-before" id="node-before"></a>
 
-### htmlDialogElement.after
-**Signature:** htmlDialogElement.after(...nodes)
-
+### htmlDialogElement.before(...nodes)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
-### htmlDialogElement.replaceWith
-**Signature:** htmlDialogElement.replaceWith(...nodes)
 
+<a name="node-after" id="node-after"></a>
+
+### htmlDialogElement.after(...nodes)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
-### htmlDialogElement.addEventListener
-**Signature:** htmlDialogElement.addEventListener(eventName, callback, [capture])
 
+<a name="node-replacewith" id="node-replacewith"></a>
+
+### htmlDialogElement.replaceWith(...nodes)
+**Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
+
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+
+<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+
+### htmlDialogElement.addEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `*` |  | 
-| callback | `*` |  | 
+| eventName | `\*` |  | 
+| callback | `\*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
-### htmlDialogElement.removeEventListener
-**Signature:** htmlDialogElement.removeEventListener(eventName, callback, [capture])
 
+<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
+
+### htmlDialogElement.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `*` |  | 
-| callback | `*` |  | 
+| eventName | `\*` |  | 
+| callback | `\*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
-### htmlDialogElement.dispatchEvent
-**Signature:** htmlDialogElement.dispatchEvent(event)
 
+<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
+
+### htmlDialogElement.dispatchEvent(event)
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
 
 | Param | Type |
 | --- | --- |
-| event | `*` | 
+| event | `\*` | 
 

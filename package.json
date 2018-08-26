@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "book:install": "gitbook install . $@",
-    "serve": "gitbook serve . $@"
+    "book:build": "gitbook build . $@",
+    "book:build:epub": "gitbook epub . $@",
+    "book:build:pdf": "gitbook pdf . $@",
+    "book:watch": "gitbook serve . $@"
   },
   "author": "",
   "license": "Apache-2.0",
@@ -26,6 +29,7 @@
     "gitbook-plugin-pretty-term": "^1.0.2",
     "gitbook-plugin-prism": "^2.4.0",
     "gitbook-plugin-recently-updated": "^1.0.1",
+    "gitbook-plugin-replace": "0.0.1",
     "gitbook-plugin-search-plus": "^1.0.3",
     "gitbook-plugin-styled-blockquotes": "^1.1.4",
     "gitbook-plugin-todo": "^0.1.3"

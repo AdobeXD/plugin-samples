@@ -1,6 +1,7 @@
-## HTMLTextAreaElement
-**Signature:** HTMLTextAreaElement ⇐ [`HTMLElement`](#htmlelement)
 
+<a name="htmltextareaelement" id="htmltextareaelement"></a>
+
+## HTMLTextAreaElement ⇐ [`HTMLElement`](#htmlelement)
 **Kind**: global class  
 **Extends**: [`HTMLElement`](#htmlelement)  
 **Access**: public  
@@ -58,14 +59,14 @@
     * [.setAttribute(name, value)](#element-setattribute)
     * [.removeAttribute(name)](#element-removeattribute)
     * [.hasAttribute(name)](#element-hasattribute) ⇒ `boolean`
-    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `*`
+    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `\*`
     * [.setAttributeNode(newAttr)](#element-setattributenode)
     * [.removeAttributeNode(oldAttr)](#element-removeattributenode)
     * [.getElementsByClassName(name)](#element-getelementsbyclassname) ⇒ [`NodeList`](#nodelist)
     * [.getElementsByTagName(name)](#element-getelementsbytagname) ⇒ [`NodeList`](#nodelist)
     * [.querySelector(selector)](#element-queryselector) ⇒ [`Element`](#element)
     * [.querySelectorAll(selector)](#element-queryselectorall) ⇒ [`NodeList`](#nodelist)
-    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `*`
+    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `\*`
     * [.insertAdjacentHTML(position, value)](#element-insertadjacenthtml)
     * [.insertAdjacentElement(position, node)](#element-insertadjacentelement) ⇒ [`Node`](#node)
     * [.insertAdjacentText(position, text)](#element-insertadjacenttext)
@@ -83,245 +84,294 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
-### new HTMLTextAreaElement
-**Signature:** new HTMLTextAreaElement(document, nodeName, namespaceURI)
 
+<a name="new-htmltextareaelement-new" id="new-htmltextareaelement-new"></a>
+
+### new HTMLTextAreaElement(document, nodeName, namespaceURI)
 Creates an instance of HTMLTextAreaElement.
 
 
 | Param | Type |
 | --- | --- |
-| document | `*` | 
-| nodeName | `*` | 
-| namespaceURI | `*` | 
+| document | `\*` | 
+| nodeName | `\*` | 
+| namespaceURI | `\*` | 
 
-### htmlTextAreaElement.value
-**Signature:** htmlTextAreaElement.value : `string`
 
+<a name="htmltextareaelement-value" id="htmltextareaelement-value"></a>
+
+### htmlTextAreaElement.value : `string`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.placeholder
-**Signature:** htmlTextAreaElement.placeholder : `string`
 
+<a name="htmltextareaelement-placeholder" id="htmltextareaelement-placeholder"></a>
+
+### htmlTextAreaElement.placeholder : `string`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.readOnly
-**Signature:** htmlTextAreaElement.readOnly : `boolean`
 
+<a name="htmltextareaelement-readonly" id="htmltextareaelement-readonly"></a>
+
+### htmlTextAreaElement.readOnly : `boolean`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.nodeName
-**Signature:** htmlTextAreaElement.nodeName : `string`
 
-**Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
-**Read only**: true  
-### htmlTextAreaElement.localName
-**Signature:** htmlTextAreaElement.localName : `string`
+<a name="element-nodename" id="element-nodename"></a>
 
-**Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
-**Read only**: true  
-### htmlTextAreaElement.tagName
-**Signature:** htmlTextAreaElement.tagName : `string`
-
+### htmlTextAreaElement.nodeName : `string`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.nodeType
-**Signature:** htmlTextAreaElement.nodeType : `number`
 
+<a name="element-localname" id="element-localname"></a>
+
+### htmlTextAreaElement.localName : `string`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.namespaceURI
-**Signature:** htmlTextAreaElement.namespaceURI : `string`
 
+<a name="element-tagname" id="element-tagname"></a>
+
+### htmlTextAreaElement.tagName : `string`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.id
-**Signature:** htmlTextAreaElement.id : `string`
 
-**Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.className
-**Signature:** htmlTextAreaElement.className : `string`
+<a name="element-nodetype" id="element-nodetype"></a>
 
-**Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.attributes
-**Signature:** htmlTextAreaElement.attributes : [`NamedNodeMap`](#namednodemap)
-
+### htmlTextAreaElement.nodeType : `number`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.style
-**Signature:** htmlTextAreaElement.style : `Style`
 
+<a name="element-namespaceuri" id="element-namespaceuri"></a>
+
+### htmlTextAreaElement.namespaceURI : `string`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.clientLeft
-**Signature:** htmlTextAreaElement.clientLeft : `number`
 
+<a name="element-id" id="element-id"></a>
+
+### htmlTextAreaElement.id : `string`
+**Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
+
+<a name="element-classname" id="element-classname"></a>
+
+### htmlTextAreaElement.className : `string`
+**Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
+
+<a name="element-attributes" id="element-attributes"></a>
+
+### htmlTextAreaElement.attributes : [`NamedNodeMap`](#namednodemap)
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.clientTop
-**Signature:** htmlTextAreaElement.clientTop : `number`
 
+<a name="element-style" id="element-style"></a>
+
+### htmlTextAreaElement.style : `Style`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.clientWidth
-**Signature:** htmlTextAreaElement.clientWidth : `number`
 
+<a name="element-clientleft" id="element-clientleft"></a>
+
+### htmlTextAreaElement.clientLeft : `number`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.clientHeight
-**Signature:** htmlTextAreaElement.clientHeight : `number`
 
+<a name="element-clienttop" id="element-clienttop"></a>
+
+### htmlTextAreaElement.clientTop : `number`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.offsetLeft
-**Signature:** htmlTextAreaElement.offsetLeft : `number`
 
+<a name="element-clientwidth" id="element-clientwidth"></a>
+
+### htmlTextAreaElement.clientWidth : `number`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.offsetTop
-**Signature:** htmlTextAreaElement.offsetTop : `number`
 
+<a name="element-clientheight" id="element-clientheight"></a>
+
+### htmlTextAreaElement.clientHeight : `number`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.offsetWidth
-**Signature:** htmlTextAreaElement.offsetWidth : `number`
 
+<a name="element-offsetleft" id="element-offsetleft"></a>
+
+### htmlTextAreaElement.offsetLeft : `number`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.offsetHeight
-**Signature:** htmlTextAreaElement.offsetHeight : `number`
 
+<a name="element-offsettop" id="element-offsettop"></a>
+
+### htmlTextAreaElement.offsetTop : `number`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.scrollLeft
-**Signature:** htmlTextAreaElement.scrollLeft : `number`
 
-**Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.scrollTop
-**Signature:** htmlTextAreaElement.scrollTop : `number`
+<a name="element-offsetwidth" id="element-offsetwidth"></a>
 
-**Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.scrollWidth
-**Signature:** htmlTextAreaElement.scrollWidth : `number`
-
+### htmlTextAreaElement.offsetWidth : `number`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.scrollHeight
-**Signature:** htmlTextAreaElement.scrollHeight : `number`
 
+<a name="element-offsetheight" id="element-offsetheight"></a>
+
+### htmlTextAreaElement.offsetHeight : `number`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.disabled
-**Signature:** htmlTextAreaElement.disabled : `boolean`
 
-**Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.innerHTML
-**Signature:** htmlTextAreaElement.innerHTML : `string`
+<a name="element-scrollleft" id="element-scrollleft"></a>
 
+### htmlTextAreaElement.scrollLeft : `number`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.outerHTML
-**Signature:** htmlTextAreaElement.outerHTML : `string`
 
+<a name="element-scrolltop" id="element-scrolltop"></a>
+
+### htmlTextAreaElement.scrollTop : `number`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
+
+<a name="element-scrollwidth" id="element-scrollwidth"></a>
+
+### htmlTextAreaElement.scrollWidth : `number`
+**Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
+**Read only**: true  
+
+<a name="element-scrollheight" id="element-scrollheight"></a>
+
+### htmlTextAreaElement.scrollHeight : `number`
+**Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
+**Read only**: true  
+
+<a name="element-disabled" id="element-disabled"></a>
+
+### htmlTextAreaElement.disabled : `boolean`
+**Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
+
+<a name="element-innerhtml" id="element-innerhtml"></a>
+
+### htmlTextAreaElement.innerHTML : `string`
+**Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
+
+<a name="element-outerhtml" id="element-outerhtml"></a>
+
+### htmlTextAreaElement.outerHTML : `string`
+**Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
+
+<a name="node-contenteditable" id="node-contenteditable"></a>
+
 ### htmlTextAreaElement.contentEditable
-**Signature:** htmlTextAreaElement.contentEditable
-
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.isConnected
-**Signature:** htmlTextAreaElement.isConnected : `boolean`
 
+<a name="node-isconnected" id="node-isconnected"></a>
+
+### htmlTextAreaElement.isConnected : `boolean`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.parentNode
-**Signature:** htmlTextAreaElement.parentNode : [`Node`](#node)
 
+<a name="node-parentnode" id="node-parentnode"></a>
+
+### htmlTextAreaElement.parentNode : [`Node`](#node)
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.firstChild
-**Signature:** htmlTextAreaElement.firstChild : [`Node`](#node)
 
+<a name="node-firstchild" id="node-firstchild"></a>
+
+### htmlTextAreaElement.firstChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.lastChild
-**Signature:** htmlTextAreaElement.lastChild : [`Node`](#node)
 
+<a name="node-lastchild" id="node-lastchild"></a>
+
+### htmlTextAreaElement.lastChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.previousSibling
-**Signature:** htmlTextAreaElement.previousSibling : [`Node`](#node)
 
+<a name="node-previoussibling" id="node-previoussibling"></a>
+
+### htmlTextAreaElement.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.nextSibling
-**Signature:** htmlTextAreaElement.nextSibling : [`Node`](#node)
 
+<a name="node-nextsibling" id="node-nextsibling"></a>
+
+### htmlTextAreaElement.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.firstElementChild
-**Signature:** htmlTextAreaElement.firstElementChild : [`Node`](#node)
 
+<a name="node-firstelementchild" id="node-firstelementchild"></a>
+
+### htmlTextAreaElement.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.lastElementChild
-**Signature:** htmlTextAreaElement.lastElementChild : [`Node`](#node)
 
+<a name="node-lastelementchild" id="node-lastelementchild"></a>
+
+### htmlTextAreaElement.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.previousElementSibling
-**Signature:** htmlTextAreaElement.previousElementSibling : [`Node`](#node)
 
+<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
+
+### htmlTextAreaElement.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.nextElementSibling
-**Signature:** htmlTextAreaElement.nextElementSibling : [`Node`](#node)
 
+<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
+
+### htmlTextAreaElement.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.textContent
-**Signature:** htmlTextAreaElement.textContent : `string`
 
+<a name="node-textcontent" id="node-textcontent"></a>
+
+### htmlTextAreaElement.textContent : `string`
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.childNodes
-**Signature:** htmlTextAreaElement.childNodes : [`NodeList`](#nodelist)
 
+<a name="node-childnodes" id="node-childnodes"></a>
+
+### htmlTextAreaElement.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
+
+<a name="node-ownerdocument" id="node-ownerdocument"></a>
+
 ### htmlTextAreaElement.ownerDocument
-**Signature:** htmlTextAreaElement.ownerDocument
-
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
+
+<a name="node-offsetparent" id="node-offsetparent"></a>
+
 ### htmlTextAreaElement.offsetParent
-**Signature:** htmlTextAreaElement.offsetParent
-
 **Kind**: instance property of [`HTMLTextAreaElement`](#htmltextareaelement)  
 **Read only**: true  
-### htmlTextAreaElement.scrollIntoView
-**Signature:** htmlTextAreaElement.scrollIntoView()
 
+<a name="element-scrollintoview" id="element-scrollintoview"></a>
+
+### htmlTextAreaElement.scrollIntoView()
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.scrollIntoViewIfNeeded
-**Signature:** htmlTextAreaElement.scrollIntoViewIfNeeded()
 
+<a name="element-scrollintoviewifneeded" id="element-scrollintoviewifneeded"></a>
+
+### htmlTextAreaElement.scrollIntoViewIfNeeded()
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.focus
-**Signature:** htmlTextAreaElement.focus()
 
+<a name="element-focus" id="element-focus"></a>
+
+### htmlTextAreaElement.focus()
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.blur
-**Signature:** htmlTextAreaElement.blur()
 
+<a name="element-blur" id="element-blur"></a>
+
+### htmlTextAreaElement.blur()
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.getAttribute
-**Signature:** htmlTextAreaElement.getAttribute(name) ⇒ `string`
 
+<a name="element-getattribute" id="element-getattribute"></a>
+
+### htmlTextAreaElement.getAttribute(name) ⇒ `string`
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlTextAreaElement.setAttribute
-**Signature:** htmlTextAreaElement.setAttribute(name, value)
 
+<a name="element-setattribute" id="element-setattribute"></a>
+
+### htmlTextAreaElement.setAttribute(name, value)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
@@ -329,94 +379,105 @@ Creates an instance of HTMLTextAreaElement.
 | name | `string` | 
 | value | `string` | 
 
-### htmlTextAreaElement.removeAttribute
-**Signature:** htmlTextAreaElement.removeAttribute(name)
 
+<a name="element-removeattribute" id="element-removeattribute"></a>
+
+### htmlTextAreaElement.removeAttribute(name)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlTextAreaElement.hasAttribute
-**Signature:** htmlTextAreaElement.hasAttribute(name) ⇒ `boolean`
 
+<a name="element-hasattribute" id="element-hasattribute"></a>
+
+### htmlTextAreaElement.hasAttribute(name) ⇒ `boolean`
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlTextAreaElement.getAttributeNode
-**Signature:** htmlTextAreaElement.getAttributeNode(name) ⇒ `*`
 
+<a name="element-getattributenode" id="element-getattributenode"></a>
+
+### htmlTextAreaElement.getAttributeNode(name) ⇒ `\*`
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlTextAreaElement.setAttributeNode
-**Signature:** htmlTextAreaElement.setAttributeNode(newAttr)
 
+<a name="element-setattributenode" id="element-setattributenode"></a>
+
+### htmlTextAreaElement.setAttributeNode(newAttr)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
-| newAttr | `*` | 
+| newAttr | `\*` | 
 
-### htmlTextAreaElement.removeAttributeNode
-**Signature:** htmlTextAreaElement.removeAttributeNode(oldAttr)
 
+<a name="element-removeattributenode" id="element-removeattributenode"></a>
+
+### htmlTextAreaElement.removeAttributeNode(oldAttr)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
-| oldAttr | `*` | 
+| oldAttr | `\*` | 
 
-### htmlTextAreaElement.getElementsByClassName
-**Signature:** htmlTextAreaElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 
-**Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
+<a name="element-getelementsbyclassname" id="element-getelementsbyclassname"></a>
 
-| Param | Type |
-| --- | --- |
-| name | `string` | 
-
-### htmlTextAreaElement.getElementsByTagName
-**Signature:** htmlTextAreaElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
-
+### htmlTextAreaElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlTextAreaElement.querySelector
-**Signature:** htmlTextAreaElement.querySelector(selector) ⇒ [`Element`](#element)
 
+<a name="element-getelementsbytagname" id="element-getelementsbytagname"></a>
+
+### htmlTextAreaElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
+**Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
+
+| Param | Type |
+| --- | --- |
+| name | `string` | 
+
+
+<a name="element-queryselector" id="element-queryselector"></a>
+
+### htmlTextAreaElement.querySelector(selector) ⇒ [`Element`](#element)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
-### htmlTextAreaElement.querySelectorAll
-**Signature:** htmlTextAreaElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 
+<a name="element-queryselectorall" id="element-queryselectorall"></a>
+
+### htmlTextAreaElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
-### htmlTextAreaElement.getBoundingClientRect
-**Signature:** htmlTextAreaElement.getBoundingClientRect() ⇒ `*`
 
+<a name="element-getboundingclientrect" id="element-getboundingclientrect"></a>
+
+### htmlTextAreaElement.getBoundingClientRect() ⇒ `\*`
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.insertAdjacentHTML
-**Signature:** htmlTextAreaElement.insertAdjacentHTML(position, value)
 
+<a name="element-insertadjacenthtml" id="element-insertadjacenthtml"></a>
+
+### htmlTextAreaElement.insertAdjacentHTML(position, value)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
@@ -424,51 +485,57 @@ Creates an instance of HTMLTextAreaElement.
 | position |  | 
 | value | `string` | 
 
-### htmlTextAreaElement.insertAdjacentElement
-**Signature:** htmlTextAreaElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 
+<a name="element-insertadjacentelement" id="element-insertadjacentelement"></a>
+
+### htmlTextAreaElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `*` | 
-| node | `*` | 
+| position | `\*` | 
+| node | `\*` | 
 
-### htmlTextAreaElement.insertAdjacentText
-**Signature:** htmlTextAreaElement.insertAdjacentText(position, text)
 
+<a name="element-insertadjacenttext" id="element-insertadjacenttext"></a>
+
+### htmlTextAreaElement.insertAdjacentText(position, text)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `*` | 
-| text | `*` | 
+| position | `\*` | 
+| text | `\*` | 
 
-### htmlTextAreaElement.hasChildNodes
-**Signature:** htmlTextAreaElement.hasChildNodes() ⇒ `boolean`
 
+<a name="node-haschildnodes" id="node-haschildnodes"></a>
+
+### htmlTextAreaElement.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.cloneNode
-**Signature:** htmlTextAreaElement.cloneNode(deep) ⇒ [`Node`](#node)
 
+<a name="node-clonenode" id="node-clonenode"></a>
+
+### htmlTextAreaElement.cloneNode(deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
 | deep | `boolean` | 
 
-### htmlTextAreaElement.appendChild
-**Signature:** htmlTextAreaElement.appendChild(child) ⇒ [`Node`](#node)
 
+<a name="node-appendchild" id="node-appendchild"></a>
+
+### htmlTextAreaElement.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
-### htmlTextAreaElement.insertBefore
-**Signature:** htmlTextAreaElement.insertBefore(child, before) ⇒ [`Node`](#node)
 
+<a name="node-insertbefore" id="node-insertbefore"></a>
+
+### htmlTextAreaElement.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
@@ -476,9 +543,10 @@ Creates an instance of HTMLTextAreaElement.
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
-### htmlTextAreaElement.replaceChild
-**Signature:** htmlTextAreaElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
+<a name="node-replacechild" id="node-replacechild"></a>
+
+### htmlTextAreaElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
@@ -486,74 +554,82 @@ Creates an instance of HTMLTextAreaElement.
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
-### htmlTextAreaElement.removeChild
-**Signature:** htmlTextAreaElement.removeChild(child) ⇒ [`Node`](#node)
 
+<a name="node-removechild" id="node-removechild"></a>
+
+### htmlTextAreaElement.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
-### htmlTextAreaElement.remove
-**Signature:** htmlTextAreaElement.remove()
 
-**Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
-### htmlTextAreaElement.before
-**Signature:** htmlTextAreaElement.before(...nodes)
+<a name="node-remove" id="node-remove"></a>
 
+### htmlTextAreaElement.remove()
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
+<a name="node-before" id="node-before"></a>
 
-### htmlTextAreaElement.after
-**Signature:** htmlTextAreaElement.after(...nodes)
-
+### htmlTextAreaElement.before(...nodes)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
-### htmlTextAreaElement.replaceWith
-**Signature:** htmlTextAreaElement.replaceWith(...nodes)
 
+<a name="node-after" id="node-after"></a>
+
+### htmlTextAreaElement.after(...nodes)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
-### htmlTextAreaElement.addEventListener
-**Signature:** htmlTextAreaElement.addEventListener(eventName, callback, [capture])
 
+<a name="node-replacewith" id="node-replacewith"></a>
+
+### htmlTextAreaElement.replaceWith(...nodes)
+**Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
+
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+
+<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+
+### htmlTextAreaElement.addEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `*` |  | 
-| callback | `*` |  | 
+| eventName | `\*` |  | 
+| callback | `\*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
-### htmlTextAreaElement.removeEventListener
-**Signature:** htmlTextAreaElement.removeEventListener(eventName, callback, [capture])
 
+<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
+
+### htmlTextAreaElement.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `*` |  | 
-| callback | `*` |  | 
+| eventName | `\*` |  | 
+| callback | `\*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
-### htmlTextAreaElement.dispatchEvent
-**Signature:** htmlTextAreaElement.dispatchEvent(event)
 
+<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
+
+### htmlTextAreaElement.dispatchEvent(event)
 **Kind**: instance method of [`HTMLTextAreaElement`](#htmltextareaelement)  
 
 | Param | Type |
 | --- | --- |
-| event | `*` | 
+| event | `\*` | 
 

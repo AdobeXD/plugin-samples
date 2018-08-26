@@ -1,6 +1,7 @@
-## HTMLAnchorElement
-**Signature:** HTMLAnchorElement ⇐ [`HTMLElement`](#htmlelement)
 
+<a name="htmlanchorelement" id="htmlanchorelement"></a>
+
+## HTMLAnchorElement ⇐ [`HTMLElement`](#htmlelement)
 **Kind**: global class  
 **Extends**: [`HTMLElement`](#htmlelement)  
 **Access**: public  
@@ -58,14 +59,14 @@
     * [.setAttribute(name, value)](#element-setattribute)
     * [.removeAttribute(name)](#element-removeattribute)
     * [.hasAttribute(name)](#element-hasattribute) ⇒ `boolean`
-    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `*`
+    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `\*`
     * [.setAttributeNode(newAttr)](#element-setattributenode)
     * [.removeAttributeNode(oldAttr)](#element-removeattributenode)
     * [.getElementsByClassName(name)](#element-getelementsbyclassname) ⇒ [`NodeList`](#nodelist)
     * [.getElementsByTagName(name)](#element-getelementsbytagname) ⇒ [`NodeList`](#nodelist)
     * [.querySelector(selector)](#element-queryselector) ⇒ [`Element`](#element)
     * [.querySelectorAll(selector)](#element-queryselectorall) ⇒ [`NodeList`](#nodelist)
-    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `*`
+    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `\*`
     * [.insertAdjacentHTML(position, value)](#element-insertadjacenthtml)
     * [.insertAdjacentElement(position, node)](#element-insertadjacentelement) ⇒ [`Node`](#node)
     * [.insertAdjacentText(position, text)](#element-insertadjacenttext)
@@ -83,253 +84,302 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
-### new HTMLAnchorElement
-**Signature:** new HTMLAnchorElement(document, nodeName, namespaceURI)
 
+<a name="new-htmlanchorelement-new" id="new-htmlanchorelement-new"></a>
+
+### new HTMLAnchorElement(document, nodeName, namespaceURI)
 Creates an instance of HTMLAnchorElement.
 
 
 | Param | Type |
 | --- | --- |
-| document | `*` | 
-| nodeName | `*` | 
-| namespaceURI | `*` | 
+| document | `\*` | 
+| nodeName | `\*` | 
+| namespaceURI | `\*` | 
 
-### htmlAnchorElement.href
-**Signature:** htmlAnchorElement.href : `string`
 
+<a name="htmlanchorelement-href" id="htmlanchorelement-href"></a>
+
+### htmlAnchorElement.href : `string`
 The `href` value for the anchor
 
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
-### htmlAnchorElement.pathname
-**Signature:** htmlAnchorElement.pathname : `string`
 
+<a name="htmlanchorelement-pathname" id="htmlanchorelement-pathname"></a>
+
+### htmlAnchorElement.pathname : `string`
 The path portion of the anchor's `href`
 
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.protocol
-**Signature:** htmlAnchorElement.protocol : `string`
 
+<a name="htmlanchorelement-protocol" id="htmlanchorelement-protocol"></a>
+
+### htmlAnchorElement.protocol : `string`
 The protocol portion of the anchor's `href`.
 
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.nodeName
-**Signature:** htmlAnchorElement.nodeName : `string`
 
+<a name="element-nodename" id="element-nodename"></a>
+
+### htmlAnchorElement.nodeName : `string`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.localName
-**Signature:** htmlAnchorElement.localName : `string`
 
+<a name="element-localname" id="element-localname"></a>
+
+### htmlAnchorElement.localName : `string`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.tagName
-**Signature:** htmlAnchorElement.tagName : `string`
 
+<a name="element-tagname" id="element-tagname"></a>
+
+### htmlAnchorElement.tagName : `string`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.nodeType
-**Signature:** htmlAnchorElement.nodeType : `number`
 
+<a name="element-nodetype" id="element-nodetype"></a>
+
+### htmlAnchorElement.nodeType : `number`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.namespaceURI
-**Signature:** htmlAnchorElement.namespaceURI : `string`
 
+<a name="element-namespaceuri" id="element-namespaceuri"></a>
+
+### htmlAnchorElement.namespaceURI : `string`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.id
-**Signature:** htmlAnchorElement.id : `string`
 
+<a name="element-id" id="element-id"></a>
+
+### htmlAnchorElement.id : `string`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
-### htmlAnchorElement.className
-**Signature:** htmlAnchorElement.className : `string`
 
+<a name="element-classname" id="element-classname"></a>
+
+### htmlAnchorElement.className : `string`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
-### htmlAnchorElement.attributes
-**Signature:** htmlAnchorElement.attributes : [`NamedNodeMap`](#namednodemap)
 
-**Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
-**Read only**: true  
-### htmlAnchorElement.style
-**Signature:** htmlAnchorElement.style : `Style`
+<a name="element-attributes" id="element-attributes"></a>
 
+### htmlAnchorElement.attributes : [`NamedNodeMap`](#namednodemap)
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.clientLeft
-**Signature:** htmlAnchorElement.clientLeft : `number`
 
+<a name="element-style" id="element-style"></a>
+
+### htmlAnchorElement.style : `Style`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.clientTop
-**Signature:** htmlAnchorElement.clientTop : `number`
 
+<a name="element-clientleft" id="element-clientleft"></a>
+
+### htmlAnchorElement.clientLeft : `number`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.clientWidth
-**Signature:** htmlAnchorElement.clientWidth : `number`
 
+<a name="element-clienttop" id="element-clienttop"></a>
+
+### htmlAnchorElement.clientTop : `number`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.clientHeight
-**Signature:** htmlAnchorElement.clientHeight : `number`
 
+<a name="element-clientwidth" id="element-clientwidth"></a>
+
+### htmlAnchorElement.clientWidth : `number`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.offsetLeft
-**Signature:** htmlAnchorElement.offsetLeft : `number`
 
+<a name="element-clientheight" id="element-clientheight"></a>
+
+### htmlAnchorElement.clientHeight : `number`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.offsetTop
-**Signature:** htmlAnchorElement.offsetTop : `number`
 
+<a name="element-offsetleft" id="element-offsetleft"></a>
+
+### htmlAnchorElement.offsetLeft : `number`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.offsetWidth
-**Signature:** htmlAnchorElement.offsetWidth : `number`
 
+<a name="element-offsettop" id="element-offsettop"></a>
+
+### htmlAnchorElement.offsetTop : `number`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.offsetHeight
-**Signature:** htmlAnchorElement.offsetHeight : `number`
 
+<a name="element-offsetwidth" id="element-offsetwidth"></a>
+
+### htmlAnchorElement.offsetWidth : `number`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.scrollLeft
-**Signature:** htmlAnchorElement.scrollLeft : `number`
 
-**Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
-### htmlAnchorElement.scrollTop
-**Signature:** htmlAnchorElement.scrollTop : `number`
+<a name="element-offsetheight" id="element-offsetheight"></a>
 
-**Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
-### htmlAnchorElement.scrollWidth
-**Signature:** htmlAnchorElement.scrollWidth : `number`
-
+### htmlAnchorElement.offsetHeight : `number`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.scrollHeight
-**Signature:** htmlAnchorElement.scrollHeight : `number`
 
+<a name="element-scrollleft" id="element-scrollleft"></a>
+
+### htmlAnchorElement.scrollLeft : `number`
+**Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
+
+<a name="element-scrolltop" id="element-scrolltop"></a>
+
+### htmlAnchorElement.scrollTop : `number`
+**Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
+
+<a name="element-scrollwidth" id="element-scrollwidth"></a>
+
+### htmlAnchorElement.scrollWidth : `number`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.disabled
-**Signature:** htmlAnchorElement.disabled : `boolean`
 
-**Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
-### htmlAnchorElement.innerHTML
-**Signature:** htmlAnchorElement.innerHTML : `string`
+<a name="element-scrollheight" id="element-scrollheight"></a>
 
+### htmlAnchorElement.scrollHeight : `number`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
-### htmlAnchorElement.outerHTML
-**Signature:** htmlAnchorElement.outerHTML : `string`
+**Read only**: true  
 
+<a name="element-disabled" id="element-disabled"></a>
+
+### htmlAnchorElement.disabled : `boolean`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
+
+<a name="element-innerhtml" id="element-innerhtml"></a>
+
+### htmlAnchorElement.innerHTML : `string`
+**Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
+
+<a name="element-outerhtml" id="element-outerhtml"></a>
+
+### htmlAnchorElement.outerHTML : `string`
+**Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
+
+<a name="node-contenteditable" id="node-contenteditable"></a>
+
 ### htmlAnchorElement.contentEditable
-**Signature:** htmlAnchorElement.contentEditable
-
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.isConnected
-**Signature:** htmlAnchorElement.isConnected : `boolean`
 
+<a name="node-isconnected" id="node-isconnected"></a>
+
+### htmlAnchorElement.isConnected : `boolean`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.parentNode
-**Signature:** htmlAnchorElement.parentNode : [`Node`](#node)
 
+<a name="node-parentnode" id="node-parentnode"></a>
+
+### htmlAnchorElement.parentNode : [`Node`](#node)
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.firstChild
-**Signature:** htmlAnchorElement.firstChild : [`Node`](#node)
 
+<a name="node-firstchild" id="node-firstchild"></a>
+
+### htmlAnchorElement.firstChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.lastChild
-**Signature:** htmlAnchorElement.lastChild : [`Node`](#node)
 
+<a name="node-lastchild" id="node-lastchild"></a>
+
+### htmlAnchorElement.lastChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.previousSibling
-**Signature:** htmlAnchorElement.previousSibling : [`Node`](#node)
 
+<a name="node-previoussibling" id="node-previoussibling"></a>
+
+### htmlAnchorElement.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.nextSibling
-**Signature:** htmlAnchorElement.nextSibling : [`Node`](#node)
 
+<a name="node-nextsibling" id="node-nextsibling"></a>
+
+### htmlAnchorElement.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.firstElementChild
-**Signature:** htmlAnchorElement.firstElementChild : [`Node`](#node)
 
+<a name="node-firstelementchild" id="node-firstelementchild"></a>
+
+### htmlAnchorElement.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.lastElementChild
-**Signature:** htmlAnchorElement.lastElementChild : [`Node`](#node)
 
+<a name="node-lastelementchild" id="node-lastelementchild"></a>
+
+### htmlAnchorElement.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.previousElementSibling
-**Signature:** htmlAnchorElement.previousElementSibling : [`Node`](#node)
 
+<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
+
+### htmlAnchorElement.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.nextElementSibling
-**Signature:** htmlAnchorElement.nextElementSibling : [`Node`](#node)
 
+<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
+
+### htmlAnchorElement.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.textContent
-**Signature:** htmlAnchorElement.textContent : `string`
 
+<a name="node-textcontent" id="node-textcontent"></a>
+
+### htmlAnchorElement.textContent : `string`
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
-### htmlAnchorElement.childNodes
-**Signature:** htmlAnchorElement.childNodes : [`NodeList`](#nodelist)
 
+<a name="node-childnodes" id="node-childnodes"></a>
+
+### htmlAnchorElement.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
+
+<a name="node-ownerdocument" id="node-ownerdocument"></a>
+
 ### htmlAnchorElement.ownerDocument
-**Signature:** htmlAnchorElement.ownerDocument
-
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
+
+<a name="node-offsetparent" id="node-offsetparent"></a>
+
 ### htmlAnchorElement.offsetParent
-**Signature:** htmlAnchorElement.offsetParent
-
 **Kind**: instance property of [`HTMLAnchorElement`](#htmlanchorelement)  
 **Read only**: true  
-### htmlAnchorElement.scrollIntoView
-**Signature:** htmlAnchorElement.scrollIntoView()
 
+<a name="element-scrollintoview" id="element-scrollintoview"></a>
+
+### htmlAnchorElement.scrollIntoView()
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
-### htmlAnchorElement.scrollIntoViewIfNeeded
-**Signature:** htmlAnchorElement.scrollIntoViewIfNeeded()
 
+<a name="element-scrollintoviewifneeded" id="element-scrollintoviewifneeded"></a>
+
+### htmlAnchorElement.scrollIntoViewIfNeeded()
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
-### htmlAnchorElement.focus
-**Signature:** htmlAnchorElement.focus()
 
+<a name="element-focus" id="element-focus"></a>
+
+### htmlAnchorElement.focus()
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
-### htmlAnchorElement.blur
-**Signature:** htmlAnchorElement.blur()
 
+<a name="element-blur" id="element-blur"></a>
+
+### htmlAnchorElement.blur()
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
-### htmlAnchorElement.getAttribute
-**Signature:** htmlAnchorElement.getAttribute(name) ⇒ `string`
 
+<a name="element-getattribute" id="element-getattribute"></a>
+
+### htmlAnchorElement.getAttribute(name) ⇒ `string`
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlAnchorElement.setAttribute
-**Signature:** htmlAnchorElement.setAttribute(name, value)
 
+<a name="element-setattribute" id="element-setattribute"></a>
+
+### htmlAnchorElement.setAttribute(name, value)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
@@ -337,94 +387,105 @@ The protocol portion of the anchor's `href`.
 | name | `string` | 
 | value | `string` | 
 
-### htmlAnchorElement.removeAttribute
-**Signature:** htmlAnchorElement.removeAttribute(name)
 
+<a name="element-removeattribute" id="element-removeattribute"></a>
+
+### htmlAnchorElement.removeAttribute(name)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlAnchorElement.hasAttribute
-**Signature:** htmlAnchorElement.hasAttribute(name) ⇒ `boolean`
 
+<a name="element-hasattribute" id="element-hasattribute"></a>
+
+### htmlAnchorElement.hasAttribute(name) ⇒ `boolean`
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlAnchorElement.getAttributeNode
-**Signature:** htmlAnchorElement.getAttributeNode(name) ⇒ `*`
 
+<a name="element-getattributenode" id="element-getattributenode"></a>
+
+### htmlAnchorElement.getAttributeNode(name) ⇒ `\*`
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlAnchorElement.setAttributeNode
-**Signature:** htmlAnchorElement.setAttributeNode(newAttr)
 
+<a name="element-setattributenode" id="element-setattributenode"></a>
+
+### htmlAnchorElement.setAttributeNode(newAttr)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
-| newAttr | `*` | 
+| newAttr | `\*` | 
 
-### htmlAnchorElement.removeAttributeNode
-**Signature:** htmlAnchorElement.removeAttributeNode(oldAttr)
 
+<a name="element-removeattributenode" id="element-removeattributenode"></a>
+
+### htmlAnchorElement.removeAttributeNode(oldAttr)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
-| oldAttr | `*` | 
+| oldAttr | `\*` | 
 
-### htmlAnchorElement.getElementsByClassName
-**Signature:** htmlAnchorElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 
-**Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
+<a name="element-getelementsbyclassname" id="element-getelementsbyclassname"></a>
 
-| Param | Type |
-| --- | --- |
-| name | `string` | 
-
-### htmlAnchorElement.getElementsByTagName
-**Signature:** htmlAnchorElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
-
+### htmlAnchorElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlAnchorElement.querySelector
-**Signature:** htmlAnchorElement.querySelector(selector) ⇒ [`Element`](#element)
 
+<a name="element-getelementsbytagname" id="element-getelementsbytagname"></a>
+
+### htmlAnchorElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
+**Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
+
+| Param | Type |
+| --- | --- |
+| name | `string` | 
+
+
+<a name="element-queryselector" id="element-queryselector"></a>
+
+### htmlAnchorElement.querySelector(selector) ⇒ [`Element`](#element)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
-### htmlAnchorElement.querySelectorAll
-**Signature:** htmlAnchorElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 
+<a name="element-queryselectorall" id="element-queryselectorall"></a>
+
+### htmlAnchorElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
-### htmlAnchorElement.getBoundingClientRect
-**Signature:** htmlAnchorElement.getBoundingClientRect() ⇒ `*`
 
+<a name="element-getboundingclientrect" id="element-getboundingclientrect"></a>
+
+### htmlAnchorElement.getBoundingClientRect() ⇒ `\*`
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
-### htmlAnchorElement.insertAdjacentHTML
-**Signature:** htmlAnchorElement.insertAdjacentHTML(position, value)
 
+<a name="element-insertadjacenthtml" id="element-insertadjacenthtml"></a>
+
+### htmlAnchorElement.insertAdjacentHTML(position, value)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
@@ -432,51 +493,57 @@ The protocol portion of the anchor's `href`.
 | position |  | 
 | value | `string` | 
 
-### htmlAnchorElement.insertAdjacentElement
-**Signature:** htmlAnchorElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 
+<a name="element-insertadjacentelement" id="element-insertadjacentelement"></a>
+
+### htmlAnchorElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `*` | 
-| node | `*` | 
+| position | `\*` | 
+| node | `\*` | 
 
-### htmlAnchorElement.insertAdjacentText
-**Signature:** htmlAnchorElement.insertAdjacentText(position, text)
 
+<a name="element-insertadjacenttext" id="element-insertadjacenttext"></a>
+
+### htmlAnchorElement.insertAdjacentText(position, text)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `*` | 
-| text | `*` | 
+| position | `\*` | 
+| text | `\*` | 
 
-### htmlAnchorElement.hasChildNodes
-**Signature:** htmlAnchorElement.hasChildNodes() ⇒ `boolean`
 
+<a name="node-haschildnodes" id="node-haschildnodes"></a>
+
+### htmlAnchorElement.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
-### htmlAnchorElement.cloneNode
-**Signature:** htmlAnchorElement.cloneNode(deep) ⇒ [`Node`](#node)
 
+<a name="node-clonenode" id="node-clonenode"></a>
+
+### htmlAnchorElement.cloneNode(deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
 | deep | `boolean` | 
 
-### htmlAnchorElement.appendChild
-**Signature:** htmlAnchorElement.appendChild(child) ⇒ [`Node`](#node)
 
+<a name="node-appendchild" id="node-appendchild"></a>
+
+### htmlAnchorElement.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
-### htmlAnchorElement.insertBefore
-**Signature:** htmlAnchorElement.insertBefore(child, before) ⇒ [`Node`](#node)
 
+<a name="node-insertbefore" id="node-insertbefore"></a>
+
+### htmlAnchorElement.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
@@ -484,9 +551,10 @@ The protocol portion of the anchor's `href`.
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
-### htmlAnchorElement.replaceChild
-**Signature:** htmlAnchorElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
+<a name="node-replacechild" id="node-replacechild"></a>
+
+### htmlAnchorElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
@@ -494,74 +562,82 @@ The protocol portion of the anchor's `href`.
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
-### htmlAnchorElement.removeChild
-**Signature:** htmlAnchorElement.removeChild(child) ⇒ [`Node`](#node)
 
+<a name="node-removechild" id="node-removechild"></a>
+
+### htmlAnchorElement.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
-### htmlAnchorElement.remove
-**Signature:** htmlAnchorElement.remove()
 
-**Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
-### htmlAnchorElement.before
-**Signature:** htmlAnchorElement.before(...nodes)
+<a name="node-remove" id="node-remove"></a>
 
+### htmlAnchorElement.remove()
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
+<a name="node-before" id="node-before"></a>
 
-### htmlAnchorElement.after
-**Signature:** htmlAnchorElement.after(...nodes)
-
+### htmlAnchorElement.before(...nodes)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
-### htmlAnchorElement.replaceWith
-**Signature:** htmlAnchorElement.replaceWith(...nodes)
 
+<a name="node-after" id="node-after"></a>
+
+### htmlAnchorElement.after(...nodes)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
-### htmlAnchorElement.addEventListener
-**Signature:** htmlAnchorElement.addEventListener(eventName, callback, [capture])
 
+<a name="node-replacewith" id="node-replacewith"></a>
+
+### htmlAnchorElement.replaceWith(...nodes)
+**Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
+
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+
+<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+
+### htmlAnchorElement.addEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `*` |  | 
-| callback | `*` |  | 
+| eventName | `\*` |  | 
+| callback | `\*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
-### htmlAnchorElement.removeEventListener
-**Signature:** htmlAnchorElement.removeEventListener(eventName, callback, [capture])
 
+<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
+
+### htmlAnchorElement.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `*` |  | 
-| callback | `*` |  | 
+| eventName | `\*` |  | 
+| callback | `\*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
-### htmlAnchorElement.dispatchEvent
-**Signature:** htmlAnchorElement.dispatchEvent(event)
 
+<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
+
+### htmlAnchorElement.dispatchEvent(event)
 **Kind**: instance method of [`HTMLAnchorElement`](#htmlanchorelement)  
 
 | Param | Type |
 | --- | --- |
-| event | `*` | 
+| event | `\*` | 
 

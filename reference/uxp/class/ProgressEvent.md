@@ -1,6 +1,7 @@
-## ProgressEvent
-**Signature:** ProgressEvent ⇐ [`Event`](#event)
 
+<a name="progressevent" id="progressevent"></a>
+
+## ProgressEvent ⇐ [`Event`](#event)
 **Kind**: global class  
 **Extends**: [`Event`](#event)  
 **Access**: public  
@@ -20,112 +21,130 @@
         * [.cancelable](#event-cancelable) : `boolean`
         * [.eventPhase](#event-eventphase)
         * [.defaultPrevented](#event-defaultprevented) : `boolean`
-        * [.returnValue](#event-returnvalue) : `*`
+        * [.returnValue](#event-returnvalue) : `\*`
         * [.preventDefault()](#event-preventdefault)
         * [.stopImmediatePropagation()](#event-stopimmediatepropagation)
         * [.stopPropagation()](#event-stoppropagation)
     * _static_
-        * [.module.exports](#progresseventmoduleexports)
+        * [.module.exports](#progressevent-module-exports)
             * [new module.exports(typeArg, [eventInit])](#new_ProgressEvent.module.exports_new)
-        * [.lengthComputable](#progresseventlengthcomputable)
-        * [.loaded](#progresseventloaded)
-        * [.total](#progresseventtotal)
-        * [.initEvent(typeArg, bubbles, cancelable)](#progresseventinitevent)
+        * [.lengthComputable](#progressevent-lengthcomputable)
+        * [.loaded](#progressevent-loaded)
+        * [.total](#progressevent-total)
+        * [.initEvent(typeArg, bubbles, cancelable)](#progressevent-initevent)
+
+
+<a name="event-type" id="event-type"></a>
 
 ### progressEvent.type
-**Signature:** progressEvent.type
-
 **Kind**: instance property of [`ProgressEvent`](#progressevent)  
 **Read only**: true  
-### progressEvent.isTrusted
-**Signature:** progressEvent.isTrusted : `boolean`
 
+<a name="event-istrusted" id="event-istrusted"></a>
+
+### progressEvent.isTrusted : `boolean`
 **Kind**: instance property of [`ProgressEvent`](#progressevent)  
 **Read only**: true  
-### progressEvent.target
-**Signature:** progressEvent.target : [`Node`](#node)
 
+<a name="event-target" id="event-target"></a>
+
+### progressEvent.target : [`Node`](#node)
 **Kind**: instance property of [`ProgressEvent`](#progressevent)  
 **Read only**: true  
-### progressEvent.currentTarget
-**Signature:** progressEvent.currentTarget : [`Node`](#node)
 
+<a name="event-currenttarget" id="event-currenttarget"></a>
+
+### progressEvent.currentTarget : [`Node`](#node)
 **Kind**: instance property of [`ProgressEvent`](#progressevent)  
 **Read only**: true  
-### progressEvent.bubbles
-**Signature:** progressEvent.bubbles : `boolean`
 
+<a name="event-bubbles" id="event-bubbles"></a>
+
+### progressEvent.bubbles : `boolean`
 **Kind**: instance property of [`ProgressEvent`](#progressevent)  
 **Read only**: true  
-### progressEvent.cancelable
-**Signature:** progressEvent.cancelable : `boolean`
 
+<a name="event-cancelable" id="event-cancelable"></a>
+
+### progressEvent.cancelable : `boolean`
 **Kind**: instance property of [`ProgressEvent`](#progressevent)  
 **Read only**: true  
+
+<a name="event-eventphase" id="event-eventphase"></a>
+
 ### progressEvent.eventPhase
-**Signature:** progressEvent.eventPhase
-
 **Kind**: instance property of [`ProgressEvent`](#progressevent)  
 **Read only**: true  
-### progressEvent.defaultPrevented
-**Signature:** progressEvent.defaultPrevented : `boolean`
 
+<a name="event-defaultprevented" id="event-defaultprevented"></a>
+
+### progressEvent.defaultPrevented : `boolean`
 **Kind**: instance property of [`ProgressEvent`](#progressevent)  
 **Read only**: true  
-### progressEvent.returnValue
-**Signature:** progressEvent.returnValue : `*`
 
+<a name="event-returnvalue" id="event-returnvalue"></a>
+
+### progressEvent.returnValue : `\*`
 **Kind**: instance property of [`ProgressEvent`](#progressevent)  
-### progressEvent.preventDefault
-**Signature:** progressEvent.preventDefault()
 
-**Kind**: instance method of [`ProgressEvent`](#progressevent)  
-### progressEvent.stopImmediatePropagation
-**Signature:** progressEvent.stopImmediatePropagation()
+<a name="event-preventdefault" id="event-preventdefault"></a>
 
+### progressEvent.preventDefault()
 **Kind**: instance method of [`ProgressEvent`](#progressevent)  
-### progressEvent.stopPropagation
-**Signature:** progressEvent.stopPropagation()
 
+<a name="event-stopimmediatepropagation" id="event-stopimmediatepropagation"></a>
+
+### progressEvent.stopImmediatePropagation()
 **Kind**: instance method of [`ProgressEvent`](#progressevent)  
+
+<a name="event-stoppropagation" id="event-stoppropagation"></a>
+
+### progressEvent.stopPropagation()
+**Kind**: instance method of [`ProgressEvent`](#progressevent)  
+
+<a name="progressevent-module-exports" id="progressevent-module-exports"></a>
+
 ### ProgressEvent.module.exports
-**Signature:** ProgressEvent.module.exports
-
 **Kind**: static class of [`ProgressEvent`](#progressevent)  
-#### new module.exports
-**Signature:** new module.exports(typeArg, [eventInit])
 
+<a name="new-progressevent-module-exports-new" id="new-progressevent-module-exports-new"></a>
+
+#### new module.exports(typeArg, [eventInit])
 Creates an instance of ProgressEvent.
 
 
 | Param | Type | Default |
 | --- | --- | --- |
-| typeArg | `*` |  | 
-| [eventInit] | `*` | <code>{}</code> | 
+| typeArg | `\*` |  | 
+| [eventInit] | `\*` | <code>{}</code> | 
+
+
+<a name="progressevent-lengthcomputable" id="progressevent-lengthcomputable"></a>
 
 ### ProgressEvent.lengthComputable
-**Signature:** ProgressEvent.lengthComputable
-
 **Kind**: static property of [`ProgressEvent`](#progressevent)  
 **Read only**: true  
+
+<a name="progressevent-loaded" id="progressevent-loaded"></a>
+
 ### ProgressEvent.loaded
-**Signature:** ProgressEvent.loaded
-
 **Kind**: static property of [`ProgressEvent`](#progressevent)  
 **Read only**: true  
+
+<a name="progressevent-total" id="progressevent-total"></a>
+
 ### ProgressEvent.total
-**Signature:** ProgressEvent.total
-
 **Kind**: static property of [`ProgressEvent`](#progressevent)  
 **Read only**: true  
-### ProgressEvent.initEvent
-**Signature:** ProgressEvent.initEvent(typeArg, bubbles, cancelable)
 
+<a name="progressevent-initevent" id="progressevent-initevent"></a>
+
+### ProgressEvent.initEvent(typeArg, bubbles, cancelable)
 **Kind**: static method of [`ProgressEvent`](#progressevent)  
 
 | Param | Type |
 | --- | --- |
-| typeArg | `*` | 
-| bubbles | `*` | 
-| cancelable | `*` | 
+| typeArg | `\*` | 
+| bubbles | `\*` | 
+| cancelable | `\*` | 
 

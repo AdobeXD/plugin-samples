@@ -1,6 +1,7 @@
-## KeyboardEvent
-**Signature:** KeyboardEvent ⇐ [`Event`](#event)
 
+<a name="keyboardevent" id="keyboardevent"></a>
+
+## KeyboardEvent ⇐ [`Event`](#event)
 **Kind**: global class  
 **Extends**: [`Event`](#event)  
 **Access**: public  
@@ -25,130 +26,153 @@
     * [.cancelable](#event-cancelable) : `boolean`
     * [.eventPhase](#event-eventphase)
     * [.defaultPrevented](#event-defaultprevented) : `boolean`
-    * [.returnValue](#event-returnvalue) : `*`
+    * [.returnValue](#event-returnvalue) : `\*`
     * [.getModifierState(keyArgs)](#keyboardevent-getmodifierstate) ⇒ `boolean`
     * [.preventDefault()](#event-preventdefault)
     * [.stopImmediatePropagation()](#event-stopimmediatepropagation)
     * [.stopPropagation()](#event-stoppropagation)
 
-### new KeyboardEvent
-**Signature:** new KeyboardEvent(type, eventInit)
 
+<a name="new-keyboardevent-new" id="new-keyboardevent-new"></a>
+
+### new KeyboardEvent(type, eventInit)
 Creates an instance of KeyboardEvent.
 
 
 | Param | Type |
 | --- | --- |
-| type | `*` | 
-| eventInit | `*` | 
+| type | `\*` | 
+| eventInit | `\*` | 
+
+
+<a name="keyboardevent-altkey" id="keyboardevent-altkey"></a>
 
 ### keyboardEvent.altKey
-**Signature:** keyboardEvent.altKey
-
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
+
+<a name="keyboardevent-ctrlkey" id="keyboardevent-ctrlkey"></a>
+
 ### keyboardEvent.ctrlKey
-**Signature:** keyboardEvent.ctrlKey
-
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
+
+<a name="keyboardevent-metakey" id="keyboardevent-metakey"></a>
+
 ### keyboardEvent.metaKey
-**Signature:** keyboardEvent.metaKey
-
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
+
+<a name="keyboardevent-shiftkey" id="keyboardevent-shiftkey"></a>
+
 ### keyboardEvent.shiftKey
-**Signature:** keyboardEvent.shiftKey
-
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
+
+<a name="keyboardevent-code" id="keyboardevent-code"></a>
+
 ### keyboardEvent.code
-**Signature:** keyboardEvent.code
-
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
+
+<a name="keyboardevent-keycode" id="keyboardevent-keycode"></a>
+
 ### keyboardEvent.keyCode
-**Signature:** keyboardEvent.keyCode
-
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
+
+<a name="keyboardevent-key" id="keyboardevent-key"></a>
+
 ### keyboardEvent.key
-**Signature:** keyboardEvent.key
-
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
+
+<a name="keyboardevent-location" id="keyboardevent-location"></a>
+
 ### keyboardEvent.location
-**Signature:** keyboardEvent.location
-
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
+
+<a name="keyboardevent-repeat" id="keyboardevent-repeat"></a>
+
 ### keyboardEvent.repeat
-**Signature:** keyboardEvent.repeat
-
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
+
+<a name="event-type" id="event-type"></a>
+
 ### keyboardEvent.type
-**Signature:** keyboardEvent.type
-
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
-### keyboardEvent.isTrusted
-**Signature:** keyboardEvent.isTrusted : `boolean`
 
+<a name="event-istrusted" id="event-istrusted"></a>
+
+### keyboardEvent.isTrusted : `boolean`
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
-### keyboardEvent.target
-**Signature:** keyboardEvent.target : [`Node`](#node)
 
+<a name="event-target" id="event-target"></a>
+
+### keyboardEvent.target : [`Node`](#node)
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
-### keyboardEvent.currentTarget
-**Signature:** keyboardEvent.currentTarget : [`Node`](#node)
 
+<a name="event-currenttarget" id="event-currenttarget"></a>
+
+### keyboardEvent.currentTarget : [`Node`](#node)
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
-### keyboardEvent.bubbles
-**Signature:** keyboardEvent.bubbles : `boolean`
 
+<a name="event-bubbles" id="event-bubbles"></a>
+
+### keyboardEvent.bubbles : `boolean`
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
-### keyboardEvent.cancelable
-**Signature:** keyboardEvent.cancelable : `boolean`
 
+<a name="event-cancelable" id="event-cancelable"></a>
+
+### keyboardEvent.cancelable : `boolean`
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
+
+<a name="event-eventphase" id="event-eventphase"></a>
+
 ### keyboardEvent.eventPhase
-**Signature:** keyboardEvent.eventPhase
-
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
-### keyboardEvent.defaultPrevented
-**Signature:** keyboardEvent.defaultPrevented : `boolean`
 
+<a name="event-defaultprevented" id="event-defaultprevented"></a>
+
+### keyboardEvent.defaultPrevented : `boolean`
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
 **Read only**: true  
-### keyboardEvent.returnValue
-**Signature:** keyboardEvent.returnValue : `*`
 
+<a name="event-returnvalue" id="event-returnvalue"></a>
+
+### keyboardEvent.returnValue : `\*`
 **Kind**: instance property of [`KeyboardEvent`](#keyboardevent)  
-### keyboardEvent.getModifierState
-**Signature:** keyboardEvent.getModifierState(keyArgs) ⇒ `boolean`
 
+<a name="keyboardevent-getmodifierstate" id="keyboardevent-getmodifierstate"></a>
+
+### keyboardEvent.getModifierState(keyArgs) ⇒ `boolean`
 **Kind**: instance method of [`KeyboardEvent`](#keyboardevent)  
 
 | Param | Type |
 | --- | --- |
 | keyArgs | `string` | 
 
-### keyboardEvent.preventDefault
-**Signature:** keyboardEvent.preventDefault()
 
+<a name="event-preventdefault" id="event-preventdefault"></a>
+
+### keyboardEvent.preventDefault()
 **Kind**: instance method of [`KeyboardEvent`](#keyboardevent)  
-### keyboardEvent.stopImmediatePropagation
-**Signature:** keyboardEvent.stopImmediatePropagation()
 
+<a name="event-stopimmediatepropagation" id="event-stopimmediatepropagation"></a>
+
+### keyboardEvent.stopImmediatePropagation()
 **Kind**: instance method of [`KeyboardEvent`](#keyboardevent)  
-### keyboardEvent.stopPropagation
-**Signature:** keyboardEvent.stopPropagation()
 
+<a name="event-stoppropagation" id="event-stoppropagation"></a>
+
+### keyboardEvent.stopPropagation()
 **Kind**: instance method of [`KeyboardEvent`](#keyboardevent)  

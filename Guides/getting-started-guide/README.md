@@ -40,11 +40,11 @@ Adobe XD loads plugins from a `plugins` folder in specific storage location:
 | MacOS         | `~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/` (note: `~/Library`, not `/Library`) |
 | Windows       | `C:\Users\%USERNAME%\AppData\Local\Packages\Adobe.CC.XD.Prerelease_adky2gkssdxte\LocalState\`       |
 
-Navigate to the above path, and if there _isn’t_ a folder that already exists with the name `plugins`, go ahead and create it. 
+Navigate to the above path, and if there _isn’t_ a folder that already exists with the name `plugins`, go ahead and create it.
 
 Example:
 
-```shell
+```bash
     $ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/
     $ mkdir plugins
 ```
@@ -56,17 +56,17 @@ Adobe XD plugins require two files:
 *   `manifest.json` is your plugin’s **manifest**. This file includes information about the plugin, such as its name, the menu item(s) it adds to XD, and so on.
 *   `main.js` is your plugin’s **code**. This file contains your JavaScript code that implements the logic for your plugin.
 
-These two files (and any others you need) are stored within a folder. Each plugin gets its own folder, so the folder names need to be unique.  By convention, the name of the folder is usually the same as the ID of the plugin (for more information about plugin IDs, see the description of the manifest file, below). 
+These two files (and any others you need) are stored within a folder. Each plugin gets its own folder, so the folder names need to be unique.  By convention, the name of the folder is usually the same as the ID of the plugin (for more information about plugin IDs, see the description of the manifest file, below).
 
 Example:
 
-```shell
+```bash
     $ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
     $ mkdir com.adobe.xd.helloWorld
     $ cd com.adobe.xd.helloWorld
     $ touch manifest.json
     $ touch main.js
-``` 
+```
 
 ### 3. Create your plugin’s manifest
 
@@ -89,7 +89,7 @@ Adobe XD requires that your plugin have a manifest named `manifest.json`. Our ex
         }
     ]
 }
-``` 
+```
 
 For more about what each entry means, [see the manifest documentation](https://adobe-xd.gitbook.io/plugin-api-reference/getting-started/index-1/manifest).
 
@@ -119,24 +119,24 @@ module.exports = { // [6]
         helloCommand: helloHandlerFunction
     }
 };
-``` 
+```
 
 1.  In this line, we get references to the `Text` and `Color` classes from XD’s `scenegraph` module. There are several different [API modules you can load using `require()`](https://adobe-xd.gitbook.io/plugin-api-reference).
-    
+
 2.  Next we define our handler function. The handler function will be invoked when the user selects the “Say Hello” menu command.  The binding between that menu command and this handler function is further described below.
-    
+
 3.  In this line we create a new `Text` object. The following lines assign various properties and styles to the text.
-    
+
 4.  Here we add the `Text` object to the scenegraph. It should show up at the (0, 0) coordinates, so if you don’t see it, try zooming out or panning until you do.
 
 5.  We bring the added text into the artboard by moving it by using the scenenode method, [moveInParentCoordinates](https://adobe-xd.gitbook.io/plugin-api-reference/xd-api-reference/scenegraph#scenenode-moveinparentcoordinates-deltax-deltay). Without this, the text would have been rendered outside of the artboard.
 
 6.  The final part of `main.js` is to export a map object, which associates the JavaScript handler function with the `commandId` property declared in the manifest earlier. The command ID (the part to the left of the `:` here) must match the `commandId` value declared in your manifest exactly.
-    
+
 
 ### 5. Invoke your plugin
 
-Great, we’ve written a plugin! How do we invoke it? 
+Great, we’ve written a plugin! How do we invoke it?
 
 If you haven’t already done so, go ahead and launch XD and open a new document. Then navigate to **Plugins | Say hello**.
 

@@ -47,14 +47,14 @@
     * [How to read a file](./Guides/how-to-import-guide/README.md)
     * [How to integrate with OAuth](./Guides/how-to-integrate-with-OAuth-guide/readme.md)
     * [How to make a simple network request](./Guides/how-to-make-a-network-request-guide/README.md)
-    * [How to connect to a websocket server](./Guides/how-to-connect-to-a-websocket-server/README.md)
+    * [How to use WebSockets](./Guides/how-to-use-websockets-guide/README.md)
 
   * Building User Interfaces
     * Asking user for confirmation
       * [With document.createElement](./Guides/how-to-ask-user-for-confirmation-guide/README.md)
       * [With HTML](./Guides/how-to-ask-user-for-confirmation-guide/README_HTML.md)
     * [Using single-line text editors](./Guides/how-to-use-single-line-text-ui-guide/README.md)
-    * [How to display a dropdown list](./Guides/how-to-display-a-dropdown-list/README.md)
+    * [How to display a dropdown list](./Guides/how-to-display-a-dropdown-list-guide/README.md)
     * [How to display an image](./Guides/how-to-display-an-image-guide/README.md)
 
 * Packaging and Distribution
@@ -74,20 +74,6 @@
     * [clipboard](./reference/clipboard.md)
     * [commands](./reference/commands.md)
     * [scenegraph](./reference/scenegraph.md)
-      * [SceneNode](./reference/scenegraph.md#SceneNode)
-        * [GraphicNode](./reference/scenegraph.md#GraphicNode)
-          * [Artboard](./reference/scenegraph.md#Artboard)
-          * [Rectangle](./reference/scenegraph.md#Rectangle)
-          * [Ellipse](./reference/scenegraph.md#Ellipse)
-          * [Line](./reference/scenegraph.md#Line)
-          * [Path](./reference/scenegraph.md#Path)
-          * [BooleanGroup](./reference/scenegraph.md#BooleanGroup)
-          * [Text](./reference/scenegraph.md#Text)
-        * [Group](./reference/scenegraph.md#Group)
-          * [SymbolInstance](./reference/scenegraph.md#SymbolInstance)
-          * [RepeatGrid](./reference/scenegraph.md#RepeatGrid)
-          * [LinkedGraphic](./reference/scenegraph.md#LinkedGraphic)
-          * [RootNode](./reference/scenegraph.md#RootNode)
     * [SceneNodeList](./reference/SceneNodeList.md)
     * [Color](./reference/Color.md)
     * [BitmapFill](./reference/BitmapFill.md)
@@ -150,6 +136,5 @@
         * [ProgressEvent](./reference/uxp/class/ProgressEvent.md)
 
 * Community
-  * Support
   * [Code of Conduct](./CODE_OF_CONDUCT.md)
   * [How to contribute](./CONTRIBUTING.md)

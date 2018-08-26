@@ -1,6 +1,7 @@
-## EventTarget
-**Signature:** EventTarget
 
+<a name="eventtarget" id="eventtarget"></a>
+
+## EventTarget
 **Kind**: global class  
 **Access**: public  
 **See**: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget  
@@ -10,34 +11,37 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
-### eventTarget.addEventListener
-**Signature:** eventTarget.addEventListener(eventName, callback, [capture])
 
+<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+
+### eventTarget.addEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`EventTarget`](#eventtarget)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `*` |  | 
-| callback | `*` |  | 
+| eventName | `\*` |  | 
+| callback | `\*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
-### eventTarget.removeEventListener
-**Signature:** eventTarget.removeEventListener(eventName, callback, [capture])
 
+<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
+
+### eventTarget.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`EventTarget`](#eventtarget)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `*` |  | 
-| callback | `*` |  | 
+| eventName | `\*` |  | 
+| callback | `\*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
-### eventTarget.dispatchEvent
-**Signature:** eventTarget.dispatchEvent(event)
 
+<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
+
+### eventTarget.dispatchEvent(event)
 **Kind**: instance method of [`EventTarget`](#eventtarget)  
 
 | Param | Type |
 | --- | --- |
-| event | `*` | 
+| event | `\*` | 
 
