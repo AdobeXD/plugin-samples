@@ -1,4 +1,4 @@
-##### Edit context rules
+# Edit context rules
 
 The **edit context** is the scope in which selection and edit operations must occur:
 - If the user has drilled down into a container node, that container is the current edit context and only its immediate children

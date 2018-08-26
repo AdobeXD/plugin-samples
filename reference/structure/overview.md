@@ -1,4 +1,4 @@
-## Plugin Structure
+# Plugin Structure
 An XD plugin consists of a folder containing the following files:
 
 * `manifest.json` - Metadata describing the plugin and which menu items it exposes
