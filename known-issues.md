@@ -74,12 +74,15 @@
 
 - When a dialog is closed, it is not removed from the DOM. This is per spec. If you want the dialog to be removed from the DOM, you must call `HTMLDialogElement#remove` explicitly.
 - `getComputedStyle` will not return quite what you expect. It will return the internal representation instead.
+- When applying HTML using `innerHTML` and friends, inline styles are ignored. You can, however, supply `<style>` tags and use `class` attributes to assign styles.
+- When applying HTML using `innerHTML`, event handlers and scripts are not parsed. This is by design.
 
 ## Network I/O
 
 - On macOS, it is not possible to use self-signed certificates with secure Websockets.
 - Websockets do not support extensions.
 - XHR does not support cookies.
+- `responseURL` is not supported on XHR
 
 ## File I/O
 

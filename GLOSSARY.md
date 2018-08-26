@@ -1,2 +1,95 @@
+## Application
+An XD-specific namespace that provides access to various methods that aren't specific to the XD document. [Read more](./reference/application.md).
+
+## Base64
+A representation of binary data that can be transferred safely over the internet.
+
+## BitmapFill
+Used to fill a SceneNode with bitmap data. [Read more](./reference/BitmapFill.md)
+
+## Clipboard
+A temporary storage location that the user can utilize to save or retrieve text or other snippets on command. Adobe XD [provides an API](./reference/clipboard) for accessing the clipboard.
+
+## Class
+A template (of sorts) used to instantiate objects. An instance has the same instance methods and properties as specified in the class.
+
+## CSS
+Short for _Cascading Style Sheets_. Adobe XD supports a _subset_ of CSS.
+
+## DOM
+Short for _Document Object Model_. Generally refers to the HTML5 DOM.
+
+## ECMAScript
+See JavaScript.
+
+## ES5
+An older version of JavaScript from 2009.
+
+## ES6
+A modern version of JavaScript. See ES2015.
+
+## ES2015
+A modern version of JavaScript, previously named ES6.
+
+## Destructive Action
+An action, which when taken, is destructive to the user's open document or their files. Such an action _may_ be undoable, but this is not always the case.
+
+## Dialog
+Represents a user interface concept whereby a sheet or window is displayed and asks the user for more information (hence the word "dialog" -- the user and computer are dialoguing together).
+
+## Dismissive Button
+A dismissive button will close a dialog. Whether an action continues after the dismissal of the dialog depends upon which button is clicked. "OK", "Cancel", "Yes", "Don't Save", "Delete" can all be dismissive buttons.
+
+## Edit Context
+Represents the context within which a plugin or user is allowed to make edits to the user's scenegraph. [Read more](./reference/core/edit-context.md).
+
+## GUID
+A globally unique identifier.
+
+## HTML
+Short for _hypertext markup language_. XD Supports a subset of HTML.
+
+## HTML5
+The modern version of HTML.
+
+## Instance
+An instance of a class. May also refer to instance properties or methods.
+
+## JavaScript
+JavaScript is a common programming language that is used in many various contexts, including the web and on servers. Adobe XD uses JavaScript to help leverage the existing skills of the entire JavaScript ecosystem.
+
+## JSON
+Short for JavaScript Object Notation.
+
+## Manifest
+A manifest is used to declare various facts about a plugin. For example, a manifest includes the plugin's name, a unique ID, and what functions correspond with what menu items. [Read more](./reference/structure/manifest.md).
+
 ## Node
-An HTML Node. See [Node](./reference/uxp/Node.md).
+A tree node. Depending on context, this node may refer to a [HTML5 DOM Node](./reference/uxp/Node.md) or an [XD Scenegraph node](./reference/scenegraph.md#scenenode).
+
+## SceneNode
+A [SceneNode](./reference/scenegraph.md#scenenode) represents a node within the user's scenegraph.
+
+## Scenegraph
+A scenegraph represents the user's document. It is so called because it is a tree (a kind of graph) of nodes that, when taken together, represents the entire "scene" of the document. Adobe XD [provides an API](./reference/scenegraph.md) for manipulating the scenegraph. [Learn more about the scenegraph](./reference/core/scenegraph.md).
+
+## SceneNodeList
+A list of scene nodes. [Read more](./reference/SceneNodeList.md)
+
+## Static
+A static method or property. These exist at the class level, and not on instantiated objects.
+
+## UXP
+Short for _Unified Extensibility Platform_. Adobe XD uses UXP for some of its extensibility APIs.
+
+## XHR
+Short for XMLHttpRequest.
+
+## XMLHttpRequest
+An network I/O API that can be used to request information from local and remote endpoints. [See documentation](./reference/uxp/class/XMLHttpRequest.md).
+
+## WebSocket
+A network I/O API that enables real-time communication with local and remote endpoints. [See documentation](./reference/uxp/class/WebSocket.md).
+
+## Widget
+Any interactive control or rendition provided by the user interface. For example, a clickable "button" is a widget.
