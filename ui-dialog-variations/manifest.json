@@ -1,0 +1,44 @@
+{
+    "id": "com.adobe.example.de1c60dad5f9723f",
+    "author": "Kerri Shotts",
+    "name": "(UI) Dialog Variations",
+    "host": {
+        "app": "XD",
+        "minVersion": "12.0.10.64"
+    },
+    "version": "1.0.0",
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Dialog Variations",
+            "menuItems": [
+                {
+                    "type": "menu",
+                    "label": "Simple Alert",
+                    "commandId": "showAlert"
+                },
+                {
+                    "type": "menu",
+                    "label": "Error Alert",
+                    "commandId": "showError"
+                },
+                {
+                    "type": "menu",
+                    "label": "Confirmation",
+                    "commandId": "showConfirm"
+                },
+                {
+                    "type": "menu",
+                    "label": "Prompt",
+                    "commandId": "showPrompt"
+                },
+                {
+                    "type": "menu",
+                    "label": "About",
+                    "commandId": "showAbout"
+                }
+            ]
+        }
+    ]
+}
+
