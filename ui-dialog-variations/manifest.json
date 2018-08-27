@@ -24,6 +24,11 @@
                 },
                 {
                     "type": "menu",
+                    "label": "Warning",
+                    "commandId": "showWarning"
+                },
+                {
+                    "type": "menu",
                     "label": "Confirmation",
                     "commandId": "showConfirm"
                 },
