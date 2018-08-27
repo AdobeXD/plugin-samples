@@ -20,77 +20,7 @@ const {
     Color
 } = require("scenegraph");
 
-/**
- * Generates a "notice" dialog with the title, default icon, and a series of messages.
- *
- * @param {string} title
- * @param {string} [icon="info-filled"]
- * @param {string[]} msgs
- */
-async function notice(title, icon = "info-filled", ...msgs) {
-    const dialog = document.createElement("dialog");
-    dialog.innerHTML = `
-<style>
-    form {
-        width: 360px;
-    }
-    form h1 {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    form h1 span {
-    }
-    form h1 img {
-        width: 14px;
-        height: 14px;
-        flex: 0 0 14px;
-    }
-</style>
-<form method="dialog">
-    <h1>
-        <span>${title}</span>
-        <img src="assets/${icon}.png" />
-    </h1>
-    ${
-        msgs.map(msg => msg.substr(0, 4) === "http" ? `<a href="${msg}">${msg}</a>` : `<p>${msg}</p>`).join("")
-    }
-    <footer>
-        <button type="submit" uxp-variant="cta">Close</button>
-    </footer>
-</form>
-    `;
-
-    try {
-        document.appendChild(dialog);
-        await dialog.showModal();
-    } finally {
-        dialog.remove();
-    }
-}
-
-/**
- * Generates an alert message
- *
- * @param {string} title
- * @param {string[]} msgs
- */
-async function alert(title, ...msgs) {
-    return notice(title, "info-filled-blue", ...msgs);
-}
-
-/**
- * Generates a warning message
- *
- * @param {*} title
- * @param {*} msgs
- */
-async function warning(title, ...msgs) {
-    return notice(title, "exclamation-filled-red", ...msgs);
-}
-
-
+const { alert, warning } = require("./dialogs.js");
 
 /**
  * Given two arrays, return an array like [ [a[0], b[0]], [a[1], b[1], ... ]
