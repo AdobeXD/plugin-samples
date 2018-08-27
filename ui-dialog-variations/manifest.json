@@ -2,6 +2,7 @@
     "id": "com.adobe.example.de1c60dad5f9723f",
     "author": "Kerri Shotts",
     "name": "(UI) Dialog Variations",
+    "icon": "icon.png",
     "host": {
         "app": "XD",
         "minVersion": "12.0.10.64"
