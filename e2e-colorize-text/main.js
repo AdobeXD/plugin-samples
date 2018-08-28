@@ -20,7 +20,7 @@ const {
     Color
 } = require("scenegraph");
 
-const { alert, warning } = require("./dialogs.js");
+const { alert, error } = require("./dialogs.js");
 
 /**
  * Given two arrays, return an array like [ [a[0], b[0]], [a[1], b[1], ... ]
@@ -163,7 +163,7 @@ function gradientize(selection) {
         }
 
         if (candidateItems > affectedItems) {
-            warning("No operable items selected...",
+            error("No operable items selected...",
                 "Be sure to select text items with the following criteria:",
                 "• Text with more than two letters",
                 "• Text with two different colors at the first and last character");
@@ -249,7 +249,7 @@ function repeatize(selection) {
         }
 
         if (candidateItems > affectedItems) {
-            warning("No operable items selected...",
+            error("No operable items selected...",
                 "Be sure to select text items with the following criteria:",
                 "• Text with more than one character",
                 "• Text with at least two different colors");
@@ -301,7 +301,7 @@ function randomize(selection) {
         }
 
         if (candidateItems > affectedItems) {
-            warning("No operable items selected...",
+            error("No operable items selected...",
                 "Be sure to select text items with the following criteria:",
                 "• Text with one or more characters"
             );

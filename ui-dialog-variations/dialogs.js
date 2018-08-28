@@ -1,3 +1,5 @@
+let manifest;
+
 /*
  * Generates a "notice" dialog with the title, default icon, and a series of messages.
  *
@@ -20,25 +22,30 @@ async function notice({
         {label: "Close", variant: "cta", type:"submit"}
     ]} = {},
     width=360,
-    iconSize=14
+    iconSize=18
 ) {
 
-    if (icon === 'app-icon') {
-        try {
+    try {
+        if (!manifest) {
             const fs = require("uxp").storage.localFileSystem;
             const dataFolder = await fs.getPluginFolder();
             const manifestFile = await dataFolder.getEntry("manifest.json");
             if (manifestFile) {
                 const json = await manifestFile.read();
-                const manifest = JSON.parse(json);
-                const iconName = manifest.icon;
-                if (iconName) {
-                    icon = iconName;
-                    iconSize = 32;
-                }
+                manifest = JSON.parse(json);
+
             }
-        } catch (err) {
-            // do nothing
+        }
+    } catch (err) {
+        // do nothing
+    }
+
+    let usingAppIcon = false;
+    if (icon === 'app-icon') {
+        if (manifest.icon) {
+            usingAppIcon = true;
+            icon = manifest.icon;
+            iconSize = 24;
         }
     }
 
@@ -53,19 +60,38 @@ async function notice({
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        ${isError ? 'color: #D7373F' : ''}
+        ${isError ? 'color: #D7373F;' : ''}
+        border-bottom-width: 2px;
+        border: 0;
+        padding-bottom: 1px;
+    }
+    hr {
+        margin: 0 6px;
+        height: 2px;
+        border-radius: 2px;
+        overflow: hidden;
+        background-color: #E8E8E8;
+        padding: 0;
+        margin-bottom: -4px;
     }
     form h1 img {
         width: ${iconSize}px;
         height: ${iconSize}px;
         flex: 0 0 ${iconSize}px;
+        padding: 0;
+        margin: 0;
+    }
+    img.app-icon {
+        border-radius: 4px;
+        overflow: hidden;
     }
 </style>
 <form method="dialog">
     <h1>
         <span>${title}</span>
-        ${icon ? `<img src="${icon}" />` : ""}
+        ${icon ? `<img ${usingAppIcon ? `class="app-icon" title="${manifest.name}"` : ""} src="${icon}" />` : ""}
     </h1>
+    <hr />
     ${
         msgs.map(msg => msg.substr(0, 4) === "http" ? `<a href="${msg}">${msg}</a>` : `<p>${msg}</p>`).join("")
     }
@@ -129,7 +155,7 @@ async function alert(title, ...msgs) {
  * @param {*} msgs
  */
 async function error(title, ...msgs) {
-    return notice({title, isError: true, icon: "assets/alert-red.png", msgs});
+    return notice({title, isError: true, msgs});
 }
 
 async function confirm(title, msg, buttons = [ "Cancel", "OK" ]) {
