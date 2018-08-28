@@ -1,4 +1,38 @@
+const {getManifest} = require('./manifest.js');
+
 let manifest;
+
+/**
+ *
+ * @param {string} str
+ */
+function strToHtml(str) {
+    let html = str;
+
+    // handle some markdown stuff
+    if (html.substr(0, 2) === '##') {
+        html = `<h3>${html.substr(2).trim()}</h3>`;
+    } else if (html.substr(0, 1) === '#') {
+        html = `<h2>${html.substr(1).trim()}</h2>`;
+    } else if (html.substr(0, 2) === '* ') {
+        html = `<p class="list"><span class="bullet">•</span><span>${html.substr(2).trim()}</span></p>`;
+    } else if (html.substr(0, 3) === '---') {
+        html = `<hr/>${html.substr(4).trim()}`;
+    } else {
+        html = `<p>${html.trim()}</p>`;
+    }
+
+    // handle links -- the catch here is that the link will transform the entire paragraph!
+    const regex = /\[([^\]]*)\]\(([^\)]*)\)/;
+    const matches = str.match(regex);
+    if (matches) {
+        const title = matches[1];
+        const url = matches[2];
+        html = `<a href="${url}">${html.replace(regex, title).replace(/\<\|?p\>/g, "")}</a>`;
+    }
+
+    return html;
+}
 
 /*
  * Generates a "notice" dialog with the title, default icon, and a series of messages.
@@ -14,7 +48,7 @@ let manifest;
  */
 async function notice({
     title,
-    icon = "app-icon",
+    icon = "plugin-icon",
     msgs,
     prompt,
     isError=false,
@@ -25,25 +59,20 @@ async function notice({
     iconSize=18
 ) {
 
+    let messages = Array.isArray(msgs) ? msgs : [ msgs ];
+
     try {
         if (!manifest) {
-            const fs = require("uxp").storage.localFileSystem;
-            const dataFolder = await fs.getPluginFolder();
-            const manifestFile = await dataFolder.getEntry("manifest.json");
-            if (manifestFile) {
-                const json = await manifestFile.read();
-                manifest = JSON.parse(json);
-
-            }
+            manifest = await getManifest();
         }
     } catch (err) {
         // do nothing
     }
 
-    let usingAppIcon = false;
-    if (icon === 'app-icon') {
+    let usingPluginIcon = false;
+    if (icon === 'plugin-icon') {
         if (manifest.icon) {
-            usingAppIcon = true;
+            usingPluginIcon = true;
             icon = manifest.icon;
             iconSize = 24;
         }
@@ -81,28 +110,43 @@ async function notice({
         padding: 0;
         margin: 0;
     }
-    img.app-icon {
+    img.plugin-icon {
         border-radius: 4px;
         overflow: hidden;
+    }
+    footer {
+        text-align: right;
+    }
+    .list {
+        display: flex;
+        flex-direction: row;
+    }
+    .list span {
+        flex: 0 0 auto;
+    }
+
+    .list + .list {
+        margin-top: 0;
+    }
+
+    h2, h3 {
+        margin: 6px;
+    }
+
+    h3 {
+        font-size: 12px;
+        color: #666666;
     }
 </style>
 <form method="dialog">
     <h1>
         <span>${title}</span>
-        ${icon ? `<img ${usingAppIcon ? `class="app-icon" title="${manifest.name}"` : ""} src="${icon}" />` : ""}
+        ${icon ? `<img ${usingPluginIcon ? `class="plugin-icon" title="${manifest.name}"` : ""} src="${icon}" />` : ""}
     </h1>
     <hr />
+    ${ messages.map(msg => strToHtml(msg)).join("") }
     ${
-        msgs.map(msg => msg.substr(0, 4) === "http" ? `<a href="${msg}">${msg}</a>` : `<p>${msg}</p>`).join("")
-    }
-    ${
-        prompt ?
-            `
-                <label>
-                    <input type="text" id="prompt" placeholder="${prompt}" />
-                </label>
-            `
-        : ""
+        prompt ? `<label><input type="text" id="prompt" placeholder="${prompt}" /></label>` : ""
     }
     <footer>
         ${buttons.map(({label, type, variant} = {}, idx) => `<button id="btn${idx}" type="${type}" uxp-variant="${variant}">${label}</button>`)}
@@ -110,11 +154,16 @@ async function notice({
 </form>
     `;
 
+    // The "ok" and "cancel" button indices. OK buttons are "submit" or "cta" buttons. Cancel buttons are "reset" buttons.
     let okButtonIdx = -1;
     let cancelButtonIdx = -1;
+
+    // Ensure that the form can submit when the user presses ENTER (we trigger the OK button here)
     const form = dialog.querySelector("form");
     form.onsubmit = () => dialog.close({which: okButtonIdx, value: prompt ? dialog.querySelector("#prompt").value : ""});
-    buttons.forEach(({label, type, variant} = {}, idx) => {
+
+    // Attach button event handlers and set ok and cancel indices
+    buttons.forEach(({type, variant} = {}, idx) => {
         const button = dialog.querySelector(`#btn${idx}`);
         if (type === "submit" || variant === "cta") {
             okButtonIdx = idx;
@@ -132,6 +181,7 @@ async function notice({
         document.appendChild(dialog);
         return await dialog.showModal();
     } catch(err) {
+        // user hit ESC or dev tried to show two dialogs on top of each other
         return {which: cancelButtonIdx, value: ""};
     } finally {
         dialog.remove();

@@ -7,7 +7,7 @@
  *
  ******************************************************************************/
 
-const {alert, confirm, prompt, error, warning} = require("./dialogs.js");
+const {alert, confirm, prompt, error, warning} = require("./lib/dialogs.js");
 
 async function showAlert() {
     return alert("Connect to the Internet",
@@ -29,7 +29,7 @@ async function showConfirm() {
 }
 
 async function showPrompt() {
-    const res = await prompt("Create Shape", "What kind of shape you would like to create?", "Shape");
+    const res = await prompt("Create Shape", "What kind of shape you would like to create?", "Shape", ["Cancel", "Create"]);
     switch (res.which) {
         case 0:
             return alert("Shape to Create", "You didn't want to apply a shape.");
@@ -61,9 +61,14 @@ async function showError() {
 
 async function showAbout() {
     return alert("About Dialog Variations",
-        "Dialog variations shows several different standard dialog templates for alerts, confirmations, prompts, and more.",
-        "For more information, please see:",
-        "https://github.com/AdobeXD/Plugin-Samples/tree/master/ui-dialog-variations"
+        "Dialog variations shows several different standard dialog templates, including:",
+        "* Simple Alerts",
+        "* Error Alerts",
+        "* Confirmation Dialogs",
+        "* Prompts",
+        "* ... along with some very basic markdown conversion to make building About dialogs even easier. See this list? It's a markdown list!",
+        "## More Information",
+        "For more information, please see [the github repo for this plugin](https://github.com/AdobeXD/Plugin-Samples/tree/master/ui-dialog-variations)."
     );
 }
 
