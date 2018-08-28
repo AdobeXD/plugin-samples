@@ -114,15 +114,16 @@ async function notice({
         border-radius: 4px;
         overflow: hidden;
     }
-    footer {
-        text-align: right;
-    }
     .list {
         display: flex;
         flex-direction: row;
     }
     .list span {
         flex: 0 0 auto;
+    }
+    .list .bullet {
+        min-width: 12px;
+        text-align: center;
     }
 
     .list + .list {
