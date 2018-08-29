@@ -27,7 +27,8 @@ Let’s walk through the process of how you can create an Adobe XD plugin. This 
 - Libraries/Frameworks/APIs: None
 
 ## Prerequisites
-Basic knowledge of HTML, CSS, and JavaScript.
+- Basic knowledge of HTML, CSS, and JavaScript.
+- [Debugging Guide](/Guides/debugging-guide)
 
 ## Development Steps
 

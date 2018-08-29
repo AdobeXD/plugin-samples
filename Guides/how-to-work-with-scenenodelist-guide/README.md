@@ -24,6 +24,7 @@ This sample demonstrates how to work with scenenode lists. **The plugin code can
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
 - [Getting Started Guide](/Guides/getting-started-guide)
+- [Debugging Guide](/Guides/debugging-guide)
 
 ## Development Steps
 

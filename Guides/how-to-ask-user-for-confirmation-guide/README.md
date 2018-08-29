@@ -43,6 +43,7 @@ This sample demonstrates how to build a user confirmation dialog in XD.  **The p
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
 - [Getting Started Guide](/Guides/getting-started-guide)
+- [Debugging Guide](/Guides/debugging-guide)
 
 ## Development Steps
 

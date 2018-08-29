@@ -24,6 +24,7 @@ This sample app will show you how to use Websocket to communicate real-time betw
 - Basic knowledge of HTML, CSS, and JavaScript
 - Basic knowledge of `WebSocket`
 - [Getting Started Guide](../getting-started-guide)
+- [Debugging Guide](/Guides/debugging-guide)
 
 ## Configuration
 
