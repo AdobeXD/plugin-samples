@@ -19,8 +19,9 @@ This sample describes how an XD plugin can invoke the default file picker and ge
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Technology Used
-- References: [XD Export Renditions API](TBD)
-- References: [XD User Interface Concepts](https://adobe-xd.gitbook.io/plugin-api-reference/user-interface/ui-concepts)
+- References: [XD File I/O](/reference/uxp/using-file-apis.md)
+- References: [XD Export Renditions API](/reference/application.md#applicationcreaterenditionsrenditions)
+- References: [XD User Interface Concepts](/reference/ui/ui-concepts.md)
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
