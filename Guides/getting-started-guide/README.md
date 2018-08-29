@@ -142,7 +142,7 @@ If you haven’t already done so, go ahead and launch XD and open a new document
 
 Alternatively, if XD was already running, then select **Plugins | Development | Reload Plugins**.
 
-![It worked!](/.meta/readme-assets/on-canvas.png)
+![It worked!](/images/readme-assets/on-canvas.png)
 
 Congratulations! You’ve built your first plugin with Adobe XD!
 

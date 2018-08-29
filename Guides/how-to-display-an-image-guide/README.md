@@ -38,7 +38,7 @@ $ mkdir com.adobe.displayimage
 $ cd com.adobe.displayimage
 $ touch manifest.json
 $ touch main.js
-``` 
+```
 
 Edit the manifest file for your plugin:
 
@@ -129,7 +129,7 @@ container.appendChild(closeButton); // [4]
 3. Listen to the click event and close the dialog
 4. Append the button to the container
 
-### 5. Create a dialog and add the container 
+### 5. Create a dialog and add the container
 ```js
 let dialog = document.createElement("dialog"); // [1]
 dialog.appendChild(container); // [2]
@@ -152,7 +152,7 @@ function displayImage(selection) {
 
 If you reload the plugin and execute it, you should see a modal window like this one:
 
-<img src="/.meta/readme-assets/display-image.png" width="50%" height="50%">
+<img src="/images/readme-assets/display-image.png" width="50%" height="50%">
 
 ## Next Steps
 

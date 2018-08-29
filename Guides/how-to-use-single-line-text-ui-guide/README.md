@@ -37,7 +37,7 @@ $ mkdir com.adobe.singlelinetext
 $ cd com.adobe.singlelinetext
 $ touch manifest.json
 $ touch main.js
-``` 
+```
 
 Edit the manifest file for your plugin:
 
@@ -113,7 +113,7 @@ container.appendChild(closeButton);
 2. Create a single line text input and append it to the container
 3. You need at least one exit point. Create a close button and add it to the container
 
-### 5. Create a dialog and add the container 
+### 5. Create a dialog and add the container
 ```js
 let dialog = document.createElement("dialog"); // [1]
 dialog.appendChild(container); // [2]
@@ -140,8 +140,8 @@ function showDialog() {
 ### 7. Create a helper function to create a text element
 ```js
 function createText(selection, txt) {  // [1]
-    const text = new Text();  
-    text.text = `Welcome, ${txt}`; 
+    const text = new Text();
+    text.text = `Welcome, ${txt}`;
     text.styleRanges = [
         {
             length: text.text.length,
@@ -149,8 +149,8 @@ function createText(selection, txt) {  // [1]
             fontSize: 40
         }
     ];
-    selection.insertionParent.addChild(text); 
-    text.moveInParentCoordinates(100, 100); 
+    selection.insertionParent.addChild(text);
+    text.moveInParentCoordinates(100, 100);
 }
 ```
 1. `createText` function takes `selection` object and `txt` text as parameters. The contents of the string is added to a `Text` object, and the `Text` object is added to the currently-selected artboard or the first artboard.  For more information, see [How to create styled text](/Guides/how-to-style-text-guide)
@@ -158,8 +158,8 @@ function createText(selection, txt) {  // [1]
 ### 8. Create the main function
 ```js
 function singleLine(selection) {
-     //  
-    document.body.appendChild(dialog); // [1]    
+     //
+    document.body.appendChild(dialog); // [1]
     const txt = await showDialog(); // [2]
     createText(selection, txt) // [3]
 }
@@ -172,11 +172,11 @@ function singleLine(selection) {
 
 If you reload the plugin and execute it, you should see a modal window like this one:
 
-<img src="/.meta/readme-assets/modal-what-is-your-name.png" width="50%" height="50%">
+<img src="/images/readme-assets/modal-what-is-your-name.png" width="50%" height="50%">
 
 If you type in your name, the text should be added to the currently-selected or first artboard:
 
-<img src="/.meta/readme-assets/single-line-text-output.png" width="50%" height="50%">
+<img src="/images/readme-assets/single-line-text-output.png" width="50%" height="50%">
 
 ## Next Steps
 

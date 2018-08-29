@@ -4,4 +4,5 @@ The **XD Plugin Experience Guidelines** (XDPEGs) can be used to ensure that your
 
 Enforcement of these guidelines is largely on a case-by-case basis. However, there *are* guidelines that will result in the immediate rejection of your plugin during the vetting process. These guidelines are prefixed with ***Always*** and ***Never***.
 
-**Note:** You aren’t required to follow the XDPEGs when building plugins for you, your team, or your enterprise. It’s still suggested that you do follow them when sharing your plugin, however, because we’ve tried to identify the common guidelines that ensure for a good user experience.
+> **info**
+> You aren’t required to follow the XDPEGs when building plugins for you, your team, or your enterprise. It’s still suggested that you do follow them when sharing your plugin, however, because we’ve tried to identify the common guidelines that ensure for a good user experience.

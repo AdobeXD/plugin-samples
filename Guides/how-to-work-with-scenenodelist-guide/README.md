@@ -37,7 +37,7 @@ $ mkdir com.adobe.scenenodelist
 $ cd com.adobe.scenenodelist
 $ touch manifest.json
 $ touch main.js
-``` 
+```
 
 Edit the manifest file for your plugin:
 
@@ -136,7 +136,7 @@ Note that each object can be added to the first artboard using the `selection.in
 
 ### 4. Create the second function that filters for rectnagles and colors them red
 
-```js 
+```js
 function filterAndColor(selection, root) { // [1]
 	root.children.forEach(node => { // [2]
 		if (node instanceof Artboard) { // [3]
@@ -162,11 +162,11 @@ function filterAndColor(selection, root) { // [1]
 
 Ater saving all your changes, reload the plugin in XD and invoke it. First, run the first command, "Create Elements"
 
-<img src="/.meta/readme-assets/create-elements.png" width="50%" height="50%">
+<img src="/images/readme-assets/create-elements.png" width="50%" height="50%">
 
 Then, run the second command, "Filter and Color"
 
-<img src="/.meta/readme-assets/filter-and-color.png" width="50%" height="50%">
+<img src="/images/readme-assets/filter-and-color.png" width="50%" height="50%">
 
 ## Next Steps
 

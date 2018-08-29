@@ -6,10 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "book:install": "gitbook install . $@",
-    "book:build": "gitbook build . $@",
-    "book:build:epub": "gitbook epub . $@",
-    "book:build:pdf": "gitbook pdf . $@",
-    "book:watch": "gitbook serve . $@"
+    "book:build": "gitbook --timing --log=debug --debug build . $@",
+    "book:build:epub": "gitbook --log=debug --debug epub . $@",
+    "book:build:pdf": "gitbook --log=debug --debug pdf . $@",
+    "book:watch": "gitbook --log=debug --debug serve . $@",
+    "book:publish:github": "gh-pages -d _book",
+    "book:publish:mirror": "gh-pages -d _book -o mirror"
   },
   "author": "",
   "license": "Apache-2.0",
@@ -37,6 +39,7 @@
   "devDependencies": {
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
+    "gh-pages": "^1.2.0",
     "gitbook-cli": "^2.3.2"
   }
 }

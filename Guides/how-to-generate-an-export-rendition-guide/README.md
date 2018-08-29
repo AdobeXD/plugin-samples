@@ -39,7 +39,7 @@ $ mkdir com.adobe.exportrendition
 $ cd com.adobe.exportrendition
 $ touch manifest.json
 $ touch main.js
-``` 
+```
 
 Edit the manifest file for your plugin:
 
@@ -147,7 +147,7 @@ closeButton.onclick = (e) => { // [5]
 }
 
 document.body.appendChild(dialog); // [6]
-dialog.appendChild(container); 
+dialog.appendChild(container);
 dialog.showModal()
 ```
 Just like HTML DOM APIs, you can use `document.createElement` method to create UI objects. Elements have the `style` property which contains metrics properties you can set
@@ -162,15 +162,15 @@ Just like HTML DOM APIs, you can use `document.createElement` method to create U
 
 Make sure to select an item (artboard) in XD and execute the plugin command:
 
-<img src="/.meta/readme-assets/export-rendition-execute.png" width="50%" height="50%">
+<img src="/images/readme-assets/export-rendition-execute.png" width="50%" height="50%">
 
 You should see a modal window like this one:
 
-<img src="/.meta/readme-assets/export-rendition-pick-file.png" width="50%" height="50%">
+<img src="/images/readme-assets/export-rendition-pick-file.png" width="50%" height="50%">
 
 The rendition will be saved at the specified location:
 
-<img src="/.meta/readme-assets/export-rendition-complete.png" width="50%" height="50%">
+<img src="/images/readme-assets/export-rendition-complete.png" width="50%" height="50%">
 
 ## Next Steps
 

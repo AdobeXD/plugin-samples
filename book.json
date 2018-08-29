@@ -8,16 +8,16 @@
     "plugins": [
         "page-toc",
         "anchorjs",
-        "collapse",
-        "pretty-term",
+        "-collapse",
+        "-pretty-term",
         "code",
-        "dashing",
+        "-dashing",
         "todo",
-        "devops",
+        "-devops",
         "expandable-chapters-interactive",
         "styled-blockquotes",
         "codetabs",
-        "recently-updated",
+        "-recently-updated",
         "github-buttons",
         "prism",
         "-highlight",
@@ -29,7 +29,7 @@
     ],
     "pluginsConfig": {
         "addcssjs": {
-            "css": ["public/custom.css"]
+            "css": ["./public/custom.css"]
         },
         "page-toc": {
             "selector": ".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4",
@@ -65,9 +65,9 @@
                     "substitute": "|"
                 },
                 {
-                    "pattern": "\\([^#\\)]*#(Attr|BaseUIEvent|CharacterData|ClassList|Clipboard|CloseEvent|Comment|Document|DocumentFragment|DOMException|DOMTokenList|DragEvent|Element|Event|EventTarget|GestureEvent|HTMLElement|HTMLAncorElement|HTMLBodyElement|HTMLButtonElement|HTMLDialogElement|HTMLHeadElement|HTMlHtmlElement|HTMLImageElement|HTMLInputElement|HTMLLabelElement|HTMLLinkElement|HTMLMenuElement|HTMLOptionElement|HTMLProgressELement|HTMLScriptElement|HTMLSelectElement|HTMLStyleElement|HTMLTextAreaElement|KeyboardEvent|MessageEvent|NamedNodeMap|Node|NodeList|PointerEvent|ProgressEvent|Shell|Text|WebSocket|XMLHttpRequest)\\)",
+                    "pattern": "\\[`(Attr|BaseUIEvent|CharacterData|ClassList|Clipboard|CloseEvent|Comment|Document|DocumentFragment|DOMException|DOMTokenList|DragEvent|Element|Event|EventTarget|GestureEvent|HTMLElement|HTMLAncorElement|HTMLBodyElement|HTMLButtonElement|HTMLDialogElement|HTMLHeadElement|HTMlHtmlElement|HTMLImageElement|HTMLInputElement|HTMLLabelElement|HTMLLinkElement|HTMLMenuElement|HTMLOptionElement|HTMLProgressELement|HTMLScriptElement|HTMLSelectElement|HTMLStyleElement|HTMLTextAreaElement|KeyboardEvent|MessageEvent|NamedNodeMap|Node|NodeList|PointerEvent|ProgressEvent|Shell|Text|WebSocket|XMLHttpRequest)`\\]\\([^\\)]*\\)",
                     "flags": "gi",
-                    "substitute": "(/reference/uxp/class/$1.html)"
+                    "substitute": "[ `$1` ](/reference/uxp/class/$1.html)"
                 },
                 {
                     "pattern": "\\([^#\\)]*#(storage)\\)",
