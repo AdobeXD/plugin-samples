@@ -21,18 +21,18 @@ This sample demonstrates how to create a plugin that adds colored lines to the u
 
 ## Technology Used
 - References
-    - [XD Scenegraph - Line](references/line.md)
-    - [XD Scenegraph - Commands](references/commands.md)
+    - [XD Scenegraph - Line](/reference/scenegraph.md#Line)
+    - [XD Scenegraph - Commands](/reference/commands.md)
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Getting Started Guide](../getting-started-guide)
+- [Getting Started Guide](/Guides/getting-started-guide)
 
 ## Development Steps
 
 ### 1.  Create plugin scaffold
 
-As described in the [Getting Started Guide](../getting-started-guide), create the directory for your plugin:
+As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
 
 ```
 $ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
@@ -134,7 +134,7 @@ function createLinesHandlerFunction(selection) { // [1]
     commands.group() // [12]
 }
 ```
-1. This function accepts one parameter, `selection`, which gives access to the selection object inside XD. Refer to [XD Selection Doc](references/selection.md) for more details.
+1. This function accepts one parameter, `selection`, which gives access to the selection object inside XD. Refer to [XD Selection Doc](/reference/selection.md) for more details.
 2. Create an empty array to contain all the `Line` objects.  It will be used later, in step [11]
 3. Loop over the provided array of line data
 4. Create a new instance of `Line`
