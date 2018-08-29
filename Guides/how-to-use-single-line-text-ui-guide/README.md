@@ -19,11 +19,12 @@ This sample describes how an XD plugin can invoke the default file picker and di
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Technology Used
-- References: [XD User Interface Concepts](https://adobe-xd.gitbook.io/plugin-api-reference/user-interface/ui-concepts)
+- References: [XD User Interface Concepts](/reference/ui/ui-concepts.md)
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
 - [Getting Started Guide](/Guides/getting-started-guide)
+- [Debugging Guide](/Guides/debugging-guide)
 
 ## Development Steps
 

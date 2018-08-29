@@ -26,6 +26,7 @@ Please note the screenshots are from a mac machine but the steps would be identi
 
 ## Prerequisites
 - [Getting Started Guide](/Guides/getting-started-guide)
+- [Debugging Guide](/Guides/debugging-guide)
 
 ## Development Steps
 

@@ -19,12 +19,13 @@ This sample demonstrates how to create path objects in XD.  The path objects are
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Technology Used
-- References: [XD Scenegraph - Path](references/selection.md)
+- References: [XD Scenegraph - Path](/reference/scenegraph.md#Path)
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
 - Basic knowledge of [Paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths)
 - [Getting Started Guide](/Guides/getting-started-guide)
+- [Debugging Guide](/Guides/debugging-guide)
 
 ## Development Steps
 
@@ -33,7 +34,7 @@ This sample demonstrates how to create path objects in XD.  The path objects are
 As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
 
 ```
-$ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
+$ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
 $ mkdir com.adobe.xd.createPieChart
 $ cd com.adobe.xd.createPieChart
 $ touch manifest.json
@@ -135,7 +136,7 @@ Note that the end angle of each wedge matches the start angle of the next wedge.
 
 Ater saving all your changes, reload the plugin in XD and invoke it.  The result should be similar to the following:
 
-<img src="../../images/readme-assets/pie-chart.png" width="50%" height="50%">
+<img src="/images/readme-assets/pie-chart.png" width="50%" height="50%">
 
 ## Next Steps
 

@@ -17,13 +17,14 @@ This sample app will show you how to use Websocket to communicate real-time betw
 
 ## Technology Used
 - References:
-    - [Websocket](https://adobe-xd.gitbook.io/plugin-api-reference/uxp-api-reference/network-apis/websocket)
-    - [UI](https://adobe-xd.gitbook.io/plugin-api-reference/user-interface/ui-concepts)
+    - [Websocket](/reference/uxp/network-IO.md#web-socket-support)
+    - [XD User Interface Concepts](/reference/ui/ui-concepts.md)
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript
 - Basic knowledge of `WebSocket`
-- [Getting Started Guide](../getting-started-guide)
+- [Getting Started Guide](/Guides/getting-started-guide)
+- [Debugging Guide](/Guides/debugging-guide)
 
 ## Configuration
 
@@ -50,7 +51,7 @@ npm install --save websocket
 As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
 
 ```
-$ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
+$ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
 $ mkdir com.adobe.xd.websockets
 $ cd com.adobe.xd.websockets
 $ touch manifest.json
@@ -273,5 +274,4 @@ wsServer.on('request', function (request) {
 
 Description
 
-- [How to debug](how-to-debug)
 - [Other samples](https://github.com/AdobeXD/Plugin-Samples)

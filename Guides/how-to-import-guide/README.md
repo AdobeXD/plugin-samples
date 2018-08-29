@@ -19,11 +19,12 @@ This sample describes how an XD plugin can invoke the default file picker and di
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Technology Used
-- References: [XD File I/O](references/selection.md)
+- References: [XD File I/O](/reference/uxp/using-file-apis.md)
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Getting Started Guide](../getting-started-guide)
+- [Getting Started Guide](/Guides/getting-started-guide)
+- [Debugging Guide](/Guides/debugging-guide)
 
 ## Development Steps
 
@@ -32,7 +33,7 @@ This sample describes how an XD plugin can invoke the default file picker and di
 As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
 
 ```
-$ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
+$ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
 $ mkdir com.adobe.xd.insertTextFromFile
 $ cd com.adobe.xd.insertTextFromFile
 $ touch manifest.json

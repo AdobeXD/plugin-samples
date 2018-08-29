@@ -23,11 +23,12 @@ Let’s walk through the process of how you can create an Adobe XD plugin. This 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Technology Used
-- [XD plugin API reference](https://adobe-xd.gitbook.io/plugin-api-reference)
+- [XD plugin API reference](/reference)
 - Libraries/Frameworks/APIs: None
 
 ## Prerequisites
-Basic knowledge of HTML, CSS, and JavaScript.
+- Basic knowledge of HTML, CSS, and JavaScript.
+- [Debugging Guide](/Guides/debugging-guide)
 
 ## Development Steps
 
@@ -37,7 +38,7 @@ Adobe XD loads plugins from a `plugins` folder in specific storage location:
 
 | Platform      | Path          |
 | ------------- |:-------------:|
-| MacOS         | `~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/` (note: `~/Library`, not `/Library`) |
+| MacOS         | `~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/` (note: `~/Library`, not `/Library`) |
 | Windows       | `C:\Users\%USERNAME%\AppData\Local\Packages\Adobe.CC.XD.Prerelease_adky2gkssdxte\LocalState\`       |
 
 Navigate to the above path, and if there _isn’t_ a folder that already exists with the name `plugins`, go ahead and create it.
@@ -61,7 +62,7 @@ These two files (and any others you need) are stored within a folder. Each plugi
 Example:
 
 ```bash
-    $ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
+    $ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
     $ mkdir com.adobe.xd.helloWorld
     $ cd com.adobe.xd.helloWorld
     $ touch manifest.json
@@ -91,7 +92,7 @@ Adobe XD requires that your plugin have a manifest named `manifest.json`. Our ex
 }
 ```
 
-For more about what each entry means, [see the manifest documentation](https://adobe-xd.gitbook.io/plugin-api-reference/getting-started/index-1/manifest).
+For more about what each entry means, [see the manifest documentation](/reference/structure/manifest.md).
 
 The value of the `commandId` property may be any string. In the next section, we will see how that string is associated with the code for our plugin.
 
@@ -121,7 +122,7 @@ module.exports = { // [6]
 };
 ```
 
-1.  In this line, we get references to the `Text` and `Color` classes from XD’s `scenegraph` module. There are several different [API modules you can load using `require()`](https://adobe-xd.gitbook.io/plugin-api-reference).
+1.  In this line, we get references to the `Text` and `Color` classes from XD’s `scenegraph` module. There are several different [API modules you can load using `require()`](/reference).
 
 2.  Next we define our handler function. The handler function will be invoked when the user selects the “Say Hello” menu command.  The binding between that menu command and this handler function is further described below.
 
@@ -129,7 +130,7 @@ module.exports = { // [6]
 
 4.  Here we add the `Text` object to the scenegraph. It should show up at the (0, 0) coordinates, so if you don’t see it, try zooming out or panning until you do.
 
-5.  We bring the added text into the artboard by moving it by using the scenenode method, [moveInParentCoordinates](https://adobe-xd.gitbook.io/plugin-api-reference/xd-api-reference/scenegraph#scenenode-moveinparentcoordinates-deltax-deltay). Without this, the text would have been rendered outside of the artboard.
+5.  We bring the added text into the artboard by moving it by using the scenenode method, [moveInParentCoordinates](/reference/scenegraph.md#SceneNode+moveInParentCoordinates). Without this, the text would have been rendered outside of the artboard.
 
 6.  The final part of `main.js` is to export a map object, which associates the JavaScript handler function with the `commandId` property declared in the manifest earlier. The command ID (the part to the left of the `:` here) must match the `commandId` value declared in your manifest exactly.
 
@@ -148,6 +149,6 @@ Congratulations! You’ve built your first plugin with Adobe XD!
 
 ## Next Steps
 
-- [Full API reference](https://adobe-xd.gitbook.io/plugin-api-reference)
-- [Debugging plugins](https://adobe-xd.gitbook.io/plugin-guides/getting-started/debugging-guide)
+- [Full API reference](/reference)
+- [Debugging plugins](/Guides/debugging-guide)
 - [Plugin samples](https://github.com/AdobeXD/Plugin-Samples)

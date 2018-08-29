@@ -34,7 +34,11 @@ After setting up the sample, you will have an XD plugin and a separate node serv
 
 ## Prerequisites
 
-This guide will assume that you are familiar with [OAuth workflow](https://oauth.net/2/).
+- Basic knowledge of HTML, CSS, and JavaScript.
+- [Getting Started Guide](/Guides/getting-started-guide)
+- [Debugging Guide](/Guides/debugging-guide)
+
+This guide will also assume that you are familiar with [OAuth workflow](https://oauth.net/2/).
 
 You must also have [a registered app on Dropbox](https://www.dropbox.com/developers/apps/create) with the following settings:
 
@@ -315,5 +319,4 @@ text.moveInParentCoordinates(100, 100); // [5]
 
 Description
 
-- [How to debug](how-to-debug)
 - [Other samples](https://github.com/AdobeXD/Plugin-Samples)
