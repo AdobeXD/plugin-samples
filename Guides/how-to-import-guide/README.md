@@ -19,11 +19,11 @@ This sample describes how an XD plugin can invoke the default file picker and di
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Technology Used
-- References: [XD File I/O](references/selection.md)
+- References: [XD File I/O](/reference/uxp/using-file-apis.md)
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Getting Started Guide](../getting-started-guide)
+- [Getting Started Guide](/Guides/getting-started-guide)
 
 ## Development Steps
 
