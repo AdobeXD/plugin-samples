@@ -51,7 +51,7 @@ npm install --save websocket
 As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
 
 ```
-$ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
+$ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
 $ mkdir com.adobe.xd.websockets
 $ cd com.adobe.xd.websockets
 $ touch manifest.json

@@ -34,7 +34,7 @@ Creating styled text in Adobe XD is easy! In this guide, we'll show you how to c
 As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
 
 ```
-$ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
+$ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
 $ mkdir com.adobe.xd.createStyledText
 $ cd com.adobe.xd.createStyledText
 $ touch manifest.json

@@ -33,7 +33,7 @@ This sample describes how an XD plugin can invoke the default file picker and di
 As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
 
 ```
-$ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
+$ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
 $ mkdir com.adobe.xd.insertTextFromFile
 $ cd com.adobe.xd.insertTextFromFile
 $ touch manifest.json

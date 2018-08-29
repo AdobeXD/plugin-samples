@@ -34,7 +34,7 @@ This sample demonstrates how to create path objects in XD.  The path objects are
 As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
 
 ```
-$ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
+$ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
 $ mkdir com.adobe.xd.createPieChart
 $ cd com.adobe.xd.createPieChart
 $ touch manifest.json

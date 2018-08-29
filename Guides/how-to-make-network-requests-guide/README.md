@@ -33,7 +33,7 @@ This sample app will show you how to load an image in an XD object (Rectangle or
 As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
 
 ```
-$ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
+$ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
 $ mkdir com.adobe.xd.networkio
 $ cd com.adobe.xd.networkio
 $ touch manifest.json

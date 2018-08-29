@@ -36,7 +36,7 @@ This sample demonstrates how to create a plugin that adds colored lines to the u
 As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
 
 ```
-$ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
+$ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
 $ mkdir com.adobe.xd.createLines
 $ cd com.adobe.xd.createLines
 $ touch manifest.json
