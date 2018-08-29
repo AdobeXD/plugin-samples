@@ -3,6 +3,7 @@
 ## Plugin Manager
 
 - When upgrading or downgrading plugins, the plugin folder is not recursively deleted. This will cause an error when attempting the installation. ([XD-59699](https://jira.corp.adobe.com/browse/XD-59699))
+- When launching XD, plugin data that is orphaned (that is, a corresponding plugin isn't installed) will be deleted. This could cause unexpected loss of preferences or data. If you have any important data in a plugin data folder, you should make a backup before uninstalling plugins.
 
 ## Scenegraph
 
@@ -81,6 +82,7 @@
 
 - On macOS, it is not possible to use self-signed certificates with secure Websockets.
 - Websockets do not support extensions.
+- Secure websockets are not yet supported. This will be addressed in a future release.
 - XHR does not support cookies.
 - `responseURL` is not supported on XHR
 
