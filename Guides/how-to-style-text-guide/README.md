@@ -18,21 +18,20 @@ Creating styled text in Adobe XD is easy! In this guide, we'll show you how to c
 
 ## Technology Used
 
-- [SceneGraph API](https://adobe-xd.gitbook.io/plugin-api-reference/scenegraph-reference/scenegraph)
-- [Text Node](https://adobe-xd.gitbook.io/plugin-api-reference/scenegraph-reference/scenegraph#text)
-- [styleRanges](https://adobe-xd.gitbook.io/plugin-api-reference/scenegraph-reference/scenegraph#text-styleranges-array)
-- [Color](#)
+- [SceneGraph API](/reference/scenegraph.md)
+- [Text Node](/reference/scenegraph.md#Text)
+- [Color](/reference/Color.md)
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Getting Started Guide](../getting-started-guide)
+- [Getting Started Guide](/Guides/getting-started-guide)
 - [Debugging Guide](/Guides/debugging-guide)
 
 ## Development Steps
 
 ### 1.  Create plugin scaffold
 
-As described in the [Getting Started Guide](../getting-started-guide), create the directory for your plugin:
+As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
 
 ```
 $ cd ~/Library/Application Support/Adobe/Adobe XD CC (Prerelease)/plugins
@@ -81,7 +80,7 @@ The remaining steps in this guide describe additional edits to the main.js file.
 
 ### 2. Import Node Types from the SceneGraph API
 
-We'll need both the [Text](https://adobe-xd.gitbook.io/plugin-api-reference/scenegraph-reference/scenegraph#text) and [Color](https://adobe-xd.gitbook.io/plugin-api-reference/scenegraph-reference/scenegraph#color) classes from XD's [SceneGraph Module](https://adobe-xd.gitbook.io/plugin-api-reference/scenegraph-reference/scenegraph).
+We'll need both the [Text](/reference/scenegraph.md#Text) and [Color](/reference/Color.md) classes from XD's [SceneGraph Module](/reference/scenegraph.md).
 
 ```js
 const { Text, Color } = require("scenegraph");
@@ -165,14 +164,10 @@ function createStyledTextHandlerFunction(selection) {
 
 ### 6. Test the plugin again
 
-If you reload the pluign and execute it, you should see the following result:
-
-![Rainbow Text](./assets/rainbow.png)
+Plugins > "Create Styled Text"
 
 ## Next Steps
 
 Description
 
-- [How to debug](how-to-debug)
-- [Investigate the style properties that are available](https://adobe-xd.gitbook.io/plugin-api-reference/scenegraph-reference/scenegraph#text-styleranges-array)
 - [Other samples](https://github.com/AdobeXD/Plugin-Samples)
