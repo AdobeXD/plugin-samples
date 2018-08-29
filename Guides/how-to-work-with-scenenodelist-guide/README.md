@@ -19,7 +19,7 @@ This sample demonstrates how to work with scenenode lists. **The plugin code can
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Technology Used
-- References: [XD Scenegraph - ScenenodeList](https://adobe-xd.gitbook.io/plugin-api-reference/xd-api-reference/scenenodelist)
+- References: [XD Scenegraph - ScenenodeList](/reference/SceneNodeList.md)
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
@@ -129,8 +129,8 @@ function createElements(selection) {
 
 ```
 1. Use `for` loop to create 5 elements of each XD object
-2. The `Rectangle` object is added to the current artboard. For more information, see the [reference guide](https://adobe-xd.gitbook.io/plugin-api-reference/xd-api-reference/scenegraph#Rectangle)
-3. The `Ellipse` object is added to the current artboard. For more information, see the [reference guide](https://adobe-xd.gitbook.io/plugin-api-reference/xd-api-reference/scenegraph#Ellipse)
+2. The `Rectangle` object is added to the current artboard. For more information, see the [reference guide](/reference/scenegraph.md#Rectangle)
+3. The `Ellipse` object is added to the current artboard. For more information, see the [reference guide](/reference/scenegraph.md#ellipse)
 4. The contents of the string is added to a `Text` object, and the `Text` object is added to the current artboard.  For more information, see [How to create styled text](/Guides/how-to-style-text-guide)
 
 Note that each object can be added to the first artboard using the `selection.insertionParent.addchild` method and `moveInParentCoordinates` to move each object inside the artboard.
@@ -173,5 +173,4 @@ Then, run the second command, "Filter and Color"
 
 Ready for more? Take a look at other guides:
 
-- [Guides](/Guides)
 - [Other samples](https://github.com/AdobeXD/Plugin-Samples)
