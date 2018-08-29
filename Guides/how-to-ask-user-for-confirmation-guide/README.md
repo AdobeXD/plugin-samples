@@ -33,16 +33,16 @@ This sample demonstrates how to build a user confirmation dialog in XD.  **The p
 
 ## Technology Used
 - References: 
-	- [UXP API - Document](https://adobe-xd.gitbook.io/plugin-api-reference/uxp-api-reference/dom5-apis/classes/document)
-	- [UXP API - Dialog](https://adobe-xd.gitbook.io/plugin-api-reference/uxp-api-reference/dom5-apis/html-elements/htmldialogelement)
-	- [UXP API - Form](https://adobe-xd.gitbook.io/plugin-api-reference/uxp-api-reference/dom5-apis/html-elements/htmlhtmlelement)
-	- [UXP API - Footer](https://adobe-xd.gitbook.io/plugin-api-reference/uxp-api-reference/dom5-apis/html-elements/htmlhtmlelement)
-	- [UXP API - Button](https://adobe-xd.gitbook.io/plugin-api-reference/uxp-api-reference/dom5-apis/html-elements/htmlbuttonelement)	
-	- [UXP API - Heading](https://adobe-xd.gitbook.io/plugin-api-reference/uxp-api-reference/dom5-apis/html-elements/htmlhtmlelement)
+	- [UXP API - Document](/reference/uxp/class/Document.md)
+	- [UXP API - Dialog](/reference/uxp/class/HTMLDialogElement.md)
+	- [UXP API - Form](/reference/uxp/class/HTMLHtmlElement.md)
+	- [UXP API - Footer](/reference/uxp/class/HTMLHtmlElement.md)
+	- [UXP API - Button](/reference/uxp/class/HTMLButtonElement.md)	
+	- [UXP API - Heading](/reference/uxp/class/HTMLHtmlElement.md)
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Getting Started Guide](../getting-started-guide)
+- [Getting Started Guide](/Guides/getting-started-guide)
 
 ## Development Steps
 
@@ -117,5 +117,5 @@ document.body.appendChild(dialog);
 
 Description
 
-- [How to debug](how-to-debug)
+- [How to debug](/Guides/debugging-guide)
 - [Other samples](https://github.com/AdobeXD/Plugin-Samples)
