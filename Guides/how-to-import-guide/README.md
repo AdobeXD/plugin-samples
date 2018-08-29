@@ -37,7 +37,7 @@ $ mkdir com.adobe.xd.insertTextFromFile
 $ cd com.adobe.xd.insertTextFromFile
 $ touch manifest.json
 $ touch main.js
-``` 
+```
 
 Edit the manifest file for your plugin:
 
@@ -67,7 +67,7 @@ async function insertTextFromFileHandler(selection) {
     // The body of this function is added later
 }
 
-module.exports = { 
+module.exports = {
     commands: {
         "insertTextFromFileCommand": insertTextFromFileHandler
     }
@@ -94,10 +94,10 @@ async function insertTextFromFileHandler(selection) { // [1]
     const [aFile] = await fs.getFileForOpening();     // [2]
     if (!aFile)                                       // [3]
 	return;
-	
+
     const contents = await aFile.read();              // [4]
 
-    const text = new Text();                          // [5] 
+    const text = new Text();                          // [5]
     text.text = contents;
     text.styleRanges = [{
         length: contents.length,
@@ -116,8 +116,8 @@ async function insertTextFromFileHandler(selection) { // [1]
 5. The contents of the string is added to a `Text` object, and the `Text` object is added to the currently-selected artboard.  For more information, see [How to create styled text](/Guides/how-to-style-text-guide)
 
 Line [2] uses a number of modern Javascript constructs.  It is executed as follows:
-* First,`fs.getFileForOpening()` function returns a `Promise` object.  
-* Next, the `await` keyword causes this asynchronous function to pause until the `Promise` is fulfilled. 
+* First,`fs.getFileForOpening()` function returns a `Promise` object.
+* Next, the `await` keyword causes this asynchronous function to pause until the `Promise` is fulfilled.
 * If the user selects a file, then the `Promise` is fulfiled. The value of the `await` expression is that of the fulfilled promise, which is an `Array` containing one `File` object.
 * If the user closes the file picker dialog without selecting a file, then the promise is also fulfilled. The value of the `await` expression is that of the fulfilled promise, which is an empty array.
 * Using the "destructuring assignment" syntax, the first element of the array is assigned to `aFile`.  If the array is empty (because the user did not select a file), then `aFile` is set to `undefined`.
@@ -131,11 +131,11 @@ Line [4] is also an asynchronous operation:
 
 If you reload the plugin and execute it, you should see a file chooser like this one:
 
-<img src="/.meta/readme-assets/filepicker.png" width="50%" height="50%">
+<img src="/images/readme-assets/filepicker.png" width="50%" height="50%">
 
 If you select a file containing text, the text should be added to the currently-selected artboard:
 
-<img src="/.meta/readme-assets/displayed-results.png" width="50%" height="50%">
+<img src="/images/readme-assets/displayed-results.png" width="50%" height="50%">
 
 ## Next Steps
 

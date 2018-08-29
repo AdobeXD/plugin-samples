@@ -1,4 +1,4 @@
-##### Properties with object values
+# Properties with object values
 
 Some scenegraph properties have values that are not simple primitive types (e.g. numbers), but rather are objects with sub-properties of
 their own. In order to update the document with changes, you must invoke the top-level setter on the _scenenode object_ itself &ndash;

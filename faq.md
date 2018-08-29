@@ -69,10 +69,6 @@ The JavaScript VM does support most of ES2015 and beyond. You can use features s
 When plugins cause an error, any changes made during that edit operation are rolled back. Plugin actions are atomic -- failure will revert the entire operation. Check the
 [Developer Console](https://adobe-xd.gitbook.io/plugin-guides/getting-started/debugging-guide#1-open-the-developer-console) view for errors.
 
-### I changed my plugin's manifest, but Adobe XD didn't see the change.
-
-You'll need to restart Adobe XD when making changes to your plugin's manifest.
-
 ### I added a new plugin to Adobe XD, but it doesn't show in the **Plugins** menu.
 
-You'll need to restart Adobe XD when adding a new plugin. Also check the [Developer Console](https://adobe-xd.gitbook.io/plugin-guides/getting-started/debugging-guide#1-open-the-developer-console) to ensure there aren't any errors in your plugin's [manifest](./reference/manifest.md).
+Check the [Developer Console](https://adobe-xd.gitbook.io/plugin-guides/getting-started/debugging-guide#1-open-the-developer-console) to ensure there aren't any errors in your plugin's [manifest](./reference/manifest.md).

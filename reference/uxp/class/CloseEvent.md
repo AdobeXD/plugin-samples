@@ -1,6 +1,7 @@
-## CloseEvent
-**Signature:** CloseEvent ⇐ [`Event`](#event)
 
+<a name="closeevent" id="closeevent"></a>
+
+## CloseEvent ⇐ [`Event`](#event)
 **Kind**: global class  
 **Extends**: [`Event`](#event)  
 **Access**: public  
@@ -19,91 +20,107 @@
     * [.cancelable](#event-cancelable) : `boolean`
     * [.eventPhase](#event-eventphase)
     * [.defaultPrevented](#event-defaultprevented) : `boolean`
-    * [.returnValue](#event-returnvalue) : `*`
+    * [.returnValue](#event-returnvalue) : `\*`
     * [.preventDefault()](#event-preventdefault)
     * [.stopImmediatePropagation()](#event-stopimmediatepropagation)
     * [.stopPropagation()](#event-stoppropagation)
 
-### new CloseEvent
-**Signature:** new CloseEvent(code, reason, wasClean)
 
+<a name="new-closeevent-new" id="new-closeevent-new"></a>
+
+### new CloseEvent(code, reason, wasClean)
 Creates an instance of CloseEvent.
 
 
 | Param | Type |
 | --- | --- |
-| code | `*` | 
-| reason | `*` | 
-| wasClean | `*` | 
+| code | `\*` | 
+| reason | `\*` | 
+| wasClean | `\*` | 
 
-### closeEvent.code
-**Signature:** closeEvent.code ⇒ `number`
 
+<a name="closeevent-code" id="closeevent-code"></a>
+
+### closeEvent.code ⇒ `number`
 **Kind**: instance property of [`CloseEvent`](#closeevent)  
 **Returns**: `number` - returns the close code sent by the server.  
-### closeEvent.reason
-**Signature:** closeEvent.reason ⇒ `number`
 
+<a name="closeevent-reason" id="closeevent-reason"></a>
+
+### closeEvent.reason ⇒ `number`
 **Kind**: instance property of [`CloseEvent`](#closeevent)  
 **Returns**: `number` - returns the string indicating the reason the server closed the connection..  
-### closeEvent.wasClean
-**Signature:** closeEvent.wasClean ⇒ `boolean`
 
+<a name="closeevent-wasclean" id="closeevent-wasclean"></a>
+
+### closeEvent.wasClean ⇒ `boolean`
 **Kind**: instance property of [`CloseEvent`](#closeevent)  
 **Returns**: `boolean` - returns a boolean that inndicates whether or not the connection was cleanly closed.  
+
+<a name="event-type" id="event-type"></a>
+
 ### closeEvent.type
-**Signature:** closeEvent.type
-
 **Kind**: instance property of [`CloseEvent`](#closeevent)  
 **Read only**: true  
-### closeEvent.isTrusted
-**Signature:** closeEvent.isTrusted : `boolean`
 
+<a name="event-istrusted" id="event-istrusted"></a>
+
+### closeEvent.isTrusted : `boolean`
 **Kind**: instance property of [`CloseEvent`](#closeevent)  
 **Read only**: true  
-### closeEvent.target
-**Signature:** closeEvent.target : [`Node`](#node)
 
+<a name="event-target" id="event-target"></a>
+
+### closeEvent.target : [`Node`](#node)
 **Kind**: instance property of [`CloseEvent`](#closeevent)  
 **Read only**: true  
-### closeEvent.currentTarget
-**Signature:** closeEvent.currentTarget : [`Node`](#node)
 
+<a name="event-currenttarget" id="event-currenttarget"></a>
+
+### closeEvent.currentTarget : [`Node`](#node)
 **Kind**: instance property of [`CloseEvent`](#closeevent)  
 **Read only**: true  
-### closeEvent.bubbles
-**Signature:** closeEvent.bubbles : `boolean`
 
+<a name="event-bubbles" id="event-bubbles"></a>
+
+### closeEvent.bubbles : `boolean`
 **Kind**: instance property of [`CloseEvent`](#closeevent)  
 **Read only**: true  
-### closeEvent.cancelable
-**Signature:** closeEvent.cancelable : `boolean`
 
+<a name="event-cancelable" id="event-cancelable"></a>
+
+### closeEvent.cancelable : `boolean`
 **Kind**: instance property of [`CloseEvent`](#closeevent)  
 **Read only**: true  
+
+<a name="event-eventphase" id="event-eventphase"></a>
+
 ### closeEvent.eventPhase
-**Signature:** closeEvent.eventPhase
-
 **Kind**: instance property of [`CloseEvent`](#closeevent)  
 **Read only**: true  
-### closeEvent.defaultPrevented
-**Signature:** closeEvent.defaultPrevented : `boolean`
 
+<a name="event-defaultprevented" id="event-defaultprevented"></a>
+
+### closeEvent.defaultPrevented : `boolean`
 **Kind**: instance property of [`CloseEvent`](#closeevent)  
 **Read only**: true  
-### closeEvent.returnValue
-**Signature:** closeEvent.returnValue : `*`
 
+<a name="event-returnvalue" id="event-returnvalue"></a>
+
+### closeEvent.returnValue : `\*`
 **Kind**: instance property of [`CloseEvent`](#closeevent)  
-### closeEvent.preventDefault
-**Signature:** closeEvent.preventDefault()
 
+<a name="event-preventdefault" id="event-preventdefault"></a>
+
+### closeEvent.preventDefault()
 **Kind**: instance method of [`CloseEvent`](#closeevent)  
-### closeEvent.stopImmediatePropagation
-**Signature:** closeEvent.stopImmediatePropagation()
 
+<a name="event-stopimmediatepropagation" id="event-stopimmediatepropagation"></a>
+
+### closeEvent.stopImmediatePropagation()
 **Kind**: instance method of [`CloseEvent`](#closeevent)  
-### closeEvent.stopPropagation
-**Signature:** closeEvent.stopPropagation()
 
+<a name="event-stoppropagation" id="event-stoppropagation"></a>
+
+### closeEvent.stopPropagation()
 **Kind**: instance method of [`CloseEvent`](#closeevent)  

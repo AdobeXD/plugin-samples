@@ -1,0 +1,41 @@
+.page-inner {
+    max-width: 1000px;
+    padding-right: 300px;
+}
+
+.page-toc {
+    position: absolute;
+    right: 0;
+    width: 275px;
+    top: 2em;
+    background: none;
+    border: 0;
+    border-left: 1px solid #EAEAEA;
+    overflow-x: auto;
+}
+
+.page-toc::before {
+    content: "Contents";
+}
+
+.page-toc li {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.book-header h1 {
+    opacity: 1;
+    font-weight: normal;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+}
+
+.book-header {
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.25);
+}
+
+#book-search-input {
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.25);
+}

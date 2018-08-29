@@ -1,4 +1,4 @@
-##### Scenegraph
+# Scenegraph
 
 The XD document is represented as a hierarchical tree of nodes called the **scenegraph**. Some scenenodes may contain children (e.g. a
 Group or Artboard), while others are leaf nodes (e.g. a Rectangle or Text node).

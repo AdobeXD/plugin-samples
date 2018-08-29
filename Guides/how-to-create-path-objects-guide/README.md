@@ -38,7 +38,7 @@ $ mkdir com.adobe.xd.createPieChart
 $ cd com.adobe.xd.createPieChart
 $ touch manifest.json
 $ touch main.js
-``` 
+```
 
 Edit the manifest file for your plugin:
 
@@ -68,7 +68,7 @@ function createPieChartHandlerFunction(selection) {
     // The body of this function is added later
 }
 
-module.exports = { 
+module.exports = {
     commands: {
         "createPieChartCommand": createPieChartHandlerFunction
     }
@@ -135,7 +135,7 @@ Note that the end angle of each wedge matches the start angle of the next wedge.
 
 Ater saving all your changes, reload the plugin in XD and invoke it.  The result should be similar to the following:
 
-<img src="../../.meta/readme-assets/pie-chart.png" width="50%" height="50%">
+<img src="../../images/readme-assets/pie-chart.png" width="50%" height="50%">
 
 ## Next Steps
 

@@ -1,33 +1,43 @@
 {
+    "title": "Adobe XD Plugin Reference",
+    "description": "Documentation, guides, how-tos, and technical reference for building Adobe XD Plugins",
+    "author": "Adobe",
+    "pdf": {
+        "fontFamily": "Georgia"
+    },
     "plugins": [
-	"page-toc",
-	"anchorjs",
-	"collapse",
-	"pretty-term",
-	"code",
-	"dashing",
-	"todo",
-        "devops",
+        "page-toc",
+        "anchorjs",
+        "-collapse",
+        "-pretty-term",
+        "code",
+        "-dashing",
+        "todo",
+        "-devops",
         "expandable-chapters-interactive",
         "styled-blockquotes",
         "codetabs",
-        "recently-updated",
+        "-recently-updated",
         "github-buttons",
         "prism",
         "-highlight",
-	"-lunr",
-	"-search",
-	"search-plus"
+        "-lunr",
+        "-search",
+        "search-plus",
+        "addcssjs",
+        "replace"
     ],
     "pluginsConfig": {
-	"page-toc": {
-	     "selector": ".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4",
-	     "position": "before-first",
-	     "showByDefault": true
-	},
+        "addcssjs": {
+            "css": ["./public/custom.css"]
+        },
+        "page-toc": {
+            "selector": ".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4",
+            "position": "before-first",
+            "showByDefault": true
+        },
         "github-buttons": {
-            "buttons": [
-                {
+            "buttons": [{
                     "user": "AdobeXD",
                     "repo": "Plugin-Docs",
                     "type": "star",
@@ -41,6 +51,85 @@
                     "size": "small"
                 }
             ]
+        },
+        "replace": {
+            "substitutes": [
+                {
+                    "pattern": "\\\\\\*",
+                    "flags": "g",
+                    "substitute": "*"
+                },
+                {
+                    "pattern": "\\\\\\|",
+                    "flags": "g",
+                    "substitute": "|"
+                },
+                {
+                    "pattern": "\\[`(Attr|BaseUIEvent|CharacterData|ClassList|Clipboard|CloseEvent|Comment|Document|DocumentFragment|DOMException|DOMTokenList|DragEvent|Element|Event|EventTarget|GestureEvent|HTMLElement|HTMLAncorElement|HTMLBodyElement|HTMLButtonElement|HTMLDialogElement|HTMLHeadElement|HTMlHtmlElement|HTMLImageElement|HTMLInputElement|HTMLLabelElement|HTMLLinkElement|HTMLMenuElement|HTMLOptionElement|HTMLProgressELement|HTMLScriptElement|HTMLSelectElement|HTMLStyleElement|HTMLTextAreaElement|KeyboardEvent|MessageEvent|NamedNodeMap|Node|NodeList|PointerEvent|ProgressEvent|Shell|Text|WebSocket|XMLHttpRequest)`\\]\\([^\\)]*\\)",
+                    "flags": "gi",
+                    "substitute": "[ `$1` ](/reference/uxp/class/$1.html)"
+                },
+                {
+                    "pattern": "\\([^#\\)]*#(storage)\\)",
+                    "flags": "gi",
+                    "substitute": "(/reference/uxp/module/$1.html)"
+                },
+                {
+                    "pattern": "\\([^#\\)]*#(fetch)\\)",
+                    "flags": "gi",
+                    "substitute": "(/reference/uxp/function/$1.html)"
+                }
+            ]
         }
+    },
+    "keywords": {
+        "attr": "uxp/class/Attr",
+        "baseuievent": "uxp/class/BaseUIEvent",
+        "characterdata": "uxp/class/CharacterData",
+        "classlist": "uxp/class/ClassList",
+        "clipboard": "uxp/class/Clipboard",
+        "closeevent": "uxp/class/CloseEvent",
+        "comment": "uxp/class/Comment",
+        "document": "uxp/class/Document",
+        "documentfragment": "uxp/class/DocumentFragment",
+        "domexception": "uxp/class/DOMException",
+        "domtokenlist": "uxp/class/DOMTokenList",
+        "dragevent": "uxp/class/DragEvent",
+        "element": "uxp/class/Element",
+        "event": "uxp/class/Event",
+        "eventtarget": "uxp/class/EventTarget",
+        "gestureevent": "uxp/class/GestureEvent",
+        "HTMLAnchorElement": "uxp/class/HTMLAnchorElement",
+        "HTMLBodyElement": "uxp/class/HTMLBodyElement",
+        "HTMLButtonElement": "uxp/class/HTMLButtonElement",
+        "HTMLCollection": "uxp/class/HTMLCollection",
+        "HTMLDialogElement": "uxp/class/HTMLDialogElement",
+        "HTMLElement": "uxp/class/HTMLElement",
+        "HTMLHeadElement": "uxp/class/HTMLHeadElement",
+        "HTMLHtmlElement": "uxp/class/HTMLHtmlElement",
+        "HTMLImageElement": "uxp/class/HTMLImageElement",
+        "HTMLInputElement": "uxp/class/HTMLInputElement",
+        "HTMLLabelElement": "uxp/class/HTMLLabelElement",
+        "HTMLLinkElement": "uxp/class/HTMLLinkElement",
+        "HTMLMenuElement": "uxp/class/HTMLMenuElement",
+        "HTMLOptionElement": "uxp/class/HTMLOptionElement",
+        "HTMLProgressElement": "uxp/class/HTMLProgressElement",
+        "HTMLScriptElement": "uxp/class/HTMLScriptElement",
+        "HTMLSelectElement": "uxp/class/HTMLSelectElement",
+        "HTMLStyleElement": "uxp/class/HTMLStyleElement",
+        "HTMLTextAreaEvent": "uxp/class/HTMLTextAreaEvent",
+        "keyboardevent": "uxp/class/KeyboardEvent",
+        "messageevent": "uxp/class/MessageEvent",
+        "namednodemap": "uxp/class/NamedNodeMap",
+        "node": "uxp/class/Node",
+        "nodelist": "uxp/class/NodeList",
+        "pointerevent": "uxp/class/PointerEvent",
+        "progressevent": "uxp/class/ProgressEvent",
+        "shell": "uxp/class/Shell",
+        "text": "uxp/class/Text",
+        "websocket": "uxp/class/WebSocket",
+        "xmlhttprequest": "uxp/class/XMLHttpRequest.md",
+        "fetch": "uxp/function/fetch",
+        "storage": "uxp/module/storage"
     }
 }

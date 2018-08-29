@@ -40,7 +40,7 @@ $ mkdir com.adobe.xd.createLines
 $ cd com.adobe.xd.createLines
 $ touch manifest.json
 $ touch main.js
-``` 
+```
 
 Edit the manifest file for your plugin:
 
@@ -70,7 +70,7 @@ function createLinesHandlerFunction(selection) {
     // The body of this function is added later
 }
 
-module.exports = { 
+module.exports = {
     commands: {
         "createLinesCommand": createLinesHandlerFunction
     }
@@ -101,7 +101,7 @@ function randomColor() {
 ```
 This function returns a web-friendly color hex value.
 
-### 5. Create line data 
+### 5. Create line data
 ```js
 const lineData = [
     { startX: 100, startY: 110, endX: 210, endY: 233 },
@@ -110,7 +110,7 @@ const lineData = [
     { startX: 400, startY: 300, endX: 500, endY: 120 }
 ]
 ```
-Note that, in this example, the subsequent line's `startX` and `startY` match the former line's `endX` and `endY`. This ensures lines are connected to each other. Feel free to modifiy the data as you wish. 
+Note that, in this example, the subsequent line's `startX` and `startY` match the former line's `endX` and `endY`. This ensures lines are connected to each other. Feel free to modifiy the data as you wish.
 
 ### 6. Create the main function, `createLinesHandlerFunction`
 ```js
@@ -142,7 +142,7 @@ function createLinesHandlerFunction(selection) { // [1]
 6. Set `strokeEnabled` to `true` in order to draw a stroke for the line
 7. Set the stroke color using the helper function, `randomColor`
 8. Set the width of the stroke using `strokeWidth` property
-9. Append the line object into the empty array created in step [2] 
+9. Append the line object into the empty array created in step [2]
 10. Insert the line into the edit context using `selection.editContext.addChild` method.  This step adds the line to the document's scenegraph.
 11. Now that all of the `Line` objects have been added to the scenegraph, set the document's current selection to be those `Line` objects.
 12. Use the `group` command to combine all of the currently-selected objects (the `Line` objects) into a single group object.
@@ -151,7 +151,7 @@ function createLinesHandlerFunction(selection) { // [1]
 
 After saving all of your changes, reload the plugin in XD and invoke it.  The result should be similar to the following:
 
-<img src="/.meta/readme-assets/lines.png" width="50%" height="50%">
+<img src="/images/readme-assets/lines.png" width="50%" height="50%">
 
 ## Next Steps
 

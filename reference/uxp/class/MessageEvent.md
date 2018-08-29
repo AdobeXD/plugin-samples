@@ -1,6 +1,7 @@
-## MessageEvent
-**Signature:** MessageEvent ⇐ [`Event`](#event)
 
+<a name="messageevent" id="messageevent"></a>
+
+## MessageEvent ⇐ [`Event`](#event)
 **Kind**: global class  
 **Extends**: [`Event`](#event)  
 **Access**: public  
@@ -19,92 +20,108 @@
     * [.cancelable](#event-cancelable) : `boolean`
     * [.eventPhase](#event-eventphase)
     * [.defaultPrevented](#event-defaultprevented) : `boolean`
-    * [.returnValue](#event-returnvalue) : `*`
+    * [.returnValue](#event-returnvalue) : `\*`
     * [.preventDefault()](#event-preventdefault)
     * [.stopImmediatePropagation()](#event-stopimmediatepropagation)
     * [.stopPropagation()](#event-stoppropagation)
 
-### new MessageEvent
-**Signature:** new MessageEvent(data, origin, source, eventInit)
 
+<a name="new-messageevent-new" id="new-messageevent-new"></a>
+
+### new MessageEvent(data, origin, source, eventInit)
 Creates an instance of MessageEvent.
 
 
 | Param | Type |
 | --- | --- |
-| data | `*` | 
-| origin | `*` | 
-| source | `*` | 
-| eventInit | `*` | 
+| data | `\*` | 
+| origin | `\*` | 
+| source | `\*` | 
+| eventInit | `\*` | 
 
-### messageEvent.data
-**Signature:** messageEvent.data ⇒ `string`
 
+<a name="messageevent-data" id="messageevent-data"></a>
+
+### messageEvent.data ⇒ `string`
 **Kind**: instance property of [`MessageEvent`](#messageevent)  
 **Returns**: `string` - returns the data sent by the server.  
-### messageEvent.origin
-**Signature:** messageEvent.origin ⇒ `string`
 
+<a name="messageevent-origin" id="messageevent-origin"></a>
+
+### messageEvent.origin ⇒ `string`
 **Kind**: instance property of [`MessageEvent`](#messageevent)  
 **Returns**: `string` - returns the origin of the message.  
-### messageEvent.source
-**Signature:** messageEvent.source ⇒ `string`
 
+<a name="messageevent-source" id="messageevent-source"></a>
+
+### messageEvent.source ⇒ `string`
 **Kind**: instance property of [`MessageEvent`](#messageevent)  
 **Returns**: `string` - returns the string indicating the messageEventSource.  
+
+<a name="event-type" id="event-type"></a>
+
 ### messageEvent.type
-**Signature:** messageEvent.type
-
 **Kind**: instance property of [`MessageEvent`](#messageevent)  
 **Read only**: true  
-### messageEvent.isTrusted
-**Signature:** messageEvent.isTrusted : `boolean`
 
+<a name="event-istrusted" id="event-istrusted"></a>
+
+### messageEvent.isTrusted : `boolean`
 **Kind**: instance property of [`MessageEvent`](#messageevent)  
 **Read only**: true  
-### messageEvent.target
-**Signature:** messageEvent.target : [`Node`](#node)
 
+<a name="event-target" id="event-target"></a>
+
+### messageEvent.target : [`Node`](#node)
 **Kind**: instance property of [`MessageEvent`](#messageevent)  
 **Read only**: true  
-### messageEvent.currentTarget
-**Signature:** messageEvent.currentTarget : [`Node`](#node)
 
+<a name="event-currenttarget" id="event-currenttarget"></a>
+
+### messageEvent.currentTarget : [`Node`](#node)
 **Kind**: instance property of [`MessageEvent`](#messageevent)  
 **Read only**: true  
-### messageEvent.bubbles
-**Signature:** messageEvent.bubbles : `boolean`
 
+<a name="event-bubbles" id="event-bubbles"></a>
+
+### messageEvent.bubbles : `boolean`
 **Kind**: instance property of [`MessageEvent`](#messageevent)  
 **Read only**: true  
-### messageEvent.cancelable
-**Signature:** messageEvent.cancelable : `boolean`
 
+<a name="event-cancelable" id="event-cancelable"></a>
+
+### messageEvent.cancelable : `boolean`
 **Kind**: instance property of [`MessageEvent`](#messageevent)  
 **Read only**: true  
+
+<a name="event-eventphase" id="event-eventphase"></a>
+
 ### messageEvent.eventPhase
-**Signature:** messageEvent.eventPhase
-
 **Kind**: instance property of [`MessageEvent`](#messageevent)  
 **Read only**: true  
-### messageEvent.defaultPrevented
-**Signature:** messageEvent.defaultPrevented : `boolean`
 
+<a name="event-defaultprevented" id="event-defaultprevented"></a>
+
+### messageEvent.defaultPrevented : `boolean`
 **Kind**: instance property of [`MessageEvent`](#messageevent)  
 **Read only**: true  
-### messageEvent.returnValue
-**Signature:** messageEvent.returnValue : `*`
 
+<a name="event-returnvalue" id="event-returnvalue"></a>
+
+### messageEvent.returnValue : `\*`
 **Kind**: instance property of [`MessageEvent`](#messageevent)  
-### messageEvent.preventDefault
-**Signature:** messageEvent.preventDefault()
 
+<a name="event-preventdefault" id="event-preventdefault"></a>
+
+### messageEvent.preventDefault()
 **Kind**: instance method of [`MessageEvent`](#messageevent)  
-### messageEvent.stopImmediatePropagation
-**Signature:** messageEvent.stopImmediatePropagation()
 
+<a name="event-stopimmediatepropagation" id="event-stopimmediatepropagation"></a>
+
+### messageEvent.stopImmediatePropagation()
 **Kind**: instance method of [`MessageEvent`](#messageevent)  
-### messageEvent.stopPropagation
-**Signature:** messageEvent.stopPropagation()
 
+<a name="event-stoppropagation" id="event-stoppropagation"></a>
+
+### messageEvent.stopPropagation()
 **Kind**: instance method of [`MessageEvent`](#messageevent)  

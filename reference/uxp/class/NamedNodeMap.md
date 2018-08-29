@@ -1,6 +1,7 @@
-## NamedNodeMap
-**Signature:** NamedNodeMap
 
+<a name="namednodemap" id="namednodemap"></a>
+
+## NamedNodeMap
 **Kind**: global class  
 **Access**: public  
 **See**: https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap  
@@ -8,14 +9,15 @@
 * [NamedNodeMap](#namednodemap)
     * [new NamedNodeMap(node)](#new-namednodemap-new)
     * [.length](#namednodemap-length) : `number`
-    * [.getNamedItem(name)](#namednodemap-getnameditem) ⇒ `*`
+    * [.getNamedItem(name)](#namednodemap-getnameditem) ⇒ `\*`
     * [.setNamedItem(attr)](#namednodemap-setnameditem)
     * [.removeNamedItem(name)](#namednodemap-removenameditem)
-    * [.item(index)](#namednodemap-item) ⇒ `*`
+    * [.item(index)](#namednodemap-item) ⇒ `\*`
 
-### new NamedNodeMap
-**Signature:** new NamedNodeMap(node)
 
+<a name="new-namednodemap-new" id="new-namednodemap-new"></a>
+
+### new NamedNodeMap(node)
 Creates an instance of NamedNodeMap.
 
 
@@ -23,44 +25,49 @@ Creates an instance of NamedNodeMap.
 | --- | --- |
 | node | [`Node`](#node) | 
 
-### namedNodeMap.length
-**Signature:** namedNodeMap.length : `number`
 
+<a name="namednodemap-length" id="namednodemap-length"></a>
+
+### namedNodeMap.length : `number`
 **Kind**: instance property of [`NamedNodeMap`](#namednodemap)  
 **Read only**: true  
-### namedNodeMap.getNamedItem
-**Signature:** namedNodeMap.getNamedItem(name) ⇒ `*`
 
+<a name="namednodemap-getnameditem" id="namednodemap-getnameditem"></a>
+
+### namedNodeMap.getNamedItem(name) ⇒ `\*`
 **Kind**: instance method of [`NamedNodeMap`](#namednodemap)  
 
 | Param | Type |
 | --- | --- |
-| name | `*` | 
+| name | `\*` | 
 
-### namedNodeMap.setNamedItem
-**Signature:** namedNodeMap.setNamedItem(attr)
 
+<a name="namednodemap-setnameditem" id="namednodemap-setnameditem"></a>
+
+### namedNodeMap.setNamedItem(attr)
 **Kind**: instance method of [`NamedNodeMap`](#namednodemap)  
 
 | Param | Type |
 | --- | --- |
-| attr | `*` | 
+| attr | `\*` | 
 
-### namedNodeMap.removeNamedItem
-**Signature:** namedNodeMap.removeNamedItem(name)
 
+<a name="namednodemap-removenameditem" id="namednodemap-removenameditem"></a>
+
+### namedNodeMap.removeNamedItem(name)
 **Kind**: instance method of [`NamedNodeMap`](#namednodemap)  
 
 | Param | Type |
 | --- | --- |
-| name | `*` | 
+| name | `\*` | 
 
-### namedNodeMap.item
-**Signature:** namedNodeMap.item(index) ⇒ `*`
 
+<a name="namednodemap-item" id="namednodemap-item"></a>
+
+### namedNodeMap.item(index) ⇒ `\*`
 **Kind**: instance method of [`NamedNodeMap`](#namednodemap)  
 
 | Param | Type |
 | --- | --- |
-| index | `*` | 
+| index | `\*` | 
 

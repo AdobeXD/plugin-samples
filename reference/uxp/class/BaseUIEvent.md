@@ -1,6 +1,7 @@
-## BaseUIEvent
-**Signature:** BaseUIEvent ⇐ [`Event`](#event)
 
+<a name="baseuievent" id="baseuievent"></a>
+
+## BaseUIEvent ⇐ [`Event`](#event)
 **Kind**: global class  
 **Extends**: [`Event`](#event)  
 **Access**: public  
@@ -43,210 +44,250 @@
     * [.cancelable](#event-cancelable) : `boolean`
     * [.eventPhase](#event-eventphase)
     * [.defaultPrevented](#event-defaultprevented) : `boolean`
-    * [.returnValue](#event-returnvalue) : `*`
+    * [.returnValue](#event-returnvalue) : `\*`
     * [.preventDefault()](#event-preventdefault)
     * [.stopImmediatePropagation()](#event-stopimmediatepropagation)
     * [.stopPropagation()](#event-stoppropagation)
 
-### new BaseUIEvent
-**Signature:** new BaseUIEvent(type, eventInit)
 
+<a name="new-baseuievent-new" id="new-baseuievent-new"></a>
+
+### new BaseUIEvent(type, eventInit)
 Creates an instance of BaseUIEvent.
 
 
 | Param | Type |
 | --- | --- |
-| type | `*` | 
-| eventInit | `*` | 
+| type | `\*` | 
+| eventInit | `\*` | 
+
+
+<a name="baseuievent-pointerid" id="baseuievent-pointerid"></a>
 
 ### baseUIEvent.pointerId
-**Signature:** baseUIEvent.pointerId
-
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.width
-**Signature:** baseUIEvent.width : `number`
 
+<a name="baseuievent-width" id="baseuievent-width"></a>
+
+### baseUIEvent.width : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.height
-**Signature:** baseUIEvent.height : `number`
 
+<a name="baseuievent-height" id="baseuievent-height"></a>
+
+### baseUIEvent.height : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.presure
-**Signature:** baseUIEvent.presure : `number`
 
+<a name="baseuievent-presure" id="baseuievent-presure"></a>
+
+### baseUIEvent.presure : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.tangentialPressure
-**Signature:** baseUIEvent.tangentialPressure : `number`
 
+<a name="baseuievent-tangentialpressure" id="baseuievent-tangentialpressure"></a>
+
+### baseUIEvent.tangentialPressure : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.tiltX
-**Signature:** baseUIEvent.tiltX : `number`
 
+<a name="baseuievent-tiltx" id="baseuievent-tiltx"></a>
+
+### baseUIEvent.tiltX : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.tiltY
-**Signature:** baseUIEvent.tiltY : `number`
 
+<a name="baseuievent-tilty" id="baseuievent-tilty"></a>
+
+### baseUIEvent.tiltY : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.twist
-**Signature:** baseUIEvent.twist : `number`
 
+<a name="baseuievent-twist" id="baseuievent-twist"></a>
+
+### baseUIEvent.twist : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.clientX
-**Signature:** baseUIEvent.clientX : `number`
 
+<a name="baseuievent-clientx" id="baseuievent-clientx"></a>
+
+### baseUIEvent.clientX : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.clientY
-**Signature:** baseUIEvent.clientY : `number`
 
+<a name="baseuievent-clienty" id="baseuievent-clienty"></a>
+
+### baseUIEvent.clientY : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.offsetX
-**Signature:** baseUIEvent.offsetX : `number`
 
+<a name="baseuievent-offsetx" id="baseuievent-offsetx"></a>
+
+### baseUIEvent.offsetX : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.offsetY
-**Signature:** baseUIEvent.offsetY : `number`
 
+<a name="baseuievent-offsety" id="baseuievent-offsety"></a>
+
+### baseUIEvent.offsetY : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.pageX
-**Signature:** baseUIEvent.pageX : `number`
 
+<a name="baseuievent-pagex" id="baseuievent-pagex"></a>
+
+### baseUIEvent.pageX : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.pageY
-**Signature:** baseUIEvent.pageY : `number`
 
+<a name="baseuievent-pagey" id="baseuievent-pagey"></a>
+
+### baseUIEvent.pageY : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.screenX
-**Signature:** baseUIEvent.screenX : `number`
 
+<a name="baseuievent-screenx" id="baseuievent-screenx"></a>
+
+### baseUIEvent.screenX : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.screenY
-**Signature:** baseUIEvent.screenY : `number`
 
+<a name="baseuievent-screeny" id="baseuievent-screeny"></a>
+
+### baseUIEvent.screenY : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.movementX
-**Signature:** baseUIEvent.movementX : `number`
 
+<a name="baseuievent-movementx" id="baseuievent-movementx"></a>
+
+### baseUIEvent.movementX : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.movementY
-**Signature:** baseUIEvent.movementY : `number`
 
+<a name="baseuievent-movementy" id="baseuievent-movementy"></a>
+
+### baseUIEvent.movementY : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.button
-**Signature:** baseUIEvent.button : `number`
 
+<a name="baseuievent-button" id="baseuievent-button"></a>
+
+### baseUIEvent.button : `number`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
+
+<a name="baseuievent-buttons" id="baseuievent-buttons"></a>
+
 ### baseUIEvent.buttons
-**Signature:** baseUIEvent.buttons
-
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
+
+<a name="baseuievent-detail" id="baseuievent-detail"></a>
+
 ### baseUIEvent.detail
-**Signature:** baseUIEvent.detail
-
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
+
+<a name="baseuievent-pointertype" id="baseuievent-pointertype"></a>
+
 ### baseUIEvent.pointerType
-**Signature:** baseUIEvent.pointerType
-
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
+
+<a name="baseuievent-altkey" id="baseuievent-altkey"></a>
+
 ### baseUIEvent.altKey
-**Signature:** baseUIEvent.altKey
-
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
+
+<a name="baseuievent-shiftkey" id="baseuievent-shiftkey"></a>
+
 ### baseUIEvent.shiftKey
-**Signature:** baseUIEvent.shiftKey
-
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
+
+<a name="baseuievent-metakey" id="baseuievent-metakey"></a>
+
 ### baseUIEvent.metaKey
-**Signature:** baseUIEvent.metaKey
-
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
+
+<a name="baseuievent-ctrlkey" id="baseuievent-ctrlkey"></a>
+
 ### baseUIEvent.ctrlKey
-**Signature:** baseUIEvent.ctrlKey
-
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
+
+<a name="baseuievent-isprimary" id="baseuievent-isprimary"></a>
+
 ### baseUIEvent.isPrimary
-**Signature:** baseUIEvent.isPrimary
-
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
+
+<a name="event-type" id="event-type"></a>
+
 ### baseUIEvent.type
-**Signature:** baseUIEvent.type
-
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.isTrusted
-**Signature:** baseUIEvent.isTrusted : `boolean`
 
+<a name="event-istrusted" id="event-istrusted"></a>
+
+### baseUIEvent.isTrusted : `boolean`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.target
-**Signature:** baseUIEvent.target : [`Node`](#node)
 
+<a name="event-target" id="event-target"></a>
+
+### baseUIEvent.target : [`Node`](#node)
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.currentTarget
-**Signature:** baseUIEvent.currentTarget : [`Node`](#node)
 
+<a name="event-currenttarget" id="event-currenttarget"></a>
+
+### baseUIEvent.currentTarget : [`Node`](#node)
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.bubbles
-**Signature:** baseUIEvent.bubbles : `boolean`
 
+<a name="event-bubbles" id="event-bubbles"></a>
+
+### baseUIEvent.bubbles : `boolean`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.cancelable
-**Signature:** baseUIEvent.cancelable : `boolean`
 
+<a name="event-cancelable" id="event-cancelable"></a>
+
+### baseUIEvent.cancelable : `boolean`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
+
+<a name="event-eventphase" id="event-eventphase"></a>
+
 ### baseUIEvent.eventPhase
-**Signature:** baseUIEvent.eventPhase
-
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.defaultPrevented
-**Signature:** baseUIEvent.defaultPrevented : `boolean`
 
+<a name="event-defaultprevented" id="event-defaultprevented"></a>
+
+### baseUIEvent.defaultPrevented : `boolean`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
 **Read only**: true  
-### baseUIEvent.returnValue
-**Signature:** baseUIEvent.returnValue : `*`
 
+<a name="event-returnvalue" id="event-returnvalue"></a>
+
+### baseUIEvent.returnValue : `\*`
 **Kind**: instance property of [`BaseUIEvent`](#baseuievent)  
-### baseUIEvent.preventDefault
-**Signature:** baseUIEvent.preventDefault()
 
+<a name="event-preventdefault" id="event-preventdefault"></a>
+
+### baseUIEvent.preventDefault()
 **Kind**: instance method of [`BaseUIEvent`](#baseuievent)  
-### baseUIEvent.stopImmediatePropagation
-**Signature:** baseUIEvent.stopImmediatePropagation()
 
+<a name="event-stopimmediatepropagation" id="event-stopimmediatepropagation"></a>
+
+### baseUIEvent.stopImmediatePropagation()
 **Kind**: instance method of [`BaseUIEvent`](#baseuievent)  
-### baseUIEvent.stopPropagation
-**Signature:** baseUIEvent.stopPropagation()
 
+<a name="event-stoppropagation" id="event-stoppropagation"></a>
+
+### baseUIEvent.stopPropagation()
 **Kind**: instance method of [`BaseUIEvent`](#baseuievent)  

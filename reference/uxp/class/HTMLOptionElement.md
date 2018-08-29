@@ -1,6 +1,7 @@
-## HTMLOptionElement
-**Signature:** HTMLOptionElement ⇐ [`HTMLElement`](#htmlelement)
 
+<a name="htmloptionelement" id="htmloptionelement"></a>
+
+## HTMLOptionElement ⇐ [`HTMLElement`](#htmlelement)
 **Kind**: global class  
 **Extends**: [`HTMLElement`](#htmlelement)  
 **Access**: public  
@@ -56,14 +57,14 @@
     * [.setAttribute(name, value)](#element-setattribute)
     * [.removeAttribute(name)](#element-removeattribute)
     * [.hasAttribute(name)](#element-hasattribute) ⇒ `boolean`
-    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `*`
+    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `\*`
     * [.setAttributeNode(newAttr)](#element-setattributenode)
     * [.removeAttributeNode(oldAttr)](#element-removeattributenode)
     * [.getElementsByClassName(name)](#element-getelementsbyclassname) ⇒ [`NodeList`](#nodelist)
     * [.getElementsByTagName(name)](#element-getelementsbytagname) ⇒ [`NodeList`](#nodelist)
     * [.querySelector(selector)](#element-queryselector) ⇒ [`Element`](#element)
     * [.querySelectorAll(selector)](#element-queryselectorall) ⇒ [`NodeList`](#nodelist)
-    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `*`
+    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `\*`
     * [.insertAdjacentHTML(position, value)](#element-insertadjacenthtml)
     * [.insertAdjacentElement(position, node)](#element-insertadjacentelement) ⇒ [`Node`](#node)
     * [.insertAdjacentText(position, text)](#element-insertadjacenttext)
@@ -81,237 +82,284 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
-### new HTMLOptionElement
-**Signature:** new HTMLOptionElement(document, nodeName, namespaceURI)
 
+<a name="new-htmloptionelement-new" id="new-htmloptionelement-new"></a>
+
+### new HTMLOptionElement(document, nodeName, namespaceURI)
 Creates an instance of HTMLOptionElement.
 
 
 | Param | Type |
 | --- | --- |
-| document | `*` | 
-| nodeName | `*` | 
-| namespaceURI | `*` | 
+| document | `\*` | 
+| nodeName | `\*` | 
+| namespaceURI | `\*` | 
 
-### htmlOptionElement.value
-**Signature:** htmlOptionElement.value : `string`
 
+<a name="htmloptionelement-value" id="htmloptionelement-value"></a>
+
+### htmlOptionElement.value : `string`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
-### htmlOptionElement.nodeName
-**Signature:** htmlOptionElement.nodeName : `string`
 
-**Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
-**Read only**: true  
-### htmlOptionElement.localName
-**Signature:** htmlOptionElement.localName : `string`
+<a name="element-nodename" id="element-nodename"></a>
 
+### htmlOptionElement.nodeName : `string`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.tagName
-**Signature:** htmlOptionElement.tagName : `string`
 
+<a name="element-localname" id="element-localname"></a>
+
+### htmlOptionElement.localName : `string`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.nodeType
-**Signature:** htmlOptionElement.nodeType : `number`
 
+<a name="element-tagname" id="element-tagname"></a>
+
+### htmlOptionElement.tagName : `string`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.namespaceURI
-**Signature:** htmlOptionElement.namespaceURI : `string`
 
+<a name="element-nodetype" id="element-nodetype"></a>
+
+### htmlOptionElement.nodeType : `number`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.id
-**Signature:** htmlOptionElement.id : `string`
 
-**Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
-### htmlOptionElement.className
-**Signature:** htmlOptionElement.className : `string`
+<a name="element-namespaceuri" id="element-namespaceuri"></a>
 
-**Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
-### htmlOptionElement.attributes
-**Signature:** htmlOptionElement.attributes : [`NamedNodeMap`](#namednodemap)
-
+### htmlOptionElement.namespaceURI : `string`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.style
-**Signature:** htmlOptionElement.style : `Style`
 
+<a name="element-id" id="element-id"></a>
+
+### htmlOptionElement.id : `string`
+**Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
+
+<a name="element-classname" id="element-classname"></a>
+
+### htmlOptionElement.className : `string`
+**Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
+
+<a name="element-attributes" id="element-attributes"></a>
+
+### htmlOptionElement.attributes : [`NamedNodeMap`](#namednodemap)
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.clientLeft
-**Signature:** htmlOptionElement.clientLeft : `number`
 
+<a name="element-style" id="element-style"></a>
+
+### htmlOptionElement.style : `Style`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.clientTop
-**Signature:** htmlOptionElement.clientTop : `number`
 
+<a name="element-clientleft" id="element-clientleft"></a>
+
+### htmlOptionElement.clientLeft : `number`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.clientWidth
-**Signature:** htmlOptionElement.clientWidth : `number`
 
+<a name="element-clienttop" id="element-clienttop"></a>
+
+### htmlOptionElement.clientTop : `number`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.clientHeight
-**Signature:** htmlOptionElement.clientHeight : `number`
 
+<a name="element-clientwidth" id="element-clientwidth"></a>
+
+### htmlOptionElement.clientWidth : `number`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.offsetLeft
-**Signature:** htmlOptionElement.offsetLeft : `number`
 
+<a name="element-clientheight" id="element-clientheight"></a>
+
+### htmlOptionElement.clientHeight : `number`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.offsetTop
-**Signature:** htmlOptionElement.offsetTop : `number`
 
+<a name="element-offsetleft" id="element-offsetleft"></a>
+
+### htmlOptionElement.offsetLeft : `number`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.offsetWidth
-**Signature:** htmlOptionElement.offsetWidth : `number`
 
+<a name="element-offsettop" id="element-offsettop"></a>
+
+### htmlOptionElement.offsetTop : `number`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.offsetHeight
-**Signature:** htmlOptionElement.offsetHeight : `number`
 
+<a name="element-offsetwidth" id="element-offsetwidth"></a>
+
+### htmlOptionElement.offsetWidth : `number`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.scrollLeft
-**Signature:** htmlOptionElement.scrollLeft : `number`
 
-**Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
-### htmlOptionElement.scrollTop
-**Signature:** htmlOptionElement.scrollTop : `number`
+<a name="element-offsetheight" id="element-offsetheight"></a>
 
-**Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
-### htmlOptionElement.scrollWidth
-**Signature:** htmlOptionElement.scrollWidth : `number`
-
+### htmlOptionElement.offsetHeight : `number`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.scrollHeight
-**Signature:** htmlOptionElement.scrollHeight : `number`
 
+<a name="element-scrollleft" id="element-scrollleft"></a>
+
+### htmlOptionElement.scrollLeft : `number`
+**Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
+
+<a name="element-scrolltop" id="element-scrolltop"></a>
+
+### htmlOptionElement.scrollTop : `number`
+**Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
+
+<a name="element-scrollwidth" id="element-scrollwidth"></a>
+
+### htmlOptionElement.scrollWidth : `number`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.disabled
-**Signature:** htmlOptionElement.disabled : `boolean`
 
-**Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
-### htmlOptionElement.innerHTML
-**Signature:** htmlOptionElement.innerHTML : `string`
+<a name="element-scrollheight" id="element-scrollheight"></a>
 
+### htmlOptionElement.scrollHeight : `number`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
-### htmlOptionElement.outerHTML
-**Signature:** htmlOptionElement.outerHTML : `string`
+**Read only**: true  
 
+<a name="element-disabled" id="element-disabled"></a>
+
+### htmlOptionElement.disabled : `boolean`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
+
+<a name="element-innerhtml" id="element-innerhtml"></a>
+
+### htmlOptionElement.innerHTML : `string`
+**Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
+
+<a name="element-outerhtml" id="element-outerhtml"></a>
+
+### htmlOptionElement.outerHTML : `string`
+**Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
+
+<a name="node-contenteditable" id="node-contenteditable"></a>
+
 ### htmlOptionElement.contentEditable
-**Signature:** htmlOptionElement.contentEditable
-
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.isConnected
-**Signature:** htmlOptionElement.isConnected : `boolean`
 
+<a name="node-isconnected" id="node-isconnected"></a>
+
+### htmlOptionElement.isConnected : `boolean`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.parentNode
-**Signature:** htmlOptionElement.parentNode : [`Node`](#node)
 
+<a name="node-parentnode" id="node-parentnode"></a>
+
+### htmlOptionElement.parentNode : [`Node`](#node)
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.firstChild
-**Signature:** htmlOptionElement.firstChild : [`Node`](#node)
 
+<a name="node-firstchild" id="node-firstchild"></a>
+
+### htmlOptionElement.firstChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.lastChild
-**Signature:** htmlOptionElement.lastChild : [`Node`](#node)
 
+<a name="node-lastchild" id="node-lastchild"></a>
+
+### htmlOptionElement.lastChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.previousSibling
-**Signature:** htmlOptionElement.previousSibling : [`Node`](#node)
 
+<a name="node-previoussibling" id="node-previoussibling"></a>
+
+### htmlOptionElement.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.nextSibling
-**Signature:** htmlOptionElement.nextSibling : [`Node`](#node)
 
+<a name="node-nextsibling" id="node-nextsibling"></a>
+
+### htmlOptionElement.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.firstElementChild
-**Signature:** htmlOptionElement.firstElementChild : [`Node`](#node)
 
+<a name="node-firstelementchild" id="node-firstelementchild"></a>
+
+### htmlOptionElement.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.lastElementChild
-**Signature:** htmlOptionElement.lastElementChild : [`Node`](#node)
 
+<a name="node-lastelementchild" id="node-lastelementchild"></a>
+
+### htmlOptionElement.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.previousElementSibling
-**Signature:** htmlOptionElement.previousElementSibling : [`Node`](#node)
 
+<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
+
+### htmlOptionElement.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.nextElementSibling
-**Signature:** htmlOptionElement.nextElementSibling : [`Node`](#node)
 
+<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
+
+### htmlOptionElement.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.textContent
-**Signature:** htmlOptionElement.textContent : `string`
 
+<a name="node-textcontent" id="node-textcontent"></a>
+
+### htmlOptionElement.textContent : `string`
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
-### htmlOptionElement.childNodes
-**Signature:** htmlOptionElement.childNodes : [`NodeList`](#nodelist)
 
+<a name="node-childnodes" id="node-childnodes"></a>
+
+### htmlOptionElement.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
+
+<a name="node-ownerdocument" id="node-ownerdocument"></a>
+
 ### htmlOptionElement.ownerDocument
-**Signature:** htmlOptionElement.ownerDocument
-
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
+
+<a name="node-offsetparent" id="node-offsetparent"></a>
+
 ### htmlOptionElement.offsetParent
-**Signature:** htmlOptionElement.offsetParent
-
 **Kind**: instance property of [`HTMLOptionElement`](#htmloptionelement)  
 **Read only**: true  
-### htmlOptionElement.scrollIntoView
-**Signature:** htmlOptionElement.scrollIntoView()
 
+<a name="element-scrollintoview" id="element-scrollintoview"></a>
+
+### htmlOptionElement.scrollIntoView()
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
-### htmlOptionElement.scrollIntoViewIfNeeded
-**Signature:** htmlOptionElement.scrollIntoViewIfNeeded()
 
+<a name="element-scrollintoviewifneeded" id="element-scrollintoviewifneeded"></a>
+
+### htmlOptionElement.scrollIntoViewIfNeeded()
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
-### htmlOptionElement.focus
-**Signature:** htmlOptionElement.focus()
 
+<a name="element-focus" id="element-focus"></a>
+
+### htmlOptionElement.focus()
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
-### htmlOptionElement.blur
-**Signature:** htmlOptionElement.blur()
 
+<a name="element-blur" id="element-blur"></a>
+
+### htmlOptionElement.blur()
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
-### htmlOptionElement.getAttribute
-**Signature:** htmlOptionElement.getAttribute(name) ⇒ `string`
 
+<a name="element-getattribute" id="element-getattribute"></a>
+
+### htmlOptionElement.getAttribute(name) ⇒ `string`
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlOptionElement.setAttribute
-**Signature:** htmlOptionElement.setAttribute(name, value)
 
+<a name="element-setattribute" id="element-setattribute"></a>
+
+### htmlOptionElement.setAttribute(name, value)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
@@ -319,94 +367,105 @@ Creates an instance of HTMLOptionElement.
 | name | `string` | 
 | value | `string` | 
 
-### htmlOptionElement.removeAttribute
-**Signature:** htmlOptionElement.removeAttribute(name)
 
+<a name="element-removeattribute" id="element-removeattribute"></a>
+
+### htmlOptionElement.removeAttribute(name)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlOptionElement.hasAttribute
-**Signature:** htmlOptionElement.hasAttribute(name) ⇒ `boolean`
 
+<a name="element-hasattribute" id="element-hasattribute"></a>
+
+### htmlOptionElement.hasAttribute(name) ⇒ `boolean`
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlOptionElement.getAttributeNode
-**Signature:** htmlOptionElement.getAttributeNode(name) ⇒ `*`
 
+<a name="element-getattributenode" id="element-getattributenode"></a>
+
+### htmlOptionElement.getAttributeNode(name) ⇒ `\*`
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlOptionElement.setAttributeNode
-**Signature:** htmlOptionElement.setAttributeNode(newAttr)
 
+<a name="element-setattributenode" id="element-setattributenode"></a>
+
+### htmlOptionElement.setAttributeNode(newAttr)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
-| newAttr | `*` | 
+| newAttr | `\*` | 
 
-### htmlOptionElement.removeAttributeNode
-**Signature:** htmlOptionElement.removeAttributeNode(oldAttr)
 
+<a name="element-removeattributenode" id="element-removeattributenode"></a>
+
+### htmlOptionElement.removeAttributeNode(oldAttr)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
-| oldAttr | `*` | 
+| oldAttr | `\*` | 
 
-### htmlOptionElement.getElementsByClassName
-**Signature:** htmlOptionElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 
-**Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
+<a name="element-getelementsbyclassname" id="element-getelementsbyclassname"></a>
 
-| Param | Type |
-| --- | --- |
-| name | `string` | 
-
-### htmlOptionElement.getElementsByTagName
-**Signature:** htmlOptionElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
-
+### htmlOptionElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlOptionElement.querySelector
-**Signature:** htmlOptionElement.querySelector(selector) ⇒ [`Element`](#element)
 
+<a name="element-getelementsbytagname" id="element-getelementsbytagname"></a>
+
+### htmlOptionElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
+**Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
+
+| Param | Type |
+| --- | --- |
+| name | `string` | 
+
+
+<a name="element-queryselector" id="element-queryselector"></a>
+
+### htmlOptionElement.querySelector(selector) ⇒ [`Element`](#element)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
-### htmlOptionElement.querySelectorAll
-**Signature:** htmlOptionElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 
+<a name="element-queryselectorall" id="element-queryselectorall"></a>
+
+### htmlOptionElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
-### htmlOptionElement.getBoundingClientRect
-**Signature:** htmlOptionElement.getBoundingClientRect() ⇒ `*`
 
+<a name="element-getboundingclientrect" id="element-getboundingclientrect"></a>
+
+### htmlOptionElement.getBoundingClientRect() ⇒ `\*`
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
-### htmlOptionElement.insertAdjacentHTML
-**Signature:** htmlOptionElement.insertAdjacentHTML(position, value)
 
+<a name="element-insertadjacenthtml" id="element-insertadjacenthtml"></a>
+
+### htmlOptionElement.insertAdjacentHTML(position, value)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
@@ -414,51 +473,57 @@ Creates an instance of HTMLOptionElement.
 | position |  | 
 | value | `string` | 
 
-### htmlOptionElement.insertAdjacentElement
-**Signature:** htmlOptionElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 
+<a name="element-insertadjacentelement" id="element-insertadjacentelement"></a>
+
+### htmlOptionElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `*` | 
-| node | `*` | 
+| position | `\*` | 
+| node | `\*` | 
 
-### htmlOptionElement.insertAdjacentText
-**Signature:** htmlOptionElement.insertAdjacentText(position, text)
 
+<a name="element-insertadjacenttext" id="element-insertadjacenttext"></a>
+
+### htmlOptionElement.insertAdjacentText(position, text)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `*` | 
-| text | `*` | 
+| position | `\*` | 
+| text | `\*` | 
 
-### htmlOptionElement.hasChildNodes
-**Signature:** htmlOptionElement.hasChildNodes() ⇒ `boolean`
 
+<a name="node-haschildnodes" id="node-haschildnodes"></a>
+
+### htmlOptionElement.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
-### htmlOptionElement.cloneNode
-**Signature:** htmlOptionElement.cloneNode(deep) ⇒ [`Node`](#node)
 
+<a name="node-clonenode" id="node-clonenode"></a>
+
+### htmlOptionElement.cloneNode(deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
 | deep | `boolean` | 
 
-### htmlOptionElement.appendChild
-**Signature:** htmlOptionElement.appendChild(child) ⇒ [`Node`](#node)
 
+<a name="node-appendchild" id="node-appendchild"></a>
+
+### htmlOptionElement.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
-### htmlOptionElement.insertBefore
-**Signature:** htmlOptionElement.insertBefore(child, before) ⇒ [`Node`](#node)
 
+<a name="node-insertbefore" id="node-insertbefore"></a>
+
+### htmlOptionElement.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
@@ -466,9 +531,10 @@ Creates an instance of HTMLOptionElement.
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
-### htmlOptionElement.replaceChild
-**Signature:** htmlOptionElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
+<a name="node-replacechild" id="node-replacechild"></a>
+
+### htmlOptionElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
@@ -476,74 +542,82 @@ Creates an instance of HTMLOptionElement.
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
-### htmlOptionElement.removeChild
-**Signature:** htmlOptionElement.removeChild(child) ⇒ [`Node`](#node)
 
+<a name="node-removechild" id="node-removechild"></a>
+
+### htmlOptionElement.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
-### htmlOptionElement.remove
-**Signature:** htmlOptionElement.remove()
 
-**Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
-### htmlOptionElement.before
-**Signature:** htmlOptionElement.before(...nodes)
+<a name="node-remove" id="node-remove"></a>
 
+### htmlOptionElement.remove()
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
+<a name="node-before" id="node-before"></a>
 
-### htmlOptionElement.after
-**Signature:** htmlOptionElement.after(...nodes)
-
+### htmlOptionElement.before(...nodes)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
-### htmlOptionElement.replaceWith
-**Signature:** htmlOptionElement.replaceWith(...nodes)
 
+<a name="node-after" id="node-after"></a>
+
+### htmlOptionElement.after(...nodes)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
-### htmlOptionElement.addEventListener
-**Signature:** htmlOptionElement.addEventListener(eventName, callback, [capture])
 
+<a name="node-replacewith" id="node-replacewith"></a>
+
+### htmlOptionElement.replaceWith(...nodes)
+**Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
+
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+
+<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+
+### htmlOptionElement.addEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `*` |  | 
-| callback | `*` |  | 
+| eventName | `\*` |  | 
+| callback | `\*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
-### htmlOptionElement.removeEventListener
-**Signature:** htmlOptionElement.removeEventListener(eventName, callback, [capture])
 
+<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
+
+### htmlOptionElement.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `*` |  | 
-| callback | `*` |  | 
+| eventName | `\*` |  | 
+| callback | `\*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
-### htmlOptionElement.dispatchEvent
-**Signature:** htmlOptionElement.dispatchEvent(event)
 
+<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
+
+### htmlOptionElement.dispatchEvent(event)
 **Kind**: instance method of [`HTMLOptionElement`](#htmloptionelement)  
 
 | Param | Type |
 | --- | --- |
-| event | `*` | 
+| event | `\*` | 
 

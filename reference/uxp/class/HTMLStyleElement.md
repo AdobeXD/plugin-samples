@@ -1,6 +1,7 @@
-## HTMLStyleElement
-**Signature:** HTMLStyleElement ⇐ [`HTMLElement`](#htmlelement)
 
+<a name="htmlstyleelement" id="htmlstyleelement"></a>
+
+## HTMLStyleElement ⇐ [`HTMLElement`](#htmlelement)
 **Kind**: global class  
 **Extends**: [`HTMLElement`](#htmlelement)  
 **Access**: public  
@@ -55,14 +56,14 @@
     * [.setAttribute(name, value)](#element-setattribute)
     * [.removeAttribute(name)](#element-removeattribute)
     * [.hasAttribute(name)](#element-hasattribute) ⇒ `boolean`
-    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `*`
+    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `\*`
     * [.setAttributeNode(newAttr)](#element-setattributenode)
     * [.removeAttributeNode(oldAttr)](#element-removeattributenode)
     * [.getElementsByClassName(name)](#element-getelementsbyclassname) ⇒ [`NodeList`](#nodelist)
     * [.getElementsByTagName(name)](#element-getelementsbytagname) ⇒ [`NodeList`](#nodelist)
     * [.querySelector(selector)](#element-queryselector) ⇒ [`Element`](#element)
     * [.querySelectorAll(selector)](#element-queryselectorall) ⇒ [`NodeList`](#nodelist)
-    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `*`
+    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `\*`
     * [.insertAdjacentHTML(position, value)](#element-insertadjacenthtml)
     * [.insertAdjacentElement(position, node)](#element-insertadjacentelement) ⇒ [`Node`](#node)
     * [.insertAdjacentText(position, text)](#element-insertadjacenttext)
@@ -80,233 +81,279 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
-### new HTMLStyleElement
-**Signature:** new HTMLStyleElement(document, nodeName, namespaceURI)
 
+<a name="new-htmlstyleelement-new" id="new-htmlstyleelement-new"></a>
+
+### new HTMLStyleElement(document, nodeName, namespaceURI)
 Creates an instance of HTMLStyleElement.
 
 
 | Param | Type |
 | --- | --- |
-| document | `*` | 
-| nodeName | `*` | 
-| namespaceURI | `*` | 
+| document | `\*` | 
+| nodeName | `\*` | 
+| namespaceURI | `\*` | 
 
-### htmlStyleElement.nodeName
-**Signature:** htmlStyleElement.nodeName : `string`
 
+<a name="element-nodename" id="element-nodename"></a>
+
+### htmlStyleElement.nodeName : `string`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.localName
-**Signature:** htmlStyleElement.localName : `string`
 
+<a name="element-localname" id="element-localname"></a>
+
+### htmlStyleElement.localName : `string`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.tagName
-**Signature:** htmlStyleElement.tagName : `string`
 
+<a name="element-tagname" id="element-tagname"></a>
+
+### htmlStyleElement.tagName : `string`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.nodeType
-**Signature:** htmlStyleElement.nodeType : `number`
 
+<a name="element-nodetype" id="element-nodetype"></a>
+
+### htmlStyleElement.nodeType : `number`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.namespaceURI
-**Signature:** htmlStyleElement.namespaceURI : `string`
 
+<a name="element-namespaceuri" id="element-namespaceuri"></a>
+
+### htmlStyleElement.namespaceURI : `string`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.id
-**Signature:** htmlStyleElement.id : `string`
 
+<a name="element-id" id="element-id"></a>
+
+### htmlStyleElement.id : `string`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
-### htmlStyleElement.className
-**Signature:** htmlStyleElement.className : `string`
 
+<a name="element-classname" id="element-classname"></a>
+
+### htmlStyleElement.className : `string`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
-### htmlStyleElement.attributes
-**Signature:** htmlStyleElement.attributes : [`NamedNodeMap`](#namednodemap)
 
-**Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
-**Read only**: true  
-### htmlStyleElement.style
-**Signature:** htmlStyleElement.style : `Style`
+<a name="element-attributes" id="element-attributes"></a>
 
+### htmlStyleElement.attributes : [`NamedNodeMap`](#namednodemap)
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.clientLeft
-**Signature:** htmlStyleElement.clientLeft : `number`
 
+<a name="element-style" id="element-style"></a>
+
+### htmlStyleElement.style : `Style`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.clientTop
-**Signature:** htmlStyleElement.clientTop : `number`
 
+<a name="element-clientleft" id="element-clientleft"></a>
+
+### htmlStyleElement.clientLeft : `number`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.clientWidth
-**Signature:** htmlStyleElement.clientWidth : `number`
 
+<a name="element-clienttop" id="element-clienttop"></a>
+
+### htmlStyleElement.clientTop : `number`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.clientHeight
-**Signature:** htmlStyleElement.clientHeight : `number`
 
+<a name="element-clientwidth" id="element-clientwidth"></a>
+
+### htmlStyleElement.clientWidth : `number`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.offsetLeft
-**Signature:** htmlStyleElement.offsetLeft : `number`
 
+<a name="element-clientheight" id="element-clientheight"></a>
+
+### htmlStyleElement.clientHeight : `number`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.offsetTop
-**Signature:** htmlStyleElement.offsetTop : `number`
 
+<a name="element-offsetleft" id="element-offsetleft"></a>
+
+### htmlStyleElement.offsetLeft : `number`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.offsetWidth
-**Signature:** htmlStyleElement.offsetWidth : `number`
 
+<a name="element-offsettop" id="element-offsettop"></a>
+
+### htmlStyleElement.offsetTop : `number`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.offsetHeight
-**Signature:** htmlStyleElement.offsetHeight : `number`
 
+<a name="element-offsetwidth" id="element-offsetwidth"></a>
+
+### htmlStyleElement.offsetWidth : `number`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.scrollLeft
-**Signature:** htmlStyleElement.scrollLeft : `number`
 
-**Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
-### htmlStyleElement.scrollTop
-**Signature:** htmlStyleElement.scrollTop : `number`
+<a name="element-offsetheight" id="element-offsetheight"></a>
 
-**Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
-### htmlStyleElement.scrollWidth
-**Signature:** htmlStyleElement.scrollWidth : `number`
-
+### htmlStyleElement.offsetHeight : `number`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.scrollHeight
-**Signature:** htmlStyleElement.scrollHeight : `number`
 
+<a name="element-scrollleft" id="element-scrollleft"></a>
+
+### htmlStyleElement.scrollLeft : `number`
+**Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
+
+<a name="element-scrolltop" id="element-scrolltop"></a>
+
+### htmlStyleElement.scrollTop : `number`
+**Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
+
+<a name="element-scrollwidth" id="element-scrollwidth"></a>
+
+### htmlStyleElement.scrollWidth : `number`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.disabled
-**Signature:** htmlStyleElement.disabled : `boolean`
 
-**Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
-### htmlStyleElement.innerHTML
-**Signature:** htmlStyleElement.innerHTML : `string`
+<a name="element-scrollheight" id="element-scrollheight"></a>
 
+### htmlStyleElement.scrollHeight : `number`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
-### htmlStyleElement.outerHTML
-**Signature:** htmlStyleElement.outerHTML : `string`
+**Read only**: true  
 
+<a name="element-disabled" id="element-disabled"></a>
+
+### htmlStyleElement.disabled : `boolean`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
+
+<a name="element-innerhtml" id="element-innerhtml"></a>
+
+### htmlStyleElement.innerHTML : `string`
+**Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
+
+<a name="element-outerhtml" id="element-outerhtml"></a>
+
+### htmlStyleElement.outerHTML : `string`
+**Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
+
+<a name="node-contenteditable" id="node-contenteditable"></a>
+
 ### htmlStyleElement.contentEditable
-**Signature:** htmlStyleElement.contentEditable
-
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.isConnected
-**Signature:** htmlStyleElement.isConnected : `boolean`
 
+<a name="node-isconnected" id="node-isconnected"></a>
+
+### htmlStyleElement.isConnected : `boolean`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.parentNode
-**Signature:** htmlStyleElement.parentNode : [`Node`](#node)
 
+<a name="node-parentnode" id="node-parentnode"></a>
+
+### htmlStyleElement.parentNode : [`Node`](#node)
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.firstChild
-**Signature:** htmlStyleElement.firstChild : [`Node`](#node)
 
+<a name="node-firstchild" id="node-firstchild"></a>
+
+### htmlStyleElement.firstChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.lastChild
-**Signature:** htmlStyleElement.lastChild : [`Node`](#node)
 
+<a name="node-lastchild" id="node-lastchild"></a>
+
+### htmlStyleElement.lastChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.previousSibling
-**Signature:** htmlStyleElement.previousSibling : [`Node`](#node)
 
+<a name="node-previoussibling" id="node-previoussibling"></a>
+
+### htmlStyleElement.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.nextSibling
-**Signature:** htmlStyleElement.nextSibling : [`Node`](#node)
 
+<a name="node-nextsibling" id="node-nextsibling"></a>
+
+### htmlStyleElement.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.firstElementChild
-**Signature:** htmlStyleElement.firstElementChild : [`Node`](#node)
 
+<a name="node-firstelementchild" id="node-firstelementchild"></a>
+
+### htmlStyleElement.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.lastElementChild
-**Signature:** htmlStyleElement.lastElementChild : [`Node`](#node)
 
+<a name="node-lastelementchild" id="node-lastelementchild"></a>
+
+### htmlStyleElement.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.previousElementSibling
-**Signature:** htmlStyleElement.previousElementSibling : [`Node`](#node)
 
+<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
+
+### htmlStyleElement.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.nextElementSibling
-**Signature:** htmlStyleElement.nextElementSibling : [`Node`](#node)
 
+<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
+
+### htmlStyleElement.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.textContent
-**Signature:** htmlStyleElement.textContent : `string`
 
+<a name="node-textcontent" id="node-textcontent"></a>
+
+### htmlStyleElement.textContent : `string`
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
-### htmlStyleElement.childNodes
-**Signature:** htmlStyleElement.childNodes : [`NodeList`](#nodelist)
 
+<a name="node-childnodes" id="node-childnodes"></a>
+
+### htmlStyleElement.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
+
+<a name="node-ownerdocument" id="node-ownerdocument"></a>
+
 ### htmlStyleElement.ownerDocument
-**Signature:** htmlStyleElement.ownerDocument
-
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
+
+<a name="node-offsetparent" id="node-offsetparent"></a>
+
 ### htmlStyleElement.offsetParent
-**Signature:** htmlStyleElement.offsetParent
-
 **Kind**: instance property of [`HTMLStyleElement`](#htmlstyleelement)  
 **Read only**: true  
-### htmlStyleElement.scrollIntoView
-**Signature:** htmlStyleElement.scrollIntoView()
 
+<a name="element-scrollintoview" id="element-scrollintoview"></a>
+
+### htmlStyleElement.scrollIntoView()
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
-### htmlStyleElement.scrollIntoViewIfNeeded
-**Signature:** htmlStyleElement.scrollIntoViewIfNeeded()
 
+<a name="element-scrollintoviewifneeded" id="element-scrollintoviewifneeded"></a>
+
+### htmlStyleElement.scrollIntoViewIfNeeded()
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
-### htmlStyleElement.focus
-**Signature:** htmlStyleElement.focus()
 
+<a name="element-focus" id="element-focus"></a>
+
+### htmlStyleElement.focus()
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
-### htmlStyleElement.blur
-**Signature:** htmlStyleElement.blur()
 
+<a name="element-blur" id="element-blur"></a>
+
+### htmlStyleElement.blur()
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
-### htmlStyleElement.getAttribute
-**Signature:** htmlStyleElement.getAttribute(name) ⇒ `string`
 
+<a name="element-getattribute" id="element-getattribute"></a>
+
+### htmlStyleElement.getAttribute(name) ⇒ `string`
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlStyleElement.setAttribute
-**Signature:** htmlStyleElement.setAttribute(name, value)
 
+<a name="element-setattribute" id="element-setattribute"></a>
+
+### htmlStyleElement.setAttribute(name, value)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
@@ -314,94 +361,105 @@ Creates an instance of HTMLStyleElement.
 | name | `string` | 
 | value | `string` | 
 
-### htmlStyleElement.removeAttribute
-**Signature:** htmlStyleElement.removeAttribute(name)
 
+<a name="element-removeattribute" id="element-removeattribute"></a>
+
+### htmlStyleElement.removeAttribute(name)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlStyleElement.hasAttribute
-**Signature:** htmlStyleElement.hasAttribute(name) ⇒ `boolean`
 
+<a name="element-hasattribute" id="element-hasattribute"></a>
+
+### htmlStyleElement.hasAttribute(name) ⇒ `boolean`
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlStyleElement.getAttributeNode
-**Signature:** htmlStyleElement.getAttributeNode(name) ⇒ `*`
 
+<a name="element-getattributenode" id="element-getattributenode"></a>
+
+### htmlStyleElement.getAttributeNode(name) ⇒ `\*`
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlStyleElement.setAttributeNode
-**Signature:** htmlStyleElement.setAttributeNode(newAttr)
 
+<a name="element-setattributenode" id="element-setattributenode"></a>
+
+### htmlStyleElement.setAttributeNode(newAttr)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
-| newAttr | `*` | 
+| newAttr | `\*` | 
 
-### htmlStyleElement.removeAttributeNode
-**Signature:** htmlStyleElement.removeAttributeNode(oldAttr)
 
+<a name="element-removeattributenode" id="element-removeattributenode"></a>
+
+### htmlStyleElement.removeAttributeNode(oldAttr)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
-| oldAttr | `*` | 
+| oldAttr | `\*` | 
 
-### htmlStyleElement.getElementsByClassName
-**Signature:** htmlStyleElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 
-**Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
+<a name="element-getelementsbyclassname" id="element-getelementsbyclassname"></a>
 
-| Param | Type |
-| --- | --- |
-| name | `string` | 
-
-### htmlStyleElement.getElementsByTagName
-**Signature:** htmlStyleElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
-
+### htmlStyleElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlStyleElement.querySelector
-**Signature:** htmlStyleElement.querySelector(selector) ⇒ [`Element`](#element)
 
+<a name="element-getelementsbytagname" id="element-getelementsbytagname"></a>
+
+### htmlStyleElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
+**Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
+
+| Param | Type |
+| --- | --- |
+| name | `string` | 
+
+
+<a name="element-queryselector" id="element-queryselector"></a>
+
+### htmlStyleElement.querySelector(selector) ⇒ [`Element`](#element)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
-### htmlStyleElement.querySelectorAll
-**Signature:** htmlStyleElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 
+<a name="element-queryselectorall" id="element-queryselectorall"></a>
+
+### htmlStyleElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
-### htmlStyleElement.getBoundingClientRect
-**Signature:** htmlStyleElement.getBoundingClientRect() ⇒ `*`
 
+<a name="element-getboundingclientrect" id="element-getboundingclientrect"></a>
+
+### htmlStyleElement.getBoundingClientRect() ⇒ `\*`
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
-### htmlStyleElement.insertAdjacentHTML
-**Signature:** htmlStyleElement.insertAdjacentHTML(position, value)
 
+<a name="element-insertadjacenthtml" id="element-insertadjacenthtml"></a>
+
+### htmlStyleElement.insertAdjacentHTML(position, value)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
@@ -409,51 +467,57 @@ Creates an instance of HTMLStyleElement.
 | position |  | 
 | value | `string` | 
 
-### htmlStyleElement.insertAdjacentElement
-**Signature:** htmlStyleElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 
+<a name="element-insertadjacentelement" id="element-insertadjacentelement"></a>
+
+### htmlStyleElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `*` | 
-| node | `*` | 
+| position | `\*` | 
+| node | `\*` | 
 
-### htmlStyleElement.insertAdjacentText
-**Signature:** htmlStyleElement.insertAdjacentText(position, text)
 
+<a name="element-insertadjacenttext" id="element-insertadjacenttext"></a>
+
+### htmlStyleElement.insertAdjacentText(position, text)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `*` | 
-| text | `*` | 
+| position | `\*` | 
+| text | `\*` | 
 
-### htmlStyleElement.hasChildNodes
-**Signature:** htmlStyleElement.hasChildNodes() ⇒ `boolean`
 
+<a name="node-haschildnodes" id="node-haschildnodes"></a>
+
+### htmlStyleElement.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
-### htmlStyleElement.cloneNode
-**Signature:** htmlStyleElement.cloneNode(deep) ⇒ [`Node`](#node)
 
+<a name="node-clonenode" id="node-clonenode"></a>
+
+### htmlStyleElement.cloneNode(deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
 | deep | `boolean` | 
 
-### htmlStyleElement.appendChild
-**Signature:** htmlStyleElement.appendChild(child) ⇒ [`Node`](#node)
 
+<a name="node-appendchild" id="node-appendchild"></a>
+
+### htmlStyleElement.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
-### htmlStyleElement.insertBefore
-**Signature:** htmlStyleElement.insertBefore(child, before) ⇒ [`Node`](#node)
 
+<a name="node-insertbefore" id="node-insertbefore"></a>
+
+### htmlStyleElement.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
@@ -461,9 +525,10 @@ Creates an instance of HTMLStyleElement.
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
-### htmlStyleElement.replaceChild
-**Signature:** htmlStyleElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
+<a name="node-replacechild" id="node-replacechild"></a>
+
+### htmlStyleElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
@@ -471,74 +536,82 @@ Creates an instance of HTMLStyleElement.
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
-### htmlStyleElement.removeChild
-**Signature:** htmlStyleElement.removeChild(child) ⇒ [`Node`](#node)
 
+<a name="node-removechild" id="node-removechild"></a>
+
+### htmlStyleElement.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
-### htmlStyleElement.remove
-**Signature:** htmlStyleElement.remove()
 
-**Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
-### htmlStyleElement.before
-**Signature:** htmlStyleElement.before(...nodes)
+<a name="node-remove" id="node-remove"></a>
 
+### htmlStyleElement.remove()
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
+<a name="node-before" id="node-before"></a>
 
-### htmlStyleElement.after
-**Signature:** htmlStyleElement.after(...nodes)
-
+### htmlStyleElement.before(...nodes)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
-### htmlStyleElement.replaceWith
-**Signature:** htmlStyleElement.replaceWith(...nodes)
 
+<a name="node-after" id="node-after"></a>
+
+### htmlStyleElement.after(...nodes)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
-### htmlStyleElement.addEventListener
-**Signature:** htmlStyleElement.addEventListener(eventName, callback, [capture])
 
+<a name="node-replacewith" id="node-replacewith"></a>
+
+### htmlStyleElement.replaceWith(...nodes)
+**Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
+
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+
+<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+
+### htmlStyleElement.addEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `*` |  | 
-| callback | `*` |  | 
+| eventName | `\*` |  | 
+| callback | `\*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
-### htmlStyleElement.removeEventListener
-**Signature:** htmlStyleElement.removeEventListener(eventName, callback, [capture])
 
+<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
+
+### htmlStyleElement.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `*` |  | 
-| callback | `*` |  | 
+| eventName | `\*` |  | 
+| callback | `\*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
-### htmlStyleElement.dispatchEvent
-**Signature:** htmlStyleElement.dispatchEvent(event)
 
+<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
+
+### htmlStyleElement.dispatchEvent(event)
 **Kind**: instance method of [`HTMLStyleElement`](#htmlstyleelement)  
 
 | Param | Type |
 | --- | --- |
-| event | `*` | 
+| event | `\*` | 
 

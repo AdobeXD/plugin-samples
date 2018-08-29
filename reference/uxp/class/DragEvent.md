@@ -1,6 +1,7 @@
-## DragEvent
-**Signature:** DragEvent ⇐ [`BaseUIEvent`](#baseuievent)
 
+<a name="dragevent" id="dragevent"></a>
+
+## DragEvent ⇐ [`BaseUIEvent`](#baseuievent)
 **Kind**: global class  
 **Extends**: [`BaseUIEvent`](#baseuievent)  
 **Access**: public  
@@ -44,215 +45,256 @@
     * [.cancelable](#event-cancelable) : `boolean`
     * [.eventPhase](#event-eventphase)
     * [.defaultPrevented](#event-defaultprevented) : `boolean`
-    * [.returnValue](#event-returnvalue) : `*`
+    * [.returnValue](#event-returnvalue) : `\*`
     * [.preventDefault()](#event-preventdefault)
     * [.stopImmediatePropagation()](#event-stopimmediatepropagation)
     * [.stopPropagation()](#event-stoppropagation)
 
-### new DragEvent
-**Signature:** new DragEvent(type, eventInit)
 
+<a name="new-dragevent-new" id="new-dragevent-new"></a>
+
+### new DragEvent(type, eventInit)
 Creates an instance of DragEvent.
 
 
 | Param | Type |
 | --- | --- |
-| type | `*` | 
-| eventInit | `*` | 
+| type | `\*` | 
+| eventInit | `\*` | 
+
+
+<a name="dragevent-datatransfer" id="dragevent-datatransfer"></a>
 
 ### dragEvent.dataTransfer
-**Signature:** dragEvent.dataTransfer
-
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
+
+<a name="baseuievent-pointerid" id="baseuievent-pointerid"></a>
+
 ### dragEvent.pointerId
-**Signature:** dragEvent.pointerId
-
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.width
-**Signature:** dragEvent.width : `number`
 
+<a name="baseuievent-width" id="baseuievent-width"></a>
+
+### dragEvent.width : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.height
-**Signature:** dragEvent.height : `number`
 
+<a name="baseuievent-height" id="baseuievent-height"></a>
+
+### dragEvent.height : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.presure
-**Signature:** dragEvent.presure : `number`
 
+<a name="baseuievent-presure" id="baseuievent-presure"></a>
+
+### dragEvent.presure : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.tangentialPressure
-**Signature:** dragEvent.tangentialPressure : `number`
 
+<a name="baseuievent-tangentialpressure" id="baseuievent-tangentialpressure"></a>
+
+### dragEvent.tangentialPressure : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.tiltX
-**Signature:** dragEvent.tiltX : `number`
 
+<a name="baseuievent-tiltx" id="baseuievent-tiltx"></a>
+
+### dragEvent.tiltX : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.tiltY
-**Signature:** dragEvent.tiltY : `number`
 
+<a name="baseuievent-tilty" id="baseuievent-tilty"></a>
+
+### dragEvent.tiltY : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.twist
-**Signature:** dragEvent.twist : `number`
 
+<a name="baseuievent-twist" id="baseuievent-twist"></a>
+
+### dragEvent.twist : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.clientX
-**Signature:** dragEvent.clientX : `number`
 
+<a name="baseuievent-clientx" id="baseuievent-clientx"></a>
+
+### dragEvent.clientX : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.clientY
-**Signature:** dragEvent.clientY : `number`
 
+<a name="baseuievent-clienty" id="baseuievent-clienty"></a>
+
+### dragEvent.clientY : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.offsetX
-**Signature:** dragEvent.offsetX : `number`
 
+<a name="baseuievent-offsetx" id="baseuievent-offsetx"></a>
+
+### dragEvent.offsetX : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.offsetY
-**Signature:** dragEvent.offsetY : `number`
 
+<a name="baseuievent-offsety" id="baseuievent-offsety"></a>
+
+### dragEvent.offsetY : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.pageX
-**Signature:** dragEvent.pageX : `number`
 
+<a name="baseuievent-pagex" id="baseuievent-pagex"></a>
+
+### dragEvent.pageX : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.pageY
-**Signature:** dragEvent.pageY : `number`
 
+<a name="baseuievent-pagey" id="baseuievent-pagey"></a>
+
+### dragEvent.pageY : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.screenX
-**Signature:** dragEvent.screenX : `number`
 
+<a name="baseuievent-screenx" id="baseuievent-screenx"></a>
+
+### dragEvent.screenX : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.screenY
-**Signature:** dragEvent.screenY : `number`
 
+<a name="baseuievent-screeny" id="baseuievent-screeny"></a>
+
+### dragEvent.screenY : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.movementX
-**Signature:** dragEvent.movementX : `number`
 
+<a name="baseuievent-movementx" id="baseuievent-movementx"></a>
+
+### dragEvent.movementX : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.movementY
-**Signature:** dragEvent.movementY : `number`
 
+<a name="baseuievent-movementy" id="baseuievent-movementy"></a>
+
+### dragEvent.movementY : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.button
-**Signature:** dragEvent.button : `number`
 
+<a name="baseuievent-button" id="baseuievent-button"></a>
+
+### dragEvent.button : `number`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
+
+<a name="baseuievent-buttons" id="baseuievent-buttons"></a>
+
 ### dragEvent.buttons
-**Signature:** dragEvent.buttons
-
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
+
+<a name="baseuievent-detail" id="baseuievent-detail"></a>
+
 ### dragEvent.detail
-**Signature:** dragEvent.detail
-
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
+
+<a name="baseuievent-pointertype" id="baseuievent-pointertype"></a>
+
 ### dragEvent.pointerType
-**Signature:** dragEvent.pointerType
-
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
+
+<a name="baseuievent-altkey" id="baseuievent-altkey"></a>
+
 ### dragEvent.altKey
-**Signature:** dragEvent.altKey
-
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
+
+<a name="baseuievent-shiftkey" id="baseuievent-shiftkey"></a>
+
 ### dragEvent.shiftKey
-**Signature:** dragEvent.shiftKey
-
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
+
+<a name="baseuievent-metakey" id="baseuievent-metakey"></a>
+
 ### dragEvent.metaKey
-**Signature:** dragEvent.metaKey
-
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
+
+<a name="baseuievent-ctrlkey" id="baseuievent-ctrlkey"></a>
+
 ### dragEvent.ctrlKey
-**Signature:** dragEvent.ctrlKey
-
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
+
+<a name="baseuievent-isprimary" id="baseuievent-isprimary"></a>
+
 ### dragEvent.isPrimary
-**Signature:** dragEvent.isPrimary
-
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
+
+<a name="event-type" id="event-type"></a>
+
 ### dragEvent.type
-**Signature:** dragEvent.type
-
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.isTrusted
-**Signature:** dragEvent.isTrusted : `boolean`
 
+<a name="event-istrusted" id="event-istrusted"></a>
+
+### dragEvent.isTrusted : `boolean`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.target
-**Signature:** dragEvent.target : [`Node`](#node)
 
+<a name="event-target" id="event-target"></a>
+
+### dragEvent.target : [`Node`](#node)
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.currentTarget
-**Signature:** dragEvent.currentTarget : [`Node`](#node)
 
+<a name="event-currenttarget" id="event-currenttarget"></a>
+
+### dragEvent.currentTarget : [`Node`](#node)
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.bubbles
-**Signature:** dragEvent.bubbles : `boolean`
 
+<a name="event-bubbles" id="event-bubbles"></a>
+
+### dragEvent.bubbles : `boolean`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.cancelable
-**Signature:** dragEvent.cancelable : `boolean`
 
+<a name="event-cancelable" id="event-cancelable"></a>
+
+### dragEvent.cancelable : `boolean`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
+
+<a name="event-eventphase" id="event-eventphase"></a>
+
 ### dragEvent.eventPhase
-**Signature:** dragEvent.eventPhase
-
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.defaultPrevented
-**Signature:** dragEvent.defaultPrevented : `boolean`
 
+<a name="event-defaultprevented" id="event-defaultprevented"></a>
+
+### dragEvent.defaultPrevented : `boolean`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
 **Read only**: true  
-### dragEvent.returnValue
-**Signature:** dragEvent.returnValue : `*`
 
+<a name="event-returnvalue" id="event-returnvalue"></a>
+
+### dragEvent.returnValue : `\*`
 **Kind**: instance property of [`DragEvent`](#dragevent)  
-### dragEvent.preventDefault
-**Signature:** dragEvent.preventDefault()
 
+<a name="event-preventdefault" id="event-preventdefault"></a>
+
+### dragEvent.preventDefault()
 **Kind**: instance method of [`DragEvent`](#dragevent)  
-### dragEvent.stopImmediatePropagation
-**Signature:** dragEvent.stopImmediatePropagation()
 
+<a name="event-stopimmediatepropagation" id="event-stopimmediatepropagation"></a>
+
+### dragEvent.stopImmediatePropagation()
 **Kind**: instance method of [`DragEvent`](#dragevent)  
-### dragEvent.stopPropagation
-**Signature:** dragEvent.stopPropagation()
 
+<a name="event-stoppropagation" id="event-stoppropagation"></a>
+
+### dragEvent.stopPropagation()
 **Kind**: instance method of [`DragEvent`](#dragevent)  

@@ -1,6 +1,7 @@
-## DOMTokenList
-**Signature:** DOMTokenList
 
+<a name="domtokenlist" id="domtokenlist"></a>
+
+## DOMTokenList
 DOMTokenList supports the ClassList and other token list functionality
 
 **Kind**: global class  
@@ -22,25 +23,28 @@ DOMTokenList supports the ClassList and other token list functionality
     * [.contains(token)](#domtokenlist-contains) ⇒ `boolean`
     * [.supports(token)](#domtokenlist-supports) ⇒ `boolean`
 
-### domTokenList.length
-**Signature:** domTokenList.length
 
+<a name="domtokenlist-length" id="domtokenlist-length"></a>
+
+### domTokenList.length
 Returns the number of tokens in the list
 
 **Kind**: instance property of [`DOMTokenList`](#domtokenlist)  
 **Read only**: true  
 **See**: https://dom.spec.whatwg.org/#dom-domtokenlist-length  
-### domTokenList.value
-**Signature:** domTokenList.value
 
+<a name="domtokenlist-value" id="domtokenlist-value"></a>
+
+### domTokenList.value
 The serialized string value of the token list
 
 **Kind**: instance property of [`DOMTokenList`](#domtokenlist)  
 **Read only**: true  
 **See**: https://dom.spec.whatwg.org/#dom-domtokenlist-value  
-### domTokenList.add
-**Signature:** domTokenList.add(...tokens)
 
+<a name="domtokenlist-add" id="domtokenlist-add"></a>
+
+### domTokenList.add(...tokens)
 Adds the specified tokens to the token list. If the token is already present, no error is thrown.
 
 **Kind**: instance method of [`DOMTokenList`](#domtokenlist)  
@@ -54,9 +58,10 @@ Adds the specified tokens to the token list. If the token is already present, no
 | --- | --- |
 | ...tokens | `string` | 
 
-### domTokenList.remove
-**Signature:** domTokenList.remove(...tokens)
 
+<a name="domtokenlist-remove" id="domtokenlist-remove"></a>
+
+### domTokenList.remove(...tokens)
 Removes the specified items from the token list. If the token is not present, no error is thrown.
 
 **Kind**: instance method of [`DOMTokenList`](#domtokenlist)  
@@ -70,9 +75,10 @@ Removes the specified items from the token list. If the token is not present, no
 | --- | --- |
 | ...tokens | `string` | 
 
-### domTokenList.replace
-**Signature:** domTokenList.replace(oldToken, newToken)
 
+<a name="domtokenlist-replace" id="domtokenlist-replace"></a>
+
+### domTokenList.replace(oldToken, newToken)
 Replaces an old token with a new token. If the old token doesn't exist,
 no action occurs, and `false` is returned.
 
@@ -88,9 +94,10 @@ no action occurs, and `false` is returned.
 | oldToken | `any` | 
 | newToken | `any` | 
 
-### domTokenList.toggle
-**Signature:** domTokenList.toggle(token, force) ⇒ `boolean`
 
+<a name="domtokenlist-toggle" id="domtokenlist-toggle"></a>
+
+### domTokenList.toggle(token, force) ⇒ `boolean`
 Toggles a token within the list. If `force` is not present, then the following
 rules are applied:
 
@@ -115,9 +122,10 @@ If `force` is supplied, then:
 | token | `string` | 
 | force | `boolean` | 
 
-### domTokenList.item
-**Signature:** domTokenList.item(index) ⇒ `string`
 
+<a name="domtokenlist-item" id="domtokenlist-item"></a>
+
+### domTokenList.item(index) ⇒ `string`
 Return the item at the specified index, or `null` if the index is out-of-range
 
 **Kind**: instance method of [`DOMTokenList`](#domtokenlist)  
@@ -128,9 +136,10 @@ Return the item at the specified index, or `null` if the index is out-of-range
 | --- | --- |
 | index | `number` | 
 
-### domTokenList.contains
-**Signature:** domTokenList.contains(token) ⇒ `boolean`
 
+<a name="domtokenlist-contains" id="domtokenlist-contains"></a>
+
+### domTokenList.contains(token) ⇒ `boolean`
 Returns whether the token is in the list or not.
 
 **Kind**: instance method of [`DOMTokenList`](#domtokenlist)  
@@ -145,9 +154,10 @@ Returns whether the token is in the list or not.
 | --- | --- |
 | token | `any` | 
 
-### domTokenList.supports
-**Signature:** domTokenList.supports(token) ⇒ `boolean`
 
+<a name="domtokenlist-supports" id="domtokenlist-supports"></a>
+
+### domTokenList.supports(token) ⇒ `boolean`
 Returns `true` if the token is acceptable to the list; otherwise returns `false`.
 If `false` is returned, passing the token would throw an error when calling
 any other method.

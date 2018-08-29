@@ -1,6 +1,7 @@
-## GestureEvent
-**Signature:** GestureEvent ⇐ [`BaseUIEvent`](#baseuievent)
 
+<a name="gestureevent" id="gestureevent"></a>
+
+## GestureEvent ⇐ [`BaseUIEvent`](#baseuievent)
 **Kind**: global class  
 **Extends**: [`BaseUIEvent`](#baseuievent)  
 **Access**: public  
@@ -52,255 +53,304 @@
     * [.cancelable](#event-cancelable) : `boolean`
     * [.eventPhase](#event-eventphase)
     * [.defaultPrevented](#event-defaultprevented) : `boolean`
-    * [.returnValue](#event-returnvalue) : `*`
+    * [.returnValue](#event-returnvalue) : `\*`
     * [.preventDefault()](#event-preventdefault)
     * [.stopImmediatePropagation()](#event-stopimmediatepropagation)
     * [.stopPropagation()](#event-stoppropagation)
 
-### new GestureEvent
-**Signature:** new GestureEvent(type, eventInit)
 
+<a name="new-gestureevent-new" id="new-gestureevent-new"></a>
+
+### new GestureEvent(type, eventInit)
 Creates an instance of GestureEvent.
 
 
 | Param | Type |
 | --- | --- |
-| type | `*` | 
-| eventInit | `*` | 
+| type | `\*` | 
+| eventInit | `\*` | 
 
-### gestureEvent.expansion
-**Signature:** gestureEvent.expansion : `number`
 
+<a name="gestureevent-expansion" id="gestureevent-expansion"></a>
+
+### gestureEvent.expansion : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.rotation
-**Signature:** gestureEvent.rotation : `number`
 
+<a name="gestureevent-rotation" id="gestureevent-rotation"></a>
+
+### gestureEvent.rotation : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.scale
-**Signature:** gestureEvent.scale : `number`
 
+<a name="gestureevent-scale" id="gestureevent-scale"></a>
+
+### gestureEvent.scale : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.translationX
-**Signature:** gestureEvent.translationX : `number`
 
+<a name="gestureevent-translationx" id="gestureevent-translationx"></a>
+
+### gestureEvent.translationX : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.translationY
-**Signature:** gestureEvent.translationY : `number`
 
+<a name="gestureevent-translationy" id="gestureevent-translationy"></a>
+
+### gestureEvent.translationY : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.velocityAngular
-**Signature:** gestureEvent.velocityAngular : `number`
 
+<a name="gestureevent-velocityangular" id="gestureevent-velocityangular"></a>
+
+### gestureEvent.velocityAngular : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.velocityExpansion
-**Signature:** gestureEvent.velocityExpansion : `number`
 
+<a name="gestureevent-velocityexpansion" id="gestureevent-velocityexpansion"></a>
+
+### gestureEvent.velocityExpansion : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.velocityX
-**Signature:** gestureEvent.velocityX : `number`
 
+<a name="gestureevent-velocityx" id="gestureevent-velocityx"></a>
+
+### gestureEvent.velocityX : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.velocityY
-**Signature:** gestureEvent.velocityY : `number`
 
+<a name="gestureevent-velocityy" id="gestureevent-velocityy"></a>
+
+### gestureEvent.velocityY : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
+
+<a name="baseuievent-pointerid" id="baseuievent-pointerid"></a>
+
 ### gestureEvent.pointerId
-**Signature:** gestureEvent.pointerId
-
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.width
-**Signature:** gestureEvent.width : `number`
 
+<a name="baseuievent-width" id="baseuievent-width"></a>
+
+### gestureEvent.width : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.height
-**Signature:** gestureEvent.height : `number`
 
+<a name="baseuievent-height" id="baseuievent-height"></a>
+
+### gestureEvent.height : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.presure
-**Signature:** gestureEvent.presure : `number`
 
+<a name="baseuievent-presure" id="baseuievent-presure"></a>
+
+### gestureEvent.presure : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.tangentialPressure
-**Signature:** gestureEvent.tangentialPressure : `number`
 
+<a name="baseuievent-tangentialpressure" id="baseuievent-tangentialpressure"></a>
+
+### gestureEvent.tangentialPressure : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.tiltX
-**Signature:** gestureEvent.tiltX : `number`
 
+<a name="baseuievent-tiltx" id="baseuievent-tiltx"></a>
+
+### gestureEvent.tiltX : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.tiltY
-**Signature:** gestureEvent.tiltY : `number`
 
+<a name="baseuievent-tilty" id="baseuievent-tilty"></a>
+
+### gestureEvent.tiltY : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.twist
-**Signature:** gestureEvent.twist : `number`
 
+<a name="baseuievent-twist" id="baseuievent-twist"></a>
+
+### gestureEvent.twist : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.clientX
-**Signature:** gestureEvent.clientX : `number`
 
+<a name="baseuievent-clientx" id="baseuievent-clientx"></a>
+
+### gestureEvent.clientX : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.clientY
-**Signature:** gestureEvent.clientY : `number`
 
+<a name="baseuievent-clienty" id="baseuievent-clienty"></a>
+
+### gestureEvent.clientY : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.offsetX
-**Signature:** gestureEvent.offsetX : `number`
 
+<a name="baseuievent-offsetx" id="baseuievent-offsetx"></a>
+
+### gestureEvent.offsetX : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.offsetY
-**Signature:** gestureEvent.offsetY : `number`
 
+<a name="baseuievent-offsety" id="baseuievent-offsety"></a>
+
+### gestureEvent.offsetY : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.pageX
-**Signature:** gestureEvent.pageX : `number`
 
+<a name="baseuievent-pagex" id="baseuievent-pagex"></a>
+
+### gestureEvent.pageX : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.pageY
-**Signature:** gestureEvent.pageY : `number`
 
+<a name="baseuievent-pagey" id="baseuievent-pagey"></a>
+
+### gestureEvent.pageY : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.screenX
-**Signature:** gestureEvent.screenX : `number`
 
+<a name="baseuievent-screenx" id="baseuievent-screenx"></a>
+
+### gestureEvent.screenX : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.screenY
-**Signature:** gestureEvent.screenY : `number`
 
+<a name="baseuievent-screeny" id="baseuievent-screeny"></a>
+
+### gestureEvent.screenY : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.movementX
-**Signature:** gestureEvent.movementX : `number`
 
+<a name="baseuievent-movementx" id="baseuievent-movementx"></a>
+
+### gestureEvent.movementX : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.movementY
-**Signature:** gestureEvent.movementY : `number`
 
+<a name="baseuievent-movementy" id="baseuievent-movementy"></a>
+
+### gestureEvent.movementY : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.button
-**Signature:** gestureEvent.button : `number`
 
+<a name="baseuievent-button" id="baseuievent-button"></a>
+
+### gestureEvent.button : `number`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
+
+<a name="baseuievent-buttons" id="baseuievent-buttons"></a>
+
 ### gestureEvent.buttons
-**Signature:** gestureEvent.buttons
-
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
+
+<a name="baseuievent-detail" id="baseuievent-detail"></a>
+
 ### gestureEvent.detail
-**Signature:** gestureEvent.detail
-
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
+
+<a name="baseuievent-pointertype" id="baseuievent-pointertype"></a>
+
 ### gestureEvent.pointerType
-**Signature:** gestureEvent.pointerType
-
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
+
+<a name="baseuievent-altkey" id="baseuievent-altkey"></a>
+
 ### gestureEvent.altKey
-**Signature:** gestureEvent.altKey
-
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
+
+<a name="baseuievent-shiftkey" id="baseuievent-shiftkey"></a>
+
 ### gestureEvent.shiftKey
-**Signature:** gestureEvent.shiftKey
-
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
+
+<a name="baseuievent-metakey" id="baseuievent-metakey"></a>
+
 ### gestureEvent.metaKey
-**Signature:** gestureEvent.metaKey
-
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
+
+<a name="baseuievent-ctrlkey" id="baseuievent-ctrlkey"></a>
+
 ### gestureEvent.ctrlKey
-**Signature:** gestureEvent.ctrlKey
-
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
+
+<a name="baseuievent-isprimary" id="baseuievent-isprimary"></a>
+
 ### gestureEvent.isPrimary
-**Signature:** gestureEvent.isPrimary
-
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
+
+<a name="event-type" id="event-type"></a>
+
 ### gestureEvent.type
-**Signature:** gestureEvent.type
-
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.isTrusted
-**Signature:** gestureEvent.isTrusted : `boolean`
 
+<a name="event-istrusted" id="event-istrusted"></a>
+
+### gestureEvent.isTrusted : `boolean`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.target
-**Signature:** gestureEvent.target : [`Node`](#node)
 
+<a name="event-target" id="event-target"></a>
+
+### gestureEvent.target : [`Node`](#node)
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.currentTarget
-**Signature:** gestureEvent.currentTarget : [`Node`](#node)
 
+<a name="event-currenttarget" id="event-currenttarget"></a>
+
+### gestureEvent.currentTarget : [`Node`](#node)
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.bubbles
-**Signature:** gestureEvent.bubbles : `boolean`
 
+<a name="event-bubbles" id="event-bubbles"></a>
+
+### gestureEvent.bubbles : `boolean`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.cancelable
-**Signature:** gestureEvent.cancelable : `boolean`
 
+<a name="event-cancelable" id="event-cancelable"></a>
+
+### gestureEvent.cancelable : `boolean`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
+
+<a name="event-eventphase" id="event-eventphase"></a>
+
 ### gestureEvent.eventPhase
-**Signature:** gestureEvent.eventPhase
-
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.defaultPrevented
-**Signature:** gestureEvent.defaultPrevented : `boolean`
 
+<a name="event-defaultprevented" id="event-defaultprevented"></a>
+
+### gestureEvent.defaultPrevented : `boolean`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
 **Read only**: true  
-### gestureEvent.returnValue
-**Signature:** gestureEvent.returnValue : `*`
 
+<a name="event-returnvalue" id="event-returnvalue"></a>
+
+### gestureEvent.returnValue : `\*`
 **Kind**: instance property of [`GestureEvent`](#gestureevent)  
-### gestureEvent.preventDefault
-**Signature:** gestureEvent.preventDefault()
 
+<a name="event-preventdefault" id="event-preventdefault"></a>
+
+### gestureEvent.preventDefault()
 **Kind**: instance method of [`GestureEvent`](#gestureevent)  
-### gestureEvent.stopImmediatePropagation
-**Signature:** gestureEvent.stopImmediatePropagation()
 
+<a name="event-stopimmediatepropagation" id="event-stopimmediatepropagation"></a>
+
+### gestureEvent.stopImmediatePropagation()
 **Kind**: instance method of [`GestureEvent`](#gestureevent)  
-### gestureEvent.stopPropagation
-**Signature:** gestureEvent.stopPropagation()
 
+<a name="event-stoppropagation" id="event-stoppropagation"></a>
+
+### gestureEvent.stopPropagation()
 **Kind**: instance method of [`GestureEvent`](#gestureevent)  

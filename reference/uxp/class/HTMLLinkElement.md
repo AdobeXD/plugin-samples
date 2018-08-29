@@ -1,6 +1,7 @@
-## HTMLLinkElement
-**Signature:** HTMLLinkElement ⇐ [`HTMLElement`](#htmlelement)
 
+<a name="htmllinkelement" id="htmllinkelement"></a>
+
+## HTMLLinkElement ⇐ [`HTMLElement`](#htmlelement)
 **Kind**: global class  
 **Extends**: [`HTMLElement`](#htmlelement)  
 **Access**: public  
@@ -55,14 +56,14 @@
     * [.setAttribute(name, value)](#element-setattribute)
     * [.removeAttribute(name)](#element-removeattribute)
     * [.hasAttribute(name)](#element-hasattribute) ⇒ `boolean`
-    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `*`
+    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `\*`
     * [.setAttributeNode(newAttr)](#element-setattributenode)
     * [.removeAttributeNode(oldAttr)](#element-removeattributenode)
     * [.getElementsByClassName(name)](#element-getelementsbyclassname) ⇒ [`NodeList`](#nodelist)
     * [.getElementsByTagName(name)](#element-getelementsbytagname) ⇒ [`NodeList`](#nodelist)
     * [.querySelector(selector)](#element-queryselector) ⇒ [`Element`](#element)
     * [.querySelectorAll(selector)](#element-queryselectorall) ⇒ [`NodeList`](#nodelist)
-    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `*`
+    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `\*`
     * [.insertAdjacentHTML(position, value)](#element-insertadjacenthtml)
     * [.insertAdjacentElement(position, node)](#element-insertadjacentelement) ⇒ [`Node`](#node)
     * [.insertAdjacentText(position, text)](#element-insertadjacenttext)
@@ -80,233 +81,279 @@
     * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
     * [.dispatchEvent(event)](#eventtarget-dispatchevent)
 
-### new HTMLLinkElement
-**Signature:** new HTMLLinkElement(document, nodeName, namespaceURI)
 
+<a name="new-htmllinkelement-new" id="new-htmllinkelement-new"></a>
+
+### new HTMLLinkElement(document, nodeName, namespaceURI)
 Creates an instance of HTMLLinkElement.
 
 
 | Param | Type |
 | --- | --- |
-| document | `*` | 
-| nodeName | `*` | 
-| namespaceURI | `*` | 
+| document | `\*` | 
+| nodeName | `\*` | 
+| namespaceURI | `\*` | 
 
-### htmlLinkElement.nodeName
-**Signature:** htmlLinkElement.nodeName : `string`
 
+<a name="element-nodename" id="element-nodename"></a>
+
+### htmlLinkElement.nodeName : `string`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.localName
-**Signature:** htmlLinkElement.localName : `string`
 
+<a name="element-localname" id="element-localname"></a>
+
+### htmlLinkElement.localName : `string`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.tagName
-**Signature:** htmlLinkElement.tagName : `string`
 
+<a name="element-tagname" id="element-tagname"></a>
+
+### htmlLinkElement.tagName : `string`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.nodeType
-**Signature:** htmlLinkElement.nodeType : `number`
 
+<a name="element-nodetype" id="element-nodetype"></a>
+
+### htmlLinkElement.nodeType : `number`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.namespaceURI
-**Signature:** htmlLinkElement.namespaceURI : `string`
 
+<a name="element-namespaceuri" id="element-namespaceuri"></a>
+
+### htmlLinkElement.namespaceURI : `string`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.id
-**Signature:** htmlLinkElement.id : `string`
 
+<a name="element-id" id="element-id"></a>
+
+### htmlLinkElement.id : `string`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
-### htmlLinkElement.className
-**Signature:** htmlLinkElement.className : `string`
 
+<a name="element-classname" id="element-classname"></a>
+
+### htmlLinkElement.className : `string`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
-### htmlLinkElement.attributes
-**Signature:** htmlLinkElement.attributes : [`NamedNodeMap`](#namednodemap)
 
-**Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
-**Read only**: true  
-### htmlLinkElement.style
-**Signature:** htmlLinkElement.style : `Style`
+<a name="element-attributes" id="element-attributes"></a>
 
+### htmlLinkElement.attributes : [`NamedNodeMap`](#namednodemap)
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.clientLeft
-**Signature:** htmlLinkElement.clientLeft : `number`
 
+<a name="element-style" id="element-style"></a>
+
+### htmlLinkElement.style : `Style`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.clientTop
-**Signature:** htmlLinkElement.clientTop : `number`
 
+<a name="element-clientleft" id="element-clientleft"></a>
+
+### htmlLinkElement.clientLeft : `number`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.clientWidth
-**Signature:** htmlLinkElement.clientWidth : `number`
 
+<a name="element-clienttop" id="element-clienttop"></a>
+
+### htmlLinkElement.clientTop : `number`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.clientHeight
-**Signature:** htmlLinkElement.clientHeight : `number`
 
+<a name="element-clientwidth" id="element-clientwidth"></a>
+
+### htmlLinkElement.clientWidth : `number`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.offsetLeft
-**Signature:** htmlLinkElement.offsetLeft : `number`
 
+<a name="element-clientheight" id="element-clientheight"></a>
+
+### htmlLinkElement.clientHeight : `number`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.offsetTop
-**Signature:** htmlLinkElement.offsetTop : `number`
 
+<a name="element-offsetleft" id="element-offsetleft"></a>
+
+### htmlLinkElement.offsetLeft : `number`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.offsetWidth
-**Signature:** htmlLinkElement.offsetWidth : `number`
 
+<a name="element-offsettop" id="element-offsettop"></a>
+
+### htmlLinkElement.offsetTop : `number`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.offsetHeight
-**Signature:** htmlLinkElement.offsetHeight : `number`
 
+<a name="element-offsetwidth" id="element-offsetwidth"></a>
+
+### htmlLinkElement.offsetWidth : `number`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.scrollLeft
-**Signature:** htmlLinkElement.scrollLeft : `number`
 
-**Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
-### htmlLinkElement.scrollTop
-**Signature:** htmlLinkElement.scrollTop : `number`
+<a name="element-offsetheight" id="element-offsetheight"></a>
 
-**Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
-### htmlLinkElement.scrollWidth
-**Signature:** htmlLinkElement.scrollWidth : `number`
-
+### htmlLinkElement.offsetHeight : `number`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.scrollHeight
-**Signature:** htmlLinkElement.scrollHeight : `number`
 
+<a name="element-scrollleft" id="element-scrollleft"></a>
+
+### htmlLinkElement.scrollLeft : `number`
+**Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
+
+<a name="element-scrolltop" id="element-scrolltop"></a>
+
+### htmlLinkElement.scrollTop : `number`
+**Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
+
+<a name="element-scrollwidth" id="element-scrollwidth"></a>
+
+### htmlLinkElement.scrollWidth : `number`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.disabled
-**Signature:** htmlLinkElement.disabled : `boolean`
 
-**Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
-### htmlLinkElement.innerHTML
-**Signature:** htmlLinkElement.innerHTML : `string`
+<a name="element-scrollheight" id="element-scrollheight"></a>
 
+### htmlLinkElement.scrollHeight : `number`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
-### htmlLinkElement.outerHTML
-**Signature:** htmlLinkElement.outerHTML : `string`
+**Read only**: true  
 
+<a name="element-disabled" id="element-disabled"></a>
+
+### htmlLinkElement.disabled : `boolean`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
+
+<a name="element-innerhtml" id="element-innerhtml"></a>
+
+### htmlLinkElement.innerHTML : `string`
+**Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
+
+<a name="element-outerhtml" id="element-outerhtml"></a>
+
+### htmlLinkElement.outerHTML : `string`
+**Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
+
+<a name="node-contenteditable" id="node-contenteditable"></a>
+
 ### htmlLinkElement.contentEditable
-**Signature:** htmlLinkElement.contentEditable
-
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.isConnected
-**Signature:** htmlLinkElement.isConnected : `boolean`
 
+<a name="node-isconnected" id="node-isconnected"></a>
+
+### htmlLinkElement.isConnected : `boolean`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.parentNode
-**Signature:** htmlLinkElement.parentNode : [`Node`](#node)
 
+<a name="node-parentnode" id="node-parentnode"></a>
+
+### htmlLinkElement.parentNode : [`Node`](#node)
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.firstChild
-**Signature:** htmlLinkElement.firstChild : [`Node`](#node)
 
+<a name="node-firstchild" id="node-firstchild"></a>
+
+### htmlLinkElement.firstChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.lastChild
-**Signature:** htmlLinkElement.lastChild : [`Node`](#node)
 
+<a name="node-lastchild" id="node-lastchild"></a>
+
+### htmlLinkElement.lastChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.previousSibling
-**Signature:** htmlLinkElement.previousSibling : [`Node`](#node)
 
+<a name="node-previoussibling" id="node-previoussibling"></a>
+
+### htmlLinkElement.previousSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.nextSibling
-**Signature:** htmlLinkElement.nextSibling : [`Node`](#node)
 
+<a name="node-nextsibling" id="node-nextsibling"></a>
+
+### htmlLinkElement.nextSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.firstElementChild
-**Signature:** htmlLinkElement.firstElementChild : [`Node`](#node)
 
+<a name="node-firstelementchild" id="node-firstelementchild"></a>
+
+### htmlLinkElement.firstElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.lastElementChild
-**Signature:** htmlLinkElement.lastElementChild : [`Node`](#node)
 
+<a name="node-lastelementchild" id="node-lastelementchild"></a>
+
+### htmlLinkElement.lastElementChild : [`Node`](#node)
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.previousElementSibling
-**Signature:** htmlLinkElement.previousElementSibling : [`Node`](#node)
 
+<a name="node-previouselementsibling" id="node-previouselementsibling"></a>
+
+### htmlLinkElement.previousElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.nextElementSibling
-**Signature:** htmlLinkElement.nextElementSibling : [`Node`](#node)
 
+<a name="node-nextelementsibling" id="node-nextelementsibling"></a>
+
+### htmlLinkElement.nextElementSibling : [`Node`](#node)
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.textContent
-**Signature:** htmlLinkElement.textContent : `string`
 
+<a name="node-textcontent" id="node-textcontent"></a>
+
+### htmlLinkElement.textContent : `string`
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
-### htmlLinkElement.childNodes
-**Signature:** htmlLinkElement.childNodes : [`NodeList`](#nodelist)
 
+<a name="node-childnodes" id="node-childnodes"></a>
+
+### htmlLinkElement.childNodes : [`NodeList`](#nodelist)
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
+
+<a name="node-ownerdocument" id="node-ownerdocument"></a>
+
 ### htmlLinkElement.ownerDocument
-**Signature:** htmlLinkElement.ownerDocument
-
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
+
+<a name="node-offsetparent" id="node-offsetparent"></a>
+
 ### htmlLinkElement.offsetParent
-**Signature:** htmlLinkElement.offsetParent
-
 **Kind**: instance property of [`HTMLLinkElement`](#htmllinkelement)  
 **Read only**: true  
-### htmlLinkElement.scrollIntoView
-**Signature:** htmlLinkElement.scrollIntoView()
 
+<a name="element-scrollintoview" id="element-scrollintoview"></a>
+
+### htmlLinkElement.scrollIntoView()
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
-### htmlLinkElement.scrollIntoViewIfNeeded
-**Signature:** htmlLinkElement.scrollIntoViewIfNeeded()
 
+<a name="element-scrollintoviewifneeded" id="element-scrollintoviewifneeded"></a>
+
+### htmlLinkElement.scrollIntoViewIfNeeded()
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
-### htmlLinkElement.focus
-**Signature:** htmlLinkElement.focus()
 
+<a name="element-focus" id="element-focus"></a>
+
+### htmlLinkElement.focus()
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
-### htmlLinkElement.blur
-**Signature:** htmlLinkElement.blur()
 
+<a name="element-blur" id="element-blur"></a>
+
+### htmlLinkElement.blur()
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
-### htmlLinkElement.getAttribute
-**Signature:** htmlLinkElement.getAttribute(name) ⇒ `string`
 
+<a name="element-getattribute" id="element-getattribute"></a>
+
+### htmlLinkElement.getAttribute(name) ⇒ `string`
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlLinkElement.setAttribute
-**Signature:** htmlLinkElement.setAttribute(name, value)
 
+<a name="element-setattribute" id="element-setattribute"></a>
+
+### htmlLinkElement.setAttribute(name, value)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
@@ -314,94 +361,105 @@ Creates an instance of HTMLLinkElement.
 | name | `string` | 
 | value | `string` | 
 
-### htmlLinkElement.removeAttribute
-**Signature:** htmlLinkElement.removeAttribute(name)
 
+<a name="element-removeattribute" id="element-removeattribute"></a>
+
+### htmlLinkElement.removeAttribute(name)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlLinkElement.hasAttribute
-**Signature:** htmlLinkElement.hasAttribute(name) ⇒ `boolean`
 
+<a name="element-hasattribute" id="element-hasattribute"></a>
+
+### htmlLinkElement.hasAttribute(name) ⇒ `boolean`
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlLinkElement.getAttributeNode
-**Signature:** htmlLinkElement.getAttributeNode(name) ⇒ `*`
 
+<a name="element-getattributenode" id="element-getattributenode"></a>
+
+### htmlLinkElement.getAttributeNode(name) ⇒ `\*`
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlLinkElement.setAttributeNode
-**Signature:** htmlLinkElement.setAttributeNode(newAttr)
 
+<a name="element-setattributenode" id="element-setattributenode"></a>
+
+### htmlLinkElement.setAttributeNode(newAttr)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
-| newAttr | `*` | 
+| newAttr | `\*` | 
 
-### htmlLinkElement.removeAttributeNode
-**Signature:** htmlLinkElement.removeAttributeNode(oldAttr)
 
+<a name="element-removeattributenode" id="element-removeattributenode"></a>
+
+### htmlLinkElement.removeAttributeNode(oldAttr)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
-| oldAttr | `*` | 
+| oldAttr | `\*` | 
 
-### htmlLinkElement.getElementsByClassName
-**Signature:** htmlLinkElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 
-**Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
+<a name="element-getelementsbyclassname" id="element-getelementsbyclassname"></a>
 
-| Param | Type |
-| --- | --- |
-| name | `string` | 
-
-### htmlLinkElement.getElementsByTagName
-**Signature:** htmlLinkElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
-
+### htmlLinkElement.getElementsByClassName(name) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
 | name | `string` | 
 
-### htmlLinkElement.querySelector
-**Signature:** htmlLinkElement.querySelector(selector) ⇒ [`Element`](#element)
 
+<a name="element-getelementsbytagname" id="element-getelementsbytagname"></a>
+
+### htmlLinkElement.getElementsByTagName(name) ⇒ [`NodeList`](#nodelist)
+**Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
+
+| Param | Type |
+| --- | --- |
+| name | `string` | 
+
+
+<a name="element-queryselector" id="element-queryselector"></a>
+
+### htmlLinkElement.querySelector(selector) ⇒ [`Element`](#element)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
-### htmlLinkElement.querySelectorAll
-**Signature:** htmlLinkElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 
+<a name="element-queryselectorall" id="element-queryselectorall"></a>
+
+### htmlLinkElement.querySelectorAll(selector) ⇒ [`NodeList`](#nodelist)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
 | selector | `string` | 
 
-### htmlLinkElement.getBoundingClientRect
-**Signature:** htmlLinkElement.getBoundingClientRect() ⇒ `*`
 
+<a name="element-getboundingclientrect" id="element-getboundingclientrect"></a>
+
+### htmlLinkElement.getBoundingClientRect() ⇒ `\*`
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
-### htmlLinkElement.insertAdjacentHTML
-**Signature:** htmlLinkElement.insertAdjacentHTML(position, value)
 
+<a name="element-insertadjacenthtml" id="element-insertadjacenthtml"></a>
+
+### htmlLinkElement.insertAdjacentHTML(position, value)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
@@ -409,51 +467,57 @@ Creates an instance of HTMLLinkElement.
 | position |  | 
 | value | `string` | 
 
-### htmlLinkElement.insertAdjacentElement
-**Signature:** htmlLinkElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 
+<a name="element-insertadjacentelement" id="element-insertadjacentelement"></a>
+
+### htmlLinkElement.insertAdjacentElement(position, node) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `*` | 
-| node | `*` | 
+| position | `\*` | 
+| node | `\*` | 
 
-### htmlLinkElement.insertAdjacentText
-**Signature:** htmlLinkElement.insertAdjacentText(position, text)
 
+<a name="element-insertadjacenttext" id="element-insertadjacenttext"></a>
+
+### htmlLinkElement.insertAdjacentText(position, text)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
-| position | `*` | 
-| text | `*` | 
+| position | `\*` | 
+| text | `\*` | 
 
-### htmlLinkElement.hasChildNodes
-**Signature:** htmlLinkElement.hasChildNodes() ⇒ `boolean`
 
+<a name="node-haschildnodes" id="node-haschildnodes"></a>
+
+### htmlLinkElement.hasChildNodes() ⇒ `boolean`
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
-### htmlLinkElement.cloneNode
-**Signature:** htmlLinkElement.cloneNode(deep) ⇒ [`Node`](#node)
 
+<a name="node-clonenode" id="node-clonenode"></a>
+
+### htmlLinkElement.cloneNode(deep) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
 | deep | `boolean` | 
 
-### htmlLinkElement.appendChild
-**Signature:** htmlLinkElement.appendChild(child) ⇒ [`Node`](#node)
 
+<a name="node-appendchild" id="node-appendchild"></a>
+
+### htmlLinkElement.appendChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
-### htmlLinkElement.insertBefore
-**Signature:** htmlLinkElement.insertBefore(child, before) ⇒ [`Node`](#node)
 
+<a name="node-insertbefore" id="node-insertbefore"></a>
+
+### htmlLinkElement.insertBefore(child, before) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
@@ -461,9 +525,10 @@ Creates an instance of HTMLLinkElement.
 | child | [`Node`](#node) | 
 | before | [`Node`](#node) | 
 
-### htmlLinkElement.replaceChild
-**Signature:** htmlLinkElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 
+<a name="node-replacechild" id="node-replacechild"></a>
+
+### htmlLinkElement.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
@@ -471,74 +536,82 @@ Creates an instance of HTMLLinkElement.
 | newChild | [`Node`](#node) | 
 | oldChild | [`Node`](#node) | 
 
-### htmlLinkElement.removeChild
-**Signature:** htmlLinkElement.removeChild(child) ⇒ [`Node`](#node)
 
+<a name="node-removechild" id="node-removechild"></a>
+
+### htmlLinkElement.removeChild(child) ⇒ [`Node`](#node)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
 | child | [`Node`](#node) | 
 
-### htmlLinkElement.remove
-**Signature:** htmlLinkElement.remove()
 
-**Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
-### htmlLinkElement.before
-**Signature:** htmlLinkElement.before(...nodes)
+<a name="node-remove" id="node-remove"></a>
 
+### htmlLinkElement.remove()
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
-| Param | Type |
-| --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
+<a name="node-before" id="node-before"></a>
 
-### htmlLinkElement.after
-**Signature:** htmlLinkElement.after(...nodes)
-
+### htmlLinkElement.before(...nodes)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
-### htmlLinkElement.replaceWith
-**Signature:** htmlLinkElement.replaceWith(...nodes)
 
+<a name="node-after" id="node-after"></a>
+
+### htmlLinkElement.after(...nodes)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
 | ...nodes | [`Array.<Node>`](#node) | 
 
-### htmlLinkElement.addEventListener
-**Signature:** htmlLinkElement.addEventListener(eventName, callback, [capture])
 
+<a name="node-replacewith" id="node-replacewith"></a>
+
+### htmlLinkElement.replaceWith(...nodes)
+**Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
+
+| Param | Type |
+| --- | --- |
+| ...nodes | [`Array.<Node>`](#node) | 
+
+
+<a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
+
+### htmlLinkElement.addEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `*` |  | 
-| callback | `*` |  | 
+| eventName | `\*` |  | 
+| callback | `\*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
-### htmlLinkElement.removeEventListener
-**Signature:** htmlLinkElement.removeEventListener(eventName, callback, [capture])
 
+<a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
+
+### htmlLinkElement.removeEventListener(eventName, callback, [capture])
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `*` |  | 
-| callback | `*` |  | 
+| eventName | `\*` |  | 
+| callback | `\*` |  | 
 | [capture] | `boolean` | <code>false</code> | 
 
-### htmlLinkElement.dispatchEvent
-**Signature:** htmlLinkElement.dispatchEvent(event)
 
+<a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
+
+### htmlLinkElement.dispatchEvent(event)
 **Kind**: instance method of [`HTMLLinkElement`](#htmllinkelement)  
 
 | Param | Type |
 | --- | --- |
-| event | `*` | 
+| event | `\*` | 
 

@@ -1,13 +1,15 @@
-## Shell
-**Signature:** Shell
 
+<a name="shell" id="shell"></a>
+
+## Shell
 To get an instance: `require("uxp").shell`
 
 **Kind**: global class  
 **Access**: public  
-### shell.openExternal
-**Signature:** shell.openExternal(url)
 
+<a name="shell-openexternal" id="shell-openexternal"></a>
+
+### shell.openExternal(url)
 Opens the url in an the system browser.
 
 **Kind**: instance method of [`Shell`](#shell)  
@@ -15,5 +17,5 @@ Opens the url in an the system browser.
 
 | Param | Type |
 | --- | --- |
-| url | `string` | `URL` | 
+| url | `string` \| `URL` | 
 

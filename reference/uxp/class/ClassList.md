@@ -1,6 +1,7 @@
-## ClassList
-**Signature:** ClassList ⇐ [`DOMTokenList`](#domtokenlist)
 
+<a name="classlist" id="classlist"></a>
+
+## ClassList ⇐ [`DOMTokenList`](#domtokenlist)
 **Kind**: global class  
 **Extends**: [`DOMTokenList`](#domtokenlist)  
 **See**: https://dom.spec.whatwg.org/#dom-element-classlist  
@@ -18,30 +19,34 @@
         * [.contains(token)](#domtokenlist-contains) ⇒ `boolean`
         * [.supports(token)](#domtokenlist-supports) ⇒ `boolean`
     * _static_
-        * [.ClassList](#classlistclasslist)
-            * [new ClassList(node)](#new-classlistclasslist-new)
+        * [.ClassList](#classlist-classlist)
+            * [new ClassList(node)](#new-classlist-classlist-new)
 
-### new ClassList
-**Signature:** new ClassList()
 
+<a name="new-classlist-new" id="new-classlist-new"></a>
+
+### new ClassList()
 Implements classlist
 
-### classList.value
-**Signature:** classList.value : `string`
 
+<a name="classlist-value" id="classlist-value"></a>
+
+### classList.value : `string`
 **Kind**: instance property of [`ClassList`](#classlist)  
 **Overrides**: [`value`](#domtokenlist-value)  
-### classList.length
-**Signature:** classList.length
 
+<a name="domtokenlist-length" id="domtokenlist-length"></a>
+
+### classList.length
 Returns the number of tokens in the list
 
 **Kind**: instance property of [`ClassList`](#classlist)  
 **Read only**: true  
 **See**: https://dom.spec.whatwg.org/#dom-domtokenlist-length  
-### classList.add
-**Signature:** classList.add(...tokens)
 
+<a name="domtokenlist-add" id="domtokenlist-add"></a>
+
+### classList.add(...tokens)
 Adds the specified tokens to the token list. If the token is already present, no error is thrown.
 
 **Kind**: instance method of [`ClassList`](#classlist)  
@@ -55,9 +60,10 @@ Adds the specified tokens to the token list. If the token is already present, no
 | --- | --- |
 | ...tokens | `string` | 
 
-### classList.remove
-**Signature:** classList.remove(...tokens)
 
+<a name="domtokenlist-remove" id="domtokenlist-remove"></a>
+
+### classList.remove(...tokens)
 Removes the specified items from the token list. If the token is not present, no error is thrown.
 
 **Kind**: instance method of [`ClassList`](#classlist)  
@@ -71,9 +77,10 @@ Removes the specified items from the token list. If the token is not present, no
 | --- | --- |
 | ...tokens | `string` | 
 
-### classList.replace
-**Signature:** classList.replace(oldToken, newToken)
 
+<a name="domtokenlist-replace" id="domtokenlist-replace"></a>
+
+### classList.replace(oldToken, newToken)
 Replaces an old token with a new token. If the old token doesn't exist,
 no action occurs, and `false` is returned.
 
@@ -89,9 +96,10 @@ no action occurs, and `false` is returned.
 | oldToken | `any` | 
 | newToken | `any` | 
 
-### classList.toggle
-**Signature:** classList.toggle(token, force) ⇒ `boolean`
 
+<a name="domtokenlist-toggle" id="domtokenlist-toggle"></a>
+
+### classList.toggle(token, force) ⇒ `boolean`
 Toggles a token within the list. If `force` is not present, then the following
 rules are applied:
 
@@ -116,9 +124,10 @@ If `force` is supplied, then:
 | token | `string` | 
 | force | `boolean` | 
 
-### classList.item
-**Signature:** classList.item(index) ⇒ `string`
 
+<a name="domtokenlist-item" id="domtokenlist-item"></a>
+
+### classList.item(index) ⇒ `string`
 Return the item at the specified index, or `null` if the index is out-of-range
 
 **Kind**: instance method of [`ClassList`](#classlist)  
@@ -129,9 +138,10 @@ Return the item at the specified index, or `null` if the index is out-of-range
 | --- | --- |
 | index | `number` | 
 
-### classList.contains
-**Signature:** classList.contains(token) ⇒ `boolean`
 
+<a name="domtokenlist-contains" id="domtokenlist-contains"></a>
+
+### classList.contains(token) ⇒ `boolean`
 Returns whether the token is in the list or not.
 
 **Kind**: instance method of [`ClassList`](#classlist)  
@@ -146,9 +156,10 @@ Returns whether the token is in the list or not.
 | --- | --- |
 | token | `any` | 
 
-### classList.supports
-**Signature:** classList.supports(token) ⇒ `boolean`
 
+<a name="domtokenlist-supports" id="domtokenlist-supports"></a>
+
+### classList.supports(token) ⇒ `boolean`
 Returns `true` if the token is acceptable to the list; otherwise returns `false`.
 If `false` is returned, passing the token would throw an error when calling
 any other method.
@@ -161,13 +172,15 @@ any other method.
 | --- | --- |
 | token | `string` | 
 
+
+<a name="classlist-classlist" id="classlist-classlist"></a>
+
 ### ClassList.ClassList
-**Signature:** ClassList.ClassList
-
 **Kind**: static class of [`ClassList`](#classlist)  
-#### new ClassList
-**Signature:** new ClassList(node)
 
+<a name="new-classlist-classlist-new" id="new-classlist-classlist-new"></a>
+
+#### new ClassList(node)
 Creates an instance of ClassList.
 
 

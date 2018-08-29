@@ -6,12 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "book:install": "gitbook install . $@",
-    "serve": "gitbook serve . $@"
+    "book:build": "gitbook --timing --log=debug --debug build . $@",
+    "book:build:epub": "gitbook --log=debug --debug epub . $@",
+    "book:build:pdf": "gitbook --log=debug --debug pdf . $@",
+    "book:watch": "gitbook --log=debug --debug serve . $@",
+    "book:publish:github": "gh-pages -d _book",
+    "book:publish:mirror": "gh-pages -d _book -o mirror"
   },
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
     "eslint": "^4.19.1",
+    "gitbook-plugin-addcssjs": "^1.0.2",
     "gitbook-plugin-anchorjs": "^2.0.1",
     "gitbook-plugin-code": "^0.1.0",
     "gitbook-plugin-codesandbox": "^0.1.1",
@@ -25,6 +31,7 @@
     "gitbook-plugin-pretty-term": "^1.0.2",
     "gitbook-plugin-prism": "^2.4.0",
     "gitbook-plugin-recently-updated": "^1.0.1",
+    "gitbook-plugin-replace": "0.0.1",
     "gitbook-plugin-search-plus": "^1.0.3",
     "gitbook-plugin-styled-blockquotes": "^1.1.4",
     "gitbook-plugin-todo": "^0.1.3"
@@ -32,6 +39,7 @@
   "devDependencies": {
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
+    "gh-pages": "^1.2.0",
     "gitbook-cli": "^2.3.2"
   }
 }
