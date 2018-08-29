@@ -1,3 +1,6 @@
+> **danger**
+> The XD Plugin Experience Guidelines are being drafted now, and are likely to change before release. Even so, you should be able to use these guidelines to craft compelling user experiences for your users.
+
 # 2.0 Interacting with the Scenegraph
 
 The scenegraph is a tree structure that represents the user’s document. You can use XD’s `scenegraph` module to manipulate the scenegraph. However, while doing so, there are some important guidelines to consider.
@@ -56,6 +59,13 @@ The **edit context** is the editable context within the scenegraph. Editing node
 - [ ] (2.4.2) If your plugin attempts to make edits outside of the current edit context, it must ***always*** handle the resulting error, *and must* ***never*** *simply fail silently*.
 - [ ] (2.4.3) It is not suggested that you ungroup and regroup items in order to work around the edit context limitations. Doing so can lose various settings, including whether or not an item is marked for export and other metadata. ***This is a violation of guideline 2.0.1.***
 
+## 2.5 Handle gradients and other fills
+
+When working with shapes, it may be tempting to extract the color values without checking the type of fill. Doing so may cause your plugin to fail silently. _What you do with non-solid colors is up to you_, but your plugin shouldn't fail silently.
+
+- [ ] (2.5.1) Handle shapes filled with bitmap data
+- [ ] (2.5.2) Handle shapes filled with a linear gradient
+- [ ] (2.5.3) Handle shapes filled with a radial gradient
 
 ## 2.9 Know when to use asynchronous logic
 

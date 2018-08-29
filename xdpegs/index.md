@@ -1,5 +1,8 @@
 # XD Plugin Experience Guidelines
 
+> **danger**
+> The XD Plugin Experience Guidelines are being drafted now, and are likely to change before release. Even so, you should be able to use these guidelines to craft compelling user experiences for your users.
+
 * [Introduction](intro.md)
 * [1.0 Performance](1-performance.md)
 * [2.0 Working with the Scenegraph](2-scenegraph.md)

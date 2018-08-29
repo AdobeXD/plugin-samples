@@ -1,3 +1,6 @@
+> **danger**
+> The XD Plugin Experience Guidelines are being drafted now, and are likely to change before release. Even so, you should be able to use these guidelines to craft compelling user experiences for your users.
+
 # 9.0 Packaging and Distribution
 
 ## 9.1 Packaging

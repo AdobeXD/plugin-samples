@@ -1,9 +1,19 @@
 # XD Plugin API Known Issues
 
-## Plugin Manager
+## General Issues
 
-- When upgrading or downgrading plugins, the plugin folder is not recursively deleted. This will cause an error when attempting the installation. ([XD-59699](https://jira.corp.adobe.com/browse/XD-59699))
+- Developer/Side-loading Specific
+  - Plugin menus and handlers may not be in-sync across documents during development (XD-50283)
+    - If someone modifies a plugin's files on disk while XD is running, and then opens more windows in XD, any windows that were open before reflect the old version of the plugin while windows that were opened later reflect the new version of the plugin. The menu bar will always reflect the old version of the plugin regardless of which window is current.
 - When launching XD, plugin data that is orphaned (that is, a corresponding plugin isn't installed) will be deleted. This could cause unexpected loss of preferences or data. If you have any important data in a plugin data folder, you should make a backup before uninstalling plugins.
+
+## Export Renditions
+
+- On Windows 10, exporting to a file or folder entry picked from a file picker will fail. You can work around this issue by writing those files first to a temporary folder or to the plugin's data folder. Then you can move them to the desired location.
+
+## Plugin Management
+
+- When upgrading or downgrading plugins, the plugin folder is not recursively deleted. This will cause an error when attempting the installation. (XD-59699)
 
 ## Scenegraph
 
@@ -12,23 +22,23 @@
   - In the past, XD's renderer would fail asserts (possibly even crash) with 0-size objects. I couldn't repro that any more, but unless we're covering it well as an officially supported case, it could easily regress again. There are some other minor bugs though, e.g. sharing fails if you have any 0-width/height artboards and bitmap export fails if any of the top-level items you're trying to export are 0-width/height.
 - Plugin command names in UWP Plugin menus are truncated (XD-52356, UWP Only)
   - Workaround: keep your plugin command names short!
-- Developer/Side-loading Specific
-  - Plugin menus and handlers may not be in-sync across documents during development (XD-50283)
-    - If someone modifies a plugin's files on disk while XD is running, and then opens more windows in XD, any windows that were open before reflect the old version of the plugin while windows that were opened later reflect the new version of the plugin. The menu bar will always reflect the old version of the plugin regardless of which window is current.
 
 ## User Interface
 
 - Single-line text fields are limited to 150 characters
-- Checkboxes may fail to render correctly if in a scrollable container. To work around this issue, make sure the containing element has a background color. (`transparent` does not count.)
-- Images within dialogs may not render until the dialog has stopped animating.
+- Checkboxes may fail to render correctly if in a scrollable container. To work around this issue, make sure the containing element has a background color. (`transparent` does not count; macOS only.)
+- Images within dialogs may not render until the dialog has stopped animating (macOS only).
 - Dialogs are neither movable nor resizable.
+- Dialogs on UWP may not expand or shrink appropriately to fit the content. This will be fixed in a future release.
 - It is not possible to show multiple dialogs at once, *except* for file and folder pickers.
+- On UWP, showing multiple dialogs in sequence may result in a crash.
 - It is not possible to trigger the emoji selector in a text field on macOS.
 - It is not possible to intercept the **ESC** gesture when dismissing a dialog. Dialogs are always dismissible using **ESC**.
 - SVG images are not supported in the UI.
-- When tabbing in a scroll view, the scroll view is not automatically scrolled to ensure the target control is in view.
-- When **TAB**ing in Windows 10, the focus border may appear incorrectly.
+- When tabbing in a scroll view, the scroll view is not automatically scrolled to ensure the target control is in view (macOS Only).
+- When **TAB**ing in Windows 10, the focus border may appear incorrectly on some elements.
 - Inline layout is not supported. Inline elements will render as `block` elements instead.
+- Tab order is not working correctly on macOS.
 
 ### HTML Elements
 
@@ -82,7 +92,7 @@
 
 - On macOS, it is not possible to use self-signed certificates with secure Websockets.
 - Websockets do not support extensions.
-- Secure websockets are not yet supported. This will be addressed in a future release.
+- Secure Websockets are not yet supported. This will be addressed in a future release.
 - XHR does not support cookies.
 - `responseURL` is not supported on XHR
 

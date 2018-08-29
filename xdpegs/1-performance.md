@@ -1,3 +1,6 @@
+> **danger**
+> The XD Plugin Experience Guidelines are being drafted now, and are likely to change before release. Even so, you should be able to use these guidelines to craft compelling user experiences for your users.
+
 # 1.0 Performance
 
 One of Adobe XD's core tenants is performance. As such, your plugin should be as performant as possible, and should avoid introducing bottlenecks or impediments to your user's workflow.

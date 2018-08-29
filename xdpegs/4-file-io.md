@@ -1,3 +1,6 @@
+> **danger**
+> The XD Plugin Experience Guidelines are being drafted now, and are likely to change before release. Even so, you should be able to use these guidelines to craft compelling user experiences for your users.
+
 # 4.0 File I/O
 
 In many cases, your plugin may need to create, read, and write files on the user’s persistent storage mediums. Your plugin should be respectful of the fact that it has access to a lot of potentially privileged information and should respect the user’s privacy. The plugin should also be mindful of not wasting a lot of space.

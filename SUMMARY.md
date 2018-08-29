@@ -45,7 +45,7 @@
   * [Working with I/O](./Guides/io-index.md)
     * [How to read a file](./Guides/how-to-import-guide/README.md)
     * [How to integrate with OAuth](./Guides/how-to-integrate-with-OAuth-guide/readme.md)
-    * [How to make a simple network request](./Guides/how-to-make-a-network-request-guide/README.md)
+    * [How to make a simple network request](./Guides/how-to-make-network-requests-guide/README.md)
     * [How to use WebSockets](./Guides/how-to-use-websockets-guide/README.md)
 
   * [Building User Interfaces](./Guides/ui-index.md)

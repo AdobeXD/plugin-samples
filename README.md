@@ -1,5 +1,8 @@
 # Adobe XD Plugins API Reference
 
+> **danger**
+> This is _prerelease_ documentation. It is subject to change, and may not represent the final release version. Do not share with anyone outside of the general prerelease group.
+
 Plugins are written in JavaScript. You can use most JavaScript features supported by modern web browsers, including ES5 and ES2015 (aka ES6) language features.
 
 Your plugins are not running inside a browser engine, however: instead your JavaScript code interacts with XD's [document model](./reference/core/scenegraph) to

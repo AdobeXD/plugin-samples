@@ -34,20 +34,20 @@ Let’s walk through the process of how you can create an Adobe XD plugin. This 
 
 ### 1. Identify where your plugins are located
 
-Adobe XD loads plugins from a `plugins` folder in specific storage location:
+Adobe XD loads plugins from a `develop` folder in specific storage location:
 
 | Platform      | Path          |
 | ------------- |:-------------:|
 | MacOS         | `~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/` (note: `~/Library`, not `/Library`) |
 | Windows       | `C:\Users\%USERNAME%\AppData\Local\Packages\Adobe.CC.XD.Prerelease_adky2gkssdxte\LocalState\`       |
 
-Navigate to the above path, and if there _isn’t_ a folder that already exists with the name `plugins`, go ahead and create it.
+Navigate to the above path, and if there _isn’t_ a folder that already exists with the name `develop`, go ahead and create it.
 
 Example:
 
 ```bash
     $ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/
-    $ mkdir plugins
+    $ mkdir develop
 ```
 
 ### 2. Create your plugin scaffold
@@ -62,7 +62,7 @@ These two files (and any others you need) are stored within a folder. Each plugi
 Example:
 
 ```bash
-    $ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
+    $ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/develop
     $ mkdir com.adobe.xd.helloWorld
     $ cd com.adobe.xd.helloWorld
     $ touch manifest.json

@@ -1,3 +1,6 @@
+> **danger**
+> The XD Plugin Experience Guidelines are being drafted now, and are likely to change before release. Even so, you should be able to use these guidelines to craft compelling user experiences for your users.
+
 # 3.0 Network I/O
 
 Interacting with the network is a useful feature — you can communicate with remote or local servers to transmit data, images, and more. However, this can be an area with a lot of edge cases, error conditions, and more, so it is wise to be diligent with your logic.
