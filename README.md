@@ -1,6 +1,6 @@
 # Plugin Samples
 
-This repository contains several sample XD plugins. You can use these to learn more about how to build plugins for Adobe XD. Make sure to read the README or instructions commented in the `main.js` file. Note that samples that start with `how-to-` has their companion guides in the [Plugin-Docs repository](https://github.com/AdobeXD/Plugin-Docs/)
+This repository contains several sample XD plugins. You can use these to learn more about how to build plugins for Adobe XD. Make sure to read the README or instructions commented in the `main.js` file. Note that samples that start with `how-to-` have their companion guides in the [Plugin-Docs repository](https://github.com/AdobeXD/Plugin-Docs/)
 
 ## Samples list
 
