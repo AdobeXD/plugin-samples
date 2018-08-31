@@ -3,7 +3,7 @@
     "name": "(H2) Insert Text from File",
     "host": {
         "app": "XD",
-        "minVersion": "8.0"
+        "minVersion": "10.0.10.24"
     },
     "version": "1.0.0",
     "uiEntryPoints": [
