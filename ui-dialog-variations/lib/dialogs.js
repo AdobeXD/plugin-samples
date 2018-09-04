@@ -56,6 +56,7 @@ async function notice({
         {label: "Close", variant: "cta", type:"submit"}
     ]} = {},
     width=360,
+    height="auto",
     iconSize=18
 ) {
 
@@ -90,7 +91,6 @@ async function notice({
         justify-content: space-between;
         align-items: center;
         ${isError ? 'color: #D7373F;' : ''}
-        border-bottom-width: 2px;
         border: 0;
         padding-bottom: 1px;
     }
@@ -138,6 +138,11 @@ async function notice({
         font-size: 12px;
         color: #666666;
     }
+    .container {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: ${height === "auto" ? height : `${height}px`};
+    }
 </style>
 <form method="dialog">
     <h1>
@@ -145,10 +150,12 @@ async function notice({
         ${icon ? `<img ${usingPluginIcon ? `class="plugin-icon" title="${manifest.name}"` : ""} src="${icon}" />` : ""}
     </h1>
     <hr />
-    ${ messages.map(msg => strToHtml(msg)).join("") }
-    ${
-        prompt ? `<label><input type="text" id="prompt" placeholder="${prompt}" /></label>` : ""
-    }
+    <div class="container">
+        ${ messages.map(msg => strToHtml(msg)).join("") }
+        ${
+            prompt ? `<label><input type="text" id="prompt" placeholder="${prompt}" /></label>` : ""
+        }
+    </div>
     <footer>
         ${buttons.map(({label, type, variant} = {}, idx) => `<button id="btn${idx}" type="${type}" uxp-variant="${variant}">${label}</button>`)}
     </footer>
