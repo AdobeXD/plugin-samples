@@ -21,7 +21,7 @@ function getDialog() {
 
 module.exports = {
     commands: {
-        menuCommand: function () {
+        menuCommand() {
             document.body.appendChild(getDialog()).showModal();
         }
     }
