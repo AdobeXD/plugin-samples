@@ -157,11 +157,10 @@ async function notice({
         }
     </div>
     <footer>
-        ${buttons.map(({label, type, variant} = {}, idx) => `<button id="btn${idx}" type="${type}" uxp-variant="${variant}">${label}</button>`)}
+        ${buttons.map(({label, type, variant} = {}, idx) => `<button id="btn${idx}" type="${type}" uxp-variant="${variant}">${label}</button>`).join("")}
     </footer>
 </form>
     `;
-
     // The "ok" and "cancel" button indices. OK buttons are "submit" or "cta" buttons. Cancel buttons are "reset" buttons.
     let okButtonIdx = -1;
     let cancelButtonIdx = -1;
