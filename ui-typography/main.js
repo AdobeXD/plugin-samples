@@ -39,7 +39,7 @@ let dialog =
         h("form", { method:"dialog", style: { width: 400 } },
             h("h1", "H1 Heading, Large Rule, Large Paragraph"),
             h("hr", { class:"large" } ),
-            h("p", { class:"large"}, lorem1),
+            h("p", { class:"large", style:{ lineHeight: 20 }}, lorem1),
             h("p", { class:"large"}, lorem3),
             h("h2", "H2 Heading, Normal Rule, Normal Paragraph"),
             h("hr"),
@@ -49,18 +49,6 @@ let dialog =
             h("hr", { class:"small" } ),
             h("p", { class:"small"}, lorem1),
             h("p", { class:"small"}, lorem3),
-            h("label",
-                h("span", "Input Type Text"),
-                h("input")
-            ),
-            h("label", { style: { flexDirection: "row", alignItems: "center" }},
-                h("input", { type: "checkbox" }),
-                h("span", "Input Type Checkbox?")
-            ),
-            h("label",
-                h("span", "Input Type Range"),
-                h("input", { type: "range" })
-            ),
             h("footer",
                 h("button", { uxpVariant: "primary", onclick(e) { dialog.close() } }, "Cancel"),
                 h("button", { uxpVariant: "cta", onclick(e) { dialog.close() } }, "Submit")
