@@ -67,7 +67,8 @@ async function showAbout() {
         "* Confirmation Dialogs",
         "* Prompts",
         "* ... along with some very basic markdown conversion to make building About dialogs even easier. See this list? It's a markdown list!",
-        "## More Information",
+        "## MORE INFORMATION",
+        "----",
         "For more information, please see [the github repo for this plugin](https://github.com/AdobeXD/Plugin-Samples/tree/master/ui-dialog-variations)."
     );
 }

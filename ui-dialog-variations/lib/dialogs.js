@@ -16,6 +16,8 @@ function strToHtml(str) {
         html = `<h2>${html.substr(1).trim()}</h2>`;
     } else if (html.substr(0, 2) === '* ') {
         html = `<p class="list"><span class="bullet">•</span><span>${html.substr(2).trim()}</span></p>`;
+    } else if (html.substr(0, 4) === '----') {
+        html = `<hr class="small"/>${html.substr(5).trim()}`;
     } else if (html.substr(0, 3) === '---') {
         html = `<hr/>${html.substr(4).trim()}`;
     } else {
@@ -28,7 +30,7 @@ function strToHtml(str) {
     if (matches) {
         const title = matches[1];
         const url = matches[2];
-        html = `<a href="${url}">${html.replace(regex, title).replace(/\<\|?p\>/g, "")}</a>`;
+        html = `<p><a href="${url}">${html.replace(regex, title).replace(/\<\|?p\>/g, "")}</a></p>`;
     }
 
     return html;
@@ -90,11 +92,11 @@ async function notice({
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        color: blue;
         ${isError ? 'color: #D7373F;' : ''}
-        border: 0;
-        padding-bottom: 1px;
+
     }
-    hr {
+    hr.old {
         margin: 0 6px;
         height: 2px;
         border-radius: 2px;
@@ -130,11 +132,11 @@ async function notice({
         margin-top: 0;
     }
 
-    h2, h3 {
+    h2.old, h3.old {
         margin: 6px;
     }
 
-    h3 {
+    h3.old {
         font-size: 12px;
         color: #666666;
     }
