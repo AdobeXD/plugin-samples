@@ -44,6 +44,7 @@ async function showWarning() {
     const res = await warning("Reset Preferences?",
                  "Are you sure you want to reset your plugin preferences?", ["Cancel", "Reset Preferences"]);
     switch (res.which) {
+        case -1:
         case 0:
             return alert("Preferences Preserved", "Your preferences are safe.");
             break;
@@ -67,7 +68,8 @@ async function showAbout() {
         "* Confirmation Dialogs",
         "* Prompts",
         "* ... along with some very basic markdown conversion to make building About dialogs even easier. See this list? It's a markdown list!",
-        "## MORE INFORMATION",
+        " ",
+        "## More Information",
         "----",
         "For more information, please see [the github repo for this plugin](https://github.com/AdobeXD/Plugin-Samples/tree/master/ui-dialog-variations)."
     );

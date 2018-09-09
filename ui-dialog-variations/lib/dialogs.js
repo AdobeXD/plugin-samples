@@ -1,21 +1,44 @@
-const {getManifest} = require('./manifest.js');
+const {getManifest, getNearestIcon} = require('./manifest.js');
 
 let manifest;
 
 /**
+ * Converts a string (or an array of strings or other objects) to a nicer HTML
+ * representation. Essentially this is a _very_ basic markdown parser.
  *
- * @param {string} str
+ * The following tokens are understood, when encountered at the beginning of
+ * a string:
+ *
+ * Token        | Result
+ * -------------|-----------------------
+ * `##`         | `<h2>`
+ * `###`        | `<h3>`
+ * `* `         | Bulleted list
+ * `----`       | `<hr class="small">`
+ * `---`        | `<hr />`
+ * `[...](href)`| `<p><a href="href">...</a></p>`
+ *
+ * @param {string | string[] | * | Array<*>} str
+ * @returns {string} the HTML representation
  */
 function strToHtml(str) {
+    // allow some common overloads, including arrays and non-strings
+    if (Array.isArray(str)) {
+        return str.map(str => strToHtml(str)).join('');
+    }
+    if (typeof str !== 'string') {
+        return strToHtml(`${str}`);
+    }
+
     let html = str;
 
     // handle some markdown stuff
     if (html.substr(0, 2) === '##') {
-        html = `<h3>${html.substr(2).trim()}</h3>`;
+        html = `<h3>${html.substr(2).trim().toUpperCase()}</h3>`;
     } else if (html.substr(0, 1) === '#') {
         html = `<h2>${html.substr(1).trim()}</h2>`;
     } else if (html.substr(0, 2) === '* ') {
-        html = `<p class="list"><span class="bullet">•</span><span>${html.substr(2).trim()}</span></p>`;
+        html = `<p class="list"><span class="bullet margin">•</span><span class="margin">${html.substr(2).trim()}</span></p>`;
     } else if (html.substr(0, 4) === '----') {
         html = `<hr class="small"/>${html.substr(5).trim()}`;
     } else if (html.substr(0, 3) === '---') {
@@ -30,7 +53,7 @@ function strToHtml(str) {
     if (matches) {
         const title = matches[1];
         const url = matches[2];
-        html = `<p><a href="${url}">${html.replace(regex, title).replace(/\<\|?p\>/g, "")}</a></p>`;
+        html = `<p><a href="${url}">${html.replace(regex, title).replace(/\<\|?p\>/g, '')}</a></p>`;
     }
 
     return html;
@@ -48,17 +71,18 @@ function strToHtml(str) {
  * @property {Object[]} [buttons] Indicates the buttons to render. If none are specified, a `Close` button is rendered.
  * @returns {Promise} Resolves to an object of the form {which, value}. `value` only makes sense if `prompt` is set. `which` indicates which button was pressed.
  */
-async function notice({
+async function createDialog({
     title,
-    icon = "plugin-icon",
+    icon = 'plugin-icon',
     msgs,
     prompt,
+    render,
     isError=false,
     buttons=[
-        {label: "Close", variant: "cta", type:"submit"}
+        {label: 'Close', variant: 'cta', type:'submit'}
     ]} = {},
     width=360,
-    height="auto",
+    height='auto',
     iconSize=18
 ) {
 
@@ -74,38 +98,28 @@ async function notice({
 
     let usingPluginIcon = false;
     if (icon === 'plugin-icon') {
-        if (manifest.icon) {
+        if (manifest.icons) {
             usingPluginIcon = true;
-            icon = manifest.icon;
             iconSize = 24;
+            icon = getNearestIcon(manifest, iconSize);
         }
     }
 
-    const dialog = document.createElement("dialog");
+    const dialog = document.createElement('dialog');
     dialog.innerHTML = `
 <style>
     form {
         width: ${width}px;
     }
-    form h1 {
+    .h1 {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        color: blue;
         ${isError ? 'color: #D7373F;' : ''}
 
     }
-    hr.old {
-        margin: 0 6px;
-        height: 2px;
-        border-radius: 2px;
-        overflow: hidden;
-        background-color: #E8E8E8;
-        padding: 0;
-        margin-bottom: -4px;
-    }
-    form h1 img {
+    .h1 img {
         width: ${iconSize}px;
         height: ${iconSize}px;
         flex: 0 0 ${iconSize}px;
@@ -120,78 +134,84 @@ async function notice({
         display: flex;
         flex-direction: row;
     }
+    .list .margin {
+        margin-bottom: 0;
+        margin-left: 0;
+    }
     .list span {
         flex: 0 0 auto;
     }
     .list .bullet {
-        min-width: 12px;
         text-align: center;
     }
-
     .list + .list {
         margin-top: 0;
     }
 
-    h2.old, h3.old {
-        margin: 6px;
-    }
-
-    h3.old {
-        font-size: 12px;
-        color: #666666;
-    }
     .container {
         overflow-x: hidden;
         overflow-y: auto;
-        height: ${height === "auto" ? height : `${height}px`};
+        height: ${height === 'auto' ? height : `${height}px`};
     }
 </style>
 <form method="dialog">
-    <h1>
+    <h1 class="h1">
         <span>${title}</span>
-        ${icon ? `<img ${usingPluginIcon ? `class="plugin-icon" title="${manifest.name}"` : ""} src="${icon}" />` : ""}
+        ${icon ? `<img ${usingPluginIcon ? `class="plugin-icon" title="${manifest.name}"` : ''} src="${icon}" />` : ''}
     </h1>
     <hr />
     <div class="container">
-        ${ messages.map(msg => strToHtml(msg)).join("") }
         ${
-            prompt ? `<label><input type="text" id="prompt" placeholder="${prompt}" /></label>` : ""
+            render ? render() : (
+                messages.map(msg => strToHtml(msg)).join('') +
+                (prompt ? `<label><input type="text" id="prompt" placeholder="${prompt}" /></label>` : '')
+            )
         }
     </div>
     <footer>
-        ${buttons.map(({label, type, variant} = {}, idx) => `<button id="btn${idx}" type="${type}" uxp-variant="${variant}">${label}</button>`).join("")}
+        ${buttons.map(({label, type, variant} = {}, idx) => `<button id="btn${idx}" type="${type}" uxp-variant="${variant}">${label}</button>`).join('')}
     </footer>
 </form>
     `;
+
     // The "ok" and "cancel" button indices. OK buttons are "submit" or "cta" buttons. Cancel buttons are "reset" buttons.
     let okButtonIdx = -1;
     let cancelButtonIdx = -1;
+    let clickedButtonIdx = -1;
 
     // Ensure that the form can submit when the user presses ENTER (we trigger the OK button here)
-    const form = dialog.querySelector("form");
-    form.onsubmit = () => dialog.close({which: okButtonIdx, value: prompt ? dialog.querySelector("#prompt").value : ""});
+    const form = dialog.querySelector('form');
+    form.onsubmit = () => dialog.close('ok');
 
     // Attach button event handlers and set ok and cancel indices
     buttons.forEach(({type, variant} = {}, idx) => {
         const button = dialog.querySelector(`#btn${idx}`);
-        if (type === "submit" || variant === "cta") {
+        if (type === 'submit' || variant === 'cta') {
             okButtonIdx = idx;
         }
-        if (type === "reset") {
+        if (type === 'reset') {
             cancelButtonIdx = idx;
         }
         button.onclick = e => {
             e.preventDefault();
-            dialog.close({which: idx, value: prompt ? dialog.querySelector("#prompt").value : ""});
+            clickedButtonIdx = idx;
+            dialog.close( idx === cancelButtonIdx ? 'reasonCanceled' : 'ok');
         }
     });
 
     try {
         document.appendChild(dialog);
-        return await dialog.showModal();
+        const response = await dialog.showModal();
+        console.log(response);
+        if (response === 'reasonCanceled') {
+            // user hit ESC
+            return {which: cancelButtonIdx, value: ''};
+        } else {
+            return {which: clickedButtonIdx, value: prompt ? dialog.querySelector('#prompt').value : ''};
+        }
     } catch(err) {
-        // user hit ESC or dev tried to show two dialogs on top of each other
-        return {which: cancelButtonIdx, value: ""};
+        // system refused the dialog
+        return {which: cancelButtonIdx, value: ''};
     } finally {
         dialog.remove();
     }
@@ -204,7 +224,7 @@ async function notice({
  * @param {string[]} msgs
  */
 async function alert(title, ...msgs) {
-    return notice({title, msgs});
+    return createDialog({title, msgs});
 }
 
 /**
@@ -214,32 +234,32 @@ async function alert(title, ...msgs) {
  * @param {*} msgs
  */
 async function error(title, ...msgs) {
-    return notice({title, isError: true, msgs});
+    return createDialog({title, isError: true, msgs});
 }
 
-async function confirm(title, msg, buttons = [ "Cancel", "OK" ]) {
-    return notice({title, msgs: [msg], buttons: [
-        {label: buttons[0], type:"reset", variant: "primary"},
-        {label: buttons[1], type:"submit", variant: "cta"}
+async function confirm(title, msg, buttons = [ 'Cancel', 'OK' ]) {
+    return createDialog({title, msgs: [msg], buttons: [
+        {label: buttons[0], type:'reset', variant: 'primary'},
+        {label: buttons[1], type:'submit', variant: 'cta'}
     ]});
 }
 
-async function warning(title, msg, buttons = [ "Cancel", "OK" ]) {
-    return notice({title, msgs: [msg], buttons: [
-        {label: buttons[0], type:"submit", variant: "primary"},
-        {label: buttons[1], type:"button", variant: "warning"}
+async function warning(title, msg, buttons = [ 'Cancel', 'OK' ]) {
+    return createDialog({title, msgs: [msg], buttons: [
+        {label: buttons[0], type:'submit', variant: 'primary'},
+        {label: buttons[1], type:'button', variant: 'warning'}
     ]});
 }
 
-async function prompt(title, msg, prompt, buttons = [ "Cancel", "OK" ]) {
-    return notice({title, msgs: [msg], prompt, buttons: [
-        {label: buttons[0], type:"reset", variant: "primary"},
-        {label: buttons[1], type:"submit", variant: "cta"}
+async function prompt(title, msg, prompt, buttons = [ 'Cancel', 'OK' ]) {
+    return createDialog({title, msgs: [msg], prompt, buttons: [
+        {label: buttons[0], type:'reset', variant: 'primary'},
+        {label: buttons[1], type:'submit', variant: 'cta'}
     ]});
 }
 
 module.exports = {
-    notice,
+    createDialog,
     alert,
     error,
     confirm,
