@@ -15,3 +15,17 @@ To edit some HTML in the playground, select **Plugins | UI HTML Playground | Edi
 If you want to see your code running in an actual dialog (instead of a simulated dialog), you can select **Plugins | UI HTML Playground | Run...**. Your last entered code will be run within the context of a dialog.
 
 > Note: None of the dialog buttons will work; you'll need to press **ESC** to exit your customized dialog.
+
+## Quirks
+
+* When previewing your code, you're running within `DIV` -- which means you can technically impact the style of the outer chrome. If you do something that completely destroys the layout of the plugin, you will want to reload it in order to restore functionality.
+
+* To set the width of the rendered dialog in "Run" mode, add the following style:
+
+  ```css
+  .form {
+    width: 360px;
+  }
+  ```
+
+  This won't be useful for actual dialogs in your own code, but it serves as a hint to the playground what size you want to use.
