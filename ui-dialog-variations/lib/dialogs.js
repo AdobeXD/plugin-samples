@@ -202,7 +202,6 @@ async function createDialog({
     try {
         document.appendChild(dialog);
         const response = await dialog.showModal();
-        console.log(response);
         if (response === 'reasonCanceled') {
             // user hit ESC
             return {which: cancelButtonIdx, value: ''};
