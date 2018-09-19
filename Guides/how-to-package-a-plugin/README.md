@@ -30,38 +30,34 @@ Please note the screenshots are from a mac machine but the steps would be identi
 
 ## Development Steps
 
-### 1. Locate your plugin.
-Your plugin folder must contain all the files you want to package.
+### 1. Compress the content as a .zip file.
 
-<img src="/images/readme-assets/package-plugin-steps/one_viewPackageContent.png" width="50%" height="50%">
+Select all files > Right click > click the option to compress
 
+<img src="/images/readme-assets/package-plugin-steps/compress.png" width="50%" height="50%">
 
-### 2. Compress the content as a .zip file.
-
-Right click on the plugin folder and click the option to compress.
-
-<img src="/images/readme-assets/package-plugin-steps/two_rightclick.png" width="50%" height="50%">
-
+_Note: If you create a parent folder of the content and compress the folder, the name of the resulted `.zip` file should match the parent folder name for the package to be installed correctly. Since there is a chance users change the name of the compressed file, we recommend you to compress the content directly instead of creating a parent folder_
 
 Here's how the .zip file should look like.
 
-<img src="/images/readme-assets/package-plugin-steps/three_compress.png" width="50%" height="50%">
+<img src="/images/readme-assets/package-plugin-steps/final-zip.png" width="50%" height="50%">
 
-### 3. Rename the .zip extension to .xdx
+### 2. Rename the .zip extension to .xdx
 
-<img src="/images/readme-assets/package-plugin-steps/four_rename.png" width="50%" height="50%">
+<img src="/images/readme-assets/package-plugin-steps/rename.png" width="50%" height="50%">
 
 If asked, click "Use .xdx".
 
-<img src="/images/readme-assets/package-plugin-steps/five_changexdx.png" width="50%" height="50%">
+<img src="/images/readme-assets/package-plugin-steps/confirmation.png" width="50%" height="50%">
 
 Here's how the final file should look like.
 
-<img src="/images/readme-assets/package-plugin-steps/six_savexdx.png" width="50%" height="50%">
+<img src="/images/readme-assets/package-plugin-steps/final-xdx.png" width="50%" height="50%">
 
 ### 4. Verify the packaging worked.
 Double clicking the .xdx file should install the plugin and show up in XD.
 
-<img src="/images/readme-assets/package-plugin-steps/success.png" width="50%" height="50%">
+<img src="/images/readme-assets/package-plugin-steps/install.png" width="50%" height="50%">
 
+<img src="/images/readme-assets/package-plugin-steps/installed.png" width="50%" height="50%">
 
