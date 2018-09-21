@@ -102,41 +102,67 @@ Checkboxes are a great way to provide on/off options to the user.
 - [ ] (5.7.3) Checkbox groups should be clearly indicated with layout
 - [ ] (5.7.4) Checkboxes must ***always*** be changeable using their associated label
 
+## 5.8 Dropdowns
 
-## 5.8 Images
+Dropdowns provide a way for the user to select one item form a list of many using a compact form.
+
+- [ ] (5.8.1) ***Never*** use dropdowns to trigger additional actions or dismiss dialogs.
+- [ ] (5.8.2) Keep lists short; don't use dropdowns when other controls (like sliders or text fields) would be more appropriate.
+
+## 5.9 Sliders
+
+Sliders provide a way for the user to specify a numeric value by indicating the value on a ranged control.
+
+- [ ] (5.9.1) Use sliders where appropriate. If there are only a few options, you might consider using a dropdown instead. If the range is very wide, it might be easier for the user if the control was a text field instead.
+- [ ] (5.9.2) Don't use sliders to indicate progress.
+- [ ] (5.9.3) When using sliders, you should provide some other mechanism for input.
+- [ ] (5.9.4) ***Always*** display the slider value in some way, so that the user doesn't have to guess at the value of the slider.
+
+## 5.10 Images
 
 Images should be as crisp as possible for the user’s display. The runtime environment will typically try to select the best option if there are “@1x”, “@2x”, “@3x” options available locally, however this does not necessarily apply to remote images.
 
 
-- [ ] (5.8.1) Ensure icons are provided in 1x and 2x resolutions (at least)
-- [ ] (5.8.2) Icons for use in action buttons should be 14x14 points.
-- [ ] (5.8.3) Avoid rescaling large images (this can cause poor performance)
-- [ ] (5.8.4) Avoid using images in lieu of other more suitable widgets
+- [ ] (5.10.1) Ensure icons are provided in 1x and 2x resolutions (at least)
+- [ ] (5.10.2) Icons for use in action buttons should be 14x14 points.
+- [ ] (5.10.3) Avoid rescaling large images (this can cause poor performance)
+- [ ] (5.10.4) Avoid using images in lieu of other more suitable widgets
+
+## 5.11 Links
+
+Links can be used to launch web pages in the user's system browser.
+
+- [ ] (5.11.1) Don't link to malicious content.
+- [ ] (5.11.2) Prefer secure websites.
+
+## 5.12 Layout
 
 
-## 5.9 Widgets
-
-This section applies to all widgets in general.
-
-
-- [ ] (5.9.1) Don’t try to override the appearance of the default widgets with CSS.
+- [ ] (5.12.1) Don’t rely on the size of the default widgets when creating your layout. Instead, your layout should be responsive.
+- [ ] (5.12.2) Don’t assume that a modal dialog will be as wide or high as you expect. Design your layout responsively.
+- [ ] (5.12.3) If your layout is complex and takes more than a few milliseconds to build, consider deferring some of the layout until after you show your UI.
+- [ ] (5.12.4) Respect the layout conventions of the platform. On Windows, layout is on a 16px grid. On macOS, it is on a 12px grid. However, you should refrain from hard-coding these units, as the grid sizes may change in the future.
 
 
-## 5.10 Layout
+## 5.13 Menus
 
 
-- [ ] (5.10.1) Don’t rely on the size of the default widgets when creating your layout. Instead, your layout should be responsive.
-- [ ] (5.10.2) Don’t assume that a modal dialog will be as wide or high as you expect. Design your layout responsively.
-- [ ] (5.10.3) If your layout is complex and takes more than a few milliseconds to build, consider deferring some of the layout until after you show your UI.
-- [ ] (5.10.4) Respect the layout conventions of the platform. On Windows, layout is on a 16px grid. On macOS, it is on a 12px grid. However, you should refrain from hard-coding these units, as the grid sizes may change in the future.
-
-
-## 5.11 Menus
-
-
-- [ ] (5.11.1) Menu items should be short and succinct.
-- [ ] (5.11.2) Menu items should use “…” whenever the operation will require additional information from the user.
+- [ ] (5.13.1) Menu items should be short and succinct. If menu items are too long, they will be truncated.
+- [ ] (5.13.2) Menu items should use “…” whenever the operation will require additional information from the user.
   - Good: “Insert stock photo…” (if a dialog of stock photos will appear, requiring further interaction)
   - Good: “Mirror selection” (no further options required)
   - Bad: “Mirror selection…” (if no further options required)
-- [ ] (5.11.3) Menu items should clearly identify the action.
+- [ ] (5.13.3) Menu items should clearly identify the action.
+- [ ] (5.13.4) When plugins provide multiple actions, consider using submenus.
+- [ ] (5.13.5) Menu items that trigger an action should generally be action-oriented. For example:
+  - Good: "Insert stock photo..."
+  - Good: "Export selected artboards..."
+- [ ] (5.13.6) When using submenus, the parent menu should be easily identified with the plugin.
+
+## 5.14 Onboarding
+
+- [ ] (5.14.1) Plugins should provide sufficient onboarding guidance for users who may be unfamiliar with the expected use.
+- [ ] (5.14.2) Consider linking to a help or support page in your plugin's error messages.
+- [ ] (5.14.3) Consider using animated GIFs to explain how to use the plugin.
+- [ ] (5.14.4) Consider having an "About" menu item (if your plugin uses submenus or has UI).
+

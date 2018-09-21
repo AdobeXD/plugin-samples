@@ -2,6 +2,66 @@
 
 `<input>` type supportes different values for its attribute "type". Depending upon the value, it supports different attributes.
 
+
+<!--
+<style>
+    label.row {
+        align-items: center;
+    }
+    label.row input[type=range] {
+        flex: 1 0 auto;
+    }
+</style>
+
+<label>
+    <span>Label</span>
+    <input type="text" placeholder="Enter some text..." />
+</label>
+
+<label class="row">
+    <span>Label</span>
+    <input type="text" placeholder="Enter some text..." />
+</label>
+
+<label>
+    <span>Label</span>
+    <input uxp-quiet="true" type="text" placeholder="Enter some text..." />
+</label>
+
+<label class="row">
+    <span>Label</span>
+    <input uxp-quiet="true" type="text" placeholder="Enter some text..." />
+</label>
+
+
+<label class="row">
+    <input type="checkbox" />
+    <span>Checkbox</span>
+</label>
+
+<label>
+    <span>Range</span>
+    <input type="range" min=0 max=100 value=25/>
+</label>
+
+<label class="row">
+    <span>Range</span>
+    <input type="range" min=0 max=100 value=50/>
+</label>
+
+<label>
+    <span>Step</span>
+    <input type="range" min=0 max=100 value=25 step=5/>
+</label>
+
+<label class="row">
+    <span>Step</span>
+    <input type="range" min=0 max=100 value=50 step=5/>
+</label>
+
+-->
+
+
 ## Type = text
 
 ### Syntax
@@ -11,12 +71,12 @@ The code below generates the following UI
 ```
 <img src="./assets/input-text.png" width="50%" height="50%">
 
-### Supported attributes 
-* id	
+### Supported attributes
+* id
 ```html
         <input type="text" id="name" />
 ```
-* title	
+* title
 ```html
         <input type="text" id="name" title="Hello World"/>
 ```
@@ -34,17 +94,17 @@ The code below generates the following UI
 * value
 ```html
         <input type="text" id="name" value="Your name"/>
-```	
+```
 
 * title
 ```html
         <input type="text" id="name" title="Your title"/>
-```	
+```
 
 * readonly
 ```html
         <input type="text" id="name" readonly="true"/>
-```	
+```
 
 * uxp-quiet
 ```html
@@ -65,12 +125,12 @@ The code below generates the following UI
 <img src="./assets/input-checkbox.png" width="50%" height="50%">
 
 ### Supported attributes
-* id	
+* id
 ```html
         <input type="checkbox" id="name" />
 ```
 
-* title	
+* title
 ```html
         <input type="checkbox" id="name" />
 ```
@@ -78,19 +138,19 @@ The code below generates the following UI
 * value
 ```html
         <input type="checkbox" id="name" value="someValue"/>
-```	
+```
 
-* checked	
+* checked
 ```html
         <input type="checkbox" id="name" value="someValue" checked/>
 ```
 
-* disabled	
+* disabled
 ```html
         <input type="checkbox" id="name" value="someValue" disabled/>
 ```
 
-* indeterminate	
+* indeterminate
 ```html
         <input type="checkbox" id="name" />
 ```
@@ -118,12 +178,12 @@ The code below generates the following UI
 
 ### Supported attributes
 
-* id	
+* id
 ```html
         <input type="range" id="name" />
 ```
 
-* title	
+* title
 ```html
         <input type="range" id="name" title="someTitle" />
 ```
@@ -131,24 +191,24 @@ The code below generates the following UI
 * disabled
 ```html
          <input type="range" id="name" disabled />
-```	
+```
 
-* min	
+* min
 ```html
         <input type="range" id="name" min="10" />
 ```
 
-* max	
+* max
 ```html
          <input type="range" id="name" max="20" />
 ```
 
-* step	
+* step
 ```html
        <input type="range" id="name" step="2" />
 ```
 
-* value	
+* value
 ```html
       <input type="range" value="90" />
 ```
@@ -169,11 +229,11 @@ The code below generates the following UI
 
 ### Supported attributes
 
-* id	
+* id
 ```html
         <input type="number" id="name" />
 ```
-* title	
+* title
 ```html
         <input type="number" id="name" title="Hello World"/>
 ```
@@ -191,19 +251,53 @@ The code below generates the following UI
 * value
 ```html
         <input type="number" id="name" value="Your name"/>
-```	
+```
 
 * title
 ```html
         <input type="number" id="name" title="Your title"/>
-```	
+```
 
 * readonly
 ```html
         <input type="number" id="name" readonly="true"/>
-```	
+```
 
 * uxp-quiet
 ```html
    		 <input uxp-quiet="true" type="number" id="name" placeholder="Your name"/>
 ```
+
+<!--
+<style>
+    .colorrow {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .colorrow span {
+        flex: 0 0 32px;
+    }
+    .colorrow input[type=text] {
+        flex: 0 0 64px;
+    }
+    .colorrow input[type=range] {
+        flex: 1 1 auto;
+    }
+</style>
+<label class="colorrow">
+    <span>R</span>
+    <input type="range" min=0 max=255 value=128 />
+    <input type="text" value="128" />
+</label>
+<label class="colorrow">
+    <span>G</span>
+    <input type="range" min=0 max=255 value=64 />
+    <input type="text" value="64" />
+</label>
+<label class="colorrow">
+    <span>B</span>
+    <input type="range" min=0 max=255 value=32 />
+    <input type="text" value="32" />
+</label>
+-->
