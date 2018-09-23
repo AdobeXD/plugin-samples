@@ -67,6 +67,9 @@ A manifest is used to declare various facts about a plugin. For example, a manif
 ## Node
 A tree node. Depending on context, this node may refer to a [HTML5 DOM Node](./reference/uxp/Node.md) or an [XD Scenegraph node](./reference/scenegraph.md#scenenode).
 
+## React
+Also known as ReactJS. A declarative, component-based JavaScript library for building user interfaces. [Learn more about React](https://reactjs.org/).
+
 ## SceneNode
 A [SceneNode](./reference/scenegraph.md#scenenode) represents a node within the user's scenegraph.
 

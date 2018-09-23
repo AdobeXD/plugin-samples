@@ -1,4 +1,4 @@
-# How To Guides
+# Tutorials
 
 * Working with Content
   * [How to draw lines](./how-to-draw-lines-guide/README.md)
