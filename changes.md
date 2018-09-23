@@ -1,5 +1,41 @@
 # Change Log
 
+## Focus Group Build #5: The Breaking Changes Update
+
+This release has UI polish and other finishing touches. It also comes with several breaking changes, as it was felt it to be better to break things _now_ rather than later.
+
+### New Features
+
+* Repeat Grid APIs
+* Better `ImageFill` API (replaces `BitmapFill`)
+* Convenience APIs for `createFile` and `createFolder`
+* Keyboard shortcuts for menu items
+
+### Fixes and improvements
+
+* `getFileForOpening` will not return an array when only requesting a _single_ file.
+* `createEntry` will _not_ create an file on disk until the first write.
+* You can now export renditions to any user-mediated location on UWP. Previously you needed to export to a temporary entry first, and then move it into the correct location.
+* Dialogs have received minor layout tweaks and polish.
+* Dialog buttons on UWP are in the correct location.
+* Dialogs can be wider on UWP than previous builds.
+* UWP allows multiple dialogs to appear in sequence.
+* Canceling a dialog will not reject the `showModal` promise; instead it will be resolved with `reasonCanceled`.
+* Text fields are no longer limited to 150 characters.
+
+### Breaking Changes
+
+* `getFileForOpening` will not return an array when only requesting a _single_ file.
+* Canceling a dialog will not reject the `showModal` promise; instead it will be resolved with `reasonCanceled`.
+* `BitmapFill` is no longer provided; use `ImageFill` instead.
+* ... TODO ...
+
+### Known Issues
+
+Please see [this page](./known-issues.md) for a comprehensive list.
+
+---
+
 ## General Prerelease (v12.0.11.14, 2018-08-24): The Plugin Update
 
 This release marks the first time plugins have been available to the general prerelease group. As such, it is now possible for users to install new plugins and develop their own plugins.
