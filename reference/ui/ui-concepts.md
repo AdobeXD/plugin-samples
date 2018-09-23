@@ -8,6 +8,6 @@ An **insertion point** is an area within XD that can accept custom user interfac
 
 * [Modal Dialogs](./dialogs.md)
 
-> **info**
+> **Info**
 >
 > More insertion points will be coming in the future!

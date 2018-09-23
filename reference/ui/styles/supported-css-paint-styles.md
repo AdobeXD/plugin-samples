@@ -77,7 +77,7 @@ border-radius: 4px;
 border-bottom-right-radius: 20px;
 ```
 
-> **info**
+> **Info**
 >
 > View more documentation on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)
 

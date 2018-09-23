@@ -1,6 +1,7 @@
 # Adobe XD Plugins API Reference
 
-> **danger**
+> **Danger**
+>
 > This is _prerelease_ documentation. It is subject to change, and may not represent the final release version. Do not share with anyone outside of the general prerelease group.
 
 Plugins are written in JavaScript. You can use most JavaScript features supported by modern web browsers, including ES5 and ES2015 (aka ES6) language features.

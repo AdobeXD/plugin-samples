@@ -62,7 +62,7 @@ Parameter | Type       | Notes
 `msg`     | `string`   | The message to display
 `buttons` | `string[]` | An array of buttons (use only two). The first is the cancel or safe dismissal option, whereas the second is the trigger option (invoked with **ENTER**)
 
-> **danger**
+> **Danger**
 >
 > Do not use confirmation dialogs for destructive actions.
 

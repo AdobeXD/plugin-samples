@@ -13,7 +13,7 @@ Dismissive dialog buttons live within a `footer` element. Within the `footer`, y
 * `uxp-variant="secondary"` indicates the button is a "secondary" button. It receives a lighter color than primary buttons.
 * `uxp-variant="warning"` indicates that the button will trigger a destructive action. This button should not be the default action.
 
-> **tip**
+> **Tip**
 >
 > Dismissive buttons should always be visible on screen without scrolling. If a dismissive button isn't visible, the user may think they are trapped in the dialog.
 

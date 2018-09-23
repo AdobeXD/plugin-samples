@@ -44,12 +44,12 @@ This release marks the first time plugins have been available to the general pre
 
 * This build has a plugin manager! You can install new plugins from the online plugin listing by using **Plugins > Discover Plugins...**. You can manage your installed plugins (including those in development) by visiting **Plugins > Manage Plugins...**.
 
-    > **tip**
+    > **Tip**
     > We will provide information on submitting your plugin for submission to the XD plugin manager at a later date.
 
 * Whenever a plugin needs to work asynchronously, XD will now block user interaction with the document. This is visible as a small dialog with the wording "Plugin xyz is working".
 
-    > **info**
+    > **Info**
     > Known issue: this appears even while other dialogs from the plugin are visible, although it is always underneath them in the visible hierarchy. As such you may see these dialogs briefly while your own plugin dialogs are animating in or out.
 
 ### Breaking Changes

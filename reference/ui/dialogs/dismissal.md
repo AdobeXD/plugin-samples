@@ -39,6 +39,6 @@ dialog.addEventListener("close", () => {
 
 You can, in some cases, prevent a dialog dismissal. If the form calls `preventDefault` on the `submit` event, the dialog will fail to dismiss.
 
-> **tip**
+> **Tip**
 >
 > It is not possible to cancel a dismissal triggered by the **ESC** gesture.
