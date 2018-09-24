@@ -7,8 +7,7 @@
 * [Debugging Plugins](./Guides/debugging-guide/readme.md)
 
 * [Plugin Structure](./reference/structure/index.md)
-  * [Plugin Name](./reference/structure/plugin-name.md)
-  * [Plugin Location](./reference/structure/plugin-location.md)
+  * [Plugin Location and Name](./reference/structure/plugin-location-name.md)
   * [Folder Structure](./reference/structure/overview.md)
     * [manifest.json](./reference/structure/manifest.md)
     * [main.js](./reference/structure/handlers.md)
