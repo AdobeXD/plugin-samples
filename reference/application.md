@@ -44,8 +44,9 @@ console.log("OS locale:", application.systemLocale); // e.g. "en_US"
 Generate renditions of nodes in the document in a batch. Overwrites any existing files without warning.
 
 **Kind**: static method of [<code>application</code>](#module_application)  
-**Returns**: `Promise<Array, string>` - Promise which is fulfilled with an array of the `outputFile`s originally passed in,
-or rejected with a string error code if one or more renditions failed for any reason.
+**Returns**: `Promise<Array<RenditionResult>, string>` -  Promise which is fulfilled with an array of RenditionResults (pointing to
+the same `outputFile`s that were originally passed in, or rejected with an error string if one or more renditions failed for
+any reason.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -53,16 +54,24 @@ or rejected with a string error code if one or more renditions failed for any re
 
 **Typedef RenditionSettings**
 
+_All rendition settings fields are required_ (for a given rendition type) unless otherwise specified.
+
 | Property | Type | Description |
 | --- | --- | --- |
 | node | !SceneNode | Root of scenegraph subtree to render |
-| outputFile | !File | File to save the rendition to (overwritten without warning if it already exists) |
+| outputFile | !uxp.storage.File | File to save the rendition to (overwritten without warning if it already exists) |
 | type | string | File type: RenditionType.PNG, JPG, PDF, or SVG |
-| scale | number | (PNG & JPG renditions) DPI multipler in the range [0.1, 100], e.g. 2.0 for @2x DPI. |
-| quality | number | (JPG renditions) Compression quality in the range [1, 100]. |
-| background | ?Color | (PNG & JPEG renditions) Alpha component ignored for JPG. Optional: defaults to transparent for PNG, solid white for JPG. |
-| minify | boolean | (SVG renditions) If true, SVG code is minified. |
-| embedImages | boolean | (SVG renditions) If true, bitmap images are stored as base64 data inside the SVG file. If false, bitmap images are saved as separate files linked from the SVG code. |
+| scale | number | _(PNG & JPG renditions)_ DPI multipler in the range [0.1, 100], e.g. 2.0 for @2x DPI. |
+| quality | number | _(JPG renditions)_ Compression quality in the range [1, 100]. |
+| background | ?Color | _(PNG & JPEG renditions)_ Alpha component ignored for JPG. Optional: defaults to transparent for PNG, solid white for JPG. |
+| minify | boolean | _(SVG renditions)_ If true, SVG code is minified. |
+| embedImages | boolean | _(SVG renditions)_ If true, bitmap images are stored as base64 data inside the SVG file. If false, bitmap images are saved as separate files linked from the SVG code. |
+
+**Typedef RenditionResult**
+
+| Property | Type | Description |
+| --- | --- | --- |
+| outputFile | !uxp.storage.File | File the rendition was written to (equal to `outputFile` in RenditionSettings) |
 
 
 * * *

@@ -31,8 +31,6 @@ commands.createMaskGroup();
     * [.distributeHorizontal()](#module_commands.distributeHorizontal)
     * [.distributeVertical()](#module_commands.distributeVertical)
     * [.alignToPixelGrid()](#module_commands.alignToPixelGrid)
-    * [.flipHorizontal()](#module_commands.flipHorizontal)
-    * [.flipVertical()](#module_commands.flipVertical)
 
 
 * * *
@@ -241,23 +239,5 @@ Distributes all selected objects evenly along the Y axis. Equivalent to _Object 
 ### commands.alignToPixelGrid()
 Shifts all selected objects and their content so they align crisply with the pixel grid. Equivalent to _Object > Align to
 Pixel Grid_.
-
-**Kind**: static method of [<code>commands</code>](#module_commands)  
-
-* * *
-
-<a name="module_commands.flipHorizontal"></a>
-
-### commands.flipHorizontal()
-Flips the object horizontally. Some objects such as Symbols cannot be flipped. Equivalent to _Object > Flip > Horizontally_.
-
-**Kind**: static method of [<code>commands</code>](#module_commands)  
-
-* * *
-
-<a name="module_commands.flipVertical"></a>
-
-### commands.flipVertical()
-Flips the object vertically. Some objects such as Symbols cannot be flipped. Equivalent to _Object > Flip > Vertically_.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  
