@@ -559,8 +559,8 @@ Multiple files can be returned if the `allowMultiple` option` is `true`.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | options | `\*` |  |  |
-| [options.initialDomain] | `Symbol` |  | the preferred initial location of the file picker. If not defined, the most recently used domain from a file picker is used instead. |
-| [options.types] | `Array.<string>` | <code>[&#x27;.*&#x27;]</code> | the allowed file types |
+| [options.initialDomain] | `Symbol` | <code>null</code> | the preferred initial location of the file picker. If not defined, the most recently used domain from a file picker is used instead. |
+| [options.types] | `Array.<string>` | _(required)_ | the allowed file extensions, with no "." prefix; use `["*"]` to allow any file to be picked |
 | [options.allowMultiple] | `boolean` | <code>false</code> | if true, multiple files can be returned (as an array) |
 
 **Example**  
