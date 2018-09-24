@@ -8,7 +8,7 @@
 
 * [Plugin Structure](./reference/structure/index.md)
   * [Plugin Location and Name](./reference/structure/plugin-location-name.md)
-  * [Folder Structure](./reference/structure/overview.md)
+  * [Folder Structure](./reference/structure/folder-structure.md)
     * [manifest.json](./reference/structure/manifest.md)
     * [main.js](./reference/structure/handlers.md)
 
