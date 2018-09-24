@@ -2,7 +2,9 @@
 
 Let’s walk through the process of creating an Adobe XD plugin.
 
-The plugin you'll create by following along with this guide is pretty simple to start. Once you're done, you'll have a solid grasp of the steps to get up and running with making your own XD plugin. At the end of the guide, we'll suggest some next steps for going deeper with the XD plugin APIs.
+The plugin you'll create by following along with this guide is pretty simple to start. Once you're done, you'll have a solid grasp of the steps to get up and running with making your own XD plugin. 
+
+At the end of the guide, we'll suggest some next steps for going deeper with the XD plugin APIs.
 
 
 <!-- doctoc command config: -->
@@ -25,7 +27,7 @@ The plugin you'll create by following along with this guide is pretty simple to 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Technology Used
-**Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/getting-started)**.
+Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/getting-started).
 
 - [XD plugin API reference](/reference)
 - Libraries/Frameworks/APIs: None
@@ -42,7 +44,7 @@ Adobe XD loads plugins that are in development from a `develop` folder in specif
 
 | Platform      | Path          |
 | ------------- |:-------------:|
-| MacOS         | `~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/` (note: `~/Library`, not `/Library`) |
+| macOS         | `~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/` (note: `~/Library`, not `/Library`) |
 | Windows       | `C:\Users\%USERNAME%\AppData\Local\Packages\Adobe.CC.XD.Prerelease_adky2gkssdxte\LocalState\`       |
 
 Navigate to the above path, and if there _isn’t_ a folder that already exists with the name `develop`, go ahead and create it.
@@ -156,7 +158,7 @@ Congratulations! You’ve built your first plugin with Adobe XD!
 
 ## Next Steps
 
-- Learnn about [debugging plugins](/Guides/debugging-guide)
+- Learn about [debugging plugins](/Guides/debugging-guide)
 - Follow our [tutorials]()
 - See working code in our [sample repos](https://github.com/AdobeXD/Plugin-Samples)
-- Browser the [API references](/reference)
+- Browse the [API references](/reference)

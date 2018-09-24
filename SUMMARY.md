@@ -3,7 +3,7 @@
 ## Getting Started
 
 * [Introduction](./README.md)
-* [Quick Start](./Guides/getting-started-guide/README.md)
+* [Quick Start](./Guides/quick-start-guide/README.md)
 * [Debugging Plugins](./Guides/debugging-guide/readme.md)
 
 * [Plugin Structure](./reference/structure/index.md)
