@@ -1,6 +1,6 @@
 # How to Debug Your Plugin
 
-In this guide, you will learn to debug your Adobe XD plugin.
+In this guide, you will learn how to debug your Adobe XD plugin.
 
 <!-- Image or GIF if necessary -->
 

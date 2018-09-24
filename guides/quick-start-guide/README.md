@@ -33,7 +33,7 @@ Complete code for this plugin can be found [on GitHub](https://github.com/AdobeX
 - Libraries/Frameworks/APIs: None
 
 ## Prerequisites
-- Basic knowledge of HTML, CSS, and JavaScript.
+- Basic knowledge of HTML, CSS, and JavaScript
 - [Debugging Guide](/Guides/debugging-guide)
 
 ## Development Steps
