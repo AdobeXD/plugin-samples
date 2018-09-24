@@ -11,23 +11,40 @@
         "-collapse",
         "-pretty-term",
         "code",
-        "-dashing",
+        "dashing",
         "todo",
         "-devops",
         "expandable-chapters-interactive",
         "styled-blockquotes",
-        "codetabs",
+        "-codetabs",
         "-recently-updated",
-        "github-buttons",
-        "prism",
-        "-highlight",
+        "-github-buttons",
+        "-prism",
+        "highlight",
         "-lunr",
         "-search",
         "search-plus",
         "addcssjs",
-        "replace"
+        "replace",
+        "simpletabs",
+        "-layout",
+        "components"
     ],
     "pluginsConfig": {
+        "components": {
+            "templatePath": "public/",
+            "templates": [{
+                    "name": "header",
+                    "target": "body",
+                    "prepend": "true"
+                },
+                {
+                    "name": "footer",
+                    "target": "#code-textarea",
+                    "prepend": "false"
+                }
+            ]
+        },
         "addcssjs": {
             "css": ["./public/custom.css"]
         },
@@ -53,8 +70,7 @@
             ]
         },
         "replace": {
-            "substitutes": [
-                {
+            "substitutes": [{
                     "pattern": "\\\\\\*",
                     "flags": "g",
                     "substitute": "*"
