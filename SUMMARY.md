@@ -3,13 +3,11 @@
 ## Getting Started
 
 * [Introduction](./README.md)
-* [Quick Start](./Guides/getting-started-guide/README.md)
+* [Quick Start](./Guides/quick-start-guide/README.md)
 * [Debugging Plugins](./Guides/debugging-guide/readme.md)
-
 * [Plugin Structure](./reference/structure/index.md)
-  * [Plugin Name](./reference/structure/plugin-name.md)
-  * [Plugin Location](./reference/structure/plugin-location.md)
-  * [Folder Structure](./reference/structure/overview.md)
+  * [Plugin Location and Name](./reference/structure/plugin-location-name.md)
+  * [Folder Structure](./reference/structure/folder-structure.md)
     * [manifest.json](./reference/structure/manifest.md)
     * [main.js](./reference/structure/handlers.md)
 

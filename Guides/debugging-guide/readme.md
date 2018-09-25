@@ -1,6 +1,6 @@
 # How to Debug Your Plugin
 
-In this guide, you will learn to debug your Adobe XD plugin.
+Bugs happen! In this guide, you will learn how to debug your Adobe XD plugin.
 
 <!-- Image or GIF if necessary -->
 
@@ -19,45 +19,46 @@ In this guide, you will learn to debug your Adobe XD plugin.
 
 ## Prerequisites
 
-- Basic knowledge of JavaScript.
-- At least one plugin installed.
-- You have read the [Getting Started Guide](/Guides/getting-started-guide)
+- Basic knowledge of JavaScript
+- At least one plugin in your `develop` folder (you can create one using our [Quick Start guide](/Guides/getting-started-guide))
+
 
 ## Debugging Steps
 
-### 1. Open the Developer Console.
+### 1. Open the Developer Console
 
-In order to see the error messages your plugin may be generating, or `console.log` messages in your file, you will need to open the XD Developer Console.
+In order to see the error messages your plugin may be generating, or to `console.log` messages from your code, you will need to open the XD Developer Console. The developer console allows you to see errors and plugin-generated logs while executing plugins. 
 
-The console allows you to see errors and plugin generated logs while executing plugins. The console log is enabled from the Plugins menu.
+The developer console is enabled from the Plugins menu:
 
-```
-Mac: Plugins->Development->Developer Console
-Win: Plugins->Developer Console
-```
+| Platform      | Menu item          |
+| ------------- |:-------------:|
+| macOS         | Plugins->Development->Developer Console |
+| Windows       | Plugins->Developer Console |
 
 ### 2. Try reloading the plugins
 
-Reload the plugins in XD by either quitting and reopening the application, or using the handy keyboard shortcuts:
+Reload the plugins in XD by either quitting and reopening the app, or using the handy keyboard shortcut:
 
-```
-Mac: Plugins->Development->Reload Plugins (Shift-Cmd-R)
-Win: Plugins->Reload Plugins (Ctrl-Alt-E)
-```
+| Platform      | Menu item          |
+| ------------- |:-------------:|
+| macOS         | Plugins->Development->Reload Plugins (Shift-Cmd-R) |
+| Windows       | Plugins->Reload Plugins (Ctrl-Alt-E) |
 
-If there are any errors blocking the plugin from running, they will appear in the Developer Console on reload.
+If there are any errors blocking the plugin from running, they will appear in the developer console on reload:
 
 ![reload-plugins](/images/readme-assets/reload-plugins.png)
 
 ### 3. Try adding `console.log` messages to your code
 
-The example code below adapted from the [Getting Started Guide](/Guides/getting-started-guide) does not appear to be creating the "Hello!" text as expected.
+The example code below, which is adapted from the [Quick Start guide](/Guides/quick-start-guide), does not appear to be creating the "Hello!" text as expected.
 
-Let's try adding a start message and an end message into `sayHello()` to double check that the code is working:
+Let's try adding a "start message" and an "end message" into `sayHello()` to double check that the code is running:
 
 ```javascript
 function sayHello(selection) {
   console.log("sayHello started!");
+
   const el = new Text();
   el.text = "Hello!";
   el.styleRanges = [
@@ -66,13 +67,15 @@ function sayHello(selection) {
       fill: new Color("#FFFFFF")
     }
   ];
+
   selection.insertionParent.addChild(el);
   el.moveInParentCoordinates(100, 100);
+
   console.log("sayHello ran to the end!");
 }
 ```
 
-Your `console.log` messages should appear in the Developer console:
+Your `console.log` messages should appear in the developer console:
 
 ![start-message](/images/readme-assets/start-message.png)
 
@@ -80,9 +83,9 @@ It looks the function is running... maybe there is another problem.
 
 ![wrong-color](/images/readme-assets/wrong-color.png)
 
-Oops, the fill color was `#FFFFFF`, which is white, and so is our background.
+Oops, the fill color set by the plugin is `#FFFFFF`, which is white: the same color as this artboard's background.
 
-You can verify this with a console.log message:
+You can verify this with a `console.log` message:
 
 ```javascript
 console.log("el fill color =" + el.fill);
@@ -90,6 +93,7 @@ console.log("el fill color =" + el.fill);
 
 ## Next Steps
 
-Ready for more? Take a look at other guides:
+Ready to learn more about XD plugins?
 
-- [Guides](/Guides)
+- Learn about [plugin structure]()
+- Follow along with our [tutorials](/Guides)

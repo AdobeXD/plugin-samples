@@ -1,6 +1,10 @@
-# Getting Started with XD Plugin Development
+# Quick Start: Make your first XD plugin
 
-Let’s walk through the process of how you can create an Adobe XD plugin. This plugin is pretty simple to start, but you should be able to follow the instructions to create just more complex plugins as well. **The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/getting-started)**.
+Let’s walk through the process of creating an Adobe XD plugin.
+
+The plugin you'll create by following along with this guide is pretty simple to start. Once you're done, you'll have a solid grasp of the steps to get up and running with making your own XD plugin. 
+
+At the end of the guide, we'll suggest some next steps for going deeper with the XD plugin APIs.
 
 
 <!-- doctoc command config: -->
@@ -23,22 +27,24 @@ Let’s walk through the process of how you can create an Adobe XD plugin. This 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Technology Used
+Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/getting-started).
+
 - [XD plugin API reference](/reference)
 - Libraries/Frameworks/APIs: None
 
 ## Prerequisites
-- Basic knowledge of HTML, CSS, and JavaScript.
+- Basic knowledge of HTML, CSS, and JavaScript
 - [Debugging Guide](/Guides/debugging-guide)
 
 ## Development Steps
 
 ### 1. Identify where your plugins are located
 
-Adobe XD loads plugins from a `develop` folder in specific storage location:
+Adobe XD loads plugins that are in development from a `develop` folder in specific location on your machine:
 
 | Platform      | Path          |
 | ------------- |:-------------:|
-| MacOS         | `~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/` (note: `~/Library`, not `/Library`) |
+| macOS         | `~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/` (note: `~/Library`, not `/Library`) |
 | Windows       | `C:\Users\%USERNAME%\AppData\Local\Packages\Adobe.CC.XD.Prerelease_adky2gkssdxte\LocalState\`       |
 
 Navigate to the above path, and if there _isn’t_ a folder that already exists with the name `develop`, go ahead and create it.
@@ -52,12 +58,18 @@ Example:
 
 ### 2. Create your plugin scaffold
 
-Adobe XD plugins require two files:
+Adobe XD plugins require two files, with these _exact_ names:
 
-*   `manifest.json` is your plugin’s **manifest**. This file includes information about the plugin, such as its name, the menu item(s) it adds to XD, and so on.
-*   `main.js` is your plugin’s **code**. This file contains your JavaScript code that implements the logic for your plugin.
+1.   `manifest.json` is your plugin’s manifest.
 
-These two files (and any others you need) are stored within a folder. Each plugin gets its own folder, so the folder names need to be unique.  By convention, the name of the folder is usually the same as the ID of the plugin (for more information about plugin IDs, see the description of the manifest file, below).
+    This file includes information about the plugin, such as its name, the menu item(s) it adds to XD, and so on. [Learn about the manifest here](./reference/structure/manifest.html).
+1.   `main.js` is your plugin’s code. 
+
+    This file contains your JavaScript code that implements the logic for your plugin. [Learn more about `main.js` here](./reference/structure/handlers.html).
+
+It's possible to have more files if you want, but these files are the bare minimum requirement for your plugin to work.
+
+Your plugin files are stored within a parent folder that you create. Each plugin gets its own folder, so the folder names need to be unique. By convention, the name of the folder is usually the same as the ID of the plugin (for more information about plugin IDs, see the description of the manifest file, below).
 
 Example:
 
@@ -71,7 +83,7 @@ Example:
 
 ### 3. Create your plugin’s manifest
 
-Adobe XD requires that your plugin have a manifest named `manifest.json`. Our example looks like this:
+In the previous step, you created a file named `manifest.json`. The manifest for this example looks like this:
 
 ```json
 {
@@ -98,7 +110,8 @@ The value of the `commandId` property may be any string. In the next section, we
 
 ### 4. Create your plugin’s code
 
-Next, we need to create the code for our plugin. This lives in a file named `main.js`.
+Next, we need to create the code for our plugin. This lives in a file named `main.js`, which we created in a step above.
+
 ```js
 const {Text, Color} = require("scenegraph"); // [1]
 
@@ -149,6 +162,7 @@ Congratulations! You’ve built your first plugin with Adobe XD!
 
 ## Next Steps
 
-- [Full API reference](/reference)
-- [Debugging plugins](/Guides/debugging-guide)
-- [Plugin samples](https://github.com/AdobeXD/Plugin-Samples)
+- Learn about [debugging plugins](/Guides/debugging-guide)
+- Follow our [tutorials]()
+- See working code in our [sample repos](https://github.com/AdobeXD/Plugin-Samples)
+- Browse the [API references](/reference)
