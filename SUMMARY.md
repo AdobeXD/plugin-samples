@@ -104,7 +104,7 @@
     * [scenegraph](./reference/scenegraph.md)
     * [SceneNodeList](./reference/SceneNodeList.md)
     * [Color](./reference/Color.md)
-    * [BitmapFill](./reference/BitmapFill.md)
+    * [ImageFill](./reference/ImageFill.md)
     * [LinearGradientFill](./reference/LinearGradientFill.md)
     * [Matrix](./reference/Matrix.md)
     * [Shadow](./reference/Shadow.md)
