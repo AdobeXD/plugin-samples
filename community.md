@@ -7,6 +7,7 @@ Whether you're looking for help, community discussion, or want to give us feedba
 
 ## Give and get help
 
+- [FAQ](https://forums.adobexdplatform.com/c/xd/faq): Browse our FAQ on the forums for quick answers to common issues and questions.
 - [Adobe XD Platform Forums](https://forums.adobexdplatform.com/): Open discussion, Q&A, and support with community experts and Adobe staff on anything related to building XD plugins. Jump in and say hi (we'll say hi back)!
 - [Stackoverflow](https://stackoverflow.com/questions/tagged/adobe-xd): You can also ask questions to the broader developer community on Stackoverflow. Use the `adobe-xd` tag when asking questions.
 
