@@ -4,9 +4,6 @@ An XD-specific namespace that provides access to various methods that aren't spe
 ## Base64
 A representation of binary data that can be transferred safely over the internet.
 
-## BitmapFill
-Used to fill a SceneNode with bitmap data. [Read more](./reference/BitmapFill.md)
-
 ## Clipboard
 A temporary storage location that the user can utilize to save or retrieve text or other snippets on command. Adobe XD [provides an API](./reference/clipboard) for accessing the clipboard.
 
@@ -54,6 +51,9 @@ Short for _hypertext markup language_. XD Supports a subset of HTML.
 
 ## HTML5
 The modern version of HTML.
+
+## ImageFill
+Used to fill a SceneNode with bitmap data. [Read more](./reference/ImageFill.md)
 
 ## Instance
 An instance of a class. May also refer to instance properties or methods.
