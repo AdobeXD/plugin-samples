@@ -89,7 +89,6 @@
 ## Join the Community
 
 * [Help, Feedback &amp; Discussion](./community.md)
-* [Frequently Asked Questions](./faq.md)
 * [Code of Conduct](./CODE_OF_CONDUCT.md)
 * [How to contribute](./CONTRIBUTING.md)
 * [Hiring](./README.md)
