@@ -2,7 +2,8 @@
 
 ## scenegraph
 The scenegraph is a node tree which represents the structure of the XD document. Some scenenodes may contain children (e.g. a Group
-or Artboard), while others are leaf nodes (e.g. a Rectangle or Text node).
+or Artboard), while others are leaf nodes (e.g. a Rectangle or Text node). The root of the scenegraph contains all Artboards that
+exist in the document, as well as all _pasteboard_ content (nodes that are not contained by any artboard).
 
 ![example of scenegraph tree](../images/scenegraphExample.png)
 
@@ -72,7 +73,7 @@ function myCommand(selection) {
 These classes are not scenenode types, but are used extensively in the scenegraph API:
 
 * [Color](Color.md) - Value object for `fill`, `stroke`, and other properties
-* [BitmapFill](BitmapFill.md) - Value object for `fill` property
+* [ImageFill](ImageFill.md) - Value object for `fill` property
 * [LinearGradientFill](LinearGradientFill.md) - Value object for `fill` property
 * [Matrix](Matrix.md) - Value object for `transform` property
 * [Shadow](Shadow.md) - Value object for `shadow` property
@@ -215,18 +216,19 @@ Node's opacity setting. The overall visual opacity seen on canvas is determined 
 <a name="SceneNode+transform"></a>
 
 ### *sceneNode.transform : <code>\![Matrix](Matrix.md)</code>*
-Affine transform matrix that converts from the node's _local coordinate space_ to its parent's coordinate space. The matrix never has skew or scale components, and if this node is an Artboard the matrix never has rotation either. Rather than working with the raw matrix directly, it may be easier to use methods such as [placeInParentCoordinates](#SceneNode+placeInParentCoordinates) or [rotateAround](#SceneNode+rotateAround).
+Affine transform matrix that converts from the node's _local coordinate space_ to its parent's coordinate space. The matrix never has
+skew or scale components, and if this node is an Artboard the matrix never has rotation either. Rather than reading the raw matrix values
+directly, it may be easier to use the [translation](#SceneNode+translation) and [rotation](#SceneNode+rotation) properties.
 
-To resize or mirror a node, use [SceneNode.resize](#SceneNode+resize) or [commands.flipHorizontal](./commands.md#module_commands.flipHorizontal) / [commands.flipVertical](./commands.md#module_commands.flipVertical),
-respectively.
-
-Returns a fresh Matrix each time, so this can be mutated by the caller without interfering with anything. Mutating the returned Matrix does not change the node's transform - only invoking the 'transform' setter changes the node.
-To modify an existing transform, always be sure to re-invoke the `transform` setter rather than just changing the Matrix object's properties inline.
-See ["Properties with object values"](../index.md#object-value-properties).
+To move or resize a node, use the [translation](#SceneNode+translation) property or APIs like [placeInParentCoordinates()](#SceneNode+placeInParentCoordinates) or [rotateAround()](#SceneNode+rotateAround).
+Setting the entire transform matrix directly is not allowed. To resize a node, use [resize()](#SceneNode+resize).
 
 For an overview of node transforms & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
 
+This getter returns a fresh Matrix each time, so its fields can be mutated by the caller without interfering with the node's state.
+
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
+**Read only**: true
 **See**
 
 - [translation](#SceneNode+translation)
@@ -540,7 +542,8 @@ node.resize(originalBounds.width * 2, originalBounds.height);
 <a name="RootNode"></a>
 
 ## RootNode
-**Kind**: class  
+**Kind**: class
+**Extends**: [<code>SceneNode</code>](#SceneNode)
 
 Class representing the root node of the document. All Artboards are children of this node, as well as any pasteboard content that
 does not lie within an Artboard. Artboards must be grouped contiguously at the bottom of this node's z order. The root node has no
@@ -560,6 +563,7 @@ visual appearance of its own.
 
 ## Group
 **Kind**: class  
+**Extends**: [<code>SceneNode</code>](#SceneNode)
 
 Group nodes represent two types of simple containers in XD:
 - Plain Groups, created by the _Object > Group_ command
@@ -677,14 +681,15 @@ To create a Masked Group, use [commands.createMaskedGroup](commands.md#module_co
 <a name="GraphicNode"></a>
 
 ## *GraphicNode*
-**Kind**: abstract class  
+**Kind**: abstract class
+**Extends**: [<code>SceneNode</code>](#SceneNode)
 
 Base class for nodes that have a stroke and/or fill. This includes leaf nodes such as Rectangle, as well as BooleanGroup
 which is a container node. If you create a shape node, it will not be visible unless you explicitly give it either a stroke
 or a fill.
 
 * *[GraphicNode](#GraphicNode)*
-    * *[.fill](#GraphicNode+fill) : ?<code>Color</code> \| <code>LinearGradientFill</code> \| <code>RadialGradientFill</code> \| <code>BitmapFill</code>*
+    * *[.fill](#GraphicNode+fill) : ?<code>Color</code> \| <code>LinearGradientFill</code> \| <code>RadialGradientFill</code> \| <code>ImageFill</code>*
     * *[.fillEnabled](#GraphicNode+fillEnabled) : <code>boolean</code>*
     * *[.stroke](#GraphicNode+stroke) : <code>?Color</code>*
     * *[.strokeEnabled](#GraphicNode+strokeEnabled) : <code>boolean</code>*
@@ -706,13 +711,14 @@ or a fill.
 
 <a name="GraphicNode+fill"></a>
 
-### *graphicNode.fill : <code>?[Color](Color.md)</code> \| <code>[LinearGradientFill](LinearGradientFill.md)</code> \| <code>RadialGradientFill</code> \| <code>[BitmapFill](BitmapFill.md)</code>*
+### *graphicNode.fill : <code>?[Color](Color.md)</code> \| <code>[LinearGradientFill](LinearGradientFill.md)</code> \| <code>RadialGradientFill</code> \| <code>[ImageFill](ImageFill.md)</code>*
 **Default**: `null`
 
 The fill applied to this shape, if any. If this property is null _or_ `fillEnabled` is false, no fill is drawn.
 Freshly created nodes have no fill by default.
 
-For Line objects, fill is ignored. For Text objects, _only_ solid Color fill values are allowed.
+For Line nodes, fill is ignored. For Text nodes, _only_ solid Color fill values are allowed. For Artboard nodes, image fill values
+are not allowed.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 **Example**  
@@ -786,7 +792,7 @@ Thickness in pixels of the stroke.
 ### *graphicNode.strokePosition : <code>string</code>*
 **Default**: `CENTER_STROKE` for most shapes, `INNER_STROKE` for Rectangle & Ellipse
 
-Position of the stroke relative to the shape's path outline: GraphicNode.INNER_STROKE, OUTER_STROKE, or CENTER_STROKE.
+Position of the stroke relative to the shape's path outline: GraphicNode.INNER_STROKE, OUTER_STROKE, or CENTER_STROKE. Ignored by Text and Line, which always render using CENTER_STROKE.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 
@@ -866,7 +872,8 @@ The node's drop shadow, if any. If there is no shadow applied, this property may
 ### *graphicNode.blur : <code>?[Blur](Blur.md)</code>*
 **Default**: `null`
 
-The node's object blur or background blur settings, if applicable. If there is no blur effect applied, this property may be null _or_ `blur.visible` may be false.
+The node's object blur or background blur settings, if applicable (a node may not have both types of blur at once). If there is no blur
+effect applied, this property may be null _or_ `blur.visible` may be false.
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
 
@@ -898,6 +905,7 @@ node.fill.linked</code>.
 
 ## Rectangle
 **Kind**: class  
+**Extends**: [<code>GraphicNode</code>](#GraphicNode)
 
 Rectangle leaf node shape, with or without rounded corners. Like all shape nodes, has no fill or stroke by default unless you set one.
 
@@ -940,6 +948,9 @@ selection.items = [rect];
 ### rectangle.cornerRadii : <code>!{topLeft:number, topRight:number, bottomRight:number, bottomLeft:number}</code> (all numbers >= 0)
 **Default**: `{topLeft:0, topRight:0, bottomRight:0, bottomLeft:0}`
 
+The actual corner radius that is rendered is capped based on the size of the rectangle even if the radius value set here is higher (see
+[<code>effectiveCornerRadii</code>](#Rectangle+effectiveCornerRadii).
+
 To set all corners to the same value, use [<code>setAllCornerRadii</code>](#Rectangle+setAllCornerRadii).
 
 **Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
@@ -959,7 +970,9 @@ True if any of the Rectangle's four corners is rounded (corner radius > 0).
 <a name="Rectangle+setAllCornerRadii"></a>
 
 ### rectangle.setAllCornerRadii(radius)
-Set the rounding radius of all four corners of the Rectangle to the same value.
+Set the rounding radius of all four corners of the Rectangle to the same value. The actual corner radius that is rendered is capped based on
+the size of the rectangle even if the radius value set here is higher (see [<code>effectiveCornerRadii</code>](#Rectangle+effectiveCornerRadii).
+
 To set the corners to different radius values, use [<code>cornerRadii</code>](#Rectangle+cornerRadii).
 
 **Kind**: instance method of [<code>Rectangle</code>](#Rectangle)  
@@ -984,17 +997,18 @@ are currently in effect, which may be smaller than the `cornerRadii` values as a
 <a name="Artboard"></a>
 
 ## Artboard
-**Kind**: class  
+**Kind**: class
+**Extends**: [<code>GraphicNode</code>](#GraphicNode)
 
-Artboard container node. All Artboards must be children of the root node (they cannot be nested), and they must be placed below all
+Artboard container node. All Artboards must be children of the root node (they cannot be nested), and they must be placed _below_ all
 pasteboard content in the z order.
 
 Artboards can have a background fill, but the stroke, shadow, and blur settings are all ignored. Artboards cannot be locked or hidden,
 or have opacity < 100%.
 
-If a node is changed to overlap an Artboard, it will automatically become a child of the artboard when the operation finishes, and
-similar if a node is changed to no longer overlap an Artboard. It is not possible to have a node overlapping an Artboard that does
-not become a child of the artboard, or vice versa, a node that falls entirely outside an Artboard's bounds but remains its child.
+Generally, all nodes that overlap an Artboard are children of that artboard, and nodes that don't overlap any Artboard are children
+of the root (pasteboard). This is taken care of automatically: if a node or is modified in any way that changes whether it overlaps
+an Artboard, its parent will automatically be changed accordingly the edit operation finishes.
 
 * [Artboard](#Artboard)
     * [.width](#Artboard+width) : <code>number</code>
@@ -1038,7 +1052,8 @@ If Artboard is scrollable, this is the height of the viewport (e.g. mobile devic
 <a name="Ellipse"></a>
 
 ## Ellipse
-**Kind**: class  
+**Kind**: class
+**Extends**: [<code>GraphicNode</code>](#GraphicNode)
 
 Ellipse leaf node shape.
 
@@ -1077,9 +1092,10 @@ True if the Ellipse is a circle (i.e., has a 1:1 aspect ratio).
 <a name="Line"></a>
 
 ## Line
-**Kind**: class  
+**Kind**: class
+**Extends**: [<code>GraphicNode</code>](#GraphicNode)
 
-Line leaf node shape.
+Line leaf node shape. Lines have a stroke but no fill.
 
 * [Line](#Line)
     * [.start](#Line+start) : \![<code>Point</code>](#Point)
@@ -1131,9 +1147,11 @@ passed this setter, even though the line's visual bounds and appearance are the 
 <a name="Path"></a>
 
 ## Path
-**Kind**: class  
+**Kind**: class
+**Extends**: [<code>GraphicNode</code>](#GraphicNode)
 
-Arbitrary vector Path leaf node shape.
+Arbitrary vector Path leaf node shape. Paths can be open or closed, and a Path may include multiple disjoint sections (aka a "compound
+path"). Even open Paths may have a fill - the fill is drawn as if the Path were closed with a final "Z" segment.
 
 The path may not start at (0,0) in local coordinates, for example if it starts with a move ("M") segment.
 
@@ -1156,7 +1174,8 @@ automatically normalized, so the getter may return a slightly different string t
 <a name="BooleanGroup"></a>
 
 ## BooleanGroup
-**Kind**: class  
+**Kind**: class
+**Extends**: [<code>GraphicNode</code>](#GraphicNode)
 
 BooleanGroup container node - although it has fill/stroke/etc. properties like a leaf shape node, it is a container
 with children. Its visual appearance is determined by generating a path via a nondestructive boolean operation on all
@@ -1188,7 +1207,8 @@ Which boolean operation is used to generate the path: BooleanGroup.PATH_OP_ADD, 
 <a name="Text"></a>
 
 ## Text
-**Kind**: class  
+**Kind**: class
+**Extends**: [<code>GraphicNode</code>](#GraphicNode)
 
 Text leaf node shape. Text can have a fill and/or stroke, but only a solid-color fill is allowed (gradient or image
 will will be rejected).
@@ -1259,7 +1279,20 @@ If true, the text is drawn upside down.
 <a name="Text+textAlign"></a>
 
 ### text.textAlign : <code>string</code>
-Horizontal alignment: Text.ALIGN_LEFT, ALIGN_CENTER, or ALIGN_RIGHT. This setting affects the layout of multiline text, and it also affects what direction text grows when edited on canvas.
+Horizontal alignment: Text.ALIGN_LEFT, ALIGN_CENTER, or ALIGN_RIGHT. This setting affects the layout of multiline text, and for point
+text it also affects how the text is positioned relative to its anchor point (x=0 in local coordinates) and what direction the text
+grows when edited on canvas.
+
+Changing textAlign on existing point text will cause it to shift horizontally. To change textAlign while keeping the text in a fixed
+position, shift the text horizontally (moving its anchor point) to compensate:
+
+**Example**
+```js
+var originalBounds = textNode.localBounds;
+textNode.textAlign = newAlignValue;
+var newBounds = textNode.localBounds;
+textNode.moveInParentCoordinates(originalBounds.x - newBounds.x, 0);
+```
 
 **Kind**: instance property of [<code>Text</code>](#Text)  
 
@@ -1303,10 +1336,11 @@ Always false for point text. For area text, true if the text does not fit in the
 <a name="SymbolInstance"></a>
 
 ## SymbolInstance
-**Kind**: class  
+**Kind**: class
+**Extends**: [<code>SceneNode</code>](#SceneNode)
 
-Container node representing one instance of a Symbol. Changes within a symbol instance are automatically synced to all other
-instances of the symbol, with certain exceptions (called "overrides").
+Container node representing one instance of a Symbol. Changes made within a symbol instance are automatically synced to all other
+other instances of the symbol - with certain exceptions, called "overrides."
 
 It is not currently possible for plugins to *create* a new Symbol definition or a new SymbolInstance node, aside from using
 [commands.duplicate](commands.md#module_commands.duplicate) to clone existing SymbolInstances.
@@ -1334,11 +1368,15 @@ An identifier unique within this document that is shared by all instances of the
 <a name="RepeatGrid"></a>
 
 ## RepeatGrid
-**Kind**: class  
+**Kind**: class
+**Extends**: [<code>SceneNode</code>](#SceneNode)
 
 Repeat Grid container node containing multiple grid cells, each one a child Group. Changes within one cell are automatically synced
-to all the other cells, with certain exceptions (called "overrides"). A Repeat Grid also defines a rectangular clipping mask which
+to all the other cells - with certain exceptions, called "overrides." A Repeat Grid also defines a rectangular clipping mask which
 determines how may cells are visible (new cells are automatically generated as needed if the Repeat Grid is resized larger).
+
+Each grid cell is a Group that is an immediate child of the RepeatGrid. These groups are automatically created and destroyed as
+needed when the RepeatGrid is resized.
 
 It is not currently possible for plugins to *create* a new RepeatGrid node, aside from using [commands.duplicate](commands.md#module_commands.duplicate)
 to clone existing RepeatGrids.
@@ -1351,6 +1389,8 @@ to clone existing RepeatGrids.
     * [.paddingX](#RepeatGrid+paddingX) : <code>number</code>
     * [.paddingY](#RepeatGrid+paddingY) : <code>number</code>
     * [.cellSize](#RepeatGrid+cellSize) : <code>!{width: number, height: number}</code>
+    * [.attachTextDataSeries(textNode, textValues)](#RepeatGrid+attachTextDataSeries)
+    * [.attachImageDataSeries(shapeNode, images)](#RepeatGrid+attachImageDataSeries)
     * [.addChild(node, index)](#Group+addChild)
     * [.addChildAfter(node, relativeTo)](#Group+addChildAfter)
     * [.addChildBefore(node, relativeTo)](#Group+addChildBefore)
@@ -1422,10 +1462,51 @@ The size of each grid cell. The size of each cell's content can vary slightly du
 
 * * *
 
+<a name="RepeatGrid+attachTextDataSeries"></a>
+
+### repeatGrid.attachTextDataSeries(textNode, textValues)
+Attach a sequence of text values to the instances of a given text node across all the cells of a Repeat Grid. The sequence is
+repeated as necessary to cover all the grid cells. This is a persistent data binding, so if the Repeat Grid is resized _later_
+to increase the number of grid cells, items from this sequence will be used to fill the text values of the new cells.
+
+You can call this API from either of _two different edit contexts_:
+- Edit context is the parent node of this RepeatGrid (i.e. a context where the RepeatGrid could be selected)
+- Edit context is the RepeatGrid cell which is the parent of textNode (i.e. a context where textNode could be selected)
+
+**Kind**: instance method of [<code>RepeatGrid</code>](#RepeatGrid)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| textNode | <code>!Text</code> | A Text node exemplar that is an immediate child of one of this RepeatGrid's cells. The data series will be bound to this text node and all corresponding copies of it in the other grid cells. |
+| textValues | <code>!Array&lt;string&gt;</code> | Array of one or more strings. Empty strings are ignored. |
+
+* * *
+
+<a name="RepeatGrid+attachImageDataSeries"></a>
+
+### repeatGrid.attachImageDataSeries(shapeNode, images)
+Attach a sequence of image fills to the instances of a given shape node across all the cells of a Repeat Grid. The sequence is
+repeated as necessary to cover all the grid cells. This is a persistent data binding, so if the Repeat Grid is resized _later_
+to increase the number of grid cells, items from this sequence will be used to set the image fill in the new cells.
+
+You can call this API from either of _two different edit contexts_:
+- Edit context is the parent node of this RepeatGrid (i.e. a context where the RepeatGrid could be selected)
+- Edit context is the RepeatGrid cell which is the parent of shapeNode (i.e. a context where shapeNode could be selected)
+
+**Kind**: instance method of [<code>RepeatGrid</code>](#RepeatGrid)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| shapeNode | <code>!GraphicNode</code> | A shape node exemplar that is an immediate child of one of this RepeatGrid's cells. The image series will be bound to this node and all corresponding copies of it in the other grid cells. Must be a node type that supports image fills (e.g. Rectangle, but not Text or Line). |
+| images | <code>!Array&lt;string&gt;</code> | Array of one or more ImageFills. |
+
+* * *
+
 <a name="LinkedGraphic"></a>
 
 ## LinkedGraphic
-**Kind**: class  
+**Kind**: class
+**Extends**: [<code>SceneNode</code>](#SceneNode)
 
 Container node whose content is linked to an external resource, such as Creative Cloud Libraries. It cannot be edited except by first
 ungrouping it, breaking this link.

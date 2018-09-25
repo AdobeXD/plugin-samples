@@ -2,11 +2,21 @@
 
 Most style properties accept the following types of colors:
 
-* Named colors
+* Named colors (see below)
 * Hex colors
 * RGB and RGBA colors
+    * Each RGB value ranges from 0 to 255.
+    * Alpha values range from 0 to 1.
 * HSL and HSLA colors
+    * The hue ranges from 0 to 359.
+    * The saturation and luminance values range from 0 to 100.
+    * Alpha values range from 0 to 1.
+* LAB and LABA colors (non-standard)
+    * Alpha values range from 0 to 1.
+* XYZ and XYZA colors (non-standard)
+    * Alpha values range from 0 to 1.
 * CMYK and CMYKA colors (non-standard)
+    * Alpha values range from 0 to 1.
 
 > **Info**
 >

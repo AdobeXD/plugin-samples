@@ -2,33 +2,48 @@
 
 ## Focus Group Build #5: The Breaking Changes Update
 
-This release has UI polish and other finishing touches. It also comes with several breaking changes, as it was felt it to be better to break things _now_ rather than later.
+This release has UI polish and other finishing touches. It also comes with several breaking changes, as it was felt it to be better to break things _now_ rather than after the API has shipped to the whole world.
 
-### New Features
+### New API Features
 
-* Repeat Grid APIs
-* Better `ImageFill` API (replaces `BitmapFill`)
-* Convenience APIs for `createFile` and `createFolder`
-* Keyboard shortcuts for menu items
+* Repeat Grid: Set sequences of text or image data using the new [`attachTextDataSeries()`](./reference/scenegraph.md#RepeatGrid+attachTextDataSeries) and [`attachImageDataSeries()`](./reference/scenegraph.md#RepeatGrid+attachImageDataSeries) APIs.
+* File IO: New `createFile()` and `createFolder()` APIs (in addition to the existing, more generic `createEntry()` API)
+* Menus:
+    * Menu items can have keyboard shortcuts
+    * Menu items can be nested into plugin-specific submenus
 
 ### Fixes and improvements
 
-* `getFileForOpening` will not return an array when only requesting a _single_ file.
-* `createEntry` will _not_ create an file on disk until the first write.
+* If `application.createRenditions()` is passed bad arguments, the error string it throws now contains a much more useful message.
+* `createEntry()` will _not_ create a file on disk until you write to it.
 * You can now export renditions to any user-mediated location on UWP. Previously you needed to export to a temporary entry first, and then move it into the correct location.
 * Dialogs have received minor layout tweaks and polish.
-* Dialog buttons on UWP are in the correct location.
-* Dialogs can be wider on UWP than previous builds.
-* UWP allows multiple dialogs to appear in sequence.
-* Canceling a dialog will not reject the `showModal` promise; instead it will be resolved with `reasonCanceled`.
+* Dialog buttons on Windows are in the correct location.
+* Dialogs can be wider on Windows than previous builds.
+* On Windows it's now possible to show multiple dialogs in sequence, like on macOS. Be sure to wait for the first dialog's promise to resolve before showing a second dialog.
 * Text fields are no longer limited to 150 characters.
 
 ### Breaking Changes
 
-* `getFileForOpening` will not return an array when only requesting a _single_ file.
-* Canceling a dialog will not reject the `showModal` promise; instead it will be resolved with `reasonCanceled`.
-* `BitmapFill` is no longer provided; use `ImageFill` instead.
-* ... TODO ...
+**Scenegraph**
+* The BitmapFill class has been replaced with a more streamlined [ImageFill](./reference/ImageFill.md) class.
+* `SceneNode.transform` is now read-only. Use other APIs to change a node's position or rotation.
+* If a Text node has varying styles within it (`textNode.styleRanges.length` > 1), changing its text content strips out the variation and sets the style of _all_ the new content to the _first_ style of the original text.
+* Minor: It is now an error to set fill or fillEnabled on a Line (previously doing so silently did nothing).
+* Minor: It is now an error to set stroke, strokeEnabled, shadow, or blur on an Artboard (previously doing so silently did nothing or resulted in buggy behavior).
+
+**Export Renditions**
+* The result of `application.createRenditions()` is now an array of objects with an `outputFile` property, rather than an array of output files directly.
+
+**Commands**
+* The `flipHorizontal()` and `flipVertical()` APIs have been removed for now. They will be reinstated once this feature is officially available to users.
+
+**File IO**
+* `getFileForOpening()` returns a File instead of an array if `allowMultiple` is false (the default value).
+* `getFileForOpening()`: the `types` parameter is now _required_, no longer optional. To allow the user to pick files of any type, use `types: [".*"]`.
+
+**User Interface**
+* Canceling a dialog via the Esc key will not reject the `showModal()` promise; instead it will be resolved the string value `"reasonCanceled"`.
 
 ### Known Issues
 
@@ -44,12 +59,12 @@ This release marks the first time plugins have been available to the general pre
 
 * This build has a plugin manager! You can install new plugins from the online plugin listing by using **Plugins > Discover Plugins...**. You can manage your installed plugins (including those in development) by visiting **Plugins > Manage Plugins...**.
 
-    > **tip**
+    > **Tip**
     > We will provide information on submitting your plugin for submission to the XD plugin manager at a later date.
 
 * Whenever a plugin needs to work asynchronously, XD will now block user interaction with the document. This is visible as a small dialog with the wording "Plugin xyz is working".
 
-    > **info**
+    > **Info**
     > Known issue: this appears even while other dialogs from the plugin are visible, although it is always underneath them in the visible hierarchy. As such you may see these dialogs briefly while your own plugin dialogs are animating in or out.
 
 ### Breaking Changes

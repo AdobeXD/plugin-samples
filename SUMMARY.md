@@ -5,7 +5,6 @@
 * [Introduction](./README.md)
 * [Quick Start](./Guides/quick-start-guide/README.md)
 * [Debugging Plugins](./Guides/debugging-guide/readme.md)
-
 * [Plugin Structure](./reference/structure/index.md)
   * [Plugin Location and Name](./reference/structure/plugin-location-name.md)
   * [Folder Structure](./reference/structure/folder-structure.md)

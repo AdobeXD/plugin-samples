@@ -27,7 +27,7 @@ Token        | Result
 -------------|-----------------------
 `##`         | `<h2>`
 `###`        | `<h3>`
-`* `         | Bulleted list
+`*[space]`   | Bulleted list
 `----`       | `<hr class="small">`
 `---`        | `<hr />`
 `[...](href)`| `<p><a href="href">...</a></p>`
@@ -36,16 +36,56 @@ Token        | Result
 
 A simple "alert" can be used to display a message along with a **Close** button. You can customize the content of the title and message, but you cannot customize the button itself.
 
-![Example Alert](../assets/helper-alert.png)
+{% tabs alertmac="macOS", alertuwp="UWP" %}
+{% content "alertmac" %}
+![Example Alert on macOS](../assets/helper-alert.png)
+
+{% content "alertuwp" %}
+![Example Alert on Windows](assets/Example%20Alert%20on%20Windows.png)
+
+{% endtabs %}
 
 Parameter | Type       | Notes
 ----------|------------|---------------
 `title`   | `string`   | The title that appears in the dialog.
 `...msgs` | `string[]` | The text to render in the dialog.
 
+You can use multiple strings to create a simple "About" dialog. For example:
+
+```js
+return alert("About Dialog Variations",
+    "Dialog variations shows several different standard dialog templates, including:",
+    "* Simple Alerts",
+    "* Error Alerts",
+    "* Confirmation Dialogs",
+    "* Prompts",
+    "* ... along with some very basic markdown conversion to make building About dialogs even easier. See this list? It's a markdown list!",
+    " ",
+    "## More Information",
+    "----",
+    "For more information, please see [the github repo for this plugin](https://github.com/AdobeXD/Plugin-Samples/tree/master/ui-dialog-variations)."
+);
+```
+
+will result in the following dialog:
+
+{% tabs aboutmac="macOS", aboutuwp="UWP" %}
+{% content "aboutmac" %}
+![Example About Dialog on macOS](assets/Example%20About%20Dialog.png)
+
+{% content "aboutuwp" %}
+![Example About Dialog on UWP](assets/Example%20About%20Dialog%20on%20UWP.png)
+
+{% endtabs %}
+
 ## Error
 
 Renders an error "alert" (with a red heading). These are useful for rendering error messages. Just like regular alerts, you cannot customize the button itself.
+
+{% tabs errormac="macOS", erroruwp="UWP" %}
+![Example Error Alert](assets/Example%20Error%20Alert.png)
+
+{% endtabs %}
 
 Parameter | Type       | Notes
 ----------|------------|---------------
@@ -56,19 +96,37 @@ Parameter | Type       | Notes
 
 Confirmation dialogs display a message and _two_ buttons. The user is free to pick which of the buttons they wish to invoke.
 
+{% tabs confirmmac="macOS", confirmuwp="UWP" %}
+
+{% content "confirmmac" %}
+![Example Confirmation Dialog](assets/Example%20Confirmation%20Dialog.png)
+
+{% content "confirmuwp" %}
+
+{% endtabs %}
+
 Parameter | Type       | Notes
 ----------|------------|---------------
 `title`   | `string`   | The title that appears in the dialog.
 `msg`     | `string`   | The message to display
 `buttons` | `string[]` | An array of buttons (use only two). The first is the cancel or safe dismissal option, whereas the second is the trigger option (invoked with **ENTER**)
 
-> **danger**
+> **Danger**
 >
 > Do not use confirmation dialogs for destructive actions.
 
 ## Warning
 
 Warning dialogs display a message and _two_ buttons, one of which is destructive. Pressing **ENTER** in this case will _not_ invoke the destructive action. Otherwise it is the same as a confirmation dialog.
+
+{% tabs warningmac="macOS", warninguwp="UWP" %}
+
+{% content "warningmac" %}
+![Example Warning Dialog](assets/Example%20Warning%20Dialog.png)
+
+{% content "warninguwp" %}
+
+{% endtabs %}
 
 Parameter | Type       | Notes
 ----------|------------|---------------
@@ -79,6 +137,15 @@ Parameter | Type       | Notes
 ## Prompt
 
 Prompts display a single line text field in addition to a message and two buttons. Neither button should be destructive as **ENTER** will trigger the second button supplied. The prompt is returned as a `value` property in the resolved promise.
+
+{% tabs promptmac="macOS", promptuwp="UWP" %}
+
+{% content "promptmac" %}
+![Example Prompt Dialog](assets/Example%20Prompt%20Dialog.png)
+
+{% content "promptuwp" %}
+
+{% endtabs %}
 
 Parameter | Type       | Notes
 ----------|------------|---------------
