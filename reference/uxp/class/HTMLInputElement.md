@@ -9,89 +9,94 @@
 
 * [HTMLInputElement](#htmlinputelement) ⇐ [`HTMLElement`](#htmlelement)
     * [new HTMLInputElement(document, nodeName, namespaceURI)](#new-htmlinputelement-new)
-    * [.value](#htmlinputelement-value) : `\*`
-    * [.checked](#htmlinputelement-checked) : `boolean`
-    * [.indeterminate](#htmlinputelement-indeterminate) : `boolean`
-    * [.name](#htmlinputelement-name) : `string`
-    * [.type](#htmlinputelement-type) : `string`
-    * [.placeholder](#htmlinputelement-placeholder) : `string`
-    * [.readOnly](#htmlinputelement-readonly) : `boolean`
-    * [.min](#htmlinputelement-min) : `string`
-    * [.max](#htmlinputelement-max) : `string`
-    * [.step](#htmlinputelement-step) : `string`
-    * [.uxpVariant](#htmlinputelement-uxpvariant) : `string`
-    * [.uxpQuiet](#htmlinputelement-uxpquiet) : `string`
-    * [.nodeName](#element-nodename) : `string`
-    * [.localName](#element-localname) : `string`
-    * [.tagName](#element-tagname) : `string`
-    * [.nodeType](#element-nodetype) : `number`
-    * [.namespaceURI](#element-namespaceuri) : `string`
-    * [.id](#element-id) : `string`
-    * [.className](#element-classname) : `string`
-    * [.attributes](#element-attributes) : [`NamedNodeMap`](#namednodemap)
-    * [.style](#element-style) : `Style`
-    * [.clientLeft](#element-clientleft) : `number`
-    * [.clientTop](#element-clienttop) : `number`
-    * [.clientWidth](#element-clientwidth) : `number`
-    * [.clientHeight](#element-clientheight) : `number`
-    * [.offsetLeft](#element-offsetleft) : `number`
-    * [.offsetTop](#element-offsettop) : `number`
-    * [.offsetWidth](#element-offsetwidth) : `number`
-    * [.offsetHeight](#element-offsetheight) : `number`
-    * [.scrollLeft](#element-scrollleft) : `number`
-    * [.scrollTop](#element-scrolltop) : `number`
-    * [.scrollWidth](#element-scrollwidth) : `number`
-    * [.scrollHeight](#element-scrollheight) : `number`
-    * [.disabled](#element-disabled) : `boolean`
-    * [.innerHTML](#element-innerhtml) : `string`
-    * [.outerHTML](#element-outerhtml) : `string`
-    * [.contentEditable](#node-contenteditable)
-    * [.isConnected](#node-isconnected) : `boolean`
-    * [.parentNode](#node-parentnode) : [`Node`](#node)
-    * [.firstChild](#node-firstchild) : [`Node`](#node)
-    * [.lastChild](#node-lastchild) : [`Node`](#node)
-    * [.previousSibling](#node-previoussibling) : [`Node`](#node)
-    * [.nextSibling](#node-nextsibling) : [`Node`](#node)
-    * [.firstElementChild](#node-firstelementchild) : [`Node`](#node)
-    * [.lastElementChild](#node-lastelementchild) : [`Node`](#node)
-    * [.previousElementSibling](#node-previouselementsibling) : [`Node`](#node)
-    * [.nextElementSibling](#node-nextelementsibling) : [`Node`](#node)
-    * [.textContent](#node-textcontent) : `string`
-    * [.childNodes](#node-childnodes) : [`NodeList`](#nodelist)
-    * [.ownerDocument](#node-ownerdocument)
-    * [.offsetParent](#node-offsetparent)
-    * [.scrollIntoView()](#element-scrollintoview)
-    * [.scrollIntoViewIfNeeded()](#element-scrollintoviewifneeded)
-    * [.focus()](#element-focus)
-    * [.blur()](#element-blur)
-    * [.getAttribute(name)](#element-getattribute) ⇒ `string`
-    * [.setAttribute(name, value)](#element-setattribute)
-    * [.removeAttribute(name)](#element-removeattribute)
-    * [.hasAttribute(name)](#element-hasattribute) ⇒ `boolean`
-    * [.getAttributeNode(name)](#element-getattributenode) ⇒ `\*`
-    * [.setAttributeNode(newAttr)](#element-setattributenode)
-    * [.removeAttributeNode(oldAttr)](#element-removeattributenode)
-    * [.getElementsByClassName(name)](#element-getelementsbyclassname) ⇒ [`NodeList`](#nodelist)
-    * [.getElementsByTagName(name)](#element-getelementsbytagname) ⇒ [`NodeList`](#nodelist)
-    * [.querySelector(selector)](#element-queryselector) ⇒ [`Element`](#element)
-    * [.querySelectorAll(selector)](#element-queryselectorall) ⇒ [`NodeList`](#nodelist)
-    * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `\*`
-    * [.insertAdjacentHTML(position, value)](#element-insertadjacenthtml)
-    * [.insertAdjacentElement(position, node)](#element-insertadjacentelement) ⇒ [`Node`](#node)
-    * [.insertAdjacentText(position, text)](#element-insertadjacenttext)
-    * [.hasChildNodes()](#node-haschildnodes) ⇒ `boolean`
-    * [.cloneNode(deep)](#node-clonenode) ⇒ [`Node`](#node)
-    * [.appendChild(child)](#node-appendchild) ⇒ [`Node`](#node)
-    * [.insertBefore(child, before)](#node-insertbefore) ⇒ [`Node`](#node)
-    * [.replaceChild(newChild, oldChild)](#node-replacechild) ⇒ [`Node`](#node)
-    * [.removeChild(child)](#node-removechild) ⇒ [`Node`](#node)
-    * [.remove()](#node-remove)
-    * [.before(...nodes)](#node-before)
-    * [.after(...nodes)](#node-after)
-    * [.replaceWith(...nodes)](#node-replacewith)
-    * [.addEventListener(eventName, callback, [capture])](#EventTarget+addEventListener)
-    * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
-    * [.dispatchEvent(event)](#eventtarget-dispatchevent)
+    * _instance_
+        * [.value](#htmlinputelement-value) : `\*`
+        * [.defaultValue](#htmlinputelement-defaultvalue) : `string`
+        * [.checked](#htmlinputelement-checked) : `boolean`
+        * [.indeterminate](#htmlinputelement-indeterminate) : `boolean`
+        * [.autofocus](#htmlinputelement-autofocus) : `boolean`
+        * [.name](#htmlinputelement-name) : `string`
+        * [.type](#htmlinputelement-type) : `string`
+        * [.placeholder](#htmlinputelement-placeholder) : `string`
+        * [.readOnly](#htmlinputelement-readonly) : `boolean`
+        * [.min](#htmlinputelement-min) : `string`
+        * [.max](#htmlinputelement-max) : `string`
+        * [.step](#htmlinputelement-step) : `string`
+        * [.uxpVariant](#htmlinputelement-uxpvariant) : `string`
+        * [.uxpQuiet](#htmlinputelement-uxpquiet) : `string`
+        * [.nodeName](#element-nodename) : `string`
+        * [.localName](#element-localname) : `string`
+        * [.tagName](#element-tagname) : `string`
+        * [.nodeType](#element-nodetype) : `number`
+        * [.namespaceURI](#element-namespaceuri) : `string`
+        * [.id](#element-id) : `string`
+        * [.className](#element-classname) : `string`
+        * [.attributes](#element-attributes) : [`NamedNodeMap`](#namednodemap)
+        * [.style](#element-style) : `Style`
+        * [.clientLeft](#element-clientleft) : `number`
+        * [.clientTop](#element-clienttop) : `number`
+        * [.clientWidth](#element-clientwidth) : `number`
+        * [.clientHeight](#element-clientheight) : `number`
+        * [.offsetLeft](#element-offsetleft) : `number`
+        * [.offsetTop](#element-offsettop) : `number`
+        * [.offsetWidth](#element-offsetwidth) : `number`
+        * [.offsetHeight](#element-offsetheight) : `number`
+        * [.scrollLeft](#element-scrollleft) : `number`
+        * [.scrollTop](#element-scrolltop) : `number`
+        * [.scrollWidth](#element-scrollwidth) : `number`
+        * [.scrollHeight](#element-scrollheight) : `number`
+        * [.disabled](#element-disabled) : `boolean`
+        * [.innerHTML](#element-innerhtml) : `string`
+        * [.outerHTML](#element-outerhtml) : `string`
+        * [.contentEditable](#node-contenteditable)
+        * [.isConnected](#node-isconnected) : `boolean`
+        * [.parentNode](#node-parentnode) : [`Node`](#node)
+        * [.firstChild](#node-firstchild) : [`Node`](#node)
+        * [.lastChild](#node-lastchild) : [`Node`](#node)
+        * [.previousSibling](#node-previoussibling) : [`Node`](#node)
+        * [.nextSibling](#node-nextsibling) : [`Node`](#node)
+        * [.firstElementChild](#node-firstelementchild) : [`Node`](#node)
+        * [.lastElementChild](#node-lastelementchild) : [`Node`](#node)
+        * [.previousElementSibling](#node-previouselementsibling) : [`Node`](#node)
+        * [.nextElementSibling](#node-nextelementsibling) : [`Node`](#node)
+        * [.textContent](#node-textcontent) : `string`
+        * [.childNodes](#node-childnodes) : [`NodeList`](#nodelist)
+        * [.ownerDocument](#node-ownerdocument)
+        * [.offsetParent](#node-offsetparent)
+        * [.scrollIntoView()](#element-scrollintoview)
+        * [.scrollIntoViewIfNeeded()](#element-scrollintoviewifneeded)
+        * [.focus()](#element-focus)
+        * [.blur()](#element-blur)
+        * [.getAttribute(name)](#element-getattribute) ⇒ `string`
+        * [.setAttribute(name, value)](#element-setattribute)
+        * [.removeAttribute(name)](#element-removeattribute)
+        * [.hasAttribute(name)](#element-hasattribute) ⇒ `boolean`
+        * [.getAttributeNode(name)](#element-getattributenode) ⇒ `\*`
+        * [.setAttributeNode(newAttr)](#element-setattributenode)
+        * [.removeAttributeNode(oldAttr)](#element-removeattributenode)
+        * [.getElementsByClassName(name)](#element-getelementsbyclassname) ⇒ [`NodeList`](#nodelist)
+        * [.getElementsByTagName(name)](#element-getelementsbytagname) ⇒ [`NodeList`](#nodelist)
+        * [.querySelector(selector)](#element-queryselector) ⇒ [`Element`](#element)
+        * [.querySelectorAll(selector)](#element-queryselectorall) ⇒ [`NodeList`](#nodelist)
+        * [.getBoundingClientRect()](#element-getboundingclientrect) ⇒ `\*`
+        * [.insertAdjacentHTML(position, value)](#element-insertadjacenthtml)
+        * [.insertAdjacentElement(position, node)](#element-insertadjacentelement) ⇒ [`Node`](#node)
+        * [.insertAdjacentText(position, text)](#element-insertadjacenttext)
+        * [.hasChildNodes()](#node-haschildnodes) ⇒ `boolean`
+        * [.cloneNode(deep)](#node-clonenode) ⇒ [`Node`](#node)
+        * [.appendChild(child)](#node-appendchild) ⇒ [`Node`](#node)
+        * [.insertBefore(child, before)](#node-insertbefore) ⇒ [`Node`](#node)
+        * [.replaceChild(newChild, oldChild)](#node-replacechild) ⇒ [`Node`](#node)
+        * [.removeChild(child)](#node-removechild) ⇒ [`Node`](#node)
+        * [.remove()](#node-remove)
+        * [.before(...nodes)](#node-before)
+        * [.after(...nodes)](#node-after)
+        * [.replaceWith(...nodes)](#node-replacewith)
+        * [.addEventListener(eventName, callback, [capture])](#EventTarget+addEventListener)
+        * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
+        * [.dispatchEvent(event)](#eventtarget-dispatchevent)
+    * _static_
+        * [.HTMLTextAreaElement#defaultValue](#htmlinputelement-htmltextareaelement-defaultvalue) : `string`
 
 
 <a name="new-htmlinputelement-new" id="new-htmlinputelement-new"></a>
@@ -114,6 +119,13 @@ Returns the value of the input element.
 
 **Kind**: instance property of [`HTMLInputElement`](#htmlinputelement)  
 
+<a name="htmlinputelement-defaultvalue" id="htmlinputelement-defaultvalue"></a>
+
+### htmlInputElement.defaultValue : `string`
+The defaultValue for the input element (if applicable to the input element's type)
+
+**Kind**: instance property of [`HTMLInputElement`](#htmlinputelement)  
+
 <a name="htmlinputelement-checked" id="htmlinputelement-checked"></a>
 
 ### htmlInputElement.checked : `boolean`
@@ -125,6 +137,13 @@ Indicates if the checkbox is checked.
 
 ### htmlInputElement.indeterminate : `boolean`
 Indicates if the element is indeterminate
+
+**Kind**: instance property of [`HTMLInputElement`](#htmlinputelement)  
+
+<a name="htmlinputelement-autofocus" id="htmlinputelement-autofocus"></a>
+
+### htmlInputElement.autofocus : `boolean`
+Indicates if the element will focus automatically when it is loaded in a form.
 
 **Kind**: instance property of [`HTMLInputElement`](#htmlinputelement)  
 
@@ -711,3 +730,10 @@ Determines if a control is rendered in "quiet" mode
 | --- | --- |
 | event | `\*` | 
 
+
+<a name="htmlinputelement-htmltextareaelement-defaultvalue" id="htmlinputelement-htmltextareaelement-defaultvalue"></a>
+
+### HTMLInputElement.HTMLTextAreaElement#defaultValue : `string`
+The defaultValue for the textarea element
+
+**Kind**: static property of [`HTMLInputElement`](#htmlinputelement)  

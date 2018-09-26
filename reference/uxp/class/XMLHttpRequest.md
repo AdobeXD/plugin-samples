@@ -208,6 +208,7 @@ The search key value is case-insensitive
 
 ### xmlHttpRequest.open(method, url, [async], [user], [password])
 Initializes a request. This method is to be used from JavaScript code; to initialize a request from native code, use openRequest() instead.
+Self-signed certificates are not currently supported for HTTPS connections.
 
 **Kind**: instance method of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
 

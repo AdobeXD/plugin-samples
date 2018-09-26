@@ -11,6 +11,8 @@
     * [new HTMLDialogElement(document, nodeName, namespaceURI)](#new-htmldialogelement-new)
     * [.open](#htmldialogelement-open) : `boolean`
     * [.returnValue](#htmldialogelement-returnvalue) : `\*`
+    * [.REJECTION_REASON_NOT_ALLOWED](#htmldialogelement-rejection-reason-not-allowed)
+    * [.REJECTION_REASON_DETACHED](#htmldialogelement-rejection-reason-detached)
     * [.nodeName](#element-nodename) : `string`
     * [.localName](#element-localname) : `string`
     * [.tagName](#element-tagname) : `string`
@@ -108,6 +110,22 @@ Creates an instance of HTMLDialogElement.
 <a name="htmldialogelement-returnvalue" id="htmldialogelement-returnvalue"></a>
 
 ### htmlDialogElement.returnValue : `\*`
+**Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
+
+<a name="htmldialogelement-rejection-reason-not-allowed" id="htmldialogelement-rejection-reason-not-allowed"></a>
+
+### htmlDialogElement.REJECTION_REASON_NOT_ALLOWED
+When the promise returned from openDialog() is rejected, error.code can be equal to this value,
+which means that the application does not allow showing dialogs (e.g. only one dialog is allowed).
+
+**Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
+
+<a name="htmldialogelement-rejection-reason-detached" id="htmldialogelement-rejection-reason-detached"></a>
+
+### htmlDialogElement.REJECTION_REASON_DETACHED
+When the promise returned from openDialog() is rejected, error.code can be equal to this value,
+which means that the node has been detached from DOM tree.
+
 **Kind**: instance property of [`HTMLDialogElement`](#htmldialogelement)  
 
 <a name="element-nodename" id="element-nodename"></a>
@@ -342,7 +360,13 @@ Creates an instance of HTMLDialogElement.
 Show the modal dialog.
 
 **Kind**: instance method of [`HTMLDialogElement`](#htmldialogelement)  
-**Returns**: `Promise` - A promise that resolves when the dialog is closed (**NSC**)  
+**Returns**: `Promise` - A promise that resolves when the dialog is closed (**NSC**)
+                   after calling the close() method or clicking the "submit" button.
+                   The promise will be resolved with returnValue as a parameter.
+                   The promise can be rejected if the dialog was closed for other reasons
+                   e.g. the user hit escape or closed the window, or if the application
+                   does not allow showing the dialog. The error parameter will give more details.
+                   error.code will be one of the values from HTMLDialogElement.rejectionReasons.  
 
 <a name="htmldialogelement-close" id="htmldialogelement-close"></a>
 

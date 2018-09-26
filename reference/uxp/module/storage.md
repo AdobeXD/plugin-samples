@@ -13,6 +13,7 @@
         * [.provider](#module-storage-entry-provider) : `FileSystemProvider`
         * [.url](#module-storage-entry-url) : `string`
         * [.nativePath](#module-storage-entry-nativepath) : `string`
+        * [.toString()](#module-storage-entry-tostring)
         * [.copyTo(folder, options)](#module-storage-entry-copyto)
         * [.moveTo(folder, options)](#module-storage-entry-moveto)
         * [.delete()](#module-storage-entry-delete)
@@ -36,7 +37,7 @@
         * _instance_
             * [.isFileSystemProvider](#module-storage-filesystemprovider-isfilesystemprovider)
             * [.supportedDomains](#module-storage-filesystemprovider-supporteddomains)
-            * [.getFileForOpening(options)](#module-storage-filesystemprovider-getfileforopening) ⇒ `Array.<File>`
+            * [.getFileForOpening(options)](#module-storage-filesystemprovider-getfileforopening) ⇒ `File` \| `Array.<File>`
             * [.getFileForSaving(options)](#module-storage-filesystemprovider-getfileforsaving) ⇒ `File`
             * [.getFolder(options)](#module-storage-filesystemprovider-getfolder) ⇒ `Folder`
             * [.getTemporaryFolder()](#module-storage-filesystemprovider-gettemporaryfolder)
@@ -51,6 +52,8 @@
             * [.isFolder](#module-storage-folder-isfolder)
             * [.getEntries()](#module-storage-folder-getentries) ⇒ `Array.<Entry>`
             * [.createEntry(name, options)](#module-storage-folder-createentry) ⇒ `File` \| `Folder`
+            * [.createFile(name, options)](#module-storage-folder-createfile) ⇒ `File`
+            * [.createFolder(name)](#module-storage-folder-createfolder) ⇒ `Folder`
             * [.getEntry(filePath)](#module-storage-folder-getentry) ⇒ `File` \| `Folder`
             * [.renameEntry(entry, newName, options)](#module-storage-folder-renameentry)
         * _static_
@@ -116,6 +119,7 @@ share.
     * [.provider](#module-storage-entry-provider) : `FileSystemProvider`
     * [.url](#module-storage-entry-url) : `string`
     * [.nativePath](#module-storage-entry-nativepath) : `string`
+    * [.toString()](#module-storage-entry-tostring)
     * [.copyTo(folder, options)](#module-storage-entry-copyto)
     * [.moveTo(folder, options)](#module-storage-entry-moveto)
     * [.delete()](#module-storage-entry-delete)
@@ -227,6 +231,13 @@ The platform native file-system path of this entry. Read-only
 ```js
 console.log(anEntry.nativePath);
 ```
+
+<a name="module-storage-entry-tostring" id="module-storage-entry-tostring"></a>
+
+#### entry.toString()
+returns the details of the given entry like name, type and native path in a readable string format.
+
+**Kind**: instance method of [`Entry`](#module-storage-entry)  
 
 <a name="module-storage-entry-copyto" id="module-storage-entry-copyto"></a>
 
@@ -441,7 +452,7 @@ to be a text file using UTF8 encoding.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | options | `any` |  |  |
-| [options.format] | `Symbol` | <code>formats.utf8</code> | The format of the file; see [utf8](utf8) and [blob](blob). |
+| [options.format] | `Symbol` | <code>formats.utf8</code> | The format of the file; see [utf8](utf8) and [binary](binary). |
 
 **Example**  
 ```js
@@ -449,7 +460,7 @@ const text = await myNovel.read();
 ```
 **Example**  
 ```js
-const data = await myNovel.read({format: formats.blob});
+const data = await myNovel.read({format: formats.binary});
 ```
 
 <a name="module-storage-file-write" id="module-storage-file-write"></a>
@@ -469,7 +480,7 @@ is controlled via the `format` option, and defaults to UTF8.
 | --- | --- | --- | --- |
 | data | `string` \| `ArrayBuffer` |  | the data to write to the file |
 | options | `any` |  |  |
-| [options.format] | `Symbol` | <code>formats.utf8</code> | the format of the file; see [utf8](utf8) and [blob](blob) |
+| [options.format] | `Symbol` | <code>formats.utf8</code> | the format of the file; see [utf8](utf8) and [binary](binary) |
 | [options.append] | `boolean` | <code>false</code> | if `true`, the data is written to the end of the file |
 
 **Example**  
@@ -480,7 +491,7 @@ await myNovel.write("Cliches and tropes aside, it really was.", {append: true});
 **Example**  
 ```js
 const data = new ArrayBuffer();
-await aDataFile.write(data, {format: formats.blob});
+await aDataFile.write(data, {format: formats.binary});
 ```
 
 <a name="module-storage-file-isfile" id="module-storage-file-isfile"></a>
@@ -511,7 +522,7 @@ need to provide your own implementation in order to use it effectively.
     * _instance_
         * [.isFileSystemProvider](#module-storage-filesystemprovider-isfilesystemprovider)
         * [.supportedDomains](#module-storage-filesystemprovider-supporteddomains)
-        * [.getFileForOpening(options)](#module-storage-filesystemprovider-getfileforopening) ⇒ `Array.<File>`
+        * [.getFileForOpening(options)](#module-storage-filesystemprovider-getfileforopening) ⇒ `File` \| `Array.<File>`
         * [.getFileForSaving(options)](#module-storage-filesystemprovider-getfileforsaving) ⇒ `File`
         * [.getFolder(options)](#module-storage-filesystemprovider-getfolder) ⇒ `Folder`
         * [.getTemporaryFolder()](#module-storage-filesystemprovider-gettemporaryfolder)
@@ -547,25 +558,25 @@ if (fs.supportedDomains.contains(domains.userDocuments)) {
 
 <a name="module-storage-filesystemprovider-getfileforopening" id="module-storage-filesystemprovider-getfileforopening"></a>
 
-#### fileSystemProvider.getFileForOpening(options) ⇒ `Array.<File>`
+#### fileSystemProvider.getFileForOpening(options) ⇒ `File` \| `Array.<File>`
 Gets a file (or files) from the file system provider for the purpose of
 opening them. Files are read-only.
 
 Multiple files can be returned if the `allowMultiple` option` is `true`.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)  
-**Returns**: `Array.<File>` - returns the selected files, or empty if no file were selected.  
+**Returns**: `File` \| `Array.<File>` - based on allowMultiple is true or false, or empty if no file were selected.  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | options | `\*` |  |  |
-| [options.initialDomain] | `Symbol` | <code>null</code> | the preferred initial location of the file picker. If not defined, the most recently used domain from a file picker is used instead. |
-| [options.types] | `Array.<string>` | _(required)_ | the allowed file extensions, with no "." prefix; use `["*"]` to allow any file to be picked |
+| [options.initialDomain] | `Symbol` |  | the preferred initial location of the file picker. If not defined, the most recently used domain from a file picker is used instead. |
+| [options.types] | `Array.<string>` | <code>[&#x27;.*&#x27;]</code> | array of file types that the file open picker displays. |
 | [options.allowMultiple] | `boolean` | <code>false</code> | if true, multiple files can be returned (as an array) |
 
 **Example**  
 ```js
-const [file] = await fs.getFileForOpening({initialDomain = domains.userDocuments});
+const file = await fs.getFileForOpening({initialDomain = domains.userDocuments});
 if (!file) {
     // no file selected
     return;
@@ -600,10 +611,11 @@ should not be returned.
 | --- | --- | --- |
 | options | `\*` |  |
 | [options.initialDomain] | `Symbol` | the preferred initial location of the file picker. If not defined, the most recently used domain from a file picker is used instead. |
+| [options.types] | `Array.<string>` | array of valid file types that the user can choose to assign to a file. |
 
 **Example**  
 ```js
-const [file] = await fs.getFileForSaving({initialDomain = domains.userDocuments});
+const [file] = await fs.getFileForSaving({ types = [ "txt" ]});
 if (!file) {
     // no file selected, or the user didn't want to overwrite one they did select
     return;
@@ -708,6 +720,8 @@ but will get it by calling [FileSystemProvider#getTemporaryFolder](FileSystemPro
         * [.isFolder](#module-storage-folder-isfolder)
         * [.getEntries()](#module-storage-folder-getentries) ⇒ `Array.<Entry>`
         * [.createEntry(name, options)](#module-storage-folder-createentry) ⇒ `File` \| `Folder`
+        * [.createFile(name, options)](#module-storage-folder-createfile) ⇒ `File`
+        * [.createFolder(name)](#module-storage-folder-createfolder) ⇒ `Folder`
         * [.getEntry(filePath)](#module-storage-folder-getentry) ⇒ `File` \| `Folder`
         * [.renameEntry(entry, newName, options)](#module-storage-folder-renameentry)
     * _static_
@@ -746,8 +760,8 @@ Creates an entry within this folder and returns the appropriate instance.
 | --- | --- | --- | --- |
 | name | `string` |  | the name of the entry to create |
 | options | `any` |  |  |
-| [options.type] | `Symbol` | <code>types.file</code> | Indicates which kind of entry to create. Pass [folder](folder) to create a new folder. |
-| [options.overwite] | `boolean` | <code>false</code> | If `true`, the create attempt can overwrite an existing file |
+| [options.type] | `Symbol` | <code>types.file</code> | Indicates which kind of entry to create. Pass [folder](folder) to create a new folder. Note that if the type is file then this method just create a file entry object and not the actual file on the disk. The file actually gets created when you call for eg: write method on the file entry object. |
+| [options.overwrite] | `boolean` | <code>false</code> | If `true`, the create attempt can overwrite an existing file |
 
 **Example**  
 ```js
@@ -756,6 +770,44 @@ const myNovel = await aFolder.createEntry("mynovel.txt");
 **Example**  
 ```js
 const catImageCollection = await aFolder.createEntry("cats", {type = types.folder});
+```
+
+<a name="module-storage-folder-createfile" id="module-storage-folder-createfile"></a>
+
+#### folder.createFile(name, options) ⇒ `File`
+Creates a File Entry object within this folder and returns the appropriate instance.
+Note that this method just create a file entry object and not the actual file on the disk.
+The file actually gets created when you call for eg: write method on the file entry object.
+
+**Kind**: instance method of [`Folder`](#module-storage-folder)  
+**Returns**: `File` - the created file entry  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| name | `string` |  | the name of the file to create. |
+| options | `any` |  |  |
+| [options.overwrite] | `boolean` | <code>false</code> | If `true`, the create attempt can overwrite an existing file |
+
+**Example**  
+```js
+const myNovelTxtFile = await aFolder.createFile("mynovel.txt");
+```
+
+<a name="module-storage-folder-createfolder" id="module-storage-folder-createfolder"></a>
+
+#### folder.createFolder(name) ⇒ `Folder`
+Creates a Folder within this folder and returns the appropriate instance.
+
+**Kind**: instance method of [`Folder`](#module-storage-folder)  
+**Returns**: `Folder` - the created folder entry object  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| name | `string` | the name of the folder to create. |
+
+**Example**  
+```js
+const myCollectionsFolder = await aFolder.createFolder("collections");
 ```
 
 <a name="module-storage-folder-getentry" id="module-storage-folder-getentry"></a>
