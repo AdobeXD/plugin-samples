@@ -5,7 +5,6 @@
 - Developer/Side-loading Specific
   - Plugin menus and handlers may not be in-sync across documents during development (XD-50283)
     - If someone modifies a plugin's files on disk while XD is running, and then opens more windows in XD, any windows that were open before reflect the old version of the plugin while windows that were opened later reflect the new version of the plugin. The menu bar will always reflect the old version of the plugin regardless of which window is current.
-- When launching XD, plugin data that is orphaned (that is, a corresponding plugin isn't installed) will be deleted. This could cause unexpected loss of preferences or data. If you have any important data in a plugin data folder, you should make a backup before uninstalling plugins.
 
 ## Export Renditions
 

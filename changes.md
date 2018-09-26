@@ -1,6 +1,6 @@
 # Change Log.
 
-## Focus Group Build #5: The Breaking Changes Update
+## General Prerelease 13.0.11: The Breaking Changes Update
 
 This release has UI polish and other finishing touches. It also comes with several breaking changes, as it was felt it to be better to break things _now_ rather than after the API has shipped to the whole world.
 
@@ -50,7 +50,7 @@ This release has UI polish and other finishing touches. It also comes with sever
 
 **User Interface**
 * Canceling a dialog via the Esc key will not reject the `showModal()` promise; instead it will be resolved the string value `"reasonCanceled"`.
-* When rendering dialogs, the suggested pattern now adds a <hr/> after your <h1> to draw the separator. If you don't add an <hr/>, there will be no divider between your heading and the content.
+* When rendering dialogs, the suggested pattern now adds a `<hr/>` after your `<h1>` to draw the separator. If you don't add an `<hr/>`, there will be no divider between your heading and the content.
 
 
 ### Fixes
@@ -62,6 +62,7 @@ This release has UI polish and other finishing touches. It also comes with sever
 - On UWP, showing multiple dialogs in sequence may result in a crash.
 - Tab order is not working correctly on macOS.
 - Secure Websockets are not yet supported.
+- When launching XD, plugin data that is orphaned (that is, a corresponding plugin isn't installed) will be deleted. This could cause unexpected loss of preferences or data. If you have any important data in a plugin data folder, you should make a backup before uninstalling plugins.
 
 ### Known Issues
 
