@@ -9,11 +9,8 @@
 
 ## Export Renditions
 
-- On Windows 10, exporting to a file or folder entry picked from a file picker will fail. You can work around this issue by writing those files first to a temporary folder or to the plugin's data folder. Then you can move them to the desired location.
+- On Windows 10, exporting a rendition may cause XD to crash. This will be fixed in the next drop.
 
-## Plugin Management
-
-- When upgrading or downgrading plugins, the plugin folder is not recursively deleted. This will cause an error when attempting the installation. (XD-59699)
 
 ## Scenegraph
 
@@ -25,26 +22,22 @@
 
 ## User Interface
 
-- Single-line text fields are limited to 150 characters
 - Checkboxes may fail to render correctly if in a scrollable container. To work around this issue, make sure the containing element has a background color. (`transparent` does not count; macOS only.)
-- Images within dialogs may not render until the dialog has stopped animating (macOS only).
 - Dialogs are neither movable nor resizable.
-- Dialogs on UWP may not expand or shrink appropriately to fit the content. This will be fixed in a future release.
 - It is not possible to show multiple dialogs at once, *except* for file and folder pickers.
-- On UWP, showing multiple dialogs in sequence may result in a crash.
 - It is not possible to trigger the emoji selector in a text field on macOS.
 - It is not possible to intercept the **ESC** gesture when dismissing a dialog. Dialogs are always dismissible using **ESC**.
 - SVG images are not supported in the UI.
 - When tabbing in a scroll view, the scroll view is not automatically scrolled to ensure the target control is in view (macOS Only).
 - When **TAB**ing in Windows 10, the focus border may appear incorrectly on some elements.
 - Inline layout is not supported. Inline elements will render as `block` elements instead.
-- Tab order is not working correctly on macOS.
+- On Windows 10, the tab order in a dialog's footer may be reversed.
 
 ### HTML Elements
 
 - It is not currently possible to set a checkbox to `checked` without also passing a value to the attribute. This means `<input type="checkbox" checked/>` will fail to render a checked checkbox. Instead you must use `<input type="checkbox" checked="true" />`
 - Interactive Widgets do not support `Pointer%` events
-- `keypress` and `keyup` are not currently supported.
+- `keypress` and `keyup` are not currently supported on macOS.
 - `<option>` tags *must* have a `value` attribute, or referencing the `select`'s `value` property will return `undefined`.
 - `<select value="…"/>` does not show the value as selected. Instead, get a reference to the element and call `setAttribute("value", …)`.
 - In React, checkboxes do not trigger `change` events. You can use a `ref` instead to assign an event handler. `<input type="checkbox" ref={el && el.addEventListener("change", e => /*…*/)} />`
@@ -84,7 +77,6 @@
 ### DOM
 
 - When a dialog is closed, it is not removed from the DOM. This is per spec. If you want the dialog to be removed from the DOM, you must call `HTMLDialogElement#remove` explicitly.
-- `getComputedStyle` will not return quite what you expect. It will return the internal representation instead.
 - When applying HTML using `innerHTML` and friends, inline styles are ignored. You can, however, supply `<style>` tags and use `class` attributes to assign styles.
 - When applying HTML using `innerHTML`, event handlers and scripts are not parsed. This is by design.
 
@@ -92,7 +84,6 @@
 
 - On macOS, it is not possible to use self-signed certificates with secure Websockets.
 - Websockets do not support extensions.
-- Secure Websockets are not yet supported. This will be addressed in a future release.
 - XHR does not support cookies.
 - `responseURL` is not supported on XHR
 
