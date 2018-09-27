@@ -109,6 +109,7 @@
     * [Shadow](./reference/Shadow.md)
     * [Blur](./reference/Blur.md)
     * [selection](./reference/selection.md)
+    * [OS](./reference/uxp/class/OS.md)
     * [Storage APIs](./reference/uxp/storage-index.md)
       * [Using the File I/O APIs](./reference/uxp/using-file-apis.md)
       * [Storage module](./reference/uxp/module/storage.md)
