@@ -1,4 +1,4 @@
-# Change Log.
+# Change Log
 
 ## General Prerelease 13.0.11: The Breaking Changes Update
 
@@ -24,6 +24,13 @@ This release has UI polish and other finishing touches. It also comes with sever
 * Dialogs can be wider on Windows than previous builds.
 * On Windows it's now possible to show multiple dialogs in sequence, like on macOS. Be sure to wait for the first dialog's promise to resolve before showing a second dialog.
 * Text fields are no longer limited to 150 characters.
+- When upgrading or downgrading plugins, the plugin folder is now recursively deleted. This will no longer cause an error when attempting an installation. (XD-59699)
+- Images within dialogs now render while the dialog is animating (macOS only).
+- Dialogs on UWP now will expand or shrink appropriately to fit the content.
+- On UWP, showing multiple dialogs in sequence should no longer result in a crash.
+- Tab order is now working correctly on macOS.
+- Secure Websockets are now supported.
+- When launching XD, plugin data that is orphaned (that is, a corresponding plugin isn't installed) will no longer be deleted. In the past, This could cause unexpected loss of preferences or data.
 
 ### Breaking Changes
 
@@ -45,24 +52,13 @@ This release has UI polish and other finishing touches. It also comes with sever
 * `getFileForOpening()`: the `types` parameter is now _required_, no longer optional. To allow the user to pick files of any type, use `types: [".*"]`.
 
 **Network IO**
-* `openExternal` only supports `http` and `https` endpoints.
-* `XMLHttpRequest`, `fetch`, and `Websocket` supports only secure endpoints on macOS.
+* `openExternal()` only supports `http` and `https` endpoints.
+* `XMLHttpRequest`, `fetch()`, and `Websocket` supports only secure endpoints on macOS.
 
 **User Interface**
 * Canceling a dialog via the Esc key will not reject the `showModal()` promise; instead it will be resolved the string value `"reasonCanceled"`.
 * When rendering dialogs, the suggested pattern now adds a `<hr/>` after your `<h1>` to draw the separator. If you don't add an `<hr/>`, there will be no divider between your heading and the content.
 
-
-### Fixes
-
-- On Windows 10, exporting to a file or folder entry picked from a file picker will fail. You can work around this issue by writing those files first to a temporary folder or to the plugin's data folder. Then you can move them to the desired location.
-- When upgrading or downgrading plugins, the plugin folder is not recursively deleted. This will cause an error when attempting the installation. (XD-59699)
-- Images within dialogs may not render until the dialog has stopped animating (macOS only).
-- Dialogs on UWP may not expand or shrink appropriately to fit the content.
-- On UWP, showing multiple dialogs in sequence may result in a crash.
-- Tab order is not working correctly on macOS.
-- Secure Websockets are not yet supported.
-- When launching XD, plugin data that is orphaned (that is, a corresponding plugin isn't installed) will be deleted. This could cause unexpected loss of preferences or data. If you have any important data in a plugin data folder, you should make a backup before uninstalling plugins.
 
 ### Known Issues
 

@@ -9,6 +9,7 @@
 ## Export Renditions
 
 - On Windows 10, exporting a rendition may cause XD to crash. This will be fixed in the next drop.
+- On Windows 10, exporting to a file or folder entry picked from a file picker will fail. You can work around this issue by writing those files first to a temporary folder or to the plugin's data folder. Then you can move them to the desired location.
 
 
 ## Scenegraph
