@@ -1,25 +1,27 @@
-
 {
     "id": "kwak.margin",
     "name": "(SG) Margin Guides",
-
     "host": {
         "app": "XD",
         "minVersion": "8.0"
     },
-
     "version": "0.0.1",
-
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "SG - Create Margin Guide",
-            "commandId": "createMarginGuide"
-        },
-        {
-            "type": "menu",
-            "label": "SG - Remove Margin Guide",
-            "commandId": "removeMarginGuide"
+            "label": "SG - Margin Guide",
+            "menuItems": [
+                {
+                    "type": "menu",
+                    "label": "SG - Create Margin Guide",
+                    "commandId": "createMarginGuide"
+                },
+                {
+                    "type": "menu",
+                    "label": "SG - Remove Margin Guide",
+                    "commandId": "removeMarginGuide"
+                }
+            ]
         }
     ]
 }
