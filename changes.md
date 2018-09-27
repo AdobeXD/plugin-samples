@@ -11,6 +11,8 @@ This release has UI polish and other finishing touches. It also comes with sever
 * Menus:
     * Menu items can have keyboard shortcuts
     * Menu items can be nested into plugin-specific submenus
+    * Menu item labels can be localized
+    * See [manifest.json documentation](./reference/structure/manifest.md) for details.
 
 ### Fixes and improvements
 
