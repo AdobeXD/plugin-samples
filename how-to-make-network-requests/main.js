@@ -1,4 +1,4 @@
-const { BitmapFill } = require("scenegraph");
+const { ImageFill } = require("scenegraph");
 
 function applyImage(selection) {
 
@@ -23,7 +23,7 @@ async function downloadImage(selection, jsonResponse) {
         const photoUrl = jsonResponse.message;
         const photoObj = await xhrBinary(photoUrl);
         const photoObjBase64 = await base64ArrayBuffer(photoObj);
-        applyBitmap(selection, photoObjBase64);
+        applyImagefill(selection, photoObjBase64);
 
     } catch (err) {
         console.log("error")
@@ -54,9 +54,8 @@ function xhrBinary(url) {
     });
 }
 
-function applyBitmap(selection, base64) {
-    const imageFill = BitmapFill.create();
-    imageFill.loadBase64Image(`data:image/jpeg;base64,${base64}`);
+function applyImagefill(selection, base64) {
+    const imageFill = new ImageFill(`data:image/jpeg;base64,${base64}`);
     selection.items[0].fill = imageFill;
 }
 

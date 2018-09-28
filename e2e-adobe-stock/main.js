@@ -20944,7 +20944,6 @@ module.exports =
                   shape.height = imageHeight;
 
                   const fill = new ImageFill(file);
-                  // bitmap.loadFromURL(file.nativePath);
                   shape.fill = fill;
                   selection.insertionParent.addChild(shape);
                   this.setState(state => ({
