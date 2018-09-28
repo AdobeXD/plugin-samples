@@ -49,7 +49,7 @@ Edit the manifest file for your plugin:
     "version": "0.0.1",
     "host": {
         "app": "XD",
-        "minVersion": "8.0"
+        "minVersion": "13.0.11.19"
     },
     "uiEntryPoints": [
         {
