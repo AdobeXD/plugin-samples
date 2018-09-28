@@ -52,7 +52,7 @@ Edit the manifest file for your plugin:
     "main": "main.js",
     "host": {
         "app": "XD",
-        "minVersion": "10.0.10.24"
+        "minVersion": "13.0.11.19"
     },
     "uiEntryPoints": [
         {
@@ -87,13 +87,14 @@ The remaining steps in this guide describe additional edits to the `main.js` fil
 const application = require("application");
 const fs = require("uxp").storage.localFileSystem;
 ```
-These modules are required to invoke the file picker and export renditions.
+These modules are required to invoke the folder picker and export renditions.
 
-### 3. Use `fs` to invoke the file picker
+### 3. Use `fs` to invoke the folder picker
 ```js
-const file = await fs.getFileForSaving();
+const folder = await fs.getFolder();
+const file = await folder.createFile("rendition.png");
 ```
-This will invoke the default file picker for user to choose the save directory and filename.
+This will invoke the default folder picker for user to choose the save directory and create a file named `rendition.png`.
 
 ### 4. Set the renditions object
 ```js
