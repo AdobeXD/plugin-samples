@@ -77,14 +77,14 @@ module.exports = {
 
 The remaining steps in this guide describe additional edits to the `main.js` file.
 
-### 2. Get references to the `BitmapFill` class from XD’s `scenegraph` module
+### 2. Get references to the `ImageFill` class from XD’s `scenegraph` module
 
-Get references to the `BitmapFill` module.
+Get references to the `ImageFill` module.
 
 ```javascript
-const { BitmapFill } = require("scenegraph");
+const { ImageFill } = require("scenegraph");
 ```
-`BitmapFill` class is imported and ready to be used to fill an object with bitmapfill.
+`ImageFill` class is imported and ready to be used to fill an object with ImageFill.
 
 ### 3. Write a helper function to make XHR requests
 ```js
@@ -177,16 +177,17 @@ function base64ArrayBuffer(arrayBuffer) {
 ```
 You can find many open-sourced codes that help you convert arraybuffer to base64 string. This particular one was cloned from [this public repository](https://gist.github.com/jonleighton/958841).
 
-### 5. Write a helper function that creates Bitmap and apply it in XD
+### 5. Write a helper function that creates ImageFill and apply it in XD
 ```js
-function applyBitmap(selection, base64) { // [1]
-    const imageFill = BitmapFill.create(); // [2]
-    imageFill.loadBase64Image(`data:image/jpeg;base64,${base64}`);
-    selection.items[0].fill = imageFill; // [3]
+
+function applyImagefill(selection, base64) { // [1]
+    const imageFill = new ImageFill(`data:image/jpeg;base64,${base64}`); // [2]
+    selection.items[0].fill = imageFill; // [2]
 }
+
 ```
 1. This helper function accepts the selection object and the base64 string as parameters
-2. Use the `BitmapFill` class to create the fill and use `loadBase64Image` method to convert `base64` to an image
+2. Use the `ImageFill` class to create the fill
 3. Apply the image to the user selected XD object
 
 ### 6. Write a helper function to download the image
@@ -197,7 +198,7 @@ async function downloadImage(selection, jsonResponse) { // [1]
         const photoUrl = jsonResponse.message; // [2]
         const photoObj = await xhrBinary(photoUrl); // [3]
         const photoObjBase64 = await base64ArrayBuffer(photoObj); // [4]
-        applyBitmap(selection, photoObjBase64); // [5]
+        applyImagefill(selection, photoObjBase64); // [5]
 
     } catch (err) {
         console.log("error")
@@ -209,7 +210,7 @@ async function downloadImage(selection, jsonResponse) { // [1]
 2. Parses the url from the json response
 3. Use `xhrBinary` to get the arraybuffer of the photo object
 4. Use `base64ArrayBuffer` to convert arraybuffer to base64 string
-5. Use `applyBitmap` to place the image in an XD artboard
+5. Use `applyImagefill` to place the image in an XD artboard
 
 ### 6. Write the main functions
 ```js
