@@ -36,11 +36,8 @@
 ### HTML Elements
 
 - It is not currently possible to set a checkbox to `checked` without also passing a value to the attribute. This means `<input type="checkbox" checked/>` will fail to render a checked checkbox. Instead you must use `<input type="checkbox" checked="true" />`
-- Interactive Widgets do not support `Pointer%` events
-- `keypress` and `keyup` are not currently supported on macOS.
 - `<option>` tags *must* have a `value` attribute, or referencing the `select`'s `value` property will return `undefined`.
 - `<select value="…"/>` does not show the value as selected. Instead, get a reference to the element and call `setAttribute("value", …)`.
-- In React, checkboxes do not trigger `change` events. You can use a `ref` instead to assign an event handler. `<input type="checkbox" ref={el && el.addEventListener("change", e => /*…*/)} />`
 - If you don’t specify a width for your `form`, block elements inside may not take up the entire width. Workaround: always set a width for your `form` elements.
 - `form`s only support `method="dialog"`. They do not submit to endpoints automatically.
 - It is not currently possible to specify the tab order.
@@ -79,6 +76,12 @@
 - When a dialog is closed, it is not removed from the DOM. This is per spec. If you want the dialog to be removed from the DOM, you must call `HTMLDialogElement#remove` explicitly.
 - When applying HTML using `innerHTML` and friends, inline styles are ignored. You can, however, supply `<style>` tags and use `class` attributes to assign styles.
 - When applying HTML using `innerHTML`, event handlers and scripts are not parsed. This is by design.
+
+### Events
+
+- Interactive Widgets do not support `Pointer%` events
+- `keypress` and `keyup` are not currently supported on macOS.
+- In React, checkboxes do not trigger `change` events. You can use a `ref` instead to assign an event handler. `<input type="checkbox" ref={el && el.addEventListener("change", e => /*…*/)} />`
 
 ## Network I/O
 
