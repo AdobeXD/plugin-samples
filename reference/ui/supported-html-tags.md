@@ -1,27 +1,46 @@
 # Supported HTML Tags
 
-* [div](#div)
-* [span](#span)
-* [h1](#heading)
-* [h2](#heading)
-* [h3](#heading)
-* [h4](#heading)
-* [h5](#heading)
-* [h6](#heading)
-* [b](#b)
-* [img](#img)
-* [button](#button)
-* [select](#select)
-* [option](#option)
-* [input type = text](#input-text)
-* [input type = range](#input-range)
-* [input type = image](#input-image)
-* [input type = number](#input-number)
-* [input type = checkbox](#input-checkbox)
-* [embed](#embed)
-* [frame](#frame)
-* [menu](#menu)
-* [menuitem](#menuitem)
+Category | Tag                  | Attribute                          | Layout | Notes and links
+---------|----------------------|------------------------------------|--------|-----------------
+Container||||
+         |[dialog](#dialog)     |                                    | N/A    | Modal Dialog
+         |[div](#div)           |                                    | Block  | Container element
+         |[footer](#footer)     |                                    | Block  | Footer containing pill buttons
+         |[form](#form)         |                                    | Block  | Form (containing widgets)
+Text     ||||
+         |[b](#b)               |                                    | Block  | Bold text
+         |[p](#p)               |                                    | Block  | Paragraph (equivalent to `div`)
+         |[h1](#heading)        |                                    | Block  | Style differences within dialog `form`
+         |[h2](#heading)        |                                    | Block  | "
+         |[h3](#heading)        |                                    | Block  | "
+         |[h4](#heading)        |                                    | Block  | "
+         |[h5](#heading)        |                                    | Block  | "
+         |[h6](#heading)        |                                    | Block  | "
+         |[p](#p)               |                                    | Block  | Paragraph (equivalent to `div`)
+         |[span](#span)         |                                    | Block  | Text element
+Images   ||||
+         |[img](#img)           |                                    | Block  | Display image
+Widgets  ||||
+         |[button](#button)     | `uxp-variant="cta"`                | Block  | Pill Button (Call To Action)
+         |[button](#button)     | `uxp-variant="primary"`            | Block  | Pill Button (Primary)
+         |[button](#button)     | `uxp-variant="secondary"`          | Block  | Pull Button (Secondary)
+         |[button](#button)     | `uxp-variant="warning"`            | Block  | Pull Button (Warning)
+         |[button](#button)     | `uxp-variant="action"`             | Block  | Action Button
+         |[button](#button)     | `uxp-selected="true"`              | Block  | Selected Action Button
+         |[button](#button)     | `uxp-quiet="true"`                 | Block  | Quiet variation (except call to action)
+         |[input](#input)       | [type="checkbox"](#input-checkbox) | Block  | Checkbox
+         |[input](#input)       | [type="image"](#input-image)       | Block  | Image Button
+         |[input](#input)       | [type="number"](#input-number)     | Block  | Text field
+         |[input](#input)       | [type="range"](#input-range)       | Block  | Slider
+         |[input](#input)       | [type="text"](#input-text)         | Block  | Text field
+         |[input](#input)       | `type="text"` `uxp-quiet="true"`   | Block  | Quiet text field
+         |[select](#select)     |                                    | Block  | Dropdown
+         |[option](#option)     |                                    | N/A    | Dropdown options
+         |[textarea](#textarea) |                                    | Block  | Standard text area
+         |[textarea](#textarea) | `uxp-quiet="true"`                 | Block  | Quiet text area
+Menus    ||||
+         |[menu](#menu)         |                                    | N/A    | Context menu
+         |[menuitem](#menuitem) |                                    | N/A    | Context menu items
 
 
 ## div
