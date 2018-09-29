@@ -185,3 +185,12 @@ body {
     width: 678px;
     height: 300px;
   }
+
+  /* privacy link */
+a .evidon-consent-link-text {
+    color: #B8B8B8;
+    font-family: "Roboto", Helvetica Neue, Helvetica, Arial, sans-serif;
+  }
+  a:hover .evidon-consent-link-text {
+    color: #EAEAEA;
+  }
