@@ -28,6 +28,7 @@ The above example is a typical modal dialog. Modal dialogs consist of:
 * Some body content
 * A footer (`<footer>`) with one or more buttons (`<button>`)
 
+
 The margins and padding that surround the structure are provided automatically. There is generally _no need_ to specify or override these margins in your own user interface, unless you want to do so.
 
 ## Building Modal Dialogs
