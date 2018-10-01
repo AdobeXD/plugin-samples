@@ -8,7 +8,7 @@
     "plugins": [
         "page-toc",
         "anchorjs",
-        "-collapse",
+        "collapse",
         "-pretty-term",
         "code",
         "dashing",
@@ -28,7 +28,10 @@
         "replace",
         "simpletabs",
         "-layout",
-        "components"
+        "components",
+        "-lightbox",
+        "github-tables",
+        "nestedmd"
     ],
     "pluginsConfig": {
         "components": {
