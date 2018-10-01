@@ -35,7 +35,7 @@ selection.items[0].fill = fill;
 
 | Param | Type | Description |
 | --- | --- | --- |
-| fileOrDataURI | <code>!uxp.storage.File|string</code> | File object pointing to an image file; or a string containing a `data:` URI with a base-64 encoded image. |
+| fileOrDataURI | `!uxp.storage.File` or `string` | File object pointing to an image file; or a string containing a `data:` URI with a base-64 encoded image. |
 
 
 * * *

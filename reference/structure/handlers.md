@@ -5,7 +5,7 @@ All plugins must have a `main.js` file, which serves as the entry point for exec
 
 ## Wiring your code to the manifest
 
-Your `main.js` file returns a map linking each `commandId` from the manifest to a _handler function_ in your code:
+Your `main.js` file exports a map linking each `commandId` from the manifest to a _handler function_ in your code:
 
 ```js
 function sayHello(selection, documentRoot) {

@@ -168,5 +168,3 @@
 ## Upcoming
 
 * [Plugin API Roadmap](./README.md)
-<!--* [XD CE API Roadmap](./README.md)-->
-* [XD Cloud Extensibility](./README.md)
