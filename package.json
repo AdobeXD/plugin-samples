@@ -14,7 +14,7 @@
     "book:publish:mirror": "gh-pages -d _book -o mirror"
   },
   "author": "",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "dependencies": {
     "eslint": "^4.19.1",
     "gitbook-plugin-addcssjs": "^1.0.2",
