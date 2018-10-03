@@ -5,18 +5,15 @@
 
 * [storage](#module-storage)
     * [.Entry](#module-storage-entry)
-        * [new Entry(name, provider, id)](#new-module-storage-entry-new)
-        * [.isEntry](#module-storage-entry-isentry) : `boolean`
-        * [.isFile](#module-storage-entry-isfile) : `boolean`
-        * [.isFolder](#module-storage-entry-isfolder) : `boolean`
+        * [new Entry()](#new-module-storage-entry-new)
         * [.name](#module-storage-entry-name) : `string`
         * [.provider](#module-storage-entry-provider) : `FileSystemProvider`
-        * [.url](#module-storage-entry-url) : `string`
+        * [.url](#module-storage-entry-url) : `URL`
         * [.nativePath](#module-storage-entry-nativepath) : `string`
-        * [.toString()](#module-storage-entry-tostring)
-        * [.copyTo(folder, options)](#module-storage-entry-copyto)
-        * [.moveTo(folder, options)](#module-storage-entry-moveto)
-        * [.delete()](#module-storage-entry-delete)
+        * [.toString()](#module-storage-entry-tostring) ⇒ `string`
+        * [.copyTo(folder, options)](#module-storage-entry-copyto) ⇒ `Promise`
+        * [.moveTo(folder, options)](#module-storage-entry-moveto) ⇒ `Promise`
+        * [.delete()](#module-storage-entry-delete) ⇒ `Promise`
         * [.getMetadata()](#module-storage-entry-getmetadata) ⇒ `Promise.<EntryMetadata>`
     * [.EntryMetadata](#module-storage-entrymetadata)
         * [.name](#module-storage-entrymetadata-name) : `string`
@@ -26,38 +23,25 @@
         * [.isFile](#module-storage-entrymetadata-isfile) : `boolean`
         * [.isFolder](#module-storage-entrymetadata-isfolder) : `boolean`
     * [.File](#module-storage-file)
-        * _instance_
-            * [.isFile](#module-storage-file-isfile)
-            * [.mode](#module-storage-file-mode) : `Symbol`
-            * [.read(options)](#module-storage-file-read) ⇒ `Promise.<(string\|ArrayBuffer)>`
-            * [.write(data, options)](#module-storage-file-write)
-        * _static_
-            * [.isFile(entry)](#module-storage-file-isfile) ⇒ `boolean`
+        * [new File()](#new-module-storage-file-new)
+        * [.mode](#module-storage-file-mode) : `Symbol`
+        * [.read(options)](#module-storage-file-read) ⇒ `Promise.<(string\|ArrayBuffer)>`
+        * [.write(data, options)](#module-storage-file-write)
     * [.FileSystemProvider](#module-storage-filesystemprovider)
-        * _instance_
-            * [.isFileSystemProvider](#module-storage-filesystemprovider-isfilesystemprovider)
-            * [.supportedDomains](#module-storage-filesystemprovider-supporteddomains)
-            * [.getFileForOpening(options)](#module-storage-filesystemprovider-getfileforopening) ⇒ `File` \| `Array.<File>`
-            * [.getFileForSaving(options)](#module-storage-filesystemprovider-getfileforsaving) ⇒ `File`
-            * [.getFolder(options)](#module-storage-filesystemprovider-getfolder) ⇒ `Folder`
-            * [.getTemporaryFolder()](#module-storage-filesystemprovider-gettemporaryfolder)
-            * [.getDataFolder()](#module-storage-filesystemprovider-getdatafolder)
-            * [.getPluginFolder()](#module-storage-filesystemprovider-getpluginfolder)
-            * [.getFsUrl()](#module-storage-filesystemprovider-getfsurl)
-            * [.getNativePath()](#module-storage-filesystemprovider-getnativepath)
-        * _static_
-            * [.isFileSystemProvider(fs)](#module-storage-filesystemprovider-isfilesystemprovider) ⇒ `boolean`
+        * [.getFileForOpening(options)](#module-storage-filesystemprovider-getfileforopening) ⇒ `Promise.&lt;File&gt;` \| `Promise.<Array>`
+        * [.getFileForSaving(suggestedName, options)](#module-storage-filesystemprovider-getfileforsaving) ⇒ `Promise.<File>`
+        * [.getFolder()](#module-storage-filesystemprovider-getfolder) ⇒ `Promise.<Folder>`
+        * [.getTemporaryFolder()](#module-storage-filesystemprovider-gettemporaryfolder) ⇒ `Promise.<Folder>`
+        * [.getDataFolder()](#module-storage-filesystemprovider-getdatafolder) ⇒ `Promise.<Folder>`
+        * [.getPluginFolder()](#module-storage-filesystemprovider-getpluginfolder) ⇒ `Promise.<Folder>`
+        * [.getFsUrl(entry)](#module-storage-filesystemprovider-getfsurl) ⇒ `URL`
+        * [.getNativePath(entry)](#module-storage-filesystemprovider-getnativepath) ⇒ `string`
     * [.Folder](#module-storage-folder) ⇐ `Entry`
-        * _instance_
-            * [.isFolder](#module-storage-folder-isfolder)
-            * [.getEntries()](#module-storage-folder-getentries) ⇒ `Array.<Entry>`
-            * [.createEntry(name, options)](#module-storage-folder-createentry) ⇒ `File` \| `Folder`
-            * [.createFile(name, options)](#module-storage-folder-createfile) ⇒ `File`
-            * [.createFolder(name)](#module-storage-folder-createfolder) ⇒ `Folder`
-            * [.getEntry(filePath)](#module-storage-folder-getentry) ⇒ `File` \| `Folder`
-            * [.renameEntry(entry, newName, options)](#module-storage-folder-renameentry)
-        * _static_
-            * [.isFolder(entry)](#module-storage-folder-isfolder) ⇒ `boolean`
+        * [.getEntries()](#module-storage-folder-getentries) ⇒ `Promise.&lt;Array.<Entry&gt;>`
+        * [.createFile(name, options)](#module-storage-folder-createfile) ⇒ `Promise.<File>`
+        * [.createFolder(name)](#module-storage-folder-createfolder) ⇒ `Folder`
+        * [.getEntry(filePath)](#module-storage-folder-getentry) ⇒ `Promise.<(File\|Folder)>`
+        * [.renameEntry(entry, newName, options)](#module-storage-folder-renameentry) ⇒ `Promise`
     * [.localFileSystem](#module-storage-localfilesystem) : `LocalFileSystemProvider`
     * [.errors](#module-storage-errors) : `Errors`
         * [.AbstractMethodInvocationError](#module-storage-errors-abstractmethodinvocationerror) ⇐ `Error`
@@ -72,19 +56,6 @@
         * [.FileIsReadOnlyError](#module-storage-errors-fileisreadonlyerror) ⇐ `Error`
         * [.DomainNotSupportedError](#module-storage-errors-domainnotsupportederror) ⇐ `Error`
         * [.InvalidFileNameError](#module-storage-errors-invalidfilenameerror) ⇐ `Error`
-    * [.domains](#module-storage-domains)
-        * [.userDesktop](#module-storage-domains-userdesktop) : `Symbol`
-        * [.userDocuments](#module-storage-domains-userdocuments) : `Symbol`
-        * [.userPictures](#module-storage-domains-userpictures) : `Symbol`
-        * [.userVideos](#module-storage-domains-uservideos) : `Symbol`
-        * [.userMusic](#module-storage-domains-usermusic) : `Symbol`
-        * [.appLocalData](#module-storage-domains-applocaldata) : `Symbol`
-        * [.appLocalLibrary](#module-storage-domains-applocallibrary) : `Symbol`
-        * [.appLocalCache](#module-storage-domains-applocalcache) : `Symbol`
-        * [.appLocalShared](#module-storage-domains-applocalshared) : `Symbol`
-        * [.appLocalTemporary](#module-storage-domains-applocaltemporary) : `Symbol`
-        * [.appRoamingData](#module-storage-domains-approamingdata) : `Symbol`
-        * [.appRoamingLibrary](#module-storage-domains-approaminglibrary) : `Symbol`
     * [.fileTypes](#module-storage-filetypes)
         * [.text](#module-storage-filetypes-text)
         * [.images](#module-storage-filetypes-images)
@@ -104,83 +75,40 @@
 
 ### storage.Entry
 An `Entry` is the base class for `File` and `Folder`. You'll
-typically never instantiate an `Entry` directly, but it provides
+never instantiate an `Entry` directly, but it provides
 the common fields and methods that both `File` and `Folder`
 share.
 
+> **Info**
+>
+> Important:
+>
+> * An Entry object may exist even if the corresponding file/folder on disk does not
+>   currently exist.
+> * It's possible for multiple Entry objects to represent the same item on disk,
+>   for example if the item was picked via multiple separate file picker invocations.
+
 **Kind**: static class of [`storage`](#module-storage)  
+**Since**: XD 12  
 
 * [.Entry](#module-storage-entry)
-    * [new Entry(name, provider, id)](#new-module-storage-entry-new)
-    * [.isEntry](#module-storage-entry-isentry) : `boolean`
-    * [.isFile](#module-storage-entry-isfile) : `boolean`
-    * [.isFolder](#module-storage-entry-isfolder) : `boolean`
+    * [new Entry()](#new-module-storage-entry-new)
     * [.name](#module-storage-entry-name) : `string`
     * [.provider](#module-storage-entry-provider) : `FileSystemProvider`
-    * [.url](#module-storage-entry-url) : `string`
+    * [.url](#module-storage-entry-url) : `URL`
     * [.nativePath](#module-storage-entry-nativepath) : `string`
-    * [.toString()](#module-storage-entry-tostring)
-    * [.copyTo(folder, options)](#module-storage-entry-copyto)
-    * [.moveTo(folder, options)](#module-storage-entry-moveto)
-    * [.delete()](#module-storage-entry-delete)
+    * [.toString()](#module-storage-entry-tostring) ⇒ `string`
+    * [.copyTo(folder, options)](#module-storage-entry-copyto) ⇒ `Promise`
+    * [.moveTo(folder, options)](#module-storage-entry-moveto) ⇒ `Promise`
+    * [.delete()](#module-storage-entry-delete) ⇒ `Promise`
     * [.getMetadata()](#module-storage-entry-getmetadata) ⇒ `Promise.<EntryMetadata>`
 
 
 <a name="new-module-storage-entry-new" id="new-module-storage-entry-new"></a>
 
-#### new Entry(name, provider, id)
-Creates an instance of Entry.
+#### new Entry()
+Creates an instance of Entry. You cannot create instances directly; they must come from a [FileSystemProvider](#module-storage-filesystemprovider)
 
-
-| Param | Type |
-| --- | --- |
-| name | `\*` | 
-| provider | `\*` | 
-| id | `\*` | 
-
-
-<a name="module-storage-entry-isentry" id="module-storage-entry-isentry"></a>
-
-#### entry.isEntry : `boolean`
-Indicates that this instance is an `Entry`. Useful for type-checking.
-
-**Kind**: instance property of [`Entry`](#module-storage-entry)  
-**Example**  
-```js
-if (something.isEntry) {
-    return something.getMetadata();
-}
-```
-
-<a name="module-storage-entry-isfile" id="module-storage-entry-isfile"></a>
-
-#### entry.isFile : `boolean`
-Indicates that this instance is **not** a `File`. Useful for type-
-checking.
-
-**Kind**: instance property of [`Entry`](#module-storage-entry)  
-**Read only**: true  
-**Example**  
-```js
-if (!anEntry.isFile) {
-    return "This entry is not a file.";
-}
-```
-
-<a name="module-storage-entry-isfolder" id="module-storage-entry-isfolder"></a>
-
-#### entry.isFolder : `boolean`
-Indicates that this instance is **not** a folder. Useful for type-
-checking.
-
-**Kind**: instance property of [`Entry`](#module-storage-entry)  
-**Read only**: true  
-**Example**  
-```js
-if (!anEntry.isFolder) {
-    return "This entry is not a folder.";
-}
-```
 
 <a name="module-storage-entry-name" id="module-storage-entry-name"></a>
 
@@ -189,6 +117,7 @@ The name of this entry. Read-only.
 
 **Kind**: instance property of [`Entry`](#module-storage-entry)  
 **Read only**: true  
+**Since**: XD 12  
 **Example**  
 ```js
 console.log(anEntry.name);
@@ -201,6 +130,7 @@ The associated provider that services this entry. Read-only.
 
 **Kind**: instance property of [`Entry`](#module-storage-entry)  
 **Read only**: true  
+**Since**: XD 12  
 **Example**  
 ```js
 if (entryOne.provider !== entryTwo.provider) {
@@ -210,11 +140,12 @@ if (entryOne.provider !== entryTwo.provider) {
 
 <a name="module-storage-entry-url" id="module-storage-entry-url"></a>
 
-#### entry.url : `string`
-The url of this entry. You can use this url as input to other entities of the extension system like for eg: set as src attribute of a Image widget in UI. Read-only.
+#### entry.url : `URL`
+The url of this entry. You can use this url as the `src` attribute of an `<img>` tag in the UI. Read-only.
 
 **Kind**: instance property of [`Entry`](#module-storage-entry)  
 **Read only**: true  
+**Since**: XD 12  
 **Example**  
 ```js
 console.log(anEntry.url);
@@ -227,6 +158,7 @@ The platform native file-system path of this entry. Read-only
 
 **Kind**: instance property of [`Entry`](#module-storage-entry)  
 **Read only**: true  
+**Since**: XD 12  
 **Example**  
 ```js
 console.log(anEntry.nativePath);
@@ -234,15 +166,19 @@ console.log(anEntry.nativePath);
 
 <a name="module-storage-entry-tostring" id="module-storage-entry-tostring"></a>
 
-#### entry.toString()
-returns the details of the given entry like name, type and native path in a readable string format.
+#### entry.toString() ⇒ `string`
+Returns the details of the given entry like name, type and native path in a readable string format.
 
 **Kind**: instance method of [`Entry`](#module-storage-entry)  
+**Since**: XD 13  
 
 <a name="module-storage-entry-copyto" id="module-storage-entry-copyto"></a>
 
-#### entry.copyTo(folder, options)
+#### entry.copyTo(folder, options) ⇒ `Promise`
 Copies this entry to the specified `folder`.
+
+The Entry object passed to this function will continue to reference the
+original item - it is _not_ updated to reference the copy.
 
 **Kind**: instance method of [`Entry`](#module-storage-entry)  
 **Throws**:
@@ -251,6 +187,7 @@ Copies this entry to the specified `folder`.
 - `PermissionDenied` if the underlying file system rejects the attempt
 - `OutOfSpace` if the file system is out of storage space
 
+**Since**: XD 12  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -273,10 +210,16 @@ await someFolder.copyTo(anotherFolder, {overwrite: true});
 
 <a name="module-storage-entry-moveto" id="module-storage-entry-moveto"></a>
 
-#### entry.moveTo(folder, options)
+#### entry.moveTo(folder, options) ⇒ `Promise`
 Moves this entry to the target folder, optionally specifying a new name.
 
+The Entry object passed to this function is automatically updated to
+reference the new location, however any _other_ Entry objects
+referencing the original item will not be updated, and will thus no
+longer point to an item that exists on disk.
+
 **Kind**: instance method of [`Entry`](#module-storage-entry)  
+**Since**: XD 12  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -308,11 +251,12 @@ await someFile.moveTo(someFolder, {newName: 'novel.txt', {overwrite: true})
 
 <a name="module-storage-entry-delete" id="module-storage-entry-delete"></a>
 
-#### entry.delete()
+#### entry.delete() ⇒ `Promise`
 Removes this entry from the file system. If the entry is a folder, all the
 contents will also be removed.
 
 **Kind**: instance method of [`Entry`](#module-storage-entry)  
+**Since**: XD 12  
 **Example**  
 ```js
 await aFile.delete();
@@ -324,9 +268,10 @@ await aFile.delete();
 Returns this entry's metadata.
 
 **Kind**: instance method of [`Entry`](#module-storage-entry)  
+**Since**: XD 12  
 **Example**  
 ```js
-const metadata = aFile.getMetadata();
+const metadata = await aFile.getMetadata();
 ```
 
 <a name="module-storage-entrymetadata" id="module-storage-entrymetadata"></a>
@@ -339,7 +284,7 @@ Metadata for an entry. It includes useful information such as:
 * date modified
 * name
 
-You'll not instantiate this directly; use [Entry#getMetadata](#module-storage-entry-getmetadata) to do so.
+You'll not instantiate this directly; use [getMetadata](#module-storage-entry-getmetadata) to get metadata information.
 
 **Kind**: static class of [`storage`](#module-storage)  
 
@@ -400,38 +345,41 @@ Indicates if the entry is a folder
 Represents a file on a file system. Provides methods for reading from and
 writing to the file. You'll never instantiate a `File` directly; instead
 you'll get access via a [FileSystemProvider](#module-storage-filesystemprovider).
+method such as [`getFileForOpening()`](#module-storage-filesystemprovider-getfileforopening).
 
 **Kind**: static class of [`storage`](#module-storage)  
+**Since**: XD 12
+
+> **Info**
+>
+> Important:
+>
+> * A File object may exist even if the corresponding file on disk does not currently exist.
+>
+> * It's possible for multiple File objects to represent the same file on disk,
+> for example if the file was picked via multiple separate file picker invocations.  
 
 * [.File](#module-storage-file)
-    * _instance_
-        * [.isFile](#module-storage-file-isfile)
-        * [.mode](#module-storage-file-mode) : `Symbol`
-        * [.read(options)](#module-storage-file-read) ⇒ `Promise.<(string\|ArrayBuffer)>`
-        * [.write(data, options)](#module-storage-file-write)
-    * _static_
-        * [.isFile(entry)](#module-storage-file-isfile) ⇒ `boolean`
+    * [new File()](#new-module-storage-file-new)
+    * [.mode](#module-storage-file-mode) : `Symbol`
+    * [.read(options)](#module-storage-file-read) ⇒ `Promise.<(string\|ArrayBuffer)>`
+    * [.write(data, options)](#module-storage-file-write)
 
 
-<a name="module-storage-file-isfile" id="module-storage-file-isfile"></a>
+<a name="new-module-storage-file-new" id="new-module-storage-file-new"></a>
 
-#### file.isFile
-Indicates that this instance is a file.
+#### new File()
+Creates an instance of File. You cannot create File instances directly; they must come from a [FileSystemProvider](#module-storage-filesystemprovider).
 
-**Kind**: instance property of [`File`](#module-storage-file)  
-**Example**  
-```js
-if (anEntry.isFile) {
-    await anEntry.read();
-}
-```
 
 <a name="module-storage-file-mode" id="module-storage-file-mode"></a>
 
 #### file.mode : `Symbol`
-Indicates whether this file is read-only or read-write. See [readOnly](readOnly) and [readWrite](readWrite).
+Indicates whether this File object supports read-only or read-write
+access. See [readOnly](#module-storage-modes-readonly) and [readWrite](#module-storage-modes-readwrite).
 
 **Kind**: instance property of [`File`](#module-storage-file)  
+**Since**: XD 12  
 **Example**  
 ```js
 if (aFile.mode === modes.readOnly) {
@@ -448,19 +396,21 @@ to be a text file using UTF8 encoding.
 
 **Kind**: instance method of [`File`](#module-storage-file)  
 **Returns**: `Promise.<(string\|ArrayBuffer)>` - the contents of the file  
+**Since**: XD 12  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| options | `any` |  |  |
-| [options.format] | `Symbol` | <code>formats.utf8</code> | The format of the file; see [utf8](utf8) and [binary](binary). |
+| options | `Object` |  |  |
+| [options.format] | `Symbol` | <code>formats.utf8</code> | Optional. The format to     read: one of [utf8](#module-storage-formats-utf8) and [binary](#module-storage-formats-binary). |
 
 **Example**  
 ```js
-const text = await myNovel.read();
+const text = await myNovel.read(); // reads file as a string
 ```
 **Example**  
 ```js
-const data = await myNovel.read({format: formats.binary});
+const data = await myNovel.read({format: formats.binary}); // data is an ArrayBuffer
+console.log("File is " + data.byteLength + " bytes long.");
 ```
 
 <a name="module-storage-file-write" id="module-storage-file-write"></a>
@@ -475,110 +425,74 @@ is controlled via the `format` option, and defaults to UTF8.
 - `FileIsReadOnly` if writing to a read-only file
 - `OutOfSpace` If writing to the file causes the file system to exceed the available space (or quota)
 
+**Since**: XD 12  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| data | `string` \| `ArrayBuffer` |  | the data to write to the file |
-| options | `any` |  |  |
-| [options.format] | `Symbol` | <code>formats.utf8</code> | the format of the file; see [utf8](utf8) and [binary](binary) |
-| [options.append] | `boolean` | <code>false</code> | if `true`, the data is written to the end of the file |
+| data | `string` \| `ArrayBuffer` |  | Data to write to the file |
+| options | `Object` |  |  |
+| [options.format] | `Symbol` | <code>formats.utf8</code> | Optional. Format to write:    one of [utf8](#module-storage-formats-utf8) or [binary](#module-storage-formats-binary). |
 
 **Example**  
 ```js
 await myNovel.write("It was a dark and stormy night.\n");
-await myNovel.write("Cliches and tropes aside, it really was.", {append: true});
 ```
 **Example**  
 ```js
-const data = new ArrayBuffer();
-await aDataFile.write(data, {format: formats.binary});
+const data = new Uint8Array([0xFF, 0xA1]);
+await aDataFile.write(data, {format: formats.binary});  // writes a 2-byte file
 ```
-
-<a name="module-storage-file-isfile" id="module-storage-file-isfile"></a>
-
-#### File.isFile(entry) ⇒ `boolean`
-Determines if the entry is a file or not. This is safe to use even if the
-entry is `null` or `undefined`.
-
-**Kind**: static method of [`File`](#module-storage-file)  
-**Returns**: `boolean` - if `true`, the entry is a file.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| entry | `any` | the entry to check |
-
 
 <a name="module-storage-filesystemprovider" id="module-storage-filesystemprovider"></a>
 
 ### storage.FileSystemProvider
-Provides access to files and folders on a file system. You'll typically not
-instantiate this directly; instead you'll use an instance of one that has
-already been created for you. This class is abstract, meaning that you'll
-need to provide your own implementation in order to use it effectively.
+Provides access to files and folders on a file system. You don't instantiate
+this directly; instead you'll use an instance that has already been created for
+you.
 
 **Kind**: static class of [`storage`](#module-storage)  
+**Since**: XD 12  
 
 * [.FileSystemProvider](#module-storage-filesystemprovider)
-    * _instance_
-        * [.isFileSystemProvider](#module-storage-filesystemprovider-isfilesystemprovider)
-        * [.supportedDomains](#module-storage-filesystemprovider-supporteddomains)
-        * [.getFileForOpening(options)](#module-storage-filesystemprovider-getfileforopening) ⇒ `File` \| `Array.<File>`
-        * [.getFileForSaving(options)](#module-storage-filesystemprovider-getfileforsaving) ⇒ `File`
-        * [.getFolder(options)](#module-storage-filesystemprovider-getfolder) ⇒ `Folder`
-        * [.getTemporaryFolder()](#module-storage-filesystemprovider-gettemporaryfolder)
-        * [.getDataFolder()](#module-storage-filesystemprovider-getdatafolder)
-        * [.getPluginFolder()](#module-storage-filesystemprovider-getpluginfolder)
-        * [.getFsUrl()](#module-storage-filesystemprovider-getfsurl)
-        * [.getNativePath()](#module-storage-filesystemprovider-getnativepath)
-    * _static_
-        * [.isFileSystemProvider(fs)](#module-storage-filesystemprovider-isfilesystemprovider) ⇒ `boolean`
+    * [.getFileForOpening(options)](#module-storage-filesystemprovider-getfileforopening) ⇒ `Promise.&lt;File&gt;` \| `Promise.<Array>`
+    * [.getFileForSaving(suggestedName, options)](#module-storage-filesystemprovider-getfileforsaving) ⇒ `Promise.<File>`
+    * [.getFolder()](#module-storage-filesystemprovider-getfolder) ⇒ `Promise.<Folder>`
+    * [.getTemporaryFolder()](#module-storage-filesystemprovider-gettemporaryfolder) ⇒ `Promise.<Folder>`
+    * [.getDataFolder()](#module-storage-filesystemprovider-getdatafolder) ⇒ `Promise.<Folder>`
+    * [.getPluginFolder()](#module-storage-filesystemprovider-getpluginfolder) ⇒ `Promise.<Folder>`
+    * [.getFsUrl(entry)](#module-storage-filesystemprovider-getfsurl) ⇒ `URL`
+    * [.getNativePath(entry)](#module-storage-filesystemprovider-getnativepath) ⇒ `string`
 
-
-<a name="module-storage-filesystemprovider-isfilesystemprovider" id="module-storage-filesystemprovider-isfilesystemprovider"></a>
-
-#### fileSystemProvider.isFileSystemProvider
-Indicates that this is a `FileSystemProvider`. Useful for type-checking.
-
-**Kind**: instance property of [`FileSystemProvider`](#module-storage-filesystemprovider)  
-
-<a name="module-storage-filesystemprovider-supporteddomains" id="module-storage-filesystemprovider-supporteddomains"></a>
-
-#### fileSystemProvider.supportedDomains
-An array of the domains this file system supports. If the file system can
-open a file picker to the user's `documents` folder, for example, then
-[userDocuments](userDocuments) will be in this list.
-
-**Kind**: instance property of [`FileSystemProvider`](#module-storage-filesystemprovider)  
-**Example**  
-```js
-if (fs.supportedDomains.contains(domains.userDocuments)) {
-    console.log("We can open a picker to the user's documents.")
-}
-```
 
 <a name="module-storage-filesystemprovider-getfileforopening" id="module-storage-filesystemprovider-getfileforopening"></a>
 
-#### fileSystemProvider.getFileForOpening(options) ⇒ `File` \| `Array.<File>`
+#### fileSystemProvider.getFileForOpening(options) ⇒ `Promise.&lt;File&gt;` \| `Promise.<Array>`
 Gets a file (or files) from the file system provider for the purpose of
 opening them. Files are read-only.
 
-Multiple files can be returned if the `allowMultiple` option` is `true`.
+Gets a file (or files) suitable for reading by displaying an "Open" file
+picker dialog to the user. File entries returned by this API are read-only -
+use [getFileForSaving](#module-storage-filesystemprovider-getfileforsaving)
+to get a File entry you can write to.
+
+The user can select multiple files only if the `allowMultiple` option is `true`.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)  
-**Returns**: `File` \| `Array.<File>` - based on allowMultiple is true or false, or empty if no file were selected.  
+**Returns**: `Promise.&lt;File&gt;` \| `Promise.<Array>` - `?File` if `allowMultiple` is false (null if picker canceled); or `!Array<File>` if `allowMultiple` is true (length 0 if picker canceled)  
+**Since**: XD 12  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| options | `\*` |  |  |
-| [options.initialDomain] | `Symbol` |  | the preferred initial location of the file picker. If not defined, the most recently used domain from a file picker is used instead. |
-| [options.types] | `Array.<string>` | <code>[&#x27;.*&#x27;]</code> | array of file types that the file open picker displays. |
-| [options.allowMultiple] | `boolean` | <code>false</code> | if true, multiple files can be returned (as an array) |
+| options | `Object` |  |  |
+| [options.types] | `Array.<string>` | <code>[&#x27;*&#x27;]</code> | Optional. Allowed file extensions, with no "." prefix; use [all](#module-storage-filetypes-all) to allow any file to be picked |
+| [options.allowMultiple] | `boolean` | <code>false</code> | Optional. If true, multiple files can be selected and this API returns `Array<File>`.<br><br>If false, only one file can be selected and this API returns a `File` directly. |
 
 **Example**  
 ```js
-const file = await fs.getFileForOpening({initialDomain = domains.userDocuments});
+const folder = await fs.getFolder();
+const file = await fs.getFileForOpening();
 if (!file) {
-    // no file selected
+    // file picker dialog was canceled
     return;
 }
 const text = await file.read();
@@ -593,31 +507,28 @@ if (files.length === 0) {
 
 <a name="module-storage-filesystemprovider-getfileforsaving" id="module-storage-filesystemprovider-getfileforsaving"></a>
 
-#### fileSystemProvider.getFileForSaving(options) ⇒ `File`
-Gets a file reference suitable for saving. The file is read-write. Any
-file picker displayed will be of the "save" variety.
-
-If the user attempts to save a file that doesn't exist, the file is
-created automatically.
+#### fileSystemProvider.getFileForSaving(suggestedName, options) ⇒ `Promise.<File>`
+Gets a file reference suitable for read-write by displaying a "Save" file
+picker dialog to the user.
 
 If the act of writing to the file would overwrite it, the file picker
-should prompt the user if they are OK with that action. If not, the file
-should not be returned.
+will prompt the user to confirm before returning a result to you.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)  
-**Returns**: `File` - returns the selected file, or `null` if no file were selected.  
+**Returns**: `Promise.<File>` - returns the selected file, or `null` if canceled  
+**Since**: XD 12  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| options | `\*` |  |
-| [options.initialDomain] | `Symbol` | the preferred initial location of the file picker. If not defined, the most recently used domain from a file picker is used instead. |
-| [options.types] | `Array.<string>` | array of valid file types that the user can choose to assign to a file. |
+| suggestedName | `string` | Required. The file extension should match one of the options specified in the `types` option. |
+| options | `Object` |  |
+| [options.types] | `Array.<string>` | Required. Allowed file extensions, with no "." prefix. |
 
 **Example**  
 ```js
-const [file] = await fs.getFileForSaving({ types = [ "txt" ]});
+const [file] = await fs.getFileForSaving("output.txt", { types: [ "txt" ]});
 if (!file) {
-    // no file selected, or the user didn't want to overwrite one they did select
+    // file picker was cancelled
     return;
 }
 await file.write("It was a dark and stormy night");
@@ -625,35 +536,31 @@ await file.write("It was a dark and stormy night");
 
 <a name="module-storage-filesystemprovider-getfolder" id="module-storage-filesystemprovider-getfolder"></a>
 
-#### fileSystemProvider.getFolder(options) ⇒ `Folder`
+#### fileSystemProvider.getFolder() ⇒ `Promise.<Folder>`
 Gets a folder from the file system via a folder picker dialog. The files
-and folders within can be accessed via [Folder#getEntries](Folder#getEntries). Any
+and folders within can be accessed via [getEntries](#module-storage-folder-getentries). Any
 files within are read-write.
 
-If the user dismisses the picker, `null` is returned instead.
+If the user cancels the picker, `null` is returned instead.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)  
-**Returns**: `Folder` - the selected folder or `null` if no folder is selected.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| options | `any` |  |
-| [options.initialDomain] | `Symbol` | the preferred initial location of the file picker. If not defined, the most recently used domain from a file picker is used instead. |
-
+**Returns**: `Promise.<Folder>` - the selected folder or `null` if picker is canceled.  
+**Since**: XD 12  
 **Example**  
 ```js
 const folder = await fs.getFolder();
-const myNovel = (await fs.getEntries()).filter(entry => entry.name.indexOf('novel') > 0);
+const myNovel = (await fs.getEntries()).find(entry => entry.name.includes('novel'));
 const text = await myNovel.read();
 ```
 
 <a name="module-storage-filesystemprovider-gettemporaryfolder" id="module-storage-filesystemprovider-gettemporaryfolder"></a>
 
-#### fileSystemProvider.getTemporaryFolder()
-Returns a temporary folder. The contents of the folder will be removed when
-the extension is disposed.
+#### fileSystemProvider.getTemporaryFolder() ⇒ `Promise.<Folder>`
+Returns a temporary folder. The contents of the folder may be lost when
+the host application is closed.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)  
+**Since**: XD 12  
 **Example**  
 ```js
 const temp = await fs.getTemporaryFolder();
@@ -661,132 +568,117 @@ const temp = await fs.getTemporaryFolder();
 
 <a name="module-storage-filesystemprovider-getdatafolder" id="module-storage-filesystemprovider-getdatafolder"></a>
 
-#### fileSystemProvider.getDataFolder()
-Returns a folder that can be used for extension's data storage without user interaction.
-It is persistent across host-app version upgrades.
+#### fileSystemProvider.getDataFolder() ⇒ `Promise.<Folder>`
+Returns a folder that can be used for storing plugin-specific data without needing user
+interaction though a file picker. Its contents remain persistent when the host
+application is updated _and_ when your plugin is updated.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)  
+**Since**: XD 12  
 
 <a name="module-storage-filesystemprovider-getpluginfolder" id="module-storage-filesystemprovider-getpluginfolder"></a>
 
-#### fileSystemProvider.getPluginFolder()
+#### fileSystemProvider.getPluginFolder() ⇒ `Promise.<Folder>`
 Returns an plugin's folder – this folder and everything within it are read only.
 This contains all the Plugin related packaged assets.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)  
+**Since**: XD 12  
 
 <a name="module-storage-filesystemprovider-getfsurl" id="module-storage-filesystemprovider-getfsurl"></a>
 
-#### fileSystemProvider.getFsUrl()
+#### fileSystemProvider.getFsUrl(entry) ⇒ `URL`
 Returns the fs url of given entry.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)  
 **Access**: public  
 
+| Param | Type |
+| --- | --- |
+| entry | `Entry` | 
+
+
 <a name="module-storage-filesystemprovider-getnativepath" id="module-storage-filesystemprovider-getnativepath"></a>
 
-#### fileSystemProvider.getNativePath()
+#### fileSystemProvider.getNativePath(entry) ⇒ `string`
 Returns the platform native file system path of given entry.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)  
 **Access**: public  
 
-<a name="module-storage-filesystemprovider-isfilesystemprovider" id="module-storage-filesystemprovider-isfilesystemprovider"></a>
-
-#### FileSystemProvider.isFileSystemProvider(fs) ⇒ `boolean`
-Checks if the supplied object is a `FileSystemProvider`. It's safe to use even
-if the object is `null` or `undefined`. Useful for type checking.
-
-**Kind**: static method of [`FileSystemProvider`](#module-storage-filesystemprovider)  
-**Returns**: `boolean` - If `true`, the object is a file system provider  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| fs | `any` | the object to check |
+| Param | Type |
+| --- | --- |
+| entry | `Entry` | 
 
 
 <a name="module-storage-folder" id="module-storage-folder"></a>
 
 ### storage.Folder ⇐ `Entry`
 Represents a folder on a file system. You'll never instantiate this directly,
-but will get it by calling [FileSystemProvider#getTemporaryFolder](FileSystemProvider#getTemporaryFolder),
-[FileSystemProvider#getFolder](FileSystemProvider#getFolder), or via [Folder#getEntries](Folder#getEntries).
+but will get it by calling [getTemporaryFolder](#module-storage-filesystemprovider-gettemporaryfolder),
+[getFolder](#module-storage-filesystemprovider-getfolder), or via
+[getEntries](#module-storage-folder-getentries).
+
+> **Info**
+>
+> Important:
+>
+> * A Folder object may exist even if the corresponding folder on disk does not currently
+>  exist.
+> * It's possible for multiple Folder objects to represent the same folder on disk,
+>   for example if the folder was picked via multiple separate folder picker invocations.
 
 **Kind**: static class of [`storage`](#module-storage)  
 **Extends**: `Entry`  
+**Since**: XD 12  
 
 * [.Folder](#module-storage-folder) ⇐ `Entry`
-    * _instance_
-        * [.isFolder](#module-storage-folder-isfolder)
-        * [.getEntries()](#module-storage-folder-getentries) ⇒ `Array.<Entry>`
-        * [.createEntry(name, options)](#module-storage-folder-createentry) ⇒ `File` \| `Folder`
-        * [.createFile(name, options)](#module-storage-folder-createfile) ⇒ `File`
-        * [.createFolder(name)](#module-storage-folder-createfolder) ⇒ `Folder`
-        * [.getEntry(filePath)](#module-storage-folder-getentry) ⇒ `File` \| `Folder`
-        * [.renameEntry(entry, newName, options)](#module-storage-folder-renameentry)
-    * _static_
-        * [.isFolder(entry)](#module-storage-folder-isfolder) ⇒ `boolean`
+    * [.getEntries()](#module-storage-folder-getentries) ⇒ `Promise.&lt;Array.<Entry&gt;>`
+    * [.createFile(name, options)](#module-storage-folder-createfile) ⇒ `Promise.<File>`
+    * [.createFolder(name)](#module-storage-folder-createfolder) ⇒ `Folder`
+    * [.getEntry(filePath)](#module-storage-folder-getentry) ⇒ `Promise.<(File\|Folder)>`
+    * [.renameEntry(entry, newName, options)](#module-storage-folder-renameentry) ⇒ `Promise`
 
-
-<a name="module-storage-folder-isfolder" id="module-storage-folder-isfolder"></a>
-
-#### folder.isFolder
-Indicates that this instance is a folder. Useful for type checking.
-
-**Kind**: instance property of [`Folder`](#module-storage-folder)  
 
 <a name="module-storage-folder-getentries" id="module-storage-folder-getentries"></a>
 
-#### folder.getEntries() ⇒ `Array.<Entry>`
+#### folder.getEntries() ⇒ `Promise.&lt;Array.<Entry&gt;>`
 Returns an array of entries contained within this folder.
 
 **Kind**: instance method of [`Folder`](#module-storage-folder)  
-**Returns**: `Array.<Entry>` - The entries within the folder.  
+**Returns**: `Promise.&lt;Array.<Entry&gt;>` - The entries within the folder.  
+**Since**: XD 12  
 **Example**  
 ```js
 const entries = await aFolder.getEntries();
 const allFiles = entries.filter(entry => entry.isFile);
 ```
 
-<a name="module-storage-folder-createentry" id="module-storage-folder-createentry"></a>
-
-#### folder.createEntry(name, options) ⇒ `File` \| `Folder`
-Creates an entry within this folder and returns the appropriate instance.
-
-**Kind**: instance method of [`Folder`](#module-storage-folder)  
-**Returns**: `File` \| `Folder` - the created entry  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| name | `string` |  | the name of the entry to create |
-| options | `any` |  |  |
-| [options.type] | `Symbol` | <code>types.file</code> | Indicates which kind of entry to create. Pass [folder](folder) to create a new folder. Note that if the type is file then this method just create a file entry object and not the actual file on the disk. The file actually gets created when you call for eg: write method on the file entry object. |
-| [options.overwrite] | `boolean` | <code>false</code> | If `true`, the create attempt can overwrite an existing file |
-
-**Example**  
-```js
-const myNovel = await aFolder.createEntry("mynovel.txt");
-```
-**Example**  
-```js
-const catImageCollection = await aFolder.createEntry("cats", {type = types.folder});
-```
-
 <a name="module-storage-folder-createfile" id="module-storage-folder-createfile"></a>
 
-#### folder.createFile(name, options) ⇒ `File`
-Creates a File Entry object within this folder and returns the appropriate instance.
-Note that this method just create a file entry object and not the actual file on the disk.
-The file actually gets created when you call for eg: write method on the file entry object.
+#### folder.createFile(name, options) ⇒ `Promise.<File>`
+Creates a File object within this folder, which need not correspond to a file that exists on disk
+yet.
+
+> **Info**
+>
+> Important:
+>
+> * If the file already exists on disk (and `overwrite` is true), creates a File object but does not
+>   modify the existing file on disk in any way.
+> * If the file does not exist yet, creates a File object but does _not_ create the file on disk yet.
+>   You can then use [write](#module-storage-file-write) to create the file and give it
+>   content.
 
 **Kind**: instance method of [`Folder`](#module-storage-folder)  
-**Returns**: `File` - the created file entry  
+**Returns**: `Promise.<File>` - the created file entry  
+**Since**: XD 13  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | name | `string` |  | the name of the file to create. |
-| options | `any` |  |  |
-| [options.overwrite] | `boolean` | <code>false</code> | If `true`, the create attempt can overwrite an existing file |
+| options | `Object` |  |  |
+| [options.overwrite] | `boolean` | <code>false</code> | If `false`, the call will fail if the file already exists. If `true`, the call will succeed regardless of whether the file currently exists on disk. |
 
 **Example**  
 ```js
@@ -796,10 +688,21 @@ const myNovelTxtFile = await aFolder.createFile("mynovel.txt");
 <a name="module-storage-folder-createfolder" id="module-storage-folder-createfolder"></a>
 
 #### folder.createFolder(name) ⇒ `Folder`
-Creates a Folder within this folder and returns the appropriate instance.
+Creates a Folder object within this folder _and_ creates the folder on disk. Unlike `createFile()`,
+this call _does_ modify the disk, and it cannot be used if the folder already exists
+(use [getEntry](#module-storage-folder-getentry) in that case).
+
+> **Info**
+>
+> Important:
+>
+> * If the folder already exists on disk, fails with an error.
+> * If the folder does not exist yet, immediately creates it on disk and then returns a Folder object
+>   for it.
 
 **Kind**: instance method of [`Folder`](#module-storage-folder)  
 **Returns**: `Folder` - the created folder entry object  
+**Since**: XD 13  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -812,15 +715,17 @@ const myCollectionsFolder = await aFolder.createFolder("collections");
 
 <a name="module-storage-folder-getentry" id="module-storage-folder-getentry"></a>
 
-#### folder.getEntry(filePath) ⇒ `File` \| `Folder`
-Gets an entry from within this folder and returns the appropriate instance.
+#### folder.getEntry(filePath) ⇒ `Promise.<(File\|Folder)>`
+Returns a File or Folder entry for an item that already exists on disk within this folder or
+its hierarchy of subfolders. Fails if no entry with the given name/path currently exists on disk.
 
 **Kind**: instance method of [`Folder`](#module-storage-folder)  
-**Returns**: `File` \| `Folder` - the fetched entry.  
+**Returns**: `Promise.<(File\|Folder)>` - the fetched entry.  
+**Since**: XD 13  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| filePath | `string` | the name/path of the entry to fetch |
+| filePath | `string` | Name, with optional relative path prefix, of an existing entry within this folder |
 
 **Example**  
 ```js
@@ -829,14 +734,18 @@ const myNovel = await aFolder.getEntry("mynovel.txt");
 
 <a name="module-storage-folder-renameentry" id="module-storage-folder-renameentry"></a>
 
-#### folder.renameEntry(entry, newName, options)
-Renames an entry to a new name.
+#### folder.renameEntry(entry, newName, options) ⇒ `Promise`
+Renames an item on disk to a new name within the same folder. The Entry object passed to this
+function is automatically updated to reference the new name, however any _other_ Entry objects
+referencing the original item will not be updated, and will thus no longer point to an item that
+exists on disk.
 
 **Kind**: instance method of [`Folder`](#module-storage-folder)  
+**Since**: XD 12  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| entry | `Entry` |  | the entry to rename |
+| entry | `Entry` |  | entry to rename (File or Folder). Must exist. |
 | newName | `string` |  | the new name to assign |
 | options | `any` |  |  |
 | [options.overwrite] | `boolean` | <code>false</code> | if `true`, renaming can overwrite an existing entry |
@@ -845,20 +754,6 @@ Renames an entry to a new name.
 ```js
 await myNovels.rename(myNovel, "myFantasticNovel.txt");
 ```
-
-<a name="module-storage-folder-isfolder" id="module-storage-folder-isfolder"></a>
-
-#### Folder.isFolder(entry) ⇒ `boolean`
-Checks if an entry is a folder. Safe to use if entry might be `null` or
-`undefined`. Useful for type checking.
-
-**Kind**: static method of [`Folder`](#module-storage-folder)  
-**Returns**: `boolean` - if `true`, the entry is a folder  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| entry | `any` | the entry to check |
-
 
 <a name="module-storage-localfilesystem" id="module-storage-localfilesystem"></a>
 
@@ -986,120 +881,12 @@ The file name contains invalid characters
 **Kind**: static class of [`errors`](#module-storage-errors)  
 **Extends**: `Error`  
 
-<a name="module-storage-domains" id="module-storage-domains"></a>
-
-### storage.domains
-Common locations that we can use when displaying a file picker.
-
-**Kind**: static constant of [`storage`](#module-storage)  
-**Access**: public  
-
-* [.domains](#module-storage-domains)
-    * [.userDesktop](#module-storage-domains-userdesktop) : `Symbol`
-    * [.userDocuments](#module-storage-domains-userdocuments) : `Symbol`
-    * [.userPictures](#module-storage-domains-userpictures) : `Symbol`
-    * [.userVideos](#module-storage-domains-uservideos) : `Symbol`
-    * [.userMusic](#module-storage-domains-usermusic) : `Symbol`
-    * [.appLocalData](#module-storage-domains-applocaldata) : `Symbol`
-    * [.appLocalLibrary](#module-storage-domains-applocallibrary) : `Symbol`
-    * [.appLocalCache](#module-storage-domains-applocalcache) : `Symbol`
-    * [.appLocalShared](#module-storage-domains-applocalshared) : `Symbol`
-    * [.appLocalTemporary](#module-storage-domains-applocaltemporary) : `Symbol`
-    * [.appRoamingData](#module-storage-domains-approamingdata) : `Symbol`
-    * [.appRoamingLibrary](#module-storage-domains-approaminglibrary) : `Symbol`
-
-
-<a name="module-storage-domains-userdesktop" id="module-storage-domains-userdesktop"></a>
-
-#### domains.userDesktop : `Symbol`
-The user's desktop folder
-
-**Kind**: static property of [`domains`](#module-storage-domains)  
-
-<a name="module-storage-domains-userdocuments" id="module-storage-domains-userdocuments"></a>
-
-#### domains.userDocuments : `Symbol`
-The user's documents folder
-
-**Kind**: static property of [`domains`](#module-storage-domains)  
-
-<a name="module-storage-domains-userpictures" id="module-storage-domains-userpictures"></a>
-
-#### domains.userPictures : `Symbol`
-The user's pictures folder or library
-
-**Kind**: static property of [`domains`](#module-storage-domains)  
-
-<a name="module-storage-domains-uservideos" id="module-storage-domains-uservideos"></a>
-
-#### domains.userVideos : `Symbol`
-The user's videos / movies folder or library
-
-**Kind**: static property of [`domains`](#module-storage-domains)  
-
-<a name="module-storage-domains-usermusic" id="module-storage-domains-usermusic"></a>
-
-#### domains.userMusic : `Symbol`
-The user's music folder or library
-
-**Kind**: static property of [`domains`](#module-storage-domains)  
-
-<a name="module-storage-domains-applocaldata" id="module-storage-domains-applocaldata"></a>
-
-#### domains.appLocalData : `Symbol`
-Local application data
-
-**Kind**: static property of [`domains`](#module-storage-domains)  
-
-<a name="module-storage-domains-applocallibrary" id="module-storage-domains-applocallibrary"></a>
-
-#### domains.appLocalLibrary : `Symbol`
-Local application library
-
-**Kind**: static property of [`domains`](#module-storage-domains)  
-
-<a name="module-storage-domains-applocalcache" id="module-storage-domains-applocalcache"></a>
-
-#### domains.appLocalCache : `Symbol`
-Local application cache directory (persistence not guaranteed)
-
-**Kind**: static property of [`domains`](#module-storage-domains)  
-
-<a name="module-storage-domains-applocalshared" id="module-storage-domains-applocalshared"></a>
-
-#### domains.appLocalShared : `Symbol`
-Local application shared data folder
-
-**Kind**: static property of [`domains`](#module-storage-domains)  
-
-<a name="module-storage-domains-applocaltemporary" id="module-storage-domains-applocaltemporary"></a>
-
-#### domains.appLocalTemporary : `Symbol`
-Local temporary directory
-
-**Kind**: static property of [`domains`](#module-storage-domains)  
-
-<a name="module-storage-domains-approamingdata" id="module-storage-domains-approamingdata"></a>
-
-#### domains.appRoamingData : `Symbol`
-Roaming application data
-
-**Kind**: static property of [`domains`](#module-storage-domains)  
-
-<a name="module-storage-domains-approaminglibrary" id="module-storage-domains-approaminglibrary"></a>
-
-#### domains.appRoamingLibrary : `Symbol`
-Roaming application library data
-
-**Kind**: static property of [`domains`](#module-storage-domains)  
-
 <a name="module-storage-filetypes" id="module-storage-filetypes"></a>
 
 ### storage.fileTypes
 This namespace describes the various file type extensions that can used be used in some FS file open methods.
 
 **Kind**: static constant of [`storage`](#module-storage)  
-**Access**: public  
 
 * [.fileTypes](#module-storage-filetypes)
     * [.text](#module-storage-filetypes-text)
@@ -1158,7 +945,7 @@ Binary file encoding
 <a name="module-storage-modes" id="module-storage-modes"></a>
 
 ### storage.modes
-This namespace describes the file open modes. for eg: open file in read-only or both read-write
+This namespace describes the access modes that can be supported by a given File entry.
 
 **Kind**: static constant of [`storage`](#module-storage)  
 **Access**: public  
