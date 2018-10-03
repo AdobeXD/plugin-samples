@@ -8,8 +8,7 @@
 
 ## Export Renditions
 
-- On Windows 10, exporting a rendition may cause XD to crash. This will be fixed in the next drop.
-- On Windows 10, exporting to a file or folder entry picked from a file picker will fail. You can work around this issue by writing those files first to a temporary folder or to the plugin's data folder. Then you can move them to the desired location.
+- On Windows, exporting to a folder which was created via `createFolder()` will not work if the folder name contains spaces, "%", or non-ASCII characters (e.g. accented letters). Such folder names work correctly when _chosen by the user_ via `getFolder()`, however.
 
 ## Plugin Management
 
@@ -17,7 +16,7 @@
 
 ## Scenegraph
 
-- `Rectangle.cornerRadii` reports incorrect values if the corners are not all the same radius. Use `effectiveCornerRadii` instead to get accurate values.
+- `Rectangle.cornerRadii` returns incorrect values if the corners are not all the same radius. Use `effectiveCornerRadii` instead to get accurate values. _Setting_ `cornerRadii` works correctly.
 - It is possible to set nodes to 0 width or 0 height.
   - Scenenode setters block negative size values but allow 0 size, even though in many cases it is equally nonsensical. We do block 0 size in the UI.
   - In the past, XD's renderer would fail asserts (possibly even crash) with 0-size objects. I couldn't repro that any more, but unless we're covering it well as an officially supported case, it could easily regress again. There are some other minor bugs though, e.g. sharing fails if you have any 0-width/height artboards and bitmap export fails if any of the top-level items you're trying to export are 0-width/height.
@@ -96,4 +95,6 @@
 
 ## File I/O
 
+- `createFile()`, `createFolder()`, or `getEntry()` with file/folder names containing "%" may not work. Such file/folder names work correctly when _chosen by the user_ via `getFolder()` or `getFileForOpening()`, however.
+- `Entry.nativePath` may return incorrect results for file/foler names containing spaces, "%", or non-ASCII characters (e.g. accented letters).
 - `Blob` is not supported. Use `ArrayBuffer` instead.
