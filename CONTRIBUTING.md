@@ -30,11 +30,23 @@ Security issues shouldn't be reported on this issue tracker. Instead, [file an i
 
 ## Gitbook Configuration
 
-### SUMMARY.MD
+The GitHub Pages rendering of this documentation is generated using [Gitbook](https://www.gitbook.com/). To preview this rendering locally:
 
-When adding documentation to this site, be sure to add the item to the correct location in `SUMMARY.MD`. Otherwise your content will not be rendered when the site is published.
+```bash
+npm install
+npm run book:install
+npm run book:build
 
-### Plugins in use
+# Now the generated Gitbook site is in a '_book' folder. It's best viewed from
+# http://localhost (not file://), so start a local web server, e.g.:
+http-server -c-1 _book
+```
+
+### Adding pages
+
+When adding an entirely new documentation page to this site, be sure to add the new file to the correct location in `SUMMARY.MD`. Otherwise your content will not be rendered when the site is published.
+
+### Gitbook plugins in use
 
 Plugin                            | For                                   | Link
 ---------------------------------:|:--------------------------------------|:-----------------------

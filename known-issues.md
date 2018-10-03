@@ -3,7 +3,7 @@
 ## General Issues
 
 - Developer/Side-loading Specific
-  - Plugin menus and handlers may not be in-sync across documents during development (XD-50283)
+  - Plugin menus and handlers may not be in-sync across documents during development
     - If someone modifies a plugin's files on disk while XD is running, and then opens more windows in XD, any windows that were open before reflect the old version of the plugin while windows that were opened later reflect the new version of the plugin. The menu bar will always reflect the old version of the plugin regardless of which window is current.
 
 ## Export Renditions
@@ -11,13 +11,17 @@
 - On Windows 10, exporting a rendition may cause XD to crash. This will be fixed in the next drop.
 - On Windows 10, exporting to a file or folder entry picked from a file picker will fail. You can work around this issue by writing those files first to a temporary folder or to the plugin's data folder. Then you can move them to the desired location.
 
+## Plugin Management
+
+- If Plugin Manager is open when you invoke Reload Plugins, it will not reflect any changes to the manifest (plugin name, description, icon) until you close & reopen it.
 
 ## Scenegraph
 
+- `Rectangle.cornerRadii` reports incorrect values if the corners are not all the same radius. Use `effectiveCornerRadii` instead to get accurate values.
 - It is possible to set nodes to 0 width or 0 height.
   - Scenenode setters block negative size values but allow 0 size, even though in many cases it is equally nonsensical. We do block 0 size in the UI.
   - In the past, XD's renderer would fail asserts (possibly even crash) with 0-size objects. I couldn't repro that any more, but unless we're covering it well as an officially supported case, it could easily regress again. There are some other minor bugs though, e.g. sharing fails if you have any 0-width/height artboards and bitmap export fails if any of the top-level items you're trying to export are 0-width/height.
-- Plugin command names in UWP Plugin menus are truncated (XD-52356, UWP Only)
+- Longer plugin command names may be truncated in the menu on Windows
   - Workaround: keep your plugin command names short!
 
 ## User Interface
@@ -39,14 +43,14 @@
 - `<option>` tags *must* have a `value` attribute, or referencing the `select`'s `value` property will return `undefined`.
 - `<select value="…"/>` does not show the value as selected. Instead, get a reference to the element and call `setAttribute("value", …)`.
 - If you don’t specify a width for your `form`, block elements inside may not take up the entire width. Workaround: always set a width for your `form` elements.
-- `form`s only support `method="dialog"`. They do not submit to endpoints automatically.
+- `form`s only support `method="dialog"`. They do not submit to a URL automatically.
 - It is not currently possible to specify the tab order.
 - The size of a `<textarea>` cannot be set with `rows` or `cols`. Use CSS styles `height` and `width` respectively.
 - `<input type="radio"/>` is not currently supported.
 - `<progress>` is not currently supported.
 - HTML5 input validation is not supported.
 - Images that fail to load will not render any “broken icon” image in place.
-- The `<dialog>` background color is different on UWP and macOS. On macOS, it is `#F5F5F5`, and on UWP it is `#FFFFFF`.
+- The `<dialog>` background color is different on Windows and macOS. On macOS, it is `#F5F5F5`, and on Windows it is `#FFFFFF`.
 - Input widgets do not accept `defaultValue`.
 - `<input type="password" />` is not supported.
 - `<option>` tags do not support `selected` or `disabled` attributes.

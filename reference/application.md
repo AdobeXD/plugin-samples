@@ -43,6 +43,10 @@ console.log("OS locale:", application.systemLocale); // e.g. "en_US"
 ### application.createRenditions(renditions)
 Generate renditions of nodes in the document in a batch. Overwrites any existing files without warning.
 
+A single `createRenditions()` call can generate any number of renditions, including multiple renditions of the same node (with
+different output settings) or renditions of multiple different nodes. Only one `createRenditions()` call can be executing at any
+given time, so wait for the Promise it returns before calling it again.
+
 **Kind**: static method of [<code>application</code>](#module_application)  
 **Returns**: `Promise<Array<RenditionResult>, string>` -  Promise which is fulfilled with an array of RenditionResults (pointing to
 the same `outputFile`s that were originally passed in, or rejected with an error string if one or more renditions failed for
@@ -58,7 +62,7 @@ _All rendition settings fields are required_ (for a given rendition type) unless
 
 | Property | Type | Description |
 | --- | --- | --- |
-| node | !SceneNode | Root of scenegraph subtree to render |
+| node | !SceneNode | Root of scenegraph subtree to render. This may be _any_ node in the scenegraph, regardless of the current edit context. |
 | outputFile | !uxp.storage.File | File to save the rendition to (overwritten without warning if it already exists) |
 | type | string | File type: RenditionType.PNG, JPG, PDF, or SVG |
 | scale | number | _(PNG & JPG renditions)_ DPI multipler in the range [0.1, 100], e.g. 2.0 for @2x DPI. |

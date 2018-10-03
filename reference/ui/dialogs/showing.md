@@ -14,9 +14,4 @@ dialog.showModal()
 >
 > The dialog element _must_ be present in the DOM before showing it. If it isn't, the method will throw an exception.
 
-It's important to note that you can only show one dialog at once. You should always close or dismiss a dialog first before showing another one.
-
-> **Danger**
->
-> On UWP (Windows 10), you may encounter difficulties rendering multiple dialogs in sequence. In general you should avoid doing so unless you're trying to render an experience that's substantially different from what came before. In that case, you may find it useful to insert a delay after one dialog closes before opening another.
-> (BUG: CCP-5854)
+It's important to note that you can only show one dialog at once. You should always close or dismiss a dialog first and then _wait for the dialog's promise to resolve_ before showing another one.

@@ -25,12 +25,9 @@ This sample demonstrates how to build a user confirmation dialog in XD using HTM
 
 ## Technology Used
 - References: 
-	- [UXP API - Document](https://adobe-xd.gitbook.io/plugin-api-reference/uxp-api-reference/dom5-apis/classes/document)
-	- [UXP API - Dialog](https://adobe-xd.gitbook.io/plugin-api-reference/uxp-api-reference/dom5-apis/html-elements/htmldialogelement)
-	- [UXP API - Form](https://adobe-xd.gitbook.io/plugin-api-reference/uxp-api-reference/dom5-apis/html-elements/htmlhtmlelement)
-	- [UXP API - Footer](https://adobe-xd.gitbook.io/plugin-api-reference/uxp-api-reference/dom5-apis/html-elements/htmlhtmlelement)
-	- [UXP API - Button](https://adobe-xd.gitbook.io/plugin-api-reference/uxp-api-reference/dom5-apis/html-elements/htmlbuttonelement)	
-	- [UXP API - Heading](https://adobe-xd.gitbook.io/plugin-api-reference/uxp-api-reference/dom5-apis/html-elements/htmlhtmlelement)
+	- [UXP API - Document](../reference/uxp/class/Document.md)
+	- [UXP API - Dialog](../reference/ui/dialogs.md)
+	- [UXP API - Button](../reference/ui/widgets/buttons.md)
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.

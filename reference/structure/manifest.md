@@ -12,12 +12,12 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
 
     "description": "Description of your plugin.",
     "icons": [
-        { "width": 96, "height": 96, "path": "images/icon.png" }
+        { "width": 96, "height": 96, "path": "images/icon@2x.png" }
     ],
 
     "host": {
         "app": "XD",
-        "minVersion": "13.0.11"
+        "minVersion": "13.0"
     },
 
     "uiEntryPoints": [
