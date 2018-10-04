@@ -2,6 +2,7 @@
 global.setTimeout = function(fn){ fn() }
 global.clearTimeout = function(){};
 
+const reactShim = require("./react-shim");
 const style = require("./styles.css");
 const React = require("react");
 const ReactDOM = require("react-dom");
