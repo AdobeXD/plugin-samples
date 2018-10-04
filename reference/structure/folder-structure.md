@@ -2,12 +2,12 @@
 
 Adobe XD plugins require two files, with these _exact_ names:
 
-<img src="/images/readme-assets/xd-folder-structure.png.png" width="50%" height="50%">
+<img src="/images/readme-assets/xd-folder-structure.png" width="50%" height="50%">
 
 1.   `manifest.json` is your plugin’s manifest.
 
     This file is where you include _facts_ about your plugin, such as its name, the menu item(s) it adds to XD, and so on. [Learn about the manifest here](./manifest.md).
-    
+
 1.   `main.js` is your plugin’s code. 
 
     This file contains your JavaScript code that implements the logic for your plugin. [Learn more about `main.js` here](./handlers.md).
