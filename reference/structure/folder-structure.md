@@ -2,7 +2,7 @@
 
 Adobe XD plugins require two files, with these _exact_ names:
 
-<img src="/images/readme-assets/xd-folder-structure.png" width="50%" height="50%">
+<img src="/images/readme-assets/xd-folder-structure.png" width="30%" height="30%">
 
 1.   `manifest.json` is your plugin’s manifest.
 
