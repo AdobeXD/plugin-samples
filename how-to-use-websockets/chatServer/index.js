@@ -1,4 +1,3 @@
-const express = require('express');
 const http = require('http');
 const webSocketsServerPort = 8888;
 

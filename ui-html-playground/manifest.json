@@ -1,0 +1,28 @@
+{
+    "id": "com.adobe.demo.ad189d4a",
+    "author": "Kerri Shotts",
+    "name": "(UI) HTML Playground",
+    "version": "1.0.0",
+    "host": {
+        "app": "XD",
+        "minVersion": "10.0.10.24"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "UI HTML Playground",
+            "menuItems": [
+                {
+                    "type": "menu",
+                    "label": "Edit...",
+                    "commandId": "editPlayground"
+                },
+                {
+                    "type": "menu",
+                    "label": "Run...",
+                    "commandId": "runPlayground"
+                }
+            ]
+        }
+    ]
+}

@@ -2,7 +2,7 @@ const { Text, Color } = require("scenegraph");
 const fs = require("uxp").storage.localFileSystem;
 
 async function insertTextFromFileHandler(selection) {
-    const [aFile] = await fs.getFileForOpening();
+    const aFile = await fs.getFileForOpening({ types: ["txt"] });
     if (!aFile)
         return;
 

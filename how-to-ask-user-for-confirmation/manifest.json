@@ -1,6 +1,6 @@
 {
   "id": "demo.userConfirmation",
-  "name": "(H2) How to show user confirmation sample plugin",
+  "name": "(H2) How to show user confirmation",
   "version": "0.0.1",
   "host": {
     "app": "XD",
