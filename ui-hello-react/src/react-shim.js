@@ -1,8 +1,15 @@
 
+if (window.setTimeout == null) {
+    window.setTimeout = function(fn){ fn() };
+}
+
+if (window.clearTimeout == null) {
+    window.clearTimeout = function(){};
+}
+
 //  this is a temporary shim for the latest versions of react.
 if (window.cancelAnimationFrame == null) {
-    window.cancelAnimationFrame = function() {
-    };
+    window.cancelAnimationFrame = function() {};
 }
 if (window.requestAnimationFrame == null) {
     window.requestAnimationFrame = function() {
@@ -10,6 +17,5 @@ if (window.requestAnimationFrame == null) {
     }
 }
 if (window.HTMLIFrameElement == null) {
-    window.HTMLIFrameElement = class HTMLIFrameElement {
-    };
+    window.HTMLIFrameElement = class HTMLIFrameElement {};
 }

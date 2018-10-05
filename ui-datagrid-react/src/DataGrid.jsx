@@ -38,7 +38,7 @@ module.exports = class DataGrid extends React.Component {
 
     render() {
         return (
-            <div className="DataGrid">
+            <div className="DataGrid margin">
                 { createRow(header) }
                 <div className="body">
                     { data.map(createRow) }

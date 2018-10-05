@@ -1,7 +1,4 @@
 //  temporary stubs required for React. These will not be required as soon as the XD environment provides setTimeout/clearTimeout
-global.setTimeout = function(fn){ fn() }
-global.clearTimeout = function(){};
-
 const reactShim = require("./react-shim");
 const style = require("./styles.css");
 const React = require("react");

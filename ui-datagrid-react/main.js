@@ -20655,7 +20655,7 @@ module.exports = class DataGrid extends React.Component {
     render() {
         return React.createElement(
             "div",
-            { className: "DataGrid" },
+            { className: "DataGrid margin" },
             createRow(header),
             React.createElement(
                 "div",
