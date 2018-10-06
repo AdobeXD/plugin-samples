@@ -23,14 +23,14 @@ This sample demonstrates how to work with scenenode lists. **The plugin code can
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Getting Started Guide](/Guides/getting-started-guide)
-- [Debugging Guide](/Guides/debugging-guide)
+- [Getting Started Guide](/guides/getting-started-guide)
+- [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
 
 ### 1.  Create plugin scaffold
 
-As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
+As described in the [Getting Started Guide](/guides/getting-started-guide), create the directory for your plugin:
 
 ```
 $ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
@@ -131,7 +131,7 @@ function createElements(selection) {
 1. Use `for` loop to create 5 elements of each XD object
 2. The `Rectangle` object is added to the current artboard. For more information, see the [reference guide](/reference/scenegraph.md#Rectangle)
 3. The `Ellipse` object is added to the current artboard. For more information, see the [reference guide](/reference/scenegraph.md#ellipse)
-4. The contents of the string is added to a `Text` object, and the `Text` object is added to the current artboard.  For more information, see [How to create styled text](/Guides/how-to-style-text-guide)
+4. The contents of the string is added to a `Text` object, and the `Text` object is added to the current artboard.  For more information, see [How to create styled text](/guides/how-to-style-text-guide)
 
 Note that each object can be added to the first artboard using the `selection.insertionParent.addchild` method and `moveInParentCoordinates` to move each object inside the artboard.
 

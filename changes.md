@@ -120,7 +120,7 @@ The following has changed in this release.
 
 ### Export Renditions
 
-For an example of using export renditions, [see this guide](./Guides/how-to-generate-an-export-rendition-guide).
+For an example of using export renditions, [see this guide](./guides/how-to-generate-an-export-rendition-guide).
 
 ### File I/O Improvements
 

@@ -24,14 +24,14 @@ Creating styled text in Adobe XD is easy! In this guide, we'll show you how to c
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Getting Started Guide](/Guides/getting-started-guide)
-- [Debugging Guide](/Guides/debugging-guide)
+- [Getting Started Guide](/guides/getting-started-guide)
+- [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
 
 ### 1.  Create plugin scaffold
 
-As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
+As described in the [Getting Started Guide](/guides/getting-started-guide), create the directory for your plugin:
 
 ```
 $ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins

@@ -26,14 +26,14 @@ This sample demonstrates how to create a plugin that adds colored lines to the u
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Getting Started Guide](/Guides/getting-started-guide)
-- [Debugging Guide](/Guides/debugging-guide)
+- [Getting Started Guide](/guides/getting-started-guide)
+- [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
 
 ### 1.  Create plugin scaffold
 
-As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
+As described in the [Getting Started Guide](/guides/getting-started-guide), create the directory for your plugin:
 
 ```
 $ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
@@ -158,5 +158,5 @@ After saving all of your changes, reload the plugin in XD and invoke it.  The re
 
 Ready for more? Take a look at other guides:
 
-- [Guides](/Guides)
+- [Guides](/guides)
 - [Other samples](https://github.com/AdobeXD/Plugin-Samples)

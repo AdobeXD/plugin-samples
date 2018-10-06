@@ -20,7 +20,7 @@ Bugs happen! In this guide, you will learn how to debug your Adobe XD plugin.
 ## Prerequisites
 
 - Basic knowledge of JavaScript
-- At least one plugin in your `develop` folder (you can create one using our [Quick Start guide](/Guides/getting-started-guide))
+- At least one plugin in your `develop` folder (you can create one using our [Quick Start guide](/guides/quick-start-guide))
 
 
 ## Debugging Steps
@@ -51,7 +51,7 @@ If there are any errors blocking the plugin from running, they will appear in th
 
 ### 3. Try adding `console.log` messages to your code
 
-The example code below, which is adapted from the [Quick Start guide](/Guides/quick-start-guide), does not appear to be creating the "Hello!" text as expected.
+The example code below, which is adapted from the [Quick Start guide](/guides/quick-start-guide), does not appear to be creating the "Hello!" text as expected.
 
 Let's try adding a "start message" and an "end message" into `sayHello()` to double check that the code is running:
 
@@ -96,4 +96,4 @@ console.log("el fill color =" + el.fill);
 Ready to learn more about XD plugins?
 
 - Learn about [plugin structure]()
-- Follow along with our [tutorials](/Guides)
+- Follow along with our [tutorials](/guides)
