@@ -3,8 +3,8 @@
 ## Getting Started
 
 * [Introduction](./README.md)
-* [Quick Start](./Guides/quick-start-guide/README.md)
-* [Debugging Plugins](./Guides/debugging-guide/readme.md)
+* [Quick Start](./guides/quick-start-guide/README.md)
+* [Debugging Plugins](./guides/debugging-guide/readme.md)
 * [Plugin Structure](./reference/structure/index.md)
   * [Plugin Location and Name](./reference/structure/plugin-location-name.md)
   * [Folder Structure](./reference/structure/folder-structure.md)
@@ -12,26 +12,26 @@
     * [main.js](./reference/structure/handlers.md)
 
 ## Tutorials
-* [Working with Content](./Guides/content-index.md)
-  * [How to draw lines](./Guides/how-to-draw-lines-guide/README.md)
-  * [How to work with paths](./Guides/how-to-create-path-objects-guide/README.md)
-  * [How to style text](./Guides/how-to-style-text-guide/README.md)
-  * [Working with the SceneNode list](./Guides/how-to-work-with-scenenodelist-guide/README.md)
-  * [How to generate an export rendition](./Guides/how-to-generate-an-export-rendition-guide/README.md)
+* [Working with Content](./guides/content-index.md)
+  * [How to draw lines](./guides/how-to-draw-lines-guide/README.md)
+  * [How to work with paths](./guides/how-to-create-path-objects-guide/README.md)
+  * [How to style text](./guides/how-to-style-text-guide/README.md)
+  * [Working with the SceneNode list](./guides/how-to-work-with-scenenodelist-guide/README.md)
+  * [How to generate an export rendition](./guides/how-to-generate-an-export-rendition-guide/README.md)
 
-* [Working with I/O](./Guides/io-index.md)
-  * [How to read a file](./Guides/how-to-import-guide/README.md)
-  * [How to integrate with OAuth](./Guides/how-to-integrate-with-OAuth-guide/readme.md)
-  * [How to make a simple network request](./Guides/how-to-make-network-requests-guide/README.md)
-  * [How to use WebSockets](./Guides/how-to-use-websockets-guide/README.md)
+* [Working with I/O](./guides/io-index.md)
+  * [How to read a file](./guides/how-to-import-guide/README.md)
+  * [How to integrate with OAuth](./guides/how-to-integrate-with-OAuth-guide/readme.md)
+  * [How to make a simple network request](./guides/how-to-make-network-requests-guide/README.md)
+  * [How to use WebSockets](./guides/how-to-use-websockets-guide/README.md)
 
-* [Building User Interfaces](./Guides/ui-index.md)
-  * [Asking user for confirmation](./Guides/how-to-ask-user-for-confirmation-guide/README.md)
-    * [With document.createElement](./Guides/how-to-ask-user-for-confirmation-guide/README.md)
-    * [With HTML](./Guides/how-to-ask-user-for-confirmation-guide/README_HTML.md)
-  * [Using single-line text editors](./Guides/how-to-use-single-line-text-ui-guide/README.md)
-  * [How to display a dropdown list](./Guides/how-to-display-a-dropdown-list-guide/README.md)
-  * [How to display an image](./Guides/how-to-display-an-image-guide/README.md)
+* [Building User Interfaces](./guides/ui-index.md)
+  * [Asking user for confirmation](./guides/how-to-ask-user-for-confirmation-guide/README.md)
+    * [With document.createElement](./guides/how-to-ask-user-for-confirmation-guide/README.md)
+    * [With HTML](./guides/how-to-ask-user-for-confirmation-guide/README_HTML.md)
+  * [Using single-line text editors](./guides/how-to-use-single-line-text-ui-guide/README.md)
+  * [How to display a dropdown list](./guides/how-to-display-a-dropdown-list-guide/README.md)
+  * [How to display an image](./guides/how-to-display-an-image-guide/README.md)
 
 ## Advanced Concepts
 
@@ -81,7 +81,7 @@
 
 ## Sharing
 
-* [How to Package a Plugin](./Guides/how-to-package-a-plugin/README.md)
+* [How to Package a Plugin](./guides/how-to-package-a-plugin/README.md)
 * [Distribution Options](./distribution/options.md)
 * [Submitting your Plugin](./distribution/how-to-submit-to-plugin-manager.md)
 * [Marketing your Plugin](./distribution/marketing.md)
