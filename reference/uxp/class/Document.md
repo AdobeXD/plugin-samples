@@ -17,7 +17,7 @@
     * [.head](#document-head) : [`HTMLHeadElement`](#htmlheadelement)
     * [.body](#document-body) : [`HTMLBodyElement`](#htmlbodyelement)
     * [.clipboard](#document-clipboard) : `Clippoard`
-    * [.styleSheets](#document-stylesheets) : `StyleSheetList`
+    * [.styleSheets](#document-stylesheets) : [`StyleSheetList`](#stylesheetlist)
     * [.contentEditable](#node-contenteditable)
     * [.isConnected](#node-isconnected) : `boolean`
     * [.parentNode](#node-parentnode) : [`Node`](#node)
@@ -120,7 +120,7 @@ Indicates if the computer is online
 
 <a name="document-stylesheets" id="document-stylesheets"></a>
 
-### document.styleSheets : `StyleSheetList`
+### document.styleSheets : [`StyleSheetList`](#stylesheetlist)
 **Kind**: instance property of [`Document`](#document)  
 **Read only**: true  
 

@@ -138,6 +138,8 @@
         * [NamedNodeMap](./reference/uxp/class/NamedNodeMap.md)
         * [Node](./reference/uxp/class/Node.md)
         * [NodeList](./reference/uxp/class/NodeList.md)
+        * [StyleSheet](./reference/uxp/class/StyleSheet.md)
+        * [StyleSheetList](./reference/uxp/class/StyleSheetList.md)
         * [Text](./reference/uxp/class/Text.md)
       * [HTML Elements](./reference/uxp/ui-html-index.md)
         * [HTMLAnchorElement](./reference/uxp/class/HTMLAnchorElement.md)
