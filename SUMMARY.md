@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-* [Introduction](./README.md)
+* [Overview](./README.md)
 * [Quick Start](./guides/quick-start-guide/README.md)
 * [Debugging Plugins](./guides/debugging-guide/readme.md)
 * [Plugin Structure](./reference/structure/index.md)
@@ -12,6 +12,7 @@
     * [main.js](./reference/structure/handlers.md)
 
 ## Tutorials
+* [About the tutorials](./guides/index.md)
 * [Working with Content](./guides/content-index.md)
   * [How to draw lines](./guides/how-to-draw-lines-guide/README.md)
   * [How to work with paths](./guides/how-to-create-path-objects-guide/README.md)
@@ -34,7 +35,7 @@
   * [How to display an image](./guides/how-to-display-an-image-guide/README.md)
 
 ## Advanced Concepts
-
+* [About advanced concepts](./reference/index.md)
 * [XD Concepts](./reference/core/index.md)
   * [The scenegraph](./reference/core/scenegraph.md)
   * [The Edit context](./reference/core/edit-context.md)
