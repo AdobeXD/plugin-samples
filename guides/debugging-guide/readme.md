@@ -2,8 +2,6 @@
 
 Bugs happen! In this guide, you will learn how to debug your Adobe XD plugin.
 
-<!-- Image or GIF if necessary -->
-
 <!-- doctoc command config: -->
 <!-- $ doctoc ./readme.md --title "## Contents" --entryprefix 1. --gitlab --maxlevel 2 -->
 
@@ -17,31 +15,32 @@ Bugs happen! In this guide, you will learn how to debug your Adobe XD plugin.
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Prerequisites
+## Prerequisite
 
-- Basic knowledge of JavaScript
-- At least one plugin in your `develop` folder (you can create one using our [Quick Start guide](/guides/quick-start-guide))
+At least one plugin in your `develop` folder (you can create one using our [Quick Start guide](/guides/quick-start-guide))
 
 
 ## Debugging Steps
 
+During development, if your plugin is misbehaving, there are few things you can do to investigate the problem.
+
 ### 1. Open the Developer Console
 
-In order to see the error messages your plugin may be generating, or to `console.log` messages from your code, you will need to open the XD Developer Console. The developer console allows you to see errors and plugin-generated logs while executing plugins. 
+You can see error messages your plugin may be generating, or `console.log` messages from your code with the XD developer console. 
 
-The developer console is enabled from the Plugins menu:
+The developer console can be opened from the Plugins menu:
 
 | Platform      | Menu item          |
-| ------------- |:-------------:|
+| ------------- | -------------      |
 | macOS         | Plugins->Development->Developer Console |
 | Windows       | Plugins->Developer Console |
 
 ### 2. Try reloading the plugins
 
-Reload the plugins in XD by either quitting and reopening the app, or using the handy keyboard shortcut:
+You can reload all plugins in your `develop` folder from the Plugins menu (or using the handy keyboard shortcut):
 
 | Platform      | Menu item          |
-| ------------- |:-------------:|
+| ------------- | -------------      |
 | macOS         | Plugins->Development->Reload Plugins (Shift-Cmd-R) |
 | Windows       | Plugins->Reload Plugins (Ctrl-Alt-E) |
 
@@ -49,15 +48,15 @@ If there are any errors blocking the plugin from running, they will appear in th
 
 ![reload-plugins](/images/readme-assets/reload-plugins.png)
 
-### 3. Try adding `console.log` messages to your code
+### 3. Try logging messages to the developer console
 
-The example code below, which is adapted from the [Quick Start guide](/guides/quick-start-guide), does not appear to be creating the "Hello!" text as expected.
+The example code below does not appear to be creating the "Hello!" text as expected.
 
-Let's try adding a "start message" and an "end message" into `sayHello()` to double check that the code is running:
+Let's try adding a "start message" and an "end message" into `sayHello()` to double-check that the code is starting and running all the way to the end:
 
 ```javascript
 function sayHello(selection) {
-  console.log("sayHello started!");
+  console.log("sayHello started!"); // log a message
 
   const el = new Text();
   el.text = "Hello!";
@@ -71,11 +70,11 @@ function sayHello(selection) {
   selection.insertionParent.addChild(el);
   el.moveInParentCoordinates(100, 100);
 
-  console.log("sayHello ran to the end!");
+  console.log("sayHello ran to the end!"); // log a message
 }
 ```
 
-Your `console.log` messages should appear in the developer console:
+Your `console.log` messages will appear in the developer console:
 
 ![start-message](/images/readme-assets/start-message.png)
 
@@ -95,5 +94,5 @@ console.log("el fill color =" + el.fill);
 
 Ready to learn more about XD plugins?
 
-- Learn about [plugin structure]()
+- Learn about [plugin structure](/reference/structure/)
 - Follow along with our [tutorials](/guides)
