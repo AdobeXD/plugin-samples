@@ -23,14 +23,14 @@ This sample describes how an XD plugin can invoke the default file picker and di
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Getting Started Guide](/Guides/getting-started-guide)
-- [Debugging Guide](/Guides/debugging-guide)
+- [Getting Started Guide](/guides/getting-started-guide)
+- [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
 
 ### 1.  Create plugin scaffold
 
-As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
+As described in the [Getting Started Guide](/guides/getting-started-guide), create the directory for your plugin:
 
 ```
 $ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
@@ -114,7 +114,7 @@ async function insertTextFromFileHandler(selection) { // [1]
 2. A file picker dialog is displayed, and the function waits for the user to select a text file.  See below for more detail.
 3. If `aFile` is undefined (because the user did not select a file), then plugin execution is aborted.
 4. The contents of the file is read, and it is returned as a string.  See below for more detail.
-5. The contents of the string is added to a `Text` object, and the `Text` object is added to the currently-selected artboard.  For more information, see [How to create styled text](/Guides/how-to-style-text-guide)
+5. The contents of the string is added to a `Text` object, and the `Text` object is added to the currently-selected artboard.  For more information, see [How to create styled text](/guides/how-to-style-text-guide)
 
 Line [2] uses a number of modern Javascript constructs.  It is executed as follows:
 * First,`fs.getFileForOpening()` function returns a `Promise` object.
@@ -141,5 +141,5 @@ If you select a file containing text, the text should be added to the currently-
 
 Ready for more? Take a look at other guides:
 
-- [Guides](/Guides)
+- [Guides](/guides)
 - [Other samples](https://github.com/AdobeXD/Plugin-Samples)

@@ -25,8 +25,8 @@ Please note the screenshots are from a mac machine but the steps would be identi
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Prerequisites
-- [Getting Started Guide](/Guides/getting-started-guide)
-- [Debugging Guide](/Guides/debugging-guide)
+- [Getting Started Guide](/guides/getting-started-guide)
+- [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
 

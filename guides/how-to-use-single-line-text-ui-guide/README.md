@@ -23,14 +23,14 @@ This sample describes how an XD plugin can invoke the default file picker and di
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Getting Started Guide](/Guides/getting-started-guide)
-- [Debugging Guide](/Guides/debugging-guide)
+- [Getting Started Guide](/guides/getting-started-guide)
+- [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
 
 ### 1.  Create plugin scaffold
 
-As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
+As described in the [Getting Started Guide](/guides/getting-started-guide), create the directory for your plugin:
 
 ```
 $ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
@@ -154,7 +154,7 @@ function createText(selection, txt) {  // [1]
     text.moveInParentCoordinates(100, 100);
 }
 ```
-1. `createText` function takes `selection` object and `txt` text as parameters. The contents of the string is added to a `Text` object, and the `Text` object is added to the currently-selected artboard or the first artboard.  For more information, see [How to create styled text](/Guides/how-to-style-text-guide)
+1. `createText` function takes `selection` object and `txt` text as parameters. The contents of the string is added to a `Text` object, and the `Text` object is added to the currently-selected artboard or the first artboard.  For more information, see [How to create styled text](/guides/how-to-style-text-guide)
 
 ### 8. Create the main function
 ```js
@@ -183,5 +183,5 @@ If you type in your name, the text should be added to the currently-selected or 
 
 Ready for more? Take a look at other guides:
 
-- [Guides](/Guides)
+- [Guides](/guides)
 - [Other samples](https://github.com/AdobeXD/Plugin-Samples)

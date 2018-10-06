@@ -4,7 +4,7 @@ Adobe XD plugins extend the capabilities of XD by adding new features to the app
 
 On this page, we'll give you a quick overview of **what you can create** and **what skills you need to bring**. 
 
-From there, you can **choose your own adventure**: build a "Hello, World" plugin in our [Quick Start guide](), follow our [tutorials](), view standalone [sample code](), or browse the [API references]().
+From there, you can **choose your own adventure**: build a "Hello, World" plugin in our [Quick Start guide](/guides/quick-start-guide), follow our [tutorials](), view standalone [sample code](), or browse the [API references]().
 
 Oh, and be sure to [join the developer community]() while you're here! We want you to say hi (we'll say hi back).
 
@@ -44,7 +44,7 @@ If you've never worked with JavaScript before, we recommend taking a moment to g
 
 
 ## Where to start?
-1. **Get Started**: To begin, read the [Quick Start guide](./guides/getting-started-guide/README.md), and follow along with [our tutorials](./guides/index.md)
+1. **Get Started**: To begin, read the [Quick Start guide](/guides/quick-start-guide), and follow along with [our tutorials](./guides/index.md)
 1. **Go deep**: Read up on [the structure of a plugin](./reference/structure/index.md), expand your reach with [advanced concepts](), and then dig into the [API reference]().
 1. **See code**: If you prefer to learn from working code, we have a [Samples repo on GitHub](https://github.com/AdobeXD/Plugin-Samples) for you to take a look at.
 1. **Join the community**: We want to hear from you, know who you are, keep you up to date with the latest info, and grow together. See our [Community page]() to learn about how to connect.

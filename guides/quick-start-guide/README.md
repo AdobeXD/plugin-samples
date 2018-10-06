@@ -34,7 +34,7 @@ Complete code for this plugin can be found [on GitHub](https://github.com/AdobeX
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript
-- [Debugging Guide](/Guides/debugging-guide)
+- [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
 
@@ -162,7 +162,7 @@ Congratulations! You’ve built your first plugin with Adobe XD!
 
 ## Next Steps
 
-- Learn about [debugging plugins](/Guides/debugging-guide)
+- Learn about [debugging plugins](/guides/debugging-guide)
 - Follow our [tutorials]()
 - See working code in our [sample repos](https://github.com/AdobeXD/Plugin-Samples)
 - Browse the [API references](/reference)

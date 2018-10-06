@@ -35,8 +35,8 @@ After setting up the sample, you will have an XD plugin and a separate node serv
 ## Prerequisites
 
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Getting Started Guide](/Guides/getting-started-guide)
-- [Debugging Guide](/Guides/debugging-guide)
+- [Getting Started Guide](/guides/getting-started-guide)
+- [Debugging Guide](/guides/debugging-guide)
 
 This guide will also assume that you are familiar with [OAuth workflow](https://oauth.net/2/).
 

@@ -23,8 +23,8 @@ This sample app will show you how to use Websocket to communicate real-time betw
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript
 - Basic knowledge of `WebSocket`
-- [Getting Started Guide](/Guides/getting-started-guide)
-- [Debugging Guide](/Guides/debugging-guide)
+- [Getting Started Guide](/guides/getting-started-guide)
+- [Debugging Guide](/guides/debugging-guide)
 
 ## Configuration
 
@@ -48,7 +48,7 @@ npm install --save websocket
 
 ### 1. Create plugin scaffold
 
-As described in the [Getting Started Guide](/Guides/getting-started-guide), create the directory for your plugin:
+As described in the [Getting Started Guide](/guides/getting-started-guide), create the directory for your plugin:
 
 ```
 $ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
