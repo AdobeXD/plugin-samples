@@ -35,19 +35,6 @@ The handler function (in the above example, `sayHello`) receives two contextual 
 The argument names `selection` and `documentRoot` are arbitrary, but are considered convention. We use those names throughout our documentation.
 
 
-## Sync and async
-
-A command handler can either complete _synchronously_, as in the example above, or it can _return a Promise_ and finish its work _asynchronously_, like this example using [the File API](../uxp/using-file-apis.md):
-
-```js
-function sayHello(selection, documentRoot) {
-    return fs.getFileForSaving().then(file => {
-        return file.write("Hello, world!");
-    });
-}
-```
-
-
 ## Accessing app APIs
 
 See [Available APIs](../core/apis.md) to learn about available APIs and how to access them. Most APIs are loaded using `require()`, but a few can be accessed directly as globals, and some key API objects are passed directly to your command handler function
