@@ -44,7 +44,12 @@ If you've never worked with JavaScript before, we recommend taking a moment to g
 
 
 ## Where to start?
+
+There are lots of ways to journey through the documentation on your way to building the next great XD plugin. If you're just getting started, we recommend following the left-hand navigation on this site from top to bottom (or until you're ready to plot your own course!).
+
+Here are some highlights you won't want to miss:
+
 1. **Get Started**: To begin, try our [Quick Start guide](/guides/quick-start-guide), then follow along with [the tutorials](./guides/index.md).
 1. **Go deep**: Read up on [the structure of a plugin](./reference/structure/index.md), expand your reach with [advanced concepts](/reference/index.md), and then dig into the [API reference](/reference/how-to-read.md).
-1. **See code**: If you prefer to learn from working code, we have a [Samples repo on GitHub](https://github.com/AdobeXD/Plugin-Samples) for you to take a look at.
+1. **See code**: If you prefer to learn from working code, we have a [samples repo on GitHub](https://github.com/AdobeXD/Plugin-Samples) for you to take a look at.
 1. **Join the community**: We want to hear from you, know who you are, keep you up to date with the latest info, and grow together. See our [Community page](/community.md) to learn about how to connect.
