@@ -36,6 +36,10 @@
 
 ## Advanced Concepts
 * [About advanced concepts](./reference/index.md)
+* [JavaScript Concepts](./reference/javascript/index.md)
+  * [JavaScript support](./reference/javascript/javascript-support.md)
+  * [Sync and Async](./reference/javascript/sync-async.md)
+  * [API environment](./reference/javascript/environment.md)
 * [XD Concepts](./reference/core/index.md)
   * [The scenegraph](./reference/core/scenegraph.md)
   * [The Edit context](./reference/core/edit-context.md)
