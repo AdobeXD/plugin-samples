@@ -36,7 +36,7 @@
 
 ## Advanced Concepts
 * [About advanced concepts](./reference/index.md)
-* [JavaScript Concepts](./reference/javascript/index.md)
+* [JavaScript and XD Plugin APIs](./reference/javascript/index.md)
   * [JavaScript support](./reference/javascript/javascript-support.md)
   * [Sync and Async](./reference/javascript/sync-async.md)
   * [API environment](./reference/javascript/environment.md)
