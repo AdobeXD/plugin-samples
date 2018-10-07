@@ -7,26 +7,6 @@ We'll keep things simple in this Quick Start guide. Once you're done, you'll hav
 At the end of the guide, we'll suggest some next steps for going deeper with the XD plugin APIs.
 
 
-<!-- doctoc command config: -->
-<!-- $ doctoc ./readme.md --title "## Contents" --entryprefix 1. --gitlab --maxlevel 3 -->
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-## Contents
-
-1. [Technology Used](#technology-used)
-1. [Prerequisites](#prerequisites)
-1. [Development Steps](#development-steps)
-    1. [1. Identify where your plugins are located](#1-identify-where-your-plugins-are-located)
-    1. [2. Create your plugin scaffold](#2-create-your-plugin-scaffold)
-    1. [3. Create your plugin’s manifest](#3-create-your-plugins-manifest)
-    1. [4. Create your plugin’s code](#4-create-your-plugins-code)
-    1. [5. Invoke your plugin](#5-invoke-your-plugin)
-1. [Next Steps](#next-steps)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-
 ## Technology Used
 Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/getting-started).
 
