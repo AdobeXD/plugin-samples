@@ -2,18 +2,6 @@
 
 This sample app will show you how to use Websocket to communicate real-time between the plugin's UI and a server. Note that this sample uses UI only as you cannot manipulate scenegraphs real-time yet. **The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-use-websockets)**.
 
-<!-- $ doctoc ./readme.md --title "## Contents" --entryprefix 1. --gitlab --maxlevel 2 -->
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-## Contents
-
-1. [Technology Used](#technology-used)
-1. [Prerequisites](#prerequisites)
-1. [Configuration](#configuration)
-1. [Development Steps](#development-steps)
-1. [Next Steps](#next-steps)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Technology Used
 - References:
