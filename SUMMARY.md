@@ -177,6 +177,7 @@
         * [ProgressEvent](./reference/uxp/class/ProgressEvent.md)
 * [Known Issues](./known-issues.md)
 * [Change Log](./changes.md)
+* [Glossary](./GLOSSARY.md)
 
 ## Upcoming
 
