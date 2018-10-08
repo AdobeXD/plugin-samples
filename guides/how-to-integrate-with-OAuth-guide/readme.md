@@ -13,18 +13,6 @@ After setting up the sample, you will have an XD plugin and a separate node serv
 1. Plugin polls the server to check if the access token is available for the session ID. If it does, the server sends back the access token
 1. Plugin uses the access token to make API calls
 
-<!-- $ doctoc ./readme.md --title "## Contents" --entryprefix 1. --gitlab --maxlevel 2 -->
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-## Contents
-
-1. [Technology Used](#technology-used)
-1. [Prerequisites](#prerequisites)
-1. [Configuration](#configuration)
-1. [Development Steps](#development-steps)
-1. [Next Steps](#next-steps)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Technology Used
 
