@@ -2,19 +2,6 @@
 
 Bugs happen! In this guide, you will learn how to debug your Adobe XD plugin.
 
-<!-- doctoc command config: -->
-<!-- $ doctoc ./readme.md --title "## Contents" --entryprefix 1. --gitlab --maxlevel 2 -->
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-## Contents
-
-1. [Prerequisites](#prerequisites)
-1. [Debugging Steps](#debugging-steps)
-1. [Next Steps](#next-steps)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 ## Prerequisite
 
 At least one plugin in your `develop` folder (you can create one using our [Quick Start guide](/guides/quick-start-guide)).
