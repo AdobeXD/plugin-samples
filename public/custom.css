@@ -1,5 +1,5 @@
 .book {
-    height: calc(100% - 96px);
+    height: calc(100% - 128px);
 }
 .page-inner {
     max-width: 1000px;
@@ -63,10 +63,15 @@
 
     background-color: white;
 }
-
-.markdown-section img:hover {
-    width: auto;
-    margin: 0;
+.markdown-section .glossary-term {
+    color: #527c23;
+    background-color: #F5F5F5;
+    padding: 2px 4px;
+    border-radius: 4px;
+    text-decoration-style: double;
+}
+.markdown-section .glossary-term:hover {
+    text-decoration-style: double;
 }
 
 .markdown-section td img {
@@ -162,8 +167,6 @@ body {
   }
 
   .footer {
-    padding: 48px;
-    padding-bottom: 0;
     color: #B8B8B8;
     text-align: right;
   }

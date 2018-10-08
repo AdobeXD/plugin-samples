@@ -31,7 +31,9 @@
         "components",
         "-lightbox",
         "github-tables",
-        "nestedmd"
+        "nestedmd",
+        "image-captions",
+        "fancybox"
     ],
     "pluginsConfig": {
         "components": {
