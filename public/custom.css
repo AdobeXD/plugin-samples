@@ -68,10 +68,10 @@
     background-color: #F5F5F5;
     padding: 2px 4px;
     border-radius: 4px;
-    text-decoration-style: double;
+    text-decoration-style: double !important;
 }
 .markdown-section .glossary-term:hover {
-    text-decoration-style: double;
+    text-decoration-style: double !important;
 }
 
 .markdown-section td img {
