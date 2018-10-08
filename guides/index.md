@@ -1,22 +1,17 @@
-# Tutorials
+# About the tutorials
 
-* Working with Content
-  * [How to draw lines](./how-to-draw-lines-guide/README.md)
-  * [How to work with paths](./how-to-create-path-objects-guide/README.md)
-  * [How to style text](./how-to-style-text-guide/README.md)
-  * [Working with the SceneNode list](./how-to-work-with-scenenodelist-guide/README.md)
-  * [How to generate an export rendition](./how-to-generate-an-export-rendition-guide/README.md)
+Do you like to learn by following step-by-step examples? If so, this is the section for you!
 
-* Working with I/O
-  * [How to read a file](./how-to-import-guide/README.md)
-  * [How to integrate with OAuth](./how-to-integrate-with-OAuth-guide/readme.md)
-  * [How to make a simple network request](./how-to-make-a-network-request-guide/README.md)
-  * [How to use WebSockets](./how-to-use-websockets-guide/README.md)
+Each of the tutorials contained within will teach you a specific skill related to the XD plugin APIs. With these tutorials, you can learn things like how to draw a line, how to make a network request, or how to display an image in your UI.
 
-* Building User Interfaces
-  * Asking user for confirmation
-    * [With document.createElement](./how-to-ask-user-for-confirmation-guide/README.md)
-    * [With HTML](./how-to-ask-user-for-confirmation-guide/README_HTML.md)
-  * [Using single-line text editors](./how-to-use-single-line-text-ui-guide/README.md)
-  * [How to display a dropdown list](./how-to-display-a-dropdown-list-guide/README.md)
-  * [How to display an image](./how-to-display-an-image-guide/README.md)
+To get the most out of the tutorials, follow along with them from top to bottom. If you get stuck while coding along, don't worry! We have code-complete sample repos on GitHub for each tutorial.
+
+Before you jump in, a quick note to save you some time: the tutorials will all assume you have completed our [Quick Start guide](/guides/quick-start-guide/README.md). Make sure to do that before you jump in.
+
+Our tutorials are divided into these main areas:
+
+- [Working with content](/guides/content-index.html)
+- [Working with I/O](/guides/io-index.html)
+- [Building user interface](/guides/ui-index.html)
+
+Chances are there's something in each section that will be relevant to the XD plugin you're creating! 
