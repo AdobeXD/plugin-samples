@@ -30,7 +30,7 @@ TBD Explanation of connection:
 The handler function (in the above example, `sayHello`) receives two contextual arguments from XD:
 
 * The current [selection](../selection.md) state
-* The root node of the entire document (see [scenegraph > RootNode](../scenegraph.html#rootnode))
+* The root node of the entire document (see [scenegraph > RootNode](../scenegraph.md#rootnode))
 
 The argument names `selection` and `documentRoot` are arbitrary, but are considered convention. We use those names throughout our documentation.
 

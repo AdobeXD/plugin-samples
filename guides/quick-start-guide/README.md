@@ -49,12 +49,12 @@ Adobe XD plugins require two files, with these _exact_ names:
 1.   `manifest.json` is your plugin’s manifest.
 
     This file includes information about the plugin, such as its name, the menu item(s) it adds to XD, and so on. 
-   [Learn about the manifest here](./reference/structure/manifest.html).
+   [Learn about the manifest here](/reference/structure/manifest.md).
    
 2.   `main.js` is your plugin’s code. 
 
     This file contains your JavaScript code that implements the logic for your plugin. 
-   [Learn more about `main.js` here](./reference/structure/handlers.html).
+   [Learn more about `main.js` here](/reference/structure/handlers.md).
 
 It's possible to have more files if you want, but these files are the bare minimum requirement for your plugin to work.
 
@@ -169,4 +169,4 @@ Congratulations! You’ve built your first plugin for Adobe XD!
 - Learn about [debugging plugins](/guides/debugging-guide)
 - Follow our [tutorials](/guides/index.md)
 - See working code in our [sample repos](https://github.com/AdobeXD/Plugin-Samples)
-- Browse the [API references](/reference/how-to-read.html)
+- Browse the [API references](/reference/how-to-read.md)

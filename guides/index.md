@@ -10,8 +10,8 @@ Before you jump in, a quick note to save you some time: the tutorials will all a
 
 Our tutorials are divided into these main areas:
 
-- [Working with content](/guides/content-index.html)
-- [Working with I/O](/guides/io-index.html)
-- [Building user interface](/guides/ui-index.html)
+- [Working with content](/guides/content-index.md)
+- [Working with I/O](/guides/io-index.md)
+- [Building user interface](/guides/ui-index.md)
 
 Chances are there's something in each section that will be relevant to the XD plugin you're creating! 

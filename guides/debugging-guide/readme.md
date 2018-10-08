@@ -83,4 +83,4 @@ Ready to learn more about XD plugins?
 
 - Learn about [plugin structure](/reference/structure/)
 - Follow along with our [tutorials](/guides)
-- Browse the [API references](/reference/how-to-read.html)
+- Browse the [API references](/reference/how-to-read.md)
