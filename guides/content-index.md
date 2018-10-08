@@ -4,8 +4,8 @@ A fundamental use case for XD plugins is working with content. Whether you want 
 
 The tutorials contained in this section will show you a few ways XD plugins can work with content:
 
-* [How to draw lines](./guides/how-to-draw-lines-guide/README.md)
-* [How to work with paths](./guides/how-to-create-path-objects-guide/README.md)
-* [How to style text](./guides/how-to-style-text-guide/README.md)
-* [Working with the SceneNode list](./guides/how-to-work-with-scenenodelist-guide/README.md)
+* [How to draw lines](./how-to-draw-lines-guide/README.md)
+* [How to work with paths](./how-to-create-path-objects-guide/README.md)
+* [How to style text](./how-to-style-text-guide/README.md)
+* [Working with the SceneNode list](./how-to-work-with-scenenodelist-guide/README.md)
 
