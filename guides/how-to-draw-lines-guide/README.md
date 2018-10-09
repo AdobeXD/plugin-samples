@@ -5,8 +5,9 @@ This sample demonstrates how to create a plugin that adds colored lines to the u
 
 ## Technology Used
 - References
-    - [XD Scenegraph - Line](/reference/scenegraph.md#line)
-    - [XD Scenegraph - Commands](/reference/commands.md)
+    - [Line](/reference/scenegraph.md#line)
+    - [Color](/reference/Color.html)
+    - [Commands](/reference/commands.md)
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
@@ -18,21 +19,19 @@ This sample demonstrates how to create a plugin that adds colored lines to the u
 > **Info**
 > Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-draw-lines).
 
-### 1.  Create plugin scaffold
 
-As described in the [Quick Start Tutorial](/guides/quick-start-guide), create the directory for your plugin:
+### 1. Prepare your plugin scaffold
 
-```
-$ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
-$ mkdir com.adobe.xd.createLines
-$ cd com.adobe.xd.createLines
-$ touch manifest.json
-$ touch main.js
-```
+First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/guides/quick-start-guide).
 
-Edit the manifest file for your plugin:
+Replace the JSON object in your manifest with the one below, noting the changes for the following fields:
 
-```js
+1. `id`
+1. `name`
+1. `uiEntryPoints[0].label`
+1. `uiEntryPoints[0].commandId`
+
+```json
 {
     "id": "com.adobe.xd.createLines",
     "name": "Create Lines sample plugin",
@@ -51,7 +50,10 @@ Edit the manifest file for your plugin:
 }
 ```
 
-In the main.js file, link the commandId to a handler function
+
+Then, update your `main.js` file, mapping the manifest's `commandId` to a handler function.
+
+Replace the content of your `main.js` file with the following code:
 
 ```js
 function createLinesHandlerFunction(selection) {
@@ -67,19 +69,28 @@ module.exports = {
 
 The remaining steps in this guide describe additional edits to the main.js file.
 
-### 2.  Get references to the `Path` and `Color` classes from XD’s `scenegraph` module
-```
-const { Line, Color } = require("scenegraph");
-```
-`Line` and `Color` classes are imported and ready to be used.
 
-### 3.  Require XD’s `commands` module
-```
+### 2.  Require in XD API dependencies
+
+For this tutorial, we just need access to two XD scenegraph classes and one XD module.
+
+Add the following lines to the top of your `main.js` file:
+
+```js
+// Add this to the top of your main.js file
+const { Line, Color } = require("scenegraph");
 const commands = require("commands");
 ```
-`commands` class is imported and ready to be used.
 
-### 4. Create a helper function, `randomColor`
+Now the `Line` and `Color` classes and `commands` module are required in and ready to be used.
+
+
+### 3. Create a helper function
+
+Our plugin is going to assing random colors to the lines we create!
+
+Add the lines of code below to your file:
+
 ```js
 function randomColor() {
     const hexValues = ['00', '33', '66', '99', 'CC', 'FF'];
@@ -87,9 +98,16 @@ function randomColor() {
     return color;
 }
 ```
-This function returns a web-friendly color hex value.
 
-### 5. Create line data
+This function returns a web-friendly color hex value (e.g., `"#FFFFFF"). This is just straight-up JavaScript; there's nothing specific to XD plugin APIs to cover here.
+
+
+### 4. Create line data
+
+In this step, we're going to add a little more plain-old JavaScript. This time we'll add a data structure that will set us up to draw lines with the XD plugin API in the next step.
+
+Add this code to your file:
+
 ```js
 const lineData = [
     { startX: 100, startY: 110, endX: 210, endY: 233 },
@@ -98,44 +116,64 @@ const lineData = [
     { startX: 400, startY: 300, endX: 500, endY: 120 }
 ]
 ```
-Note that, in this example, the subsequent line's `startX` and `startY` match the former line's `endX` and `endY`. This ensures lines are connected to each other. Feel free to modifiy the data as you wish.
 
-### 6. Create the main function, `createLinesHandlerFunction`
+A couple of things to note:
+
+- In this example, the each line's `startX` and `startY` matches the former line's `endX` and `endY`. This ensures lines are connected to each other. But they don't _have_ to connect; feel free to modifiy the data as you wish!
+- The data structure here is important to note:
+  - `lineData` is an array. This gives us a way to store coordinates for multiple lines. We'll loop over this array in the next step.
+  - The array contains multiple objects that will be passed, one at a time, to the `Line` API.
+  - Since we're drawing lines, each object has a _start_ and _end_ coordinates for X and Y.
+
+
+### 5. Create the main function
+
+In this step, we'll build out the main function, `createLinesHandlerFunction`, that we added in the first step. Each of the numbered comments are explained below:
+
 ```js
-function createLinesHandlerFunction(selection) { // [1]
-    let lines = []; // [2]
-    lineData.forEach(data => { // [3]
-        const line = new Line(); //[4]
-        line.setStartEnd( //[5]
+function createLinesHandlerFunction(selection) {    // [1]
+
+    let lines = [];                                 // [2]
+
+    lineData.forEach(data => {                      // [3]
+        const line = new Line();                    // [4.i]
+
+        line.setStartEnd(                           // [4.ii]
             data.startX,
             data.startY,
             data.endX,
             data.endY
-        )
-        line.strokeEnabled = true; // [6]
-        line.stroke = new Color(randomColor()); // [7]
-        line.strokeWidth = 3; // [8]
-        lines.push(line); // [9]
-        selection.editContext.addChild(line) // [10]
-    })
-    selection.items = lines // [11]
-    commands.group() // [12]
+        );
+
+        line.strokeEnabled = true;                  // [4.iii]
+        line.stroke = new Color(randomColor());     // [4.iv]
+        line.strokeWidth = 3;                       // [4.v]
+
+        lines.push(line);                           // [4.vi]
+
+        selection.editContext.addChild(line)        // [4.vii]
+    });
+
+    selection.items = lines;                        // [11]
+    commands.group();                               // [12]
 }
 ```
-1. This function accepts one parameter, `selection`, which gives access to the selection object inside XD. Refer to [XD Selection Doc](/reference/selection.md) for more details.
-2. Create an empty array to contain all the `Line` objects.  It will be used later, in step [11]
-3. Loop over the provided array of line data
-4. Create a new instance of `Line`
-5. Use the `Line` object's setter, `.setStartEnd`, to set the line data
-6. Set `strokeEnabled` to `true` in order to draw a stroke for the line
-7. Set the stroke color using the helper function, `randomColor`
-8. Set the width of the stroke using `strokeWidth` property
-9. Append the line object into the empty array created in step [2]
-10. Insert the line into the edit context using `selection.editContext.addChild` method.  This step adds the line to the document's scenegraph.
+
+1. This function only needs the first [contextual argument](/reference/structure/handlers.html#contextual-arguments), `selection`, which gives access to the selection object inside XD.
+2. Create an empty array to contain all the `Line` objects we'll create. This array will be used in a later step.
+3. Loop over the `lineData` array, getting an individual `data` object each time through the loop.
+4. For each `data` object:
+    1. Create a new instance of `Line`.
+    1. Use the `Line` object's setter, `.setStartEnd`, to set the line data from our `data` object.
+    1. Set the `strokeEnabled` property to `true` in order to draw a stroke for the line.
+    1. Set the stroke color using the `randomColor` helper function.
+    1. Set the width of the stroke using `strokeWidth` property.
+    1. Append the line object into the `lines` array.
+    1. Insert the line into the edit context using the `selection.editContext.addChild` method.  This step adds the line to the document's scenegraph.
 11. Now that all of the `Line` objects have been added to the scenegraph, set the document's current selection to be those `Line` objects.
 12. Use the `group` command to combine all of the currently-selected objects (the `Line` objects) into a single group object.
 
-### 7. Execute the plugin
+### 6. Run the plugin
 
 After saving all of your changes, reload the plugin in XD and invoke it.  The result should be similar to the following:
 
@@ -143,7 +181,13 @@ After saving all of your changes, reload the plugin in XD and invoke it.  The re
 
 ## Next Steps
 
-Ready for more? Take a look at other guides:
+Want to expand on what you learned here? Have a look at these references to see options for customizing this sample plugin:
 
-- [Guides](/guides)
-- [Other samples](https://github.com/AdobeXD/Plugin-Samples)
+- [Line](/reference/scenegraph.md#line)
+- [Color](/reference/Color.html)
+- [Commands](/reference/commands.md)
+
+Ready to explore further? Take a look at our other resources:
+
+- [Tutorials](/guides)
+- [Sample code repos](https://github.com/AdobeXD/plugin-samples)
