@@ -7,7 +7,7 @@ Please note the screenshots are from a mac machine but the steps would be identi
 
 
 ## Prerequisites
-- [Getting Started Guide](/guides/getting-started-guide)
+- [Quick Start Tutorial](/guides/quick-start-guide)
 - [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
