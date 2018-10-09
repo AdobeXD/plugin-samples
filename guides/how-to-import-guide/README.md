@@ -7,7 +7,7 @@ This sample describes how an XD plugin can invoke the default file picker and di
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Getting Started Guide](/guides/getting-started-guide)
+- [Quick Start Tutorial](/guides/quick-start-guide)
 - [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
@@ -17,7 +17,7 @@ This sample describes how an XD plugin can invoke the default file picker and di
 
 ### 1.  Create plugin scaffold
 
-As described in the [Getting Started Guide](/guides/getting-started-guide), create the directory for your plugin:
+As described in the [Quick Start Tutorial](/guides/quick-start-guide), create the directory for your plugin:
 
 ```
 $ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins

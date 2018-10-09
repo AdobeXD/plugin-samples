@@ -11,7 +11,7 @@ This sample demonstrates how to build a user confirmation dialog in XD using HTM
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Getting Started Guide](../getting-started-guide)
+- [Quick Start Tutorial](../quick-start-guide)
 
 ## Development Steps
 
