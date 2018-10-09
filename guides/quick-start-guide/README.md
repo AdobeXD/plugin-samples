@@ -7,18 +7,9 @@ We'll keep things simple in this Quick Start guide. Once you're done, you'll hav
 At the end of the guide, we'll suggest some next steps for going deeper with the XD plugin APIs.
 
 
-## Technology Used
-
-- [XD plugin API reference](/reference)
-- Libraries/Frameworks/APIs: None
-
-
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript
 - A text editor to write your code in (like VSCode, Sublime Text, Bracket, Atom, etc)
-- Basic familiarity with the Terminal application on your OS:
-    - macOS: Terminal.app
-    - Windows: XYZ
 
 
 ## Development Steps
@@ -28,25 +19,15 @@ At the end of the guide, we'll suggest some next steps for going deeper with the
 
 ### 1. Identify where your plugins are located
 
-Adobe XD loads plugins that are in development from a `develop` folder in specific location on your machine:
+Adobe XD loads plugins that are in development from a `develop` folder in specific location on your machine. To get to that folder, simply go to this menu item: _Plugins > Development > Show Develop Folder_.
 
-| Platform      | Path          |
-| ------------- | ------------- |
-| macOS         | `~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/` (note: `~/Library`, not `/Library`) |
-| Windows       | `C:\Users\%USERNAME%\AppData\Local\Packages\Adobe.CC.XD.Prerelease_adky2gkssdxte\LocalState\`       |
-
-Navigate to the above path, and if there _isn’t_ a folder that already exists with the name `develop`, go ahead and create it.
-
-Example:
-
-```bash
-$ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/
-$ mkdir develop
-```
+This will open the `develop` folder, which we'll use in the next step.
 
 ### 2. Create your plugin scaffold
 
-Adobe XD plugins require two files, with these _exact_ names:
+Next, you'll need to make a new folder within the `develop` folder to store the plugin files that you'll create below. Name your new plugin folder anything you like.
+
+Now, let's create your plugin files. Open your favorite text editor and create two files inside of your new plugin folder with these _exact_ names:
 
 1.   `manifest.json` is your plugin’s manifest.
 
@@ -58,27 +39,7 @@ Adobe XD plugins require two files, with these _exact_ names:
     This file contains your JavaScript code that implements the logic for your plugin. 
    [Learn more about `main.js` here](/reference/structure/handlers.md).
 
-It's possible to have more files if you want, but these files are the bare minimum requirement for your plugin to work.
-
-Your plugin files are stored within a parent folder that you create. Each plugin gets its own folder, so your folder name must be unique. By convention, the name of the folder is usually the same as the ID of the plugin (for more information about plugin IDs, see the description of the manifest file, below).
-
-Example:
-
-```bash
-$ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/develop
-$ mkdir com.adobe.xd.helloWorld
-$ cd com.adobe.xd.helloWorld
-$ touch manifest.json
-$ touch main.js
-```
-
-This terminal example does the following:
-
-1. Navigates to your XD plugin `develop` folder
-1. Makes a parent folder for your plugin
-1. Navigates into your new parent folder
-1. Creates a file called `manifest.json`
-1. Creates a file called `main.js`
+It's possible to have more files if you want, but these files are the bare minimum requirement for your plugin to work, and are all we'll need for this Quick Start tutorial.
 
 
 ### 3. Create your plugin’s manifest
@@ -104,9 +65,9 @@ In the previous step, you created a file named `manifest.json`. Open that file a
 }
 ```
 
-For more about what each entry means, [see the manifest documentation](/reference/structure/manifest.md).
+If you're curious about what each entry means, [see the manifest documentation](/reference/structure/manifest.md).
 
-The value of the `commandId` property may be any string. In the next section, we will see how that string is associated with the code for our plugin.
+The value of the `commandId` property may be any string; in this case, it's `helloCommand`. In the next section, we will see how this string is associated with the code for our plugin.
 
 
 ### 4. Create your plugin’s code
@@ -158,13 +119,14 @@ This code does the following:
 
 So we’ve written a plugin! How do we run it?
 
-If you haven’t already done so, go ahead and launch XD and open a new document. Then navigate to the **Plugins | Say hello** menu item.
+If you haven’t already done so, launch XD and open a new document. Then navigate to the _Plugins > Say hello_ menu item.
 
-Alternatively, if XD was already open, select **Plugins | Development | Reload Plugins**.
+Alternatively, if XD was already open, select _Plugins > Development > Reload Plugins_.
 
 ![It worked!](/images/readme-assets/on-canvas.png)
 
 Congratulations! You’ve built your first plugin for Adobe XD!
+
 
 ## Next Steps
 
