@@ -5,7 +5,7 @@ This sample demonstrates how to create a plugin that adds colored lines to the u
 
 ## Technology Used
 - References
-    - [XD Scenegraph - Line](/reference/scenegraph.md#Line)
+    - [XD Scenegraph - Line](/reference/scenegraph.md#line)
     - [XD Scenegraph - Commands](/reference/commands.md)
 
 ## Prerequisites
