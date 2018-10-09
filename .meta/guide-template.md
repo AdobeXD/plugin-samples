@@ -23,6 +23,9 @@ Basic knowledge of HTML, CSS, and JavaScript.
 
 ## Development Steps
 
+> **Info**
+> Complete code for this plugin can be found [on GitHub]().
+
 ### 1. Step 1
 Description
 

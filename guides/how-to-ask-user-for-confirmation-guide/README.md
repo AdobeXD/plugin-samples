@@ -1,6 +1,6 @@
 # Asking the user for confirmation
 
-This sample demonstrates how to build a user confirmation dialog in XD.  **The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-ask-user-for-confirmation)**.
+This sample demonstrates how to build a user confirmation dialog in XD.
 
 
 ## Technology Used
@@ -18,6 +18,9 @@ This sample demonstrates how to build a user confirmation dialog in XD.  **The p
 - [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
+
+> **Info**
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-ask-user-for-confirmation).
 
 ### 1. Create the dialog.
 ```

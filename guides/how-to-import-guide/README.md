@@ -1,5 +1,5 @@
 # How to read the contents of a file
-This sample describes how an XD plugin can invoke the default file picker and display the text extracted from the file chosen by user. **The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-import)**.
+This sample describes how an XD plugin can invoke the default file picker and display the text extracted from the file chosen by user.
 
 
 ## Technology Used
@@ -11,6 +11,9 @@ This sample describes how an XD plugin can invoke the default file picker and di
 - [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
+
+> **Info**
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-import).
 
 ### 1.  Create plugin scaffold
 

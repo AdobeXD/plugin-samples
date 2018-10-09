@@ -1,5 +1,5 @@
 # How to show an image in the modal UI
-This sample shows how to add an image in the modal UI. **The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-display-an-image)**.
+This sample shows how to add an image in the modal UI.
 
 
 ## Technology Used
@@ -11,6 +11,9 @@ This sample shows how to add an image in the modal UI. **The plugin code can be 
 - [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
+
+> **Info**
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-display-an-image).
 
 ### 1. Create plugin scaffold
 

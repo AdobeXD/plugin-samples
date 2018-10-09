@@ -1,6 +1,6 @@
 # How to Use Websockets
 
-This sample app will show you how to use Websocket to communicate real-time between the plugin's UI and a server. Note that this sample uses UI only as you cannot manipulate scenegraphs real-time yet. **The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-use-websockets)**.
+This sample app will show you how to use Websocket to communicate real-time between the plugin's UI and a server. Note that this sample uses UI only as you cannot manipulate scenegraphs real-time yet.
 
 
 ## Technology Used
@@ -32,7 +32,10 @@ $ npm init
 npm install --save websocket
 ```
 
-## Development Steps - Plugin
+## Development Steps
+
+> **Info**
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-use-websockets). - Plugin
 
 ### 1. Create plugin scaffold
 
@@ -183,7 +186,10 @@ async function connectWS() {
 4. Send the message entered by user to server via websocket
 5. If the received message's status is not `ongoing`, that means the socket connection is going to be closed - hide the input field and let the user close the dialog
 
-## Development Steps - Server
+## Development Steps
+
+> **Info**
+> Complete code for this plugin can be found [on GitHub](). - Server
 
 ### Create the main file, `index.js`
 Create `index.js` inside the `chatServer` folder created during the [Configuration](#configuration) step above

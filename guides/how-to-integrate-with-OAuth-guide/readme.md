@@ -1,6 +1,6 @@
 # How to Integrate with OAuth
 
-This sample app will show you how to implement the OAuth workflow with Dropbox API in Adobe XD. **The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-integrate-with-OAuth)**.
+This sample app will show you how to implement the OAuth workflow with Dropbox API in Adobe XD.
 
 After setting up the sample, you will have an XD plugin and a separate node server. See below for the high level workflow:
 
@@ -87,6 +87,9 @@ $ npm start
 Now you can use the HTTPS endpoint provided by `ngrok`
 
 ## Development Steps
+
+> **Info**
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-integrate-with-OAuth).
 
 ### 1. Get references to the `Text` and `Color` classes from XD’s `scenegraph` module
 ```javascript
