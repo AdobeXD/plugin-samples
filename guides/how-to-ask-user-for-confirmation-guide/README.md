@@ -1,16 +1,9 @@
 # Asking the user for confirmation
 
-This sample demonstrates how to build a user confirmation dialog in XD.
-
+There are many times when a plugin will need to ask the user whether or not it should proceed with a given course of action. This guide will show you an easy way to get user confirmation before proceeding with a task.
 
 ## Technology Used
-- References: 
-	- [UXP API - Document](/reference/uxp/class/Document.md)
-	- [UXP API - Dialog](/reference/uxp/class/HTMLDialogElement.md)
-	- [UXP API - Form](/reference/uxp/class/HTMLHtmlElement.md)
-	- [UXP API - Footer](/reference/uxp/class/HTMLHtmlElement.md)
-	- [UXP API - Button](/reference/uxp/class/HTMLButtonElement.md)	
-	- [UXP API - Heading](/reference/uxp/class/HTMLHtmlElement.md)
+- [Plugin Toolkit](https://github.com/AdobeXD/plugin-toolkit)
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
@@ -20,73 +13,100 @@ This sample demonstrates how to build a user confirmation dialog in XD.
 ## Development Steps
 
 > **Info**
-> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-ask-user-for-confirmation).
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/ui-dialog-variations).
 
-### 1. Create the dialog.
-```
-let dialog = document.createElement("dialog");
-```
+### 1. Add the "plugin helpers" library
 
-### 2. Create the form and set its properties.
-```
-let container = document.createElement("form");
-container.setAttribute("method", "dialog");
-container.style.minWidth = 400;
-container.style.padding = 40;
-```
+Creating dialogs can take a lot of boilerplate code, but we've created a small library that makes it simple to display simple dialogs in the form of a "helper" library. This library is located at https://github.com/AdobeXD/plugin-toolkit.
 
-### 3. Create the heading to show up on the form.
-```
-let message = document.createElement("h1");
-message.textContent = "Are you sure?";
-```
+To add the library to your project, you can:
 
-### 4. Append the heading to the form container. 
-```
-container.appendChild(message);
+* Click the "Clone or Download" button on the right side of the page
+* Uncompress the zip file after the download completes
+* Copy the `lib` folder to your plugin project
+
+### 2. Require the `dialogs` module in `main.js`
+
+Add the following to your `main.js`:
+
+```js
+const { confirm } = require("./lib/dialogs.js");
 ```
 
-### 5. Create the footer. 
-```
-let footer = document.createElement("footer");
-```
+This will import a `confirm` function that we can call to display a confirmation dialog.
 
-### 6. Create a helper function to create buttons
-```
-function createButton(text, variant){
-    let newButton = document.createElement("button");
-    newButton.textContent = text;
-    newButton.setAttribute("uxp-variant", variant);
-    newButton.onclick = (e) => dialog.close();
-    return newButton;
+### 3. Create a function to display the confirmation
+
+```js
+async function showConfirm() {
+	/* we'll display a dialog here */
 }
 ```
 
-### 7. Create the buttons using the helper function
-```
-let yesButton = createButton("Yes", "cta");
-let noButton = createButton("No");
+Next, inside this function, we call `confirm` to actually show the confirmation dialog. `confirm` takes three arguments:
+
+1. The dialog's title
+2. The text you want to display to the user in the dialog's body
+3. The two buttons from which you want the user to choose (A confirmation dialog can only have two buttons)
+
+Let's see what that looks like in code:
+
+```js
+const feedback = await confirm("Enable Smart Filters?", //[1]
+	"Smart filters are nondestructive and will preserve your original images.", //[2]
+	["Cancel", "Enable"] /*[3]*/ );
 ```
 
-### 8. Append the buttons to the footer.
-```
-footer.appendChild(yesButton);
-footer.appendChild(noButton);
+Note that the third argument is an array of strings. These identify the names of the two buttons that will display in the confirmation dialog. These are given in the order they would appear on a macOS machine, which means that the "cancel" or negative button is listed first, and the "ok" or acceptance button is listed last.
+
+### 5. React to which button was pressed
+
+When the dialog is closed, some useful information about which button was pressed will be provided. You can access this using the `which` property on the `feedback` variable (return value from `confirm`).
+
+```js
+switch (feedback.which) {
+	case 0:
+		/* User canceled */
+		break;
+	case 1:
+		/* User clicked Enable */
+		break;
+}
 ```
 
-### 9. Append the footer to the form container.
-```
-container.appendChild(footer);
+As you can see, the value of `which` maps to the buttons as specified when calling `confirm`. So `0` is the "Cancel" button and `1` is the "Enable" button.
+
+### 6. Create the menu handler
+
+We need to export a menu handler from the `main.js` file so that XD knows what to do with our plugin:
+
+```js
+module.exports = {
+    commands: {
+        showConfirm
+    }
+}
 ```
 
-### 10. Append the form container to the dialog created in the first step.
-```
-dialog.appendChild(container);
-```
+Be sure to add this to your plugin `manifest.json` as well:
 
-### 11. Append the dialog to the document body.
-```
-document.body.appendChild(dialog);
+```json
+{
+    "id": "your.id.here",
+    "name": "Show Confirmation",
+    "host": {
+        "app": "XD",
+        "minVersion": "13.0.0"
+    },
+    "version": "1.0.0",
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+			"label": "Confirmation",
+			"commandId": "showConfirm"
+		}
+    ]
+}
 ```
 
 ## Next Steps
