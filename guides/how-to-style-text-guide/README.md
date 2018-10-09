@@ -140,9 +140,9 @@ function createStyledTextHandlerFunction(selection) {
     	{text: "text",  color: "violet"}
     ];
     
-    node.text = textData.map(item => item.text).join("");   // [1]
+    node.text = textData.map(item => item.text).join("");   // [2]
     
-    node.styleRange = textData.map(item => ({               // [1]
+    node.styleRange = textData.map(item => ({               // [3]
         length: item.text.length,
         fill: new Color(item.color),
         fontSize: 24
@@ -159,13 +159,13 @@ Here's what's changed:
 1. Just as before, we set `node.text` equal to the text to be displayed. This time, the text string is created by concatenating together all the `.text` property values contained in the `textData` array. The `Array#map` gets us an array of strings, which we combine into a single string with `Array#join`.
 1. In this step, we build an array of style objects, applying each style to a few characters of the text string. We use `Array#map` again, this time converting each item in the `textData` array into a style object. The `length` of each style is equal to the length of the text string contained in one element of the `textData` array. The `color` of each style is equal to the color value contained in one element of the `textData` array.
 
-> **Tip:**
+> **tip**
 > The `Color` constructor understands some color names, but you have plenty of other options for defining colors, including hex, rgba, and more. [See the `Color` reference for more information](/reference/Color.html).
 
 
 ### 6. Run the plugin
 
-After saving all of your changes, reload the plugin in XD and invoke it. You'll now have rainbow-colored text:
+After saving all of your changes, reload the plugin in XD and run it. You'll now have rainbow-colored text:
 
 ![]()
 
