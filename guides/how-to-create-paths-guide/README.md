@@ -165,7 +165,7 @@ Ater saving all your changes, reload the plugin in XD and invoke it.  The result
 
 Want to expand on what you learned here? Have a look at these references to see options for customizing this sample plugin:
 
-- [Path](/reference/scenegraph.md#Path)
+- [Path](/reference/scenegraph.md#path)
 - [Color](/reference/Color.html)
 - [Commands](/reference/commands.md)
 
