@@ -3,8 +3,8 @@ const fs = require("uxp").storage.localFileSystem;
 
 async function exportRendition(selection) {
     if (selection.items.length > 0) {
-        const file = await fs.getFileForSaving();
-
+        const folder = await fs.getFolder();
+        const file = await folder.createFile("rendition.png");
         const renditions = [{
             node: selection.items[0],
             outputFile: file,

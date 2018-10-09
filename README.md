@@ -6,7 +6,7 @@ This repository contains several sample XD plugins. You can use these to learn m
 
 | Extension | Main APIs Used | Description | Minimum Version |
 | --- | ------ | --- | --- |
-| e2e-adobe-stock | Network I/O (Fetch) | Lets users use End-to-end Adobe Stock Photo Search | 10.0.10.24 |
+| e2e-adobe-stock | Network I/O (Fetch) | Lets users use End-to-end Adobe Stock Photo Search | 13.0.11.19 |
 | e2e-colorize-text | Scenegraph, ScenenodeList | Provides several text color utilities | 12.0.10.64 |
 | e2e-stock-chart | UI, File I/O, Scenegraph, Network I/O (Fetch)  | Draws a line chart of the picked stock quote | 10.0.10.24 |
 | getting-started | Scenegraph  | Creates a text ("Hello!") object and inserts it into the artboard | 8.0 |
@@ -14,13 +14,13 @@ This repository contains several sample XD plugins. You can use these to learn m
 | how-to-create-path-objects | Scenegraph | Demonstrates how to create shapes using path objects | 8.0 |
 | how-to-display-an-image | UI | Demonstrates how to add an image in the modal UI | 10.0.10.24 |
 | how-to-draw-lines | Scenegraph | Demonstrates how to create line objects | 8.0 |
-| how-to-generate-an-export-rendition | File I/O, Application(renditions) | Demonstrates how to generate an export rendition of an object | 10.0.10.24 |
-| how-to-import | File I/O, Scenegraph | Demonstrates how to import a `.txt` file | 10.0.10.24 |
+| how-to-generate-an-export-rendition | File I/O, Application(renditions) | Demonstrates how to generate an export rendition of an object | 13.0.11.19 |
+| how-to-import | File I/O, Scenegraph | Demonstrates how to import a `.txt` file | 13.0.11.19 |
 | how-to-integrate-with-OAuth | Network I/O (XHR, openExternal), Node.js server | Demonstrates how to integrate with a third-party OAuth | 10.0.10.24 |
-| how-to-make-network-requests | Network I/O (XHR , Fetch), Scenegraph | Demonstrates how to make network requests | 10.0.10.24 |
+| how-to-make-network-requests | Network I/O (XHR , Fetch), Scenegraph | Demonstrates how to make network requests | 13.0.11.19 |
 | how-to-style-text | Scenegraph | Demonstrates how to create text nodes with styled text | 10.0.10.24 |
 | how-to-use-single-line-text-ui | UI, Scenegraph | Demonstrates how to take user input from the modal dailog and insert the text | 10.0.10.24 |
-| how-to-use-websockets | UI, Network I/O (Websockets), Node.js server | Demonstrates how to use websockets to communicate with an exernal server | 10.0.10.24 |
+| how-to-use-websockets | UI, Network I/O (Websockets), Node.js server | Demonstrates how to use websockets to communicate with an exernal server | 13.0.11.19 |
 | how-to-work-with-scenenodelist | Scenegraph | Demonstrates how to create various objects and use scenenode list to filter and color | 8.0 |
 | sg-chart-generator | Scenegraph, Commands | Demonstrates how to generate pie charts and bar charts | 8.0 |
 | sg-dummy-data | Scenegraph, Commands | Demonstrates how to generate random data | 8.0 |
