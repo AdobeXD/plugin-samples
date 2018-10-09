@@ -1,16 +1,16 @@
 {
-    "id": "com.adobe.xd.gettingstarted",
-    "name": "(H2) getting started sample plugin",
+    "id": "com.adobe.xd.helloWorld",
+    "name": "Hello World sample plugin",
     "host": {
         "app": "XD",
         "minVersion": "8.0"
     },
-    "version": "0.0.1",
+    "version": "1.0.0",
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Getting Started (Say Hello)",
-            "commandId": "helloCommand"
+            "label": "Create Rectangle",
+            "commandId": "createRectangle"
         }
     ]
 }
