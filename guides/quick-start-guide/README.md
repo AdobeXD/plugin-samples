@@ -39,6 +39,10 @@ Now, let's create your plugin files. Open your favorite text editor and create t
     This file contains your JavaScript code that implements the logic for your plugin. 
    [Learn more about `main.js` here](/reference/structure/handlers.md).
 
+
+These two files go into your plugin's parent directory. When you have the right structure, it will look like this:
+<img src="/images/readme-assets/xd-folder-structure.png" width="40%" height="40%">
+
 It's possible to have more files if you want, but these files are the bare minimum requirement for your plugin to work, and are all we'll need for this Quick Start tutorial.
 
 

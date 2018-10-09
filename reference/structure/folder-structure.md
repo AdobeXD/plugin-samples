@@ -13,7 +13,7 @@ Adobe XD plugins require two files, with these _exact_ names:
 
 
 These two files go into your plugin's parent directory. When you have the right structure, it will look like this:
-<img src="/images/readme-assets/xd-folder-structure.png" width="30%" height="30%">
+<img src="/images/readme-assets/xd-folder-structure.png" width="40%" height="40%">
 
 The `manifest.json` and `main.js` files stored in your plugin's parent directory are the bare minimum requirement for your plugin to work, but it's possible to have more files if you want. Any data files you need to include with your plugin can be read in using the [File APIs](../uxp/using-file-apis.md).
 
