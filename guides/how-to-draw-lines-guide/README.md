@@ -3,12 +3,6 @@
 This sample demonstrates how to create a plugin that adds colored lines to the user's document.
 
 
-## Technology Used
-- References
-    - [Line](/reference/scenegraph.md#line)
-    - [Color](/reference/Color.html)
-    - [Commands](/reference/commands.md)
-
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
 - [Quick Start Tutorial](/guides/quick-start-guide)
