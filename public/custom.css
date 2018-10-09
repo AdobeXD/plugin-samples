@@ -65,13 +65,14 @@
 }
 .markdown-section .glossary-term {
     color: #527c23;
-    background-color: #F5F5F5;
     padding: 2px 4px;
-    border-radius: 4px;
-    text-decoration-style: double !important;
+    text-decoration: none !important;
+    text-decoration-style: none !important;
+    border-bottom:2px dotted;
 }
 .markdown-section .glossary-term:hover {
-    text-decoration-style: double !important;
+    text-decoration: none !important;
+    text-decoration-style: none !important;
 }
 
 .markdown-section td img {

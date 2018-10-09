@@ -13,34 +13,40 @@
       }).join("");
     }
 
+    var INGEST_ENDPOINT = "https://cc-api-data.adobe.io/ingest";
+    var TRACKER_KEY = "xdplatform";
+    var ENVIRONMENT = "prod";
     var tracker;
+    var evidonTimer = setTimeout(track, 500);
 
     /* report page hit IF we have privacy consent from the user */
     window.addEventListener("adobePrivacy:PrivacyConsent", function () {
-      var trackerKey = "xdplatform";
 
       // check if the user has a cookie
       var cookies = document.cookie.split(';');
       var trackerCookie = cookies.filter(function (v) {
-        return v.trim().substr(0, trackerKey.length + 1) === trackerKey + '=';
+        return v.trim().substr(0, TRACKER_KEY.length + 1) === TRACKER_KEY + '=';
       });
       if (trackerCookie.length > 0) {
         tracker = trackerCookie[0].split("=")[1];
       } else {
         tracker = createTrackerID();
-        document.cookie = trackerKey + "=" + tracker;
+        document.cookie = TRACKER_KEY + "=" + tracker;
       }
 
+      clearInterval(evidonTimer);
       track();
 
-      gitbook.events.on("page.change", () => track());
+      if (typeof gitbook !== "undefined") {
+        gitbook.events.on("page.change", () => track());
+      }
     });
 
     function track() {
 
       // track the page hit
       var req = new XMLHttpRequest();
-      req.open("POST", "https://cc-api-data-stage.adobe.io/ingest/");
+      req.open("POST", INGEST_ENDPOINT);
 
       req.setRequestHeader("Content-Type", "application/json");
       req.setRequestHeader("X-API-Key", "xdplatform-web-service");
@@ -50,7 +56,7 @@
       var data = {
         "events": [{
           "project": "xdplatform-web-service",
-          "environment": "stage",
+          "environment": ENVIRONMENT,
           "time": new Date().toISOString(),
           "ingesttype": "dunamis",
           "data": {
@@ -60,7 +66,7 @@
             "event.type": "render",
             "event.type": "page",
             "event.pagename": location.hostname + location.pathname,
-            "event.user_guid": tracker,
+            "event.user_guid": tracker || createTrackerID(), // fall back to random ID (in case of no evidon)
             "event.user_agent": navigator.userAgent,
             "event.language": navigator.language,
             "event.url": location.href,
