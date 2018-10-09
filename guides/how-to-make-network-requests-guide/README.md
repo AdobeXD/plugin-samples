@@ -1,6 +1,6 @@
 # How to make network requests
 
-This sample app will show you how to load an image in an XD object (Rectangle or Artboard) by making network requests using `XHR` and `fetch`. **The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-make-network-requests)**.
+This sample app will show you how to load an image in an XD object (Rectangle or Artboard) by making network requests using `XHR` and `fetch`.
 
 
 ## Technology Used
@@ -16,6 +16,9 @@ This sample app will show you how to load an image in an XD object (Rectangle or
 - [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
+
+> **Info**
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-make-network-requests).
 
 ### 1. Create plugin scaffold
 

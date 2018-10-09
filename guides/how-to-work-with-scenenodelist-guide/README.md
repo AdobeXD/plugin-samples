@@ -1,5 +1,5 @@
 # How to work with ScenenodeList
-This sample demonstrates how to work with scenenode lists. **The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-work-with-scenenodelist)**.
+This sample demonstrates how to work with scenenode lists.
 
 
 ## Technology Used
@@ -11,6 +11,9 @@ This sample demonstrates how to work with scenenode lists. **The plugin code can
 - [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
+
+> **Info**
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-work-with-scenenodelist).
 
 ### 1.  Create plugin scaffold
 

@@ -1,7 +1,7 @@
 # How to package a plugin.
 This guide describes how to package the files of an XD plugin.
 
-It is a prerequisite to have a working plugin with all the files that you intend to package. For reference, **this guide will use sample plugin code found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/getting-started)**.
+It is a prerequisite to have a working plugin with all the files that you intend to package.
 
 Please note the screenshots are from a mac machine but the steps would be identitical on a windows machine.
 
@@ -11,6 +11,9 @@ Please note the screenshots are from a mac machine but the steps would be identi
 - [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
+
+> **Info**
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/getting-started).
 
 ### 1. Compress the content as a .zip file.
 

@@ -8,7 +8,6 @@ At the end of the guide, we'll suggest some next steps for going deeper with the
 
 
 ## Technology Used
-Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/getting-started).
 
 - [XD plugin API reference](/reference)
 - Libraries/Frameworks/APIs: None
@@ -23,6 +22,9 @@ Complete code for this plugin can be found [on GitHub](https://github.com/AdobeX
 
 
 ## Development Steps
+
+> **Info**
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/getting-started).
 
 ### 1. Identify where your plugins are located
 

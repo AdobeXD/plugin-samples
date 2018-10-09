@@ -1,6 +1,6 @@
 # How to create styled text
 
-Creating styled text in Adobe XD is easy! In this guide, we'll show you how to create a text element with a specific color and font size, and also a text element with multiple inline colors. **The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-style-text)**.
+Creating styled text in Adobe XD is easy! In this guide, we'll show you how to create a text element with a specific color and font size, and also a text element with multiple inline colors.
 
 
 ## Technology Used
@@ -15,6 +15,9 @@ Creating styled text in Adobe XD is easy! In this guide, we'll show you how to c
 - [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
+
+> **Info**
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-style-text).
 
 ### 1.  Create plugin scaffold
 

@@ -1,5 +1,5 @@
 # How to generate an export rendition
-This sample describes how an XD plugin can invoke the default file picker and generate an export rendition of the selected Artboard. **The plugin code can be found [here](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-generate-an-export-rendition)**.
+This sample describes how an XD plugin can invoke the default file picker and generate an export rendition of the selected Artboard.
 
 
 ## Technology Used
@@ -13,6 +13,9 @@ This sample describes how an XD plugin can invoke the default file picker and ge
 - [Debugging Guide](/guides/debugging-guide)
 
 ## Development Steps
+
+> **Info**
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-generate-an-export-rendition).
 
 ### 1. Create plugin scaffold
 
