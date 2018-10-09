@@ -62,8 +62,8 @@ In the previous step, you created a file named `manifest.json`. Open that file a
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Say hello",
-            "commandId": "helloCommand"
+            "label": "Create Rectangle",
+            "commandId": "createRectangle"
         }
     ]
 }
@@ -71,7 +71,7 @@ In the previous step, you created a file named `manifest.json`. Open that file a
 
 If you're curious about what each entry means, [see the manifest documentation](/reference/structure/manifest.md).
 
-The value of the `commandId` property may be any string; in this case, it's `helloCommand`. In the next section, we will see how this string is associated with the code for our plugin.
+The value of the `commandId` property may be any string; in this case, it's `createRectangle`. In the next section, we will see how this string is associated with the code for our plugin.
 
 
 ### 4. Create your plugin’s code
@@ -82,48 +82,47 @@ Next, we need to create the JavaScript code for our plugin. The code lives in a 
 Paste this code into `main.js`:
 
 ```js
-const {Text, Color} = require("scenegraph"); // [1]
+const {Rectangle, Color} = require("scenegraph"); // [1]
 
-function helloHandlerFunction(selection) { // [2]
-    const el = new Text(); // [3]
-    el.text = "Hello!";
-    el.styleRanges = [
-        {
-            length: el.text.length,
-            fill: new Color("#FF0000")
-        }
-    ];
-    selection.insertionParent.addChild(el); // [4]
-    el.moveInParentCoordinates(100, 100); // [5]
+function rectangleHandlerFunction(selection) { // [2]
+
+    const newElement = new Rectangle(); // [3]
+    newElement.width = 100;
+    newElement.height = 50;
+    newElement.fill = new Color("Purple");
+
+    selection.insertionParent.addChild(newElement); // [4]
+    newElement.moveInParentCoordinates(100, 100); // [5]
+
 }
 
 module.exports = { // [6]
     commands: {
-        helloCommand: helloHandlerFunction
+        createRectangle: rectangleHandlerFunction
     }
 };
 ```
 
 This code does the following:
 
-1.  Gets references to the `Text` and `Color` classes from XD’s `scenegraph` module. There are several different [API modules you can load using `require()`](/reference).
+1.  Gets references to the `Rectangle` and `Color` classes from XD’s `scenegraph` module. There are several different [API modules you can load using `require()`](/reference).
 
-2.  Defines our handler function. The handler function will run when the user selects the “Say Hello” menu command in the app.
+2.  Defines our handler function. The handler function will run when the user selects the “Create Rectangle” menu command in the app.
 
-3.  Creates a new `Text` object. There's nothing in it yet! The following lines assign various properties and styles to the text.
+3.  Creates a new `Rectangle` object. There's nothing in it yet! The following lines assign various properties and styles to the text.
 
-4.  Adds the `Text` object to the scenegraph at the top-left (coordinates `0, 0,`).
+4.  Adds the `Rectangle` object to the scenegraph at the top-left (coordinates `0, 0,`).
 
-5.  Puts the `Text` object at coordinates `100, 100` within the parent element.
+5.  Puts the `Rectangle` object at coordinates `100, 100` within the parent element.
 
-6.  Exports a map object, which associates the JavaScript handler function (`helloHandlerFunction`) with the `commandId` property declared in the manifest earlier. The command ID (the part to the left of the `:` here) must match the `commandId` value declared in your manifest exactly.
+6.  Exports a map object, which associates the JavaScript handler function (`rectangleHandlerFunction`) with the `commandId` property declared in the manifest earlier. The command ID (the part to the left of the `:` here) must match the `commandId` value declared in your manifest exactly.
 
 
 ### 5. Run your plugin
 
 So we’ve written a plugin! How do we run it?
 
-If you haven’t already done so, launch XD and open a new document. Then navigate to the _Plugins > Say hello_ menu item.
+If you haven’t already done so, launch XD and open a new document. Then navigate to the _Plugins > Create Rectangle_ menu item.
 
 Alternatively, if XD was already open, select _Plugins > Development > Reload Plugins_.
 
