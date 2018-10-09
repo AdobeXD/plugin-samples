@@ -4,7 +4,7 @@ This sample demonstrates how to create a plugin that adds colored lines to the u
 
 
 ## Prerequisites
-- Basic knowledge of HTML, CSS, and JavaScript.
+- Basic knowledge of HTML, CSS, and JavaScript
 - [Quick Start Tutorial](/guides/quick-start-guide)
 - [Debugging Guide](/guides/debugging-guide)
 
@@ -61,10 +61,10 @@ module.exports = {
 };
 ```
 
-The remaining steps in this guide describe additional edits to the main.js file.
+The remaining steps in this guide describe additional edits to the `main.js` file.
 
 
-### 2.  Require in XD API dependencies
+### 2. Require in XD API dependencies
 
 For this tutorial, we just need access to two XD scenegraph classes and one XD module.
 
@@ -122,7 +122,7 @@ A couple of things to note:
 
 ### 5. Create the main function
 
-In this step, we'll build out the main function, `createLinesHandlerFunction`, that we added in the first step. Each of the numbered comments are explained below:
+In this step, we'll build out the main function, `createLinesHandlerFunction`, that we added in the first step. Each of the numbered comments are explained below the code:
 
 ```js
 function createLinesHandlerFunction(selection) {    // [1]
