@@ -1,4 +1,4 @@
-# How to work with SceneNodeList
+# How to work with a SceneNodeList
 
 This sample demonstrates how to work with a SceneNodeList in Adobe XD. The short version of this story is that a `SceneNodeList` is _not an Array_. Read on for details.
 
@@ -139,7 +139,7 @@ Recall that in the first step, we made a note of [contextual arguments in comman
 Like any [`SceneNode`](/reference/scenegraph.html#scenenode), `documentRoot` has a `.children` property that returns a `SceneNodeList`. 
 
 > **info**
-> A `SceneNodeList is _not an Array_. One notable difference is that, with a `SceneNodeList`, you access elements in the list with the `#at` method (`node.children.at(0)` to get the first node in the list). [You can learn more about the `SceneNodeList` class here](/reference/SceneNodeList.html).
+> A `SceneNodeList` is _not an Array_. One notable difference is that, with a `SceneNodeList`, you access elements in the list using the `#at` method (for example, `node.children.at(0)` to get the first node in the list). [You can learn more about the `SceneNodeList` class here](/reference/SceneNodeList.html).
 
 Let's fill out our handler function. Each of the numbered comments are explained below the code:
 
@@ -167,9 +167,9 @@ function filterAndColor(selection, documentRoot) {
 
 ### 5. Run the plugin
 
-Ater saving all your changes, reload the plugin in XD. 
+After saving all your changes, reload the plugin in XD. 
 
-First, run the "Create Elements" command:
+First, select an artboard and run the "Create Elements" command:
 
 <img src="/images/readme-assets/create-elements.png" width="50%" height="50%">
 
