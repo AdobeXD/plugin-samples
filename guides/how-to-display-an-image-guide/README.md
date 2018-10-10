@@ -137,7 +137,7 @@ function displayImage(selection) {
 
 ### 7. Test the plugin
 
-If you reload the plugin and execute it, you should see a modal window like this one:
+If you reload the plugin and run it, you should see a modal window like this one:
 
 <img src="/images/readme-assets/display-image.png" width="50%" height="50%">
 
