@@ -122,7 +122,7 @@ Not bad for a few lines of code! Let's push it a little further.
 
 ### 5. Update the main function
 
-All red is ok, but we can make our text more colorful than that. Let's change the code to apply multiple styles to the text, resulting rainbow-colored text in the document.
+All red is ok, but we can make our text more colorful than that. Let's change the code to apply multiple styles to the text, resulting in rainbow-colored text.
 
 As we mentioned earlier, the `styleRange` property takes an _array_ of objects. This means we can have more than one style in a text node. Let's use that to our advantage:
 
@@ -160,7 +160,7 @@ Here's what's changed:
 1. In this step, we build an array of style objects, applying each style to a few characters of the text string. We use `Array#map` again, this time converting each item in the `textData` array into a style object. The `length` of each style is equal to the length of the text string contained in one element of the `textData` array. The `color` of each style is equal to the color value contained in one element of the `textData` array.
 
 > **tip**
-> The `Color` constructor understands some color names, but you have plenty of other options for defining colors, including hex, rgba, and more. [See the `Color` reference for more information](/reference/Color.html).
+> The `Color` constructor understands some color names, but you have plenty of other options for defining colors precisely, including hex, rgba, and more. [See the `Color` reference for more information](/reference/Color.html).
 
 
 ### 6. Run the plugin
@@ -174,7 +174,7 @@ After saving all of your changes, reload the plugin in XD and run it. You'll now
 
 Want to expand on what you learned here? Have a look at these references to see options for customizing this sample plugin:
 
-- [Text Node](/reference/scenegraph.md#text)
+- [Text](/reference/scenegraph.md#text)
 - [Color](/reference/Color.md)
 
 
