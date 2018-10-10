@@ -146,9 +146,9 @@ function filterAndColor(selection, root) { // [1]
 4. Filter the artboard's children to only select rectangles
 5. Color the rectnagles red
 
-### 5. Execute the plugin
+### 5. Run the plugin
 
-Ater saving all your changes, reload the plugin in XD and invoke it. First, run the first command, "Create Elements"
+Ater saving all your changes, reload the plugin in XD and run it. First, run the first command, "Create Elements"
 
 <img src="/images/readme-assets/create-elements.png" width="50%" height="50%">
 

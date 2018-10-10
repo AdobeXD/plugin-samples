@@ -59,7 +59,7 @@ The `uiEntryPoints` field is an _array_ of objects, and each object must match o
 Key | Type | Description
 ----|------|------------
 `type` | `string` | Entry point type. Currently `"menu"` is the only supported value.
-`label` | `string` or `Object` | Label for this menu item that the user will select to invoke your plugin. May be a single string _or_ an object containing localized strings (see "Localization," below).
+`label` | `string` or `Object` | Label for this menu item that the user will select to run your plugin. May be a single string _or_ an object containing localized strings (see "Localization," below).
 `commandId` | `string` | Identifier that links the menu item to a function in your plugin's JavaScript code. This identifier needs to be unique within your plugin (but doesn't need to be globally unique). It can be whatever you like, but it makes sense to succinctly describe what the command will do.
 `shortcut` | `{mac: string, win: string}` | _Optional._ Object defining Mac & Windows keyboard shortcuts for this menu item. See "Keyboard shortcuts" below for details.
 

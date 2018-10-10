@@ -158,7 +158,7 @@ function singleLine(selection) {
 
 ### 9. Test the plugin
 
-If you reload the plugin and execute it, you should see a modal window like this one:
+If you reload the plugin and run it, you should see a modal window like this one:
 
 <img src="/images/readme-assets/modal-what-is-your-name.png" width="50%" height="50%">
 

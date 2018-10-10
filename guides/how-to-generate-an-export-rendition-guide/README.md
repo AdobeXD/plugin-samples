@@ -149,7 +149,7 @@ Just like HTML DOM APIs, you can use `document.createElement` method to create U
 
 ### 7. Test the plugin
 
-Make sure to select an item (artboard) in XD and execute the plugin command:
+Make sure to select an item (artboard) in XD and run the plugin command:
 
 <img src="/images/readme-assets/export-rendition-execute.png" width="50%" height="50%">
 

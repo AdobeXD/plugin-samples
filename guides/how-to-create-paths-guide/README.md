@@ -157,7 +157,7 @@ Note that the end angle of each wedge matches the start angle of the next wedge.
 
 ### 5. Run the plugin
 
-Ater saving all your changes, reload the plugin in XD and invoke it.  The result should be similar to the following:
+Ater saving all your changes, reload the plugin in XD and run it.  The result should be similar to the following:
 
 <img src="/images/readme-assets/pie-chart.png" width="50%" height="50%">
 
