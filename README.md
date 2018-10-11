@@ -78,4 +78,4 @@ This repository contains several sample XD plugins. You can use these to learn m
 
 6. Launch plugins from the `Plugins` menu.
 
-Make sure to check out [XD Plugin Guides](https://adobe-xd.gitbook.io/plugin-guides/) and [XD Plugin References](https://adobe-xd.gitbook.io/plugin-api-reference).
+Make sure to check out [XD Plugin Guides](https://github.com/AdobeXD/plugin-docs/blob/master/guides/index.md) and [XD Plugin References](https://github.com/AdobeXD/plugin-docs).

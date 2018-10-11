@@ -1,7 +1,7 @@
 # Getting started
 
 This sample simply creates a rectangle object and inserts it into the artboard.
-[Read the step-by-step guide for this sample](https://github.com/AdobeXD/Plugin-Guides/tree/master/Guides/getting-started-guide).
+[Read the step-by-step guide for this sample](https://github.com/AdobeXD/plugin-docs/tree/master/guides/quick-start-guide).
 
 ## Usage
 
