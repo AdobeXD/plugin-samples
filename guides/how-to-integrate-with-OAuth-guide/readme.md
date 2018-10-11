@@ -1,115 +1,177 @@
 # How to Integrate with OAuth
 
-This sample app will show you how to implement the OAuth workflow with Dropbox API in Adobe XD.
+This tutorial will show you how to implement the OAuth workflow in an XD plugin, using the Dropbox API as an example. 
 
-After setting up the sample, you will have an XD plugin and a separate node server. See below for the high level workflow:
+> **info**
+> Auth workflows are necessarily complex, so this tutorial will be on the longer side and make use of some advanced concepts. Please read the each section carefully, especially the Prerequisites and Configuration sections.
 
-1. Plugin pings the server to get the session ID
-1. Server returns a unique ID for the user's XD session
-1. Plugin opens a tab in user's default browser with a url pointing to an endpoint of the server 
-1. Server handles the entire OAuth code grant workflow
-1. User gives necessary permissions to the plugin
-1. Server saves the access token paired with the session ID
-1. Plugin polls the server to check if the access token is available for the session ID. If it does, the server sends back the access token
-1. Plugin uses the access token to make API calls
-
-
-## Technology Used
-
-1. [OAuth](https://oauth.net/2/)
-1. Node.js and the `npm` package manager
-1. [ngrok](https://ngrok.com/)
 
 ## Prerequisites
 
 - Basic knowledge of HTML, CSS, and JavaScript.
 - [Quick Start Tutorial](/guides/quick-start-guide)
 - [Debugging Guide](/guides/debugging-guide)
+- Familiary with your OS's command line application
+- Familiarity with [OAuth](https://oauth.net/2/)
+- [A registered app on Dropbox](https://www.dropbox.com/developers/apps/create) with the following settings:
 
-This guide will also assume that you are familiar with [OAuth workflow](https://oauth.net/2/).
+	1. Choose "Dropbox API"
+	1. Choose "Full Dropbox" for the access type
+	1. In `Redirect URIs`, add your own `https` `ngrok` URL (example: "https://476322de.ngrok.io/callback") or a secure public URL if you have one
 
-You must also have [a registered app on Dropbox](https://www.dropbox.com/developers/apps/create) with the following settings:
 
-1. Choose "Dropbox API"
-1. Choose "Full Dropbox" for the access type
-1. In `Redirect URIs`, add your a `https` `ngrok` uri (example: "https://476322de.ngrok.io/callback") or a secure public uri if you have one
+## Technology Used
+
+1. [Install required] [Node.js](https://nodejs.org/en/) and the [`npm` package manager](https://www.npmjs.com)
+1. [OAuth](https://oauth.net/2/)
+1. [ngrok](https://ngrok.com/)
+1. [Dropbox API](https://www.dropbox.com/developers/documentation/http/overview)
+
+
+## Overview of the OAuth workflow
+
+There are three parts of this workflow:
+
+- Your XD plugin
+- Your server endpoints (for this development example, we'll create a local Node.js server)
+- The service providers OAuth endpoints (for this example, the Dropbox API)
+
+The high-level workflow is as follows:
+
+1. The XD plugin pings the server to get the session ID
+1. The server returns a unique ID for the user's XD session
+1. Plugin opens a tab in user's default browser with a URL pointing to an endpoint on the server 
+1. The server handles the entire OAuth code grant workflow
+1. The user gives necessary permissions to the plugin
+1. The server saves the access token paired with the session ID
+1. The plugin polls the server to check if the access token is available for the session ID. If the token is available, the server sends the access token back
+1. The plugin uses the access token to make API calls to the service API
+
 
 ## Configuration
 
-The following steps will help you get this sample up and running.
+> **Info**
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-integrate-with-OAuth).
 
-### Install Node.js packages
+The following steps will help you get the sample code from our GitHub repo up and running.
 
-Inside the `server` folder, there is `package.json` file that contains a list of dependencies. Run the following command from the top level directory of the app to install dependencies:
-```
+
+### 1. Install Node.js packages
+
+Inside the sample repo's `server` folder, there is a `package.json` file that contains a list of dependencies. Run the following command from the top level directory of the repo to install the dependencies:
+
+```bash
 $ cd server
 $ npm install
 ```
 
-### Use `ngrok` to create an SSL public URL
+### 2. Use `ngrok` to create a public SSL URL
 
-You can use either [ngrok](https://ngrok.com/) to create a SSL public endpoint or use your own pulblic URL.
+You can use either [ngrok](https://ngrok.com/) to create a public SSL endpoint, or use your own public URL.
 
+To use `ngrok`, first [download it to your machine](https://ngrok.com/download).
+
+You can run `ngrok` from anywhere on your machine, but since we're already in the `server` folder, we'll move `ngrok` there for convenience.
+
+```bash
+mv ~/Downloads/ngrok ./
 ```
+
+Then we run it:
+
+```bash
 ./ngrok http 8000
 ```
 
-### Enter your Dropbox API credentials and public URL
+Now `ngrok` is forwarding all HTTP requests from port `8000` to a public SSL endpoint. 
 
-Enter the required credentials in `public/config.js`:
+You can see the forwarding endpoint currently being used in the `ngrok` terminal output. Note the forwarding endpoint; we'll use it in the next step.
+
+
+### 3. Set your API credentials and public URL
+
+Enter the required credentials in `public/config.js`. You'll need:
+
+- Your Dropbox API key
+- Your Dropbox API secret
+- Your `ngrok` public URL
 
 ```javascript
 const dropboxApiKey = "YOUR-DROPBOX-API-KEY";
 const dropboxApiSecret = "YOUR-DROPBOX-SECRET";
-const publicUrl = "YOUR-PUBLIC-URL"; //Example : https://476322de.ngrok.io/
+const publicUrl = "YOUR-PUBLIC-URL"; // e.g. https://476322de.ngrok.io/
 
 try {
-        if (module) {
-                module.exports = {
-                        dropboxApiKey: dropboxApiKey,
-                        dropboxApiSecret: dropboxApiSecret,
-                        publicUrl: publicUrl
-                }
-        }
+	if (module) {
+		module.exports = {
+			dropboxApiKey: dropboxApiKey,
+			dropboxApiSecret: dropboxApiSecret,
+			publicUrl: publicUrl
+		}
+	}
 }
-catch (err) { }
+catch (err) {
+	console.log(err);
+}
 ```
-You can get your Dropbox API Key and Secret from your registered app page on the [Dropbox App Console](https://www.dropbox.com/developers/apps/).
 
-### Start the server
+Our server will make use of these settings in a later step.
 
-After completing the configuration steps, start the server in the `server` folder:
+
+### 4. Start the server
+
+After completing the configuration steps, start the server from the `server` folder:
 
 ```
 $ npm start
 ```
 
-Now you can use the HTTPS endpoint provided by `ngrok`
+Now you have a running server with an HTTPS endpoint and your Dropbox credentials ready to go.
+
 
 ## Development Steps
 
-> **Info**
-> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-integrate-with-OAuth).
+Now we can get back to the XD plugin side of things!
 
-### 1. Get references to the `Text` and `Color` classes from XD’s `scenegraph` module
+### 1. Require in XD API dependencies
+
+For this tutorial, we just need access to two XD scenegraph classes.
+
+Add the following lines to the top of your plugin's top-level `main.js` file:
+
 ```javascript
 const { Text, Color } = require("scenegraph");
 ```
-`Text` and `Color` classes are imported and ready to be used.
 
-### 2. Save the public URL in a global variable
+Now the `Text` and `Color` classes are required in and ready to be used.
+
+
+### 2. Store the public URL
+
+Your plugin will also need to know your public URL. Since we used `ngrok` earlier, we'll make a constant with that URL:
+
 ```javascript
-const publicUrl = "https://176d0d74.ngrok.io"
+const publicUrl = "YOUR-PUBLIC-URL"; 	// e.g. https://476322de.ngrok.io/
 ```
-Make sure to acquire your own public url. This url will be used to send requests to your server.
 
-### 3. Create a global variable to store the access token
+This url will be used to send requests to your server.
+
+
+### 3. Create a variable to store the access token
+
+Once you receive the access token from your server, you can use the token for API calls as long as the token is stored in memory and the XD session is alive.
+
 ```javascript
 let accessToken;
 ```
-Once you receive the access token from your server, you can use the token for API calls as long as the token is saved in a global variable and the XD session is alive.
 
-### 4. Write a helper function to send XHR requests
+We'll assign the value later.
+
+
+### 4. Write a helper function for XHR requests
+
+
+
 ```javascript
 // XHR helper function
 function xhrRequest(url, method) {
@@ -141,21 +203,31 @@ function xhrRequest(url, method) {
 	});
 }
 ```
+
 1. This helper function returns a promise object
 2. Request timeout is set to 6000 miliseconds
 3. On a successful request, the promise is resolved with `req.response`. In any other scenarios, the promise is rejected
 4. If the request was timed out after 6000 miliseconds, the function loops and keeps sending XHR request until the response is received
 5. The function sends the request to the specified `url` with the specified `method`
 
-### 5. Create the main function, `launchOAuth`
+
+### 5. Create the main plugin function
+
+Note the use of the `async` keyword since this function will have asynchronous calls inside.
+
 ```javascript
 async function launchOAuth(selection) {
 	...
 }
 ```
-Note that this function is an `async` function since it has async calls inside. Please see the subsequent steps below to see what goes into this function
 
-### 6. Write a XHR call to get the session ID
+Please see the subsequent steps below to see what goes into this function
+
+
+### 6. Get the session ID
+
+We'll make an XHR request.
+
 ```javascript
 const rid = await xhrRequest(`${publicUrl}/getRequestId`, 'GET')
 			.then(response => {
@@ -163,7 +235,10 @@ const rid = await xhrRequest(`${publicUrl}/getRequestId`, 'GET')
 			})
 ```
 
-This part of the function sends a `GET` request to your server's `getRequestId` endpoint and returns `response.id`. Let's take a look at the code on the server side.
+This part of the function sends a `GET` request to your server's `getRequestId` endpoint and returns `response.id`. 
+
+Let's take a look at the code on the server side:
+
 ```javascript
 /* Authorized Request IDs (simulating database) */
 const requestIds = {}; // [1]
@@ -180,13 +255,19 @@ app.get('/getRequestId', function (req, res) {
 	}
 })
 ```
+
 1. Note that there is a global variable, `requestIDs`, which is an empty JavaScript object. For the sake of simplicity, we are using this object to simulate a database
 2. This loop function simulates writing to a database by creating a new id, save the id in the global object, and `res.json` with the id
 
+
 ### 7. Open the default browser with the URL pointing to your server
+
+To open the machine's default browser from an XD plugin, we can use UXP's `shell` module:
+
 ```javascript
 require("uxp").shell.openExternal(`${publicUrl}/login?requestId=${rid}`)
 ```
+
 This will open the browser with the url pointing to an endpoint in your server. Let's take a look at the code on the server side.
 
 ```javascript
@@ -223,6 +304,7 @@ app.get('/callback', function (req, res) {
 		});
 })
 ```
+
 1. `/login` route grabs the `requestId` from the query parameter
 2. and redirects to the Dropbox's `authorize` endpoint and pass the `requestId` to the optional parameter, `state`. This redirect will prompt the login screen on the user's browser
 3. Once the dropbox API returns the `code` to the specified callback endpoint, `/callback`, which then parses the `code` and the `requestId`
@@ -231,7 +313,9 @@ app.get('/callback', function (req, res) {
 6. Store the access token received from Dropbox in the session object 
 7. Simulate writing to a database by paring the access token with `requestId` and storing it to `requestIds` global object
 
+
 ### 8. Poll the server until access token is received
+
 ```javascript
 accessToken = await xhrRequest(`${publicUrl}/getCredentials?requestId=${rid}`, 'GET')
 			.then(tokenResponse => {
@@ -242,6 +326,7 @@ As noted in step #4, the `xhrRequest` helper function is designed to poll the se
 
 
 ### 9. Show a dialog indicating the token has been received
+
 ```javascript
 // create the dialog
 let dialog = document.createElement("dialog"); // [1]
@@ -270,6 +355,7 @@ document.body.appendChild(dialog); // [6]
 dialog.appendChild(container); 
 dialog.showModal()
 ```
+
 Just like HTML DOM APIs, you can use `document.createElement` method to create UI objects. Elements have the `style` property which contains metrics properties you can set
 1. The `dialog` element is the modal window that pops down in XD
 2. Create a container `div` element
@@ -278,15 +364,20 @@ Just like HTML DOM APIs, you can use `document.createElement` method to create U
 5. Create a listener for the click event and close the dialog
 6. Attache the dialog to the document, addd the contianer, and use `showModal` method to show the modal
 
+
 ### 10. Make an API call to Dropbox
+
 ```javascript
 const dropboxProfileUrl = `https://api.dropboxapi.com/2/users/get_current_account?authorization=Bearer%20${accessToken}`; // [1]
 const dropboxProfile = await xhrRequest(dropboxProfileUrl, 'POST'); // [2]
 ```
+
 1. Note that received `accessToken` is included in this Dropbox API call to retrieve the current account's profile
 2. `xhrRequest` helper function is used again to make this `POST` call
 
+
 ### 10. Create a text element to show the profile information inside the current artboard
+
 ```javascript
 const text = new Text(); // [1]
 text.text = JSON.stringify(dropboxProfile); // [2]
@@ -300,14 +391,17 @@ text.styleRanges = [ // [3]
 selection.insertionParent.addChild(text); // [4]
 text.moveInParentCoordinates(100, 100); // [5]
 ```
+
 1. Create a new `Text` instance in XD
 2. Populate the text with the stringified version of the profile `json` object
 3. Add the `styleRanges` for the text
 4. Insert the text
 5. Move the text inside the artboard to make it visible
 
+
 ## Next Steps
 
-Description
+Ready to explore further? Take a look at our other resources:
 
-- [Other samples](https://github.com/AdobeXD/Plugin-Samples)
+- [Tutorials](/guides)
+- [Sample code repos](https://github.com/AdobeXD/plugin-samples)
