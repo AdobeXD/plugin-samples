@@ -20,7 +20,7 @@
   * [Working with a SceneNodeList](./guides/how-to-work-with-scenenodelist-guide/README.md)
 
 * [Working with I/O](./guides/io-index.md)
-  * [How to generate an export rendition](./guides/how-to-generate-an-export-rendition-guide/README.md)
+  * [How to export a rendition](./guides/how-to-export-a-rendition-guide/README.md)
   * [How to read a file](./guides/how-to-import-guide/README.md)
   * [How to integrate with OAuth](./guides/how-to-integrate-with-OAuth-guide/readme.md)
   * [How to make a simple network request](./guides/how-to-make-network-requests-guide/README.md)
