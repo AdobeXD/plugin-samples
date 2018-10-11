@@ -22,9 +22,9 @@
 * [Working with I/O](./guides/io-index.md)
   * [How to export a rendition](./guides/how-to-export-a-rendition-guide/README.md)
   * [How to read a file](./guides/how-to-read-a-file-guide/README.md)
-  * [How to integrate with OAuth](./guides/how-to-integrate-with-OAuth-guide/readme.md)
   * [How to make a simple network request](./guides/how-to-make-network-requests-guide/README.md)
   * [How to use WebSockets](./guides/how-to-use-websockets-guide/README.md)
+  * [How to integrate with OAuth](./guides/how-to-integrate-with-OAuth-guide/readme.md)
 
 * [Building User Interfaces](./guides/ui-index.md)
   * [Asking user for confirmation](./guides/how-to-ask-user-for-confirmation-guide/README.md)

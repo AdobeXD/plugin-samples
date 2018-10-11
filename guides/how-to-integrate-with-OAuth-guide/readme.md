@@ -30,7 +30,13 @@ This tutorial will show you how to implement the OAuth workflow in an XD plugin,
 
 ## Overview of the OAuth workflow
 
-After setting up the sample, you will have an XD plugin and a separate Node.js server. The high-level workflow is as follows:
+There are three parts of this workflow:
+
+- Your XD plugin
+- Your server endpoints (for this development example, we'll create a local Node.js server)
+- The service providers OAuth endpoints (for this example, the Dropbox API)
+
+The high-level workflow is as follows:
 
 1. The XD plugin pings the server to get the session ID
 1. The server returns a unique ID for the user's XD session
@@ -50,7 +56,7 @@ After setting up the sample, you will have an XD plugin and a separate Node.js s
 The following steps will help you get the sample code from our GitHub repo up and running.
 
 
-### Install Node.js packages
+### 1. Install Node.js packages
 
 Inside the sample repo's `server` folder, there is a `package.json` file that contains a list of dependencies. Run the following command from the top level directory of the repo to install the dependencies:
 
@@ -59,11 +65,11 @@ $ cd server
 $ npm install
 ```
 
-### Use `ngrok` to create a public SSL URL
+### 2. Use `ngrok` to create a public SSL URL
 
 You can use either [ngrok](https://ngrok.com/) to create a public SSL endpoint, or use your own public URL.
 
-To use `ngrok`, [first download it to your machine](https://ngrok.com/download).
+To use `ngrok`, first [download it to your machine](https://ngrok.com/download).
 
 You can run `ngrok` from anywhere on your machine, but since we're already in the `server` folder, we'll move `ngrok` there for convenience.
 
@@ -79,10 +85,10 @@ Then we run it:
 
 Now `ngrok` is forwarding all HTTP requests from port `8000` to a public SSL endpoint. 
 
-You can see the forwarding endpoint currently being used in `ngrok`s terminal output. Note that forwarding endpoint; we'll use it in the next step.
+You can see the forwarding endpoint currently being used in the `ngrok` terminal output. Note the forwarding endpoint; we'll use it in the next step.
 
 
-### Set your API credentials and public URL
+### 3. Set your API credentials and public URL
 
 Enter the required credentials in `public/config.js`. You'll need:
 
@@ -112,7 +118,7 @@ catch (err) {
 Our server will make use of these settings in a later step.
 
 
-### Start the server
+### 4. Start the server
 
 After completing the configuration steps, start the server from the `server` folder:
 
@@ -127,33 +133,44 @@ Now you have a running server with an HTTPS endpoint and your Dropbox credential
 
 Now we can get back to the XD plugin side of things!
 
-### 1. Get references to the `Text` and `Color` classes from XD’s `scenegraph` module
+### 1. Require in XD API dependencies
+
+For this tutorial, we just need access to two XD scenegraph classes.
+
+Add the following lines to the top of your plugin's top-level `main.js` file:
 
 ```javascript
 const { Text, Color } = require("scenegraph");
 ```
 
-`Text` and `Color` classes are imported and ready to be used.
+Now the `Text` and `Color` classes are required in and ready to be used.
 
-### 2. Save the public URL in a global variable
+
+### 2. Store the public URL
+
+Your plugin will also need to know your public URL. Since we used `ngrok` earlier, we'll make a constant with that URL:
 
 ```javascript
-const publicUrl = "https://176d0d74.ngrok.io"
+const publicUrl = "YOUR-PUBLIC-URL"; 	// e.g. https://476322de.ngrok.io/
 ```
 
-Make sure to acquire your own public url. This url will be used to send requests to your server.
+This url will be used to send requests to your server.
 
 
-### 3. Create a global variable to store the access token
+### 3. Create a variable to store the access token
+
+Once you receive the access token from your server, you can use the token for API calls as long as the token is stored in memory and the XD session is alive.
 
 ```javascript
 let accessToken;
 ```
 
-Once you receive the access token from your server, you can use the token for API calls as long as the token is saved in a global variable and the XD session is alive.
+We'll assign the value later.
 
 
-### 4. Write a helper function to send XHR requests
+### 4. Write a helper function for XHR requests
+
+
 
 ```javascript
 // XHR helper function
@@ -194,7 +211,9 @@ function xhrRequest(url, method) {
 5. The function sends the request to the specified `url` with the specified `method`
 
 
-### 5. Create the main function, `launchOAuth`
+### 5. Create the main plugin function
+
+Note the use of the `async` keyword since this function will have asynchronous calls inside.
 
 ```javascript
 async function launchOAuth(selection) {
@@ -202,10 +221,13 @@ async function launchOAuth(selection) {
 }
 ```
 
-Note that this function is an `async` function since it has async calls inside. Please see the subsequent steps below to see what goes into this function
+Please see the subsequent steps below to see what goes into this function
 
 
-### 6. Write a XHR call to get the session ID
+### 6. Get the session ID
+
+We'll make an XHR request.
+
 ```javascript
 const rid = await xhrRequest(`${publicUrl}/getRequestId`, 'GET')
 			.then(response => {
@@ -213,7 +235,9 @@ const rid = await xhrRequest(`${publicUrl}/getRequestId`, 'GET')
 			})
 ```
 
-This part of the function sends a `GET` request to your server's `getRequestId` endpoint and returns `response.id`. Let's take a look at the code on the server side.
+This part of the function sends a `GET` request to your server's `getRequestId` endpoint and returns `response.id`. 
+
+Let's take a look at the code on the server side:
 
 ```javascript
 /* Authorized Request IDs (simulating database) */
@@ -237,6 +261,8 @@ app.get('/getRequestId', function (req, res) {
 
 
 ### 7. Open the default browser with the URL pointing to your server
+
+To open the machine's default browser from an XD plugin, we can use UXP's `shell` module:
 
 ```javascript
 require("uxp").shell.openExternal(`${publicUrl}/login?requestId=${rid}`)
