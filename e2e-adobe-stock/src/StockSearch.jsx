@@ -97,7 +97,7 @@ class StockSearch extends React.Component {
         const storage = require('uxp').storage;
         const fs = storage.localFileSystem;
         const formats = storage.formats;
-        const { Rectangle, BitmapFill } = require('scenegraph');
+        const { Rectangle, ImageFill } = require('scenegraph');
 
         const { results, selected } = this.state;
         const { selection } = this.props;
@@ -123,8 +123,7 @@ class StockSearch extends React.Component {
                 shape.width = imageWidth;
                 shape.height = imageHeight;
 
-                const bitmap = new BitmapFill();
-                bitmap.loadFromURL(file.nativePath);
+                const bitmap = new ImageFill(file.nativepath);
                 shape.fill = bitmap;
                 selection.insertionParent.addChild(shape);
                 this.setState(state => ({

@@ -1,0 +1,16 @@
+{
+    "id": "your.id.here",
+    "name": "(SG) Lots of Rectangles",
+    "host": {
+        "app": "XD",
+        "minVersion": "13.0.11"
+    },
+    "version": "0.0.1",
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Draw Lots of Rectangles",
+            "commandId": "draw"
+        }
+    ]
+}
