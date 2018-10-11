@@ -53,7 +53,7 @@ Edit the manifest file for your plugin:
 
 ```js
 {
-    "id": "com.adobe.xd.websockets",
+    "id": "HOW_TO_USE_WEBSOCKETS",
     "name": "Websockets",
     "version": "0.0.1",
     "host": {

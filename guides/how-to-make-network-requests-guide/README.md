@@ -36,7 +36,7 @@ Edit the manifest file for your plugin:
 
 ```js
 {
-    "id": "com.adobe.xd.networkio",
+    "id": "HOW_TO_MAKE_NETWORK_REQUESTS",
     "name": "Network IO",
     "version": "0.0.1",
     "host": {

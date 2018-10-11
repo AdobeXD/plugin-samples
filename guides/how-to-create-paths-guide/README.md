@@ -27,7 +27,7 @@ Replace the JSON object in your manifest with the one below, noting the changes 
 
 ```json
 {
-    "id": "com.adobe.xd.createPieChart",
+    "id": "HOW_TO_CREATE_PATHS",
     "name": "Create Pie Chart sample plugin",
     "host": {
         "app": "XD",

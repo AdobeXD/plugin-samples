@@ -52,7 +52,7 @@ In the previous step, you created a file named `manifest.json`. Open that file a
 
 ```json
 {
-    "id": "com.adobe.xd.helloWorld",
+    "id": "QUICK_START",
     "name": "Hello World sample plugin",
     "host": {
         "app": "XD",

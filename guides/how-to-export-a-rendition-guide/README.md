@@ -25,7 +25,7 @@ Replace the JSON object in your manifest with the one below, noting the changes 
 
 ```json
 {
-    "id": "com.adobe.exportrendition",
+    "id": "HOW_TO_EXPORT_A_RENDITION",
     "name": "Export Rendition Plugin",
     "host": {
         "app": "XD",
