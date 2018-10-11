@@ -135,8 +135,8 @@ application.createRenditions(renditionSettings)    // [1]
 ```
 
 1. The `application#createRenditions` method accepts as an argument the `renditionSettings` data structure that we created in step #4.
-2. `createRenditions` returns a Promise. We log s.
-3. 
+2. `createRenditions` returns a Promise. We log success to the developer console.
+3. Any errors will land in `.catch`, which we also log to the developer console.
 
 
 ### 6. Run the plugin
@@ -148,6 +148,8 @@ You should see a file picker like this one:
 <img src="/images/readme-assets/export-rendition-pick-file.png" width="50%" height="50%">
 
 The rendition will be saved at the specified location.
+
+Open the developer console to see your success or error message from the previous step.
 
 
 ## Next Steps
