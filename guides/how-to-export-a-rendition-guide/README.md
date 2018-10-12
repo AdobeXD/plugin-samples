@@ -10,7 +10,7 @@ This sample describes how an XD plugin can invoke the default file picker and ge
 ## Development Steps
 
 > **Info**
-> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-generate-an-export-rendition).
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-export-a-rendition).
 
 ### 1. Prepare your plugin scaffold
 
