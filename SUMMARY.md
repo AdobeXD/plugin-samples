@@ -84,7 +84,7 @@
 
 * [How to Package a Plugin](./guides/how-to-package-a-plugin/README.md)
 * [Distribution Options](./distribution/options.md)
-* [Submitting your Plugin](./distribution/how-to-submit-to-plugin-manager.md)
+* [Submitting your Plugin](./distribution/publishing.md)
 * [Marketing your Plugin](./distribution/marketing.md)
 
 ## Join the Community
