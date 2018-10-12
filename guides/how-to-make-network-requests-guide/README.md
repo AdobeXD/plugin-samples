@@ -27,7 +27,7 @@ Replace the JSON object in your manifest with the one below, noting the changes 
 
 ```json
 {
-    "id": "com.adobe.xd.networkio",
+    "id": "HOW_TO_MAKE_NETWORK_REQUESTS",
     "name": "Network IO",
     "version": "0.0.1",
     "host": {

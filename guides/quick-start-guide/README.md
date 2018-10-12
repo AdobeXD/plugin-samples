@@ -15,7 +15,7 @@ At the end of the guide, we'll suggest some next steps for going deeper with the
 ## Development Steps
 
 > **Info**
-> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/getting-started).
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/quick-start).
 
 ### 1. Identify where your plugins are located
 
@@ -52,7 +52,7 @@ In the previous step, you created a file named `manifest.json`. Open that file a
 
 ```json
 {
-    "id": "com.adobe.xd.helloWorld",
+    "id": "QUICK_START",
     "name": "Hello World sample plugin",
     "host": {
         "app": "XD",

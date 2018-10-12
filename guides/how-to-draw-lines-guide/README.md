@@ -27,7 +27,7 @@ Replace the JSON object in your manifest with the one below, noting the changes 
 
 ```json
 {
-    "id": "com.adobe.xd.createLines",
+    "id": "HOW_TO_DRAW_LINES",
     "name": "Create Lines sample plugin",
     "host": {
         "app": "XD",

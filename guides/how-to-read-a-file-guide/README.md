@@ -11,7 +11,7 @@ This tutorial will show you how an XD plugin can read in a file from the file sy
 ## Development Steps
 
 > **Info**
-> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-import).
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-read-a-file).
 
 
 ### 1. Prepare your plugin scaffold
@@ -27,7 +27,7 @@ Replace the JSON object in your manifest with the one below, noting the changes 
 
 ```json
 {
-    "id": "com.adobe.xd.insertTextFromFile",
+    "id": "HOW_TO_READ_A_FILE",
     "name": "Insert Text from File",
     "host": {
         "app": "XD",

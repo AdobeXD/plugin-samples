@@ -31,7 +31,7 @@ Edit the manifest file for your plugin:
 
 ```
 {
-    "id": "com.adobe.displayimage",
+    "id": "HOW_TO_DISPLAY_AN_MAGE",
     "name": "Native Path Plugin",
     "version": "0.0.1",
     "main": "main.js",

@@ -26,7 +26,7 @@ Replace the JSON object in your manifest with the one below, noting the changes 
 
 ```json
 {
-    "id": "com.adobe.xd.createStyledText",
+    "id": "HOW_TO_STYLE_TEXT",
     "name": "Create Styled Text sample plugin",
     "host": {
         "app": "XD",
