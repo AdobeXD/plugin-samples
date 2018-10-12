@@ -1,4 +1,4 @@
-# How to package a plugin
+# Packaging your plugin
 
 Before you share your plugin, you'll need to package it up.
 
@@ -11,7 +11,7 @@ This guide describes how to package the files of an XD plugin. It's a simple pro
 
 ## Workflow
 
-### 1. Compress your files as a .zip file
+### 1. Compress your files as a .ZIP file
 
 Select all files within your plugin's parent folder. On both macOS and Windows you can right-click to compress:
 
@@ -20,7 +20,7 @@ Select all files within your plugin's parent folder. On both macOS and Windows y
 | macOS         | Right-click > Compress # items |
 | Windows       | Right-click > Send to > Compressed (zipped) folder |
 
-> **danger**
+> **tip**
 > Compressing the plugin's _parent_ folder is not recommended as it complicates the requirements for filenames. Instead, compress the _contents_ of the parent folder.
 
 
