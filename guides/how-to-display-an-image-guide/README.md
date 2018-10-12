@@ -33,11 +33,11 @@ Edit the manifest file for your plugin:
 {
     "id": "HOW_TO_DISPLAY_AN_MAGE",
     "name": "Native Path Plugin",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "main": "main.js",
     "host": {
         "app": "XD",
-        "minVersion": "10.0.10.24"
+        "minVersion": "13.0.0"
     },
     "uiEntryPoints": [
         {

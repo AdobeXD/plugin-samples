@@ -56,7 +56,7 @@ In the previous step, you created a file named `manifest.json`. Open that file a
     "name": "Hello World sample plugin",
     "host": {
         "app": "XD",
-        "minVersion": "8.0"
+        "minVersion": "13.0.0"
     },
     "version": "1.0.0",
     "uiEntryPoints": [

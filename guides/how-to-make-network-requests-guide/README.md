@@ -29,10 +29,10 @@ Replace the JSON object in your manifest with the one below, noting the changes 
 {
     "id": "HOW_TO_MAKE_NETWORK_REQUESTS",
     "name": "Network IO",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "host": {
         "app": "XD",
-        "minVersion": "13.0.11.19"
+        "minVersion": "13.0.0"
     },
     "uiEntryPoints": [
         {
