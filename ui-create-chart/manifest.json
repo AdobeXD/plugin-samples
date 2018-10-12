@@ -1,5 +1,5 @@
 {
-    "id": "com.adobe.createchart",
+    "id": "CREATE_CHART",
     "name": "(UI) Create Chart",
     "version": "0.0.1",
     "main": "main.js",

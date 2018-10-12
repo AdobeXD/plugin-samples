@@ -1,5 +1,5 @@
 {
-    "id": "com.adobe.contextmenu",
+    "id": "UI_CONTEXT_MENU",
     "name": "(UI) Context Menu",
     "version": "0.0.1",
     "main": "main.js",

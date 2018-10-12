@@ -1,5 +1,5 @@
 {
-    "id": "com.adobe.renameartboards",
+    "id": "UI_RENAME_ARTBOARD",
     "name": "(UI) Rename Artboards",
     "version": "0.0.1",
     "main": "main.js",

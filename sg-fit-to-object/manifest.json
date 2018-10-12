@@ -1,15 +1,11 @@
-
 {
-    "id": "kwak.fit",
+    "id": "FIT_IT",
     "name": "(SG) Fit to Object",
-
     "host": {
         "app": "XD",
         "minVersion": "8.0"
     },
-
     "version": "0.0.1",
-
     "uiEntryPoints": [
         {
             "type": "menu",

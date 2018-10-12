@@ -1,5 +1,5 @@
 {
-    "id": "com.adobe.stockpick",
+    "id": "PICK_STOCK",
     "name": "(E2E) Pick Stock",
     "version": "0.0.1",
     "main": "main.js",

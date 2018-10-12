@@ -1,5 +1,5 @@
 {
-    "id": "com.adobe.example.87eb1e9bdd4a269f",
+    "id": "COLORIZE_TEXT",
     "author": "Kerri Shotts",
     "name": "(E2E) Colorize Text",
     "icon": "icon.png",
@@ -37,4 +37,3 @@
         }
     ]
 }
-

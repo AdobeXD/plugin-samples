@@ -1,5 +1,5 @@
 {
-    "id": "com.adobe.hello",
+    "id": "UI_HELLO",
     "name": "(UI) Hello Plugin",
     "version": "0.0.1",
     "main": "main.js",

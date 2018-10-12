@@ -1,5 +1,5 @@
 {
-    "id": "com.adobe.simpleform",
+    "id": "UI_SIMPLE_FORM",
     "name": "(UI) Simple Form Plugin",
     "version": "0.0.1",
     "main": "main.js",
