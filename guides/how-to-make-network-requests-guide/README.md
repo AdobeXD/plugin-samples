@@ -3,12 +3,6 @@
 This sample app will show you how to load an image in an XD object (Rectangle or Artboard) by making network requests using `XHR` and `fetch`.
 
 
-## Technology Used
-- References:
-    - [Network IO](/reference/uxp/network-IO.md#web-socket-support)
-    - [XMLHttpRequest](/reference/uxp/network-IO.md#xmlhttprequest-support)
-    - [fetch](/reference/uxp/network-IO.md#fetch-support)
-
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript
 - Basic knowledge of `XMLHttpRequest` and `fetch`
@@ -22,19 +16,16 @@ This sample app will show you how to load an image in an XD object (Rectangle or
 
 ### 1. Create plugin scaffold
 
-As described in the [Quick Start Tutorial](/guides/quick-start-guide), create the directory for your plugin:
+First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/guides/quick-start-guide).
 
-```
-$ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/plugins
-$ mkdir com.adobe.xd.networkio
-$ cd com.adobe.xd.networkio
-$ touch manifest.json
-$ touch main.js
-``` 
+Replace the JSON object in your manifest with the one below, noting the changes for the following fields:
 
-Edit the manifest file for your plugin:
+1. `id`
+1. `name`
+1. `uiEntryPoints[0].label`
+1. `uiEntryPoints[0].commandId`
 
-```js
+```json
 {
     "id": "com.adobe.xd.networkio",
     "name": "Network IO",
@@ -53,7 +44,9 @@ Edit the manifest file for your plugin:
 }
 ```
 
-In the `main.js` file, link the commandId to a handler function
+Then, update your `main.js` file, mapping the manifest's `commandId` to a handler function.
+
+Replace the content of your `main.js` file with the following code:
 
 ```js
 function applyImage(selection) {
@@ -69,128 +62,106 @@ module.exports = {
 
 The remaining steps in this guide describe additional edits to the `main.js` file.
 
-### 2. Get references to the `ImageFill` class from XD’s `scenegraph` module
 
-Get references to the `ImageFill` module.
+### 2. Require in XD API dependencies 
+
+For this tutorial, we just need access to one XD scenegraph class.
+
+Add the following lines to the top of your `main.js` file:
 
 ```javascript
+// Add this to the top of your main.js file
 const { ImageFill } = require("scenegraph");
 ```
-`ImageFill` class is imported and ready to be used to fill an object with ImageFill.
+
+Now the `ImageFill` class is imported and ready to be used.
+
 
 ### 3. Write a helper function to make XHR requests
+
+Our XHR helper `xhrBinary` will make an HTTP GET request to any URL it is passed, and a return a Promise with an `arraybuffer`.
+
+Each of the numbered comments are explained below the code:
+
 ```js
-function xhrBinary(url) { // [1]
-    return new Promise((resolve, reject) => { // [2]
-        const req = new XMLHttpRequest(); // [3]
+function xhrBinary(url) {                                       // [1]
+    return new Promise((resolve, reject) => {                   // [2]
+        const req = new XMLHttpRequest();                       // [3]
         req.onload = () => {
             if (req.status === 200) {
                 try {
-                    const arr = new Uint8Array(req.response); // [4]
-                    resolve(arr); // [5]
+                    const arr = new Uint8Array(req.response);   // [4]
+                    resolve(arr);                               // [5]
                 } catch (err) {
-                    reject('Couldnt parse response. ${err.message}, ${req.response}');
+                    reject(`Couldnt parse response. ${err.message}, ${req.response}`);
                 }
             } else {
-                reject('Request had an error: ${req.status}');
+                reject(`Request had an error: ${req.status}`);
             }
         }
         req.onerror = reject;
         req.onabort = reject;
         req.open('GET', url, true);
-        req.responseType = "arraybuffer"; // [6]
+        req.responseType = "arraybuffer";                       // [6]
         req.send();
     });
 }
 ```
+
 1. `xhrBinary` function takes a url as a parameter
-2. The function returns a Promise object
-3. The function uses the `XMLHttpRequest` web module to make requests
-4. Once the correct response comes back, the function uses `Unit8Array` method to convert the response to arraybuffer
-5. After the conversion, the promise is resolved. If failed in any part of the process, the promise is rejected
-6. Make sure the set the `responseType` as `arraybufer`
+2. The function returns a Promise
+3. The function uses `XMLHttpRequest` to make network requests
+4. Once the correct response comes back, the function uses `Unit8Array` method to convert the response to an `arraybuffer`
+5. After the conversion, the promise is resolved
+6. Make sure the set the `responseType` as `arraybuffer`
 
-### 4. Write a helper function to convert arraybuffer to base64 string
-``` js
-function base64ArrayBuffer(arrayBuffer) {
-    let base64 = '';
-    const encodings = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+We'll use this function in a later step.
 
-    const bytes = new Uint8Array(arrayBuffer);
-    const byteLength = bytes.byteLength;
-    const byteRemainder = byteLength % 3;
-    const mainLength = byteLength - byteRemainder;
 
-    let a;
-    let b;
-    let c;
-    let d;
-    let chunk;
+### 4. Convert `arraybuffer` to `base64` string
 
-    // Main loop deals with bytes in chunks of 3
-    for (let i = 0; i < mainLength; i += 3) {
-        // Combine the three bytes into a single integer
-        chunk = (bytes[i] << 16) | (bytes[i + 1] << 8) | bytes[i + 2];
+The help function we just made returns and `arraybuffer` but `ImageFill` will expect a `base64` string. We need to convert one to the other.
 
-        // Use bitmasks to extract 6-bit segments from the triplet
-        a = (chunk & 16515072) >> 18; // 16515072 = (2^6 - 1) << 18
-        b = (chunk & 258048) >> 12; // 258048   = (2^6 - 1) << 12
-        c = (chunk & 4032) >> 6; // 4032     = (2^6 - 1) << 6
-        d = chunk & 63;        // 63       = 2^6 - 1
+The XD plugin API does not provide a `atob` method, as you would expect in a browser environment. You will need to supply your own conversion method.
 
-        // Convert the raw binary segments to the appropriate ASCII encoding
-        base64 += encodings[a] + encodings[b] + encodings[c] + encodings[d];
-    }
+Luckily, you don't need to create your own from scratch. There are many open-source libraries out there that will convert `arraybuffer` to `base64` string. [This public is one such example in a GitHub Gist](https://gist.github.com/jonleighton/958841).
 
-    // Deal with the remaining bytes and padding
-    if (byteRemainder === 1) {
-        chunk = bytes[mainLength];
+Find your favorite and add it to your `main.js` file. For this example, we'll call the `base64ArrayBuffer` found in the Gist linked above.
 
-        a = (chunk & 252) >> 2; // 252 = (2^6 - 1) << 2
+We'll use this function in a later step.
 
-        // Set the 4 least significant bits to zero
-        b = (chunk & 3) << 4; // 3   = 2^2 - 1
 
-        base64 += `${encodings[a]}${encodings[b]}==`;
-    } else if (byteRemainder === 2) {
-        chunk = (bytes[mainLength] << 8) | bytes[mainLength + 1];
+### 5. Write a helper to apply `ImageFill`
 
-        a = (chunk & 64512) >> 10; // 64512 = (2^6 - 1) << 10
-        b = (chunk & 1008) >> 4; // 1008  = (2^6 - 1) << 4
+This helper function will create an `ImageFill` instance that can be applied to a user-selected XD scengraph object:
 
-        // Set the 2 least significant bits to zero
-        c = (chunk & 15) << 2; // 15    = 2^4 - 1
-
-        base64 += `${encodings[a]}${encodings[b]}${encodings[c]}=`;
-    }
-
-    return base64;
-}
-```
-You can find many open-sourced codes that help you convert arraybuffer to base64 string. This particular one was cloned from [this public repository](https://gist.github.com/jonleighton/958841).
-
-### 5. Write a helper function that creates ImageFill and apply it in XD
 ```js
-
-function applyImagefill(selection, base64) { // [1]
+function applyImagefill(selection, base64) {                             // [1]
     const imageFill = new ImageFill(`data:image/jpeg;base64,${base64}`); // [2]
-    selection.items[0].fill = imageFill; // [2]
+    selection.items[0].fill = imageFill;                                 // [3]
 }
-
 ```
-1. This helper function accepts the selection object and the base64 string as parameters
+
+1. The function accepts the `selection` and a `base64` string as parameters
 2. Use the `ImageFill` class to create the fill
-3. Apply the image to the user selected XD object
+3. Apply the image to the user-selected XD object
+
+We'll use this function in the next step.
+
 
 ### 6. Write a helper function to download the image
-```js
-async function downloadImage(selection, jsonResponse) { // [1]
-    try {
 
-        const photoUrl = jsonResponse.message; // [2]
-        const photoObj = await xhrBinary(photoUrl); // [3]
-        const photoObjBase64 = await base64ArrayBuffer(photoObj); // [4]
-        applyImagefill(selection, photoObjBase64); // [5]
+Ok, you've just made three helper functions. Now we're going to tie them all together!
+
+Note the use of the `async` keyword at the beginning of the function.
+
+```js
+async function downloadImage(selection, jsonResponse) {             // [1]
+    try {
+        const photoUrl = jsonResponse.message;                      // [2]
+        const photoObj = await xhrBinary(photoUrl);                 // [3]
+        const photoObjBase64 = await base64ArrayBuffer(photoObj);   // [4]
+        applyImagefill(selection, photoObjBase64);                  // [5]
 
     } catch (err) {
         console.log("error")
@@ -198,41 +169,51 @@ async function downloadImage(selection, jsonResponse) { // [1]
     }
 }
 ```
-1. This helper function accepts the selection object and the json response as parameters
-2. Parses the url from the json response
-3. Use `xhrBinary` to get the arraybuffer of the photo object
-4. Use `base64ArrayBuffer` to convert arraybuffer to base64 string
-5. Use `applyImagefill` to place the image in an XD artboard
 
-### 6. Write the main functions
+1. This helper function accepts the `selection` and a JSON response object as parameters
+2. Gets the URL from the JSON response
+3. Uses our async `xhrBinary` function to get an `arraybuffer`
+4. Uses our async `base64ArrayBuffer` function to convert `arraybuffer` to `base64` string
+5. Uses `applyImagefill` to place the image into a user-selected XD object
+
+
+### 7. Write the main handler function
+
+This is the function that will be called with the user runs our plugin command.
+
 ```js
 function applyImage(selection) {
-
-    if (selection.items.length) { // [1]
-        const url = "https://dog.ceo/api/breeds/image/random"; // [2]
-        return fetch(url) // [3]
+    if (selection.items.length) {                                   // [1]
+        const url = "https://dog.ceo/api/breeds/image/random";      // [2]
+        return fetch(url)                                           // [3]
             .then(function (response) {
-                return response.json(); // [4]
+                return response.json();                             // [4]
             })
             .then(function (jsonResponse) {
-                return downloadImage(selection, jsonResponse); // [5]
+                return downloadImage(selection, jsonResponse);      // [5]
             });
     } else {
         console.log("Please select a shape to apply the downloaded image.");
     }
-
 }
-
-
 ```
+
 1. Checks if user has selected at least one object
-2. This is an example public URL to get a url to download a dog image
-3. `fetch` is used to get response that contains the url for a dog image
-4. The first `.then` block returns the response json object
-5. The second `.then` block uses `downloadImage` to download the image and place it to the document
+2. This is an example public URL to an image
+3. Pass the URL to `fetch`
+4. The first `.then` block returns the response JSON object
+5. The second `.then` block passes the `selection` and our JSON reponse to our  `downloadImage` function, ultimately placing it in the document
+
 
 ## Next Steps
 
-Description
+Want to expand on what you learned here? Have a look at these references to see options for customizing this sample plugin:
 
-- [Other samples](https://github.com/AdobeXD/Plugin-Samples)
+- [Network I/O](/reference/uxp/network-IO.md)
+- [XMLHttpRequest](/reference/uxp/network-IO.md#xmlhttprequest-support)
+- [fetch](/reference/uxp/network-IO.md#fetch-support)
+
+Ready to explore further? Take a look at our other resources:
+
+- [Tutorials](/guides)
+- [Sample code repos](https://github.com/AdobeXD/plugin-samples)
