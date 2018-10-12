@@ -17,7 +17,9 @@ To learn how to publish your plugin on the XD plugin manager, [see our publishin
 
 ## Direct distribution
 
-Direct distribution leaves the 
+Direct distribution lets you choose how to provide users with access to your plugin. Your website? Email? Cloud file share? It's up to you! 
+
+If you distribute a .XDX file, installation is as simple as one double-click.
 
 
 ## Next steps
