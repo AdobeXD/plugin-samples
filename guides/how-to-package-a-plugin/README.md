@@ -1,48 +1,53 @@
-# How to package a plugin.
-This guide describes how to package the files of an XD plugin.
+# How to package a plugin
 
-It is a prerequisite to have a working plugin with all the files that you intend to package.
+Before you share your plugin, you'll need to package it up.
 
-Please note the screenshots are from a mac machine but the steps would be identitical on a windows machine.
+This guide describes how to package the files of an XD plugin. It's a simple process that can be summarized in three words: _compress_, _rename_, and _verify_.
 
 
-## Prerequisites
-- [Quick Start Tutorial](/guides/quick-start-guide)
-- [Debugging Guide](/guides/debugging-guide)
+## Prerequisite
+- A code-complete plugin (if you don't have one yet, try our [Quick Start Tutorial](/guides/quick-start-guide))
 
-## Development Steps
 
-> **Info**
-> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/getting-started).
+## Workflow
 
-### 1. Compress the content as a .zip file.
+### 1. Compress your files as a .zip file
 
-Select all files > Right click > click the option to compress
+Select all files within your plugin's parent folder. On both macOS and Windows you can right-click to compress:
 
-<img src="/images/readme-assets/package-plugin-steps/compress.png" width="50%" height="50%">
+| Platform      | Menu item          |
+| ------------- | -------------      |
+| macOS         | Right-click > Compress # items |
+| Windows       | Right-click > Send to > Compressed (zipped) folder |
 
-_Note: If you create a parent folder of the content and compress the folder, the name of the resulted `.zip` file should match the parent folder name for the package to be installed correctly. Since there is a chance users change the name of the compressed file, we recommend you to compress the content directly instead of creating a parent folder_
+> **danger**
+> Compressing the plugin's _parent_ folder is not recommended as it complicates the requirements for filenames. Instead, compress the _contents_ of the parent folder.
 
-Here's how the .zip file should look like.
 
-<img src="/images/readme-assets/package-plugin-steps/final-zip.png" width="50%" height="50%">
+### 2. Rename the .ZIP extension to .XDX
 
-### 2. Rename the .zip extension to .xdx
+Adobe XD recognizes the .XDX file extension as an XD plugin. 
 
-<img src="/images/readme-assets/package-plugin-steps/rename.png" width="50%" height="50%">
+By using this file extension, your plugin automactically gets the "double-click to install" feature, meaning that if you share your plugin directly to users, all they have to do is double-click to install the plugin to Adobe XD.
 
-If asked, click "Use .xdx".
+If you plan to submit your plugin for distribution via the XD plugin manager, renaming your .ZIP to .XDX is required.
 
-<img src="/images/readme-assets/package-plugin-steps/confirmation.png" width="50%" height="50%">
 
-Here's how the final file should look like.
+### 3. Verify the packaging worked
 
-<img src="/images/readme-assets/package-plugin-steps/final-xdx.png" width="50%" height="50%">
-
-### 4. Verify the packaging worked.
-Double clicking the .xdx file should install the plugin and show up in XD.
+Try double-clicking your .XDX file. It should prompt you to install the plugin: 
 
 <img src="/images/readme-assets/package-plugin-steps/install.png" width="50%" height="50%">
 
+Click install:
+
 <img src="/images/readme-assets/package-plugin-steps/installed.png" width="50%" height="50%">
 
+You'll get a success message upon installation, after which the plugin will show up in XD.
+
+
+## Next steps
+
+You've packaged your plugin! Now you're ready to distribute your plugin.
+
+[Learn about your options for distributing XD plugins to users](/distribution/options.html).
