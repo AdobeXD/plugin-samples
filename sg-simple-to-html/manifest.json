@@ -3,9 +3,9 @@
     "name": "(SG) Convert Rects to HTML",
     "host": {
         "app": "XD",
-        "minVersion": "8.0"
+        "minVersion": "13.0.0"
     },
-    "version": "0.0.1",
+    "version": "1.0.0",
     "uiEntryPoints": [
         {
             "type": "menu",
