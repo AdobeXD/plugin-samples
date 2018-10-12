@@ -1,6 +1,6 @@
 # Distribution options
 
-Once you have a packaged plugin, you're ready to distribute. You can get your plugins into users' hands through the XD in-app plugin manager or via direct distribution.
+Once you have a packaged plugin, you're ready to distribute. You can make your plugin available to users through the XD in-app plugin manager or via direct distribution.
 
 ## Prerequisite
 
