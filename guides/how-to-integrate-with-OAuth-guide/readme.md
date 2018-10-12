@@ -268,7 +268,9 @@ To open the machine's default browser from an XD plugin, we can use UXP's `shell
 require("uxp").shell.openExternal(`${publicUrl}/login?requestId=${rid}`)
 ```
 
-This will open the browser with the url pointing to an endpoint in your server. Let's take a look at the code on the server side.
+This will open the browser with the url pointing to an endpoint on your server. 
+
+Let's take a look at the code on the server side.
 
 ```javascript
 app.get('/login', function (req, res) {
