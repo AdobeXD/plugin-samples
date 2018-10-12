@@ -23,7 +23,6 @@
   * [How to export a rendition](./guides/how-to-export-a-rendition-guide/README.md)
   * [How to read a file](./guides/how-to-read-a-file-guide/README.md)
   * [How to make network requests](./guides/how-to-make-network-requests-guide/README.md)
-  * [How to use WebSockets](./guides/how-to-use-websockets-guide/README.md)
   * [How to integrate with OAuth](./guides/how-to-integrate-with-OAuth-guide/readme.md)
 
 * [Building User Interfaces](./guides/ui-index.md)

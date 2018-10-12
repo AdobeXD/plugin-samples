@@ -1,6 +1,8 @@
-# How to Use Websockets
+# How to use WebSockets
 
-This sample app will show you how to use Websocket to communicate real-time between the plugin's UI and a server. Note that this sample uses UI only as you cannot manipulate scenegraphs real-time yet.
+This sample app will show you how to use WebSockets to communicate real-time between the plugin's UI and a server. 
+
+Note that this sample uses UI only as you cannot manipulate scenegraph real-time yet.
 
 
 ## Technology Used
