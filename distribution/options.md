@@ -1,4 +1,4 @@
-# Distribution
+# Distribution options
 
 Once you have a packaged plugin, you're ready to distribute. You can get your plugins into users' hands through the XD in-app plugin manager or via direct distribution.
 
@@ -12,7 +12,7 @@ The XD plugin manager lets users discover and install XD plugin right from withi
 
 ![]()
 
-To learn how to publish your plugin on the XD plugin manager, [see our publishing guide]().
+To learn how to publish your plugin on the XD plugin manager, [see our publishing guide](./publishing).
 
 
 ## Direct distribution
@@ -22,5 +22,5 @@ Direct distribution leaves the
 
 ## Next steps
 
-- If you plan to publish on the XD plugin manager, see our [publishing guide]()
+- If you plan to publish on the XD plugin manager, see our [publishing guide](./publishing)
 - No matter how you plan to distribute, be sure to see our [plugin marketing guide](./marketing)
