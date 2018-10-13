@@ -2,7 +2,7 @@
 
 Let’s walk through creating your first Adobe XD plugin together.
 
-We'll keep things simple in this Quick Start guide. Once you're done, you'll have a solid grasp of the steps to take when starting to create your own XD plugin. 
+We'll keep things simple in this Quick Start tutorial. Once you're done, you'll have a solid grasp of the steps to take when starting to create your own XD plugin. 
 
 At the end of the guide, we'll suggest some next steps for going deeper with the XD plugin APIs.
 
@@ -110,17 +110,17 @@ module.exports = { // [6]
 
 This code does the following:
 
-1.  Gets references to the `Rectangle` and `Color` classes from XD’s `scenegraph` module. There are several different [API modules you can load using `require()`](/reference).
+1.  Gets references to the `Rectangle` and `Color` classes from XD’s `scenegraph` module. There are several different [API modules you can load using `require()`](/reference/core/apis.html).
 2.  Defines our handler function. The handler function will run when the user selects the “Create Rectangle” menu command in the app.
-3.  Creates a new `Rectangle` object. There's nothing in it yet! The following lines assign various properties and styles to the text.
-4.  Adds the `Rectangle` object to the scenegraph at the top-left (coordinates `0, 0,`).
+3.  Creates a new `Rectangle` object. There's nothing in it yet! The following lines assign various properties and styles to the rectangle: width, height, and color.
+4.  Adds the `Rectangle` object to the scenegraph at the top-left (coordinates `0, 0`).
 5.  Puts the `Rectangle` object at coordinates `100, 100` within the parent element.
 6.  Exports a map object, which associates the JavaScript handler function (`rectangleHandlerFunction`) with the `commandId` property declared in the manifest earlier. The command ID (the part to the left of the `:` here) must match the `commandId` value declared in your manifest exactly.
 
 
 ### 5. Run your plugin
 
-So we’ve written a plugin! How do we run it?
+So you’ve written a plugin! How do we run it?
 
 If you haven’t already done so, launch XD and open a new document. Then navigate to the _Plugins > Create Rectangle_ menu item.
 
