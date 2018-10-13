@@ -30,6 +30,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    margin-left: -20px;
 }
 
 .book-header h1 {
