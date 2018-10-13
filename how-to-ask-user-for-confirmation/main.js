@@ -37,7 +37,7 @@ function createDialog() {
     // add the footer to the form container.
     container.appendChild(footer);
 
-    // add the container to the dialog. 
+    // add the container to the dialog.
     dialog.appendChild(container);
 
     //  add the dialog to the main document

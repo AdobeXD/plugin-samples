@@ -1,0 +1,21 @@
+{
+  "id": "HOW_TO_SHOW_AN_ALERT",
+  "name": "(H2) How to show an alert",
+  "version": "1.0.0",
+  "host": {
+    "app": "XD",
+    "minVersion": "13.0.0"
+  },
+  "uiEntryPoints": [
+    {
+      "type": "menu",
+      "label": "How to show an alert",
+      "commandId": "showAlert"
+    },
+    {
+      "type": "menu",
+      "label": "How to show an error",
+      "commandId": "showError"
+    }
+  ]
+}
