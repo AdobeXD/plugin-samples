@@ -6,7 +6,7 @@ Creating styled text in Adobe XD is easy! In this guide, we'll show you how to c
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript
 - [Quick Start Tutorial](/guides/quick-start-guide)
-- [Debugging Guide](/guides/debugging-guide)
+- [Debugging Guide](/guides/debugging-guide/README.md)
 
 ## Development Steps
 

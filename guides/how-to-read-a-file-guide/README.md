@@ -6,7 +6,7 @@ This tutorial will show you how an XD plugin can read in a file from the file sy
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
 - [Quick Start Tutorial](/guides/quick-start-guide)
-- [Debugging Guide](/guides/debugging-guide)
+- [Debugging Guide](/guides/debugging-guide/README.md)
 
 ## Development Steps
 
