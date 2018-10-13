@@ -7,7 +7,7 @@
 * [Quick Start](./guides/quick-start-guide/index.md)
 * [Debugging Plugins](./guides/debugging-guide/readme.md)
 * [Plugin Structure](./reference/structure/index.md)
-  * [Plugin Location and Name](./reference/structure/plugin-location-name.md)
+  * [Plugin Location](./reference/structure/location.md)
   * [Folder Structure](./reference/structure/folder-structure.md)
     * [manifest.json](./reference/structure/manifest.md)
     * [main.js](./reference/structure/handlers.md)
