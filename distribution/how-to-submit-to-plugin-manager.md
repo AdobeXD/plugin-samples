@@ -59,6 +59,15 @@ On this page you can enter optionally release notes for your plugin. Release not
 
 Once you're ready to initiate the plugin review, click "Submit".
 
+Congratulations!
+
+
+## CC Integrations Review
+
+After you submit, the CC Integrations Review team will review your plugin. Depending on current submission volume, it can take up to 10 business days before you hear a response. Thank you for being patient with us. 
+
+Once your submission has been reviewed, we’ll reach out letting you know if it has been approved or rejected, and provide any next steps.
+
 
 ## Next steps
 
