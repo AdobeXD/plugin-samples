@@ -9,9 +9,13 @@ The XD plugin manager is accessed through the _Plugins_ menu in the app: go to _
 In order to make your plugin available in the XD plugin manager, you'll need to go through our submission and review process.
 
 
+## Prerequisite
+
+- [A packaged plugin](/guides/how-to-package-a-plugin/README.md)
+
 ## Submit your plugin
 
-You can submit your plugin for review through the I/O Console, where you can provide [your packaged plugin](./packaging.md), a description of your plugin, plugin icons, and release notes.
+You can submit your plugin for review through the I/O Console, where you can provide your packaged plugin, a description of your plugin, plugin icons, and release notes.
 
 We'll walk you through the workflow below.
 
