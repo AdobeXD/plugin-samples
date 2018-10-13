@@ -21,3 +21,8 @@ my-plugin-folder
 ```
 
 The `manifest.json` and `main.js` files stored in your plugin's parent directory are the bare minimum requirement for your plugin to work, but it's possible to have more JavaScript files if you want. You can learn about including further JavaScript files in our [JavaScript concepts section on using `require`](/reference/javascript/javascript-support.html#can-i-use-require).
+
+For now, read on to learn about the two required files:
+
+- [manifest.json](./manifest.md)
+- [`main.js`](./handlers.md)
