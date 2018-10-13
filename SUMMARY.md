@@ -28,9 +28,6 @@
 * [Building User Interfaces](./guides/ui-index.md)
   * [How to show an alert](./guides/how-to-show-an-alert-guide/README.md)
   * [Asking user for confirmation](./guides/how-to-ask-user-for-confirmation-guide/README.md)
-  * [Using single-line text editors](./guides/how-to-use-single-line-text-ui-guide/README.md)
-  * [How to display a dropdown list](./guides/how-to-display-a-dropdown-list-guide/README.md)
-  * [How to display an image](./guides/how-to-display-an-image-guide/README.md)
 
 ## Advanced Concepts
 * [About advanced concepts](./reference/index.md)
