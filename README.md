@@ -10,14 +10,17 @@ This repository contains several sample XD plugins. You can use these to learn m
 | e2e-colorize-text | Scenegraph, ScenenodeList | Provides several text color utilities | 13.0.0 |
 | e2e-stock-chart | UI, File I/O, Scenegraph, Network I/O (Fetch)  | Draws a line chart of the picked stock quote | 13.0.0 |
 | getting-started | Scenegraph  | Creates a text ("Hello!") object and inserts it into the artboard | 13.0.0 |
-| how-to-show-an-alert | UI | Demonstrates how to show an alert and an error dialog | 13.0.0 |
+| how-to-ask-user-for-confirmation | UI | Demonstrates how to build a user confirmation dialog | 13.0.0 |
 | how-to-create-path-objects | Scenegraph | Demonstrates how to create shapes using path objects | 13.0.0 |
+| how-to-display-an-image | UI | Demonstrates how to add an image in the modal UI | 13.0.0 |
 | how-to-draw-lines | Scenegraph | Demonstrates how to create line objects | 13.0.0 |
 | how-to-generate-an-export-rendition | File I/O, Application(renditions) | Demonstrates how to generate an export rendition of an object | 13.0.0 |
 | how-to-import | File I/O, Scenegraph | Demonstrates how to import a `.txt` file | 13.0.0 |
 | how-to-integrate-with-OAuth | Network I/O (XHR, openExternal), Node.js server | Demonstrates how to integrate with a third-party OAuth | 13.0.0 |
 | how-to-make-network-requests | Network I/O (XHR , Fetch), Scenegraph | Demonstrates how to make network requests | 13.0.0 |
 | how-to-style-text | Scenegraph | Demonstrates how to create text nodes with styled text | 13.0.0 |
+| how-to-use-single-line-text-ui | UI, Scenegraph | Demonstrates how to take user input from the modal dailog and insert the text | 13.0.0 |
+| how-to-use-websockets | UI, Network I/O (Websockets), Node.js server | Demonstrates how to use websockets to communicate with an exernal server | 13.0.0 |
 | how-to-work-with-scenenodelist | Scenegraph | Demonstrates how to create various objects and use scenenode list to filter and color | 13.0.0 |
 | sg-chart-generator | Scenegraph, Commands | Demonstrates how to generate pie charts and bar charts | 13.0.0 |
 | sg-dummy-data | Scenegraph, Commands | Demonstrates how to generate random data | 13.0.0 |
@@ -26,7 +29,9 @@ This repository contains several sample XD plugins. You can use these to learn m
 | sg-lots-of-lines | Scenegraph | Draws multiple lines | 13.0.0 |
 | sg-margin-guides | Scenegraph, Commands | Create/remove margin guides around the existing objects in artboard(s) | 13.0.0 |
 | sg-meme-me | Scenegraph, Commands | Takes text inputs and an image and convert them into a meme | 13.0.0 |
+| sg-randomizer | Scenegraph, Commands | Duplicates the selection randomly around the artboard | 13.0.0 |
 | sg-repeater | Scenegraph, Commands | Duplicates the selection horizontally or circularly | 13.0.0 |
+| sg-simple-to-html | Scenegraph, Commands | Converts the selected shapes (paths, text, rectangles) into HTML | 13.0.0 |
 | sg-turtle | Scenegraph, Commands | Draws a series of lines by following "turtle graphics" commands | 13.0.0 |
 | sg-update-weather | Scenegraph, Network I/O (XHR) | Finds all text elements that follow a specific pattern and insert the temperatures | 13.0.0 |
 | ui-button-padding | UI | Uses `h` function to create a simple UI with these UI elements: form, labrel, footer | 13.0.0 |
@@ -73,4 +78,4 @@ This repository contains several sample XD plugins. You can use these to learn m
 
 6. Launch plugins from the `Plugins` menu.
 
-Make sure to check out [XD Plugin Guides](https://adobexdplatform.com/plugin-docs/guides) and [XD Plugin References](https://adobexdplatform.com/plugin-docs/reference).
+Make sure to check out [XD Plugin Guides](https://adobe-xd.gitbook.io/plugin-guides/) and [XD Plugin References](https://adobe-xd.gitbook.io/plugin-api-reference).

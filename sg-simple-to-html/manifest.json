@@ -1,0 +1,16 @@
+{
+    "id": "SIMPLE_TO_HTML",
+    "name": "(SG) Convert Rects to HTML",
+    "host": {
+        "app": "XD",
+        "minVersion": "13.0.0"
+    },
+    "version": "1.0.0",
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "SG - Rects To HTML",
+            "commandId": "rectsToHTML"
+        }
+    ]
+}

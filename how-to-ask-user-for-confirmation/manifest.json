@@ -1,0 +1,21 @@
+{
+  "id": "HOW_TO_ASK_USER_CONFIRMATION",
+  "name": "(H2) How to show user confirmation",
+  "version": "1.0.0",
+  "host": {
+    "app": "XD",
+    "minVersion": "8.0"
+  },
+  "uiEntryPoints": [
+    {
+      "type": "menu",
+      "label": "How to Ask User for Confirmation",
+      "commandId": "menuCommand"
+    },
+    {
+      "type": "menu",
+      "label": "How to Ask User for Confirmation with HTML",
+      "commandId": "menuCommandHTML"
+    }
+  ]
+}
