@@ -20,6 +20,4 @@ my-plugin-folder
 └── manifest.json
 ```
 
-The `manifest.json` and `main.js` files stored in your plugin's parent directory are the bare minimum requirement for your plugin to work, but it's possible to have more files if you want. Any data files you need to include with your plugin can be read in using the [File APIs](../uxp/using-file-apis.md).
-
-You can learn more about where plugins are stored in our [plugin location and name guide](./plugin-location-name.md).
+The `manifest.json` and `main.js` files stored in your plugin's parent directory are the bare minimum requirement for your plugin to work, but it's possible to have more JavaScript files if you want. You can learn about including further JavaScript files in our [JavaScript concepts section on using `require`](/reference/javascript/javascript-support.html#can-i-use-require).
