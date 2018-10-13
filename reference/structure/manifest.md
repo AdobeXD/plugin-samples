@@ -2,7 +2,7 @@
 
 The manifest is where you include metadata about your plugin. Simply put, the manifest is a list of facts about your plugin in the form of a JSON object. No executable code goes into your manifest.
 
-### Example
+### Example manifest
 
 ```json
 {
@@ -17,7 +17,7 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
 
     "host": {
         "app": "XD",
-        "minVersion": "13.0"
+        "minVersion": "13.0.0"
     },
 
     "uiEntryPoints": [
@@ -40,19 +40,19 @@ The top level of the manifest JSON object contains high-level information about 
 
 Key path | Type | Description
 ---------|------|------------
-`id`     | `string` | Unique identifier for your plugin. You can get your unique ID on the Adobe I/O Console. [Learn more here]().
-`name`   | `string` | Human-readable name of your plugin. Note that this isn't visible to the user _yet_.
+`id`     | `string` | Unique identifier for your plugin. You can get your unique ID on the [Adobe I/O Console](https://console.adobe.io/plugins).
+`name`   | `string` | Human-readable name of your plugin. Note that this isn't visible to the user _yet_, buy may become user-visible in a future update.
 `version`| `string` | Version number of your plugin in `x.y.z` format.
 `description` | `string` | Description displayed in the Plugin Manager listing.
 `icons` | `Array<Object>` | Icon(s) displayed in the Plugin Manager listing. Currently, you should supply only a single icon that is 96x96 at 2x scale (XD will automatically downscale it to 48x48 on a 1x display; you cannot provide a second, separate 48x48 image file at this time).
 `host.app` | `string` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `"XD"`).
 `host.minVersion` | `string` | Minimum required version of Adobe XD that can run this plugin.
 `host.maxVersion` | `string` | _Optional._ Maximum version of XD that can run this plugin.
-`uiEntryPoints` | `Array<MenuItemDefinition or SubmenuDefinition>` | List of objects describing what entries your plugin adds to the Plugins menu in XD. See the next section for details.
+`uiEntryPoints` | `Array<MenuItemDefinition or SubmenuDefinition>` | List of objects describing what entries your plugin adds to the _Plugins_ menu in XD. See the next section for details.
 
 ### UI entry points array
 
-The `uiEntryPoints` field is an _array_ of objects, and each object must match one of the two formats below. Items appear in the Plugins menu in the same order as they're listed in the `uiEntryPoints` array.
+The `uiEntryPoints` field is an _array_ of objects, and each object must match one of the two formats below. Items appear in the _Plugins_ menu in the same order as they're listed in the `uiEntryPoints` array.
 
 #### MenuItemDefinition (executable menu items)
 
@@ -73,7 +73,7 @@ Key | Type | Description
 
 #### Keyboard shortcuts
 
-Keyboard shortcuts are defined separately for each platform (as seen in the example at top). Each definition is a string that follows this syntax:
+Keyboard shortcuts are defined separately for each platform (as seen in the example at the top of this guide). Each definition is a string that follows this syntax:
 
 * One or more modifier keys, in any order, each one followed by `"+"`
     * _Mac:_ modifiers may be `Cmd`, `Ctrl`, `Opt` / `Alt`, or `Shift`. Shortcut _must_ contain at least one of `Cmd` or `Ctrl`.
@@ -81,9 +81,9 @@ Keyboard shortcuts are defined separately for each platform (as seen in the exam
 
 * A letter or number key.
     * Letters are case-insensitive (e.g. `"Cmd+P"` and `"Cmd+p"` mean the same thing and neither requires pressing Shift).
-    * Other keys - including punctuation, arrow keys, or F1-F12 - are currently _not supported_.
+    * Other keys (including punctuation, arrow keys, or F1-F12) are currently _not supported_.
 
-If your shortcut collides with a built-in XD command _or_ another plugin's shortcut, your shortcut will be ignored and you'll see a warning printed to the Developer Console.
+If your shortcut collides with a built-in XD command _or_ another plugin's shortcut, your shortcut will be ignored and you'll see a warning printed to the [developer console](/guides/debugging-guide/#1-look-for-errors-in-the-developer-console).
 
 ### Localization
 
@@ -99,6 +99,6 @@ Localized labels are represented as an object containing multiple translations, 
 }
 ```
 
-A default string is always required. The language must be a two-letter code from [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) - _not_ a hyphenated code such as `en-US`. To avoid inconsistency with the rest of XD's built-in menu items, languages that aren't supported by XD are ignored.
+A default string is always required. The language must be a two-letter code from [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), _not_ a hyphenated code such as `en-US`. To avoid inconsistency with the rest of XD's built-in menu items, languages that aren't supported by XD are ignored.
 
 You can also localize strings that appear in your plugin's own dialog UI, by choosing which strings to use in your UI based on the value of [application.appLanguage](../application.md#module_application.appLanguage).
