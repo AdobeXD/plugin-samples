@@ -31,7 +31,22 @@ XD plugin APIs support most of ES2015 and beyond. You can use features such as:
 
 Yes, you can use `require` to import additional files.
 
-Note that `require` file resolution does not align with Node.js-style resolution. You can only require files in your plugin directory, and there’s no lookup in a `package.json`, should it exist.
+Note that `require` in XD does not follow Node.js-style resolution. You can only require files in your plugin directory relative to your file location, but not outside of your plugin directory. There is no lookup in a `package.json` or a `node_modules` directory.
+
+For example, the following works:
+
+```js
+const aFile = require("./aFile");
+const someJSON = require("./someJSON.json");
+const anotherFile = require("./path/to/file/file");
+const someLib = require("./node_modules/somelib");
+```
+
+However, the following will not:
+
+```js
+const someLib = require("somelib");  // no package.json lookup
+```
 
 
 ## Can I use nmp packages or Node.js APIs?
