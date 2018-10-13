@@ -19,10 +19,10 @@ module.exports.commands = {
 };
 ```
 
-TBD Explanation of connection:
-- function
-- exports
-- manifest
+In this example:
+
+1.  `helloCommand` matches the value of `commandId` in your manifest
+1. `sayHello` is the name of your main handler function, so it is mapped to `helloCommand` in your command exports.
 
 
 ## Contextual arguments
