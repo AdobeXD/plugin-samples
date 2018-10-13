@@ -157,6 +157,11 @@ body {
     text-decoration: underline;
   }
 
+  h1 a:hover {
+      text-decoration: none;
+      color: inherit;
+  }
+
   .logos {
     display: -ms-flexbox;
     display: flex;

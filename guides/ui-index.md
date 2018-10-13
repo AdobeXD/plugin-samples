@@ -1,12 +1,24 @@
 # Building user interfaces
 
-While plenty of XD plugins are perfectly suited to run like headless scripts, many plugin creators will want to offer the user a way to dynmically interact. XD plugins can display UI in the form of modal dialogs, built with JavaScript and a supported subset of HTML and CSS.
+While plenty of XD plugins are perfectly suited to run like headless scripts, many plugins will need to interact witht the user in some way. XD plugins can display UI in the form of modal dialogs, built with JavaScript and a supported subset of HTML and CSS. For simple alerts and messages, we've also built various helpers which make it easy to display important messages, get user feedback, and more. The guides in this section will focus on the UI you can generate using these helpers. Should you need more power than these helpers provide, you can learn more by reading the [User Interface Concepts](../reference/ui/ui-concepts.md).
 
-The guides contained in this section will get you on your way to building plugin UI well-suited for XD:
+The guides contained in this section will get you on your way to building plugin UI well-suited for XD utilizing the [Plugin Toolkit](https://github.com/AdobeXD/plugin-toolkit) library. Before continuing, please ensure that you install the tooklit in your project, as follows:
 
-* [Asking user for confirmation](./how-to-ask-user-for-confirmation-guide/README.md)
-    * [With document.createElement](./how-to-ask-user-for-confirmation-guide/README.md)
-    * [With HTML](./how-to-ask-user-for-confirmation-guide/README_HTML.md)
-* [Using single-line text editors](./how-to-use-single-line-text-ui-guide/README.md)
-* [How to display a dropdown list](./how-to-display-a-dropdown-list-guide/README.md)
-* [How to display an image](./how-to-display-an-image-guide/README.md)
+* Click the "Clone or Download" button on the right side of the [Plugin Toolkit](https://github.com/AdobeXD/plugin-toolkit) page
+* Uncompress the zip file after the download completes
+* Copy the `lib` folder to your plugin project
+
+Now you're ready to display simple messages to your users!
+
+* [How to show an alert](./how-to-show-an-alert-guide/README.md)
+* [How to ask user for confirmation](./how-to-ask-user-for-confirmation-guide/README.md)
+* [How to get input from the user](./how-to-get-input-from-the-user/README.md)
+
+## More complex UI
+
+There are a lot of ways to render more complex UI. You can review the following material to learn more:
+
+* [User Interface Concepts](../reference/ui/ui-concepts.md)
+* [User Interface Widgets](../reference/ui/widgets.md)
+* [User Interface Layout](../reference/ui/layout.md)
+* [All about Dialogs](../reference/ui/dialogs.md)
