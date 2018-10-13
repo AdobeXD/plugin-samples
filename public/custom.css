@@ -148,6 +148,11 @@ body {
     font-size: 14px;
   }
 
+  h1 a {
+      color: inherit;
+      font-size: inherit;
+  }
+
   a:hover {
     text-decoration: underline;
   }
