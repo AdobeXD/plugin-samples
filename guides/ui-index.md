@@ -10,9 +10,9 @@ The guides contained in this section will get you on your way to building plugin
 
 Now you're ready to display simple messages to your users!
 
-* [How to show an alert](./how-to-show-an-alert-guide/README.md)
-* [How to ask user for confirmation](./how-to-ask-user-for-confirmation-guide/README.md)
-* [How to get input from the user](./how-to-get-input-from-the-user/README.md)
+* [How to show an alert](./how-to-show-an-alert-guide/index.md)
+* [How to ask user for confirmation](./how-to-ask-user-for-confirmation-guide/index.md)
+* [How to get input from the user](./how-to-get-input-from-the-user/index.md)
 
 ## More complex UI
 
