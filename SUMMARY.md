@@ -3,8 +3,9 @@
 ## Getting Started
 
 * [Overview](./README.md)
-* [Quick Start](./guides/quick-start-guide/README.md)
-* [Debugging Plugins](./guides/debugging-guide/README.md)
+
+* [Quick Start](./guides/quick-start-guide/index.md)
+* [Debugging Plugins](./guides/debugging-guide/readme.md)
 * [Plugin Structure](./reference/structure/index.md)
   * [Plugin Location and Name](./reference/structure/plugin-location-name.md)
   * [Folder Structure](./reference/structure/folder-structure.md)
@@ -14,20 +15,20 @@
 ## Tutorials
 * [About the tutorials](./guides/index.md)
 * [Working with Content](./guides/content-index.md)
-  * [How to draw lines](./guides/how-to-draw-lines-guide/README.md)
-  * [How to create paths](./guides/how-to-create-paths-guide/README.md)
-  * [How to style text](./guides/how-to-style-text-guide/README.md)
-  * [Working with a SceneNodeList](./guides/how-to-work-with-scenenodelist-guide/README.md)
+  * [How to draw lines](./guides/how-to-draw-lines-guide/index.md)
+  * [How to create paths](./guides/how-to-create-paths-guide/index.md)
+  * [How to style text](./guides/how-to-style-text-guide/index.md)
+  * [Working with a SceneNodeList](./guides/how-to-work-with-scenenodelist-guide/index.md)
 
 * [Working with I/O](./guides/io-index.md)
-  * [How to export a rendition](./guides/how-to-export-a-rendition-guide/README.md)
-  * [How to read a file](./guides/how-to-read-a-file-guide/README.md)
-  * [How to make network requests](./guides/how-to-make-network-requests-guide/README.md)
-  * [How to integrate with OAuth](./guides/how-to-integrate-with-OAuth-guide/readme.md)
+  * [How to export a rendition](./guides/how-to-export-a-rendition-guide/index.md)
+  * [How to read a file](./guides/how-to-read-a-file-guide/index.md)
+  * [How to make network requests](./guides/how-to-make-network-requests-guide/index.md)
+  * [How to integrate with OAuth](./guides/how-to-integrate-with-OAuth-guide/index.md)
 
 * [Building User Interfaces](./guides/ui-index.md)
-  * [How to show an alert](./guides/how-to-show-an-alert-guide/README.md)
-  * [Asking user for confirmation](./guides/how-to-ask-user-for-confirmation-guide/README.md)
+  * [How to show an alert](./guides/how-to-show-an-alert-guide/index.md)
+  * [Asking user for confirmation](./guides/how-to-ask-user-for-confirmation-guide/index.md)
 
 ## Advanced Concepts
 * [About advanced concepts](./reference/index.md)

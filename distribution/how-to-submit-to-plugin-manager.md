@@ -11,7 +11,7 @@ In order to make your plugin available in the XD plugin manager, you'll need to 
 
 ## Prerequisite
 
-- [A packaged plugin](/guides/how-to-package-a-plugin/README.md)
+- [A packaged plugin](/guides/how-to-package-a-plugin/index.md)
 
 ## Submit your plugin
 
@@ -68,7 +68,7 @@ Congratulations!
 
 ## CC Integrations Review
 
-After you submit, the CC Integrations Review team will review your plugin. Depending on current submission volume, it can take up to 10 business days before you hear a response. Thank you for being patient with us. 
+After you submit, the CC Integrations Review team will review your plugin. Depending on current submission volume, it can take up to 10 business days before you hear a response. Thank you for being patient with us.
 
 Once your submission has been reviewed, we’ll reach out letting you know if it has been approved or rejected, and provide any next steps.
 

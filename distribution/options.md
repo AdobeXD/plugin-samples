@@ -4,7 +4,7 @@ Once you have a packaged plugin, you're ready to distribute. You can make your p
 
 ## Prerequisite
 
-- [A packaged plugin](/guides/how-to-package-a-plugin/README.md)
+- [A packaged plugin](/guides/how-to-package-a-plugin/index.md)
 
 ## The XD plugin manager
 
@@ -17,7 +17,7 @@ To learn how to publish your plugin on the XD plugin manager, [see our publishin
 
 ## Direct distribution
 
-Direct distribution lets you choose how to provide users with access to your plugin. Your website? Email? Cloud file share? It's up to you! 
+Direct distribution lets you choose how to provide users with access to your plugin. Your website? Email? Cloud file share? It's up to you!
 
 If you distribute a .XDX file, installation is as simple as one double-click.
 
