@@ -1,29 +1,32 @@
 const { Rectangle, Color } = require("scenegraph");
 const commands = require("commands");
 
-function draw(selection) {
+function myPluginCommand(selection) {
+  const rect = new Rectangle();
+  rect.width = 320;
+  rect.height = 320;
 
-  const r = new Rectangle();
-  r.width = 320;
-  r.height = 320;
-  r.fill = null;
-  r.stroke = new Color("rgba(255, 255, 255, 0.5)");
+  rect.fill = null;
+  rect.stroke = new Color("white");
+  rect.opacity = 0.5;
 
-  selection.insertionParent.addChild(r);
-  selection.items = [r];
+  selection.insertionParent.addChild(rect);
+  selection.items = [rect];
 
-  let c = 0;
-  while (c++ < 179) {
+  let times = 0;
+  while (times < 179) {
     commands.duplicate();
 
     const node = selection.items[0];
     node.rotateAround(5, node.localCenterPoint);
     node.moveInParentCoordinates(5, 0);
+
+    times += 1;
   }
 }
 
 module.exports = {
   commands: {
-    draw
+    myPluginCommand
   }
 };

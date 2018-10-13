@@ -1,16 +1,25 @@
 {
-    "id": "LOTS_OF_RECTS",
-    "name": "(SG) Lots of Rectangles",
-    "host": {
-        "app": "XD",
-        "minVersion": "13.0.0"
+    "name": "Draw Lots of Rectangles",
+    "id": "00000000",
+    "version":"1.0.0",
+    "description":"Sample plugin for Adobe XD...",
+    "icons":[
+       {
+          "width":96,
+          "height":96,
+          "path":"images/icon.png"
+       }
+    ],
+    "host":{
+       "app":"XD",
+       "minVersion":"13.0.0"
     },
-    "version": "1.0.0",
-    "uiEntryPoints": [
-        {
-            "type": "menu",
-            "label": "Draw Lots of Rectangles",
-            "commandId": "draw"
-        }
+    "uiEntryPoints":[
+       {
+          "type":"menu",
+          "label":"Draw lots of rects",
+          "commandId":"myPluginCommand"
+       }
     ]
-}
+ }
+ }

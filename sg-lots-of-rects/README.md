@@ -1,6 +1,7 @@
-# Draw Lots of Lines
+# Draw Lots of Rects
 
-Has two demos:
+Made for one thing and one thing only: makes a complex spiral on the artboard using a lot of retangles!
 
-1. Draws a red and green line in the upper corner, crossing each other.
-2. Draws a lot of lines, over the artboard, kind of like a hypnotic effect.
+## Use
+
+Plugins > Draw Lots of Rects
