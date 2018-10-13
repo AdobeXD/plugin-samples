@@ -6,7 +6,7 @@ This sample demonstrates how to work with a SceneNodeList in Adobe XD. The short
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
 - [Quick Start Tutorial](/guides/quick-start-guide)
-- [Debugging Guide](/guides/debugging-guide)
+- [Debugging Guide](/guides/debugging-guide/README.md)
 
 ## Development Steps
 

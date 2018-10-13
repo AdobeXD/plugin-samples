@@ -19,10 +19,10 @@ module.exports.commands = {
 };
 ```
 
-TBD Explanation of connection:
-- function
-- exports
-- manifest
+In this example:
+
+1.  `helloCommand` matches the value of `commandId` in your manifest
+1. `sayHello` is the name of your main handler function, so it is mapped to `helloCommand` in your command exports.
 
 
 ## Contextual arguments
@@ -37,10 +37,9 @@ The argument names `selection` and `documentRoot` are arbitrary, but are conside
 
 ## Accessing app APIs
 
-See [Available APIs](../core/apis.md) to learn about available APIs and how to access them. Most APIs are loaded using `require()`, but a few can be accessed directly as globals, and some key API objects are passed directly to your command handler function
-([see menu item handlers](./handlers.md)).
+See [Available APIs](../core/apis.md) to learn about how to access the APIs that XD provides you with. Most APIs are loaded using `require()`, but a few can be accessed directly as globals.
 
 
-## Loading more code files
+## Loading libraries and other JavaScript files
 
-TBD
+You can learn about including further JavaScript files in our [JavaScript concepts section on using `require`](/reference/javascript/javascript-support.html#can-i-use-require).

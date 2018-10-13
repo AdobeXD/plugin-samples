@@ -14,19 +14,13 @@ Adobe XD loads plugins from the `plugins` and `develop` folders. These folders a
 
 
 ### The `develop` folder
-The `develop` folder is used during plugin development, and is the only folder XD will reload plugins from when you reload plugins from the **Plugins** menu:
+The `develop` folder is used during plugin development, and is the only folder XD will reload plugins from when you [reload plugins from the **Plugins** menu](/guides/debugging-guide/#2-try-reloading-the-plugins).
 
-| Platform      | Menu item          |
-| ------------- | -------------      |
-| macOS         | Plugins->Development->Reload Plugins (Shift-Cmd-R) |
-| Windows       | Plugins->Reload Plugins (Ctrl-Alt-E) |
+XD makes it very easy for you to get to the `develop` folder: simply go to this menu item: Plugins > Development > Show Develop Folder.
 
-If there _isn't_ a folder that already exists named `develop`, you can go ahead and create it yourself:
+> **tip**
+> If there _isn't_ a folder that already exists named `develop`, you can go ahead and create it yourself.
 
-```bash
-$ cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/
-$ mkdir develop
-```
 
 ### The `plugins` folder
 The `plugins` folder is where production plugins are stored when the user installs them. 

@@ -15,23 +15,21 @@ During development, if your plugin is misbehaving, there are few things you can 
 
 You can see error messages your plugin may be causing with the XD developer console. 
 
-The developer console can be opened from the Plugins menu:
+The developer console can be opened from the _Plugins_ menu: _Plugins > Development > Developer Console_.
 
-| Platform      | Menu item          |
-| ------------- | -------------      |
-| macOS         | Plugins->Development->Developer Console |
-| Windows       | Plugins->Developer Console |
 
 ### 2. Try reloading the plugins
 
-You can reload all plugins in your `develop` folder from the Plugins menu (or using the handy keyboard shortcut):
+You can reload all plugins in your `develop` folder from the _Plugins_ menu: _Plugins > Development > Reload Plugins_.
+
+There's also a handy keyboard shortcut:
 
 | Platform      | Menu item          |
 | ------------- | -------------      |
-| macOS         | Plugins->Development->Reload Plugins (Shift-Cmd-R) |
-| Windows       | Plugins->Reload Plugins (Ctrl-Alt-E) |
+| macOS         | Shift-Cmd-R        |
+| Windows       | Ctrl-Alt-E         |
 
-If there are any errors blocking the plugin from running, they will appear in the developer console on reload:
+If there are any errors blocking the plugin from loading, they will appear in the developer console on reload:
 
 ![reload-plugins](/images/readme-assets/reload-plugins.png)
 
@@ -43,7 +41,7 @@ Let's try adding a "start message" and an "end message" into `sayHello()` to dou
 
 ```javascript
 function sayHello(selection) {
-  console.log("sayHello started!"); // log a message
+  console.log("sayHello started!");         // log a message
 
   const el = new Text();
   el.text = "Hello!";
@@ -57,7 +55,7 @@ function sayHello(selection) {
   selection.insertionParent.addChild(el);
   el.moveInParentCoordinates(100, 100);
 
-  console.log("sayHello ran to the end!"); // log a message
+  console.log("sayHello ran to the end!");  // log a message
 }
 ```
 

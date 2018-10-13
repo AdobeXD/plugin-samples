@@ -7,7 +7,7 @@ This sample app will show you how to load an image in an XD object (Rectangle or
 - Basic knowledge of HTML, CSS, and JavaScript
 - Basic knowledge of `XMLHttpRequest` and `fetch`
 - [Quick Start Tutorial](/guides/quick-start-guide)
-- [Debugging Guide](/guides/debugging-guide)
+- [Debugging Guide](/guides/debugging-guide/README.md)
 
 ## Development Steps
 
