@@ -2,25 +2,6 @@
 
 Adobe XD provides several APIs to you, via the `require` method. You can also import your own modules and files using `require`.
 
-## Using Require
-
-`require` does not follow node-style module resolution. Instead, you can use `require` to load files relative to your plugin's location, but not outside of it, and not implicitly from `node_modules`.
-
-For example, the following works:
-
-```js
-const aFile = require("./aFile");
-const someJSON = require("./someJSON.json");
-const anotherFile = require("./path/to/file/file");
-const someLib = require("./node_modules/somelib");
-```
-
-However, the following will not:
-
-```js
-const someLib = require("somelib");  // no package.json lookup
-```
-
 ## Principal API modules
 
 * [selection](../selection.md) - Indicates the selected nodes and related context
