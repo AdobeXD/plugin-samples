@@ -10,7 +10,7 @@ Once you have a packaged plugin, you're ready to distribute. You can make your p
 
 The XD plugin manager lets users discover and install XD plugin right from within the app. Installation is as easy as a single click.
 
-![]()
+![](/images/plugin-manager.png)
 
 To learn how to publish your plugin on the XD plugin manager, [see our publishing guide](./publishing).
 
