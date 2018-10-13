@@ -41,7 +41,12 @@ Now, let's create your plugin files. Open your favorite text editor and create t
 
 
 These two files go into your plugin's parent directory. When you have the right structure, it will look like this:
-<img src="/images/readme-assets/xd-folder-structure.png" width="40%" height="40%">
+
+```
+my-plugin-folder
+├── main.js
+└── manifest.json
+```
 
 It's possible to have more files if you want, but these files are the bare minimum requirement for your plugin to work, and are all we'll need for this Quick Start tutorial.
 
@@ -82,17 +87,17 @@ Next, we need to create the JavaScript code for our plugin. The code lives in a 
 Paste this code into `main.js`:
 
 ```js
-const {Rectangle, Color} = require("scenegraph"); // [1]
+const {Rectangle, Color} = require("scenegraph");   // [1]
 
-function rectangleHandlerFunction(selection) { // [2]
+function rectangleHandlerFunction(selection) {      // [2]
 
-    const newElement = new Rectangle(); // [3]
+    const newElement = new Rectangle();             // [3]
     newElement.width = 100;
     newElement.height = 50;
     newElement.fill = new Color("Purple");
 
     selection.insertionParent.addChild(newElement); // [4]
-    newElement.moveInParentCoordinates(100, 100); // [5]
+    newElement.moveInParentCoordinates(100, 100);   // [5]
 
 }
 
@@ -106,15 +111,10 @@ module.exports = { // [6]
 This code does the following:
 
 1.  Gets references to the `Rectangle` and `Color` classes from XD’s `scenegraph` module. There are several different [API modules you can load using `require()`](/reference).
-
 2.  Defines our handler function. The handler function will run when the user selects the “Create Rectangle” menu command in the app.
-
 3.  Creates a new `Rectangle` object. There's nothing in it yet! The following lines assign various properties and styles to the text.
-
 4.  Adds the `Rectangle` object to the scenegraph at the top-left (coordinates `0, 0,`).
-
 5.  Puts the `Rectangle` object at coordinates `100, 100` within the parent element.
-
 6.  Exports a map object, which associates the JavaScript handler function (`rectangleHandlerFunction`) with the `commandId` property declared in the manifest earlier. The command ID (the part to the left of the `:` here) must match the `commandId` value declared in your manifest exactly.
 
 
@@ -133,7 +133,7 @@ Congratulations! You’ve built your first plugin for Adobe XD!
 
 ## Next Steps
 
-- Learn about [debugging plugins](/guides/debugging-guide)
-- Follow our [tutorials](/guides/index.md)
-- See working code in our [sample repos](https://github.com/AdobeXD/Plugin-Samples)
+- Learn about [debugging plugins](/guides/debugging-guide/readme.md)
+- Follow our [tutorials](/guides/)
+- See working code in our [sample repos on GitHub](https://github.com/AdobeXD/Plugin-Samples)
 - Browse the [API references](/reference/how-to-read.md)
