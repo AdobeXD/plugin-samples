@@ -92,7 +92,6 @@
 * [Help, Feedback &amp; Discussion](./community.md)
 * [Code of Conduct](./CODE_OF_CONDUCT.md)
 * [How to contribute](./CONTRIBUTING.md)
-* [Hiring](./README.md)
 
 ## Technical Reference
 
