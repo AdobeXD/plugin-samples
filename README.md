@@ -34,7 +34,7 @@ Below are the prerequisite skills you'll need to build a plugin. It's a short li
 ##### Required
 **JavaScript**: XD plugins are written in JavaScript. The XD plugin APIs support ES6+ JavaScript features, and ES5 is perfectly fine too.
 
-If you've never worked with JavaScript before, we recommend taking a moment to get familiar with the language first. But come back quickly; you don't need to be a JavaScript rock star to get started building XD plugins. The [Quick Start tutorial](/tutorials/quick-start/README.md) and [API feature tutorials](/tutorials) you'll find in the documentation will help get you on your way.
+If you've never worked with JavaScript before, we recommend taking a moment to get familiar with the language first. But come back quickly; you don't need to be a JavaScript rock star to get started building XD plugins. The [Quick Start tutorial](/tutorials/quick-start/) and [API feature tutorials](/tutorials) you'll find in the documentation will help get you on your way.
 
 ##### Recommended
 **HTML/CSS**: If you plan to offer a UI for your plugin, some familiarity with HTML and CSS is recommended. XD plugin APIs support a _subset_ of HTML and CSS for creating plugin UI.
