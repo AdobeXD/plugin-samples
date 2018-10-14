@@ -8,10 +8,10 @@ Color is a very important part of your user interface. It can highlight importan
 
 There are four classes of semantic colors beyond the normal standard text color.
 
-* Widgets and text with **informative** semantics are colored blue.
-* Widgets and text with **positive** semantics are colored green.
-* Widgets and text intended to provide cautionary **notice** are colored orange.
-* Widgets and text that provide warnings (**negative** semantics) are colored red.
+* elements and text with **informative** semantics are colored blue.
+* elements and text with **positive** semantics are colored green.
+* elements and text intended to provide cautionary **notice** are colored orange.
+* elements and text that provide warnings (**negative** semantics) are colored red.
 
 {% content "examplesmac" %}
 ![](assets/macOS%20Semantic%20Color%20Example.png)

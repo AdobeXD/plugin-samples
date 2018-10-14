@@ -19,6 +19,6 @@ Now you're ready to display simple messages to your users!
 There are a lot of ways to render more complex UI. You can review the following material to learn more:
 
 * [User Interface Concepts](../reference/ui/ui-concepts.md)
-* [User Interface Widgets](../reference/ui/widgets.md)
+* [User Interface elements](../reference/ui/elements.md)
 * [User Interface Layout](../reference/ui/layout.md)
 * [All about Dialogs](../reference/ui/dialogs.md)

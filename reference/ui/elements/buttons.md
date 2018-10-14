@@ -193,7 +193,7 @@ As you can see, buttons are, by default rendered in _block_ layout. This results
 
 The remainder of the buttons are rendered in flex containers (see [Flexbox layout](../layout/flex.md)). When rendered within flex containers, buttons will respect the stretching and positioning, but by default buttons will shrink to fit their textual content.
 
-If you need a specific width, you can assign a `width` style, but it is important to be aware that widgets render with different metrics on macOS and Windows.
+If you need a specific width, you can assign a `width` style, but it is important to be aware that elements render with different metrics on macOS and Windows.
 
 ## Guidelines
 

@@ -55,7 +55,7 @@ View on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)
 
 ## padding
 
-Applies a padding to the element. You can use CSS shorthands to assign multiple paddings at once. Note that you _cannot_ affect certain widgets with padding.
+Applies a padding to the element. You can use CSS shorthands to assign multiple paddings at once. Note that you _cannot_ affect certain elements with padding.
 
 ```js
 const div = document.createElement("div");
@@ -74,7 +74,7 @@ View on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/width)
 
 ## height
 
-Sets the height of an element. Not all widgets can accept custom heights (such as buttons).
+Sets the height of an element. Not all elements can accept custom heights (such as buttons).
 
 View on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/height)
 
@@ -86,7 +86,7 @@ View on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/max-width)
 
 ## max-height
 
-Sets the maximum height of an element. Not all widgets can accept custom heights (such as buttons).
+Sets the maximum height of an element. Not all elements can accept custom heights (such as buttons).
 
 View on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/max-height)
 

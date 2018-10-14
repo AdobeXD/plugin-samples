@@ -50,7 +50,7 @@
 - HTML5 input validation is not supported.
 - Images that fail to load will not render any “broken icon” image in place.
 - The `<dialog>` background color is different on Windows and macOS. On macOS, it is `#F5F5F5`, and on Windows it is `#FFFFFF`.
-- Input widgets do not accept `defaultValue`.
+- Input elements do not accept `defaultValue`.
 - `<input type="password" />` is not supported.
 - `<option>` tags do not support `selected` or `disabled` attributes.
 - `<label for="id"/>` is not supported. Wrap `<label>` around the control instead.
@@ -82,7 +82,7 @@
 
 ### Events
 
-- Interactive Widgets do not support `Pointer%` events
+- Interactive elements do not support `Pointer%` events
 - `keypress` and `keyup` are not currently supported on macOS.
 - In React, checkboxes do not trigger `change` events. You can use a `ref` instead to assign an event handler. `<input type="checkbox" ref={el && el.addEventListener("change", e => /*…*/)} />`
 

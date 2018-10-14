@@ -127,7 +127,7 @@ Images should be as crisp as possible for the user’s display. The runtime envi
 - [ ] (5.10.1) Ensure icons are provided in 1x and 2x resolutions (at least)
 - [ ] (5.10.2) Icons for use in action buttons should be 14x14 points.
 - [ ] (5.10.3) Avoid rescaling large images (this can cause poor performance)
-- [ ] (5.10.4) Avoid using images in lieu of other more suitable widgets
+- [ ] (5.10.4) Avoid using images in lieu of other more suitable elements
 
 ## 5.11 Links
 
@@ -139,7 +139,7 @@ Links can be used to launch web pages in the user's system browser.
 ## 5.12 Layout
 
 
-- [ ] (5.12.1) Don’t rely on the size of the default widgets when creating your layout. Instead, your layout should be responsive.
+- [ ] (5.12.1) Don’t rely on the size of the default elements when creating your layout. Instead, your layout should be responsive.
 - [ ] (5.12.2) Don’t assume that a modal dialog will be as wide or high as you expect. Design your layout responsively.
 - [ ] (5.12.3) If your layout is complex and takes more than a few milliseconds to build, consider deferring some of the layout until after you show your UI.
 - [ ] (5.12.4) Respect the layout conventions of the platform. On Windows, layout is on a 16px grid. On macOS, it is on a 12px grid. However, you should refrain from hard-coding these units, as the grid sizes may change in the future.
