@@ -2,7 +2,7 @@
 
 The manifest is where you include metadata about your plugin. Simply put, the manifest is a list of facts about your plugin in the form of a JSON object. No executable code goes into your manifest.
 
-### Example manifest
+## Example manifest
 
 ```json
 {
@@ -34,7 +34,7 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
 See the sections below to learn more about each key/value field. All fields are required unless otherwise noted below.
 
 
-### Top-level metadata
+## Top-level metadata
 
 The top level of the manifest JSON object contains high-level information about your plugin.
 
@@ -50,11 +50,11 @@ Key path | Type | Description
 `host.maxVersion` | `string` | _Optional._ Maximum version of XD (in `x.y.z` format) that can run this plugin.
 `uiEntryPoints` | `Array<MenuItemDefinition or SubmenuDefinition>` | List of objects describing what entries your plugin adds to the _Plugins_ menu in XD. See the next section for details.
 
-### UI entry points array
+## UI entry points array
 
 The `uiEntryPoints` field is an _array_ of objects, and each object must match one of the two formats below. Items appear in the _Plugins_ menu in the same order as they're listed in the `uiEntryPoints` array.
 
-#### MenuItemDefinition (executable menu items)
+### MenuItemDefinition (executable menu items)
 
 Key | Type | Description
 ----|------|------------
@@ -63,7 +63,7 @@ Key | Type | Description
 `commandId` | `string` | Identifier that links the menu item to a function in your plugin's JavaScript code. This identifier needs to be unique within your plugin (but doesn't need to be globally unique). It can be whatever you like, but it makes sense to succinctly describe what the command will do.
 `shortcut` | `{mac: string, win: string}` | _Optional._ Object defining Mac & Windows keyboard shortcuts for this menu item. See "Keyboard shortcuts" below for details.
 
-#### SubmenuDefinition (submenu)
+### SubmenuDefinition (submenu)
 
 Key | Type | Description
 ----|------|------------
@@ -71,7 +71,7 @@ Key | Type | Description
 `label` | `string` or `Object` | Label for this submenu. May be a single string _or_ an object containing localized strings (see below).
 `menuItems` | `Array<MenuItemDefinition>` | Nested array specifying the menu items this submenu contains. Only a single submenu nesting level is supported, so this array may not contain any `SubmenuDefinition`s itself, only executable `MenuItemDefinition`s.
 
-#### Keyboard shortcuts
+### Keyboard shortcuts
 
 Keyboard shortcuts are defined separately for each platform (as seen in the example at the top of this guide). Each definition is a string that follows this syntax:
 
@@ -85,7 +85,7 @@ Keyboard shortcuts are defined separately for each platform (as seen in the exam
 
 If your shortcut collides with a built-in XD command _or_ another plugin's shortcut, your shortcut will be ignored and you'll see a warning printed to the [developer console](/guides/debugging-guide/#1-look-for-errors-in-the-developer-console).
 
-### Localization
+## Localization
 
 Plugin menu item labels can be localized to match the rest of XD's UI. Other fields such as `name` and `description` _cannot be localized yet._
 
