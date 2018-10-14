@@ -171,11 +171,13 @@ After saving all your changes, reload the plugin in XD.
 
 First, select an artboard and run the "Create Elements" command:
 
-<img src="/plugin-docs/images/readme-assets/create-elements.png" width="50%" height="50%">
+![](/plugin-docs/images/readme-assets/create-elements.pn)
+
 
 Then, run the "Filter and Color" command:
 
-<img src="/plugin-docs/images/readme-assets/filter-and-color.png" width="50%" height="50%">
+![](/plugin-docs/images/readme-assets/filter-and-color.png)
+
 
 You've worked with a `SceneNodeList` to iterate through an artboard's contents and filter based on element type!
 
