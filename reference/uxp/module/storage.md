@@ -5,11 +5,13 @@
 
 * [storage](#module-storage)
     * [.Entry](#module-storage-entry)
-        * [new Entry()](#new-module-storage-entry-new)
         * [.name](#module-storage-entry-name) : `string`
         * [.provider](#module-storage-entry-provider) : `FileSystemProvider`
         * [.url](#module-storage-entry-url) : `URL`
         * [.nativePath](#module-storage-entry-nativepath) : `string`
+        * [.isEntry](#module-storage-entry-isentry) : `boolean`
+        * [.isFile](#module-storage-entry-isfile) : `boolean`
+        * [.isFolder](#module-storage-entry-isfolder) : `boolean`
         * [.toString()](#module-storage-entry-tostring) ⇒ `string`
         * [.copyTo(folder, options)](#module-storage-entry-copyto) ⇒ `Promise`
         * [.moveTo(folder, options)](#module-storage-entry-moveto) ⇒ `Promise`
@@ -23,14 +25,13 @@
         * [.isFile](#module-storage-entrymetadata-isfile) : `boolean`
         * [.isFolder](#module-storage-entrymetadata-isfolder) : `boolean`
     * [.File](#module-storage-file)
-        * [new File()](#new-module-storage-file-new)
         * [.mode](#module-storage-file-mode) : `Symbol`
         * [.read(options)](#module-storage-file-read) ⇒ `Promise.<(string\|ArrayBuffer)>`
         * [.write(data, options)](#module-storage-file-write)
     * [.FileSystemProvider](#module-storage-filesystemprovider)
-        * [.getFileForOpening(options)](#module-storage-filesystemprovider-getfileforopening) ⇒ `Promise.<File>` \| `Promise.<Array>`
-        * [.getFileForSaving(suggestedName, options)](#module-storage-filesystemprovider-getfileforsaving) ⇒ `Promise.<File>`
-        * [.getFolder()](#module-storage-filesystemprovider-getfolder) ⇒ `Promise.<Folder>`
+        * [.getFileForOpening(options)](#module-storage-filesystemprovider-getfileforopening) ⇒ `Promise.<?File>` \| `Promise.<!Array.<File>>`
+        * [.getFileForSaving(suggestedName, options)](#module-storage-filesystemprovider-getfileforsaving) ⇒ `Promise.<?File>`
+        * [.getFolder()](#module-storage-filesystemprovider-getfolder) ⇒ `Promise.<?Folder>`
         * [.getTemporaryFolder()](#module-storage-filesystemprovider-gettemporaryfolder) ⇒ `Promise.<Folder>`
         * [.getDataFolder()](#module-storage-filesystemprovider-getdatafolder) ⇒ `Promise.<Folder>`
         * [.getPluginFolder()](#module-storage-filesystemprovider-getpluginfolder) ⇒ `Promise.<Folder>`
@@ -89,25 +90,21 @@ share.
 >   for example if the item was picked via multiple separate file picker invocations.
 
 **Kind**: static class of [`storage`](#module-storage)
-**Since**: XD 12
+**Since**: XD 13
 
 * [.Entry](#module-storage-entry)
-    * [new Entry()](#new-module-storage-entry-new)
     * [.name](#module-storage-entry-name) : `string`
     * [.provider](#module-storage-entry-provider) : `FileSystemProvider`
     * [.url](#module-storage-entry-url) : `URL`
     * [.nativePath](#module-storage-entry-nativepath) : `string`
+    * [.isEntry](#module-storage-entry-isentry) : `boolean`
+    * [.isFile](#module-storage-entry-isfile) : `boolean`
+    * [.isFolder](#module-storage-entry-isfolder) : `boolean`
     * [.toString()](#module-storage-entry-tostring) ⇒ `string`
     * [.copyTo(folder, options)](#module-storage-entry-copyto) ⇒ `Promise`
     * [.moveTo(folder, options)](#module-storage-entry-moveto) ⇒ `Promise`
     * [.delete()](#module-storage-entry-delete) ⇒ `Promise`
     * [.getMetadata()](#module-storage-entry-getmetadata) ⇒ `Promise.<EntryMetadata>`
-
-
-<a name="new-module-storage-entry-new" id="new-module-storage-entry-new"></a>
-
-#### new Entry()
-Creates an instance of Entry. You cannot create instances directly; they must come from a [FileSystemProvider](#module-storage-filesystemprovider)
 
 
 <a name="module-storage-entry-name" id="module-storage-entry-name"></a>
@@ -117,7 +114,7 @@ The name of this entry. Read-only.
 
 **Kind**: instance property of [`Entry`](#module-storage-entry)
 **Read only**: true
-**Since**: XD 12
+**Since**: XD 13
 **Example**
 ```js
 console.log(anEntry.name);
@@ -130,7 +127,7 @@ The associated provider that services this entry. Read-only.
 
 **Kind**: instance property of [`Entry`](#module-storage-entry)
 **Read only**: true
-**Since**: XD 12
+**Since**: XD 13
 **Example**
 ```js
 if (entryOne.provider !== entryTwo.provider) {
@@ -145,7 +142,7 @@ The url of this entry. You can use this url as the `src` attribute of an `<img>`
 
 **Kind**: instance property of [`Entry`](#module-storage-entry)
 **Read only**: true
-**Since**: XD 12
+**Since**: XD 13
 **Example**
 ```js
 console.log(anEntry.url);
@@ -158,10 +155,51 @@ The platform native file-system path of this entry. Read-only
 
 **Kind**: instance property of [`Entry`](#module-storage-entry)
 **Read only**: true
-**Since**: XD 12
+**Since**: XD 13
 **Example**
 ```js
 console.log(anEntry.nativePath);
+```
+
+#### entry.isEntry : `boolean`
+Indicates that this instance is an `Entry`. Useful for type-checking.
+
+**Kind**: instance property of [`Entry`](#module-storage-entry)
+**Example**
+```js
+if (something.isEntry) {
+    return something.getMetadata();
+}
+```
+
+<a name="module-storage-entry-isfile" id="module-storage-entry-isfile"></a>
+
+#### entry.isFile : `boolean`
+Indicates that this instance is **not** a `File`. Useful for type-
+checking.
+
+**Kind**: instance property of [`Entry`](#module-storage-entry)
+**Read only**: true
+**Example**
+```js
+if (!anEntry.isFile) {
+    return "This entry is not a file.";
+}
+```
+
+<a name="module-storage-entry-isfolder" id="module-storage-entry-isfolder"></a>
+
+#### entry.isFolder : `boolean`
+Indicates that this instance is **not** a folder. Useful for type-
+checking.
+
+**Kind**: instance property of [`Entry`](#module-storage-entry)
+**Read only**: true
+**Example**
+```js
+if (!anEntry.isFolder) {
+    return "This entry is not a folder.";
+}
 ```
 
 <a name="module-storage-entry-tostring" id="module-storage-entry-tostring"></a>
@@ -187,7 +225,7 @@ original item - it is _not_ updated to reference the copy.
 - `PermissionDenied` if the underlying file system rejects the attempt
 - `OutOfSpace` if the file system is out of storage space
 
-**Since**: XD 12
+**Since**: XD 13
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -219,7 +257,7 @@ referencing the original item will not be updated, and will thus no
 longer point to an item that exists on disk.
 
 **Kind**: instance method of [`Entry`](#module-storage-entry)
-**Since**: XD 12
+**Since**: XD 13
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -256,7 +294,7 @@ Removes this entry from the file system. If the entry is a folder, all the
 contents will also be removed.
 
 **Kind**: instance method of [`Entry`](#module-storage-entry)
-**Since**: XD 12
+**Since**: XD 13
 **Example**
 ```js
 await aFile.delete();
@@ -268,7 +306,7 @@ await aFile.delete();
 Returns this entry's metadata.
 
 **Kind**: instance method of [`Entry`](#module-storage-entry)
-**Since**: XD 12
+**Since**: XD 13
 **Example**
 ```js
 const metadata = await aFile.getMetadata();
@@ -284,7 +322,9 @@ Metadata for an entry. It includes useful information such as:
 * date modified
 * name
 
-You'll not instantiate this directly; use [getMetadata](#module-storage-entry-getmetadata) to get metadata information.
+You'll never instantiate an `EntryMetadata` directly; instead use
+[getMetadata](#module-storage-entry-getmetadata) to get metadata for a
+specific File or Folder entry.
 
 **Kind**: static class of [`storage`](#module-storage)
 
@@ -348,7 +388,7 @@ you'll get access via a [FileSystemProvider](#module-storage-filesystemprovider)
 method such as [`getFileForOpening()`](#module-storage-filesystemprovider-getfileforopening).
 
 **Kind**: static class of [`storage`](#module-storage)
-**Since**: XD 12
+**Since**: XD 13
 
 > **Info**
 >
@@ -360,16 +400,9 @@ method such as [`getFileForOpening()`](#module-storage-filesystemprovider-getfil
 > for example if the file was picked via multiple separate file picker invocations.
 
 * [.File](#module-storage-file)
-    * [new File()](#new-module-storage-file-new)
     * [.mode](#module-storage-file-mode) : `Symbol`
     * [.read(options)](#module-storage-file-read) ⇒ `Promise.<(string\|ArrayBuffer)>`
     * [.write(data, options)](#module-storage-file-write)
-
-
-<a name="new-module-storage-file-new" id="new-module-storage-file-new"></a>
-
-#### new File()
-Creates an instance of File. You cannot create File instances directly; they must come from a [FileSystemProvider](#module-storage-filesystemprovider).
 
 
 <a name="module-storage-file-mode" id="module-storage-file-mode"></a>
@@ -379,7 +412,7 @@ Indicates whether this File object supports read-only or read-write
 access. See [readOnly](#module-storage-modes-readonly) and [readWrite](#module-storage-modes-readwrite).
 
 **Kind**: instance property of [`File`](#module-storage-file)
-**Since**: XD 12
+**Since**: XD 13
 **Example**
 ```js
 if (aFile.mode === modes.readOnly) {
@@ -396,20 +429,20 @@ to be a text file using UTF8 encoding.
 
 **Kind**: instance method of [`File`](#module-storage-file)
 **Returns**: `Promise.<(string\|ArrayBuffer)>` - the contents of the file
-**Since**: XD 12
+**Since**: XD 13
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | options | `Object` |  |  |
-| [options.format] | `Symbol` | <code>formats.utf8</code> | Optional. The format to     read: one of [utf8](#module-storage-formats-utf8) and [binary](#module-storage-formats-binary). |
+| [options.format] | `Symbol` | <code>formats.utf8</code> | Optional. Format to read: one of [`storage.formats.utf8`](#module-storage-formats-utf8) or [`storage.formats.binary`](#module-storage-formats-binary). |
 
 **Example**
 ```js
-const text = await myNovel.read(); // reads file as a string
+const text = await myNovel.read(); // 'text' is a string
 ```
 **Example**
 ```js
-const data = await myNovel.read({format: formats.binary}); // data is an ArrayBuffer
+const data = await myNovel.read({format: formats.binary}); // 'data' is an ArrayBuffer
 console.log("File is " + data.byteLength + " bytes long.");
 ```
 
@@ -425,13 +458,13 @@ is controlled via the `format` option, and defaults to UTF8.
 - `FileIsReadOnly` if writing to a read-only file
 - `OutOfSpace` If writing to the file causes the file system to exceed the available space (or quota)
 
-**Since**: XD 12
+**Since**: XD 13
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | data | `string` \| `ArrayBuffer` |  | Data to write to the file |
 | options | `Object` |  |  |
-| [options.format] | `Symbol` | <code>formats.utf8</code> | Optional. Format to write:    one of [utf8](#module-storage-formats-utf8) or [binary](#module-storage-formats-binary). |
+| [options.format] | `Symbol` | <code>formats.utf8</code> | Optional. Format to write: [`storage.formats.utf8`](#module-storage-formats-utf8) or [`storage.formats.binary`](#module-storage-formats-binary). |
 
 **Example**
 ```js
@@ -451,12 +484,12 @@ this directly; instead you'll use an instance that has already been created for
 you.
 
 **Kind**: static class of [`storage`](#module-storage)
-**Since**: XD 12
+**Since**: XD 13
 
 * [.FileSystemProvider](#module-storage-filesystemprovider)
-    * [.getFileForOpening(options)](#module-storage-filesystemprovider-getfileforopening) ⇒ `Promise.<File>` \| `Promise.<Array>`
-    * [.getFileForSaving(suggestedName, options)](#module-storage-filesystemprovider-getfileforsaving) ⇒ `Promise.<File>`
-    * [.getFolder()](#module-storage-filesystemprovider-getfolder) ⇒ `Promise.<Folder>`
+    * [.getFileForOpening(options)](#module-storage-filesystemprovider-getfileforopening) ⇒ `Promise.<?File>` \| `Promise.<!Array.<File>>`
+    * [.getFileForSaving(suggestedName, options)](#module-storage-filesystemprovider-getfileforsaving) ⇒ `Promise.<?File>`
+    * [.getFolder()](#module-storage-filesystemprovider-getfolder) ⇒ `Promise.<?Folder>`
     * [.getTemporaryFolder()](#module-storage-filesystemprovider-gettemporaryfolder) ⇒ `Promise.<Folder>`
     * [.getDataFolder()](#module-storage-filesystemprovider-getdatafolder) ⇒ `Promise.<Folder>`
     * [.getPluginFolder()](#module-storage-filesystemprovider-getpluginfolder) ⇒ `Promise.<Folder>`
@@ -466,10 +499,7 @@ you.
 
 <a name="module-storage-filesystemprovider-getfileforopening" id="module-storage-filesystemprovider-getfileforopening"></a>
 
-#### fileSystemProvider.getFileForOpening(options) ⇒ `Promise.<File>` \| `Promise.<Array>`
-Gets a file (or files) from the file system provider for the purpose of
-opening them. Files are read-only.
-
+#### fileSystemProvider.getFileForOpening(options) ⇒ `Promise.<File>` \| `Promise.<Array.<File>>`
 Gets a file (or files) suitable for reading by displaying an "Open" file
 picker dialog to the user. File entries returned by this API are read-only -
 use [getFileForSaving](#module-storage-filesystemprovider-getfileforsaving)
@@ -478,18 +508,17 @@ to get a File entry you can write to.
 The user can select multiple files only if the `allowMultiple` option is `true`.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)
-**Returns**: `Promise.<File>` \| `Promise.<Array>` - `?File` if `allowMultiple` is false (null if picker canceled); or `!Array<File>` if `allowMultiple` is true (length 0 if picker canceled)
-**Since**: XD 12
+**Returns**: `Promise.<?File>` \| `Promise.<!Array.<File>>` - `?File` if `allowMultiple` is false (null if picker canceled); or `!Array<File>` if `allowMultiple` is true (length 0 if picker canceled)
+**Since**: XD 13
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | options | `Object` |  |  |
-| [options.types] | `Array.<string>` | <code>[&#x27;*&#x27;]</code> | Optional. Allowed file extensions, with no "." prefix; use [all](#module-storage-filetypes-all) to allow any file to be picked |
+| [options.types] | `Array.<string>` | <code>[&#x27;*&#x27;]</code> | Optional. Allowed file extensions, with no "." prefix; use [`storage.fileTypes.all`](#module-storage-filetypes-all) to allow any file to be picked |
 | [options.allowMultiple] | `boolean` | <code>false</code> | Optional. If true, multiple files can be selected and this API returns `Array<File>`.<br><br>If false, only one file can be selected and this API returns a `File` directly. |
 
 **Example**
 ```js
-const folder = await fs.getFolder();
 const file = await fs.getFileForOpening();
 if (!file) {
     // file picker dialog was canceled
@@ -507,7 +536,7 @@ if (files.length === 0) {
 
 <a name="module-storage-filesystemprovider-getfileforsaving" id="module-storage-filesystemprovider-getfileforsaving"></a>
 
-#### fileSystemProvider.getFileForSaving(suggestedName, options) ⇒ `Promise.<File>`
+#### fileSystemProvider.getFileForSaving(suggestedName, options) ⇒ `Promise.<?File>`
 Gets a file reference suitable for read-write by displaying a "Save" file
 picker dialog to the user.
 
@@ -515,8 +544,8 @@ If the act of writing to the file would overwrite it, the file picker
 will prompt the user to confirm before returning a result to you.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)
-**Returns**: `Promise.<File>` - returns the selected file, or `null` if canceled
-**Since**: XD 12
+**Returns**: `Promise.<?File>` - returns the selected file, or `null` if canceled
+**Since**: XD 13
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -526,7 +555,7 @@ will prompt the user to confirm before returning a result to you.
 
 **Example**
 ```js
-const [file] = await fs.getFileForSaving("output.txt", { types: [ "txt" ]});
+const file = await fs.getFileForSaving("output.txt", { types: [ "txt" ]});
 if (!file) {
     // file picker was cancelled
     return;
@@ -536,7 +565,7 @@ await file.write("It was a dark and stormy night");
 
 <a name="module-storage-filesystemprovider-getfolder" id="module-storage-filesystemprovider-getfolder"></a>
 
-#### fileSystemProvider.getFolder() ⇒ `Promise.<Folder>`
+#### fileSystemProvider.getFolder() ⇒ `Promise.<?Folder>`
 Gets a folder from the file system via a folder picker dialog. The files
 and folders within can be accessed via [getEntries](#module-storage-folder-getentries). Any
 files within are read-write.
@@ -544,8 +573,8 @@ files within are read-write.
 If the user cancels the picker, `null` is returned instead.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)
-**Returns**: `Promise.<Folder>` - the selected folder or `null` if picker is canceled.
-**Since**: XD 12
+**Returns**: `Promise.<?Folder>` - the selected folder or `null` if picker is canceled.
+**Since**: XD 13
 **Example**
 ```js
 const folder = await fs.getFolder();
@@ -560,7 +589,7 @@ Returns a temporary folder. The contents of the folder may be lost when
 the host application is closed.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)
-**Since**: XD 12
+**Since**: XD 13
 **Example**
 ```js
 const temp = await fs.getTemporaryFolder();
@@ -574,7 +603,7 @@ interaction though a file picker. Its contents remain persistent when the host
 application is updated _and_ when your plugin is updated.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)
-**Since**: XD 12
+**Since**: XD 13
 
 <a name="module-storage-filesystemprovider-getpluginfolder" id="module-storage-filesystemprovider-getpluginfolder"></a>
 
@@ -583,7 +612,7 @@ Returns an plugin's folder – this folder and everything within it are read onl
 This contains all the Plugin related packaged assets.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)
-**Since**: XD 12
+**Since**: XD 13
 
 <a name="module-storage-filesystemprovider-getfsurl" id="module-storage-filesystemprovider-getfsurl"></a>
 
@@ -591,7 +620,6 @@ This contains all the Plugin related packaged assets.
 Returns the fs url of given entry.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)
-**Access**: public
 
 | Param | Type |
 | --- | --- |
@@ -604,7 +632,6 @@ Returns the fs url of given entry.
 Returns the platform native file system path of given entry.
 
 **Kind**: instance method of [`FileSystemProvider`](#module-storage-filesystemprovider)
-**Access**: public
 
 | Param | Type |
 | --- | --- |
@@ -630,7 +657,7 @@ but will get it by calling [getTemporaryFolder](#module-storage-filesystemprovid
 
 **Kind**: static class of [`storage`](#module-storage)
 **Extends**: `Entry`
-**Since**: XD 12
+**Since**: XD 13
 
 * [.Folder](#module-storage-folder) ⇐ `Entry`
     * [.getEntries()](#module-storage-folder-getentries) ⇒ `Promise.<Array.<Entry>>`
@@ -647,7 +674,7 @@ Returns an array of entries contained within this folder.
 
 **Kind**: instance method of [`Folder`](#module-storage-folder)
 **Returns**: `Promise.<Array.<Entry>>` - The entries within the folder.
-**Since**: XD 12
+**Since**: XD 13
 **Example**
 ```js
 const entries = await aFolder.getEntries();
@@ -741,7 +768,7 @@ referencing the original item will not be updated, and will thus no longer point
 exists on disk.
 
 **Kind**: instance method of [`Folder`](#module-storage-folder)
-**Since**: XD 12
+**Since**: XD 13
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -921,7 +948,6 @@ All file types
 This namespace describes the file content formats supported in FS methods like read and write.
 
 **Kind**: static constant of [`storage`](#module-storage)
-**Access**: public
 
 * [.formats](#module-storage-formats)
     * [.utf8](#module-storage-formats-utf8) : `Symbol`
@@ -948,7 +974,6 @@ Binary file encoding
 This namespace describes the access modes that can be supported by a given File entry.
 
 **Kind**: static constant of [`storage`](#module-storage)
-**Access**: public
 
 * [.modes](#module-storage-modes)
     * [.readOnly](#module-storage-modes-readonly) : `Symbol`
@@ -975,7 +1000,6 @@ The file is read-write.
 This namespace describes the type of the entry. Whether file or folder etc.
 
 **Kind**: static constant of [`storage`](#module-storage)
-**Access**: public
 
 * [.types](#module-storage-types)
     * [.file](#module-storage-types-file) : `Symbol`
