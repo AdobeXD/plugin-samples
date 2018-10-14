@@ -3,7 +3,7 @@
   <script defer src="https://wwwimages2.adobe.com/etc/beagle/public/globalnav/adobe-privacy/latest/privacy.min.js"></script>
   <script defer>
     function createTrackerID() {
-      var fmt = 'xxxxxxxx-xxxx-4xxx-1xxx-xxxxxxxxxxxx';
+      let fmt = 'xxxxxxxx-xxxx-4xxx-1xxx-xxxxxxxxxxxx';
       return fmt.split("").map(function (c) {
         if (c === 'x') {
           return Math.floor(Math.random() * 16).toString(16);
@@ -13,18 +13,18 @@
       }).join("");
     }
 
-    var INGEST_ENDPOINT = "https://cc-api-data.adobe.io/ingest";
-    var TRACKER_KEY = "xdplatform";
-    var ENVIRONMENT = "prod";
-    var tracker;
-    var evidonTimer = setTimeout(track, 500);
+    let INGEST_ENDPOINT = "https://cc-api-data.adobe.io/ingest";
+    let TRACKER_KEY = "xdplatform";
+    let ENVIRONMENT = "prod";
+    let tracker;
+    let evidonTimer = setTimeout(track, 500);
 
     /* report page hit IF we have privacy consent from the user */
     window.addEventListener("adobePrivacy:PrivacyConsent", function () {
 
       // check if the user has a cookie
-      var cookies = document.cookie.split(';');
-      var trackerCookie = cookies.filter(function (v) {
+      let cookies = document.cookie.split(';');
+      let trackerCookie = cookies.filter(function (v) {
         return v.trim().substr(0, TRACKER_KEY.length + 1) === TRACKER_KEY + '=';
       });
       if (trackerCookie.length > 0) {
@@ -45,7 +45,7 @@
     function track() {
 
       // track the page hit
-      var req = new XMLHttpRequest();
+      let req = new XMLHttpRequest();
       req.open("POST", INGEST_ENDPOINT);
 
       req.setRequestHeader("Content-Type", "application/json");
@@ -53,7 +53,7 @@
 
       // (Note: we don't care about errors here)
 
-      var data = {
+      let data = {
         "events": [{
           "project": "xdplatform-web-service",
           "environment": ENVIRONMENT,

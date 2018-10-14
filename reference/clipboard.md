@@ -6,7 +6,7 @@ This module lets you copy text to the clipboard. It is not yet possible to copy 
 **Example**  
 ```js
 // Copy the layer name of the selected item to the clipboard
-var clipboard = require("clipboard");
+let clipboard = require("clipboard");
 clipboard.copyText(selection.items[0].name);
 ```
 

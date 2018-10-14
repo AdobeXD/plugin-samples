@@ -11,11 +11,11 @@ The supported image encodings are: PNG, JPEG, and GIF.
 // User picks an image file
 const storage = require("uxp").storage;
 const fs = storage.localFileSystem;
-var imageFile = await fs.getFileForOpening({ types: storage.fileTypes.images });
+let imageFile = await fs.getFileForOpening({ types: storage.fileTypes.images });
 
 // Create ImageFill for this image
 const ImageFill = require("scenegraph").ImageFill;
-var fill = new ImageFill(imageFile);
+let fill = new ImageFill(imageFile);
 
 // Set fill of first selected item
 selection.items[0].fill = fill;

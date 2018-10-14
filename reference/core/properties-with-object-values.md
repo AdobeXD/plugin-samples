@@ -7,7 +7,7 @@ changing properties on the object value "inline" will not result in an update.
 For example:
 ```js
 // Right:
-var color = node.fill;
+let color = node.fill;
 color.r = 0x80;
 node.fill = color;  // update fill in the scenegraph by kicking the node's setter
 

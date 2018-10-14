@@ -6,11 +6,11 @@ The `application` module exposes useful information about XD's state, along with
 **Example**  
 ```js
 // Generate PNG rendition of the selected node
-var application = require("application");
-var fs = require("uxp").storage.localFileSystem;
-var file = await fs.getFileForSaving();
-var shape = selection.items[0];
-var renditions = [{
+let application = require("application");
+let fs = require("uxp").storage.localFileSystem;
+let file = await fs.getFileForSaving();
+let shape = selection.items[0];
+let renditions = [{
      node: shape,
      outputFile: file,
      type: application.RenditionType.PNG,
@@ -23,7 +23,7 @@ application.createRenditions(renditions).then(function (resultFiles) {
 
 **Example**  
 ```js
-var application = require("application");
+let application = require("application");
 console.log("Version:", application.version);        // e.g. "13.0.21.3"
 console.log("XD locale:", application.appLanguage);  // e.g. "en"
 console.log("OS locale:", application.systemLocale); // e.g. "en_US"

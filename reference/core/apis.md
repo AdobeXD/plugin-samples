@@ -11,17 +11,17 @@ Adobe XD provides several APIs to you, via the `require` method. You can also im
       (`selection` and `documentRoot`).
     * To create _new_ nodes in the document, load this module explicitly to access the constructor functions:
       ```js
-      var Rectangle = require("scenegraph").Rectangle;
-      var node = new Rectangle();
+      let Rectangle = require("scenegraph").Rectangle;
+      let node = new Rectangle();
       ```
 * [commands](../commands.md) - Invoke commands to change the document structure and perform other complex operations.
-    * Load this module explicitly: `var commands = require("commands");`
+    * Load this module explicitly: `let commands = require("commands");`
 * [storage](../uxp/using-file-apis) - Read and write files on disk
     * Load this module explicitly: `const fs = require("uxp").storage.localFileSystem;`
 * [Network](../uxp/network-IO.md) - Use browser-style `XMLHttpRequest`, `fetch()`, and `WebSocket` APIs to access the network.
     * These APIs are in the global namespace, so you can use them without any `require()` statements
 * [clipboard](../clipboard.md) - Copy text to the clipboard.
-    * Load this module explicitly: `var clipboard = require("clipboard");`
+    * Load this module explicitly: `let clipboard = require("clipboard");`
 
 ## Helper classes
 

@@ -104,7 +104,7 @@ Note the data structure in the code below: an array of objects (in this case, on
 Each of the numbered comments are explained below the code:
 
 ```js
-var renditionSettings = [{
+let renditionSettings = [{
     node: selection.items[0],               // [1]
     outputFile: file,                       // [2]
     type: application.RenditionType.PNG,    // [3]

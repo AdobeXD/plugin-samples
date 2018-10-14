@@ -158,7 +158,7 @@ The code below generates the following UI
 This value for this attribute can only be set in javascript like this:
 
 	```
-		var input = document.getElementById("name");
+		let input = document.getElementById("name");
 		 input.indeterminate = true;
 	```
 

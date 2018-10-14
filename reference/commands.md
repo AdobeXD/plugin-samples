@@ -7,7 +7,7 @@ want the command to target, then invoke the command:
 
 **Example**  
 ```js
-var commands = require("commands");
+let commands = require("commands");
 selectionModel.selection = [shape1, shape2, maskShape];
 commands.createMaskGroup();
 ```
@@ -45,9 +45,9 @@ Group_ in the UI.
 
 **Example**  
 ```js
-var shape1 = new Rectangle();
+let shape1 = new Rectangle();
 // ...configure Rectangle size & appearance...
-var label = new Text();
+let label = new Text();
 // ...configure Text content & appearance...
 
 // Add both nodes to the current edit context first
@@ -57,7 +57,7 @@ selection.insertionParent.addChild(label);
 // Select both shapes, then run the group() command
 selection.items = [shape1, label];
 commands.group();
-var group = selection.items[0];  // the new Group node is what's selected afterward
+let group = selection.items[0];  // the new Group node is what's selected afterward
 ```
 
 * * *
@@ -83,10 +83,10 @@ _Object > Mask With Shape_.
 
 **Example**  
 ```js
-var shape1 = new Rectangle(),
+let shape1 = new Rectangle(),
     shape2 = new Ellipse();
 // ...configure shapes' size & appearance...
-var maskShape = new Ellipse();
+let maskShape = new Ellipse();
 // ...configure mask shape's size...
 
 // Create a Masked Group: add all nodes to the current edit context, select them, then run the createMaskGroup() command
@@ -95,7 +95,7 @@ selection.insertionParent.addChild(shape2);
 selection.insertionParent.addChild(maskShape);  // added last: topmost in z order
 selection.items = [shape1, shape2, maskShape];  // order of selection array does not matter
 commands.createMaskGroup();
-var maskedGroup = selection.items[0];
+let maskedGroup = selection.items[0];
 ```
 
 * * *

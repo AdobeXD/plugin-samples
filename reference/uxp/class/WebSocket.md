@@ -21,7 +21,7 @@
 | Param | Type | Description |
 | --- | --- | --- |
 | url | `string` | The URL to which to connect; this should be the URL to which the WebSocket server will respond. |
-| protocols | `string` \| `Array.<string>` | Either a single protocol string or an array of protocol strings. Example usage: var ws = new WebSocket("ws://demos.kaazing.com/echo","xmpp"); Throws an exception of Error Object if invalid url or protocols is passed |
+| protocols | `string` \| `Array.<string>` | Either a single protocol string or an array of protocol strings. Example usage: let ws = new WebSocket("ws://demos.kaazing.com/echo","xmpp"); Throws an exception of Error Object if invalid url or protocols is passed |
 
 
 <a name="module-global-websocket-protocol" id="module-global-websocket-protocol"></a>

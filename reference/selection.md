@@ -71,8 +71,8 @@ Array representing the current selection *plus* any locked items that the user h
 **Read only**: true  
 **Example**  
 ```js
-var numUnlockedSelected = selection.items.length;
-var numLockedSelected = selection.itemsIncludingLocked.length - numUnlockedSelected;
+let numUnlockedSelected = selection.items.length;
+let numLockedSelected = selection.itemsIncludingLocked.length - numUnlockedSelected;
 console.log("There are " + numLockedSelected + " locked nodes 'sort of' currently selected");
 ```
 

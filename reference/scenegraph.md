@@ -16,7 +16,7 @@ traversing the entire document tree using the [`documentRoot`](#RootNode) argume
 **Example**  
 ```js
 function myCommand(selection) {
-    var node = selection.items[0];
+    let node = selection.items[0];
 
     console.log("The selected node is a: " + node.constructor.name);
 
@@ -31,9 +31,9 @@ To create new scenenodes, load this `scenegraph` module directly and use the nod
 
 **Example**  
 ```js
-var scenegraph = require("scenegraph");
+let scenegraph = require("scenegraph");
 function myCommand(selection) {
-    var newShape = new scenegraph.Rectangle();
+    let newShape = new scenegraph.Rectangle();
     newShape.width = 100;
     newShape.height = 50;
     newShape.fill = new Color("red");
@@ -153,7 +153,7 @@ The list is immutable. Use [removeFromParent](#SceneNode+removeFromParent) and [
 **Read only**: true  
 **Example**  
 ```js
-var node = ...;
+let node = ...;
 console.log("Node has " + node.children.length + " children");
 console.log("First child: " + node.children.at(0));  // do not use `[0]` - it will not work!
 
@@ -478,9 +478,9 @@ For an overview of node positioning & coordinate systems, see [Coordinate spaces
 **Example**  
 ```js
 // Place this node's top-left corner at the centerpoint of its parent
-var parentCenter = node.parent.localCenterPoint;  // parent's center in parent's coordinates
-var nodeBounds = node.localBounds;  // node's bounds in its own local coordinates
-var nodeTopLeft = {x: nodeBounds.x, y: nodeBounds.y};  // node's top left corner in its own local coordinates
+let parentCenter = node.parent.localCenterPoint;  // parent's center in parent's coordinates
+let nodeBounds = node.localBounds;  // node's bounds in its own local coordinates
+let nodeTopLeft = {x: nodeBounds.x, y: nodeBounds.y};  // node's top left corner in its own local coordinates
 node.placeInParentCoordinates(nodeTopLeft, parentCenter);
 ```
 
@@ -508,7 +508,7 @@ For an overview of node transforms & coordinate systems, see [Coordinate spaces]
 node.rotateAround(45, node.localCenterPoint);
 
 // Ignoring the node's previous angle, set its rotation to exactly 180 degrees
-var rotationDelta = 180 - node.rotation;
+let rotationDelta = 180 - node.rotation;
 node.rotateAround(rotationDelta, node.localCenterPoint);
 ```
 
@@ -533,7 +533,7 @@ changed/fixed later.
 **Example**  
 ```js
 // Double the width of this node
-var originalBounds = node.localBounds;
+let originalBounds = node.localBounds;
 node.resize(originalBounds.width * 2, originalBounds.height);
 ```
 
@@ -579,10 +579,10 @@ path outline is used, for clipping the group.
 
 **Example**  
 ```js
-var commands = require("commands");
+let commands = require("commands");
 
 // Newly created shape nodes
-var shape1 = ...,
+let shape1 = ...,
     shape2 = ...;
 
 // Add both nodes to the current edit context first
@@ -592,7 +592,7 @@ selection.insertionParent.addChild(shape2);
 // Select both shapes, then run the Group command
 selection.items = [shape1, shape2];
 commands.group();
-var group = selection.items[0];  // selection has been set to the new Group node afterward
+let group = selection.items[0];  // selection has been set to the new Group node afterward
 ```
 
 * [Group](#Group)
@@ -670,7 +670,7 @@ The mask shape applied to this group, if any. This object is also present in the
 
 **Example**
 ```js
-var group = ...;
+let group = ...;
 console.log("Type of group is: " + (group.mask ? "Masked Group" : "Plain Group"));
 ```
 
@@ -911,7 +911,7 @@ Rectangle leaf node shape, with or without rounded corners. Like all shape nodes
 
 **Example**
 ```js
-var rect = new Rectangle();
+let rect = new Rectangle();
 rect.width = 100;
 rect.height = 25;
 rect.fill = new Color("red");
@@ -1288,9 +1288,9 @@ position, shift the text horizontally (moving its anchor point) to compensate:
 
 **Example**
 ```js
-var originalBounds = textNode.localBounds;
+let originalBounds = textNode.localBounds;
 textNode.textAlign = newAlignValue;
-var newBounds = textNode.localBounds;
+let newBounds = textNode.localBounds;
 textNode.moveInParentCoordinates(originalBounds.x - newBounds.x, 0);
 ```
 

@@ -12,7 +12,7 @@ Ordered from lowest z order to highest.
 
 **Example**
 ```js
-var node = ...;
+let node = ...;
 console.log("Node has " + node.children.length + " children");
 console.log("First child: " + node.children.at(0));  // do not use `[0]` - it will not work!
 node.children.forEach(function (childNode, i) {
