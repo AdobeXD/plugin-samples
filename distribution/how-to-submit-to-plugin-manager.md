@@ -4,7 +4,7 @@ The simplest way for Adobe XD users to discover and install plugins is through t
 
 The XD plugin manager is accessed through the _Plugins_ menu in the app: go to _Plugins > Discover Plugins..._ to open it:
 
-![]()
+![](/images/plugin-manager.png)
 
 In order to make your plugin available in the XD plugin manager, you'll need to go through our submission and review process.
 
@@ -12,6 +12,23 @@ In order to make your plugin available in the XD plugin manager, you'll need to 
 ## Prerequisite
 
 - [A packaged plugin](/guides/how-to-package-a-plugin/index.md)
+
+
+## Pre-submission checklist
+
+Before you submit, be sure to go through this checklist of common reasons for rejection. Doing so now might save you an extra step or two on your way to publishing.
+
+**Checklist**
+
+- Does the plugin ID in your `manifest.json` file match the plugin ID assigned to you on the [I/O Console](https://console.adobe.io/plugins)? [Learn more here](/reference/structure/manifest.md#top-level-metadata).
+- Is the plugin `version` number _format_ correct in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata).
+- Is the plugin `host.minVersion` number and (optionally) `host.maxVersion` number _format_ correct in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata).
+- When packaging your plugin, did you make sure to compress the files (and _not_ the parent folder)? [Learn more here](/distribution/packaging.md#1-compress-your-files-as-a-zip-file).
+- Did you verify the .XDX installs when you double-click it?
+- After installing, did you verify that the plugin runs when you select it's command(s) from XD's _Plugins_ menu?
+
+Answering "no" to any of these questions will get your submission rejected, requiring you to submit again.
+
 
 ## Submit your plugin
 
