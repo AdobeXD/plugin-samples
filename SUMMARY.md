@@ -180,4 +180,4 @@
 
 ## Upcoming
 
-* [Plugin API Roadmap](./README.md)
+* [Plugin API Roadmap](./plugin-api-roadmap.md)
