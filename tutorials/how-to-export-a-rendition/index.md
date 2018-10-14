@@ -145,7 +145,8 @@ After saving all of your changes, reload the plugin in XD. Make sure to select a
 
 You should see a file picker like this one:
 
-<img src="/plugin-docs/images/readme-assets/export-rendition-pick-file.png" width="50%" height="50%">
+![](/plugin-docs/images/readme-assets/export-rendition-pick-file.png)
+
 
 The rendition will be saved at the specified location.
 

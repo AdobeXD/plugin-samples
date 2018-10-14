@@ -126,7 +126,8 @@ If you haven’t already done so, launch XD and open a new document. Then naviga
 
 Alternatively, if XD was already open, select _Plugins > Development > Reload Plugins_.
 
-<img src="/plugin-docs/images/readme-assets/on-canvas.png" width="40%" height="40%">
+![](/plugin-docs/images/readme-assets/on-canvas.png)
+
 
 Congratulations! You’ve built your first plugin for Adobe XD!
 
