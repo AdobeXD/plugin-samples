@@ -4,17 +4,17 @@
 
 * [Overview](./README.md)
 
-* [Quick Start](./guides/quick-start-guide/index.md)
-* [Debugging Plugins](./guides/debugging-guide/readme.md)
-* [Plugin Structure](./reference/structure/index.md)
-  * [Plugin Location](./reference/structure/location.md)
-  * [Folder Structure](./reference/structure/folder-structure.md)
+* [Quick start](./guides/quick-start-guide/index.md)
+* [Debugging plugins](./guides/debugging-guide/readme.md)
+* [Plugin structure](./reference/structure/index.md)
+  * [Plugin location](./reference/structure/location.md)
+  * [Folder structure](./reference/structure/folder-structure.md)
     * [manifest.json](./reference/structure/manifest.md)
     * [main.js](./reference/structure/handlers.md)
 
 ## Tutorials
 * [About the tutorials](./guides/index.md)
-* [Working with Content](./guides/content-index.md)
+* [Working with content](./guides/content-index.md)
   * [How to draw lines](./guides/how-to-draw-lines-guide/index.md)
   * [How to create paths](./guides/how-to-create-paths-guide/index.md)
   * [How to style text](./guides/how-to-style-text-guide/index.md)
@@ -26,7 +26,7 @@
   * [How to make network requests](./guides/how-to-make-network-requests-guide/index.md)
   * [How to integrate with OAuth](./guides/how-to-integrate-with-OAuth-guide/index.md)
 
-* [Building User Interfaces](./guides/ui-index.md)
+* [Building user interfaces](./guides/ui-index.md)
   * [How to show an alert](./guides/how-to-show-an-alert-guide/index.md)
   * [Asking user for confirmation](./guides/how-to-ask-user-for-confirmation-guide/index.md)
 
@@ -75,24 +75,24 @@
   * [2.0 Scenegraph](./xdpegs/2-scenegraph.md)
   * [3.0 Network I/O](./xdpegs/3-network-io.md)
   * [4.0 File I/O](./xdpegs/4-file-io.md)
-  * [5.0 User Interface](./xdpegs/5-ui.md)
+  * [5.0 User interface](./xdpegs/5-ui.md)
 
 ## Sharing
 
-* [Packaging your Plugin](./distribution/packaging.md)
-* [Distribution Options](./distribution/options.md)
-* [Publishing your Plugin](./distribution/how-to-submit-to-plugin-manager.md)
-* [Marketing your Plugin](./distribution/marketing.md)
+* [Packaging your plugin](./distribution/packaging.md)
+* [Distribution options](./distribution/options.md)
+* [Publishing your plugin](./distribution/how-to-submit-to-plugin-manager.md)
+* [Marketing your plugin](./distribution/marketing.md)
 
 ## Join the Community
 
-* [Help, Feedback &amp; Discussion](./community.md)
-* [Code of Conduct](./CODE_OF_CONDUCT.md)
+* [Help, feedback, &amp; discussion](./community.md)
+* [Code of conduct](./CODE_OF_CONDUCT.md)
 * [How to contribute](./CONTRIBUTING.md)
 
 ## Technical Reference
 
-* [API References](./reference/how-to-read.md)
+* [API references](./reference/how-to-read.md)
     * [How to read this reference](./reference/how-to-read.md)
     * [application](./reference/application.md)
     * [clipboard](./reference/clipboard.md)
@@ -117,13 +117,13 @@
       * [openExternal](./reference/uxp/class/Shell.md)
     * [UI APIs](./reference/uxp/ui-index.md)
       * [Supported HTML Tags](./reference/ui/supported-html-tags.md)
-      * [Supported Events](./reference/ui/supported-events.md)
-      * [CSS Support](./reference/uxp/namespace/css.md)
-        * [Supported CSS Paint Styles](./reference/ui/styles/supported-css-paint-styles.md)
-        * [Supported CSS Layout Styles](./reference/ui/styles/supported-css-layout-styles.md)
-        * [Supported CSS Selectors](./reference/ui/styles/supported-css-selectors.md)
-        * [Supported CSS Text Styles](./reference/ui/styles/supported-css-text-styles.md)
-        * [Supported Colors](./reference/ui/styles/supported-colors.md)
+      * [Supported events](./reference/ui/supported-events.md)
+      * [CSS support](./reference/uxp/namespace/css.md)
+        * [Supported CSS paint styles](./reference/ui/styles/supported-css-paint-styles.md)
+        * [Supported CSS layout styles](./reference/ui/styles/supported-css-layout-styles.md)
+        * [Supported CSS selectors](./reference/ui/styles/supported-css-selectors.md)
+        * [Supported CSS text styles](./reference/ui/styles/supported-css-text-styles.md)
+        * [Supported colors](./reference/ui/styles/supported-colors.md)
       * [Classes](./reference/uxp/ui-classes-index.md)
         * [Attr](./reference/uxp/class/Attr.md)
         * [CharacterData](./reference/uxp/class/CharacterData.md)
@@ -144,7 +144,7 @@
         * [StyleSheet](./reference/uxp/class/StyleSheet.md)
         * [StyleSheetList](./reference/uxp/class/StyleSheetList.md)
         * [Text](./reference/uxp/class/Text.md)
-      * [HTML Elements](./reference/uxp/ui-html-index.md)
+      * [HTML elements](./reference/uxp/ui-html-index.md)
         * [HTMLAnchorElement](./reference/uxp/class/HTMLAnchorElement.md)
         * [HTMLBodyElement](./reference/uxp/class/HTMLBodyElement.md)
         * [HTMLButtonElement](./reference/uxp/class/HTMLButtonElement.md)
@@ -174,10 +174,10 @@
         * [MessageEvent](./reference/uxp/class/MessageEvent.md)
         * [PointerEvent](./reference/uxp/class/PointerEvent.md)
         * [ProgressEvent](./reference/uxp/class/ProgressEvent.md)
-* [Known Issues](./known-issues.md)
-* [Change Log](./changes.md)
+* [Known issues](./known-issues.md)
+* [Change log](./changes.md)
 * [Glossary](./GLOSSARY.md)
 
 ## Upcoming
 
-* [Plugin API Roadmap](./plugin-api-roadmap.md)
+* [Plugin API roadmap](./plugin-api-roadmap.md)
