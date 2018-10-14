@@ -4,8 +4,8 @@ This sample describes how an XD plugin can invoke the default file picker and ge
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Quick Start Tutorial](/guides/quick-start-guide)
-- [Debugging Guide](/guides/debugging-guide/README.md)
+- [Quick Start Tutorial](/tutorials/quick-start)
+- [Debugging Tutorial](/tutorials/debugging/README.md)
 
 ## Development Steps
 
@@ -14,7 +14,7 @@ This sample describes how an XD plugin can invoke the default file picker and ge
 
 ### 1. Prepare your plugin scaffold
 
-First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/guides/quick-start-guide).
+First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/tutorials/quick-start).
 
 Replace the JSON object in your manifest with the one below, noting the changes for the following fields:
 
@@ -65,10 +65,10 @@ A couple of notes about the handler function shell above:
 1. This function will run _asynchronously_, as indicated by the `async` keyword at the beginning of the line. To learn more about what this means, see [our document on sync and async support](/Users/arnwine/Desktop/plugin-docs/reference/javascript/sync-async.md).
 1. Since this plugin will require user to select an object, we use an `if` statement to check if there is an XD object selected.
 
-The remaining steps in this guide describe additional edits to the `main.js` file.
+The remaining steps in this tutorial describe additional edits to the `main.js` file.
 
 
-### 2. Require in XD API dependencies 
+### 2. Require in XD API dependencies
 
 For this tutorial, we just need access to one XD module and one UXP class.
 
@@ -145,7 +145,7 @@ After saving all of your changes, reload the plugin in XD. Make sure to select a
 
 You should see a file picker like this one:
 
-<img src="/images/readme-assets/export-rendition-pick-file.png" width="50%" height="50%">
+<img src="/plugin-docs/images/readme-assets/export-rendition-pick-file.png" width="50%" height="50%">
 
 The rendition will be saved at the specified location.
 
@@ -161,5 +161,5 @@ Want to expand on what you learned here? Have a look at these references to see 
 
 Ready to explore further? Take a look at our other resources:
 
-- [Tutorials](/guides)
+- [Tutorials](/tutorials)
 - [Sample code repos](https://github.com/AdobeXD/plugin-samples)

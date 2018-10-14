@@ -11,7 +11,7 @@ In order to make your plugin available in the XD plugin manager, you'll need to 
 
 ## Prerequisite
 
-- [A packaged plugin](/guides/how-to-package-a-plugin/index.md)
+- [A packaged plugin](/tutorials/how-to-package-a-plugin/index.md)
 
 
 ## Pre-submission checklist
@@ -42,7 +42,7 @@ We'll walk you through the workflow below.
 
 ### 1. Read the submission guidelines
 
-All plugins are reviewed by our CC Integrations Review team. Please make sure to read our [Creative Cloud Developer Submission Guidelines](https://partners.adobe.com/exchangeprogram/creativecloud/build/dev-submission-guidelines.html) before submitting to ensure a smooth path to publishing your plugin. Plugins violating the guidelines may be rejected.
+All plugins are reviewed by our CC Integrations Review team. Please make sure to read our [Creative Cloud Developer Submission Guidelines](https://partners.adobe.com/exchangeprogram/creativecloud/build/dev-submissionlines.html) before submitting to ensure a smooth path to publishing your plugin. Plugins violating the guidelines may be rejected.
 
 
 ### 2. Begin your submission
@@ -95,4 +95,4 @@ Once your submission has been reviewed, we’ll reach out letting you know if it
 
 ## Next steps
 
-No matter how you plan to distribute, be sure to see our [plugin marketing guide](./marketing) to learn about the ins and outs of marketing an Adobe XD plugin.
+No matter how you plan to distribute, be sure to see our [plugin marketing tutorial](./marketing) to learn about the ins and outs of marketing an Adobe XD plugin.

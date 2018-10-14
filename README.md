@@ -2,9 +2,9 @@
 
 XD plugins extend the capabilities of [Adobe XD](https://www.adobe.com/products/xd.html) by adding new features to the app, automating workflows, connecting the app to external services, and more.
 
-On this page, we'll give you a quick overview of **what you can create** and **what skills you need to bring**. 
+On this page, we'll give you a quick overview of **what you can create** and **what skills you need to bring**.
 
-From there, you can **choose your own adventure**: build a "Hello, World" plugin in our [Quick Start guide](/guides/quick-start-guide), follow our [tutorials](/guides/index.md), try code-complete [sample plugins](https://github.com/AdobeXD/plugin-samples), or browse the [API references](/reference/how-to-read.md).
+From there, you can **choose your own adventure**: build a "Hello, World" plugin in our [Quick Start tutorial](/tutorials/quick-start), follow our [tutorials](/tutorials/index.md), try code-complete [sample plugins](https://github.com/AdobeXD/plugin-samples), or browse the [API references](/reference/how-to-read.md).
 
 Oh, and be sure to [join the developer community](/community.md) while you're here! We want you to say hi (we'll say hi back).
 
@@ -24,7 +24,7 @@ XD plugins appear to the user in one of two ways, as a _Plugins_ menu item that:
 1. Runs with **no UI** (like a script), or
 2. Opens a custom **modal UI** where the user can interact with the plugin
 
-You can learn more about the API surfaces available to you in [our tutorials](/guides/index.md), as well as in our [API References](/reference/how-to-read.md).
+You can learn more about the API surfaces available to you in [our tutorials](/tutorials/index.md), as well as in our [API References](/reference/how-to-read.md).
 
 
 ## What skills do you need?
@@ -32,9 +32,9 @@ You can learn more about the API surfaces available to you in [our tutorials](/g
 Below are the prerequisite skills you'll need to build a plugin. It's a short list! And even if you're new to coding, we think you'll be able to build your skills as you go.
 
 ##### Required
-**JavaScript**: XD plugins are written in JavaScript. The XD plugin APIs support ES6+ JavaScript features, and ES5 is perfectly fine too. 
+**JavaScript**: XD plugins are written in JavaScript. The XD plugin APIs support ES6+ JavaScript features, and ES5 is perfectly fine too.
 
-If you've never worked with JavaScript before, we recommend taking a moment to get familiar with the language first. But come back quickly; you don't need to be a JavaScript rock star to get started building XD plugins. The [Quick Start tutorial](/guides/quick-start-guide/README.md) and [API feature tutorials](/guides) you'll find in the documentation will help get you on your way.
+If you've never worked with JavaScript before, we recommend taking a moment to get familiar with the language first. But come back quickly; you don't need to be a JavaScript rock star to get started building XD plugins. The [Quick Start tutorial](/tutorials/quick-start/README.md) and [API feature tutorials](/tutorials) you'll find in the documentation will help get you on your way.
 
 ##### Recommended
 **HTML/CSS**: If you plan to offer a UI for your plugin, some familiarity with HTML and CSS is recommended. XD plugin APIs support a _subset_ of HTML and CSS for creating plugin UI.
@@ -49,7 +49,7 @@ There are lots of ways to journey through the documentation on your way to build
 
 Here are some highlights you won't want to miss:
 
-1. **Get Started**: To begin, try our [Quick Start tutorial](/guides/quick-start-guide), then follow along with [the API feature tutorials](./guides/index.md).
+1. **Get Started**: To begin, try our [Quick Start tutorial](/tutorials/quick-start), then follow along with [the API feature tutorials](./tutorials/index.md).
 1. **Go deep**: Read up on [the structure of a plugin](./reference/structure/index.md), expand your reach with [advanced concepts](/reference/index.md), and then dig into the [API reference](/reference/how-to-read.md).
 1. **See code**: If you prefer to learn from working code, we have a [samples repo on GitHub](https://github.com/AdobeXD/Plugin-Samples) for you to take a look at.
 1. **Join the community**: We want to hear from you, know who you are, keep you up to date with the latest info, and grow together. See our [Community page](/community.md) to learn about how to connect.

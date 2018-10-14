@@ -5,8 +5,8 @@ This tutorial will show you how an XD plugin can read in a file from the file sy
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Quick Start Tutorial](/guides/quick-start-guide)
-- [Debugging Guide](/guides/debugging-guide/README.md)
+- [Quick Start Tutorial](/tutorials/quick-start)
+- [Debugging Tutorial](/tutorials/debugging/README.md)
 
 ## Development Steps
 
@@ -16,7 +16,7 @@ This tutorial will show you how an XD plugin can read in a file from the file sy
 
 ### 1. Prepare your plugin scaffold
 
-First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/guides/quick-start-guide).
+First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/tutorials/quick-start).
 
 Replace the JSON object in your manifest with the one below, noting the changes for the following fields:
 
@@ -61,7 +61,7 @@ module.exports = {
 };
 ```
 
-The remaining steps in this guide describe additional edits to the `main.js` file.
+The remaining steps in this tutorial describe additional edits to the `main.js` file.
 
 
 ### 2. Require in XD API dependencies
@@ -109,7 +109,7 @@ async function insertTextFromFileHandler(selection) {               // [1]
 2. A file picker dialog is displayed, and the function waits for the user to select a text file. The selected file is assigned to `aFile`. The `#getFileForOpening` method is asynchronous, so the `await` keyword is used.
 3. If `aFile` is undefined (because the user did not select a file), then plugin exits.
 4. The contents of the file is read in, and returned as a string. See below for more detail. The `#read` method is asynchronous, so the `await` keyword is used.
-5. The contents of the string is added to a `Text` object. For details on `Text` properties, see the "[How to style text](/guides/how-to-style-text-guide)" tutorial.
+5. The contents of the string is added to a `Text` object. For details on `Text` properties, see the "[How to style text](/tutorials/how-to-style-text)" tutorial.
 6. The `text` object is added to and positioned on the selected artboard.
 
 
@@ -117,11 +117,11 @@ async function insertTextFromFileHandler(selection) {               // [1]
 
 After saving all of your changes, reload the plugin in XD and run it. First you'll see a file picker:
 
-<img src="/images/readme-assets/filepicker.png" width="50%" height="50%">
+<img src="/plugin-docs/images/readme-assets/filepicker.png" width="50%" height="50%">
 
 If you select a file containing text, the text should be added to the currently-selected artboard:
 
-<img src="/images/readme-assets/displayed-results.png" width="50%" height="50%">
+<img src="/plugin-docs/images/readme-assets/displayed-results.png" width="50%" height="50%">
 
 
 ## Next Steps
@@ -134,5 +134,5 @@ Want to expand on what you learned here? Have a look at these references to see 
 
 Ready to explore further? Take a look at our other resources:
 
-- [Tutorials](/guides)
+- [Tutorials](/tutorials)
 - [Sample code repos](https://github.com/AdobeXD/plugin-samples)

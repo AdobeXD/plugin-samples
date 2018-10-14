@@ -1,6 +1,6 @@
 # How to Integrate with OAuth
 
-This tutorial will show you how to implement the OAuth workflow in an XD plugin, using the Dropbox API as an example. 
+This tutorial will show you how to implement the OAuth workflow in an XD plugin, using the Dropbox API as an example.
 
 > **info**
 > Auth workflows are necessarily complex, so this tutorial will be on the longer side and make use of some advanced concepts. Please read the each section carefully, especially the Prerequisites and Configuration sections.
@@ -9,8 +9,8 @@ This tutorial will show you how to implement the OAuth workflow in an XD plugin,
 ## Prerequisites
 
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Quick Start Tutorial](/guides/quick-start-guide)
-- [Debugging Guide](/guides/debugging-guide/README.md)
+- [Quick Start Tutorial](/tutorials/quick-start)
+- [Debugging Tutorial](/tutorials/debugging/README.md)
 - Familiary with your OS's command line application
 - Familiarity with [OAuth](https://oauth.net/2/)
 - [A registered app on Dropbox](https://www.dropbox.com/developers/apps/create) with the following settings:
@@ -40,7 +40,7 @@ The high-level workflow is as follows:
 
 1. The XD plugin pings the server to get the session ID
 1. The server returns a unique ID for the user's XD session
-1. Plugin opens a tab in user's default browser with a URL pointing to an endpoint on the server 
+1. Plugin opens a tab in user's default browser with a URL pointing to an endpoint on the server
 1. The server handles the entire OAuth code grant workflow
 1. The user gives necessary permissions to the plugin
 1. The server saves the access token paired with the session ID
@@ -83,7 +83,7 @@ Then we run it:
 ./ngrok http 8000
 ```
 
-Now `ngrok` is forwarding all HTTP requests from port `8000` to a public SSL endpoint. 
+Now `ngrok` is forwarding all HTTP requests from port `8000` to a public SSL endpoint.
 
 You can see the forwarding endpoint currently being used in the `ngrok` terminal output. Note the forwarding endpoint; we'll use it in the next step.
 
@@ -235,7 +235,7 @@ const rid = await xhrRequest(`${publicUrl}/getRequestId`, 'GET')
 			})
 ```
 
-This part of the function sends a `GET` request to your server's `getRequestId` endpoint and returns `response.id`. 
+This part of the function sends a `GET` request to your server's `getRequestId` endpoint and returns `response.id`.
 
 Let's take a look at the code on the server side:
 
@@ -268,7 +268,7 @@ To open the machine's default browser from an XD plugin, we can use UXP's `shell
 require("uxp").shell.openExternal(`${publicUrl}/login?requestId=${rid}`)
 ```
 
-This will open the browser with the url pointing to an endpoint on your server. 
+This will open the browser with the url pointing to an endpoint on your server.
 
 Let's take a look at the code on the server side.
 
@@ -312,7 +312,7 @@ app.get('/callback', function (req, res) {
 3. Once the dropbox API returns the `code` to the specified callback endpoint, `/callback`, which then parses the `code` and the `requestId`
 4. Set `requestOptions` object with Dropbox's token URI
 5. Use the `request` library to send the `POST` request
-6. Store the access token received from Dropbox in the session object 
+6. Store the access token received from Dropbox in the session object
 7. Simulate writing to a database by paring the access token with `requestId` and storing it to `requestIds` global object
 
 
@@ -354,7 +354,7 @@ closeButton.onclick = (e) => { // [5]
 }
 
 document.body.appendChild(dialog); // [6]
-dialog.appendChild(container); 
+dialog.appendChild(container);
 dialog.showModal()
 ```
 
@@ -405,5 +405,5 @@ text.moveInParentCoordinates(100, 100); // [5]
 
 Ready to explore further? Take a look at our other resources:
 
-- [Tutorials](/guides)
+- [Tutorials](/tutorials)
 - [Sample code repos](https://github.com/AdobeXD/plugin-samples)

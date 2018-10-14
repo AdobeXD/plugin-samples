@@ -6,8 +6,8 @@ This sample demonstrates how to create path objects in XD.  The path objects are
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript
 - Basic knowledge of [Paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths)
-- [Quick Start Tutorial](/guides/quick-start-guide)
-- [Debugging Guide](/guides/debugging-guide/README.md)
+- [Quick Start Tutorial](/tutorials/quick-start)
+- [Debugging Tutorial](/tutorials/debugging/README.md)
 
 ## Development Steps
 
@@ -16,7 +16,7 @@ This sample demonstrates how to create path objects in XD.  The path objects are
 
 ### 1.  Create plugin scaffold
 
-First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/guides/quick-start-guide).
+First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/tutorials/quick-start).
 
 Replace the JSON object in your manifest with the one below, noting the changes for the following fields:
 
@@ -62,7 +62,7 @@ module.exports = {
 };
 ```
 
-The remaining steps in this guide describe additional edits to the `main.js` file.
+The remaining steps in this tutorial describe additional edits to the `main.js` file.
 
 
 ### 2.  Require in XD API dependencies
@@ -159,7 +159,7 @@ Note that the end angle of each wedge matches the start angle of the next wedge.
 
 Ater saving all your changes, reload the plugin in XD and run it.  The result should be similar to the following:
 
-<img src="/images/readme-assets/pie-chart.png" width="50%" height="50%">
+<img src="/plugin-docs/images/readme-assets/pie-chart.png" width="50%" height="50%">
 
 ## Next Steps
 
@@ -171,5 +171,5 @@ Want to expand on what you learned here? Have a look at these references to see 
 
 Ready to explore further? Take a look at our other resources:
 
-- [Tutorials](/guides)
+- [Tutorials](/tutorials)
 - [Sample code repos](https://github.com/AdobeXD/plugin-samples)

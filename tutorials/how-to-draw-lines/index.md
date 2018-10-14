@@ -5,8 +5,8 @@ This sample demonstrates how to create a plugin that adds colored lines to the u
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript
-- [Quick Start Tutorial](/guides/quick-start-guide)
-- [Debugging Guide](/guides/debugging-guide/README.md)
+- [Quick Start Tutorial](/tutorials/quick-start)
+- [Debugging Tutorial](/tutorials/debugging/README.md)
 
 ## Development Steps
 
@@ -16,7 +16,7 @@ This sample demonstrates how to create a plugin that adds colored lines to the u
 
 ### 1. Prepare your plugin scaffold
 
-First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/guides/quick-start-guide).
+First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/tutorials/quick-start).
 
 Replace the JSON object in your manifest with the one below, noting the changes for the following fields:
 
@@ -61,7 +61,7 @@ module.exports = {
 };
 ```
 
-The remaining steps in this guide describe additional edits to the `main.js` file.
+The remaining steps in this tutorial describe additional edits to the `main.js` file.
 
 
 ### 2. Require in XD API dependencies
@@ -171,7 +171,7 @@ function createLinesHandlerFunction(selection) {    // [1]
 
 After saving all of your changes, reload the plugin in XD and run it. The result should be similar to the following:
 
-<img src="/images/readme-assets/lines.png" width="50%" height="50%">
+<img src="/plugin-docs/images/readme-assets/lines.png" width="50%" height="50%">
 
 ## Next Steps
 
@@ -183,5 +183,5 @@ Want to expand on what you learned here? Have a look at these references to see 
 
 Ready to explore further? Take a look at our other resources:
 
-- [Tutorials](/guides)
+- [Tutorials](/tutorials)
 - [Sample code repos](https://github.com/AdobeXD/plugin-samples)

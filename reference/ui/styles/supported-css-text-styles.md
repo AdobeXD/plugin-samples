@@ -2,12 +2,12 @@
 
 | Style | Unsupported Elements | Notes |
 | :--- | :--- | :--- | :--- |
-| [color](http://localhost:1234/reference/ui/styles/supported-css-text-styles.html#color) | `BUTTON`,`INPUT`,`SELECT`,`OPTION`,`TEXTAREA` | [Supported Colors](http://localhost:1234/reference/ui/styles/..supported-colors.md);[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color) |
-| [letter-spacing](http://localhost:1234/reference/ui/styles/supported-css-text-styles.html#letter-spacing) | `BUTTON`,`INPUT`,`SELECT`,`OPTION`,`TEXTAREA` | [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing)
-| [font-family](http://localhost:1234/reference/ui/styles/supported-css-text-styles.html#font-family) | `BUTTON`,`INPUT`,`SELECT`,`OPTION`,`TEXTAREA` | [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family); Partial support |
-| [font-size](http://localhost:1234/reference/ui/styles/supported-css-text-styles.html#font-size) | `BUTTON`,`INPUT`,`SELECT`,`OPTION`,`TEXTAREA` | [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) |
-| [font-style](http://localhost:1234/reference/ui/styles/supported-css-text-styles.html#font-style) | `BUTTON`,`INPUT`,`SELECT`,`OPTION`,`TEXTAREA` | [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-style) |
-| [font-weight](http://localhost:1234/reference/ui/styles/supported-css-text-styles.html#font-weight) | `BUTTON`,`INPUT`,`SELECT`,`OPTION`,`TEXTAREA` | [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight) |
+| [color](/plugin-docs/reference/ui/styles/supported-css-text-styles.html#color) | `BUTTON`,`INPUT`,`SELECT`,`OPTION`,`TEXTAREA` | [Supported Colors](/plugin-docs/reference/ui/styles/..supported-colors.md);[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color) |
+| [letter-spacing](/plugin-docs/reference/ui/styles/supported-css-text-styles.html#letter-spacing) | `BUTTON`,`INPUT`,`SELECT`,`OPTION`,`TEXTAREA` | [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing)
+| [font-family](/plugin-docs/reference/ui/styles/supported-css-text-styles.html#font-family) | `BUTTON`,`INPUT`,`SELECT`,`OPTION`,`TEXTAREA` | [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family); Partial support |
+| [font-size](/plugin-docs/reference/ui/styles/supported-css-text-styles.html#font-size) | `BUTTON`,`INPUT`,`SELECT`,`OPTION`,`TEXTAREA` | [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) |
+| [font-style](/plugin-docs/reference/ui/styles/supported-css-text-styles.html#font-style) | `BUTTON`,`INPUT`,`SELECT`,`OPTION`,`TEXTAREA` | [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-style) |
+| [font-weight](/plugin-docs/reference/ui/styles/supported-css-text-styles.html#font-weight) | `BUTTON`,`INPUT`,`SELECT`,`OPTION`,`TEXTAREA` | [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight) |
 
 
 > **Info**

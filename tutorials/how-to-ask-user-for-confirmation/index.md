@@ -1,14 +1,14 @@
 # Asking the user for confirmation
 
-There are many times when a plugin will need to ask the user whether or not it should proceed with a given course of action. This guide will show you an easy way to get user confirmation before proceeding with a task.
+There are many times when a plugin will need to ask the user whether or not it should proceed with a given course of action. This tutorial will show you an easy way to get user confirmation before proceeding with a task.
 
 ## Technology Used
 - [Plugin Toolkit](https://github.com/AdobeXD/plugin-toolkit)
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Quick Start Tutorial](/guides/quick-start-guide)
-- [Debugging Guide](/guides/debugging-guide/README.md)
+- [Quick Start Tutorial](/tutorials/quick-start)
+- [Debugging Tutorial](/tutorials/debugging/README.md)
 
 ## Development Steps
 
@@ -113,5 +113,5 @@ Be sure to add this to your plugin `manifest.json` as well:
 
 Description
 
-- [How to debug](/guides/debugging-guide/README.md)
+- [How to debug](/tutorials/debugging/README.md)
 - [Other samples](https://github.com/AdobeXD/Plugin-Samples)

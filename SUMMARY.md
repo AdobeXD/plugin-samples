@@ -4,8 +4,8 @@
 
 * [Overview](./README.md)
 
-* [Quick start](./guides/quick-start-guide/index.md)
-* [Debugging plugins](./guides/debugging-guide/readme.md)
+* [Quick start](./tutorials/quick-start/index.md)
+* [Debugging plugins](./tutorials/debugging/readme.md)
 * [Plugin structure](./reference/structure/index.md)
   * [Plugin location](./reference/structure/location.md)
   * [Folder structure](./reference/structure/folder-structure.md)
@@ -13,22 +13,22 @@
     * [main.js](./reference/structure/handlers.md)
 
 ## Tutorials
-* [About the tutorials](./guides/index.md)
-* [Working with content](./guides/content-index.md)
-  * [How to draw lines](./guides/how-to-draw-lines-guide/index.md)
-  * [How to create paths](./guides/how-to-create-paths-guide/index.md)
-  * [How to style text](./guides/how-to-style-text-guide/index.md)
-  * [Working with a SceneNodeList](./guides/how-to-work-with-scenenodelist-guide/index.md)
+* [About the tutorials](./tutorials/index.md)
+* [Working with content](./tutorials/content-index.md)
+  * [How to draw lines](./tutorials/how-to-draw-lines/index.md)
+  * [How to create paths](./tutorials/how-to-create-paths/index.md)
+  * [How to style text](./tutorials/how-to-style-text/index.md)
+  * [Working with a SceneNodeList](./tutorials/how-to-work-with-scenenodelist/index.md)
 
-* [Working with I/O](./guides/io-index.md)
-  * [How to export a rendition](./guides/how-to-export-a-rendition-guide/index.md)
-  * [How to read a file](./guides/how-to-read-a-file-guide/index.md)
-  * [How to make network requests](./guides/how-to-make-network-requests-guide/index.md)
-  * [How to integrate with OAuth](./guides/how-to-integrate-with-OAuth-guide/index.md)
+* [Working with I/O](./tutorials/io-index.md)
+  * [How to export a rendition](./tutorials/how-to-export-a-rendition/index.md)
+  * [How to read a file](./tutorials/how-to-read-a-file/index.md)
+  * [How to make network requests](./tutorials/how-to-make-network-requests/index.md)
+  * [How to integrate with OAuth](./tutorials/how-to-integrate-with-OAuth/index.md)
 
-* [Building user interfaces](./guides/ui-index.md)
-  * [How to show an alert](./guides/how-to-show-an-alert-guide/index.md)
-  * [Asking user for confirmation](./guides/how-to-ask-user-for-confirmation-guide/index.md)
+* [Building user interfaces](./tutorials/ui-index.md)
+  * [How to show an alert](./tutorials/how-to-show-an-alert/index.md)
+  * [Asking user for confirmation](./tutorials/how-to-ask-user-for-confirmation/index.md)
 
 ## Advanced Concepts
 * [About advanced concepts](./reference/index.md)

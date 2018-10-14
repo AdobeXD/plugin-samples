@@ -1,12 +1,12 @@
 # How to style text
 
-Creating styled text in Adobe XD is easy! In this guide, we'll show you how to create a text element with a specific color and font size, and also a text element with multiple inline colors.
+Creating styled text in Adobe XD is easy! In this tutorial, we'll show you how to create a text element with a specific color and font size, and also a text element with multiple inline colors.
 
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript
-- [Quick Start Tutorial](/guides/quick-start-guide)
-- [Debugging Guide](/guides/debugging-guide/README.md)
+- [Quick Start Tutorial](/tutorials/quick-start)
+- [Debugging Tutorial](/tutorials/debugging/README.md)
 
 ## Development Steps
 
@@ -15,7 +15,7 @@ Creating styled text in Adobe XD is easy! In this guide, we'll show you how to c
 
 ### 1.  Prepare your plugin scaffold
 
-First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/guides/quick-start-guide).
+First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/tutorials/quick-start).
 
 Replace the JSON object in your manifest with the one below, noting the changes for the following fields:
 
@@ -53,14 +53,14 @@ function createStyledTextHandlerFunction(selection) {
     // The body of this function is added later
 }
 
-module.exports = { 
+module.exports = {
     commands: {
         "createStyledTextCommand": createStyledTextHandlerFunction
     }
 };
 ```
 
-The remaining steps in this guide describe additional edits to the `main.js` file.
+The remaining steps in this tutorial describe additional edits to the `main.js` file.
 
 
 ### 2. Require in XD API dependencies
@@ -92,7 +92,7 @@ function createStyledTextHandlerFunction(selection) {
         fill: new Color("#FF0000"),
         fontSize: 24
     }];
-    
+
     selection.insertionParent.addChild(node);   // [4]
     node.moveInParentCoordinates(20, 50);       // [5]
 }
@@ -100,7 +100,7 @@ function createStyledTextHandlerFunction(selection) {
 
 1. Create the `Text` object.
 2. Populate `text` with a string.
-3. Create a style range, setting the color to be red and the font size to 24.  
+3. Create a style range, setting the color to be red and the font size to 24.
 4. Add `text` to the scenegraph as a child of the currrently-selected artboard.
 5. Move `text` to a different position relative to the artboard's coordinate system.
 
@@ -129,7 +129,7 @@ As we mentioned earlier, the `styleRange` property takes an _array_ of objects. 
 ```js
 function createStyledTextHandlerFunction(selection) {
     const node = new Text();
-    
+
     const textData = [                                     // [1]
     	{text: "This ", color: "red"},
     	{text: "is ",   color: "orange"},
@@ -139,9 +139,9 @@ function createStyledTextHandlerFunction(selection) {
     	{text: "bow ",  color: "indigo"},
     	{text: "text",  color: "violet"}
     ];
-    
+
     node.text = textData.map(item => item.text).join("");   // [2]
-    
+
     node.styleRange = textData.map(item => ({               // [3]
         length: item.text.length,
         fill: new Color(item.color),
@@ -180,5 +180,5 @@ Want to expand on what you learned here? Have a look at these references to see 
 
 Ready to explore further? Take a look at our other resources:
 
-- [Tutorials](/guides)
+- [Tutorials](/tutorials)
 - [Sample code repos](https://github.com/AdobeXD/plugin-samples)

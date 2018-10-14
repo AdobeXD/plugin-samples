@@ -1,10 +1,10 @@
 # How to Debug Your Plugin
 
-Bugs happen! In this guide, you will learn how to debug your Adobe XD plugin.
+Bugs happen! In this tutorial, you will learn how to debug your Adobe XD plugin.
 
 ## Prerequisite
 
-At least one plugin in your `develop` folder (you can create one using our [Quick Start guide](/guides/quick-start-guide)).
+At least one plugin in your `develop` folder (you can create one using our [Quick Start tutorial](/tutorials/quick-start)).
 
 
 ## Debugging Steps
@@ -13,7 +13,7 @@ During development, if your plugin is misbehaving, there are few things you can 
 
 ### 1. Look for errors in the developer console
 
-You can see error messages your plugin may be causing with the XD developer console. 
+You can see error messages your plugin may be causing with the XD developer console.
 
 The developer console can be opened from the _Plugins_ menu: _Plugins > Development > Developer Console_.
 
@@ -80,5 +80,5 @@ console.log("el fill color =" + el.fill);
 Ready to learn more about XD plugins?
 
 - Learn about [plugin structure](/reference/structure/)
-- Follow along with our [tutorials](/guides)
+- Follow along with our [tutorials](/tutorials)
 - Browse the [API references](/reference/how-to-read.md)

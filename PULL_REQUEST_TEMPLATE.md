@@ -8,7 +8,7 @@
 
 This is a pull request for:
 
-- [ ] A guide contained within this repo.
+- [ ] A tutorial contained within this repo.
 - [ ] A sample contained within this repo.
 - [ ] Something new that I have already discussed with Adobe in a GitHub issue. Issue link:
 

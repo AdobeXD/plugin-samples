@@ -1,6 +1,6 @@
 # How to show an alert
 
-There will be times when you need to show a simple message to your user. This guide will show you an easy way to display an informational message like the following:
+There will be times when you need to show a simple message to your user. This tutorial will show you an easy way to display an informational message like the following:
 
 ![A typical alert message](assets/Our%20Alert.png)
 
@@ -13,8 +13,8 @@ Other times you'll need to display an _error_ alert, which looks like this:
 
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
-- [Quick Start Tutorial](/guides/quick-start-guide)
-- [Debugging Guide](/guides/debugging-guide/README.md)
+- [Quick Start Tutorial](/tutorials/quick-start)
+- [Debugging Tutorial](/tutorials/debugging/README.md)
 
 ## Development Steps
 
@@ -139,7 +139,7 @@ It's important to know _when_ to show an alert because they do obstruct the user
 
 Other than `alert` and `error`, there are other useful dialog helpers that you might be interested in.
 
-- [How to ask for confirmation](../how-to-ask-for-confirmation-guide)
-- [How to show a prompt](../how-to-show-a-prompt-guide)
+- [How to ask for confirmation](../how-to-ask-for-confirmation)
+- [How to show a prompt](../how-to-show-a-prompt)
 - [User Interface Concepts](../../reference/ui/ui-concepts.md)
 - [Other samples](https://github.com/AdobeXD/Plugin-Samples)

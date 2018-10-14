@@ -6,8 +6,8 @@ This sample app will show you how to load an image in an XD object (Rectangle or
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript
 - Basic knowledge of `XMLHttpRequest` and `fetch`
-- [Quick Start Tutorial](/guides/quick-start-guide)
-- [Debugging Guide](/guides/debugging-guide/README.md)
+- [Quick Start Tutorial](/tutorials/quick-start)
+- [Debugging Tutorial](/tutorials/debugging/README.md)
 
 ## Development Steps
 
@@ -16,7 +16,7 @@ This sample app will show you how to load an image in an XD object (Rectangle or
 
 ### 1. Create plugin scaffold
 
-First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/guides/quick-start-guide).
+First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/tutorials/quick-start).
 
 Replace the JSON object in your manifest with the one below, noting the changes for the following fields:
 
@@ -53,17 +53,17 @@ function applyImage(selection) {
     // The body of this function is added later
 }
 
-module.exports = { 
+module.exports = {
     commands: {
         applyImage
     }
 };
 ```
 
-The remaining steps in this guide describe additional edits to the `main.js` file.
+The remaining steps in this tutorial describe additional edits to the `main.js` file.
 
 
-### 2. Require in XD API dependencies 
+### 2. Require in XD API dependencies
 
 For this tutorial, we just need access to one XD scenegraph class.
 
@@ -215,5 +215,5 @@ Want to expand on what you learned here? Have a look at these references to see 
 
 Ready to explore further? Take a look at our other resources:
 
-- [Tutorials](/guides)
+- [Tutorials](/tutorials)
 - [Sample code repos](https://github.com/AdobeXD/plugin-samples)

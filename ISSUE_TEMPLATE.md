@@ -4,7 +4,7 @@
 
 This is an issue regarding:
 
-- [ ] The guides contained within this repo.
+- [ ] The tutorials contained within this repo.
 - [ ] The samples contained within this repo.
 
 

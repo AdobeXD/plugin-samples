@@ -73,7 +73,7 @@ Key | Type | Description
 
 ### Keyboard shortcuts
 
-Keyboard shortcuts are defined separately for each platform (as seen in the example at the top of this guide). Each definition is a string that follows this syntax:
+Keyboard shortcuts are defined separately for each platform (as seen in the example at the top of this tutorial). Each definition is a string that follows this syntax:
 
 * One or more modifier keys, in any order, each one followed by `"+"`
     * _Mac:_ modifiers may be `Cmd`, `Ctrl`, `Opt` / `Alt`, or `Shift`. Shortcut _must_ contain at least one of `Cmd` or `Ctrl`.
@@ -83,7 +83,7 @@ Keyboard shortcuts are defined separately for each platform (as seen in the exam
     * Letters are case-insensitive (e.g. `"Cmd+P"` and `"Cmd+p"` mean the same thing and neither requires pressing Shift).
     * Other keys (including punctuation, arrow keys, or F1-F12) are currently _not supported_.
 
-If your shortcut collides with a built-in XD command _or_ another plugin's shortcut, your shortcut will be ignored and you'll see a warning printed to the [developer console](/guides/debugging-guide/#1-look-for-errors-in-the-developer-console).
+If your shortcut collides with a built-in XD command _or_ another plugin's shortcut, your shortcut will be ignored and you'll see a warning printed to the [developer console](/tutorials/debugging/#1-look-for-errors-in-the-developer-console).
 
 ## Localization
 

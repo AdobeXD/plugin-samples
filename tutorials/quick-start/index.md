@@ -2,9 +2,9 @@
 
 Let’s walk through creating your first Adobe XD plugin together.
 
-We'll keep things simple in this Quick Start tutorial. Once you're done, you'll have a solid grasp of the steps to take when starting to create your own XD plugin. 
+We'll keep things simple in this Quick Start tutorial. Once you're done, you'll have a solid grasp of the steps to take when starting to create your own XD plugin.
 
-At the end of the guide, we'll suggest some next steps for going deeper with the XD plugin APIs.
+At the end of the tutorial, we'll suggest some next steps for going deeper with the XD plugin APIs.
 
 
 ## Prerequisites
@@ -31,12 +31,12 @@ Now, let's create your plugin files. Open your favorite text editor and create t
 
 1.   `manifest.json` is your plugin’s manifest.
 
-    This file includes information about the plugin, such as its name, the menu item(s) it adds to XD, and so on. 
+    This file includes information about the plugin, such as its name, the menu item(s) it adds to XD, and so on.
    [Learn about the manifest here](/reference/structure/manifest.md).
-   
-2.   `main.js` is your plugin’s code. 
 
-    This file contains your JavaScript code that implements the logic for your plugin. 
+2.   `main.js` is your plugin’s code.
+
+    This file contains your JavaScript code that implements the logic for your plugin.
    [Learn more about `main.js` here](/reference/structure/handlers.md).
 
 
@@ -126,14 +126,14 @@ If you haven’t already done so, launch XD and open a new document. Then naviga
 
 Alternatively, if XD was already open, select _Plugins > Development > Reload Plugins_.
 
-<img src="/images/readme-assets/on-canvas.png" width="40%" height="40%">
+<img src="/plugin-docs/images/readme-assets/on-canvas.png" width="40%" height="40%">
 
 Congratulations! You’ve built your first plugin for Adobe XD!
 
 
 ## Next Steps
 
-- Learn about [debugging plugins](/guides/debugging-guide/README.md)
-- Follow our [tutorials](/guides/)
+- Learn about [debugging plugins](/tutorials/debugging/README.md)
+- Follow our [tutorials](/tutorials/)
 - See working code in our [sample repos on GitHub](https://github.com/AdobeXD/Plugin-Samples)
 - Browse the [API references](/reference/how-to-read.md)
