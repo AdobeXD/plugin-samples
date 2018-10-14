@@ -237,7 +237,7 @@ We modified some of the APIs, added an in-app console log view and replaced the 
 
 ### Developer Console
 
-We now have an in-app developer console that allows you to see errors and plugin generated logs while executing plugins. The console log is enabled from the Plugins menu.
+We now have an in-app developer console that allows you to see errors and plugin generated logs while executing plugins. The console log is enabled from the _Plugins_ menu.
 ```
 Mac: Plugins > Development > Developer Console
 Win: Plugins > Developer Console
@@ -245,7 +245,7 @@ Win: Plugins > Developer Console
 
 ### Reloading Plugins
 
-We have replaced the previous 3 keyboard shortcut options with a new `Reload Plugins` command. The new command reloads all plugins found in the plugins folder, even newly added plugins. You can invoke plugin reload from the Plugins menu or via keyboard shortcuts:
+We have replaced the previous 3 keyboard shortcut options with a new `Reload Plugins` command. The new command reloads all plugins found in the plugins folder, even newly added plugins. You can invoke plugin reload from the _Plugins_ menu or via keyboard shortcuts:
 ```
 Mac: Plugins > Development > Reload Plugins (Cmd-Shift-R)
 Win: Plugins > Reload Plugins (Ctrl-Shift-R)

@@ -19,7 +19,7 @@ The XD plugin APIs enable you to build plugins for a number of use cases, includ
 - **Publish & Handoff**: Make publishing and handoff a breeze by integrating with online services and content management systems.
 - **Designer & Stakeholder Collaboration**: Enhance collaboration between designers and stakeholders by integrating with the workflow services your team uses.
 
-XD plugins appear to the user in one of two ways, as a "Plugins" menu item that:
+XD plugins appear to the user in one of two ways, as a _Plugins_ menu item that:
 
 1. Runs with **no UI** (like a script), or
 2. Opens a custom **modal UI** where the user can interact with the plugin

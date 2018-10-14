@@ -111,7 +111,7 @@ module.exports = { // [6]
 This code does the following:
 
 1.  Gets references to the `Rectangle` and `Color` classes from XD’s `scenegraph` module. There are several different [API modules you can load using `require()`](/reference/core/apis.html).
-2.  Defines our handler function. The handler function will run when the user selects the “Create Rectangle” menu command in the app.
+2.  Defines our handler function. The handler function will run when the user selects the _Create Rectangle_ menu command in the app's _Plugins_ menu.
 3.  Creates a new `Rectangle` object. There's nothing in it yet! The following lines assign various properties and styles to the rectangle: width, height, and color.
 4.  Adds the `Rectangle` object to the scenegraph at the top-left (coordinates `0, 0`).
 5.  Puts the `Rectangle` object at coordinates `100, 100` within the parent element.

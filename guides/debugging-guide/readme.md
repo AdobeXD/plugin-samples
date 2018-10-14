@@ -24,7 +24,7 @@ You can reload all plugins in your `develop` folder from the _Plugins_ menu: _Pl
 
 There's also a handy keyboard shortcut:
 
-| Platform      | Menu item          |
+| Platform      | Keyboard shortcut  |
 | ------------- | -------------      |
 | macOS         | Shift-Cmd-R        |
 | Windows       | Ctrl-Alt-E         |
