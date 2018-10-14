@@ -24,7 +24,7 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
         {
             "type": "menu",
             "label": "Menu Item",
-            "commandId": "myCommandId",
+            "commandId": "helloCommand",
             "shortcut": { "mac": "Cmd+Shift+P", "win": "Ctrl+Shift+P" }
         }
     ]
