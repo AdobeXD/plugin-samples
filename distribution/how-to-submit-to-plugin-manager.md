@@ -24,6 +24,7 @@ Before you submit, be sure to go through this checklist of common reasons for re
 - Is the plugin `version` number _format_ correct in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata).
 - Is the plugin `host.minVersion` number and (optionally) `host.maxVersion` number _format_ correct in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata).
 - When packaging your plugin, did you make sure to compress the files (and _not_ the parent folder)? [Learn more here](/distribution/packaging.md#1-compress-your-files-as-a-zip-file).
+- Is the .XDX file less than 25MB in size?
 - Did you verify the .XDX installs when you double-click it?
 - After installing, did you verify that the plugin runs when you select it's command(s) from XD's _Plugins_ menu?
 
@@ -59,6 +60,8 @@ On this page you can:
 
 1. Verify that the plugin ID in your plugin's manifest matches the one you see in the I/O Console
 1. Upload your packaged plugin
+
+Note that your .XDX file size must be under 25MB to upload it for submission.
 
 > **info**
 > The plugin name you see on this screen is the plugin name that users will see in the plugin manager. This name is not changeable. If you've decided to change the name of your plugin, before you submit you'll need to create a new plugin on the I/O Console, get the new plugin ID that you are issued, add that plugin ID to your plugin's manifest, and repackage the plugin.
