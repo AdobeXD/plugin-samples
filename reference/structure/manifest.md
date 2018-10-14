@@ -46,8 +46,8 @@ Key path | Type | Description
 `description` | `string` | Description displayed in the Plugin Manager listing.
 `icons` | `Array<Object>` | Icon(s) displayed in the Plugin Manager listing. Currently, you should supply only a single icon that is 96x96 at 2x scale (XD will automatically downscale it to 48x48 on a 1x display; you cannot provide a second, separate 48x48 image file at this time).
 `host.app` | `string` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `"XD"`).
-`host.minVersion` | `string` | Minimum required version of Adobe XD that can run this plugin.
-`host.maxVersion` | `string` | _Optional._ Maximum version of XD that can run this plugin.
+`host.minVersion` | `string` | Minimum required version of Adobe XD (in `x.y.z` format) that can run this plugin.
+`host.maxVersion` | `string` | _Optional._ Maximum version of XD (in `x.y.z` format) that can run this plugin.
 `uiEntryPoints` | `Array<MenuItemDefinition or SubmenuDefinition>` | List of objects describing what entries your plugin adds to the _Plugins_ menu in XD. See the next section for details.
 
 ### UI entry points array
