@@ -5,7 +5,7 @@
 * [Overview](./README.md)
 
 * [Quick start](./tutorials/quick-start/index.md)
-* [Debugging plugins](./tutorials/debugging/readme.md)
+* [Debugging plugins](./tutorials/debugging/index.md)
 * [Plugin structure](./reference/structure/index.md)
   * [Plugin location](./reference/structure/location.md)
   * [Folder structure](./reference/structure/folder-structure.md)
