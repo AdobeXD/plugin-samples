@@ -14,7 +14,7 @@ Other times you'll need to display an _error_ alert, which looks like this:
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
 - [Quick Start Tutorial](/tutorials/quick-start)
-- [Debugging Tutorial](/tutorials/debugging/README.md)
+- [Debugging Tutorial](/tutorials/debugging/index.md)
 
 ## Development Steps
 

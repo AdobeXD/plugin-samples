@@ -8,7 +8,7 @@ There are many times when a plugin will need to ask the user whether or not it s
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript.
 - [Quick Start Tutorial](/tutorials/quick-start)
-- [Debugging Tutorial](/tutorials/debugging/README.md)
+- [Debugging Tutorial](/tutorials/debugging/index.md)
 
 ## Development Steps
 
@@ -113,5 +113,5 @@ Be sure to add this to your plugin `manifest.json` as well:
 
 Description
 
-- [How to debug](/tutorials/debugging/README.md)
+- [How to debug](/tutorials/debugging/index.md)
 - [Other samples](https://github.com/AdobeXD/Plugin-Samples)

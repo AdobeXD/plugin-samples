@@ -6,7 +6,7 @@ This sample demonstrates how to create a plugin that adds colored lines to the u
 ## Prerequisites
 - Basic knowledge of HTML, CSS, and JavaScript
 - [Quick Start Tutorial](/tutorials/quick-start)
-- [Debugging Tutorial](/tutorials/debugging/README.md)
+- [Debugging Tutorial](/tutorials/debugging/index.md)
 
 ## Development Steps
 

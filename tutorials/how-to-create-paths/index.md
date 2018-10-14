@@ -7,7 +7,7 @@ This sample demonstrates how to create path objects in XD.  The path objects are
 - Basic knowledge of HTML, CSS, and JavaScript
 - Basic knowledge of [Paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths)
 - [Quick Start Tutorial](/tutorials/quick-start)
-- [Debugging Tutorial](/tutorials/debugging/README.md)
+- [Debugging Tutorial](/tutorials/debugging/index.md)
 
 ## Development Steps
 

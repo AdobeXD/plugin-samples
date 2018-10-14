@@ -133,7 +133,7 @@ Congratulations! You’ve built your first plugin for Adobe XD!
 
 ## Next Steps
 
-- Learn about [debugging plugins](/tutorials/debugging/README.md)
+- Learn about [debugging plugins](/tutorials/debugging/index.md)
 - Follow our [tutorials](/tutorials/)
 - See working code in our [sample repos on GitHub](https://github.com/AdobeXD/Plugin-Samples)
 - Browse the [API references](/reference/how-to-read.md)
