@@ -39,7 +39,7 @@ The example code below does not appear to be creating the "Hello!" text as expec
 
 Let's try adding a "start message" and an "end message" into `sayHello()` to double-check that the code is starting and running all the way to the end:
 
-```javascript
+```js
 function sayHello(selection) {
   console.log("sayHello started!");         // log a message
 
@@ -71,7 +71,7 @@ Oops, the fill color set by the plugin is `#FFFFFF`, which is white: the same co
 
 You can verify this with a `console.log` message:
 
-```javascript
+```js
 console.log("el fill color =" + el.fill);
 ```
 

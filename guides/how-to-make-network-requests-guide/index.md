@@ -69,7 +69,7 @@ For this tutorial, we just need access to one XD scenegraph class.
 
 Add the following lines to the top of your `main.js` file:
 
-```javascript
+```js
 // Add this to the top of your main.js file
 const { ImageFill } = require("scenegraph");
 ```
