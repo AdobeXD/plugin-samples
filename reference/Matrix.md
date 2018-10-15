@@ -234,7 +234,7 @@ Returns x & y coordinates of the given point after transformation described by t
 ### matrix.transformRect(rect) ⇒ <code>!{x:number, y:number, width:number, height:number}</code>
 Transforms a rectangle using this matrix, returning the _axis-aligned_ bounds of the resulting rectangle. If this matrix has
 rotation, then the result will have different width & height from the original rectangle, due to axis alignment. See
-["Coordinate Spaces"](../index.md#coordinate-spaces) for some illustrations of this.
+["Coordinate Spaces"](/reference/core/coordinate-spaces-and-units.md) for some illustrations of this.
 
 **Kind**: instance method of [<code>Matrix</code>](#Matrix)  
 **Returns**: <code>!{x:number, y:number, width:number, height:number}</code>
