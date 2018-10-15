@@ -10,5 +10,5 @@ XD supports rich styling options in your user interface through a combination of
 
 For specifics on what is and isn't supported, please refer to:
 
-* [Supported HTML Elements](../../uxp/ui-html-index.md)
-* [Supported Styles](../../uxp/namespace/css.md)
+* [Supported HTML Elements](/reference/uxp/ui-html-index.md)
+* [Supported Styles](/reference/ui/styles/using-css.md)

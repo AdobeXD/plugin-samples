@@ -739,7 +739,7 @@ ellipse.fill = new Color("red");
 ```
 
 To modify an existing fill, always be sure to re-invoke the `fill` setter rather than just changing the fill object's properties inline.
-See ["Properties with object values"](../index.md#object-value-properties).
+See ["Properties with object values"](/reference/core/properties-with-object-values.md).
 
 > **Danger**
 > The RadialGradientFill type is not documented and its API may change. Plugins currently cannot modify or otherwise work with radial gradients.
@@ -776,7 +776,7 @@ ellipse.stroke = new Color("red");
 ```
 
 To modify an existing stroke, always be sure to re-invoke the `stroke` setter rather than just changing the Color object's properties inline.
-See ["Properties with object values"](../index.md#object-value-properties).
+See ["Properties with object values"](/reference/core/properties-with-object-values.md).
 
 * * *
 
