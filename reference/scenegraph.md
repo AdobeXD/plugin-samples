@@ -8,7 +8,7 @@ by any artboard).
 
 ![example of scenegraph tree](../images/scenegraphExample.png)
 
-You can modify properties on any scenenodes within the current [_edit context_](../index.md#edit-contexts), and add leaf nodes to the current
+You can modify properties on any scenenodes within the current [_edit context_](/reference/core/edit-context.md), and add leaf nodes to the current
 edit context, but you cannot make structural changes directly to the scenegraph tree. Instead, use [commands](commands.md).
 
 Typically, you access scenegraph nodes via the [`selection`](selection.md) argument that is passed to your plugin command, or by
