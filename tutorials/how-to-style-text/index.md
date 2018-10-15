@@ -167,7 +167,7 @@ Here's what's changed:
 
 After saving all of your changes, reload the plugin in XD and run it. You'll now have rainbow-colored text:
 
-![]()
+![Rainbow text](./assets/rainbow.png)
 
 
 ## Next Steps
