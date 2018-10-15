@@ -4,7 +4,7 @@ Once you have a packaged plugin, you're ready to distribute. You can make your p
 
 ## Prerequisite
 
-- [A packaged plugin](/packaging.md)
+- [A packaged plugin](./packaging.md)
 
 ## The XD plugin manager
 
@@ -12,7 +12,7 @@ The XD plugin manager lets users discover and install XD plugin right from withi
 
 ![](/images/plugin-manager.png)
 
-To learn how to publish your plugin on the XD plugin manager, [see our publishing tutorial](./publishing.md).
+To learn how to publish your plugin on the XD plugin manager, [see our publishing tutorial](./how-to-submit-to-plugin-manager.md).
 
 
 ## Direct distribution
@@ -30,5 +30,5 @@ If you distribute a .XDX file, installation is as simple as one double-click.
 
 ## Next steps
 
-- If you plan to publish on the XD plugin manager, see our [publishing tutorial](./publishing.md)
+- If you plan to publish on the XD plugin manager, see our [publishing tutorial](./how-to-submit-to-plugin-manager.md)
 - No matter how you plan to distribute, be sure to see our [plugin marketing tutorial](./marketing.md)
