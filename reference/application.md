@@ -16,8 +16,8 @@ let renditions = [{
      type: application.RenditionType.PNG,
      scale: 2
 }];
-application.createRenditions(renditions).then(function (resultFiles) {
-    ...
+application.createRenditions(renditions).then(function (results) {
+    // ...do something with outputFiles on disk...
 });
 ```
 

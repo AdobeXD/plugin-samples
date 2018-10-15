@@ -2,14 +2,18 @@
 
 ## commands
 You can make structural changes to the scenegraph, and perform other complex operations, by programmatically invoking the same
-commands as XD users have access to in the UI. These methods do not take arguments. Instead, set the [selection](selection.md) to the objects you
-want the command to target, then invoke the command:
+commands as XD users have access to in the UI. Because structural changes have many nuanced rules and behaviors in XD, these calls
+function more like automating the UI than like low-level APIs.
+
+For example, these methods do not take arguments. Instead, set the [selection](selection.md) to the objects you want the command to target, then
+invoke the command. Commands may also change the selection when run, for example selecting a newly created Group node.
 
 **Example**  
 ```js
 let commands = require("commands");
-selectionModel.selection = [shape1, shape2, maskShape];
+selection.items = [shape1, shape2, maskShape];
 commands.createMaskGroup();
+console.log(selection.items);  // [Group]
 ```
 
 * [commands](#module_commands)

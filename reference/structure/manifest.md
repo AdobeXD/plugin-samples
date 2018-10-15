@@ -6,7 +6,7 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
 
 ```json
 {
-    "id": "ID_FROM_IO_CONSOLE",
+    "id": "YOUR_ID_HERE",
     "name": "Name of Your Plugin",
     "version": "0.0.1",
 
@@ -23,7 +23,7 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Menu Item",
+            "label": "Hello World",
             "commandId": "helloCommand",
             "shortcut": { "mac": "Cmd+Shift+P", "win": "Ctrl+Shift+P" }
         }
@@ -41,13 +41,13 @@ The top level of the manifest JSON object contains high-level information about 
 Key path | Type | Description
 ---------|------|------------
 `id`     | `string` | Unique identifier for your plugin. You can get your unique ID on the [Adobe I/O Console](https://console.adobe.io/plugins).
-`name`   | `string` | Human-readable name of your plugin. Note that this isn't visible to the user _yet_, buy may become user-visible in a future update.
-`version`| `string` | Version number of your plugin in `x.y.z` format.
+`name`   | `string` | Human-readable name of your plugin displayed in the Plugin Manager listing.
+`version`| `string` | Version number of your plugin in `x.y.z` format. *Must be three segments.*
 `description` | `string` | Description displayed in the Plugin Manager listing.
 `icons` | `Array<Object>` | Icon(s) displayed in the Plugin Manager listing. Currently, you should supply only a single icon that is 96x96 at 2x scale (XD will automatically downscale it to 48x48 on a 1x display; you cannot provide a second, separate 48x48 image file at this time).
 `host.app` | `string` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `"XD"`).
-`host.minVersion` | `string` | Minimum required version of Adobe XD (in `x.y.z` format) that can run this plugin.
-`host.maxVersion` | `string` | _Optional._ Maximum version of XD (in `x.y.z` format) that can run this plugin.
+`host.minVersion` | `string` | Minimum required version of Adobe XD (in `x.y.z` format) that can run this plugin. *Must be three segments* (typically you'll leave all segments set to 0 except for the major version number).
+`host.maxVersion` | `string` | _Optional._ Maximum version of XD (in `x.y.z` format) that can run this plugin. *Must be three segments* as well.
 `uiEntryPoints` | `Array<MenuItemDefinition or SubmenuDefinition>` | List of objects describing what entries your plugin adds to the _Plugins_ menu in XD. See the next section for details.
 
 ## UI entry points array

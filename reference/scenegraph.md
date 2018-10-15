@@ -1,9 +1,10 @@
 <a name="module_scenegraph"></a>
 
 ## scenegraph
-The scenegraph is a node tree which represents the structure of the XD document. Some scenenodes may contain children (e.g. a Group
-or Artboard), while others are leaf nodes (e.g. a Rectangle or Text node). The root of the scenegraph contains all Artboards that
-exist in the document, as well as all _pasteboard_ content (nodes that are not contained by any artboard).
+The scenegraph is a node tree which represents the structure of the XD document. It closely matches the hierarchy seen in the Layers panel
+inside XD. Some scenenodes may contain children (e.g. a Group or Artboard), while others are leaf nodes (e.g. a Rectangle or Text node). The
+root of the scenegraph contains all Artboards that exist in the document, as well as all _pasteboard_ content (nodes that are not contained
+by any artboard).
 
 ![example of scenegraph tree](../images/scenegraphExample.png)
 
@@ -207,7 +208,7 @@ False if this node has been hidden by the user (eyeball toggle in Layers panel).
 <a name="SceneNode+opacity"></a>
 
 ### *sceneNode.opacity : <code>number</code>* (0.0 - 1.0)
-Node's opacity setting. The overall visual opacity seen on canvas is determined by combining this value with the opacity of the node's entire parent chain, as well as the opacity settings of its fill/stroke properties if this is a leaf node.
+Node's opacity setting. The overall visual opacity seen in the document is determined by combining this value with the opacities of the node's entire parent chain, as well as the opacity settings of its fill/stroke properties if this is a leaf node.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 
@@ -420,7 +421,8 @@ True if the node should be included in the output of _File > Export > Batch_ and
 <a name="SceneNode+hasLinkedContent"></a>
 
 ### *sceneNode.hasLinkedContent : <code>boolean</code>*
-True if the node's appearance comes from a link to an external resource, such as Creative Cloud Libraries.
+True if the node's appearance comes from a link to an external resource, such as Creative Cloud Libraries or a
+separate XD document (in the case of a Linked Symbol instance).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -517,11 +519,21 @@ node.rotateAround(rotationDelta, node.localCenterPoint);
 <a name="SceneNode+resize"></a>
 
 ### *sceneNode.resize(width, height)*
-Attempts to change localBounds.width & height to match the specified sizes. This operation may not succeed,
-since some nodes are not resizable.
+Attempts to change `localBounds.width` & `height` to match the specified sizes. The result is not guaranteed to
+match your requested size, since some nodes have limits on their ability to resize.
 
-_Note:_ Currenty this does not respect the "aspect ratio lock" setting in XD's Properties panel. This may be
-changed/fixed later.
+Note that _resizing_ is different from simply _rescaling_ the content:
+* Styles like stroke weight and corner radius stay the same size, so the ratio of their size relative to the
+  resized shape will change.
+* If this node is a Group, resizing may invoke XD's Responsive Resize feature, which rearranges items using a
+  fluid layout and may change only the _position_ (not size) of some children.
+* Some content cannot be resized at all, or cannot stretch to change its aspect ratio.
+
+Rescaling, by contrast, is the effect seen when you zoom in on the view in XD, or when you export a node at
+a higher DPI multiplier.
+
+_Note:_ Currenty this function does not respect the "aspect ratio lock" setting in XD's Properties panel. This
+may be changed/fixed later.
 
 **Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
 
@@ -728,6 +740,9 @@ ellipse.fill = new Color("red");
 
 To modify an existing fill, always be sure to re-invoke the `fill` setter rather than just changing the fill object's properties inline.
 See ["Properties with object values"](../index.md#object-value-properties).
+
+> **Danger**
+> The RadialGradientFill type is not documented and its API may change. Plugins currently cannot modify or otherwise work with radial gradients.
 
 * * *
 
@@ -1007,8 +1022,8 @@ Artboards can have a background fill, but the stroke, shadow, and blur settings 
 or have opacity < 100%.
 
 Generally, all nodes that overlap an Artboard are children of that artboard, and nodes that don't overlap any Artboard are children
-of the root (pasteboard). This is taken care of automatically: if a node or is modified in any way that changes whether it overlaps
-an Artboard, its parent will automatically be changed accordingly the edit operation finishes.
+of the root (pasteboard). XD ensures this automatically: if a node is modified in any way that changes whether it overlaps an
+Artboard, its parent will automatically be changed accordingly after the edit operation finishes.
 
 * [Artboard](#Artboard)
     * [.width](#Artboard+width) : <code>number</code>
@@ -1108,7 +1123,7 @@ Line leaf node shape. Lines have a stroke but no fill.
 <a name="Line+start"></a>
 
 ### line.start : \![<code>Point</code>](#Point)
-Start point of the Line in local coordinate space.TEMP: To change the start point, use [setStartEnd](#Line+setStartEnd).
+Start point of the Line in local coordinate space. To change the start point, use [setStartEnd](#Line+setStartEnd).
 
 **Kind**: instance property of [<code>Line</code>](#Line)  
 **Read only**: true  
@@ -1118,7 +1133,7 @@ Start point of the Line in local coordinate space.TEMP: To change the start poin
 <a name="Line+end"></a>
 
 ### line.end : \![<code>Point</code>](#Point)
-Endpoint of the Line in local coordinate space.TEMP: To change the endpoint, use [setStartEnd](#Line+setStartEnd).
+Endpoint of the Line in local coordinate space. To change the endpoint, use [setStartEnd](#Line+setStartEnd).
 
 **Kind**: instance property of [<code>Line</code>](#Line)  
 **Read only**: true  
@@ -1129,7 +1144,7 @@ Endpoint of the Line in local coordinate space.TEMP: To change the endpoint, use
 
 ### line.setStartEnd(startX, startY, endX, endY)
 Set the start and end points of the Line in local coordinate space. The values may be normalized by this setter, shifting the node's
-translation and counter-shifting the start/end points. So the start/end setters may return values different from the values you
+translation and counter-shifting the start/end points. So the start/end getters may return values different from the values you
 passed this setter, even though the line's visual bounds and appearance are the same.
 
 **Kind**: instance method of [<code>Line</code>](#Line)  
@@ -1281,7 +1296,7 @@ If true, the text is drawn upside down.
 ### text.textAlign : <code>string</code>
 Horizontal alignment: Text.ALIGN_LEFT, ALIGN_CENTER, or ALIGN_RIGHT. This setting affects the layout of multiline text, and for point
 text it also affects how the text is positioned relative to its anchor point (x=0 in local coordinates) and what direction the text
-grows when edited on canvas.
+grows when edited by the user.
 
 Changing textAlign on existing point text will cause it to shift horizontally. To change textAlign while keeping the text in a fixed
 position, shift the text horizontally (moving its anchor point) to compensate:
