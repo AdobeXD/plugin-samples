@@ -170,7 +170,7 @@ Supported color formats are as follows:
 **Kind**: static property of [`css`](#css)  
 **See**
 
-- https://developer.mozilla.org/en/docs/Web/CSS/borde-right-color
+- https://developer.mozilla.org/en/docs/Web/CSS/border-right-color
 - https://github.com/colorjs/color-name/blob/master/index.js
 
 
