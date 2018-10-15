@@ -42,7 +42,7 @@ We'll walk you through the workflow below.
 
 ### 1. Read the submission guidelines
 
-All plugins are reviewed by our CC Integrations Review team. Please make sure to read our [Creative Cloud Developer Submission Guidelines](https://partners.adobe.com/exchangeprogram/creativecloud/build/dev-submissionlines.html) before submitting to ensure a smooth path to publishing your plugin. Plugins violating the guidelines may be rejected.
+All plugins are reviewed by our CC Integrations Review team. Please make sure to read our [Creative Cloud Developer Submission Guidelines](https://partners.adobe.com/exchangeprogram/creativecloud/build/dev-submission-guidelines.html) before submitting to ensure a smooth path to publishing your plugin. Plugins violating the guidelines may be rejected.
 
 
 ### 2. Begin your submission
