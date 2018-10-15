@@ -169,10 +169,7 @@ function filterAndColor(selection, documentRoot) {
 
 After saving all your changes, reload the plugin in XD.
 
-First, select an artboard and run the "Create Elements" command:
-
-![](/plugin-docs/images/create-elements.pn)
-
+First, select an artboard and run the "Create Elements" command. You plugin will pull shapes on the artboard.
 
 Then, run the "Filter and Color" command:
 
