@@ -5,7 +5,7 @@
 **Kind**: global class
 **Extends**: [`HTMLElement`](#htmlelement)
 **Access**: public
-**See**: https://developer.mozilla.org/en-US/docs/Web/API/HTMLMenuElement
+**See**: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu
 
 * [HTMLMenuElement](#htmlmenuelement) ⇐ [`HTMLElement`](#htmlelement)
     * [new HTMLMenuElement(document, nodeName, namespaceURI)](#new-htmlmenuelement-new)

@@ -14,7 +14,7 @@ edit context, but you cannot make structural changes directly to the scenegraph 
 Typically, you access scenegraph nodes via the [`selection`](selection.md) argument that is passed to your plugin command, or by
 traversing the entire document tree using the [`documentRoot`](#RootNode) argument that is passed to your plugin command.
 
-**Example**  
+**Example**
 ```js
 function myCommand(selection) {
     let node = selection.items[0];
@@ -30,7 +30,7 @@ function myCommand(selection) {
 
 To create new scenenodes, load this `scenegraph` module directly and use the node constructor functions:
 
-**Example**  
+**Example**
 ```js
 let scenegraph = require("scenegraph");
 function myCommand(selection) {
@@ -77,14 +77,14 @@ These classes are not scenenode types, but are used extensively in the scenegrap
 * [ImageFill](ImageFill.md) - Value object for `fill` property
 * [LinearGradientFill](LinearGradientFill.md) - Value object for `fill` property
 * [Matrix](Matrix.md) - Value object for `transform` property
-* [Shadow](Shadow.md) - Value object for `shadow` property
-* [Blur](Blur.md) - Value object for `blur` property
+* [Shadow](Shadow.md) - Value object for `Shadow` property
+* [Blur](Blur.md) - Value object for `Blur` property
 
 
 <a name="SceneNode"></a>
 
 ## *SceneNode*
-**Kind**: abstract class  
+**Kind**: abstract class
 
 Base class of all scenegraph nodes. Nodes will always be an instance of some _subclass_ of SceneNode.
 
@@ -125,8 +125,8 @@ Base class of all scenegraph nodes. Nodes will always be an instance of some _su
 ### *sceneNode.guid : <code>string</code>*
 Returns a unique identifier for this node that stays the same when the file is closed & reopened, or if the node is moved to a different part of the document. Cut-Paste will result in a new guid, however.
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
 
 * * *
 
@@ -135,8 +135,8 @@ Returns a unique identifier for this node that stays the same when the file is c
 ### *sceneNode.parent : [<code>SceneNode</code>](#SceneNode)*
 Returns the parent node. Null if this is the root node, or a freshly constructed node which has not been added to a parent yet.
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
 
 * * *
 
@@ -150,9 +150,9 @@ methods such as `forEach()` for convenience, however.
 
 The list is immutable. Use [removeFromParent](#SceneNode-removeFromParent) and [addChild](#Group-addChild) to add/remove child nodes.
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
-**Example**  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
+**Example**
 ```js
 let node = ...;
 console.log("Node has " + node.children.length + " children");
@@ -170,8 +170,8 @@ node.children.forEach(function (childNode, i) {
 ### *sceneNode.isInArtworkTree : <code>boolean</code>*
 True if the node's parent chain connects back to the document root node.
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
 
 * * *
 
@@ -180,8 +180,8 @@ True if the node's parent chain connects back to the document root node.
 ### *sceneNode.isContainer : <code>boolean</code>*
 True if this node is a type that could have children (e.g. an Artboard, Group, Boolean Group, etc.).
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
 
 * * *
 
@@ -190,9 +190,9 @@ True if this node is a type that could have children (e.g. an Artboard, Group, B
 ### *sceneNode.selected : <code>boolean</code>*
 True if this node is part of the current selection. To get a list of *all* selected nodes or change which nodes are selected, use [selection](selection.md).
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
-**See**: [selection](selection.md)  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
+**See**: [selection](selection.md)
 
 * * *
 
@@ -201,7 +201,7 @@ True if this node is part of the current selection. To get a list of *all* selec
 ### *sceneNode.visible : <code>boolean</code>*
 False if this node has been hidden by the user (eyeball toggle in Layers panel). If true, the node may still be invisible for other reasons: a parent or grandparent has visible=false, the node has opacity=0%, the node is clipped by a mask, etc.
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 
 * * *
 
@@ -210,7 +210,7 @@ False if this node has been hidden by the user (eyeball toggle in Layers panel).
 ### *sceneNode.opacity : <code>number</code>* (0.0 - 1.0)
 Node's opacity setting. The overall visual opacity seen in the document is determined by combining this value with the opacities of the node's entire parent chain, as well as the opacity settings of its fill/stroke properties if this is a leaf node.
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 
 * * *
 
@@ -228,7 +228,7 @@ For an overview of node transforms & coordinate systems, see [Coordinate spaces]
 
 This getter returns a fresh Matrix each time, so its fields can be mutated by the caller without interfering with the node's state.
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 **Read only**: true
 **See**
 
@@ -254,7 +254,7 @@ the `e` & `f` fields in the transform Matrix.
 
 For an overview of node positioning & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 **See**
 
 - [moveInParentCoordinates](#SceneNode-moveInParentCoordinates)
@@ -271,9 +271,9 @@ The rotation component of this node's [transform](#SceneNode-transform), in cloc
 
 For an overview of node transforms & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
-**See**: [rotateAround](#SceneNode-rotateAround)  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
+**See**: [rotateAround](#SceneNode-rotateAround)
 
 * * *
 
@@ -284,8 +284,8 @@ The node's _path bounds_ in document-global coordinate space (represented by a b
 
 For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
 **See**
 
 - [globalDrawBounds](#SceneNode-globalDrawBounds)
@@ -304,8 +304,8 @@ The visual top-left of a node's path bounds is located at (localBounds.x, localB
 
 For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
 **See**
 
 - [globalBounds](#SceneNode-globalBounds)
@@ -321,8 +321,8 @@ The node's _path bounds_ in its parent's coordinate space (represented by a boun
 
 For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
 **See**
 
 - [globalBounds](#SceneNode-globalBounds)
@@ -341,8 +341,8 @@ This is a shortcut for `node.transform.transformPoint({x: node.localBounds.x, y:
 
 For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
 **See**
 
 - [boundsInParent](#SceneNode-boundsInParent)
@@ -359,9 +359,9 @@ This is a shortcut for `{x: localBounds.x + localBounds.width/2, y: localBounds.
 
 For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
-**See**: [localBounds](#SceneNode-localBounds)  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
+**See**: [localBounds](#SceneNode-localBounds)
 
 * * *
 
@@ -372,8 +372,8 @@ The node's _draw bounds_ in document-global coordinate space. Draw bounds are la
 
 For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
 **See**
 
 - [globalBounds](#SceneNode-globalBounds)
@@ -386,7 +386,7 @@ For an overview of node bounding boxes & coordinate systems, see [Coordinate spa
 ### *sceneNode.name : <code>string</code>*
 Node name as seen in the Layers panel. Also used as filename during Export.
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 
 * * *
 
@@ -395,8 +395,8 @@ Node name as seen in the Layers panel. Also used as filename during Export.
 ### *sceneNode.hasDefaultName : <code>boolean</code>*
 True if [name](#SceneNode-name) is a generic, auto-generated string (e.g. "Rectangle 5"). False if name has been explicitly set.
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
 
 * * *
 
@@ -405,7 +405,7 @@ True if [name](#SceneNode-name) is a generic, auto-generated string (e.g. "Recta
 ### *sceneNode.locked : <code>boolean</code>*
 True if the node is locked, meaning it cannot normally be selected.
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 
 * * *
 
@@ -414,7 +414,7 @@ True if the node is locked, meaning it cannot normally be selected.
 ### *sceneNode.markedForExport : <code>boolean</code>*
 True if the node should be included in the output of _File > Export > Batch_ and other bulk-export workflows.
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 
 * * *
 
@@ -424,8 +424,8 @@ True if the node should be included in the output of _File > Export > Batch_ and
 True if the node's appearance comes from a link to an external resource, such as Creative Cloud Libraries or a
 separate XD document (in the case of a Linked Symbol instance).
 
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
-**Read only**: true  
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
 
 * * *
 
@@ -434,7 +434,7 @@ separate XD document (in the case of a Linked Symbol instance).
 ### *sceneNode.removeFromParent()*
 Remove this node from its parent, effectively deleting it from the document.
 
-**Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
+**Kind**: instance method of [<code>SceneNode</code>](#SceneNode)
 
 * * *
 
@@ -447,7 +447,7 @@ setting it back.
 
 For an overview of node positioning & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
-**Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
+**Kind**: instance method of [<code>SceneNode</code>](#SceneNode)
 **See**
 
 - [placeInParentCoordinates](#SceneNode-placeInParentCoordinates)
@@ -456,8 +456,8 @@ For an overview of node positioning & coordinate systems, see [Coordinate spaces
 
 | Param | Type |
 | --- | --- |
-| deltaX | <code>number</code> | 
-| deltaY | <code>number</code> | 
+| deltaX | <code>number</code> |
+| deltaY | <code>number</code> |
 
 
 * * *
@@ -470,14 +470,14 @@ any rotation on this node, etc.).
 
 For an overview of node positioning & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
-**Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
+**Kind**: instance method of [<code>SceneNode</code>](#SceneNode)
 
 | Param | Type | Description |
 | --- | --- | --- |
 | registrationPoint | \![<code>Point</code>](#Point) | Point in this node's local coordinate space to align with parentPoint |
 | parentPoint | \![<code>Point</code>](#Point) | Point in this node's parent's coordinate space to move registrationPoint to |
 
-**Example**  
+**Example**
 ```js
 // Place this node's top-left corner at the centerpoint of its parent
 let parentCenter = node.parent.localCenterPoint;  // parent's center in parent's coordinates
@@ -496,15 +496,15 @@ already has nonzero rotation, this operation _adds_ to its existing angle.
 
 For an overview of node transforms & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
-**Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
-**See**: [rotation](#SceneNode-rotation)  
+**Kind**: instance method of [<code>SceneNode</code>](#SceneNode)
+**See**: [rotation](#SceneNode-rotation)
 
 | Param | Type | Description |
 | --- | --- | --- |
 | deltaAngle | <code>number</code> | In degrees. |
 | rotationCenter | [<code>Point</code>](#Point) | Point to rotate around, in node's local coordinates. |
 
-**Example**  
+**Example**
 ```js
 // Rotate the node 45 degrees clockwise around its centerpoint
 node.rotateAround(45, node.localCenterPoint);
@@ -535,14 +535,14 @@ a higher DPI multiplier.
 _Note:_ Currenty this function does not respect the "aspect ratio lock" setting in XD's Properties panel. This
 may be changed/fixed later.
 
-**Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
+**Kind**: instance method of [<code>SceneNode</code>](#SceneNode)
 
 | Param | Type |
 | --- | --- |
-| width | <code>number</code> | 
-| height | <code>number</code> | 
+| width | <code>number</code> |
+| height | <code>number</code> |
 
-**Example**  
+**Example**
 ```js
 // Double the width of this node
 let originalBounds = node.localBounds;
@@ -574,7 +574,7 @@ visual appearance of its own.
 <a name="Group"></a>
 
 ## Group
-**Kind**: class  
+**Kind**: class
 **Extends**: [<code>SceneNode</code>](#SceneNode)
 
 Group nodes represent two types of simple containers in XD:
@@ -589,7 +589,7 @@ the scope of the current _edit context_). Instead, to create Groups and other ne
 In a Mask Group, the mask shape is included in the group's `children` list, at the top of the z order. It is not visible - only its
 path outline is used, for clipping the group.
 
-**Example**  
+**Example**
 ```js
 let commands = require("commands");
 
@@ -677,8 +677,8 @@ Removes all children from this node. Equivalent to calling removeFromParent() on
 ### group.mask : ?[<code>SceneNode</code>](#SceneNode)
 The mask shape applied to this group, if any. This object is also present in the group's `children` list. Though it has no direct visual appearance of its own, the mask affects the entire group's appearance by clipping all its other content.
 
-**Kind**: instance property of [<code>Group</code>](#Group)  
-**Read only**: true  
+**Kind**: instance property of [<code>Group</code>](#Group)
+**Read only**: true
 
 **Example**
 ```js
@@ -732,8 +732,8 @@ Freshly created nodes have no fill by default.
 For Line nodes, fill is ignored. For Text nodes, _only_ solid Color fill values are allowed. For Artboard nodes, image fill values
 are not allowed.
 
-**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
-**Example**  
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
+**Example**
 ```js
 ellipse.fill = new Color("red");
 ```
@@ -753,7 +753,7 @@ See ["Properties with object values"](/reference/core/properties-with-object-val
 
 If false, the `fill` is not rendered. The user can toggle this via a checkbox in the Properties panel.
 
-**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
 
 * * *
 
@@ -769,8 +769,8 @@ Depending on the [`strokeWidth`](#GraphicNode-strokeWidth) and [`strokePosition`
 of a node may need to be positioned on fractional pixels in order for the stroke itself to be crisply aligned to the pixel grid.
 For example, if a horizontal line uses a 1px center stroke, the line's y should end in .5 to keep the stroke on-pixel.
 
-**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
-**Example**  
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
+**Example**
 ```js
 ellipse.stroke = new Color("red");
 ```
@@ -787,7 +787,7 @@ See ["Properties with object values"](/reference/core/properties-with-object-val
 
 If false, the `stroke` is not rendered. The user can toggle this via a checkbox in the Properties panel.
 
-**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
 
 * * *
 
@@ -798,7 +798,7 @@ If false, the `stroke` is not rendered. The user can toggle this via a checkbox 
 
 Thickness in pixels of the stroke.
 
-**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
 
 * * *
 
@@ -809,7 +809,7 @@ Thickness in pixels of the stroke.
 
 Position of the stroke relative to the shape's path outline: GraphicNode.INNER_STROKE, OUTER_STROKE, or CENTER_STROKE. Ignored by Text and Line, which always render using CENTER_STROKE.
 
-**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
 
 * * *
 
@@ -820,7 +820,7 @@ Position of the stroke relative to the shape's path outline: GraphicNode.INNER_S
 
 For Lines and non-closed Paths, how the dangling ends of the stroke are rendered: GraphicNode.STROKE_CAP_NONE, STROKE_CAP_SQUARE, or STROKE_CAP_ROUND.
 
-**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
 
 * * *
 
@@ -831,7 +831,7 @@ For Lines and non-closed Paths, how the dangling ends of the stroke are rendered
 
 How sharp corners in the shape are rendered: GraphicNode.STROKE_JOIN_BEVEL, STROKE_JOIN_ROUND, or STROKE_JOIN_MITER.
 
-**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
 
 * * *
 
@@ -840,7 +840,7 @@ How sharp corners in the shape are rendered: GraphicNode.STROKE_JOIN_BEVEL, STRO
 ### *graphicNode.strokeMiterLimit : <code>number</code>* &gt;= 0
 **Default**: `4`
 
-**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
 
 * * *
 
@@ -856,7 +856,7 @@ as `[3, 3]`.
 
 The appearance of each segment's start/end follows the [strokeEndCaps](#GraphicNode#strokeEndCaps) setting.
 
-**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
 
 * * *
 
@@ -867,7 +867,7 @@ The appearance of each segment's start/end follows the [strokeEndCaps](#GraphicN
 
 Ignored unless `strokeDashArray` is non-empty. Shifts the "phase" of the repeating dash pattern along the length of the stroke.
 
-**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
 
 * * *
 
@@ -878,7 +878,7 @@ Ignored unless `strokeDashArray` is non-empty. Shifts the "phase" of the repeati
 
 The node's drop shadow, if any. If there is no shadow applied, this property may be null _or_ `shadow.visible` may be false.
 
-**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
 
 * * *
 
@@ -890,7 +890,7 @@ The node's drop shadow, if any. If there is no shadow applied, this property may
 The node's object blur or background blur settings, if applicable (a node may not have both types of blur at once). If there is no blur
 effect applied, this property may be null _or_ `blur.visible` may be false.
 
-**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
 
 * * *
 
@@ -900,8 +900,8 @@ effect applied, this property may be null _or_ `blur.visible` may be false.
 Returns a representation of the node's outline in SVG `<path>` syntax. Note that only nodes with [strokePosition](#GraphicNode#strokePosition) ==
 `GraphicNode.CENTER_STROKE` can be faithfully rendered in actual SVG using the exact pathData shown here.
 
-**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
-**Read only**: true  
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
+**Read only**: true
 
 * * *
 
@@ -911,15 +911,15 @@ Returns a representation of the node's outline in SVG `<path>` syntax. Note that
 True if the node has an image fill that comes from a link to an external resource, such as Creative Cloud Libraries. Equivalent to the expression: <code>node.fill &&
 node.fill.linked</code>.
 
-**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)  
-**Read only**: true  
+**Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
+**Read only**: true
 
 * * *
 
 <a name="Rectangle"></a>
 
 ## Rectangle
-**Kind**: class  
+**Kind**: class
 **Extends**: [<code>GraphicNode</code>](#GraphicNode)
 
 Rectangle leaf node shape, with or without rounded corners. Like all shape nodes, has no fill or stroke by default unless you set one.
@@ -947,14 +947,14 @@ selection.items = [rect];
 <a name="Rectangle-width"></a>
 
 ### rectangle.width : <code>number</code> &gt; 0
-**Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
+**Kind**: instance property of [<code>Rectangle</code>](#Rectangle)
 
 * * *
 
 <a name="Rectangle-height"></a>
 
 ### rectangle.height : <code>number</code> &gt; 0
-**Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
+**Kind**: instance property of [<code>Rectangle</code>](#Rectangle)
 
 * * *
 
@@ -968,7 +968,7 @@ The actual corner radius that is rendered is capped based on the size of the rec
 
 To set all corners to the same value, use [<code>setAllCornerRadii</code>](#Rectangle-setAllCornerRadii).
 
-**Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
+**Kind**: instance property of [<code>Rectangle</code>](#Rectangle)
 
 * * *
 
@@ -977,8 +977,8 @@ To set all corners to the same value, use [<code>setAllCornerRadii</code>](#Rect
 ### rectangle.hasRoundedCorners : <code>boolean</code>
 True if any of the Rectangle's four corners is rounded (corner radius > 0).
 
-**Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
-**Read only**: true  
+**Kind**: instance property of [<code>Rectangle</code>](#Rectangle)
+**Read only**: true
 
 * * *
 
@@ -990,11 +990,11 @@ the size of the rectangle even if the radius value set here is higher (see [<cod
 
 To set the corners to different radius values, use [<code>cornerRadii</code>](#Rectangle-cornerRadii).
 
-**Kind**: instance method of [<code>Rectangle</code>](#Rectangle)  
+**Kind**: instance method of [<code>Rectangle</code>](#Rectangle)
 
 | Param | Type |
 | --- | --- |
-| radius | <code>number</code> | 
+| radius | <code>number</code> |
 
 
 * * *
@@ -1005,7 +1005,7 @@ To set the corners to different radius values, use [<code>cornerRadii</code>](#R
 The actual corner radius that is rendered may be capped by the size of the rectangle. Returns the actual radii that
 are currently in effect, which may be smaller than the `cornerRadii` values as a result.
 
-**Kind**: instance property of [<code>Rectangle</code>](#Rectangle)  
+**Kind**: instance property of [<code>Rectangle</code>](#Rectangle)
 
 * * *
 
@@ -1040,7 +1040,7 @@ Artboard, its parent will automatically be changed accordingly after the edit op
 <a name="Artboard-width"></a>
 
 ### artboard.width : <code>number</code> &gt; 0
-**Kind**: instance property of [<code>Artboard</code>](#Artboard)  
+**Kind**: instance property of [<code>Artboard</code>](#Artboard)
 
 * * *
 
@@ -1049,8 +1049,8 @@ Artboard, its parent will automatically be changed accordingly after the edit op
 ### artboard.height : <code>number</code> &gt; 0
 For scrollable Artboards, this is the total height encompassing all content - not just the viewport size (i.e. screen height).
 
-**Kind**: instance property of [<code>Artboard</code>](#Artboard)  
-**See**: [viewportHeight](#Artboard-viewportHeight)  
+**Kind**: instance property of [<code>Artboard</code>](#Artboard)
+**See**: [viewportHeight](#Artboard-viewportHeight)
 
 * * *
 
@@ -1059,8 +1059,8 @@ For scrollable Artboards, this is the total height encompassing all content - no
 ### artboard.viewportHeight : <code>?number</code>
 If Artboard is scrollable, this is the height of the viewport (e.g. mobile device screen size). Null if Artboard isn't scrollable.
 
-**Kind**: instance property of [<code>Artboard</code>](#Artboard)  
-**See**: [height](#Artboard-height)  
+**Kind**: instance property of [<code>Artboard</code>](#Artboard)
+**See**: [height](#Artboard-height)
 
 * * *
 
@@ -1083,14 +1083,14 @@ Ellipse leaf node shape.
 <a name="Ellipse-radiusX"></a>
 
 ### ellipse.radiusX : <code>number</code>
-**Kind**: instance property of [<code>Ellipse</code>](#Ellipse)  
+**Kind**: instance property of [<code>Ellipse</code>](#Ellipse)
 
 * * *
 
 <a name="Ellipse-radiusY"></a>
 
 ### ellipse.radiusY : <code>number</code>
-**Kind**: instance property of [<code>Ellipse</code>](#Ellipse)  
+**Kind**: instance property of [<code>Ellipse</code>](#Ellipse)
 
 * * *
 
@@ -1099,8 +1099,8 @@ Ellipse leaf node shape.
 ### ellipse.isCircle : <code>boolean</code>
 True if the Ellipse is a circle (i.e., has a 1:1 aspect ratio).
 
-**Kind**: instance property of [<code>Ellipse</code>](#Ellipse)  
-**Read only**: true  
+**Kind**: instance property of [<code>Ellipse</code>](#Ellipse)
+**Read only**: true
 
 * * *
 
@@ -1125,8 +1125,8 @@ Line leaf node shape. Lines have a stroke but no fill.
 ### line.start : \![<code>Point</code>](#Point)
 Start point of the Line in local coordinate space. To change the start point, use [setStartEnd](#Line-setStartEnd).
 
-**Kind**: instance property of [<code>Line</code>](#Line)  
-**Read only**: true  
+**Kind**: instance property of [<code>Line</code>](#Line)
+**Read only**: true
 
 * * *
 
@@ -1135,8 +1135,8 @@ Start point of the Line in local coordinate space. To change the start point, us
 ### line.end : \![<code>Point</code>](#Point)
 Endpoint of the Line in local coordinate space. To change the endpoint, use [setStartEnd](#Line-setStartEnd).
 
-**Kind**: instance property of [<code>Line</code>](#Line)  
-**Read only**: true  
+**Kind**: instance property of [<code>Line</code>](#Line)
+**Read only**: true
 
 * * *
 
@@ -1147,14 +1147,14 @@ Set the start and end points of the Line in local coordinate space. The values m
 translation and counter-shifting the start/end points. So the start/end getters may return values different from the values you
 passed this setter, even though the line's visual bounds and appearance are the same.
 
-**Kind**: instance method of [<code>Line</code>](#Line)  
+**Kind**: instance method of [<code>Line</code>](#Line)
 
 | Param | Type |
 | --- | --- |
-| startX | <code>number</code> | 
-| startY | <code>number</code> | 
-| endX | <code>number</code> | 
-| endY | <code>number</code> | 
+| startX | <code>number</code> |
+| startY | <code>number</code> |
+| endX | <code>number</code> |
+| endY | <code>number</code> |
 
 
 * * *
@@ -1182,7 +1182,7 @@ The path may not start at (0,0) in local coordinates, for example if it starts w
 Representation of the path outline in SVG `<path>` syntax. Unlike other node types, pathData is writable here. Syntax is
 automatically normalized, so the getter may return a slightly different string than what you passed to the setter.
 
-**Kind**: instance property of [<code>Path</code>](#Path)  
+**Kind**: instance property of [<code>Path</code>](#Path)
 
 * * *
 
@@ -1214,8 +1214,8 @@ to clone existing BooleanGroups.
 ### booleanGroup.pathOp : <code>string</code>
 Which boolean operation is used to generate the path: BooleanGroup.PATH_OP_ADD, PATH_OP_SUBTRACT, PATH_OP_INTERSECT, or PATH_OP_EXCLUDE_OVERLAP.
 
-**Kind**: instance property of [<code>BooleanGroup</code>](#BooleanGroup)  
-**Read only**: true  
+**Kind**: instance property of [<code>BooleanGroup</code>](#BooleanGroup)
+**Read only**: true
 
 * * *
 
@@ -1264,7 +1264,7 @@ The plaintext content of the node, including any hard line breaks but excluding 
 Setting text does not change styleRanges, so styles aligned with the old text's string indices will continue to be applied to
 the new string's indices unless you explicitly change styleRanges as well.
 
-**Kind**: instance property of [<code>Text</code>](#Text)  
+**Kind**: instance property of [<code>Text</code>](#Text)
 
 * * *
 
@@ -1278,7 +1278,7 @@ same style as the last range.
 When _setting_ styleRanges, any fields missing from a given range default to the existing values from the *last* range in the old
 value of styleRanges. The styleRanges _getter_ always returns fully realized range objects with all fields specified.
 
-**Kind**: instance property of [<code>Text</code>](#Text)  
+**Kind**: instance property of [<code>Text</code>](#Text)
 
 * * *
 
@@ -1287,7 +1287,7 @@ value of styleRanges. The styleRanges _getter_ always returns fully realized ran
 ### text.flipY : <code>boolean</code>
 If true, the text is drawn upside down.
 
-**Kind**: instance property of [<code>Text</code>](#Text)  
+**Kind**: instance property of [<code>Text</code>](#Text)
 
 * * *
 
@@ -1309,7 +1309,7 @@ let newBounds = textNode.localBounds;
 textNode.moveInParentCoordinates(originalBounds.x - newBounds.x, 0);
 ```
 
-**Kind**: instance property of [<code>Text</code>](#Text)  
+**Kind**: instance property of [<code>Text</code>](#Text)
 
 * * *
 
@@ -1324,7 +1324,7 @@ fixed while the font size changes, shifting the spacing's proportional relations
 rendered line spacing will change to match the new font size, since 0 means the spacing is dynamically calculated from the current
 font settings.
 
-**Kind**: instance property of [<code>Text</code>](#Text)  
+**Kind**: instance property of [<code>Text</code>](#Text)
 
 * * *
 
@@ -1333,8 +1333,8 @@ font settings.
 ### text.areaBox : <code>?{width:number, height:number}</code>
 Null for point text. For area text, specifies the size of the rectangle within which text is wrapped and clipped.
 
-**Kind**: instance property of [<code>Text</code>](#Text)  
-**Read only**: true  
+**Kind**: instance property of [<code>Text</code>](#Text)
+**Read only**: true
 
 * * *
 
@@ -1343,8 +1343,8 @@ Null for point text. For area text, specifies the size of the rectangle within w
 ### text.clippedByArea : <code>boolean</code>
 Always false for point text. For area text, true if the text does not fit in the content box and its bottom is being clipped.
 
-**Kind**: instance property of [<code>Text</code>](#Text)  
-**Read only**: true  
+**Kind**: instance property of [<code>Text</code>](#Text)
+**Read only**: true
 
 * * *
 
@@ -1375,8 +1375,8 @@ It is not currently possible for plugins to *create* a new Symbol definition or 
 ### symbolInstance.symbolId : <code>string</code>
 An identifier unique within this document that is shared by all instances of the same Symbol.
 
-**Kind**: instance property of [<code>SymbolInstance</code>](#SymbolInstance)  
-**Read only**: true  
+**Kind**: instance property of [<code>SymbolInstance</code>](#SymbolInstance)
+**Read only**: true
 
 * * *
 
@@ -1419,7 +1419,7 @@ to clone existing RepeatGrids.
 ### repeatGrid.width : <code>number</code>
 Defines size of the RepeatGrid. Cells are created and destroyed as necessary to fill the current size. Cells that only partially fit will be clipped.
 
-**Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)  
+**Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)
 
 * * *
 
@@ -1428,7 +1428,7 @@ Defines size of the RepeatGrid. Cells are created and destroyed as necessary to 
 ### repeatGrid.height : <code>number</code>
 Defines size of the RepeatGrid. Cells are created and destroyed as necessary to fill the current size. Cells that only partially fit will be clipped.
 
-**Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)  
+**Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)
 
 * * *
 
@@ -1437,7 +1437,7 @@ Defines size of the RepeatGrid. Cells are created and destroyed as necessary to 
 ### repeatGrid.numColumns : <code>number</code>
 Number of grid columns
 
-**Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)  
+**Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)
 
 * * *
 
@@ -1446,7 +1446,7 @@ Number of grid columns
 ### repeatGrid.numRows : <code>number</code>
 Number of grid rows
 
-**Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)  
+**Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)
 
 * * *
 
@@ -1455,7 +1455,7 @@ Number of grid rows
 ### repeatGrid.paddingX : <code>number</code>
 Horizontal spacing between grid cells/columns
 
-**Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)  
+**Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)
 
 * * *
 
@@ -1464,7 +1464,7 @@ Horizontal spacing between grid cells/columns
 ### repeatGrid.paddingY : <code>number</code>
 Vertical spacing between grid cells/rows
 
-**Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)  
+**Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)
 
 * * *
 
@@ -1473,7 +1473,7 @@ Vertical spacing between grid cells/rows
 ### repeatGrid.cellSize : <code>!{width: number, height: number}</code>
 The size of each grid cell. The size of each cell's content can vary slightly due to text overrides; the cell size is always set to the width of the widest cell content and the height of the tallest cell content.
 
-**Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)  
+**Kind**: instance property of [<code>RepeatGrid</code>](#RepeatGrid)
 
 * * *
 
