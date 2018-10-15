@@ -105,7 +105,7 @@ async function insertTextFromFileHandler(selection) {               // [1]
 }
 ```
 
-1. This example uses XD's asynchronous Filo I/O APIs, so the handler function must be declared as an async method. To learn more about async support in XD plugin APIs, see [our document on sync and async support](/Users/arnwine/Desktop/plugin-docs/reference/javascript/sync-async.md).
+1. This example uses XD's asynchronous Filo I/O APIs, so the handler function must be declared as an async method. To learn more about async support in XD plugin APIs, see [our document on sync and async support](/reference/javascript/sync-async.md).
 2. A file picker dialog is displayed, and the function waits for the user to select a text file. The selected file is assigned to `aFile`. The `#getFileForOpening` method is asynchronous, so the `await` keyword is used.
 3. If `aFile` is undefined (because the user did not select a file), then plugin exits.
 4. The contents of the file is read in, and returned as a string. See below for more detail. The `#read` method is asynchronous, so the `await` keyword is used.

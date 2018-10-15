@@ -62,7 +62,7 @@ module.exports = {
 
 A couple of notes about the handler function shell above:
 
-1. This function will run _asynchronously_, as indicated by the `async` keyword at the beginning of the line. To learn more about what this means, see [our document on sync and async support](/Users/arnwine/Desktop/plugin-docs/reference/javascript/sync-async.md).
+1. This function will run _asynchronously_, as indicated by the `async` keyword at the beginning of the line. To learn more about what this means, see [our document on sync and async support](/reference/javascript/sync-async.md).
 1. Since this plugin will require user to select an object, we use an `if` statement to check if there is an XD object selected.
 
 The remaining steps in this tutorial describe additional edits to the `main.js` file.
