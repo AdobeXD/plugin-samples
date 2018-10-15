@@ -19,6 +19,7 @@
     "eslint": "^4.19.1",
     "gitbook-plugin-addcssjs": "^1.0.2",
     "gitbook-plugin-anchorjs": "^2.0.1",
+    "gitbook-plugin-bulk-redirect": "^0.2.1",
     "gitbook-plugin-code": "^0.1.0",
     "gitbook-plugin-codesandbox": "^0.1.1",
     "gitbook-plugin-codetabs": "^1.0.0",
