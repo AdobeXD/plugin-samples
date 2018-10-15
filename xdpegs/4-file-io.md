@@ -1,6 +1,3 @@
-> **Danger**
->
-> The XD Plugin Experience Guidelines are being drafted now, and are likely to change before release. Even so, you should be able to use these guidelines to craft compelling user experiences for your users.
 
 # 4.0 File I/O
 
