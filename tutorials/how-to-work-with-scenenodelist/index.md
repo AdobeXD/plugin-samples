@@ -189,7 +189,7 @@ Want to expand on what you learned here? Have a look at these references to see 
 - [Rectangle](/reference/scenegraph.html#rectangle)
 - [Ellipse](/reference/scenegraph.html#ellipse)
 - [Text](/reference/scenegraph.html#text)
-- [Color](/reference/Color.html)
+- [Color](/reference/Color.md)
 
 Ready to explore further? Take a look at our other resources:
 
