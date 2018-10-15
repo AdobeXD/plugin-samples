@@ -19,7 +19,7 @@ Other times you'll need to display an _error_ alert, which looks like this:
 ## Development Steps
 
 > **Info**
-> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/how-to-show-an-alert).
+> Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/plugin-samples/tree/master/how-to-display-an-alert).
 
 ### 1. Add the "plugin helpers" library
 
@@ -141,5 +141,5 @@ Other than `alert` and `error`, there are other useful dialog helpers that you m
 
 - [How to ask for confirmation](../how-to-ask-for-confirmation)
 - [How to show a prompt](../how-to-show-a-prompt)
-- [User Interface Concepts](../../reference/ui/ui-concepts.md)
+- [User Interface Concepts](/reference/ui/)
 - [Other samples](https://github.com/AdobeXD/Plugin-Samples)
