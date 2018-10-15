@@ -9,6 +9,6 @@ In this section, we'll talk about JavaScript topics that are specific to XD plug
 
 Topics include:
 
-- [JavaScript version and feature support](./reference/javascript/javascript-support.md)
-- [Sync and Async](./reference/javascript/sync-async.md)
-- [The API environment](./reference/javascript/environment.md)
+- [JavaScript version and feature support](/reference/javascript/javascript-support.md)
+- [Sync and Async](/reference/javascript/sync-async.md)
+- [The API environment](/reference/javascript/environment.md)
