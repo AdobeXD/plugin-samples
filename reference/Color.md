@@ -5,13 +5,13 @@
 
 * [Color](#Color)
     * [new Color(value, opacity)](#new_Color_new)
-    * [.a](#Color+a) : <code>number</code>
-    * [.r](#Color+r) : <code>number</code>
-    * [.g](#Color+g) : <code>number</code>
-    * [.b](#Color+b) : <code>number</code>
-    * [.toRgba()](#Color+toRgba) ⇒ <code>!{r:number, g:number, b:number, a:number}</code>
-    * [.toHex(forceSixDigits)](#Color+toHex) ⇒ <code>string</code>
-    * [.clone()](#Color+clone) ⇒ <code>!Color</code>
+    * [.a](#Color-a) : <code>number</code>
+    * [.r](#Color-r) : <code>number</code>
+    * [.g](#Color-g) : <code>number</code>
+    * [.b](#Color-b) : <code>number</code>
+    * [.toRgba()](#Color-toRgba) ⇒ <code>!{r:number, g:number, b:number, a:number}</code>
+    * [.toHex(forceSixDigits)](#Color-toHex) ⇒ <code>string</code>
+    * [.clone()](#Color-clone) ⇒ <code>!Color</code>
 
 
 * * *
@@ -29,7 +29,7 @@ Create a new color instance.
 
 * * *
 
-<a name="Color+a"></a>
+<a name="Color-a"></a>
 
 ### *color.a : <code>number</code>*
 Integer 0-255. Get/set the alpha channel value.
@@ -39,7 +39,7 @@ Integer 0-255. Get/set the alpha channel value.
 
 * * *
 
-<a name="Color+r"></a>
+<a name="Color-r"></a>
 
 ### *color.r : <code>number</code>*
 Integer 0-255. Get/set the red channel value.
@@ -49,7 +49,7 @@ Integer 0-255. Get/set the red channel value.
 
 * * *
 
-<a name="Color+g"></a>
+<a name="Color-g"></a>
 
 ### *color.g : <code>number</code>*
 Integer 0-255. Get/set the green channel value.
@@ -59,7 +59,7 @@ Integer 0-255. Get/set the green channel value.
 
 * * *
 
-<a name="Color+b"></a>
+<a name="Color-b"></a>
 
 ### *color.b : <code>number</code>*
 Integer 0-255. Get/set the blue channel value.
@@ -69,7 +69,7 @@ Integer 0-255. Get/set the blue channel value.
 
 * * *
 
-<a name="Color+toRgba"></a>
+<a name="Color-toRgba"></a>
 
 ### color.toRgba()
 Convert to an object with r, g, b, a keys where
@@ -81,7 +81,7 @@ r, g, b, a range from 0 - 255.
 
 * * *
 
-<a name="Color+toHex"></a>
+<a name="Color-toHex"></a>
 
 ### color.toHex(forceSixDigits) ⇒ <code>string</code>
 Convert to hex string with "#" prefix. Ignores the Color's alpha value.
@@ -97,7 +97,7 @@ Returns a 3-digit string if possible, otherwise returns a 6-digit string.
 
 * * *
 
-<a name="Color+clone"></a>
+<a name="Color-clone"></a>
 
 ### color.clone() ⇒ [!<code>Color</code>](#Color)
 Returns a clone of the current color object

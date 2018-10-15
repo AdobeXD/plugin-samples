@@ -5,11 +5,11 @@
 
 * [Shadow](#Shadow)
     * [new Shadow(x, y, blur, color, visible)](#new_Shadow_new)
-    * [.x](#Shadow+x) : <code>number</code>
-    * [.y](#Shadow+y) : <code>number</code>
-    * [.blur](#Shadow+blur) : <code>number</code>
-    * [.color](#Shadow+color) : <code>!Color</code>
-    * [.visible](#Shadow+visible) : <code>boolean</code>
+    * [.x](#Shadow-x) : <code>number</code>
+    * [.y](#Shadow-y) : <code>number</code>
+    * [.blur](#Shadow-blur) : <code>number</code>
+    * [.color](#Shadow-color) : <code>!Color</code>
+    * [.visible](#Shadow-visible) : <code>boolean</code>
 
 
 * * *
@@ -32,7 +32,7 @@ The `visible` argument is optional and defaults to true.
 
 * * *
 
-<a name="Shadow+x"></a>
+<a name="Shadow-x"></a>
 
 ### *shadow.x : <code>number</code>*
 X offset of the shadow relative to the shape it is attached to, in _global coordinates_ (i.e. independent of the shape's rotation or any
@@ -43,7 +43,7 @@ parent's rotation). May be negative.
 
 * * *
 
-<a name="Shadow+y"></a>
+<a name="Shadow-y"></a>
 
 ### *shadow.y : <code>number</code>*
 Y offset of the shadow relative to the shape it is attached to, in _global coordinates_  (i.e. independent of the shape's rotation or any
@@ -54,7 +54,7 @@ parent's rotation). May be negative.
 
 * * *
 
-<a name="Shadow+blur"></a>
+<a name="Shadow-blur"></a>
 
 ### *shadow.blur : <code>number</code>* &gt;= 0
 
@@ -63,7 +63,7 @@ parent's rotation). May be negative.
 
 * * *
 
-<a name="Shadow+color"></a>
+<a name="Shadow-color"></a>
 
 ### *shadow.color : <code>\![Color](Color.md)</code>*
 
@@ -72,7 +72,7 @@ parent's rotation). May be negative.
 
 * * *
 
-<a name="Shadow+visible"></a>
+<a name="Shadow-visible"></a>
 
 ### *shadow.visible : <code>boolean</code>*
 If false, the shadow is not rendered. The user can toggle this via a checkbox in the Properties panel.

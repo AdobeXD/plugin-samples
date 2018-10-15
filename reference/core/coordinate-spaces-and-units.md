@@ -9,7 +9,7 @@ a rotated rectangle that is inside an artboard:
 
 ![diagram of coordinate spaces](../../images/coordSpaces.png)
 
-The top-left corner of a node is not always located at (0,0) in its own local coordinate space. Use [`localBounds`](../scenegraph.md#SceneNode+localBounds)
+The top-left corner of a node is not always located at (0,0) in its own local coordinate space. Use [`localBounds`](../scenegraph.md#SceneNode-localBounds)
 to get the true top-left of a node. For example, the baseline of a [Point Text node](../scenegraph.md#Text) is at Y=0 in its local coordinates, so its
 upper-left corner is at a negative Y value. Similarly, centered or right-aligned text will start at a negative X value in local coordinates.
 
@@ -23,6 +23,6 @@ For example, a center or outside stroke protrudes beyond the path outline, as do
 
 ![examples of path bounds vs. draw bounds](../../images/pathBounds.png)
 
-If you need a bounding box that encompasses _all_ visible pixels of an object, use [`globalDrawBounds`](../scenegraph.md#SceneNode+globalDrawBounds).
+If you need a bounding box that encompasses _all_ visible pixels of an object, use [`globalDrawBounds`](../scenegraph.md#SceneNode-globalDrawBounds).
 The draw bounds are the bounds used when exporting a bitmap image, for example. However, in most other cases (including align/snapping), XD uses the
 path outline bounds.

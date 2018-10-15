@@ -8,14 +8,14 @@ applied to.
 
 * [LinearGradientFill](#LinearGradientFill)
     * [new LinearGradientFill()](#new_LinearGradientFill_new)
-    * [.clone()](#LinearGradientFill+clone) ⇒ <code>!LinearGradientFill</code>
-    * [.colorStops](#LinearGradientFill+colorStops) : <code>!Array&lt;{stop:number, color:!Color}></code>
-    * [.startX](#LinearGradientFill+startX) : <code>number</code>
-    * [.startY](#LinearGradientFill+startY) : <code>number</code>
-    * [.endX](#LinearGradientFill+endX) : <code>number</code>
-    * [.endY](#LinearGradientFill+endY) : <code>number</code>
-    * [.getEndPoints()](#LinearGradientFill+getEndPoints) ⇒ <code>!Array&lt;number></code>
-    * [.setEndPoints(startX, startY, endX, endY)](#LinearGradientFill+setEndPoints)
+    * [.clone()](#LinearGradientFill-clone) ⇒ <code>!LinearGradientFill</code>
+    * [.colorStops](#LinearGradientFill-colorStops) : <code>!Array&lt;{stop:number, color:!Color}></code>
+    * [.startX](#LinearGradientFill-startX) : <code>number</code>
+    * [.startY](#LinearGradientFill-startY) : <code>number</code>
+    * [.endX](#LinearGradientFill-endX) : <code>number</code>
+    * [.endY](#LinearGradientFill-endY) : <code>number</code>
+    * [.getEndPoints()](#LinearGradientFill-getEndPoints) ⇒ <code>!Array&lt;number></code>
+    * [.setEndPoints(startX, startY, endX, endY)](#LinearGradientFill-setEndPoints)
 
 
 * * *
@@ -28,7 +28,7 @@ Create a new LinearGradientFill instance.
 
 * * *
 
-<a name="LinearGradientFill+clone"></a>
+<a name="LinearGradientFill-clone"></a>
 
 ### *linearGradientFill.clone() ⇒ <code>!LinearGradientFill</code>*
 Returns a copy of this instance.
@@ -38,7 +38,7 @@ Returns a copy of this instance.
 
 * * *
 
-<a name="LinearGradientFill+colorStops"></a>
+<a name="LinearGradientFill-colorStops"></a>
 
 ### *linearGradientFill.colorStops : <code>!Array&lt;{stop:number, color:\![Color](Color.md)}></code>*
 Array of objects representing each color and its position along the gradient line. The position (`stop` value) is a number 0.0 - 1.0.
@@ -48,7 +48,7 @@ Array of objects representing each color and its position along the gradient lin
 
 * * *
 
-<a name="LinearGradientFill+startX"></a>
+<a name="LinearGradientFill-startX"></a>
 
 ### *linearGradientFill.startX : <code>number</code>*
 X position of the start of the gradient line, as a multiple of the object's bounding box: X=0 indicates the left edge of the bounding box and X=1 indicates the right edge.
@@ -59,7 +59,7 @@ The gradient line _may_ start or end outside the object's bounding box, so value
 
 * * *
 
-<a name="LinearGradientFill+startY"></a>
+<a name="LinearGradientFill-startY"></a>
 
 ### *linearGradientFill.startY : <code>number</code>*
 Y position of the start of the gradient line, as a multiple of the object's bounding box: Y=0 indicates the top edge of the bounding box and Y=1 indicates the bottom edge.
@@ -70,7 +70,7 @@ The gradient line _may_ start or end outside the object's bounding box, so value
 
 * * *
 
-<a name="LinearGradientFill+endX"></a>
+<a name="LinearGradientFill-endX"></a>
 
 ### *linearGradientFill.endX : <code>number</code>*
 X position of the end of the gradient line, as a multiple of the object's bounding box: X=0 indicates the left edge of the bounding box and X=1 indicates the right edge.
@@ -81,7 +81,7 @@ The gradient line _may_ start or end outside the object's bounding box, so value
 
 * * *
 
-<a name="LinearGradientFill+endY"></a>
+<a name="LinearGradientFill-endY"></a>
 
 ### *linearGradientFill.endY : <code>number</code>*
 Y position of the end of the gradient line, as a multiple of the object's bounding box: Y=0 indicates the top edge of the bounding box and Y=1 indicates the bottom edge.
@@ -92,7 +92,7 @@ The gradient line _may_ start or end outside the object's bounding box, so value
 
 * * *
 
-<a name="LinearGradientFill+getEndPoints"></a>
+<a name="LinearGradientFill-getEndPoints"></a>
 
 ### *linearGradientFill.getEndPoints() ⇒ <code>!Array&lt;number></code>*
 Returns an array of \[startX, startY, endX, endY\].
@@ -102,7 +102,7 @@ Returns an array of \[startX, startY, endX, endY\].
 
 * * *
 
-<a name="LinearGradientFill+setEndPoints"></a>
+<a name="LinearGradientFill-setEndPoints"></a>
 
 ### *linearGradientFill.setEndPoints(startX, startY, endX, endY)
 Shorthand for setting all four start/endpoint properties.

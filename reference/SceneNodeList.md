@@ -1,10 +1,10 @@
 <a name="SceneNodeList"></a>
 
 ## SceneNodeList
-Represents the children of a scenenode. Typically accessed via the [SceneNode.children](scenegraph.md#SceneNode+children) property.
+Represents the children of a scenenode. Typically accessed via the [SceneNode.children](scenegraph.md#SceneNode-children) property.
 
-This is _not an Array_, so you must use [`at(i)`](#SceneNodeList+at) instead of `[i]` to access children by index. It has a
-number of Array-like methods such as [forEach](#SceneNodeList+forEach) for convenience, however.
+This is _not an Array_, so you must use [`at(i)`](#SceneNodeList-at) instead of `[i]` to access children by index. It has a
+number of Array-like methods such as [forEach](#SceneNodeList-forEach) for convenience, however.
 
 Ordered from lowest z order to highest.
 
@@ -20,21 +20,21 @@ node.children.forEach(function (childNode, i) {
 });
 ```
 
-**See**: [SceneNode.children](scenegraph.md#SceneNode+children)  
+**See**: [SceneNode.children](scenegraph.md#SceneNode-children)  
 
 * [SceneNodeList](#SceneNodeList)
-    * [.length](#SceneNodeList+length) : <code>number</code>
-    * [.forEach(callback, thisArg)](#SceneNodeList+forEach) ⇒ <code>void</code>
-    * [.forEachRight(callback, thisArg)](#SceneNodeList+forEachRight) ⇒ <code>void</code>
-    * [.filter(callback, thisArg)](#SceneNodeList+filter) ⇒ <code>Array.&lt;!SceneNode&gt;</code>
-    * [.map(callback, thisArg)](#SceneNodeList+map) ⇒ <code>Array.&lt;\*&gt;</code>
-    * [.some(callback, thisArg)](#SceneNodeList+some) ⇒ <code>boolean</code>
-    * [.at()](#SceneNodeList+at) ⇒ <code>SceneNode</code>
+    * [.length](#SceneNodeList-length) : <code>number</code>
+    * [.forEach(callback, thisArg)](#SceneNodeList-forEach) ⇒ <code>void</code>
+    * [.forEachRight(callback, thisArg)](#SceneNodeList-forEachRight) ⇒ <code>void</code>
+    * [.filter(callback, thisArg)](#SceneNodeList-filter) ⇒ <code>Array.&lt;!SceneNode&gt;</code>
+    * [.map(callback, thisArg)](#SceneNodeList-map) ⇒ <code>Array.&lt;\*&gt;</code>
+    * [.some(callback, thisArg)](#SceneNodeList-some) ⇒ <code>boolean</code>
+    * [.at()](#SceneNodeList-at) ⇒ <code>SceneNode</code>
 
 
 * * *
 
-<a name="SceneNodeList+length"></a>
+<a name="SceneNodeList-length"></a>
 
 ### sceneNodeList.length : <code>number</code>
 Number of children in the list.
@@ -44,7 +44,7 @@ Number of children in the list.
 
 * * *
 
-<a name="SceneNodeList+forEach"></a>
+<a name="SceneNodeList-forEach"></a>
 
 ### sceneNodeList.forEach(callback, thisArg) ⇒ <code>void</code>
 Iterate all children in the list.
@@ -59,7 +59,7 @@ Iterate all children in the list.
 
 * * *
 
-<a name="SceneNodeList+forEachRight"></a>
+<a name="SceneNodeList-forEachRight"></a>
 
 ### sceneNodeList.forEachRight(callback, thisArg) ⇒ <code>void</code>
 Iterate all children in the list, in reverse order (highest z order to lowest).
@@ -74,7 +74,7 @@ Iterate all children in the list, in reverse order (highest z order to lowest).
 
 * * *
 
-<a name="SceneNodeList+filter"></a>
+<a name="SceneNodeList-filter"></a>
 
 ### sceneNodeList.filter(callback, thisArg) ⇒ <code>Array.&lt;!SceneNode&gt;</code>
 Iterates all children and returns an array of just the children that passed the filter function's test.
@@ -89,7 +89,7 @@ Iterates all children and returns an array of just the children that passed the 
 
 * * *
 
-<a name="SceneNodeList+map"></a>
+<a name="SceneNodeList-map"></a>
 
 ### sceneNodeList.map(callback, thisArg) ⇒ <code>Array.&lt;\*&gt;</code>
 Iterates all children and returns an array of the map function's result value for each child node.
@@ -104,7 +104,7 @@ Iterates all children and returns an array of the map function's result value fo
 
 * * *
 
-<a name="SceneNodeList+some"></a>
+<a name="SceneNodeList-some"></a>
 
 ### sceneNodeList.some(callback, thisArg) ⇒ <code>boolean</code>
 Iterates children until the test returns true for at least one child.
@@ -120,7 +120,7 @@ Iterates children until the test returns true for at least one child.
 
 * * *
 
-<a name="SceneNodeList+at"></a>
+<a name="SceneNodeList-at"></a>
 
 ### sceneNodeList.at() ⇒ <code>SceneNode</code>
 **Kind**: instance method of [<code>SceneNodeList</code>](#SceneNodeList)  

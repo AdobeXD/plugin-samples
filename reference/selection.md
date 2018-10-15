@@ -22,24 +22,24 @@ The selection can only contain items within the current _edit context_:
 Note that when in the root edit context, the selection _can_ contain items with multiple different parents.
 
 Items that are _locked_ cannot be in the selection. If the user or your plugin attempts to select any locked items, they are
-automatically filtered into a separate list ([itemsIncludingLocked](#selection+itemsIncludingLocked)) which is generally only used by the Unlock
+automatically filtered into a separate list ([itemsIncludingLocked](#selection-itemsIncludingLocked)) which is generally only used by the Unlock
 command.
 
 **Kind**: object  
 
 * [selection](#selection)
-    * [.items](#selection+items) : <code>!Array&lt;!SceneNode&gt;</code>
-    * [.itemsIncludingLocked](#selection+itemsIncludingLocked) : <code>!Array&lt;!SceneNode&gt;</code>
-    * [.hasArtwork](#selection+hasArtwork) : <code>boolean</code>
-    * [.hasArtboards](#selection+hasArtboards) : <code>boolean</code>
-    * [.editContext](#selection+editContext) : <code>!SceneNode</code>
-    * [.insertionParent](#selection+insertionParent) : <code>!SceneNode</code>
-    * [.focusedArtboard](#selection+focusedArtboard) : <code>?Artboard</code>
+    * [.items](#selection-items) : <code>!Array&lt;!SceneNode&gt;</code>
+    * [.itemsIncludingLocked](#selection-itemsIncludingLocked) : <code>!Array&lt;!SceneNode&gt;</code>
+    * [.hasArtwork](#selection-hasArtwork) : <code>boolean</code>
+    * [.hasArtboards](#selection-hasArtboards) : <code>boolean</code>
+    * [.editContext](#selection-editContext) : <code>!SceneNode</code>
+    * [.insertionParent](#selection-insertionParent) : <code>!SceneNode</code>
+    * [.focusedArtboard](#selection-focusedArtboard) : <code>?Artboard</code>
 
 
 * * *
 
-<a name="selection+items"></a>
+<a name="selection-items"></a>
 
 ### selection.items : <code>!Array&lt;\![SceneNode](scenegraph.md#SceneNode)&gt;</code>
 Array representing the current selection. Empty array if nothing is selected (never null). Never includes locked nodes.
@@ -62,7 +62,7 @@ selection.items = null;       // deselect all (convenience)
 
 * * *
 
-<a name="selection+itemsIncludingLocked"></a>
+<a name="selection-itemsIncludingLocked"></a>
 
 ### selection.itemsIncludingLocked : <code>!Array&lt;\![SceneNode](scenegraph.md#SceneNode)&gt;</code>
 Array representing the current selection *plus* any locked items that the user has attempted to select.
@@ -78,27 +78,27 @@ console.log("There are " + numLockedSelected + " locked nodes 'sort of' currentl
 
 * * *
 
-<a name="selection+hasArtwork"></a>
+<a name="selection-hasArtwork"></a>
 
 ### selection.hasArtwork : <code>boolean</code>
-True if the selection isn’t empty and consists of one or more non-Artboards. Never true at the same time as [hasArtboards](#selection+hasArtboards).
+True if the selection isn’t empty and consists of one or more non-Artboards. Never true at the same time as [hasArtboards](#selection-hasArtboards).
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
 **Read only**: true  
 
 * * *
 
-<a name="selection+hasArtboards"></a>
+<a name="selection-hasArtboards"></a>
 
 ### selection.hasArtboards : <code>boolean</code>
-True if the selection isn’t empty and consists of one or more Artboards. Never true at the same time as [hasArtwork](#selection+hasArtwork).
+True if the selection isn’t empty and consists of one or more Artboards. Never true at the same time as [hasArtwork](#selection-hasArtwork).
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
 **Read only**: true  
 
 * * *
 
-<a name="selection+editContext"></a>
+<a name="selection-editContext"></a>
 
 ### selection.editContext : <code>\![SceneNode](scenegraph.md#SceneNode)</code>
 The context in which selection and edit operations must occur. If the user hasn't drilled into any container node, this value is the document root, and its scope includes all immediate children of the pasteboard (including Artboards), *and* all immediate children of all those Artboards.
@@ -108,7 +108,7 @@ The context in which selection and edit operations must occur. If the user hasn'
 
 * * *
 
-<a name="selection+insertionParent"></a>
+<a name="selection-insertionParent"></a>
 
 ### selection.insertionParent : <code>\![SceneNode](scenegraph.md#SceneNode)</code>
 The preferred parent to insert newly added content into. Takes into account the current edit context as well as the "focused artboard" if in the root context.
@@ -118,7 +118,7 @@ The preferred parent to insert newly added content into. Takes into account the 
 
 * * *
 
-<a name="selection+focusedArtboard"></a>
+<a name="selection-focusedArtboard"></a>
 
 ### selection.focusedArtboard : <code>?[Artboard](scenegraph.md#Artboard)</code>
 The artboard the user is currently most focused on (via recent selection or edit operations). May be null, for example if no artboards exist or if the user just deleted an artboard.

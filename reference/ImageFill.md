@@ -23,12 +23,12 @@ selection.items[0].fill = fill;
 
 * [ImageFill](#ImageFill)
     * [new ImageFill(fileOrDataURI)](#new_ImageFill_new)
-    * [.clone()](#ImageFill+clone) ⇒ <code>!ImageFill</code>
-    * [.scaleBehavior](#ImageFill+scaleBehavior) : <code>string</code>
-    * [.naturalWidth](#ImageFill+naturalWidth) : <code>number</code>
-    * [.naturalHeight](#ImageFill+naturalHeight) : <code>number</code>
-    * [.mimeType](#ImageFill+mimeType) : <code>string</code>
-    * [.isLinkedContent](#ImageFill+isLinkedContent) : <code>boolean</code>
+    * [.clone()](#ImageFill-clone) ⇒ <code>!ImageFill</code>
+    * [.scaleBehavior](#ImageFill-scaleBehavior) : <code>string</code>
+    * [.naturalWidth](#ImageFill-naturalWidth) : <code>number</code>
+    * [.naturalHeight](#ImageFill-naturalHeight) : <code>number</code>
+    * [.mimeType](#ImageFill-mimeType) : <code>string</code>
+    * [.isLinkedContent](#ImageFill-isLinkedContent) : <code>boolean</code>
 
 
 ## ImageFill()
@@ -40,7 +40,7 @@ selection.items[0].fill = fill;
 
 * * *
 
-<a name="ImageFill+clone"></a>
+<a name="ImageFill-clone"></a>
 
 ### imageFill.clone() ⇒ <code>!ImageFill</code>
 Returns a new copy of this ImageFill.
@@ -51,7 +51,7 @@ Returns a new copy of this ImageFill.
 
 * * *
 
-<a name="ImageFill+scaleBehavior"></a>
+<a name="ImageFill-scaleBehavior"></a>
 
 ### *imageFill.scaleBehavior : <code>string</code>*
 **Default**: `SCALE_COVER`
@@ -70,7 +70,7 @@ Image size and scaling are also affected by _cropping settings_, but these are n
 
 * * *
 
-<a name="ImageFill+naturalWidth"></a>
+<a name="ImageFill-naturalWidth"></a>
 
 ### *imageFill.naturalWidth : <code>number</code>*
 Pixel dimensions of the underlying bitmap image data.
@@ -81,7 +81,7 @@ Pixel dimensions of the underlying bitmap image data.
 
 * * *
 
-<a name="ImageFill+naturalHeight"></a>
+<a name="ImageFill-naturalHeight"></a>
 
 ### *imageFill.naturalHeight : <code>number</code>*
 Pixel dimensions of the underlying bitmap image data.
@@ -92,7 +92,7 @@ Pixel dimensions of the underlying bitmap image data.
 
 * * *
 
-<a name="ImageFill+mimeType"></a>
+<a name="ImageFill-mimeType"></a>
 
 ### *imageFill.mimeType : <code>string</code>*
 Format the image data was originally encoded in, such as `image/gif` or `image/jpeg`.
@@ -103,7 +103,7 @@ Format the image data was originally encoded in, such as `image/gif` or `image/j
 
 * * *
 
-<a name="ImageFill+isLinkedContent"></a>
+<a name="ImageFill-isLinkedContent"></a>
 
 ### *imageFill.isLinkedContent : <code>boolean</code>*
 True if the image comes from a link to an external resource, such as Creative Cloud Libraries.
