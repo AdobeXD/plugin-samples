@@ -8,7 +8,7 @@ by any artboard).
 
 ![example of scenegraph tree](../images/scenegraphExample.png)
 
-You can modify properties on any scenenodes within the current [_edit context_](../index.md#edit-contexts), and add leaf nodes to the current
+You can modify properties on any scenenodes within the current [_edit context_](/reference/core/edit-context.md), and add leaf nodes to the current
 edit context, but you cannot make structural changes directly to the scenegraph tree. Instead, use [commands](commands.md).
 
 Typically, you access scenegraph nodes via the [`selection`](selection.md) argument that is passed to your plugin command, or by
@@ -224,7 +224,7 @@ directly, it may be easier to use the [translation](#SceneNode-translation) and 
 To move or resize a node, use the [translation](#SceneNode-translation) property or APIs like [placeInParentCoordinates()](#SceneNode-placeInParentCoordinates) or [rotateAround()](#SceneNode-rotateAround).
 Setting the entire transform matrix directly is not allowed. To resize a node, use [resize()](#SceneNode-resize).
 
-For an overview of node transforms & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
+For an overview of node transforms & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
 This getter returns a fresh Matrix each time, so its fields can be mutated by the caller without interfering with the node's state.
 
@@ -252,7 +252,7 @@ The translate component of this node's [transform](#SceneNode-transform). Since 
 the transform Matrix, translation occurs along the parent's X/Y axes, not the node's own local X/Y axes. This is equivalent to
 the `e` & `f` fields in the transform Matrix.
 
-For an overview of node positioning & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
+For an overview of node positioning & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **See**
@@ -269,7 +269,7 @@ For an overview of node positioning & coordinate systems, see [Coordinate spaces
 ### *sceneNode.rotation : <code>number</code>*
 The rotation component of this node's [transform](#SceneNode-transform), in clockwise degrees.
 
-For an overview of node transforms & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
+For an overview of node transforms & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -282,7 +282,7 @@ For an overview of node transforms & coordinate systems, see [Coordinate spaces]
 ### *sceneNode.globalBounds : \![<code>Bounds</code>](#Bounds)*
 The node's _path bounds_ in document-global coordinate space (represented by a bounding box aligned with global X/Y axes). Path bounds match the selection outline seen in the XD, but exclude some visual parts of the node (outer stroke, drop shadow / blur, etc.).
 
-For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -302,7 +302,7 @@ The node's _path bounds_ in its own local coordinate space. This coordinate spac
 
 The visual top-left of a node's path bounds is located at (localBounds.x, localBounds.y). This value is _not_ necessarily (0,0) in the local coordinate space: for example, a text node's baseline is at y=0 in local coordinates, so the top of the text has a negative y value.
 
-For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -319,7 +319,7 @@ For an overview of node bounding boxes & coordinate systems, see [Coordinate spa
 ### *sceneNode.boundsInParent : \![<code>Bounds</code>](#Bounds)*
 The node's _path bounds_ in its parent's coordinate space (represented by a bounding box aligned with the parent's X/Y axes - so if the node has rotation, the top-left of the node is not necessarily located at the top-left of boundsInParent). Path bounds match the selection outline seen in XD, but exclude some visual parts of the node (outer stroke, drop shadow / blur, etc.).
 
-For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -339,7 +339,7 @@ The position of the node's upper-left corner (localBounds.x, localBounds.y) in i
 rotated, this is not the same as the top-left corner of boundsInParent.
 This is a shortcut for `node.transform.transformPoint({x: node.localBounds.x, y: node.localBounds.y})`
 
-For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -357,7 +357,7 @@ For an overview of node bounding boxes & coordinate systems, see [Coordinate spa
 The position of the node's centerpoint in its own local coordinate space. Useful as an argument to [rotateAround](#SceneNode-rotateAround).
 This is a shortcut for `{x: localBounds.x + localBounds.width/2, y: localBounds.y + localBounds.height/2})`
 
-For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -370,7 +370,7 @@ For an overview of node bounding boxes & coordinate systems, see [Coordinate spa
 ### *sceneNode.globalDrawBounds : \![<code>Bounds</code>](#Bounds)*
 The node's _draw bounds_ in document-global coordinate space. Draw bounds are larger than the selection outline seen in XD, including outer stroke, drop shadow / blur, etc. - every visible pixel of the node is encompassed by these bounds. This matches the image dimensions if the node is exported as a PNG/JPEG bitmap.
 
-For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
+For an overview of node bounding boxes & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
 **Read only**: true  
@@ -445,7 +445,7 @@ Move the node by the given number of pixels along the parent's X/Y axes (if this
 moving the node along its own local X/Y axes). This is equivalent to modifying the value returned by 'translation' and then
 setting it back.
 
-For an overview of node positioning & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
+For an overview of node positioning & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
 **Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
 **See**
@@ -468,7 +468,7 @@ For an overview of node positioning & coordinate systems, see [Coordinate spaces
 Move the node so the given point in its local coordinates is placed at the given point in its parent's coordinates (taking into account
 any rotation on this node, etc.).
 
-For an overview of node positioning & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
+For an overview of node positioning & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
 **Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
 
@@ -494,7 +494,7 @@ node.placeInParentCoordinates(nodeTopLeft, parentCenter);
 Rotate the node clockwise by the given number of degrees around the given point in the plugin's local coordinate space. If this node
 already has nonzero rotation, this operation _adds_ to its existing angle.
 
-For an overview of node transforms & coordinate systems, see [Coordinate spaces](../index.md#coordinate-spaces).
+For an overview of node transforms & coordinate systems, see [Coordinate spaces](/reference/core/coordinate-spaces-and-units.md).
 
 **Kind**: instance method of [<code>SceneNode</code>](#SceneNode)  
 **See**: [rotation](#SceneNode-rotation)  

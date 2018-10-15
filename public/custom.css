@@ -209,3 +209,15 @@ a .evidon-consent-link-text {
   a:hover .evidon-consent-link-text {
     color: #EAEAEA;
   }
+
+  /* Some mobile stuff */
+
+  @media (max-width: 640px) {
+      .page-toc {
+          float: none;
+          position: static;
+      }
+      .page-inner {
+          padding-right: 0;
+      }
+  }

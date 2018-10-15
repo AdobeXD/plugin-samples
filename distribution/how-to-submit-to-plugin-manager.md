@@ -11,7 +11,7 @@ In order to make your plugin available in the XD plugin manager, you'll need to 
 
 ## Prerequisite
 
-- [A packaged plugin](/tutorials/how-to-package-a-plugin/index.md)
+- [A packaged plugin](/distribution/packaging.md)
 
 
 ## Pre-submission checklist
