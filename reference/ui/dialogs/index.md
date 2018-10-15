@@ -212,13 +212,101 @@ function render() {
 
 {% endtabs %}
 
-
-* [DOM Structure](./dialogs/dom-structure.md)
-* [Building a Dialog with HTML](./dialogs/building-dialog-with-html.md)
-* [Building a Dialog with React](./dialogs/building-dialog-with-react.md)
-* [Helpers](./dialogs/helpers.md)
-
 Once a dialog is built, you will need to manage its lifecycle:
 
 * [Showing a Modal Dialog](./dialogs/showing.md)
-* [Dismissing a Modal Dialog](./dialogs.dismissal.md)
+* [Dismissing a Modal Dialog](./dialogs/dismissal.md)
+
+## Variations
+
+### Alert
+
+A simple "alert" can be used to display a message along with a **Close** button. You can customize the content of the title and message, but you cannot customize the button itself.
+
+![Example Alert](../assets/helper-alert.png)
+
+E## Error
+
+An error "alert" (with a red heading). These are useful for rendering error messages. Just like regular alerts, you cannot customize the button itself.
+
+![Example Error Alert](./assets/Example%20Error%20Alert.png)
+
+### Confirmation
+
+Confirmation dialogs display a message and _two_ buttons. The user is free to pick which of the buttons they wish to invoke.
+
+![Example Confirmation Dialog](./assets/Example%20Confirmation%20Dialog.png)
+
+> **Danger**
+>
+> Do not use confirmation dialogs for destructive actions.
+
+### Warning
+
+Warning dialogs display a message and _two_ buttons, one of which is destructive. Pressing **ENTER** in this case should _not_ invoke the destructive action. Otherwise it is the same as a confirmation dialog.
+
+![Example Warning Dialog](./assets/Example%20Warning%20Dialog.png)
+
+### Prompt
+
+Prompts display a single line text field in addition to a message and two buttons.
+
+![Example Prompt Dialog](./assets/Example%20Prompt%20Dialog.png)
+
+## Guidelines
+
+You should always strive to provide a good user experience with a modal dialog. That means providing easy access to dismissive buttons, avoiding dark patterns, and ensuring that your dialog doesn't block the user from forward progress in their work.
+
+You should definitely read up on the [experience guidelines](../../../xdpegs/5-ui.md) to learn more about what to do and what not to do.
+
+##### When to Use Dialogs
+
+Dialogs are very intrusive to the user's workflow. As such, you should consider their use very carefully.
+
+* **Don't** display a "success" dialog when the result of the plugin is obvious to the user.
+* **Do** display a "success" dialog when the result of the plugin is **not** obvious to the user (such as data being sent to a remote endpoint.)
+* **Don't** fail silently &mdash; let the user know what went wrong and how they can fix it by showing a modal dialog.
+
+##### No Nested Dialogs
+
+You should avoid nesting dialogs within other dialogs. The only exception to this guideline is when displaying file or folder pickers.
+
+##### Three Buttons
+
+In general, try to strive to avoid dialogs with lots of buttons in the footer. You should try to use up to three buttons in the footer.
+
+##### Dismissive Buttons
+
+Dismissive dialog buttons live within a `footer` element. Within the `footer`, you can have any number of buttons, but you should follow these guidelines when defining variants (which you can use to indicate if a button is the default or is destructive):
+
+* `uxp-variant="cta"` indicates that the button is a "call to action". This is typically used for the default action. You should only have one of these buttons in a dialog.
+* `uxp-variant="primary"` indicates the button is a "primary" button. This is the _default_ if `uxp-variant` is not specified.
+* `uxp-variant="secondary"` indicates the button is a "secondary" button. It receives a lighter color than primary buttons.
+* `uxp-variant="warning"` indicates that the button will trigger a destructive action. This button should not be the default action.
+
+> **Tip**
+>
+> Dismissive buttons should always be visible on screen without scrolling. If a dismissive button isn't visible, the user may think they are trapped in the dialog.
+
+##### Dismissal by other means
+
+You should avoid dismissing a dialog using other means, including action buttons, checkboxes, etc.
+
+## Keyboard Interaction
+
+Key       | Action
+----------|----------------------------
+ENTER     | Submits the dialog's form
+ESC       | Cancels the dialog
+TAB       | Moves to the next focusable element.
+SHIFT+TAB | Moves to the previous focusable element.
+
+## Known Issues
+
+- Large dialogs on small screens (or in small windows) do not scroll automatically and will clip. You should apply a fixed height to your dialogs.
+- Dialogs are neither movable nor resizable.
+- It is not possible to show multiple dialogs at once, *except* for file and folder pickers.
+- It is not possible to intercept the **ESC** gesture when dismissing a dialog. Dialogs are always dismissible using **ESC**.
+- When **TAB**ing in Windows 10, the focus border may appear incorrectly on some elements.
+- On Windows 10, the tab order in a dialog's footer may be reversed.
+- The `<dialog>` background color is different on Windows and macOS. On macOS, it is `#F5F5F5`, and on Windows it is `#FFFFFF`.

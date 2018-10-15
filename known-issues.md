@@ -26,15 +26,10 @@
 ## User Interface
 
 - Checkboxes may fail to render correctly if in a scrollable container. To work around this issue, make sure the containing element has a background color. (`transparent` does not count; macOS only.)
-- Dialogs are neither movable nor resizable.
-- It is not possible to show multiple dialogs at once, *except* for file and folder pickers.
 - It is not possible to trigger the emoji selector in a text field on macOS.
-- It is not possible to intercept the **ESC** gesture when dismissing a dialog. Dialogs are always dismissible using **ESC**.
 - SVG images are not supported in the UI.
 - When tabbing in a scroll view, the scroll view is not automatically scrolled to ensure the target control is in view (macOS Only).
-- When **TAB**ing in Windows 10, the focus border may appear incorrectly on some elements.
 - Inline layout is not supported. Inline elements will render as `block` elements instead.
-- On Windows 10, the tab order in a dialog's footer may be reversed.
 
 ### HTML Elements
 
@@ -49,7 +44,6 @@
 - `<progress>` is not currently supported.
 - HTML5 input validation is not supported.
 - Images that fail to load will not render any “broken icon” image in place.
-- The `<dialog>` background color is different on Windows and macOS. On macOS, it is `#F5F5F5`, and on Windows it is `#FFFFFF`.
 - Input elements do not accept `defaultValue`.
 - `<input type="password" />` is not supported.
 - `<option>` tags do not support `selected` or `disabled` attributes.

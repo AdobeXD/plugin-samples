@@ -2,7 +2,7 @@
 <a name="module-global-xmlhttprequest" id="module-global-xmlhttprequest"></a>
 
 ## global.XMLHttpRequest
-**Kind**: static class of [`global`](#module-global)  
+**Kind**: static class of [`global`](#module-global)
 
 * [.XMLHttpRequest](#module-global-xmlhttprequest)
     * [new XMLHttpRequest()](#new-module-global-xmlhttprequest-new)
@@ -23,10 +23,10 @@
     * [.abort()](#module-global-xmlhttprequest-abort)
     * [.getAllResponseHeaders()](#module-global-xmlhttprequest-getallresponseheaders) ⇒ `string`
     * [.getResponseHeader(name)](#module-global-xmlhttprequest-getresponseheader) ⇒ `string`
-    * [.open(method, url, [async], [user], [password])](#module_global.XMLHttpRequest+open)
+    * [.open(method, url, [async], [user], [password])](#module-global-xmlhttprequest-open)
     * [.overrideMimeType(mimetype)](#module-global-xmlhttprequest-overridemimetype)
     * [.setRequestHeader(header, data)](#module-global-xmlhttprequest-setrequestheader)
-    * [.send([data])](#module_global.XMLHttpRequest+send)
+    * [.send([data])](#module-global-xmlhttprequest-send)
 
 
 <a name="new-module-global-xmlhttprequest-new" id="new-module-global-xmlhttprequest-new"></a>
@@ -40,26 +40,26 @@ The constructor initializes an XMLHttpRequest. It must be called before any othe
 ### xmlHttpRequest.responseURL
 Unsupported
 
-**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
-**Read only**: true  
+**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)
+**Read only**: true
 
 <a name="module-global-xmlhttprequest-readystate" id="module-global-xmlhttprequest-readystate"></a>
 
 ### xmlHttpRequest.readyState ⇒ `int`
 Returns an unsigned short, the state of the request.
 
-**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
-**Returns**: `int` - returns the state of the XMLHttpRequest client.  
-**Read only**: true  
+**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)
+**Returns**: `int` - returns the state of the XMLHttpRequest client.
+**Read only**: true
 
 <a name="module-global-xmlhttprequest-responsetext" id="module-global-xmlhttprequest-responsetext"></a>
 
 ### xmlHttpRequest.responseText ⇒ `string`
 Returns a DOMString that contains the response to the request as text, or null if the request was unsuccessful or has not yet been sent.
 
-**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
-**Returns**: `string` - returns the received text response.  
-**Read only**: true  
+**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)
+**Returns**: `string` - returns the received text response.
+**Read only**: true
 
 <a name="module-global-xmlhttprequest-responsexml" id="module-global-xmlhttprequest-responsexml"></a>
 
@@ -67,13 +67,13 @@ Returns a DOMString that contains the response to the request as text, or null i
 Returns the XML document that supports W3C DOM level2 specification.
 The XML document is constructed with received bytes using XMLHttpRequest.
 
-**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
-**Returns**: `object` - returns the XML document response.  
+**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)
+**Returns**: `object` - returns the XML document response.
 **Throws**:
 
 - [`DOMException`](#domexception) if responseType is not the empty string or "document".
 
-**Read only**: true  
+**Read only**: true
 
 <a name="module-global-xmlhttprequest-response" id="module-global-xmlhttprequest-response"></a>
 
@@ -81,24 +81,24 @@ The XML document is constructed with received bytes using XMLHttpRequest.
 Returns the response from the server in the type specified by responseType.
 Only valid after the load event fires.
 
-**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
+**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)
 **Returns**: `string` \| `ArrayBuffer` \| `Blob` \| `Object` - returns an ArrayBuffer, Blob, Document, JavaScript object, or a DOMString, depending on the value of;
-XMLHttpRequest.responseType that contains the response entity body.  
-**Read only**: true  
+XMLHttpRequest.responseType that contains the response entity body.
+**Read only**: true
 
 <a name="module-global-xmlhttprequest-status" id="module-global-xmlhttprequest-status"></a>
 
 ### xmlHttpRequest.status ⇒ `string`
-**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
-**Returns**: `string` - returns the HTTP status code received from the server.  
-**Read only**: true  
+**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)
+**Returns**: `string` - returns the HTTP status code received from the server.
+**Read only**: true
 
 <a name="module-global-xmlhttprequest-statustext" id="module-global-xmlhttprequest-statustext"></a>
 
 ### xmlHttpRequest.statusText ⇒ `string`
-**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
-**Returns**: `string` - returns the response's status message with regard to the HTTP status code received from the server.  
-**Read only**: true  
+**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)
+**Returns**: `string` - returns the response's status message with regard to the HTTP status code received from the server.
+**Read only**: true
 
 <a name="module-global-xmlhttprequest-timeout" id="module-global-xmlhttprequest-timeout"></a>
 
@@ -106,14 +106,14 @@ XMLHttpRequest.responseType that contains the response entity body.
 The number of milliseconds a request can take before automatically being terminated.
 The default value is 0, which means there is no timeout.
 
-**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
+**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)
 
 <a name="module-global-xmlhttprequest-timeout" id="module-global-xmlhttprequest-timeout"></a>
 
 ### xmlHttpRequest.timeout
 Terminates a request and a timeout event will be dispatched after the given time has passed.
 
-**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
+**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)
 **Throws**:
 
 - [`DOMException`](#domexception) if called for synchronous request.
@@ -127,14 +127,14 @@ Terminates a request and a timeout event will be dispatched after the given time
 <a name="module-global-xmlhttprequest-responsetype" id="module-global-xmlhttprequest-responsetype"></a>
 
 ### xmlHttpRequest.responseType ⇒ `string`
-**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
+**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)
 **Returns**: `string` - returns a string taken from the XMLHttpRequestResponseType enum which specifies;
-what type of data the response contains.  
+what type of data the response contains.
 
 <a name="module-global-xmlhttprequest-responsetype" id="module-global-xmlhttprequest-responsetype"></a>
 
 ### xmlHttpRequest.responseType
-**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
+**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -147,12 +147,12 @@ what type of data the response contains.
 Indicates whether to send cookies on a HTTP request.
 When the value is set to true, XMLHttpRequest sends cookies. Otherwise, cookies are not sent.
 
-**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
+**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)
 
 <a name="module-global-xmlhttprequest-withcredentials" id="module-global-xmlhttprequest-withcredentials"></a>
 
 ### xmlHttpRequest.withCredentials
-**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
+**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)
 **Throws**:
 
 - [`DOMException`](#domexception) when set if state is not unsent or opened.
@@ -168,16 +168,16 @@ When the value is set to true, XMLHttpRequest sends cookies. Otherwise, cookies 
 ### xmlHttpRequest.upload ⇒ `XMLHttpRequestEventUpload`
 If XMLHttpRequest has data in the body to upload, upload related event will be notified via XMLHttpRequest.upload.
 
-**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
-**Returns**: `XMLHttpRequestEventUpload` - returns XMLHttpRequestEventUpload object.  
-**Read only**: true  
+**Kind**: instance property of [`XMLHttpRequest`](#module-global-xmlhttprequest)
+**Returns**: `XMLHttpRequestEventUpload` - returns XMLHttpRequestEventUpload object.
+**Read only**: true
 
 <a name="module-global-xmlhttprequest-abort" id="module-global-xmlhttprequest-abort"></a>
 
 ### xmlHttpRequest.abort()
 Aborts the request if it has already been sent.
 
-**Kind**: instance method of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
+**Kind**: instance method of [`XMLHttpRequest`](#module-global-xmlhttprequest)
 
 <a name="module-global-xmlhttprequest-getallresponseheaders" id="module-global-xmlhttprequest-getallresponseheaders"></a>
 
@@ -185,9 +185,9 @@ Aborts the request if it has already been sent.
 Returns sorted and combined response’s header list.
 Each header field is defined by a group of [lower cased name]": "[value]"\r\n". Combined value is separated by ", ".
 
-**Kind**: instance method of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
-**Returns**: `string` - returns response’s header list.  
-**Read only**: true  
+**Kind**: instance method of [`XMLHttpRequest`](#module-global-xmlhttprequest)
+**Returns**: `string` - returns response’s header list.
+**Read only**: true
 
 <a name="module-global-xmlhttprequest-getresponseheader" id="module-global-xmlhttprequest-getresponseheader"></a>
 
@@ -195,9 +195,9 @@ Each header field is defined by a group of [lower cased name]": "[value]"\r\n". 
 Returns the matching value of the given field name in response's header.
 The search key value is case-insensitive
 
-**Kind**: instance method of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
-**Returns**: `string` - returns the value of the given name in response's header list.  
-**Read only**: true  
+**Kind**: instance method of [`XMLHttpRequest`](#module-global-xmlhttprequest)
+**Returns**: `string` - returns the value of the given name in response's header list.
+**Read only**: true
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -210,7 +210,7 @@ The search key value is case-insensitive
 Initializes a request. This method is to be used from JavaScript code; to initialize a request from native code, use openRequest() instead.
 Self-signed certificates are not currently supported for HTTPS connections.
 
-**Kind**: instance method of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
+**Kind**: instance method of [`XMLHttpRequest`](#module-global-xmlhttprequest)
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -227,7 +227,7 @@ Self-signed certificates are not currently supported for HTTPS connections.
 Use a MIME type other than the one provided by the server when interpreting the data being transferred in a request.
 If parsing the MIME type fails, "application/octet-stream" will be used to interpret the data.
 
-**Kind**: instance method of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
+**Kind**: instance method of [`XMLHttpRequest`](#module-global-xmlhttprequest)
 **Throws**:
 
 - [`DOMException`](#domexception) if state is loading or done
@@ -243,7 +243,7 @@ If parsing the MIME type fails, "application/octet-stream" will be used to inter
 ### xmlHttpRequest.setRequestHeader(header, data)
 Sets the value of an HTTP request header. You must call setRequestHeader()after open(), but before send().
 
-**Kind**: instance method of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
+**Kind**: instance method of [`XMLHttpRequest`](#module-global-xmlhttprequest)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -256,7 +256,7 @@ Sets the value of an HTTP request header. You must call setRequestHeader()after 
 ### xmlHttpRequest.send([data])
 Sends the request. If the request is asynchronous (which is the default), this method returns as soon as the request is sent.
 
-**Kind**: instance method of [`XMLHttpRequest`](#module-global-xmlhttprequest)  
+**Kind**: instance method of [`XMLHttpRequest`](#module-global-xmlhttprequest)
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |

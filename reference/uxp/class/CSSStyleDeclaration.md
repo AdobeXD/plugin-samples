@@ -2,7 +2,7 @@
 <a name="cssstyledeclaration" id="cssstyledeclaration"></a>
 
 ## CSSStyleDeclaration
-**Kind**: global class  
+**Kind**: global class
 
 * [CSSStyleDeclaration](#cssstyledeclaration)
     * _instance_
@@ -12,7 +12,7 @@
         * [.cssFloat](#cssstyledeclaration-cssfloat)
         * [.item(index)](#cssstyledeclaration-item) ⇒ `\*`
         * [.getPropertyValue(property)](#cssstyledeclaration-getpropertyvalue) ⇒ `\*`
-        * [.setProperty(property, value, [priority])](#CSSStyleDeclaration+setProperty)
+        * [.setProperty(property, value, [priority])](#cssstyledeclaration-setproperty)
         * [.removeProperty(property)](#cssstyledeclaration-removeproperty)
     * _static_
         * [.CSSStyleDeclaration](#cssstyledeclaration-cssstyledeclaration)
@@ -22,71 +22,71 @@
 <a name="cssstyledeclaration-length" id="cssstyledeclaration-length"></a>
 
 ### cssStyleDeclaration.length
-**Kind**: instance property of [`CSSStyleDeclaration`](#cssstyledeclaration)  
-**Read only**: true  
+**Kind**: instance property of [`CSSStyleDeclaration`](#cssstyledeclaration)
+**Read only**: true
 
 <a name="cssstyledeclaration-parentrule" id="cssstyledeclaration-parentrule"></a>
 
 ### cssStyleDeclaration.parentRule
-**Kind**: instance property of [`CSSStyleDeclaration`](#cssstyledeclaration)  
-**Read only**: true  
+**Kind**: instance property of [`CSSStyleDeclaration`](#cssstyledeclaration)
+**Read only**: true
 
 <a name="cssstyledeclaration-cssfloat" id="cssstyledeclaration-cssfloat"></a>
 
 ### cssStyleDeclaration.cssFloat
-**Kind**: instance property of [`CSSStyleDeclaration`](#cssstyledeclaration)  
+**Kind**: instance property of [`CSSStyleDeclaration`](#cssstyledeclaration)
 
 <a name="cssstyledeclaration-cssfloat" id="cssstyledeclaration-cssfloat"></a>
 
 ### cssStyleDeclaration.cssFloat
-**Kind**: instance property of [`CSSStyleDeclaration`](#cssstyledeclaration)  
+**Kind**: instance property of [`CSSStyleDeclaration`](#cssstyledeclaration)
 
 <a name="cssstyledeclaration-item" id="cssstyledeclaration-item"></a>
 
 ### cssStyleDeclaration.item(index) ⇒ `\*`
-**Kind**: instance method of [`CSSStyleDeclaration`](#cssstyledeclaration)  
+**Kind**: instance method of [`CSSStyleDeclaration`](#cssstyledeclaration)
 
 | Param | Type |
 | --- | --- |
-| index | `\*` | 
+| index | `\*` |
 
 
 <a name="cssstyledeclaration-getpropertyvalue" id="cssstyledeclaration-getpropertyvalue"></a>
 
 ### cssStyleDeclaration.getPropertyValue(property) ⇒ `\*`
-**Kind**: instance method of [`CSSStyleDeclaration`](#cssstyledeclaration)  
+**Kind**: instance method of [`CSSStyleDeclaration`](#cssstyledeclaration)
 
 | Param | Type |
 | --- | --- |
-| property | `\*` | 
+| property | `\*` |
 
 
 <a name="cssstyledeclaration-setproperty" id="cssstyledeclaration-setproperty"></a>
 
 ### cssStyleDeclaration.setProperty(property, value, [priority])
-**Kind**: instance method of [`CSSStyleDeclaration`](#cssstyledeclaration)  
+**Kind**: instance method of [`CSSStyleDeclaration`](#cssstyledeclaration)
 
 | Param | Type | Default |
 | --- | --- | --- |
-| property | `\*` |  | 
-| value | `\*` |  | 
-| [priority] | `string` | <code>&quot;\&quot;\&quot;&quot;</code> | 
+| property | `\*` |  |
+| value | `\*` |  |
+| [priority] | `string` | <code>&quot;\&quot;\&quot;&quot;</code> |
 
 
 <a name="cssstyledeclaration-removeproperty" id="cssstyledeclaration-removeproperty"></a>
 
 ### cssStyleDeclaration.removeProperty(property)
-**Kind**: instance method of [`CSSStyleDeclaration`](#cssstyledeclaration)  
+**Kind**: instance method of [`CSSStyleDeclaration`](#cssstyledeclaration)
 
 | Param | Type |
 | --- | --- |
-| property | `\*` | 
+| property | `\*` |
 
 
 <a name="cssstyledeclaration-cssstyledeclaration" id="cssstyledeclaration-cssstyledeclaration"></a>
 
 ### CSSStyleDeclaration.CSSStyleDeclaration
-**Kind**: static class of [`CSSStyleDeclaration`](#cssstyledeclaration)  
+**Kind**: static class of [`CSSStyleDeclaration`](#cssstyledeclaration)
 
 <a name="new-cssstyledeclaration-cssstyledeclaration-new" id="new-cssstyledeclaration-cssstyledeclaration-new"></a>
 
@@ -96,6 +96,6 @@ Creates an instance of CSSStyleDeclaration.
 
 | Param | Type |
 | --- | --- |
-| style | `\*` | 
-| parentRule | `\*` | 
+| style | `\*` |
+| parentRule | `\*` |
 

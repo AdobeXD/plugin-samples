@@ -2,7 +2,7 @@
 <a name="module-global-websocket" id="module-global-websocket"></a>
 
 ## global.WebSocket
-**Kind**: static class of [`global`](#module-global)  
+**Kind**: static class of [`global`](#module-global)
 
 * [.WebSocket](#module-global-websocket)
     * [new WebSocket(url, protocols)](#new-module-global-websocket-new)
@@ -11,7 +11,7 @@
     * [.binaryType](#module-global-websocket-binarytype)
     * [.binaryType](#module-global-websocket-binarytype) ⇒ `string`
     * [.send(data)](#module-global-websocket-send)
-    * [.close([code], [reason])](#module_global.WebSocket+close)
+    * [.close([code], [reason])](#module-global-websocket-close)
 
 
 <a name="new-module-global-websocket-new" id="new-module-global-websocket-new"></a>
@@ -27,23 +27,23 @@
 <a name="module-global-websocket-protocol" id="module-global-websocket-protocol"></a>
 
 ### webSocket.protocol ⇒ `string`
-**Kind**: instance property of [`WebSocket`](#module-global-websocket)  
+**Kind**: instance property of [`WebSocket`](#module-global-websocket)
 **Returns**: `string` - returns a string indicating the name of the sub-protocol the server selected;
-this will be one of the strings specified in the protocols parameter when creating the WebSocket object.  
+this will be one of the strings specified in the protocols parameter when creating the WebSocket object.
 
 <a name="module-global-websocket-bufferedamount" id="module-global-websocket-bufferedamount"></a>
 
 ### webSocket.bufferedAmount ⇒ `number`
-**Kind**: instance property of [`WebSocket`](#module-global-websocket)  
+**Kind**: instance property of [`WebSocket`](#module-global-websocket)
 **Returns**: `number` - returns the number of bytes of data that have been queued using calls to send() but not yet transmitted to the network.
 This value resets to zero once all queued data has been sent.
 This value does not reset to zero when the connection is closed;
-if you keep calling send(), this will continue to climb. Read only  
+if you keep calling send(), this will continue to climb. Read only
 
 <a name="module-global-websocket-binarytype" id="module-global-websocket-binarytype"></a>
 
 ### webSocket.binaryType
-**Kind**: instance property of [`WebSocket`](#module-global-websocket)  
+**Kind**: instance property of [`WebSocket`](#module-global-websocket)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -53,8 +53,8 @@ if you keep calling send(), this will continue to climb. Read only
 <a name="module-global-websocket-binarytype" id="module-global-websocket-binarytype"></a>
 
 ### webSocket.binaryType ⇒ `string`
-**Kind**: instance property of [`WebSocket`](#module-global-websocket)  
-**Returns**: `string` - returns the string indicating the binary data type.  
+**Kind**: instance property of [`WebSocket`](#module-global-websocket)
+**Returns**: `string` - returns the string indicating the binary data type.
 
 <a name="module-global-websocket-send" id="module-global-websocket-send"></a>
 
@@ -63,7 +63,7 @@ Enqueues the specified data to be transmitted to the other end over the WebSocke
 increasing the value of bufferedAmount by the number of bytes needed to contain the data.
 If the data can't be sent (for example, because it needs to be buffered but the buffer is full), the socket is closed automatically.
 
-**Kind**: instance method of [`WebSocket`](#module-global-websocket)  
+**Kind**: instance method of [`WebSocket`](#module-global-websocket)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -75,7 +75,7 @@ If the data can't be sent (for example, because it needs to be buffered but the 
 ### webSocket.close([code], [reason])
 Closes the websocket connection
 
-**Kind**: instance method of [`WebSocket`](#module-global-websocket)  
+**Kind**: instance method of [`WebSocket`](#module-global-websocket)
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |

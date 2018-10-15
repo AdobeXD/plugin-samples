@@ -1,1 +1,0 @@
-# Building a Modal Dialog with React

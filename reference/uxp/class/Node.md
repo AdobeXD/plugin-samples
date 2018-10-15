@@ -2,10 +2,10 @@
 <a name="node" id="node"></a>
 
 ## Node ⇐ [`EventTarget`](#eventtarget)
-**Kind**: global class  
-**Extends**: [`EventTarget`](#eventtarget)  
-**Access**: public  
-**See**: https://developer.mozilla.org/en-US/docs/Web/API/Node  
+**Kind**: global class
+**Extends**: [`EventTarget`](#eventtarget)
+**Access**: public
+**See**: https://developer.mozilla.org/en-US/docs/Web/API/Node
 
 * [Node](#node) ⇐ [`EventTarget`](#eventtarget)
     * [new Node(ownerDocument)](#new-node-new)
@@ -36,8 +36,8 @@
         * [.before(...nodes)](#node-before)
         * [.after(...nodes)](#node-after)
         * [.replaceWith(...nodes)](#node-replacewith)
-        * [.addEventListener(eventName, callback, [capture])](#EventTarget+addEventListener)
-        * [.removeEventListener(eventName, callback, [capture])](#EventTarget+removeEventListener)
+        * [.addEventListener(eventName, callback, [capture])](#eventtarget-addeventlistener)
+        * [.removeEventListener(eventName, callback, [capture])](#eventtarget-removeeventlistener)
         * [.dispatchEvent(event)](#eventtarget-dispatchevent)
     * _static_
         * [.ELEMENT_NODE](#node-element-node)
@@ -56,256 +56,256 @@ Creates an instance of Node.
 
 | Param | Type |
 | --- | --- |
-| ownerDocument | `\*` | 
+| ownerDocument | `\*` |
 
 
 <a name="node-contenteditable" id="node-contenteditable"></a>
 
 ### node.contentEditable
-**Kind**: instance property of [`Node`](#node)  
-**Read only**: true  
+**Kind**: instance property of [`Node`](#node)
+**Read only**: true
 
 <a name="node-isconnected" id="node-isconnected"></a>
 
 ### node.isConnected : `boolean`
-**Kind**: instance property of [`Node`](#node)  
-**Read only**: true  
+**Kind**: instance property of [`Node`](#node)
+**Read only**: true
 
 <a name="node-parentnode" id="node-parentnode"></a>
 
 ### node.parentNode : [`Node`](#node)
-**Kind**: instance property of [`Node`](#node)  
-**Read only**: true  
+**Kind**: instance property of [`Node`](#node)
+**Read only**: true
 
 <a name="node-firstchild" id="node-firstchild"></a>
 
 ### node.firstChild : [`Node`](#node)
-**Kind**: instance property of [`Node`](#node)  
-**Read only**: true  
+**Kind**: instance property of [`Node`](#node)
+**Read only**: true
 
 <a name="node-lastchild" id="node-lastchild"></a>
 
 ### node.lastChild : [`Node`](#node)
-**Kind**: instance property of [`Node`](#node)  
-**Read only**: true  
+**Kind**: instance property of [`Node`](#node)
+**Read only**: true
 
 <a name="node-previoussibling" id="node-previoussibling"></a>
 
 ### node.previousSibling : [`Node`](#node)
-**Kind**: instance property of [`Node`](#node)  
-**Read only**: true  
+**Kind**: instance property of [`Node`](#node)
+**Read only**: true
 
 <a name="node-nextsibling" id="node-nextsibling"></a>
 
 ### node.nextSibling : [`Node`](#node)
-**Kind**: instance property of [`Node`](#node)  
-**Read only**: true  
+**Kind**: instance property of [`Node`](#node)
+**Read only**: true
 
 <a name="node-firstelementchild" id="node-firstelementchild"></a>
 
 ### node.firstElementChild : [`Node`](#node)
-**Kind**: instance property of [`Node`](#node)  
-**Read only**: true  
+**Kind**: instance property of [`Node`](#node)
+**Read only**: true
 
 <a name="node-lastelementchild" id="node-lastelementchild"></a>
 
 ### node.lastElementChild : [`Node`](#node)
-**Kind**: instance property of [`Node`](#node)  
-**Read only**: true  
+**Kind**: instance property of [`Node`](#node)
+**Read only**: true
 
 <a name="node-previouselementsibling" id="node-previouselementsibling"></a>
 
 ### node.previousElementSibling : [`Node`](#node)
-**Kind**: instance property of [`Node`](#node)  
-**Read only**: true  
+**Kind**: instance property of [`Node`](#node)
+**Read only**: true
 
 <a name="node-nextelementsibling" id="node-nextelementsibling"></a>
 
 ### node.nextElementSibling : [`Node`](#node)
-**Kind**: instance property of [`Node`](#node)  
-**Read only**: true  
+**Kind**: instance property of [`Node`](#node)
+**Read only**: true
 
 <a name="node-textcontent" id="node-textcontent"></a>
 
 ### node.textContent : `string`
-**Kind**: instance property of [`Node`](#node)  
+**Kind**: instance property of [`Node`](#node)
 
 <a name="node-childnodes" id="node-childnodes"></a>
 
 ### node.childNodes : [`NodeList`](#nodelist)
-**Kind**: instance property of [`Node`](#node)  
-**Read only**: true  
+**Kind**: instance property of [`Node`](#node)
+**Read only**: true
 
 <a name="node-ownerdocument" id="node-ownerdocument"></a>
 
 ### node.ownerDocument
-**Kind**: instance property of [`Node`](#node)  
-**Read only**: true  
+**Kind**: instance property of [`Node`](#node)
+**Read only**: true
 
 <a name="node-attributes" id="node-attributes"></a>
 
 ### node.attributes
-**Kind**: instance property of [`Node`](#node)  
-**Read only**: true  
+**Kind**: instance property of [`Node`](#node)
+**Read only**: true
 
 <a name="node-offsetparent" id="node-offsetparent"></a>
 
 ### node.offsetParent
-**Kind**: instance property of [`Node`](#node)  
-**Read only**: true  
+**Kind**: instance property of [`Node`](#node)
+**Read only**: true
 
 <a name="node-haschildnodes" id="node-haschildnodes"></a>
 
 ### node.hasChildNodes() ⇒ `boolean`
-**Kind**: instance method of [`Node`](#node)  
+**Kind**: instance method of [`Node`](#node)
 
 <a name="node-clonenode" id="node-clonenode"></a>
 
 ### node.cloneNode(deep) ⇒ [`Node`](#node)
-**Kind**: instance method of [`Node`](#node)  
+**Kind**: instance method of [`Node`](#node)
 
 | Param | Type |
 | --- | --- |
-| deep | `boolean` | 
+| deep | `boolean` |
 
 
 <a name="node-appendchild" id="node-appendchild"></a>
 
 ### node.appendChild(child) ⇒ [`Node`](#node)
-**Kind**: instance method of [`Node`](#node)  
+**Kind**: instance method of [`Node`](#node)
 
 | Param | Type |
 | --- | --- |
-| child | [`Node`](#node) | 
+| child | [`Node`](#node) |
 
 
 <a name="node-insertbefore" id="node-insertbefore"></a>
 
 ### node.insertBefore(child, before) ⇒ [`Node`](#node)
-**Kind**: instance method of [`Node`](#node)  
+**Kind**: instance method of [`Node`](#node)
 
 | Param | Type |
 | --- | --- |
-| child | [`Node`](#node) | 
-| before | [`Node`](#node) | 
+| child | [`Node`](#node) |
+| before | [`Node`](#node) |
 
 
 <a name="node-replacechild" id="node-replacechild"></a>
 
 ### node.replaceChild(newChild, oldChild) ⇒ [`Node`](#node)
-**Kind**: instance method of [`Node`](#node)  
+**Kind**: instance method of [`Node`](#node)
 
 | Param | Type |
 | --- | --- |
-| newChild | [`Node`](#node) | 
-| oldChild | [`Node`](#node) | 
+| newChild | [`Node`](#node) |
+| oldChild | [`Node`](#node) |
 
 
 <a name="node-removechild" id="node-removechild"></a>
 
 ### node.removeChild(child) ⇒ [`Node`](#node)
-**Kind**: instance method of [`Node`](#node)  
+**Kind**: instance method of [`Node`](#node)
 
 | Param | Type |
 | --- | --- |
-| child | [`Node`](#node) | 
+| child | [`Node`](#node) |
 
 
 <a name="node-remove" id="node-remove"></a>
 
 ### node.remove()
-**Kind**: instance method of [`Node`](#node)  
+**Kind**: instance method of [`Node`](#node)
 
 <a name="node-before" id="node-before"></a>
 
 ### node.before(...nodes)
-**Kind**: instance method of [`Node`](#node)  
+**Kind**: instance method of [`Node`](#node)
 
 | Param | Type |
 | --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
+| ...nodes | [`Array.<Node>`](#node) |
 
 
 <a name="node-after" id="node-after"></a>
 
 ### node.after(...nodes)
-**Kind**: instance method of [`Node`](#node)  
+**Kind**: instance method of [`Node`](#node)
 
 | Param | Type |
 | --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
+| ...nodes | [`Array.<Node>`](#node) |
 
 
 <a name="node-replacewith" id="node-replacewith"></a>
 
 ### node.replaceWith(...nodes)
-**Kind**: instance method of [`Node`](#node)  
+**Kind**: instance method of [`Node`](#node)
 
 | Param | Type |
 | --- | --- |
-| ...nodes | [`Array.<Node>`](#node) | 
+| ...nodes | [`Array.<Node>`](#node) |
 
 
 <a name="eventtarget-addeventlistener" id="eventtarget-addeventlistener"></a>
 
 ### node.addEventListener(eventName, callback, [capture])
-**Kind**: instance method of [`Node`](#node)  
+**Kind**: instance method of [`Node`](#node)
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
-| [capture] | `boolean` | <code>false</code> | 
+| eventName | `\*` |  |
+| callback | `\*` |  |
+| [capture] | `boolean` | <code>false</code> |
 
 
 <a name="eventtarget-removeeventlistener" id="eventtarget-removeeventlistener"></a>
 
 ### node.removeEventListener(eventName, callback, [capture])
-**Kind**: instance method of [`Node`](#node)  
+**Kind**: instance method of [`Node`](#node)
 
 | Param | Type | Default |
 | --- | --- | --- |
-| eventName | `\*` |  | 
-| callback | `\*` |  | 
-| [capture] | `boolean` | <code>false</code> | 
+| eventName | `\*` |  |
+| callback | `\*` |  |
+| [capture] | `boolean` | <code>false</code> |
 
 
 <a name="eventtarget-dispatchevent" id="eventtarget-dispatchevent"></a>
 
 ### node.dispatchEvent(event)
-**Kind**: instance method of [`Node`](#node)  
+**Kind**: instance method of [`Node`](#node)
 
 | Param | Type |
 | --- | --- |
-| event | `\*` | 
+| event | `\*` |
 
 
 <a name="node-element-node" id="node-element-node"></a>
 
 ### Node.ELEMENT_NODE
-**Kind**: static property of [`Node`](#node)  
+**Kind**: static property of [`Node`](#node)
 
 <a name="node-attribute-node" id="node-attribute-node"></a>
 
 ### Node.ATTRIBUTE_NODE
-**Kind**: static property of [`Node`](#node)  
+**Kind**: static property of [`Node`](#node)
 
 <a name="node-text-node" id="node-text-node"></a>
 
 ### Node.TEXT_NODE
-**Kind**: static property of [`Node`](#node)  
+**Kind**: static property of [`Node`](#node)
 
 <a name="node-document-node" id="node-document-node"></a>
 
 ### Node.DOCUMENT_NODE
-**Kind**: static property of [`Node`](#node)  
+**Kind**: static property of [`Node`](#node)
 
 <a name="node-document-fragment-node" id="node-document-fragment-node"></a>
 
 ### Node.DOCUMENT_FRAGMENT_NODE
-**Kind**: static property of [`Node`](#node)  
+**Kind**: static property of [`Node`](#node)
 
 <a name="node-comment-node" id="node-comment-node"></a>
 
 ### Node.COMMENT_NODE
-**Kind**: static property of [`Node`](#node)  
+**Kind**: static property of [`Node`](#node)
