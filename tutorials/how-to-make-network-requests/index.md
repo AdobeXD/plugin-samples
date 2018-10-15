@@ -209,9 +209,9 @@ function applyImage(selection) {
 
 Want to expand on what you learned here? Have a look at these references to see options for customizing this sample plugin:
 
-- [Network I/O](/reference/uxp/network-IO.md)
-- [XMLHttpRequest](/reference/uxp/network-IO.md#xmlhttprequest-support)
-- [fetch](/reference/uxp/network-IO.md#fetch-support)
+- [Network I/O](/reference/uxp/network-index.md)
+- [XMLHttpRequest](/reference/uxp/network-index.md#xmlhttprequest-support)
+- [fetch](/reference/uxp/network-index.md#fetch-support)
 
 Ready to explore further? Take a look at our other resources:
 
