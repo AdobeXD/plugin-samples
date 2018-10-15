@@ -175,7 +175,7 @@ After saving all of your changes, reload the plugin in XD and run it. You'll now
 Want to expand on what you learned here? Have a look at these references to see options for customizing this sample plugin:
 
 - [Text](/reference/scenegraph.md#text)
-- [Color](/reference/Color.md)
+- [Color](/reference/Color.html)
 
 
 Ready to explore further? Take a look at our other resources:
