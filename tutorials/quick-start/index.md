@@ -17,6 +17,19 @@ At the end of the tutorial, we'll suggest some next steps for going deeper with 
 > **Info**
 > Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/quick-start).
 
+
+### 0. Get a plugin ID from the I/O Developer Console
+
+Before you start, you'll want to create a plugin on the Adobe I/O Developer Console.
+
+1. [Go to the I/O Console and sign in or sign up](https://console.adobe.io/plugins)
+1. Click "New Plugin"
+1. Give your plugin a unique name and click "Create Plugin"
+1. On the following page, get the 8-character unique plugin ID.
+
+We'll use this plugin ID in one of the next steps.
+
+
 ### 1. Identify where your plugins are located
 
 Adobe XD loads plugins that are in development from a `develop` folder in specific location on your machine. To get to that folder, simply go to this menu item: _Plugins > Development > Show Develop Folder_.
@@ -72,6 +85,12 @@ In the previous step, you created a file named `manifest.json`. Open that file a
         }
     ]
 }
+```
+
+Be sure to replace the `id` value with the unique plugin ID you got from the I/O Console in the first step:
+
+```json
+"id": "1234ABCD",
 ```
 
 If you're curious about what each entry means, [see the manifest documentation](/reference/structure/manifest.md).
