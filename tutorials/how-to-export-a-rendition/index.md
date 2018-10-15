@@ -1,5 +1,5 @@
 # How to export a rendition
-This sample describes how an XD plugin can invoke the default file picker and generate a rendition of the selected artboard for export.
+This sample describes how an XD plugin can invoke the default folder picker and generate a rendition of the selected artboard for export.
 
 
 ## Prerequisites
@@ -80,19 +80,19 @@ const application = require("application");
 const fs = require("uxp").storage.localFileSystem;
 ```
 
-Now the `application` module and `localFileSystem` class are required in and ready to be used. These modules are required to invoke the file picker and export renditions.
+Now the `application` module and `localFileSystem` class are required in and ready to be used. These modules are required to invoke the folder picker and export renditions.
 
 
-### 3. Invoke the file picker
+### 3. Invoke the folder picker
 
-Here, we'll use `uxp.storage.localFileSystem` (our `fs` constant) to invoke the file picker:
+Here, we'll use `uxp.storage.localFileSystem` (our `fs` constant) to invoke the folder picker:
 
 ```js
 const folder = await fs.getFolder();
 const file = await folder.createFile("rendition.png");
 ```
 
-This will invoke the default file picker for user to choose the save directory and create a file named `rendition.png`.
+This will invoke the default folder picker for user to choose the save directory and create a file named `rendition.png`.
 
 
 ### 4. Define your rendition settings
@@ -143,7 +143,7 @@ application.createRenditions(renditionSettings)    // [1]
 
 After saving all of your changes, reload the plugin in XD. Make sure to select an artboard and run the plugin command.
 
-You should see a file picker like this one:
+You should see a folder picker like this one:
 
 ![](/../images/export-rendition-pick-file.png)
 
