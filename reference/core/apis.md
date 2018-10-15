@@ -16,7 +16,7 @@ Adobe XD provides several APIs to you, via the `require` method. You can also im
       ```
 * [commands](../commands.md) - Invoke commands to change the document structure and perform other complex operations.
     * Load this module explicitly: `let commands = require("commands");`
-* [storage](../uxp/using-file-apis) - Read and write files on disk
+* [storage](../uxp/storage-index.md) - Read and write files on disk
     * Load this module explicitly: `const fs = require("uxp").storage.localFileSystem;`
 * [Network](../uxp/network-index.md) - Use browser-style `XMLHttpRequest`, `fetch()`, and `WebSocket` APIs to access the network.
     * These APIs are in the global namespace, so you can use them without any `require()` statements
