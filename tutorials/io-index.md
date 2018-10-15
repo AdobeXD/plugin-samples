@@ -5,7 +5,7 @@ If you want your plugin to go beyond the document to work with local files or we
 The tutorials contained in this section will show you a few ways XD plugins can work with file and network I/O:
 
 * [How to export a rendition](./how-to-export-a-rendition/index.md)
-* [How to read a file](./how-to-import/index.md)
+* [How to read a file](./how-to-read-a-file/index.md)
 * [How to integrate with OAuth](./how-to-integrate-with-OAuth/index.md)
 * [How to make a simple network request](./how-to-make-network-requests/index.md)
-* [How to use WebSockets](./how-to-use-websockets/index.md)
+<!-- * [How to use WebSockets](./how-to-use-websockets/index.md) -->
