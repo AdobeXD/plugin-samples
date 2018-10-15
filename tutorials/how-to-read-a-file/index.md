@@ -27,7 +27,7 @@ Replace the JSON object in your manifest with the one below, noting the changes 
 
 ```json
 {
-    "id": "HOW_TO_READ_A_FILE",
+    "id": "ID_FROM_IO_CONSOLE",
     "name": "Insert Text from File",
     "host": {
         "app": "XD",

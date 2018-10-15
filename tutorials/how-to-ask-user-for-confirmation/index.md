@@ -92,7 +92,7 @@ Be sure to add this to your plugin `manifest.json` as well:
 
 ```json
 {
-    "id": "your.id.here",
+    "id": "ID_FROM_IO_CONSOLE",
     "name": "Show Confirmation",
     "host": {
         "app": "XD",

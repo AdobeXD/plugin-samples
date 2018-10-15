@@ -25,7 +25,7 @@ Replace the JSON object in your manifest with the one below, noting the changes 
 
 ```json
 {
-    "id": "HOW_TO_EXPORT_A_RENDITION",
+    "id": "ID_FROM_IO_CONSOLE",
     "name": "Export Rendition Plugin",
     "host": {
         "app": "XD",

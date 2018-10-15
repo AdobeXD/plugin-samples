@@ -57,7 +57,7 @@ In the previous step, you created a file named `manifest.json`. Open that file a
 
 ```json
 {
-    "id": "QUICK_START",
+    "id": "ID_FROM_IO_CONSOLE",
     "name": "Hello World sample plugin",
     "host": {
         "app": "XD",

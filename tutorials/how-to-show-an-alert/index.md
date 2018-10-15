@@ -104,7 +104,7 @@ Be sure to add this to your plugin `manifest.json` as well:
 
 ```json
 {
-  "id": "HOW_TO_SHOW_AN_ALERT",
+  "id": "ID_FROM_IO_CONSOLE",
   "name": "(H2) How to show an alert",
   "version": "1.0.0",
   "host": {

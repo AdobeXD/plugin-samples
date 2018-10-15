@@ -25,7 +25,7 @@ Replace the JSON object in your manifest with the one below, noting the changes 
 
 ```json
 {
-    "id": "HOW_TO_WORK_WITH_SCENENODELIST",
+    "id": "ID_FROM_IO_CONSOLE",
     "name": "SceneNodeList Plugin",
     "host": {
         "app": "XD",

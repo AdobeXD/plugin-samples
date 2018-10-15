@@ -27,7 +27,7 @@ Replace the JSON object in your manifest with the one below, noting the changes 
 
 ```json
 {
-    "id": "HOW_TO_MAKE_NETWORK_REQUESTS",
+    "id": "ID_FROM_IO_CONSOLE",
     "name": "Network IO",
     "version": "1.0.0",
     "host": {

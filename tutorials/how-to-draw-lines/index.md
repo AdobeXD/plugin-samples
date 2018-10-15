@@ -27,7 +27,7 @@ Replace the JSON object in your manifest with the one below, noting the changes 
 
 ```json
 {
-    "id": "HOW_TO_DRAW_LINES",
+    "id": "ID_FROM_IO_CONSOLE",
     "name": "Create Lines sample plugin",
     "host": {
         "app": "XD",
