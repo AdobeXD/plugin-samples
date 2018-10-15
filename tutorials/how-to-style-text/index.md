@@ -115,7 +115,7 @@ Here are a few things to notice about the `styleRange` property of `Text` object
 
 If you reload the plugin and run it, you should see the following result:
 
-![Red text](/assets/red.png)
+![Red text](/images/red.png)
 
 Not bad for a few lines of code! Let's push it a little further.
 
@@ -167,7 +167,7 @@ Here's what's changed:
 
 After saving all of your changes, reload the plugin in XD and run it. You'll now have rainbow-colored text:
 
-![Rainbow text](/assets/rainbow.png)
+![Rainbow text](/images/rainbow.png)
 
 
 ## Next Steps
