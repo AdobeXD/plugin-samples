@@ -9,7 +9,7 @@ You can listen for the _default_ gesture (typically [ENTER]) by registering for 
 
 ```js
 function onsubmit() {
-    dialog.close(document.getElementById("name").value);
+    dialog.close("ok");
 }
 form.onsubmit = onsubmit;
 ```
@@ -18,7 +18,7 @@ You should also register a `click` handler for your "OK" and "Cancel" buttons:
 
 ```js
 const cancelButton = document.querySelector("#cancel");
-cancelButton.addEventListener("click", () => dialog.close());
+cancelButton.addEventListener("click", () => dialog.close("reasonCanceled"));
 
 const okButton = document.querySelector("#ok");
 okButton.addEventListener("click", e => {
