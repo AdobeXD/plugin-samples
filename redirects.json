@@ -1,0 +1,8 @@
+{
+    "redirects": [
+            {
+                "from": "guides/how-to-package-a-plugin.html",
+                "to": "distribution/packaging.html"
+            }
+        ]
+}
