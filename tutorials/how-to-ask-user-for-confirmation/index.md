@@ -111,7 +111,8 @@ Be sure to add this to your plugin `manifest.json` as well:
 
 ## Next Steps
 
-Description
+Ready to explore further? Take a look at our other resources:
 
-- [How to debug](/tutorials/debugging/index.md)
-- [Other samples](https://github.com/AdobeXD/Plugin-Samples)
+- [Tutorials](/tutorials)
+- [Sample code repos](https://github.com/AdobeXD/plugin-samples)
+
