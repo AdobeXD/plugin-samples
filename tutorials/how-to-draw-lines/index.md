@@ -171,7 +171,7 @@ function createLinesHandlerFunction(selection) {    // [1]
 
 After saving all of your changes, reload the plugin in XD and run it. The result should be similar to the following:
 
-![](/plugin-docs/images/readme-assets/lines.png)
+![](/plugin-docs/images/lines.png)
 
 
 ## Next Steps

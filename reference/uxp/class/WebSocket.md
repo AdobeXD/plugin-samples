@@ -80,5 +80,4 @@ Closes the websocket connection
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [code] | `integer` | <code>1000</code> | A integer value as per https://developer.mozilla.org/en-US/docs/Web/API/WebSocket#close(). |
-| [reason] | `string` | <code>&quot;\&quot;\&quot;&quot;</code> | A human-readable string explaining why the connection is closing. Throws an exception of Error Object if invalid code or reason is passed Refer https://wiki.corp.adobe.com/pages/viewpage.action?pageId=1455687313#FileandNetworkI/OTestCases-CloseMethodbehaviorforWebSockets |
-
+| [reason] | `string` | <code>&quot;\&quot;\&quot;&quot;</code> | A human-readable string explaining why the connection is closing. Throws an exception of Error Object if invalid code or reason is passed

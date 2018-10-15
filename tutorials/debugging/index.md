@@ -31,7 +31,7 @@ There's also a handy keyboard shortcut:
 
 If there are any errors blocking the plugin from loading, they will appear in the developer console on reload:
 
-![reload-plugins](/images/readme-assets/reload-plugins.png)
+![reload-plugins](/images/reload-plugins.png)
 
 ### 3. Try logging messages to the developer console
 
@@ -61,11 +61,11 @@ function sayHello(selection) {
 
 Your `console.log` messages will appear in the developer console:
 
-![start-message](/images/readme-assets/start-message.png)
+![start-message](/images/start-message.png)
 
 It looks like the function is running... maybe there is another problem.
 
-![wrong-color](/images/readme-assets/wrong-color.png)
+![wrong-color](/images/wrong-color.png)
 
 Oops, the fill color set by the plugin is `#FFFFFF`, which is white: the same color as this artboard's background.
 
