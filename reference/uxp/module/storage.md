@@ -290,8 +290,7 @@ await someFile.moveTo(someFolder, {newName: 'novel.txt', {overwrite: true})
 <a name="module-storage-entry-delete" id="module-storage-entry-delete"></a>
 
 #### entry.delete() ⇒ `Promise`
-Removes this entry from the file system. If the entry is a folder, all the
-contents will also be removed.
+Removes this entry from the file system. If the entry is a folder, you must remove the files inside before removing the folder.
 
 **Kind**: instance method of [`Entry`](#module-storage-entry)
 **Since**: XD 13
