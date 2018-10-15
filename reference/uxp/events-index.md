@@ -83,7 +83,7 @@ Dispatched when a websocket is closed.
 
  &nbsp;             | &nbsp;
 --------------------|---------------------------------------
-Applies to          | `Websocket`
+Applies to          | `WebSocket`
 Since               | XD 13
 
 ## focus
