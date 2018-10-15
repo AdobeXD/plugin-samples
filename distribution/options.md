@@ -4,7 +4,7 @@ Once you have a packaged plugin, you're ready to distribute. You can make your p
 
 ## Prerequisite
 
-- [A packaged plugin](/distribution/packaging.md)
+- [A packaged plugin](/packaging.md)
 
 ## The XD plugin manager
 
