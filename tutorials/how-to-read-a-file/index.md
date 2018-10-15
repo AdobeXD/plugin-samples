@@ -129,7 +129,7 @@ If you select a file containing text, the text should be added to the currently-
 
 Want to expand on what you learned here? Have a look at these references to see options for customizing this sample plugin:
 
-- [File I/O](/reference/uxp/using-file-apis.md)
+- [File I/O](/reference/uxp/storage-index.md)
 - [Text](/reference/scenegraph.md#text)
 
 

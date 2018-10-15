@@ -24,7 +24,7 @@ newElement.fill = new Color("Purple");
 
 XD plugins also support _asynchronous_ code with both Promises and async/await. Some XD plugin APIs are asynchronous in nature. You can also create your own Promises as you would in any JavaScript environment.
 
-Here's an example using [the File API](../uxp/using-file-apis.md) and Promise syntax:
+Here's an example using [the File API](../uxp/storage-index.md) and Promise syntax:
 
 ```js
 function sayHello(selection, documentRoot) {

@@ -157,7 +157,7 @@ Open the developer console to see your success or error message from the previou
 
 Want to expand on what you learned here? Have a look at these references to see options for customizing this sample plugin:
 
-- [File I/O](/reference/uxp/using-file-apis.md)
+- [File I/O](/reference/uxp/storage-index.md)
 - [Export Renditions](/reference/application.md#applicationcreaterenditionsrenditions)
 
 Ready to explore further? Take a look at our other resources:
