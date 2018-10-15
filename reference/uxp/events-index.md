@@ -128,7 +128,7 @@ Dispatched when a websocket receives a message.
 
  &nbsp;             | &nbsp;
 --------------------|---------------------------------------
-Applies to          | `Websocket`
+Applies to          | `WebSocket`
 Since               | XD 13
 
 ## pointerEnter
