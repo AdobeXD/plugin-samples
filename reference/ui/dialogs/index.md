@@ -214,8 +214,8 @@ function render() {
 
 Once a dialog is built, you will need to manage its lifecycle:
 
-* [Showing a Modal Dialog](./dialogs/showing.md)
-* [Dismissing a Modal Dialog](./dialogs/dismissal.md)
+* [Showing a Modal Dialog](./showing.md)
+* [Dismissing a Modal Dialog](./dismissal.md)
 
 ## Variations
 
