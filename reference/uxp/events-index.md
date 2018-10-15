@@ -21,16 +21,16 @@ Event                                  | MDN Link
 
 The following event classes are supported by XD:
 
-* [BaseUIEvent](./reference/uxp/class/BaseUIEvent.md)
-* [CloseEvent](./reference/uxp/class/CloseEvent.md)
-* [Event](./reference/uxp/class/Event.md)
-* [EventTarget](./reference/uxp/class/EventTarget.md)
-* [FocusEvent](./reference/uxp/class/FocusEvent.md)
-* [GestureEvent](./reference/uxp/class/GestureEvent.md)
-* [KeyboardEvent](./reference/uxp/class/KeyboardEvent.md)
-* [MessageEvent](./reference/uxp/class/MessageEvent.md)
-* [PointerEvent](./reference/uxp/class/PointerEvent.md)
-* [ProgressEvent](./reference/uxp/class/ProgressEvent.md)
+* [BaseUIEvent](class/BaseUIEvent.md)
+* [CloseEvent](class/CloseEvent.md)
+* [Event](class/Event.md)
+* [EventTarget](class/EventTarget.md)
+* [FocusEvent](class/FocusEvent.md)
+* [GestureEvent](class/GestureEvent.md)
+* [KeyboardEvent](class/KeyboardEvent.md)
+* [MessageEvent](class/MessageEvent.md)
+* [PointerEvent](class/PointerEvent.md)
+* [ProgressEvent](class/ProgressEvent.md)
 
 ## blur
 
