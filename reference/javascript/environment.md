@@ -13,7 +13,7 @@ In some cases, we follow standards, but only support a _subset_ of features you 
 
 ## Accessing global APIs
 
-Supported APIs that you would expect as window globals in other enviroments are also available as globals in XD. Examples include `XMLHttpRequest`, `fetch`, `WebSocket`, `document`, and more.
+Supported APIs that you would expect as window globals in other enviroments are also available as globals in XD. Examples include `XMLHttpRequest`, `fetch`, `WebSocket`, `Document`, and more.
 
 Example:
 
