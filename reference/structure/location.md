@@ -9,8 +9,8 @@ Adobe XD loads plugins from the `plugins` and `develop` folders. These folders a
 
 | Platform      | Path          |
 | ------------- | ------------- |
-| macOS         | `~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/` |
-| Windows       | `C:\Users\%USERNAME%\AppData\Local\Packages\Adobe.CC.XD.Prerelease_adky2gkssdxte\LocalState\` |
+| macOS         | `~/Library/Application\ Support/Adobe/Adobe\ XD\ CC/`|
+| Windows       | `C:\Users\%USERNAME%\AppData\Local\Packages\Adobe.CC.XD_adky2gkssdxte\LocalState\` |
 
 This path will eventually (if it doesn't already) contain two folders: `develop` and `plugins`.
 
