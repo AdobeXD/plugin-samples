@@ -1,0 +1,16 @@
+{
+    "id": "com.adobe.ui-tabs-react",
+    "name": "(UI) Tabs React",
+    "version": "0.0.1",
+    "host": {
+        "app": "XD",
+        "minVersion": "10.0.10.24"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "UI Tabs React",
+            "commandId": "menuCommand"
+        }
+    ]
+}
