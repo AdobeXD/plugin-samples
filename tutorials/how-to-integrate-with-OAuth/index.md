@@ -262,7 +262,7 @@ app.get('/getRequestId', function (req, res) {
 
 ### 7. Open the default browser with the URL pointing to your server
 
-To open the machine's default browser from an XD plugin, we can use UXP's `Shell` module:
+To open the machine's default browser from an XD plugin, we can use UXP's `shell` module:
 
 ```js
 require("uxp").shell.openExternal(`${publicUrl}/login?requestId=${rid}`)

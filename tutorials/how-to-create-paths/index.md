@@ -128,7 +128,7 @@ function createWedge(selection, radius, startAngle, endAngle, color) { // [1]
     1. The pie chart radius (`chartRadius`)
     1. The start radian of the wedge (`startAngle`)
     1. The end radian of the wedge (`endAngle`)
-    1. The color of the wedge (`Color`)
+    1. The color of the wedge (`color`)
 1. Based on these arguments, `pathData` is constructed. The pen is moved to the origin, a line is drawn to the first point on the edge of the circle, an arc is drawn to the second point on the edge of the circle, and then a line is drawn back to the origin. For more information on how to create path data, please refer to [Paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths)
 1. Create a new instance of `Path`
 1. Set `pathData`

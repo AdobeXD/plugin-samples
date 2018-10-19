@@ -157,7 +157,7 @@ Here's what's changed:
 
 1. This data structure stores the text to be displayed, as well as the color to use for each fragment of text.
 1. Just as before, we set `node.text` equal to the text to be displayed. This time, the text string is created by concatenating together all the `.text` property values contained in the `textData` array. The `Array#map` gets us an array of strings, which we combine into a single string with `Array#join`.
-1. In this step, we build an array of style objects, applying each style to a few characters of the text string. We use `Array#map` again, this time converting each item in the `textData` array into a style object. The `length` of each style is equal to the length of the text string contained in one element of the `textData` array. The `Color` of each style is equal to the color value contained in one element of the `textData` array.
+1. In this step, we build an array of style objects, applying each style to a few characters of the text string. We use `Array#map` again, this time converting each item in the `textData` array into a style object. The `length` of each style is equal to the length of the text string contained in one element of the `textData` array. The `color` of each style is equal to the color value contained in one element of the `textData` array.
 
 > **tip**
 > The `Color` constructor understands some color names, but you have plenty of other options for defining colors precisely, including hex, rgba, and more. [See the `Color` reference for more information](/reference/Color.md).

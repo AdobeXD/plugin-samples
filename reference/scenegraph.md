@@ -77,8 +77,8 @@ These classes are not scenenode types, but are used extensively in the scenegrap
 * [ImageFill](ImageFill.md) - Value object for `fill` property
 * [LinearGradientFill](LinearGradientFill.md) - Value object for `fill` property
 * [Matrix](Matrix.md) - Value object for `transform` property
-* [Shadow](Shadow.md) - Value object for `Shadow` property
-* [Blur](Blur.md) - Value object for `Blur` property
+* [Shadow](Shadow.md) - Value object for `shadow` property
+* [Blur](Blur.md) - Value object for `blur` property
 
 
 <a name="SceneNode"></a>

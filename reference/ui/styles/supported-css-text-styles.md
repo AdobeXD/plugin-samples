@@ -18,7 +18,7 @@
 
 ## color
 
-`Color` sets the color of text. Color can be specified using HEX color strings, `rgb` and `rgba` color values, `hsl` and `hsla` values, and other color spaces \(such as CMYK\). For more, [see the supported colors and forms](./supported-colors.md).
+`color` sets the color of text. Color can be specified using HEX color strings, `rgb` and `rgba` color values, `hsl` and `hsla` values, and other color spaces \(such as CMYK\). For more, [see the supported colors and forms](./supported-colors.md).
 
 **Supported Values**
 
