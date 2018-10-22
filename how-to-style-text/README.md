@@ -1,7 +1,7 @@
 # Text Styles
 
 This sample has two commands that create text nodes with styled text.
-[Read the step-by-step guide for this sample](https://github.com/AdobeXD/Plugin-Guides/tree/master/Guides/how-to-style-text-guide).
+[Read the step-by-step guide for this sample](https://adobexdplatform.com/plugin-docs/tutorials/how-to-style-text/).
 
 ## Usage
 

@@ -1,6 +1,6 @@
 # Make network requests and fill the object
 
-This sample shows how to make network requests using `Fetch` and `XMLHttpRequest`.
+This sample shows how to make network requests using `Fetch` and `XMLHttpRequest`. [Read the step-by-step guide for this sample](https://adobexdplatform.com/plugin-docs/tutorials/how-to-make-network-requests/).
 
 ## Usage
 
