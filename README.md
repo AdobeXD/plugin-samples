@@ -54,9 +54,9 @@ This repository contains several sample XD plugins. You can use these to learn m
 
 1. Go to this directory (Mac or Windows):
 
-   Mac: `cd ~/Library/Application\ Support/Adobe/Adobe\ XD\ CC\ \(Prerelease\)/`
+   Mac: `~/Library/Application\ Support/Adobe/Adobe\ XD\ CC/`
 
-   Windows: `C:\Users\your-username-here\AppData\Local\Packages\Adobe.CC.XD.Prerelease_adky2gkssdxte\LocalState\`
+   Windows: `C:\Users\%USERNAME%\AppData\Local\Packages\Adobe.CC.XD_adky2gkssdxte\LocalState\`
 
 2. Rename the "plugins" directory if any
 
@@ -65,7 +65,7 @@ This repository contains several sample XD plugins. You can use these to learn m
 
 3. Checkout this repository as the "plugins" directory.
 
-    `git clone git@github.com:AdobeXD/Plugin-Samples.git plugins`
+    `git clone https://github.com/AdobeXD/plugin-samples.git plugins`
 
 4. Launch XD and start a new Document.
 
