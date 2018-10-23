@@ -123,7 +123,7 @@ class StockSearch extends React.Component {
                 shape.width = imageWidth;
                 shape.height = imageHeight;
 
-                const bitmap = new ImageFill(file.nativepath);
+                const bitmap = new ImageFill(file);
                 shape.fill = bitmap;
                 selection.insertionParent.addChild(shape);
                 this.setState(state => ({
