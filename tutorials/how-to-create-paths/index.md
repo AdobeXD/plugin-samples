@@ -83,7 +83,7 @@ Now the `Path` and `Color` classes are required in and ready to be used.
 
 ##### Calculate a point on a circle
 
-Our plugin will need to be able to calculate the coordinates of a point on a circle.
+Since our plugin will create a pie chart, this helper function will be used to return an x,y coordinates of each wedge in the pie chart. The function accepts `radius` and `angle` as parameters and use them to calculate the coordinates of a point on a circle at a given angle on the perimeter of the circle.
 
 Add the lines of code below to your file:
 
