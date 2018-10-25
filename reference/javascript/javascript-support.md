@@ -49,7 +49,7 @@ const someLib = require("somelib");  // no package.json lookup
 ```
 
 
-## Can I use nmp packages or Node.js APIs?
+## Can I use npm packages or Node.js APIs?
 
 You may be able to use some npm packages without modification, but chances are good that you’ll need to use webpack or rollup in order to generate a bundle.
 
