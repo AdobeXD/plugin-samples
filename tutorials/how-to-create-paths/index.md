@@ -100,7 +100,8 @@ This is just straight-up JavaScript; there's nothing specific to XD plugin APIs 
 
 We won't cover the math in depth, here's an overview what this helper function does:
 
-- The angle is expressed in degrees. It must be converted to radians before passing it to the sine and cosine functions.
+- The angle is expressed in degrees. It must be converted to radians before passing it to the sine and cosine functions. More info: [Math.cos](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cos), [Math.sin](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sin)
+- The function will return the coordinates as a string in the `x,y` format, which will be used to be inserted to the path data, which also has to be a string
 
 
 
