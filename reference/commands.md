@@ -6,7 +6,7 @@ commands as XD users have access to in the UI. Because structural changes have m
 function more like automating the UI than like low-level APIs.
 
 For example, these methods do not take arguments. Instead, set the [selection](selection.md) to the objects you want the command to target, then
-invoke the command. Commands may also change the selection when run, for example selecting a newly created Group node.
+invoke the command. Commands may also change the selection when run - for example, `group()` selects the newly created Group node.
 
 **Example**  
 ```js

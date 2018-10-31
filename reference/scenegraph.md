@@ -2,9 +2,9 @@
 
 ## scenegraph
 The scenegraph is a node tree which represents the structure of the XD document. It closely matches the hierarchy seen in the Layers panel
-inside XD. Some scenenodes may contain children (e.g. a Group or Artboard), while others are leaf nodes (e.g. a Rectangle or Text node). The
-root of the scenegraph contains all Artboards that exist in the document, as well as all _pasteboard_ content (nodes that are not contained
-by any artboard).
+inside XD. Some scenenodes may contain children (e.g., a Group or Artboard), while others are leaf nodes (e.g., a Rectangle or Text node).
+The root of the scenegraph contains all Artboards that exist in the document, as well as all _pasteboard_ content (nodes that are not
+contained by any artboard).
 
 ![example of scenegraph tree](../images/scenegraphExample.png)
 
@@ -1226,7 +1226,7 @@ Which boolean operation is used to generate the path: BooleanGroup.PATH_OP_ADD, 
 **Extends**: [<code>GraphicNode</code>](#GraphicNode)
 
 Text leaf node shape. Text can have a fill and/or stroke, but only a solid-color fill is allowed (gradient or image
-will will be rejected).
+fill will be rejected).
 
 There are two types of Text nodes:
 - Point Text - Expands to fit the full width of the text content. Only uses multiple lines if the text content contains hard line
