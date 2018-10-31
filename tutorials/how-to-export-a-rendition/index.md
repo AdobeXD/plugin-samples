@@ -145,7 +145,7 @@ After saving all of your changes, reload the plugin in XD. Make sure to select a
 
 You should see a folder picker like this one:
 
-![](/../images/export-rendition-pick-file.png)
+![System folder picker screen](/../images/export-rendition-pick-file.png)
 
 
 The rendition will be saved at the specified location.

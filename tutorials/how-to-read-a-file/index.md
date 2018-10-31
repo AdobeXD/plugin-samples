@@ -117,12 +117,12 @@ async function insertTextFromFileHandler(selection) {               // [1]
 
 After saving all of your changes, reload the plugin in XD and run it. First you'll see a file picker:
 
-![](/../images/filepicker.png)
+![System file picker](/../images/filepicker.png)
 
 
 If you select a file containing text, the text should be added to the currently-selected artboard:
 
-![](/../images/displayed-results.png)
+![blue text added to the artboard](/../images/displayed-results.png)
 
 
 ## Next Steps

@@ -160,7 +160,7 @@ Note that the end angle of each wedge matches the start angle of the next wedge.
 
 Ater saving all your changes, reload the plugin in XD and run it.  The result should be similar to the following:
 
-![](/../images/pie-chart.png)
+![Created pie chart](/../images/pie-chart.png)
 
 
 ## Next Steps

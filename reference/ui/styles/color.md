@@ -14,10 +14,10 @@ There are four classes of semantic colors beyond the normal standard text color.
 * elements and text that provide warnings (**negative** semantics) are colored red.
 
 {% content "examplesmac" %}
-![](assets/macOS%20Semantic%20Color%20Example.png)
+![Semantic color example for Mac](assets/macOS%20Semantic%20Color%20Example.png)
 
 {% content "examplesuwp" %}
-![](assets/Windows%20Semantic%20Color%20Example.png)
+![Semantic color example for Windows](assets/Windows%20Semantic%20Color%20Example.png)
 
 {% content "code" %}
 

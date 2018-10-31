@@ -39,12 +39,12 @@ If you plan to submit your plugin for distribution via the XD plugin manager, re
 
 Try double-clicking your .XDX file. It should prompt you to install the plugin:
 
-![](/../images/install.png)
+![XD package install prompt](/../images/install.png)
 
 
 Click install:
 
-![](/../images/installed.png)
+![XD package install success](/../images/installed.png)
 
 
 You'll get a success message upon installation, after which the plugin will show up in XD.

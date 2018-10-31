@@ -4,7 +4,7 @@ The simplest way for Adobe XD users to discover and install plugins is through t
 
 The XD plugin manager is accessed through the _Plugins_ menu in the app: go to _Plugins > Discover Plugins..._ to open it:
 
-![](/images/plugin-manager.png)
+![XD Plugin Manager](/images/plugin-manager.png)
 
 In order to make your plugin available in the XD plugin manager, you'll need to go through our submission and review process.
 
