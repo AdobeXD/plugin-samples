@@ -12,4 +12,3 @@ Topics include:
 - [JavaScript version and feature support](javascript-support.md)
 - [Sync and Async](sync-async.md)
 - [The API environment](environment.md)
-- [The API environment](environment.md)
