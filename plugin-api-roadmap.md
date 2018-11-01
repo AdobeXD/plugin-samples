@@ -8,6 +8,6 @@ We've got a lot of stuff planned for the future of the Adobe XD platform, and we
 
 ## Roadmap
 
-<iframe src="https://trello.com/b/WFKmCVaz/xd-extensibility-roadmap" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+<iframe src="https://trello.com/b/WFKmCVaz.html" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent;"></iframe>
 
 [Open in separate page](https://trello.com/b/WFKmCVaz/xd-extensibility-roadmap)
