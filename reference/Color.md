@@ -23,7 +23,7 @@ Create a new color instance.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| value | `!string | number | {r:number, g:number, b:number, a:?number}` | String in CSS color format (hex, rgb, rgba, hsl, hsla, hsv, hsva, or color name); or ARGB numeric value (unsigned 32-bit integer); or object with r, g, b, a keys all set to integers from 0 - 255 (if `a` is omitted, 255 is used). |
+| value | <code>! string &#124; number &#124; {r:number, g:number, b:number, a:?number}`</code> | One of:<ul><li>String in CSS color format (hex, rgb, rgba, hsl, hsla, hsv, hsva, or color name)</li><li>ARGB numeric value (unsigned 32-bit integer)</li><li>Object with `r`, `g`, `b`, `a` keys all set to integers from 0 - 255 (if `a` is omitted, 255 is used)</li></ul> |
 | opacity | `?number` | Optional, floating-point value from 0 - 1. Use when `value` parameter doesn't specify an opacity and you don't want the default 1.0 (100%) opacity. |
 
 
