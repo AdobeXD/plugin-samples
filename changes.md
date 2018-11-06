@@ -1,5 +1,18 @@
 # Change Log
 
+## Public Release 14.0.42
+
+### New API Features
+
+* [Viewport](./reference/viewport.md): Pan and zoom the view of the document, and get information about the current viewport bounds.
+
+### Known Issues
+
+See the [Known Issues page](./known-issues.md) for a comprehensive list.
+
+
+----
+
 ## Public Release 13.0.12
 
 ### Fixes and improvements
