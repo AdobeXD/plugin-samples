@@ -6,6 +6,11 @@
 
 * [Viewport](./reference/viewport.md): Pan and zoom the view of the document, and get information about the current viewport bounds.
 
+### Fixes and improvements
+
+* Exporting renditions to a folder _created by_ your plugin now works reliably on Windows if the folder name contains spaces or other special characters.
+* `Rectangle.cornerRadii` now returns correct values if the corners are not all the same radius.
+
 ### Known Issues
 
 See the [Known Issues page](./known-issues.md) for a comprehensive list.
