@@ -8,6 +8,7 @@
 
 ### Fixes and improvements
 
+* For convenience, the arguments passed to plugin commands are now also available as [`scenegraph.selection`](reference/scenegraph.md#module_scenegraph-selection) and [`scenegraph.root`](reference/scenegraph.md#module_scenegraph-root).
 * Exporting renditions to a folder _created by_ your plugin now works reliably on Windows if the folder name contains spaces or other special characters.
 * `Rectangle.cornerRadii` now returns correct values if the corners are not all the same radius.
 

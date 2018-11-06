@@ -12,7 +12,8 @@ You can modify properties on any scenenodes within the current [_edit context_](
 edit context, but you cannot make structural changes directly to the scenegraph tree. Instead, use [commands](commands.md).
 
 Typically, you access scenegraph nodes via the [`selection`](selection.md) argument that is passed to your plugin command, or by
-traversing the entire document tree using the [`documentRoot`](#RootNode) argument that is passed to your plugin command.
+traversing the entire document tree using the [`documentRoot`](#RootNode) argument that is passed to your plugin command. These
+objects are also accessible [on the scenegraph module](#other-module-members) for convenience.
 
 **Example**
 ```js
@@ -80,6 +81,38 @@ These classes are not scenenode types, but are used extensively in the scenegrap
 * [Shadow](Shadow.md) - Value object for `shadow` property
 * [Blur](Blur.md) - Value object for `blur` property
 
+
+## Other module members
+
+* [selection](#module_scenegraph-selection) : \![<code>Selection</code>](./selection.md)
+* [root](#module_scenegraph-root) : \![<code>RootNode</code>](#RootNode)
+
+
+* * *
+
+<a name="module_scenegraph-selection"></a>
+
+### *scenegraph.selection : \![<code>Selection</code>](./selection.md)*
+Object representing the current selection state and [edit context](./core/edit-context.md). Also available as the first argument passed to your plugin command handler function.
+
+**Kind**: static property of [<code>scenegraph</code>](#module_scenegraph)
+**Read only**: true
+**Since**: XD 14
+
+
+* * *
+
+<a name="module_scenegraph-root"></a>
+
+### *scenegraph.root : \![<code>RootNode</code>](#RootNode)*
+Root node of the current document's scenegraph. Also available as the second argument passed to your plugin command handler function.
+
+**Kind**: static property of [<code>scenegraph</code>](#module_scenegraph)
+**Read only**: true
+**Since**: XD 14
+
+
+* * *
 
 <a name="SceneNode"></a>
 
