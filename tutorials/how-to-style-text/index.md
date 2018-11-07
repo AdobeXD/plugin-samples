@@ -87,7 +87,7 @@ Each of the numbered comments are explained below the code:
 function createStyledTextHandlerFunction(selection) {
     const node = new Text();                    // [1]
     node.text = "This is some red text";        // [2]
-    node.styleRange = [{                        // [3]
+    node.styleRanges = [{                        // [3]
         length: node.text.length,
         fill: new Color("#FF0000"),
         fontSize: 24
@@ -142,7 +142,7 @@ function createStyledTextHandlerFunction(selection) {
 
     node.text = textData.map(item => item.text).join("");   // [2]
 
-    node.styleRange = textData.map(item => ({               // [3]
+    node.styleRanges = textData.map(item => ({               // [3]
         length: item.text.length,
         fill: new Color(item.color),
         fontSize: 24
