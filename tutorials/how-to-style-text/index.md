@@ -104,8 +104,8 @@ function createStyledTextHandlerFunction(selection) {
 4. Add `text` to the scenegraph as a child of the currrently-selected artboard.
 5. Move `text` to a different position relative to the artboard's coordinate system.
 
-Here are a few things to notice about the `styleRange` property of `Text` objects:
-* `styleRange` is an array of objects; you can have more than one style for a text node.
+Here are a few things to notice about the `styleRanges` property of `Text` objects:
+* `styleRanges` is an array of objects; you can have more than one style for a text node.
 * Each style is given a `length` which determines the number of characters to which the style is applied. Specifying the length of our text string ensures that the color is applied to the entire text node.
 * Text color is specified by the `fill` property.
 * The size of the text is specified by the `fontSize` property.
@@ -124,7 +124,7 @@ Not bad for a few lines of code! Let's push it a little further.
 
 All red is ok, but we can make our text more colorful than that. Let's change the code to apply multiple styles to the text, resulting in rainbow-colored text.
 
-As we mentioned earlier, the `styleRange` property takes an _array_ of objects. This means we can have more than one style in a text node. Let's use that to our advantage:
+As we mentioned earlier, the `styleRanges` property takes an _array_ of objects. This means we can have more than one style in a text node. Let's use that to our advantage:
 
 ```js
 function createStyledTextHandlerFunction(selection) {
