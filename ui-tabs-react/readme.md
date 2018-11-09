@@ -2,7 +2,7 @@
 
 This sample demonstrates how to render a TabList control within react by using the plugin-toolkit-react library.
 
-### to build
+### Build Instructions
 
 install yarn (if needed) with
 
