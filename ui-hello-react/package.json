@@ -18,8 +18,8 @@
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "css-loader": "^1.0.0",
-    "react": "^16.15.2",
-    "react-dom": "^16.15.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "style-loader": "^0.22.0"
   }
 }

@@ -1,7 +1,7 @@
 # Export artboard as PNG rendition
 
 This sample generates an export rendition of an object in XD as PNG.
-[Read the step-by-step guide for this sample](https://github.com/AdobeXD/Plugin-Guides/tree/master/Guides/how-to-generate-an-export-rendition-guide).
+[Read the step-by-step guide for this sample](https://adobexdplatform.com/plugin-docs/tutorials/how-to-export-a-rendition/).
 
 ## Usage
 

@@ -1,7 +1,7 @@
 # Filter and Color objects
 
 This sample demonstrates how to create various objects and use scenenode list to filter and color rectangles.
-[Read the step-by-step guide for this sample](https://github.com/AdobeXD/Plugin-Guides/tree/master/Guides/how-to-work-with-scenenodelist-guide).
+[Read the step-by-step guide for this sample](https://adobexdplatform.com/plugin-docs/tutorials/how-to-work-with-scenenodelist/).
 
 ## Usage
 
