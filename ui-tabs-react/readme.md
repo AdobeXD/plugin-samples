@@ -1,5 +1,8 @@
+# UI Tabs with React Sample
 
-to build
+This sample demonstrates how to render a TabList control within react by using the plugin-toolkit-react library.
+
+### to build
 
 install yarn (if needed) with
 
@@ -12,5 +15,3 @@ install dependencies with
 watch and automaticaly rebuild with
 
     yarn watch
-
-This sample demonstrates how to render a TabList control within react by using the plugin-toolkit-react library.
