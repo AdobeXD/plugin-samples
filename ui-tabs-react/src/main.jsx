@@ -1,10 +1,14 @@
-//  temporary stubs required for React. These will not be required as soon as the XD environment provides setTimeout/clearTimeout
-const reactShim = require("./react-shim");
-const style = require("./styles.css");
+// make sure to import the react plugin toolkit first as it contains compatibility shims
+const { TabList } = require("@adobe/xd-plugin-toolkit-react");
 const React = require("react");
 const ReactDOM = require("react-dom");
 
+function SampleTabContent(text) {
+    return <div className="margin">{ text }</div>
+}
+
 class HelloForm extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = { selected: props.selected || 0, type: "" };
@@ -31,13 +35,18 @@ class HelloForm extends React.Component {
                         <option value="quiet small">Quiet Small</option>
                     </select>
                 </label>
-                <nav className={`row ${this.state.type}`}>
-                    <span className={`tab ${index === 0 ? 'active' : ''}`} onClick={e => this.setState({ selected: 0 })}>Section One</span>
-                    <span className={`tab ${index === 1 ? 'active' : ''}`} onClick={e => this.setState({ selected: 1 })}>Section Two</span>
-                    <span className={`tab ${index === 2 ? 'active' : ''}`} onClick={e => this.setState({ selected: 2 })}>Section Three</span>
-                    <span className="tab disabled">Section Disabled</span>
-                </nav>
-                <p>{`You have selected section: ${index + 1}`}</p>
+                <div>
+                    <TabList
+                        quiet={this.state.type.includes("quiet")}
+                        small={this.state.type.includes("small")}
+                        tabs={{
+                            "1": { label: "Section One", view: SampleTabContent.bind(null, "One Content") },
+                            "2": { label: "Section Two", view: SampleTabContent.bind(null, "Two Content") },
+                            "3": { label: "Section Three", view: SampleTabContent.bind(null, "Three Content") },
+                            "4": { label: "Section Disabled", disabled: true }
+                        }}
+                    />
+                </div>
                 <footer>
                     <button type="submit" uxp-variant="cta" onClick={this.onDoneClick}>Done</button>
                 </footer>
