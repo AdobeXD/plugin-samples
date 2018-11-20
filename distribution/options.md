@@ -21,7 +21,8 @@ Direct distribution lets you choose how to provide users with access to your plu
 
 If you distribute a .XDX file, installation is as simple as one double-click.
 
-> **info**
+> **Info**
+>
 > Note that attaching a .XDX file directly to an email might cause the email to get blocked.
 >
 > - Outlook fails silently; the message disappears into the void, without being delivered to the recipient.

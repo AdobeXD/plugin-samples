@@ -21,7 +21,9 @@ Before you submit, be sure to go through this checklist of common reasons for re
 **Checklist**
 
 - Does the plugin ID in your `manifest.json` file match the plugin ID assigned to you on the [I/O Console](https://console.adobe.io/plugins)? [Learn more here](/reference/structure/manifest.md#top-level-metadata).
+- Does your plugin _name_ in your `manifest.json` file match the plugin name you created on the [I/O Console](https://console.adobe.io/plugins)? [Learn more here](/reference/structure/manifest.md#top-level-metadata).
 - Is the plugin `version` number _format_ correct in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata).
+- Have you _increased_ the version number in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata). You _must_ increment your version number _each time you submit your plugin for review_.
 - Is the plugin `host.minVersion` number and (optionally) `host.maxVersion` number _format_ correct in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata).
 - When packaging your plugin, did you make sure to compress the files (and _not_ the parent folder)? [Learn more here](/distribution/packaging.md#1-compress-your-files-as-a-zip-file).
 - Is the .XDX file less than 25MB in size?
@@ -76,6 +78,12 @@ On this page you can provide:
 1. An icon for your plugin
 
 All information entered on this page will be user-facing, visible in the XD plugin manager.
+
+> **Danger**
+>
+> The support page you link must include information on how to get support. There should be a link to support, filing an issue, etc.
+>
+> Note: For Github repositories, you should link to a `README.md` file or other markdown file that describes how to file an issue or directly to a new issue submission form. **Do not link directly to your repo's list of issues.**
 
 ### 5. Enter your release notes
 
