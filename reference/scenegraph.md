@@ -1278,9 +1278,16 @@ string does not contain any of those characters. This makes aligning text based 
 * [Text](#Text)
     * [.text](#Text-text) : <code>string</code>
     * [.styleRanges](#Text-styleRanges) : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:!Color, charSpacing:number, underline:boolean}&gt;</code>
+    * [.fontFamily](#Text-fontFamily) : <code>string</code>
+    * [.fontStyle](#Text-fontStyle) : <code>string</code>
+    * [.fontSize](#Text-fontSize) : <code>number</code>
+    * [.fill](#Text-fill) : <code>Color</code>
+    * [.charSpacing](#Text-charSpacing) : <code>number</code>
+    * [.underline](#Text-underline) : <code>boolean</code>
     * [.flipY](#Text-flipY) : <code>boolean</code>
     * [.textAlign](#Text-textAlign) : <code>string</code>
     * [.lineSpacing](#Text-lineSpacing) : <code>number</code>
+    * [.paragraphSpacing](#Text-paragraphSpacing) : <code>number</code>
     * [.areaBox](#Text-areaBox) : <code>?{width:number, height:number}</code>
     * [.clippedByArea](#Text-clippedByArea) : <code>boolean</code>
 
@@ -1315,6 +1322,86 @@ value of styleRanges. The styleRanges _getter_ always returns fully realized ran
 
 * * *
 
+<a name="Text-fontFamily"></a>
+
+### text.fontFamily : <code>string</code>
+**Since**: XD 14
+
+Set the font family across all style ranges, or get the font family of the last style range (font family of all the text
+if one range covers all the text). Plugins should not assume any particular default value for fontFamily.
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
+<a name="Text-fontStyle"></a>
+
+### text.fontStyle : <code>string</code>
+**Default**: non-italic normal weight style
+**Since**: XD 14
+
+Set the font style across all style ranges, or get the font style of the last style range (font style of all the text
+if one range covers all the text).
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
+<a name="Text-fontSize"></a>
+
+### text.fontSize : <code>number</code> &gt; 0
+**Since**: XD 14
+
+Font size in document pixels. Set the font size across all style ranges, or get the font size of the last style range
+(font size of all the text if one range covers all the text). Plugins should not assume any particular default value for
+fontSize.
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
+<a name="Text-fill"></a>
+
+### text.fill : <code>?[Color](Color.md)</code>
+**Default**: `null`
+
+Set the text color across all style ranges, or get the color of the last style range (color of all the text if one range
+covers all the text). Unlike most other nodes, text only allows a solid color fill - gradients and image fills are not
+supported.
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
+<a name="Text-charSpacing"></a>
+
+### text.charSpacing : <code>number</code>
+**Default**: `0`
+**Since**: XD 14
+
+Character spacing in increments of 1/1000th of the fontSize, in addition to the font's default character kerning. May be
+negative.
+
+Set the character spacing across all style ranges, or get the character spacing of the last style range (character
+spacing of all the text if one range covers all the text).
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
+<a name="Text-underline"></a>
+
+### text.underline : <code>boolean</code>
+**Default**: `false`
+**Since**: XD 14
+
+Set underline across all style ranges, or get the underline of the last style range (underline of all the text if one
+range covers all the text).
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
 <a name="Text-flipY"></a>
 
 ### text.flipY : <code>boolean</code>
@@ -1327,6 +1414,7 @@ If true, the text is drawn upside down.
 <a name="Text-textAlign"></a>
 
 ### text.textAlign : <code>string</code>
+**Default**: `ALIGN_LEFT`
 Horizontal alignment: Text.ALIGN_LEFT, ALIGN_CENTER, or ALIGN_RIGHT. This setting affects the layout of multiline text, and for point
 text it also affects how the text is positioned relative to its anchor point (x=0 in local coordinates) and what direction the text
 grows when edited by the user.
@@ -1349,6 +1437,8 @@ textNode.moveInParentCoordinates(originalBounds.x - newBounds.x, 0);
 <a name="Text-lineSpacing"></a>
 
 ### text.lineSpacing : <code>number</code> &gt; 0, or 0 for default spacing
+**Default**: `0`
+
 Distance between baselines in multiline text, in document pixels. The special value 0 causes XD to use the default line spacing
 defined by the font given the current font size & style.
 
@@ -1356,6 +1446,23 @@ This property is not automatically adjusted when fontSize changes, if line spaci
 fixed while the font size changes, shifting the spacing's proportional relationship to font size. If the value is 0, then the
 rendered line spacing will change to match the new font size, since 0 means the spacing is dynamically calculated from the current
 font settings.
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
+<a name="Text-paragraphSpacing"></a>
+
+### text.paragraphSpacing : <code>number</code> &gt;= 0
+**Default**: `0`
+**Since**: XD 14
+
+Additional distance between paragraphs, in document pixels, added to the lineSpacing amount (soft line breaks in area text are
+separated only by lineSpacing, while hard line breaks are separated by lineSpacing + paragraphSpacing). Unlike lineSpacing, 0
+is not a special value; it just means no added spacing.
+
+Similar to lineSpacing, this property is not automatically adjusted when fontSize changes. The paragraph spacing amount will stay
+fixed while the font size changes, shifting the spacing's proportional relationship to font size.
 
 **Kind**: instance property of [<code>Text</code>](#Text)
 
