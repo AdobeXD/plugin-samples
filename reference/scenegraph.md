@@ -144,6 +144,7 @@ Base class of all scenegraph nodes. Nodes will always be an instance of some _su
     * *[.locked](#SceneNode-locked) : <code>boolean</code>*
     * *[.markedForExport](#SceneNode-markedForExport) : <code>boolean</code>*
     * *[.hasLinkedContent](#SceneNode-hasLinkedContent) : <code>boolean</code>*
+    * *[.pluginData](#SceneNode-pluginData) : <code>&ast;</code>*
     * *[.removeFromParent()](#SceneNode-removeFromParent)*
     * *[.moveInParentCoordinates(deltaX, deltaY)](#SceneNode-moveInParentCoordinates)*
     * *[.placeInParentCoordinates(registrationPoint, parentPoint)](#SceneNode-placeInParentCoordinates)*
@@ -456,6 +457,27 @@ True if the node should be included in the output of _File > Export > Batch_ and
 ### *sceneNode.hasLinkedContent : <code>boolean</code>*
 True if the node's appearance comes from a link to an external resource, such as Creative Cloud Libraries or a
 separate XD document (in the case of a Linked Symbol instance).
+
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
+
+* * *
+
+<a name="SceneNode-pluginData"></a>
+
+### *sceneNode.pluginData : <code>&ast;</code>*
+**Since**: XD 14
+
+Metadata specific to your plugin. Must be a value which can be converted to a JSON string, or undefined to clear the
+stored metadata on this node.
+
+Metadata is persisted with the document when it is saved. Duplicating a node (including across documents, via copy-paste)
+will duplicate the metadata with it. If the node lies within a Symbol or Repeat Grid, all instances of the node will have
+identical metadata (changes in one copy will automatically be synced to the other copy). Metadata stored by this plugin
+cannot be accessed by other plugins - each plugin has its own isolated metadata storage.
+
+To store general metadata for the document overall, set pluginData on the [root](#module_scenegraph-root) node of the scenegraph. Metadata on
+the root node can be changed from _any_ edit context.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 **Read only**: true

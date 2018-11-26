@@ -4,6 +4,7 @@
 
 ### New API Features
 
+* [Document & node metadata](./reference/scenegraph.md#SceneNode-pluginData): Store plugin-specific info on individual scenegraph nodes or in the document in general.
 * [Viewport](./reference/viewport.md): Pan and zoom the view of the document, and get information about the current viewport bounds.
 * [Text](./reference/scenegraph.md#Text): Get/set paragraph spacing; create/modify area text; more easily work with uniform-styled text via convenience getter/setter APIs for character attributes.
 
