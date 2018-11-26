@@ -41,8 +41,8 @@ The top level of the manifest JSON object contains high-level information about 
 Key path | Type | Description
 ---------|------|------------
 `id`     | `string` | Unique identifier for your plugin. You can get your unique ID on the [Adobe I/O Console](https://console.adobe.io/plugins).
-`name`   | `string` | Human-readable name of your plugin displayed in the Plugin Manager listing.
-`version`| `string` | Version number of your plugin in `x.y.z` format. *Must be three segments.*
+`name`   | `string` | Human-readable name of your plugin displayed in the Plugin Manager listing. (Note: if you're submitting your plugin, this name _must_ match what is in your [I/O Console](https://console.adobe.io/plugins) plugin submission.)
+`version`| `string` | Version number of your plugin in `x.y.z` format. *Must be three segments. Each version component must be between `0` and `99`.
 `description` | `string` | Description displayed in the Plugin Manager listing.
 `icons` | `Array<Object>` | Icon(s) displayed in the Plugin Manager listing. Currently, you should supply only a single icon that is 96x96 at 2x scale (XD will automatically downscale it to 48x48 on a 1x display; you cannot provide a second, separate 48x48 image file at this time).
 `host.app` | `string` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `"XD"`).
@@ -59,7 +59,7 @@ The `uiEntryPoints` field is an _array_ of objects, and each object must match o
 Key | Type | Description
 ----|------|------------
 `type` | `string` | Entry point type. Currently `"menu"` is the only supported value.
-`label` | `string` or `Object` | Label for this menu item that the user will select to run your plugin. May be a single string _or_ an object containing localized strings (see "Localization," below).
+`label` | `string` or `Object` | Label for this menu item that the user will select to run your plugin. May be a single string _or_ an object containing localized strings (see "Localization," below). Your menu item must [follow our plugin experience guidelines](../../xdpegs/5-ui.md#513-menus).
 `commandId` | `string` | Identifier that links the menu item to a function in your plugin's JavaScript code. This identifier needs to be unique within your plugin (but doesn't need to be globally unique). It can be whatever you like, but it makes sense to succinctly describe what the command will do.
 `shortcut` | `{mac: string, win: string}` | _Optional._ Object defining Mac & Windows keyboard shortcuts for this menu item. See "Keyboard shortcuts" below for details.
 
@@ -69,7 +69,7 @@ Key | Type | Description
 ----|------|------------
 `type` | `string` | Entry point type. Currently `"menu"` is the only supported value.
 `label` | `string` or `Object` | Label for this submenu. May be a single string _or_ an object containing localized strings (see below).
-`menuItems` | `Array<MenuItemDefinition>` | Nested array specifying the menu items this submenu contains. Only a single submenu nesting level is supported, so this array may not contain any `SubmenuDefinition`s itself, only executable `MenuItemDefinition`s.
+`menuItems` | `Array<MenuItemDefinition>` | Nested array specifying the menu items this submenu contains. Only a single submenu nesting level is supported, so this array may not contain any `SubmenuDefinition`s itself, only executable `MenuItemDefinition`s. Your menu item must [follow our plugin experience guidelines](../../xdpegs/5-ui.md#513-menus).
 
 ### Keyboard shortcuts
 

@@ -20,17 +20,18 @@ Select all files within your plugin's parent folder. On both macOS and Windows y
 | macOS         | _Right-click > Compress # items_ |
 | Windows       | _Right-click > Send to > Compressed (zipped) folder_ |
 
-If you plan to distribute via the XD plugin manager, make sure your .ZIP file is less than 25MB in size. You'll only be able to submit for review if your file is under the size limit.
+If you plan to distribute via the XD plugin manager, your .ZIP file **must be less than 25MB in size**. You'll only be able to submit for review if your file is under the size limit.
 
-> **tip**
-> Compressing the plugin's _parent_ folder is not recommended as it complicates the requirements for filenames. Instead, compress the _contents_ of the parent folder.
+> **Danger**
+>
+> You should not compress the plugin's _parent_ folder. Instead, compress the _contents_ of the parent folder. Failure to do so will likely cause a rejection when submitting to the [I/O Console](https://console.adobe.io/plugins).
 
 
 ### 2. Rename the .ZIP extension to .XDX
 
 Adobe XD recognizes the .XDX file extension as an XD plugin.
 
-By using this file extension, your plugin automactically gets the "double-click to install" feature, meaning that if you share your plugin directly to users, all they have to do is double-click to install the plugin to Adobe XD.
+By using this file extension, your plugin automatically gets the "double-click to install" feature, meaning that if you share your plugin directly to users, all they have to do is double-click to install the plugin to Adobe XD.
 
 If you plan to submit your plugin for distribution via the XD plugin manager, renaming your .ZIP to .XDX is required.
 
