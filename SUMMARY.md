@@ -92,6 +92,7 @@
     * [How to read this reference](./reference/how-to-read.md)
     * [application](./reference/application.md)
     * [clipboard](./reference/clipboard.md)
+    * [cloud](./reference/cloud.md)
     * [commands](./reference/commands.md)
     * [scenegraph](./reference/scenegraph.md)
     * [SceneNodeList](./reference/SceneNodeList.md)
