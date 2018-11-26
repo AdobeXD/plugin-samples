@@ -24,7 +24,7 @@ const okButton = document.querySelector("#ok");
 okButton.addEventListener("click", e => {
     onsubmit();
     e.preventDefault();
-}
+});
 ```
 
 You can listen for the dialog's dismissal using the `close` event on the dialog:
