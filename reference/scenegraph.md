@@ -1473,8 +1473,13 @@ fixed while the font size changes, shifting the spacing's proportional relations
 ### text.areaBox : <code>?{width:number, height:number}</code>
 Null for point text. For area text, specifies the size of the rectangle within which text is wrapped and clipped.
 
+Changing point text to area text or vice versa will change the origin / anchor point of the text, thus changing its localBounds,
+but it will also automatically change the node's transform so its globalBounds and boundsInParent origins remain unchanged.
+
+Changing area text to point text will also automatically insert hard line breaks ("\n") into the text to match the previous line
+wrapping's appearance exactly.
+
 **Kind**: instance property of [<code>Text</code>](#Text)
-**Read only**: true
 
 * * *
 

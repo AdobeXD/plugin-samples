@@ -5,7 +5,7 @@
 ### New API Features
 
 * [Viewport](./reference/viewport.md): Pan and zoom the view of the document, and get information about the current viewport bounds.
-* [Text](./reference/scenegraph.md#Text): Paragraph spacing, and convenience getter/setter APIs for character attributes such as font style and size.
+* [Text](./reference/scenegraph.md#Text): Get/set paragraph spacing; create/modify area text; more easily work with uniform-styled text via convenience getter/setter APIs for character attributes.
 
 ### Fixes and improvements
 
