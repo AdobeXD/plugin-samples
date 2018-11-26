@@ -11,12 +11,12 @@ clipboard.copyText(selection.items[0].name);
 ```
 
 * [clipboard](#module_clipboard)
-    * [.copyText()](#module_clipboard.copyText)
+    * [.copyText()](#module_clipboard-copyText)
 
 
 * * *
 
-<a name="module_clipboard.copyText"></a>
+<a name="module_clipboard-copyText"></a>
 
 ### clipboard.copyText()
 Write plain text to the clipboard.

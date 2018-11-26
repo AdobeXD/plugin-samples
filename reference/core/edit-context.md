@@ -17,8 +17,8 @@ Like nearly all edit operations in XD, your plugin is limited to making changes 
 
 **Structural changes** _cannot_ be made directly, since their impact extends to nodes outside the edit context's scope. You can make
 structural changes by scripting XD commands:
-- Ungroup (or break apart other container types) - use the [`ungroup()` command](../commands.md#module_commands.ungroup)
-- Create new Groups (add a whole _tree_ of new nodes) - use the [`group()` command](../commands.md#module_commands.group)
-- Rearrange Z order - use commands such as [`bringToFront()`](../commands.md#module_commands.bringToFront)
+- Ungroup (or break apart other container types) - use the [`ungroup()` command](../commands.md#module_commands-ungroup)
+- Create new Groups (add a whole _tree_ of new nodes) - use the [`group()` command](../commands.md#module_commands-group)
+- Rearrange Z order - use commands such as [`bringToFront()`](../commands.md#module_commands-bringToFront)
 
 If a plugin breaks any of these rules, its entire edit operation will be reverted to protect the user's document from corruption.

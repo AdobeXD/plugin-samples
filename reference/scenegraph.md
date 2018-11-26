@@ -686,7 +686,7 @@ let group = ...;
 console.log("Type of group is: " + (group.mask ? "Masked Group" : "Plain Group"));
 ```
 
-To create a Masked Group, use [commands.createMaskedGroup](commands.md#module_commands.createMaskedGroup) instead of [commands.group](commands.md#module_commands.group).
+To create a Masked Group, use [commands.createMaskGroup](commands.md#module_commands-createMaskGroup) instead of [commands.group](commands.md#module_commands-group).
 
 * * *
 
@@ -1196,7 +1196,7 @@ BooleanGroup container node - although it has fill/stroke/etc. properties like a
 with children. Its visual appearance is determined by generating a path via a nondestructive boolean operation on all
 its children's paths.
 
-It is not currently possible for plugins to *create* a new BooleanGroup node, aside from using [commands.duplicate](commands.md#module_commands.duplicate)
+It is not currently possible for plugins to *create* a new BooleanGroup node, aside from using [commands.duplicate](commands.md#module_commands-duplicate)
 to clone existing BooleanGroups.
 
 * [BooleanGroup](#BooleanGroup)
@@ -1358,7 +1358,7 @@ Container node representing one instance of a Symbol. Changes made within a symb
 other instances of the symbol - with certain exceptions, called "overrides."
 
 It is not currently possible for plugins to *create* a new Symbol definition or a new SymbolInstance node, aside from using
-[commands.duplicate](commands.md#module_commands.duplicate) to clone existing SymbolInstances.
+[commands.duplicate](commands.md#module_commands-duplicate) to clone existing SymbolInstances.
 
 * [SymbolInstance](#SymbolInstance)
     * [.symbolId](#SymbolInstance-symbolId) : <code>string</code>
@@ -1393,7 +1393,7 @@ determines how may cells are visible (new cells are automatically generated as n
 Each grid cell is a Group that is an immediate child of the RepeatGrid. These groups are automatically created and destroyed as
 needed when the RepeatGrid is resized.
 
-It is not currently possible for plugins to *create* a new RepeatGrid node, aside from using [commands.duplicate](commands.md#module_commands.duplicate)
+It is not currently possible for plugins to *create* a new RepeatGrid node, aside from using [commands.duplicate](commands.md#module_commands-duplicate)
 to clone existing RepeatGrids.
 
 * [RepeatGrid](#RepeatGrid)

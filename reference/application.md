@@ -30,15 +30,15 @@ console.log("OS locale:", application.systemLocale); // e.g. "en_US"
 ```
 
 * [application](#module_application)
-    * [.createRenditions(renditions)](#module_application.createRenditions) ⇒ `Promise<Array, string>`
-    * [.version](#module_application.version) : <code>string</code>
-    * [.appLanguage](#module_application.appLanguage) : <code>string</code>
-    * [.systemLocale](#module_application.systemLocale) : <code>string</code>
+    * [.createRenditions(renditions)](#module_application-createRenditions) ⇒ `Promise<Array, string>`
+    * [.version](#module_application-version) : <code>string</code>
+    * [.appLanguage](#module_application-appLanguage) : <code>string</code>
+    * [.systemLocale](#module_application-systemLocale) : <code>string</code>
 
 
 * * *
 
-<a name="module_application.createRenditions"></a>
+<a name="module_application-createRenditions"></a>
 
 ### application.createRenditions(renditions)
 Generate renditions of nodes in the document in a batch. Overwrites any existing files without warning.
@@ -80,7 +80,7 @@ _All rendition settings fields are required_ (for a given rendition type) unless
 
 * * *
 
-<a name="module_application.version"></a>
+<a name="module_application-version"></a>
 
 ### *application.version : <code>string</code>*
 Adobe XD version number in the form "major.minor.patch.build"
@@ -91,7 +91,7 @@ Adobe XD version number in the form "major.minor.patch.build"
 
 * * *
 
-<a name="module_application.appLanguage"></a>
+<a name="module_application-appLanguage"></a>
 
 ### *application.appLanguage : <code>string</code>*
 Current language the application UI is using. This may not equal the user's OS locale setting: it is the closest
@@ -104,7 +104,7 @@ language only, with no region info (e.g. "fr", not "fr_FR").
 
 * * *
 
-<a name="module_application.systemLocale"></a>
+<a name="module_application-systemLocale"></a>
 
 ### *application.systemLocale : <code>string</code>*
 User's OS-wide locale setting. May not match the XD UI, since XD does not support all world languages. Includes both

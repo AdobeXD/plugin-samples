@@ -27,7 +27,7 @@
         * [.stopPropagation()](#event-stoppropagation)
     * _static_
         * [.module.exports](#progressevent-module-exports)
-            * [new module.exports(typeArg, [eventInit])](#new_ProgressEvent.module.exports_new)
+            * [new module.exports(typeArg, [eventInit])](#new-progressevent-module-exports-new)
         * [.lengthComputable](#progressevent-lengthcomputable)
         * [.loaded](#progressevent-loaded)
         * [.total](#progressevent-total)

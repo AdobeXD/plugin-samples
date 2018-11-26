@@ -17,29 +17,29 @@ console.log(selection.items);  // [Group]
 ```
 
 * [commands](#module_commands)
-    * [.group()](#module_commands.group)
-    * [.ungroup()](#module_commands.ungroup)
-    * [.createMaskGroup()](#module_commands.createMaskGroup)
-    * [.convertToPath()](#module_commands.convertToPath)
-    * [.duplicate()](#module_commands.duplicate)
-    * [.bringToFront()](#module_commands.bringToFront)
-    * [.bringForward()](#module_commands.bringForward)
-    * [.sendToBack()](#module_commands.sendToBack)
-    * [.sendBackward()](#module_commands.sendBackward)
-    * [.alignLeft()](#module_commands.alignLeft)
-    * [.alignRight()](#module_commands.alignRight)
-    * [.alignHorizontalCenter()](#module_commands.alignHorizontalCenter)
-    * [.alignTop()](#module_commands.alignTop)
-    * [.alignBottom()](#module_commands.alignBottom)
-    * [.alignVerticalCenter()](#module_commands.alignVerticalCenter)
-    * [.distributeHorizontal()](#module_commands.distributeHorizontal)
-    * [.distributeVertical()](#module_commands.distributeVertical)
-    * [.alignToPixelGrid()](#module_commands.alignToPixelGrid)
+    * [.group()](#module_commands-group)
+    * [.ungroup()](#module_commands-ungroup)
+    * [.createMaskGroup()](#module_commands-createMaskGroup)
+    * [.convertToPath()](#module_commands-convertToPath)
+    * [.duplicate()](#module_commands-duplicate)
+    * [.bringToFront()](#module_commands-bringToFront)
+    * [.bringForward()](#module_commands-bringForward)
+    * [.sendToBack()](#module_commands-sendToBack)
+    * [.sendBackward()](#module_commands-sendBackward)
+    * [.alignLeft()](#module_commands-alignLeft)
+    * [.alignRight()](#module_commands-alignRight)
+    * [.alignHorizontalCenter()](#module_commands-alignHorizontalCenter)
+    * [.alignTop()](#module_commands-alignTop)
+    * [.alignBottom()](#module_commands-alignBottom)
+    * [.alignVerticalCenter()](#module_commands-alignVerticalCenter)
+    * [.distributeHorizontal()](#module_commands-distributeHorizontal)
+    * [.distributeVertical()](#module_commands-distributeVertical)
+    * [.alignToPixelGrid()](#module_commands-alignToPixelGrid)
 
 
 * * *
 
-<a name="module_commands.group"></a>
+<a name="module_commands-group"></a>
 
 ### commands.group()
 Wraps the selected objects in a [Group](scenegraph.md#Group), leaving the Group selected afterward. Equivalent to _Object >
@@ -66,7 +66,7 @@ let group = selection.items[0];  // the new Group node is what's selected afterw
 
 * * *
 
-<a name="module_commands.ungroup"></a>
+<a name="module_commands-ungroup"></a>
 
 ### commands.ungroup()
 Ungroups any of the selected objects that are ungroupable containers (Groups, Symbols, Repeat Grids, etc.). Equivalent to
@@ -76,7 +76,7 @@ _Object > Ungroup_.
 
 * * *
 
-<a name="module_commands.createMaskGroup"></a>
+<a name="module_commands-createMaskGroup"></a>
 
 ### commands.createMaskGroup()
 Creates a masked [Group](scenegraph.md#Group) from the selected objects, using the object that is highest in the z order as
@@ -104,7 +104,7 @@ let maskedGroup = selection.items[0];
 
 * * *
 
-<a name="module_commands.convertToPath"></a>
+<a name="module_commands-convertToPath"></a>
 
 ### commands.convertToPath()
 Converts each selected object to a [Path](scenegraph.md#Path) with the exact same visual appearance. Only applies to leaf
@@ -114,7 +114,7 @@ nodes and [Boolean Groups](scenegraph.md#BooleanGroup). Equivalent to _Object > 
 
 * * *
 
-<a name="module_commands.duplicate"></a>
+<a name="module_commands-duplicate"></a>
 
 ### commands.duplicate()
 Duplicates all selected objects, leaving the duplicates selected afterward.
@@ -130,7 +130,7 @@ Equivalent to _Edit > Duplicate_.
 
 * * *
 
-<a name="module_commands.bringToFront"></a>
+<a name="module_commands-bringToFront"></a>
 
 ### commands.bringToFront()
 Brings selected objects to the front of the z order. Equivalent to _Object > Arrange > Bring to Front_.
@@ -139,7 +139,7 @@ Brings selected objects to the front of the z order. Equivalent to _Object > Arr
 
 * * *
 
-<a name="module_commands.bringForward"></a>
+<a name="module_commands-bringForward"></a>
 
 ### commands.bringForward()
 Brings each selected object one step closer to the front of the z order. Equivalent to _Object > Arrange > Bring Forward_.
@@ -148,7 +148,7 @@ Brings each selected object one step closer to the front of the z order. Equival
 
 * * *
 
-<a name="module_commands.sendToBack"></a>
+<a name="module_commands-sendToBack"></a>
 
 ### commands.sendToBack()
 Sends selected objects to the back of the z order. Equivalent to _Object > Arrange > Send to Back_.
@@ -157,7 +157,7 @@ Sends selected objects to the back of the z order. Equivalent to _Object > Arran
 
 * * *
 
-<a name="module_commands.sendBackward"></a>
+<a name="module_commands-sendBackward"></a>
 
 ### commands.sendBackward()
 Sends each selected object one step closer to the back of the z order. Equivalent to _Object > Arrange > Send Backward_.
@@ -166,7 +166,7 @@ Sends each selected object one step closer to the back of the z order. Equivalen
 
 * * *
 
-<a name="module_commands.alignLeft"></a>
+<a name="module_commands-alignLeft"></a>
 
 ### commands.alignLeft()
 Aligns all selected objects flush left. Equivalent to _Object > Align > Left_.
@@ -175,7 +175,7 @@ Aligns all selected objects flush left. Equivalent to _Object > Align > Left_.
 
 * * *
 
-<a name="module_commands.alignRight"></a>
+<a name="module_commands-alignRight"></a>
 
 ### commands.alignRight()
 Aligns all selected objects flush right. Equivalent to _Object > Align > Right_.
@@ -184,7 +184,7 @@ Aligns all selected objects flush right. Equivalent to _Object > Align > Right_.
 
 * * *
 
-<a name="module_commands.alignHorizontalCenter"></a>
+<a name="module_commands-alignHorizontalCenter"></a>
 
 ### commands.alignHorizontalCenter()
 Aligns all selected objects along their horizontal centerlines. Equivalent to _Object > Align > Center (Horizontally)_.
@@ -193,7 +193,7 @@ Aligns all selected objects along their horizontal centerlines. Equivalent to _O
 
 * * *
 
-<a name="module_commands.alignTop"></a>
+<a name="module_commands-alignTop"></a>
 
 ### commands.alignTop()
 Aligns all selected objects flush top. Equivalent to _Object > Align > Top_.
@@ -202,7 +202,7 @@ Aligns all selected objects flush top. Equivalent to _Object > Align > Top_.
 
 * * *
 
-<a name="module_commands.alignBottom"></a>
+<a name="module_commands-alignBottom"></a>
 
 ### commands.alignBottom()
 Aligns all selected objects flush bottom. Equivalent to _Object > Align > Bottom_.
@@ -211,7 +211,7 @@ Aligns all selected objects flush bottom. Equivalent to _Object > Align > Bottom
 
 * * *
 
-<a name="module_commands.alignVerticalCenter"></a>
+<a name="module_commands-alignVerticalCenter"></a>
 
 ### commands.alignVerticalCenter()
 Aligns all selected objects along their vertical centerlines. Equivalent to _Object > Align > Center (Vertically)_.
@@ -220,7 +220,7 @@ Aligns all selected objects along their vertical centerlines. Equivalent to _Obj
 
 * * *
 
-<a name="module_commands.distributeHorizontal"></a>
+<a name="module_commands-distributeHorizontal"></a>
 
 ### commands.distributeHorizontal()
 Distributes all selected objects evenly along the X axis. Equivalent to _Object > Distribute > Horizontally_.
@@ -229,7 +229,7 @@ Distributes all selected objects evenly along the X axis. Equivalent to _Object 
 
 * * *
 
-<a name="module_commands.distributeVertical"></a>
+<a name="module_commands-distributeVertical"></a>
 
 ### commands.distributeVertical()
 Distributes all selected objects evenly along the Y axis. Equivalent to _Object > Distribute > Vertically_.
@@ -238,7 +238,7 @@ Distributes all selected objects evenly along the Y axis. Equivalent to _Object 
 
 * * *
 
-<a name="module_commands.alignToPixelGrid"></a>
+<a name="module_commands-alignToPixelGrid"></a>
 
 ### commands.alignToPixelGrid()
 Shifts all selected objects and their content so they align crisply with the pixel grid. Equivalent to _Object > Align to
