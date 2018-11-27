@@ -9,11 +9,20 @@
 * [Text](./reference/scenegraph.md#Text): Get/set paragraph spacing; create/modify area text; more easily work with uniform-styled text via convenience getter/setter APIs for character attributes.
 * [Published links](./reference/cloud.md): Get latest links for prototypes & design specs that have been shared from the current document.
 
+### Breaking Changes
+
+* Plugins can only write to the clipboard or modify the selection while actively running a menu command (same as the rules for making scenegraph changes).
+
 ### Fixes and improvements
 
 * For convenience, the arguments passed to plugin commands are now also available as [`scenegraph.selection`](reference/scenegraph.md#module_scenegraph-selection) and [`scenegraph.root`](reference/scenegraph.md#module_scenegraph-root).
 * Exporting renditions to a folder _created by_ your plugin now works reliably on Windows if the folder name contains spaces or other special characters.
 * `Rectangle.cornerRadii` now returns correct values if the corners are not all the same radius.
+
+### User-facing plugin features
+
+* Safe mode: To temporarily disable all plugins for troubleshooting purposes, launch XD while holding down Shift. Re-launching XD will re-enable all plugins.
+* Uninstalling a plugin now clears its data/settings folder. Users are now prompted to confirm before uninstalling.
 
 ### Known Issues
 
