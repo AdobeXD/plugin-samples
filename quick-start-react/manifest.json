@@ -1,0 +1,16 @@
+{
+  "id": "QUICKSTART_REACT",
+  "name": "Quickstart - React",
+  "version": "1.0.0",
+  "host": {
+    "app": "XD",
+    "minVersion": "13.0.0"
+  },
+  "uiEntryPoints": [
+    {
+      "type": "menu",
+      "label": "Quickstart - React JSX",
+      "commandId": "main"
+    }
+  ]
+}
