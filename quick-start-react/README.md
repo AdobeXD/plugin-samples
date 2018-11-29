@@ -17,7 +17,7 @@ npm install
 
 3. Install yarn packages
 ```
-yarn instatll
+yarn install
 ```
 
 4. Start compliling
