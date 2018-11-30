@@ -19,7 +19,8 @@ The selection can only contain items within the current _edit context_:
   artboard _or_ any combination of the pasteboard's immediate children and one or more artboards' immediate children. The selection
   cannot contain both artboards and non-artboards at the same time, however.
 
-Note that when in the root edit context, the selection _can_ contain items with multiple different parents.
+Don't assume that all selected items have the same parent node: in the root edit context, the selection can contain items with
+differing parents (multiple different artboards, as well as the root node).
 
 Items that are _locked_ cannot be in the selection. If the user or your plugin attempts to select any locked items, they are
 automatically filtered into a separate list ([itemsIncludingLocked](#selection-itemsIncludingLocked)) which is generally only used by the Unlock
@@ -47,6 +48,7 @@ Array representing the current selection. Empty array if nothing is selected (ne
 As a convenience, the setter also accepts a single node or null as valid input. However, the getter always returns an array.
 
 If the user selects nodes one-by-one, by Shift-clicking, this array lists the nodes in the order they were added to the selection.
+If the user selected by other means, e.g. dragging a marquee, the order has no meaning.
 
 Returns a fresh array each time, so this can be mutated by the caller without interfering with anything. Mutating the array
 does not change the selection - only invoking the 'items' setter changes selection.
