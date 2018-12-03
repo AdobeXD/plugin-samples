@@ -25,15 +25,15 @@ class HelloForm extends React.Component {
 
     render() {
         return (
-            <form style={{ width: 300 }}>
+            <form style={{ width: 300 }} onSubmit={this.onDoneClick}>
                 <h1>React with JSX Components</h1>
                 <label>
                     <span>What is your name?</span>
                     <input onChange={this.onInputChange} />
                 </label>
-                <p>{"Hello " + this.state.name}</p>
+                <p>{`Hello ${this.state.name}`}</p>
                 <footer>
-                    <button type="submit" uxp-variant="cta" onClick={this.onDoneClick}>Done</button>
+                    <button type="submit" uxp-variant="cta">Done</button>
                 </footer>
             </form>
         );

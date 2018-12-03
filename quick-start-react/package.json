@@ -20,6 +20,7 @@
     "css-loader": "^1.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "style-loader": "^0.22.0"
+    "style-loader": "^0.22.0",
+    "yarn": "^1.12.3"
   }
 }
