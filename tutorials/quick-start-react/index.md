@@ -18,7 +18,7 @@ Once you're done, you'll have a solid grasp of the steps to take when starting t
 
 
 ### 0. Folder structure
-Note that we are going to use webpack to bundle JavaScript files for usage in XD and yarn package manager to install dependencies. When you have the right structure, it will look like this:
+Note that we are going to use [webpack](https://webpack.js.org/) to bundle JavaScript files for usage in XD and [yarn](https://yarnpkg.com/en/) package manager to install dependencies. When you have the right structure, it will look like this:
 
 ```
 my-plugin-folder
@@ -31,8 +31,8 @@ my-plugin-folder
 └── webpack.config.js
 ```
 
-### 0. Install dependencies
-In order to corretly use React in XD, you will have to install dependencies correctly. Follow the steps below:
+### 1. Install dependencies
+In order to correctly use React in XD, you will have to install dependencies correctly. Follow the steps below:
 1. List the required dependencies in `manifest.json`
 ```js
 {
@@ -108,12 +108,9 @@ All dependencies are installed and we are good to go!
 
 Now, let's create your plugin files. Open your favorite text editor and create the following files and folders:
 
-1.   `manifest.json` is your plugin’s manifest.
+- `manifest.json` is your plugin’s manifest. This file includes information about the plugin, such as its name, the menu item(s) it adds to XD, and so on. [Learn about the manifest here](/reference/structure/manifest.md).
 
-    This file includes information about the plugin, such as its name, the menu item(s) it adds to XD, and so on.
-   [Learn about the manifest here](/reference/structure/manifest.md).
-
-2.   `src` is your plugin's folder that contains all JavaScript files that are going to be compiled
+- `src` is your plugin's folder that contains all JavaScript files that are going to be compiled
     - `main.jsx` is the main file for the plugin
     - `HelloForm.jsx` is the file that contains the only React component we are going to use. Note that you can have multiple `.jsx` files if needed
     - `react-shim.js` is a JavaScript file that helps React run smoothly in XD's environment. Further details to follow in a later section
