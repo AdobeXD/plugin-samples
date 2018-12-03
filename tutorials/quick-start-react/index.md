@@ -57,7 +57,8 @@ In order to correctly use React in XD, you will have to install dependencies cor
     "css-loader": "^1.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "style-loader": "^0.22.0"
+    "style-loader": "^0.22.0",
+    "yarn": "^1.12.3"
   }
 }
 ```
@@ -94,6 +95,10 @@ module.exports = {
     }
 };
 ```
+As per [webpack's documentation](https://webpack.js.org/configuration/externals/), 
+> The `externals` configuration option provides a way of excluding dependencies from the output bundles. Instead, the created bundle relies on that dependency to be present in the consumer's environment.  
+Note taht, in this example, we are excluding `scenegraph` API to be exlcuded from the output bundles since this dependency is present in the XD environment. 
+
 3. Install yarn, if needed
 ```
 npm install -g yarn
@@ -213,15 +218,15 @@ class HelloForm extends React.Component { // [3]
 
     render() { // [14]
         return (
-            <form style={{ width: 300 }}>
+            <form style={{ width: 300 }} onSubmit={this.onDoneClick}>
                 <h1>React with JSX Components</h1>
                 <label>
                     <span>What is your name?</span>
                     <input onChange={this.onInputChange} />
                 </label>
-                <p>{"Hello " + this.state.name}</p>
+                <p>{`Hello ${this.state.name}`}</p>
                 <footer>
-                    <button type="submit" uxp-variant="cta" onClick={this.onDoneClick}>Done</button>
+                    <button type="submit" uxp-variant="cta">Done</button>
                 </footer>
             </form>
         );
@@ -280,13 +285,16 @@ This code does the following:
 1.  Loads `react-shim.js` to make React run in the XD environment
 2.  Gets reference to `react` and `react-dom` modules installed earlier in the steps
 3.  Imports `HelloForm` component
-4.  Creates a dialo UI
-5.  Renders the imported `HelloForm` component and passes `dialog` and `selection` objects as props
+4.  Creates the dialog UI
+5.  Renders the imported `HelloForm` component and passes `dialog` and `selection` objects as props. Note that the dialog is reused, so it gets rendered only once. 
 6.  Loads the modal inside the XD document
 7.  Exports a map object, which associates the JavaScript handler function (`main`) with the `commandId` property declared in the manifest earlier. The command ID must match the `commandId` value declared in your manifest exactly.
 
 ### 5. Compile the code
-Run `yarn watch` to compile the code and watch for changes. This process will create the `main.js` file to be read by Adobe XD.
+
+**Developement** - Run `yarn watch` to compile the code and watch for changes. This process will create the `main.js` file to be read by Adobe XD.
+
+**Production** - Run `yarn build` to build the final version of your plugin
 
 ### 5. Run your plugin
 
