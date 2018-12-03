@@ -8,7 +8,7 @@ async function exportRendition(selection) {
         const renditions = [{
             node: selection.items[0],
             outputFile: file,
-            type: "png",
+            type: application.RenditionType.PNG,
             scale: 2
         }];
 
