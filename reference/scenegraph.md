@@ -1233,14 +1233,17 @@ There are two types of Text nodes:
   breaks ("\n").
 - Area Text - Fixed width and height. Text is automatically wrapped (soft line wrapping) to fit the width. If it does not fit the
   height, any remaining text is clipped.
+
 Check whether [<code>areaBox</code>](#Text-areaBox) is null to determine the type of a Text node.
 
-The baseline of a Point Text node is at y=0 in its own local coordinate system. Horizontally, local x=0 is the _anchor point_ that the
-text grows from / shrinks toward when edited. This anchor depends on the justification: for example, if the text is centered, x=0 is
-the horizontal centerpoint of the text.
-
-The bounds reported for a Text object leave enough space for descenders, uppercase letters, and accent marks, even if the current
-string does not contain any of those characters. This makes aligning text based on its bounds behave more consistently.
+Text bounds and layout work differently depending on the type of text:
+- Point Text - The baseline of is at y=0 in its own local coordinate system. Horizontally, local x=0 is the _anchor point_ that the
+  text grows from / shrinks toward when edited. This anchor depends on the justification: for example, if the text is centered, x=0 is
+  the horizontal centerpoint of the text. The localBounds box leaves enough space for descenders, uppercase letters, and accent marks,
+  even if the current string does not contain any of those characters. This makes aligning text based on its bounds behave more
+  consistently.
+- Area Text - The baseline is at a positive y value in local coordinates, and its local (0, 0) is the top left of the areaBox. Text
+  always flows to the right and down from this local origin regardless of justification.
 
 * [Text](#Text)
     * [.text](#Text-text) : <code>string</code>
