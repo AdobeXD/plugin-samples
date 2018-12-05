@@ -11,7 +11,7 @@
   "devDependencies": {
     "css-loader": "^1.0.0",
     "file-loader": "^1.1.11",
-    "nodemon": "^1.18.4",
+    "nodemon": "^1.18.7",
     "style-loader": "^0.22.1",
     "webpack": "^4.16.4",
     "webpack-cli": "^3.1.0"
