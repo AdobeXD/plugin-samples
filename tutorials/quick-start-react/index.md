@@ -33,7 +33,7 @@ my-plugin-folder
 
 ### 1. Install dependencies
 In order to correctly use React in XD, you will have to install dependencies correctly. Follow the steps below:
-1. List the required dependencies in `manifest.json`
+1. List the required dependencies in `package.json`
 ```js
 {
   "name": "helllo_react_jsx",
@@ -97,7 +97,8 @@ module.exports = {
 ```
 As per [webpack's documentation](https://webpack.js.org/configuration/externals/), 
 > The `externals` configuration option provides a way of excluding dependencies from the output bundles. Instead, the created bundle relies on that dependency to be present in the consumer's environment.  
-Note taht, in this example, we are excluding `scenegraph` API to be exlcuded from the output bundles since this dependency is present in the XD environment. 
+
+Note that, in this example, we are excluding `scenegraph` API to be exlcuded from the output bundles since this dependency is present in the XD environment. 
 
 3. Install yarn, if needed
 ```
@@ -120,7 +121,7 @@ Now, let's create your plugin files. Open your favorite text editor and create t
     - `HelloForm.jsx` is the file that contains the only React component we are going to use. Note that you can have multiple `.jsx` files if needed
     - `react-shim.js` is a JavaScript file that helps React run smoothly in XD's environment. Further details to follow in a later section
 
-### 3. Create your plugin’s manifest
+### 3. Edit your plugin’s manifest
 
 In the previous step, you created a file named `manifest.json`. Open that file and paste in this JSON object:
 
