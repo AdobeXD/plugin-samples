@@ -272,7 +272,7 @@ function main(selection) {
         return dialog
     }
 
-    return document.body.appendChild(getDialog()).showModal())
+    return document.body.appendChild(getDialog()).showModal();
 }
 
 module.exports = { // [7]
