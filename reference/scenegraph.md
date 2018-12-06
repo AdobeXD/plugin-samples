@@ -1237,9 +1237,9 @@ There are two types of Text nodes:
 Check whether [<code>areaBox</code>](#Text-areaBox) is null to determine the type of a Text node.
 
 Text bounds and layout work differently depending on the type of text:
-- Point Text - The baseline of is at y=0 in its own local coordinate system. Horizontally, local x=0 is the _anchor point_ that the
+- Point Text - The baseline is at y=0 in the node's local coordinate system. Horizontally, local x=0 is the _anchor point_ that the
   text grows from / shrinks toward when edited. This anchor depends on the justification: for example, if the text is centered, x=0 is
-  the horizontal centerpoint of the text. The localBounds box leaves enough space for descenders, uppercase letters, and accent marks,
+  the horizontal centerpoint of the text. The bounding box leaves enough space for descenders, uppercase letters, and accent marks,
   even if the current string does not contain any of those characters. This makes aligning text based on its bounds behave more
   consistently.
 - Area Text - The baseline is at a positive y value in local coordinates, and its local (0, 0) is the top left of the areaBox. Text
