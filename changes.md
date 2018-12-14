@@ -1,5 +1,22 @@
 # Change Log
 
+## Public Release 15.0.12
+
+No new APIs or API changes.
+
+### User-facing plugin features
+
+* Force stop: If a plugin operation is blocking XD for more than one second with no UI shown, the user sees a spinner with the option to force-stop the plugin. _This does not stop the plugin's code
+  from running_, but it reverts any partially-completed changes to the document and revokes the plugin from being the foreground operation (unblocking the XD UI and blocking the plugin from making
+  document changes until it's invoked again by the user). If the plugin does eventually reawaken and try to continue running code from earlier, any attempts to modify the document will throw an error.
+
+### Known Issues
+
+No new known issues. See the [Known Issues page](./known-issues.md) for a comprehensive list of existing known issues.
+
+
+----
+
 ## Public Release 14.0.42
 
 ### New API Features
@@ -29,7 +46,7 @@
 
 ### Known Issues
 
-See the [Known Issues page](./known-issues.md) for a comprehensive list.
+No new known issues. See the [Known Issues page](./known-issues.md) for a comprehensive list of existing known issues.
 
 
 ----
