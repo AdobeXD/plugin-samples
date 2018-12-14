@@ -21,6 +21,9 @@
 
 ### User-facing plugin features
 
+* "Discover Plugins" listing improvements:
+    * Sort by plugin name, in addition to the default of sorting by release date.
+    * Searching the plugin listing now searches the description field in addition to just the plugin title.
 * Safe mode: To temporarily disable all plugins for troubleshooting purposes, launch XD while holding down Shift. Re-launching XD will re-enable all plugins.
 * Uninstalling a plugin now clears its data/settings folder. Users are now prompted to confirm before uninstalling.
 
