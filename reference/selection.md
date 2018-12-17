@@ -12,7 +12,9 @@ function myCommand(selection, documentRoot) {
 module.exports.commands = { myCommandId: myCommand };
 ```
 
-The selection can only contain items within the current _edit context_:
+You can also access this object from the [`scenegraph.selection`](./scenegraph.md#module_scenegraph-selection) property.
+
+The selection can only contain items within the current [_edit context_](/reference/core/edit-context.md):
 - If the user has drilled down into a container node, the container is the current edit context and only its immediate children
   can be selected.
 - If the user hasn't drilled into any container, the root of the document is the edit context, and the selection may contain any

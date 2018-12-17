@@ -12,7 +12,8 @@ You can modify properties on any scenenodes within the current [_edit context_](
 edit context, but you cannot make structural changes directly to the scenegraph tree. Instead, use [commands](commands.md).
 
 Typically, you access scenegraph nodes via the [`selection`](selection.md) argument that is passed to your plugin command, or by
-traversing the entire document tree using the [`documentRoot`](#RootNode) argument that is passed to your plugin command.
+traversing the entire document tree using the [`documentRoot`](#RootNode) argument that is passed to your plugin command. These
+objects are also accessible [on the scenegraph module](#other-module-members) for convenience.
 
 **Example**
 ```js
@@ -81,6 +82,38 @@ These classes are not scenenode types, but are used extensively in the scenegrap
 * [Blur](Blur.md) - Value object for `blur` property
 
 
+## Other module members
+
+* [selection](#module_scenegraph-selection) : \![<code>Selection</code>](./selection.md)
+* [root](#module_scenegraph-root) : \![<code>RootNode</code>](#RootNode)
+
+
+* * *
+
+<a name="module_scenegraph-selection"></a>
+
+### *scenegraph.selection : \![<code>Selection</code>](./selection.md)*
+Object representing the current selection state and [edit context](./core/edit-context.md). Also available as the first argument passed to your plugin command handler function.
+
+**Kind**: static property of [<code>scenegraph</code>](#module_scenegraph)
+**Read only**: true
+**Since**: XD 14
+
+
+* * *
+
+<a name="module_scenegraph-root"></a>
+
+### *scenegraph.root : \![<code>RootNode</code>](#RootNode)*
+Root node of the current document's scenegraph. Also available as the second argument passed to your plugin command handler function.
+
+**Kind**: static property of [<code>scenegraph</code>](#module_scenegraph)
+**Read only**: true
+**Since**: XD 14
+
+
+* * *
+
 <a name="SceneNode"></a>
 
 ## *SceneNode*
@@ -111,6 +144,7 @@ Base class of all scenegraph nodes. Nodes will always be an instance of some _su
     * *[.locked](#SceneNode-locked) : <code>boolean</code>*
     * *[.markedForExport](#SceneNode-markedForExport) : <code>boolean</code>*
     * *[.hasLinkedContent](#SceneNode-hasLinkedContent) : <code>boolean</code>*
+    * *[.pluginData](#SceneNode-pluginData) : <code>&ast;</code>*
     * *[.removeFromParent()](#SceneNode-removeFromParent)*
     * *[.moveInParentCoordinates(deltaX, deltaY)](#SceneNode-moveInParentCoordinates)*
     * *[.placeInParentCoordinates(registrationPoint, parentPoint)](#SceneNode-placeInParentCoordinates)*
@@ -423,6 +457,27 @@ True if the node should be included in the output of _File > Export > Batch_ and
 ### *sceneNode.hasLinkedContent : <code>boolean</code>*
 True if the node's appearance comes from a link to an external resource, such as Creative Cloud Libraries or a
 separate XD document (in the case of a Linked Symbol instance).
+
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
+
+* * *
+
+<a name="SceneNode-pluginData"></a>
+
+### *sceneNode.pluginData : <code>&ast;</code>*
+**Since**: XD 14
+
+Metadata specific to your plugin. Must be a value which can be converted to a JSON string, or undefined to clear the
+stored metadata on this node.
+
+Metadata is persisted with the document when it is saved. Duplicating a node (including across documents, via copy-paste)
+will duplicate the metadata with it. If the node lies within a Symbol or Repeat Grid, all instances of the node will have
+identical metadata (changes in one copy will automatically be synced to the other copy). Metadata stored by this plugin
+cannot be accessed by other plugins - each plugin has its own isolated metadata storage.
+
+To store general metadata for the document overall, set pluginData on the [root](#module_scenegraph-root) node of the scenegraph. Metadata on
+the root node can be changed from _any_ edit context.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 **Read only**: true
@@ -1248,9 +1303,16 @@ Text bounds and layout work differently depending on the type of text:
 * [Text](#Text)
     * [.text](#Text-text) : <code>string</code>
     * [.styleRanges](#Text-styleRanges) : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:!Color, charSpacing:number, underline:boolean}&gt;</code>
+    * [.fontFamily](#Text-fontFamily) : <code>string</code>
+    * [.fontStyle](#Text-fontStyle) : <code>string</code>
+    * [.fontSize](#Text-fontSize) : <code>number</code>
+    * [.fill](#Text-fill) : <code>Color</code>
+    * [.charSpacing](#Text-charSpacing) : <code>number</code>
+    * [.underline](#Text-underline) : <code>boolean</code>
     * [.flipY](#Text-flipY) : <code>boolean</code>
     * [.textAlign](#Text-textAlign) : <code>string</code>
     * [.lineSpacing](#Text-lineSpacing) : <code>number</code>
+    * [.paragraphSpacing](#Text-paragraphSpacing) : <code>number</code>
     * [.areaBox](#Text-areaBox) : <code>?{width:number, height:number}</code>
     * [.clippedByArea](#Text-clippedByArea) : <code>boolean</code>
 
@@ -1285,6 +1347,86 @@ value of styleRanges. The styleRanges _getter_ always returns fully realized ran
 
 * * *
 
+<a name="Text-fontFamily"></a>
+
+### text.fontFamily : <code>string</code>
+**Since**: XD 14
+
+Set the font family across all style ranges, or get the font family of the last style range (font family of all the text
+if one range covers all the text). Plugins should not assume any particular default value for fontFamily.
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
+<a name="Text-fontStyle"></a>
+
+### text.fontStyle : <code>string</code>
+**Default**: non-italic normal weight style
+**Since**: XD 14
+
+Set the font style across all style ranges, or get the font style of the last style range (font style of all the text
+if one range covers all the text).
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
+<a name="Text-fontSize"></a>
+
+### text.fontSize : <code>number</code> &gt; 0
+**Since**: XD 14
+
+Font size in document pixels. Set the font size across all style ranges, or get the font size of the last style range
+(font size of all the text if one range covers all the text). Plugins should not assume any particular default value for
+fontSize.
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
+<a name="Text-fill"></a>
+
+### text.fill : <code>?[Color](Color.md)</code>
+**Default**: `null`
+
+Set the text color across all style ranges, or get the color of the last style range (color of all the text if one range
+covers all the text). Unlike most other nodes, text only allows a solid color fill - gradients and image fills are not
+supported.
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
+<a name="Text-charSpacing"></a>
+
+### text.charSpacing : <code>number</code>
+**Default**: `0`
+**Since**: XD 14
+
+Character spacing in increments of 1/1000th of the fontSize, in addition to the font's default character kerning. May be
+negative.
+
+Set the character spacing across all style ranges, or get the character spacing of the last style range (character
+spacing of all the text if one range covers all the text).
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
+<a name="Text-underline"></a>
+
+### text.underline : <code>boolean</code>
+**Default**: `false`
+**Since**: XD 14
+
+Set underline across all style ranges, or get the underline of the last style range (underline of all the text if one
+range covers all the text).
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
 <a name="Text-flipY"></a>
 
 ### text.flipY : <code>boolean</code>
@@ -1297,6 +1439,7 @@ If true, the text is drawn upside down.
 <a name="Text-textAlign"></a>
 
 ### text.textAlign : <code>string</code>
+**Default**: `ALIGN_LEFT`
 Horizontal alignment: Text.ALIGN_LEFT, ALIGN_CENTER, or ALIGN_RIGHT. This setting affects the layout of multiline text, and for point
 text it also affects how the text is positioned relative to its anchor point (x=0 in local coordinates) and what direction the text
 grows when edited by the user.
@@ -1319,6 +1462,8 @@ textNode.moveInParentCoordinates(originalBounds.x - newBounds.x, 0);
 <a name="Text-lineSpacing"></a>
 
 ### text.lineSpacing : <code>number</code> &gt; 0, or 0 for default spacing
+**Default**: `0`
+
 Distance between baselines in multiline text, in document pixels. The special value 0 causes XD to use the default line spacing
 defined by the font given the current font size & style.
 
@@ -1331,13 +1476,35 @@ font settings.
 
 * * *
 
+<a name="Text-paragraphSpacing"></a>
+
+### text.paragraphSpacing : <code>number</code> &gt;= 0
+**Default**: `0`
+**Since**: XD 14
+
+Additional distance between paragraphs, in document pixels, added to the lineSpacing amount (soft line breaks in area text are
+separated only by lineSpacing, while hard line breaks are separated by lineSpacing + paragraphSpacing). Unlike lineSpacing, 0
+is not a special value; it just means no added spacing.
+
+Similar to lineSpacing, this property is not automatically adjusted when fontSize changes. The paragraph spacing amount will stay
+fixed while the font size changes, shifting the spacing's proportional relationship to font size.
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
 <a name="Text-areaBox"></a>
 
 ### text.areaBox : <code>?{width:number, height:number}</code>
 Null for point text. For area text, specifies the size of the rectangle within which text is wrapped and clipped.
 
+Changing point text to area text or vice versa will change the origin / anchor point of the text, thus changing its localBounds,
+but it will also automatically change the node's transform so its globalBounds and boundsInParent origins remain unchanged.
+
+Changing area text to point text will also automatically insert hard line breaks ("\n") into the text to match the previous line
+wrapping's appearance exactly.
+
 **Kind**: instance property of [<code>Text</code>](#Text)
-**Read only**: true
 
 * * *
 
