@@ -480,7 +480,6 @@ To store general metadata for the document overall, set pluginData on the [root]
 the root node can be changed from _any_ edit context.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
-**Read only**: true
 
 * * *
 
