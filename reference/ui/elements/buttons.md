@@ -110,8 +110,8 @@ Warning buttons are used when the action is considered destructive. This variant
 > Warning buttons should _never_ be the default buttons on a form (that is, the action that is invoked when the user presses ENTER to dismiss a dialog).
 
 ```html
-<button uxp-variant="warning">Cancel</button>
-<button uxp-variant="warning" uxp-quiet="true">Cancel</button>
+<button uxp-variant="warning">Delete</button>
+<button uxp-variant="warning" uxp-quiet="true">Delete</button>
 ```
 
 {% content "variantaction" %}
