@@ -8,8 +8,9 @@ Dialogs can be dismissed in the following ways:
 You can listen for the _default_ gesture (typically [ENTER]) by registering for the `submit` event on the `form`:
 
 ```js
-function onsubmit() {
+function onsubmit(e) {
     dialog.close("ok");
+    e.preventDefault();
 }
 form.onsubmit = onsubmit;
 ```
