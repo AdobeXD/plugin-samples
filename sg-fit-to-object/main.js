@@ -14,7 +14,6 @@
  * - "Rotate Clock Fit Item": Rotate the item clockwise and fit the artboard.
  * - "Rotate Counter Clock Fit Item": Rotate the item counter clockwise and fit the artboard.
  *
- * Demo: https://adobe.enterprise.slack.com/files/W7FG32S6M/FA8KX3269/apr-17-2018_16-36-00.mp4
  */
 
 var Artboard = require("scenegraph").Artboard;
@@ -30,64 +29,64 @@ function rotatateClockFitItem(selection) {
 	fitIt(selection, "right");
 }
 
-function rotateCounterClockFitItem(selection){
+function rotateCounterClockFitItem(selection) {
 	fitIt(selection, "left");
 }
 
 // Main function
 
 function fitIt(selection, direction) {
-	if (selection.hasArtwork){
+	if (selection.hasArtwork) {
 		var selectedItem = selection.items[0];
 		var itemsToFit = getItemsToFit(selection);
 
-		itemsToFit.forEach(function(itemToFit){
+		itemsToFit.forEach(function (itemToFit) {
 			// Duplicate the selected item
 			commands.duplicate();
 
-		    // Rotate the selection as requested
-		    rotate(selection.items[0], direction, selection.items[0].localCenterPoint);
+			// Rotate the selection as requested
+			rotate(selection.items[0], direction, selection.items[0].localCenterPoint);
 
-		    // Resize to fit the target object
-		    resize(selection.items[0], itemToFit.globalBounds);
+			// Resize to fit the target object
+			resize(selection.items[0], itemToFit.globalBounds);
 
-		    // Place the item in the center of the target object
-		    if (itemToFit.parent instanceof Group){
-		    	selection.items[0].placeInParentCoordinates(selection.items[0].localCenterPoint, getCenterPoint(itemToFit));
-		    } else {
-		    	selection.items[0].placeInParentCoordinates(selection.items[0].localCenterPoint, itemToFit.localCenterPoint);
-		    }
+			// Place the item in the center of the target object
+			if (itemToFit.parent instanceof Group) {
+				selection.items[0].placeInParentCoordinates(selection.items[0].localCenterPoint, getCenterPoint(itemToFit));
+			} else {
+				selection.items[0].placeInParentCoordinates(selection.items[0].localCenterPoint, itemToFit.localCenterPoint);
+			}
 
-		    // Bring the item to the front
-		    commands.bringToFront()
+			// Bring the item to the front
+			commands.bringToFront()
 		})
 	}
 }
 
 // Helper functions
 
-function getItemsToFit(selection){
+function getItemsToFit(selection) {
 	var selectedItem = selection.items[0];
 	var parent = selectedItem.parent;
 	var itemsToFit = [];
 
 	// First use case where items are grouped
-	if (parent instanceof Group){
+	if (parent instanceof Group) {
 		parent.children.forEach(function (childNode, i) {
-			if (!childNode.selected){
-	    		itemsToFit.push(childNode);
+			if (!childNode.selected) {
+				itemsToFit.push(childNode);
 			}
 		});
 	} else {
-	// Second use case where items are not grouped (Fitting the Artboard)
-	    while (true){
-	    	if (parent instanceof Artboard){
-	    		itemsToFit.push(parent);
-	    		break;
-	    	} else {
-	    		parent = parent.parent;
-	    	}
-	    }
+		// Second use case where items are not grouped (Fitting the Artboard)
+		while (true) {
+			if (parent instanceof Artboard) {
+				itemsToFit.push(parent);
+				break;
+			} else {
+				parent = parent.parent;
+			}
+		}
 	}
 	return itemsToFit;
 }
@@ -104,7 +103,7 @@ function rotate(node, direction, centerPoint) {
 		} else if (node.rotation == -180) {
 			node.rotateAround(180, centerPoint);
 		}
-	} else if (direction == "left"){
+	} else if (direction == "left") {
 		if (node.rotation == 0) {
 			node.rotateAround(-90, centerPoint);
 		} else if (node.rotation == 90) {
@@ -114,7 +113,7 @@ function rotate(node, direction, centerPoint) {
 		} else if (node.rotation == -180) {
 			node.rotateAround(-270, centerPoint);
 		}
-	} else if (direction == "right"){
+	} else if (direction == "right") {
 		if (node.rotation == 0) {
 			node.rotateAround(90, centerPoint);
 		} else if (node.rotation == -90) {
@@ -129,25 +128,25 @@ function rotate(node, direction, centerPoint) {
 
 function resize(node, globalBounds) {
 	// Resize to fit the artboard
-    if (node.rotation == 0 || node.rotation == -180 || node.rotation == 180){
-	    node.resize(globalBounds.width, globalBounds.height);
-    } else if (node.rotation == 90 || node.rotation == -90) {
-    	node.resize(globalBounds.height, globalBounds.width);
-    }
+	if (node.rotation == 0 || node.rotation == -180 || node.rotation == 180) {
+		node.resize(globalBounds.width, globalBounds.height);
+	} else if (node.rotation == 90 || node.rotation == -90) {
+		node.resize(globalBounds.height, globalBounds.width);
+	}
 }
 
 function getCenterPoint(node) {
 	console.log(node.parent)
 	return {
-		x: node.boundsInParent.x + node.boundsInParent.width/2,
-		y: node.boundsInParent.y + node.boundsInParent.height/2
+		x: node.boundsInParent.x + node.boundsInParent.width / 2,
+		y: node.boundsInParent.y + node.boundsInParent.height / 2
 	}
 }
 
 module.exports = {
-    commands: {
-        fitItem: fitItem,
-        rotatateClockFitItem: rotatateClockFitItem,
-        rotateCounterClockFitItem: rotateCounterClockFitItem
-    }
+	commands: {
+		fitItem: fitItem,
+		rotatateClockFitItem: rotatateClockFitItem,
+		rotateCounterClockFitItem: rotateCounterClockFitItem
+	}
 };

@@ -6,18 +6,17 @@
  *
  * Run "Remove margin guide" to remove the guide rectangles from selected artboard(s).
  *
- * Demo: https://adobexdteam.slack.com/archives/C0B913DPV/p1524599264000015
  */
 
 
-var {Rectangle, Color, Text, Group, Artboard, Ellipse, Line} = require("scenegraph");
+var { Rectangle, Color, Text, Group, Artboard, Ellipse, Line } = require("scenegraph");
 var commands = require("commands");
 var artboards = {};
 
 function createMarginGuide(selection) {
-	selection.items.forEach(function(node){
-		if(node instanceof Artboard ){
-			if ((node.guid in artboards)){
+	selection.items.forEach(function (node) {
+		if (node instanceof Artboard) {
+			if ((node.guid in artboards)) {
 				removeMarginGuide(selection);
 				createMarginGuide(selection);
 			} else {
@@ -26,19 +25,19 @@ function createMarginGuide(selection) {
 				var metrics = getMetrics(artboard);
 
 				// Create left rectangle
-				var leftCenterPoint = {x: metrics.left/2, y: metrics.artboardHeight/2};
+				var leftCenterPoint = { x: metrics.left / 2, y: metrics.artboardHeight / 2 };
 				createRectangle(artboard, metrics.leftMargin, metrics.leftMargin, metrics.artboardHeight, leftCenterPoint);
 
 				// Create right rectangle
-				var leftCenterPoint = {x: metrics.right + metrics.rightMargin/2, y: metrics.artboardHeight/2};
+				var leftCenterPoint = { x: metrics.right + metrics.rightMargin / 2, y: metrics.artboardHeight / 2 };
 				createRectangle(artboard, metrics.rightMargin, metrics.rightMargin, metrics.artboardHeight, leftCenterPoint);
 
 				// Create top rectangle
-				var topCenterPoint = {x: metrics.artboardWidth/2, y: metrics.top - metrics.topMargin/2};
+				var topCenterPoint = { x: metrics.artboardWidth / 2, y: metrics.top - metrics.topMargin / 2 };
 				createRectangle(artboard, metrics.topMargin, metrics.artboardWidth, metrics.topMargin, topCenterPoint);
 
 				// Create bottom rectangle
-				var bottomCenterPoint = {x: metrics.artboardWidth/2, y: metrics.bottom + metrics.bottomMargin/2};
+				var bottomCenterPoint = { x: metrics.artboardWidth / 2, y: metrics.bottom + metrics.bottomMargin / 2 };
 				createRectangle(artboard, metrics.bottomMargin, metrics.artboardWidth, metrics.bottomMargin, bottomCenterPoint);
 			}
 		} else {
@@ -48,11 +47,11 @@ function createMarginGuide(selection) {
 }
 
 function removeMarginGuide(selection) {
-	selection.items.forEach(function(node){
-		if(node instanceof Artboard && (node.guid in artboards)){
+	selection.items.forEach(function (node) {
+		if (node instanceof Artboard && (node.guid in artboards)) {
 			var artboard = node;
-			artboard.children.forEach(function(child){
-				if (artboards[artboard.guid].indexOf(child.guid) > -1){
+			artboard.children.forEach(function (child) {
+				if (artboards[artboard.guid].indexOf(child.guid) > -1) {
 					child.removeFromParent();
 				}
 			})
@@ -62,7 +61,7 @@ function removeMarginGuide(selection) {
 }
 
 
-function createRectangle(artboard, marginLength, marginWidth, marginHeight, placementCenterPoint){
+function createRectangle(artboard, marginLength, marginWidth, marginHeight, placementCenterPoint) {
 	// Create and place the rectangle
 	var rectangle = new Rectangle();
 	rectangle.width = marginWidth;
@@ -76,18 +75,18 @@ function createRectangle(artboard, marginLength, marginWidth, marginHeight, plac
 	var text = new Text();
 	text.text = marginLength.toString();
 	text.styleRanges = [{
-	                length: text.text.length,
-	                fontFamily: 'Impact',
-	                fontStyle: 'Regular',
-	                fontSize: 40,
-	                charSpacing: 0,
-	                underline: false,
-	                fill: new Color("#000")
-	            }];
-    text.stroke = new Color("#fff");
-    text.strokeEnabled = true;
-    text.strokeWidth = 1;
-    text.visible = true;
+		length: text.text.length,
+		fontFamily: 'Impact',
+		fontStyle: 'Regular',
+		fontSize: 40,
+		charSpacing: 0,
+		underline: false,
+		fill: new Color("#000")
+	}];
+	text.stroke = new Color("#fff");
+	text.strokeEnabled = true;
+	text.strokeWidth = 1;
+	text.visible = true;
 	artboard.addChild(text);
 	text.placeInParentCoordinates(text.localCenterPoint, placementCenterPoint);
 
@@ -95,7 +94,7 @@ function createRectangle(artboard, marginLength, marginWidth, marginHeight, plac
 	artboards[artboard.guid].push(text.guid);
 }
 
-function getMetrics(artboard){
+function getMetrics(artboard) {
 
 	var metrics = {};
 	metrics.artboardHeight = artboard.height;
@@ -109,7 +108,7 @@ function getMetrics(artboard){
 	metrics.bottom = 0;
 	metrics.bottomMargin = 0;
 
-	artboard.children.forEach(function(artboardChild){
+	artboard.children.forEach(function (artboardChild) {
 		if (artboardChild.boundsInParent.x < metrics.left) {
 			metrics.left = artboardChild.boundsInParent.x;
 			metrics.leftMargin = artboardChild.boundsInParent.x;
@@ -132,8 +131,8 @@ function getMetrics(artboard){
 
 
 module.exports = {
-    commands: {
-        createMarginGuide: createMarginGuide,
-        removeMarginGuide: removeMarginGuide
-    }
+	commands: {
+		createMarginGuide: createMarginGuide,
+		removeMarginGuide: removeMarginGuide
+	}
 };
