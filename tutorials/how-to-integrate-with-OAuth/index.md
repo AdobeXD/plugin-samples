@@ -11,7 +11,7 @@ This tutorial will show you how to implement the OAuth workflow in an XD plugin,
 - Basic knowledge of HTML, CSS, and JavaScript.
 - [Quick Start Tutorial](/tutorials/quick-start)
 - [Debugging Tutorial](/tutorials/debugging/index.md)
-- Familiary with your OS's command line application
+- Familiarity with your OS's command line application
 - Familiarity with [OAuth](https://oauth.net/2/)
 - [A registered app on Dropbox](https://www.dropbox.com/developers/apps/create) with the following settings:
 
@@ -364,7 +364,7 @@ Just like HTML DOM APIs, you can use `document.createElement` method to create U
 3. Create a `h3` element to let the user know the auth workflow has been completed
 4. You need at least one exit point. Create a close button and add it to the container
 5. Create a listener for the click event and close the dialog
-6. Attache the dialog to the document, addd the contianer, and use `showModal` method to show the modal
+6. Attach the dialog to the document, add the container, and use `showModal` method to show the modal
 
 
 ### 10. Make an API call to Dropbox
