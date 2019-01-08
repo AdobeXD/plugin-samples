@@ -25,7 +25,7 @@ there's no guarantee that these styles are currently used anywhere in the docume
 ### Enums
 
 <dl>
-<dt><a name="GradientType"></a> GradientType : </dt><dd>`LINEAR`, `RADIAL` - Type of gradient color element: linear gradient or radial gradient</dd>
+<dt><a name="GradientType"></a> GradientType : </dt><dd><code>LINEAR</code>, <code>RADIAL</code> - Type of gradient color element: linear gradient or radial gradient</dd>
 
 </dl>
 
@@ -244,8 +244,8 @@ var assets = require("assets"),
         underline: false
     },
     numAdded = assets.characterStyles.add([
-        arialItalic,
-        { name: "Link Text", style: linkTextStyle }
+        { style: arialItalic },   // (no name)
+        { style: linkTextStyle, name: "Link Text" }
     ]);
 ```
 
@@ -267,7 +267,7 @@ Typically you will pass asset objects returned from [`get()`](#module_assets-cha
 
 | Param | Type |
 | --- | --- |
-| charStyleAssets | <<code>! CharacterStyleAsset &#124; Array.&lt;CharacterStyleAsset></code> |
+| charStyleAssets | <code>! CharacterStyleAsset &#124; Array.&lt;CharacterStyleAsset></code> |
 
 **Example**
 ```js
