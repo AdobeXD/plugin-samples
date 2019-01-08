@@ -91,6 +91,7 @@
 * [API references](./reference/how-to-read.md)
     * [How to read this reference](./reference/how-to-read.md)
     * [application](./reference/application.md)
+    * [assets](./reference/assets.md)
     * [clipboard](./reference/clipboard.md)
     * [cloud](./reference/cloud.md)
     * [commands](./reference/commands.md)

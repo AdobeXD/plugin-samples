@@ -2,10 +2,22 @@
 
 ## Public Release 15.0.12
 
-No new APIs or API changes.
+### New API Features
+
+* [Assets panel colors & text styles](./reference/assets.md): Get/add/remove any colors, gradients, and text styles saved in the Assets panel.
+
+### Breaking Changes
+
+No breaking changes.
+
+### Fixes and improvements
+
+No other API changes.
 
 ### User-facing plugin features
 
+* Disable plugins: Temporarily disable a plugin without uninstalling it or erasing its data. Choose _Plugins > Manage Plugins_, then click the "..." menu for a specific plugin and choose _Disable_.
+  A disabled plugin does not appear anywhere in the XD UI other than the Manage Plugins view, and none of its code is loaded or run.
 * Force stop: If a plugin operation is blocking XD for more than one second with no UI shown, the user sees a spinner with the option to force-stop the plugin. _This does not stop the plugin's code
   from running_, but it reverts any partially-completed changes to the document and revokes the plugin from being the foreground operation (unblocking the XD UI and blocking the plugin from making
   document changes until it's invoked again by the user). If the plugin does eventually reawaken and try to continue running code from earlier, any attempts to modify the document will throw an error.
