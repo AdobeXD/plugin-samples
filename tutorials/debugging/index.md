@@ -31,7 +31,7 @@ There's also a handy keyboard shortcut:
 
 If there are any errors blocking the plugin from loading, they will appear in the developer console on reload:
 
-![reload-plugins](/images/reload-plugins.png)
+![reload-error.png](/images/reload-error.png)
 
 ### 3. Try logging messages to the developer console
 
@@ -72,7 +72,7 @@ Oops, the fill color set by the plugin is `#FFFFFF`, which is white: the same co
 You can verify this with a `console.log` message:
 
 ```js
-console.log("el fill color =" + el.fill);
+console.log("el fill color =" + el.fill);  // OUTPUT HERE
 ```
 
 ## Next Steps
