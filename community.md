@@ -24,7 +24,7 @@ Whether you're looking for help, community discussion, or want to give us feedba
 ## Get the latest news
 
 - [Adobe Tech Blog](https://medium.com/adobetech): Developer-focused news from across Adobe. We post about API updates, how-tos, events, and more on this blog. Be sure to follow us for regular updates that matter to you.
-- [CC Developer Newsletter](): CC Ecosystem updates delivered directly to your inbox. We cover topics ranging from API announcements to go-to-market tips. Sign up for the newsletter to stay in the loop on the latest from across the ecosystem.
+- [CC Developer Newsletter](https://www.adobe.com/subscription/ccdevnewsletter.html): CC Ecosystem updates delivered directly to your inbox. We cover topics ranging from API announcements to go-to-market tips. Sign up for the newsletter to stay in the loop on the latest from across the ecosystem.
 
 
 ## Open source
