@@ -18,18 +18,23 @@ https://xd.adobelanding.com/en/xd-plugin-download/?name=036869b3
 ## Result
 **Success**
 1. The browser will ask user for confirmation  
+
 ![Open XD confirmation](/images/openxd.png)  
 
 1. Once user clicks on "Open Adobe XD CC", the browser will display the confirmation messsage  
+
 ![Browser confrimation page](/images/confirmation.png)  
 
 1. Finally, the user is taken to Xd product with the plugin manager open to the plugin. The user has to click "Install"  
+
 ![Plugin install page](/images/plugininstall.png)  
 
 **Fallback**
 1. No Params included in URL - Show error message and show the user how to manually download plugins  
+
 ![Plugin not found](/images/pluginnotfound.png)  
 2. Couldn't find XD on users system - Show error message and show the user how to download plugins and give the option to download XD  
+
 ![XD not found](/images/xdnotfound.png)  
 
 ## Next Steps
