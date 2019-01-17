@@ -10,7 +10,7 @@ This tutorial walks through the process of deep-linking into XD plugin install. 
 - Base URL: https://xd.adobelanding.com/en/xd-plugin-download/?
 - `name`: This parameter refers to your plugin's ID which can be retrieved from [Adobe Console](https://console.adobe.io/plugins)
 
-![Console displaying plugin ID](/images/on-canvas.png)
+![Console displaying plugin ID](/images/console.png)
 
 **Example**
 ```
