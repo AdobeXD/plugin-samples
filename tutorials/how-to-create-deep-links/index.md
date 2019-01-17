@@ -10,7 +10,7 @@ This tutorial walks through the process of deep-linking into XD plugin install. 
 - Base URL: https://xd.adobelanding.com/en/xd-plugin-download/?
 - `name`: This parameter refers to your plugin's ID which can be retrieved from [Adobe Console](https://console.adobe.io/plugins)
 
-![Console displaying plugin ID](/../images/on-canvas.png)
+![Console displaying plugin ID](/images/on-canvas.png)
 
 **Example**
 ```
@@ -20,13 +20,13 @@ https://xd.adobelanding.com/en/xd-plugin-download/?name=036869b3
 ## Result
 **Success**
 1. The browser will ask user for confirmation
-![Open XD confirmation](/../images/openxd.png)
+![Open XD confirmation](/images/openxd.png)
 
 1. Once user clicks on "Open Adobe XD CC", the browser will display the confirmation messsage
-![Browser confrimation page](/../images/confirmation.png)
+![Browser confrimation page](/images/confirmation.png)
 
 1. Finally, the user is taken to Xd product with the plugin manager open to the plugin. The user has to click "Install"
-![Plugin install page](/../images/plugininstall.png)
+![Plugin install page](/images/plugininstall.png)
 
 **Fallback**
 1. No Params included in URL - Show error message and show the user how to manually download plugins
