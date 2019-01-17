@@ -16,7 +16,7 @@ https://xd.adobelanding.com/en/xd-plugin-download/?name=036869b3
 ```
 
 ## Result
-**Success**
+### Success
 1. The browser will ask user for confirmation  
 
 ![Open XD confirmation](/images/openxd.png)  
@@ -29,7 +29,7 @@ https://xd.adobelanding.com/en/xd-plugin-download/?name=036869b3
 
 ![Plugin install page](/images/plugininstall.png)  
 
-**Fallback**
+### Fallback
 1. No Params included in URL - Show error message and show the user how to manually download plugins  
 
 ![Plugin not found](/images/pluginnotfound.png)  
