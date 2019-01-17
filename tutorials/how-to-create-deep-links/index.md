@@ -27,9 +27,10 @@ https://xd.adobelanding.com/en/xd-plugin-download/?name=036869b3
 ![Plugin install page](/images/plugininstall.png)  
 
 **Fallback**
-1. No Params included in URL - Show error message and show the user how to manually download plugins
-2. Couldn't find XD on users system - Show error message and show the user how to download plugins and give the option to download XD
-3. On mobile - Send Reminder Email with Link 
+1. No Params included in URL - Show error message and show the user how to manually download plugins  
+![Plugin not found](/images/pluginnotfound.png)  
+2. Couldn't find XD on users system - Show error message and show the user how to download plugins and give the option to download XD  
+![XD not found](/images/xdnotfound.png)  
 
 ## Next Steps
 Ready to explore further? Take a look at our other resources:
