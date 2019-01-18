@@ -63,11 +63,13 @@ This section describes what the user will experience when there is an issue enco
 
 If no parameter is included in the URL or an inaccurate parameter is provided, the browser will show an error message and show the user how to manually download plugins  
 
-Example:
+Inaccurate parameter examples:
 ```
 https://xd.adobelanding.com/en/xd-plugin-download/?
 https://xd.adobelanding.com/en/xd-plugin-download/?wrongparameter=036869b3
 ```
+
+These inaccurate urls will result in showing the error message in the browser:
 
 ![Inaccurate parameter](/images/inaccurateparam.png)
 
