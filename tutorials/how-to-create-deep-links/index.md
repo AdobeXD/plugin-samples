@@ -82,7 +82,7 @@ https://xd.adobelanding.com/en/xd-plugin-download/?name=wrongpluginid
 
 If XD is not found on user's system, the browser will show an error message with the option to download XD:
 
-![XD not found](/images/xdnotfound.png)
+<!-- ![XD not found](/images/xdnotfound.png) -->
 
 ## Next Steps
 
