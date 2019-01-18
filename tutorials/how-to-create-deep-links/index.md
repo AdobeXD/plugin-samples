@@ -43,17 +43,11 @@ The browser will ask user for confirmation:
 
 ![Open XD confirmation](/images/openxd.png)
 
-### Browser confirmation message
+### Browser confirmation message and XD launch
 
-Once the user clicks on "Open Adobe XD CC", the browser will display a confirmation messsage, start launching XD, and bring user's focus to XD
+Once the user clicks on "Open Adobe XD CC", the browser will display a confirmation messsage and take user the Adobe XD application with the plugin manager open to the plugin listing:
 
-![Browser confrimation page](/images/confirmation.png)
-
-### Transfer to XD
-
-While the browser shows the confirmation message, the user is taken to the Adobe XD application with the plugin manager open to the plugin listing. The user must to click "Install":
-
-![Plugin install page](/images/plugininstall.png)
+![GIF for Browser confirmation message and XD launch](/images/deeplink.gif)  
 
 ## Fallback
 
