@@ -5,7 +5,7 @@ This tutorial walks through the process of deep-linking to an XD plugin listing.
 ## Prerequisites
 
 - Plugin listing deep-linking only works with users on Adobe XD 14+ (release in December 2018)
-- Your plugin should have a plugin ID and be [listed on the plugin manager](/distribution/how-to-submit-to-plugin-manager.html)
+- Your plugin should have a plugin ID and be [listed on the Plugin Manager](/distribution/how-to-submit-to-plugin-manager.html)
 
 ## URL & Parameters
 
@@ -45,7 +45,7 @@ The browser will ask user for confirmation:
 
 ### Browser confirmation message and XD launch
 
-Once the user clicks on "Open Adobe XD CC", the browser will display a confirmation messsage and take user the Adobe XD application with the plugin manager open to the plugin listing:
+Once the user clicks on "Open Adobe XD CC", the browser will display a confirmation messsage and take user the Adobe XD application with the Plugin Manager open to the plugin listing:
 
 ![GIF for Browser confirmation message and XD launch](/images/deeplink.gif)  
 
