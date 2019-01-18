@@ -34,8 +34,9 @@ https://xd.adobelanding.com/en/xd-plugin-download/?name=036869b3
 
 ![Plugin not found](/images/pluginnotfound.png)  
 > Couldn't find XD on users system - Show error message and show the user how to download plugins and give the option to download XD  
-
+<p align="center">
 ![XD not found](/images/xdnotfound.png)  
+</p>
 
 ## Next Steps
 Ready to explore further? Take a look at our other resources:
