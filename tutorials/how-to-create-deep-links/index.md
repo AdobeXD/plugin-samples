@@ -63,7 +63,7 @@ https://xd.adobelanding.com/en/xd-plugin-download/?
 https://xd.adobelanding.com/en/xd-plugin-download/?wrongparameter=036869b3
 ```
 
-These inaccurate urls will result in showing the error message in the browser:
+These inaccurate URLs will result in showing the following error message in the browser:
 
 ![Inaccurate parameter](/images/inaccurateparam.png)
 
