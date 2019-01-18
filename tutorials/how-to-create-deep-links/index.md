@@ -27,7 +27,7 @@ The browser will ask user for confirmation
 ![Open XD confirmation](/images/openxd.png)  
 
 ### Browser confirmation message
-Once user clicks on "Open Adobe XD CC", the browser will display the confirmation messsage  
+Once user clicks on "Open Adobe XD CC", the browser will display the confirmation messsage, start launching XD, and bring user focus to XD
 
 ![Browser confrimation page](/images/confirmation.png)  
 
@@ -37,10 +37,13 @@ Finally, the user is taken to Xd product with the plugin manager open to the plu
 ![Plugin install page](/images/plugininstall.png)  
 
 ## Fallback
-### Inaccurate parameters
-If no parameter is included or inaccurate parameters are entered in the URL, the browser will show an error message and show the user how to manually download plugins  
+### No parameter provided
+If no parameter is included in the URL or an inaccurate parameter is provided, the browser will show an error message and show the user how to manually download plugins  
 
 ![Plugin not found](/images/pluginnotfound.png)  
+
+### Inaccurate plugin ID provided
+If no parameter is included in the URL, the browser will show an error message and show the user how to manually download plugins  
 
 ### XD not installed
 if XD is not found on user's system, the browser will show an error message and show the user how to download plugins and give the option to download XD    
