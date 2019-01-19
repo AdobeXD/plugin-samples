@@ -21,7 +21,7 @@ The selection can only contain items within the current [_edit context_](/refere
   artboard _or_ any combination of the pasteboard's immediate children and one or more artboards' immediate children. The selection
   cannot contain both artboards and non-artboards at the same time, however.
 
-Don't assume that all selected items have the same parent node: in the root edit context, the selection can contain items with
+**Don't assume that all selected items have the same parent node:** in the root edit context, the selection can contain items with
 differing parents (multiple different artboards, as well as the root node).
 
 Items that are _locked_ cannot be in the selection. If the user or your plugin attempts to select any locked items, they are
@@ -46,6 +46,8 @@ command.
 
 ### selection.items : <code>!Array&lt;\![SceneNode](scenegraph.md#SceneNode)&gt;</code>
 Array representing the current selection. Empty array if nothing is selected (never null). Never includes locked nodes.
+May include items with different parents (for example, an item in an artboard plus an item on the pasteboard can be selected
+at the same time). Never mixes artboards with other nodes: a selection is either all artboards or all non-artboards.
 
 As a convenience, the setter also accepts a single node or null as valid input. However, the getter always returns an array.
 
