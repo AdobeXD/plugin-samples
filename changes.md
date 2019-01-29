@@ -5,6 +5,7 @@
 ### New API Features
 
 * [Assets panel colors & text styles](./reference/assets.md): Get/add/remove any colors, gradients, and text styles saved in the Assets panel.
+* [Deep link to plugin listings](./distribution/how-to-create-deep-links.md): Link from web sites, social media, etc. directly to your plugin listing in XD's UI so users can easily install the plugin.
 
 ### Breaking Changes
 

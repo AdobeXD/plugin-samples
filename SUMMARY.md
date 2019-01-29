@@ -79,6 +79,7 @@
 * [Distribution options](./distribution/options.md)
 * [Publishing your plugin](./distribution/how-to-submit-to-plugin-manager.md)
 * [Marketing your plugin](./distribution/marketing.md)
+* [Deep-linking to your plugin listing](./distribution/how-to-create-deep-links.md)
 
 ## Join the Community
 
