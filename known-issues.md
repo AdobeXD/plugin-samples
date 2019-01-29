@@ -18,6 +18,10 @@
 - Longer plugin command names may be truncated in the menu on Windows
   - Workaround: keep your plugin command names short!
 
+## Assets Panel
+
+- Plugins can modify the Assets panel contents while running in the background. Do not rely on this - in a future release, it will be blocked. Only make modifications to the document (including Assets panel) while the plugin is running a user-invoked command.
+
 ## User Interface
 
 - Checkboxes may fail to render correctly if in a scrollable container. To work around this issue, make sure the containing element has a background color. (`transparent` does not count; macOS only.)

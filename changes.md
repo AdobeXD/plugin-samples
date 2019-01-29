@@ -1,6 +1,6 @@
 # Change Log
 
-## Public Release 15.0.12
+## XD Release 15.0.12
 
 ### New API Features
 
@@ -24,12 +24,14 @@ No other API changes.
 
 ### Known Issues
 
-No new known issues. See the [Known Issues page](./known-issues.md) for a comprehensive list of existing known issues.
+* *New:* Plugins can modify the Assets panel contents while running in the background. Do not rely on this - in a future release, it will be blocked.
+
+See the [Known Issues page](./known-issues.md) for a comprehensive list of existing known issues.
 
 
 ----
 
-## Public Release 14.0.42
+## XD Release 14.0.42
 
 ### New API Features
 
@@ -63,7 +65,7 @@ No new known issues. See the [Known Issues page](./known-issues.md) for a compre
 
 ----
 
-## Public Release 13.0.12
+## XD Release 13.0.12
 
 ### Fixes and improvements
 
