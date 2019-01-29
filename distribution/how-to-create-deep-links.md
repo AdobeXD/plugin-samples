@@ -5,7 +5,7 @@ This tutorial walks through the process of deep-linking to an XD plugin listing.
 ## Prerequisites
 
 - Plugin listing deep-linking only works with users on Adobe XD 14+ (released in December 2018)
-- Your plugin should have a plugin ID and be [listed on the Plugin Manager](/distribution/how-to-submit-to-plugin-manager.html)
+- Your plugin should have a plugin ID and be [listed on the Plugin Manager](/distribution/how-to-submit-to-plugin-manager.md)
 
 ## URL & Parameters
 
