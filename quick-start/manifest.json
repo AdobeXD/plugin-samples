@@ -1,5 +1,5 @@
 {
-    "id": "ID_FROM_IO_CONSOLE",
+    "id": "QUICK_START",
     "name": "Hello World sample plugin",
     "host": {
         "app": "XD",
