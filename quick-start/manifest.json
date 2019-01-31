@@ -1,9 +1,9 @@
 {
-    "id": "QUICK_START",
+    "id": "ID_FROM_IO_CONSOLE",
     "name": "Hello World sample plugin",
     "host": {
         "app": "XD",
-        "minVersion": "13.0.0"
+        "minVersion": "14.0.0"
     },
     "version": "1.0.0",
     "uiEntryPoints": [
