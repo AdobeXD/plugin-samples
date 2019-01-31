@@ -76,12 +76,9 @@ const { ImageFill } = require("scenegraph");
 
 Now the `ImageFill` class is imported and ready to be used.
 
-
-### 3. Write a helper function to make XHR requests
+### 3. Write a helper function to make XHR requests  
 
 Our XHR helper `xhrBinary` will make an HTTP GET request to any URL it is passed, and a return a Promise with an `arraybuffer`.
-
-Each of the numbered comments are explained below the code:
 
 ```js
 function xhrBinary(url) {                                       // [1]
@@ -115,54 +112,38 @@ function xhrBinary(url) {                                       // [1]
 5. After the conversion, the promise is resolved
 6. Make sure the set the `responseType` as `arraybuffer`
 
-We'll use this function in a later step.
-
-
-### 4. Convert `arraybuffer` to `base64` string
-
-The help function we just made returns and `arraybuffer` but `ImageFill` will expect a `base64` string. We need to convert one to the other.
-
-The XD plugin API does not provide a `atob` method, as you would expect in a browser environment. You will need to supply your own conversion method.
-
-Luckily, you don't need to create your own from scratch. There are many open-source libraries out there that will convert `arraybuffer` to `base64` string. [This public is one such example in a GitHub Gist](https://gist.github.com/jonleighton/958841).
-
-Find your favorite and add it to your `main.js` file. For this example, we'll call the `base64ArrayBuffer` found in the Gist linked above.
-
-We'll use this function in a later step.
-
-
-### 5. Write a helper to apply `ImageFill`
+### 4. Write a helper to apply `ImageFill`
 
 This helper function will create an `ImageFill` instance that can be applied to a user-selected XD scengraph object:
 
 ```js
-function applyImagefill(selection, base64) {                             // [1]
-    const imageFill = new ImageFill(`data:image/jpeg;base64,${base64}`); // [2]
-    selection.items[0].fill = imageFill;                                 // [3]
+function applyImagefill(selection, file) {                             // [1]
+    const imageFill = new ImageFill(file);                             // [2]
+    selection.items[0].fill = imageFill;                               // [3]
 }
 ```
 
-1. The function accepts the `selection` and a `base64` string as parameters
+1. The function accepts the `selection` and a `file` as parameters
 2. Use the `ImageFill` class to create the fill
 3. Apply the image to the user-selected XD object
 
 We'll use this function in the next step.
 
-
-### 6. Write a helper function to download the image
+### 5. Write a helper function to download the image
 
 Ok, you've just made three helper functions. Now we're going to tie them all together!
 
 Note the use of the `async` keyword at the beginning of the function.
 
 ```js
-async function downloadImage(selection, jsonResponse) {             // [1]
+async function downloadImage(selection, jsonResponse) {                 // [1]
     try {
-        const photoUrl = jsonResponse.message;                      // [2]
-        const photoObj = await xhrBinary(photoUrl);                 // [3]
-        const photoObjBase64 = await base64ArrayBuffer(photoObj);   // [4]
-        applyImagefill(selection, photoObjBase64);                  // [5]
-
+        const photoUrl = jsonResponse.message;                          // [2]
+        const photoObj = await xhrBinary(photoUrl);                     // [3]
+        const tempFolder = await fs.getTemporaryFolder();               // [4]
+        const tempFile = await tempFolder.createFile("tmp");            // [5]
+        await tempFile.write(photoObj, { format: uxp.formats.binary }); // [6]
+        applyImagefill(selection, tempFile);                            // [7]
     } catch (err) {
         console.log("error")
         console.log(err.message);
@@ -173,11 +154,12 @@ async function downloadImage(selection, jsonResponse) {             // [1]
 1. This helper function accepts the `selection` and a JSON response object as parameters
 2. Gets the URL from the JSON response
 3. Uses our async `xhrBinary` function to get an `arraybuffer`
-4. Uses our async `base64ArrayBuffer` function to convert `arraybuffer` to `base64` string
-5. Uses `applyImagefill` to place the image into a user-selected XD object
+4. Uses the `fs` module and its `getTemporaryFolder` method to create a temp folder
+5. Uses the `createFile` method to create a temp file
+6. Uses the `write` method to write the binary file to store
+7. Uses `applyImagefill` to place the image into a user-selected XD object
 
-
-### 7. Write the main handler function
+### 6. Write the main handler function
 
 This is the function that will be called with the user runs our plugin command.
 
@@ -203,7 +185,6 @@ function applyImage(selection) {
 3. Pass the URL to `fetch`
 4. The first `.then` block returns the response JSON object
 5. The second `.then` block passes the `selection` and our JSON reponse to our  `downloadImage` function, ultimately placing it in the document
-
 
 ## Next Steps
 
