@@ -3,7 +3,6 @@ const uxp = require("uxp").storage;
 const fs = uxp.localFileSystem;
 
 function applyImage(selection) {
-
     if (selection.items.length) {
         const url = "https://dog.ceo/api/breeds/image/random";
         return fetch(url)
@@ -16,7 +15,6 @@ function applyImage(selection) {
     } else {
         console.log("Please select a shape to apply the downloaded image.");
     }
-
 }
 
 async function downloadImage(selection, jsonResponse) {
