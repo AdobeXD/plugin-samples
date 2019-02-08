@@ -81,7 +81,7 @@ Now the `Line` and `Color` classes and `commands` module are required in and rea
 
 ### 3. Create a helper function
 
-Our plugin is going to assing random colors to the lines we create!
+Our plugin is going to assigning random colors to the lines we create!
 
 Add the lines of code below to your file:
 

@@ -91,7 +91,7 @@ Now the `Artboard`, `Rectangle`, `Ellipse`, `Text`, and `Color` classes are requ
 
 This function will do what it says on the label: create elements in the XD document. It's just here for the purpose of generating elements that will help us learn about the `SceneNodeList` in the next section.
 
-Because of that, we won't go into detail about the `createElements` function. In short, it will create a number of rectangles, ellispses, and text elements, and put them on your XD artboard.
+Because of that, we won't go into detail about the `createElements` function. In short, it will create a number of rectangles, ellipses, and text elements, and put them on your XD artboard.
 
 ```js
 function createElements(selection) {
