@@ -5,6 +5,7 @@
 * [Overview](./README.md)
 
 * [Quick start](./tutorials/quick-start/index.md)
+* [Quick start - React](./tutorials/quick-start-react/index.md)
 * [Debugging plugins](./tutorials/debugging/index.md)
 * [Plugin structure](./reference/structure/index.md)
   * [Plugin location](./reference/structure/location.md)
