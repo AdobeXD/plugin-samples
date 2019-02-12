@@ -1,6 +1,29 @@
 # Change Log
 
-## XD Release 15.0.12
+## XD Release 16.0.12 (February 2019)
+
+### New API Features
+
+* **setTimeout() & friends:** `setTimeout()`, `setInterval()`, `setImmediate()`, and the corresponding `clear*()` methods are now available as global APIs. These APIs _do not_ allow plugins to
+  control animations in the XD document - plugins can still only modify the document as part of an atomic operation while the UI is blocked. But timeout APIs _do_ allow for simple animations in
+  your plugin's dialog UI (e.g. a progress indicator), "debouncing" user input, etc. – and they help support web frameworks like React with fewer polyfills needed.
+
+### Breaking Changes
+
+No breaking changes.
+
+### Fixes and improvements
+
+No other API changes.
+
+### Known Issues
+
+No new known issues. See the [Known Issues page](./known-issues.md) for a comprehensive list of existing known issues.
+
+
+----
+
+## XD Release 15.0.12 (January 2019)
 
 ### New API Features
 
@@ -32,7 +55,7 @@ See the [Known Issues page](./known-issues.md) for a comprehensive list of exist
 
 ----
 
-## XD Release 14.0.42
+## XD Release 14.0.42 (December 2018)
 
 ### New API Features
 
@@ -66,15 +89,6 @@ No new known issues. See the [Known Issues page](./known-issues.md) for a compre
 
 ----
 
-## XD Release 13.0.12
+## XD Release 13.0.12 (October 2018)
 
-### Fixes and improvements
-
-* You can now export renditions to any user-chosen location on Windows.
-    * Caveat: exporting renditions to a folder _created by_ your plugin will not work if the folder name contains spaces or other special characters. See [known issues](./known-issues.md) for details.
-
-### Breaking Changes
-
-* **File IO** - If the user cancels `getFileForOpening()` in single-file mode (the default), the API now resolves with null instead of an empty array. The multiple-file mode continues to resolve with an empty array when canceled.
-* **Export Renditions** - You cannot make multiple concurrent calls to `application.createRenditions()`, since it was not guaranteed to work correctly in this case. Either wait for for the Promise from one call to finish before calling again, or accumulate all your requests into one array and make a single call for all of them.
-* The undocumented global APIs `localStorage` and `sessionStorage` have been removed for now.
+This was the first release of Adobe XD featuring a public API for in-app plugins!
