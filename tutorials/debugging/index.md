@@ -27,7 +27,7 @@ There's also a handy keyboard shortcut:
 | Platform      | Keyboard shortcut  |
 | ------------- | -------------      |
 | macOS         | Shift-Cmd-R        |
-| Windows       | Ctrl-Alt-E         |
+| Windows       | Ctrl-Shift-R       |
 
 If there are any errors blocking the plugin from loading, they will appear in the developer console on reload:
 
