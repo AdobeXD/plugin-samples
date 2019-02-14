@@ -77,7 +77,7 @@ Sliders allow the user to pick from a continuum of values between a minimum and 
 
 ## Usage
 
-You can render a typical dropdown using the following:
+You can render a typical slider using the following:
 
 {% tabs html="HTML", js="JS", react="React" %}
 
