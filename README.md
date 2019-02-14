@@ -9,7 +9,7 @@ This repository contains several sample XD plugins. You can use these to learn m
 | e2e-adobe-stock | Network I/O (Fetch) | Lets users use End-to-end Adobe Stock Photo Search | 13.0.0 |
 | e2e-colorize-text | Scenegraph, ScenenodeList | Provides several text color utilities | 13.0.0 |
 | e2e-stock-chart | UI, File I/O, Scenegraph, Network I/O (Fetch)  | Draws a line chart of the picked stock quote | 13.0.0 |
-| quick-start | Scenegraph  | Creates a rectanle object and inserts it into the artboard | 13.0.0 |
+| quick-start | Scenegraph  | Creates a rectangle object and inserts it into the artboard | 13.0.0 |
 | how-to-show-an-alert | UI | Demonstrates how to show an alert and an error dialog | 13.0.0 |
 | how-to-create-path-objects | Scenegraph | Demonstrates how to create shapes using path objects | 13.0.0 |
 | how-to-draw-lines | Scenegraph | Demonstrates how to create line objects | 13.0.0 |
