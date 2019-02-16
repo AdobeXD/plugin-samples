@@ -1,70 +1,90 @@
-const $ = sel => document.querySelector(sel);
+async function menuCommand() {
+  // Get and show the dialog
+  const dialog = getDialog();
+  const result = await dialog.showModal();
 
-function createDialog(id = "dialog") {
-    const sel = `#${id}`;
-    let dialog = document.querySelector(sel);
-    if (dialog) {
-        console.log("Reusing old dialog");
-        return dialog;
-    }
+  // Exit if the user cancels the modal
+  if (result === "reasonCanceled")
+    return console.log("User clicked cancel or escape.");
 
-    document.body.innerHTML = `
-<style>
-    ${sel} form {
-        width: 300px;
-    }
-</style>
-<dialog id="${id}">
-    <form method="dialog">
-        <h1>Hello!</h1>
-        <label>
-            <span>What's your name?</span>
-            <input uxp-quiet="true" type="text" id="name" placeholder="Your name"/>
-        </label>
-        <footer>
-            <button id="cancel">Cancel</button>
-            <button type="submit" id="ok" uxp-variant="cta">OK</button>
-        </footer>
-    </form>
-</dialog>
-`;
-
-    dialog = document.querySelector(sel);
-
-    const [form, cancel, ok, name] = [`${sel} form`, "#cancel", "#ok", "#name"].map(s => $(s));
-
-    const submit = () => {
-        dialog.close(name.value);
-    }
-
-    cancel.addEventListener("click", () => {
-         dialog.close();
-    });
-    ok.addEventListener("click", e => {
-        submit();
-        e.preventDefault();
-    });
-    form.onsubmit = submit;
-
-    return dialog;
+  // Exit on user completion of task
+  return console.log(`Your name is ${result}`);
 }
 
-async function menuCommand() {
+function getDialog() {
+  // Get the dialog if it already exists
+  let dialog = document.querySelector("dialog");
 
-    const dialog = createDialog();
+  if (dialog) {
+    console.log("Dialog already loaded in DOM. Reusing...");
+    return dialog;
+  }
 
-    try {
-        const r = await dialog.showModal();
-        if (r) {
-            console.log(`Your name is ${r}`);
+  // Otherwise, create and return a new dialog
+  return createDialog();
+}
+
+function createDialog() {
+  console.log(`
+Adding dialog to DOM. 
+This will remain in the DOM until \`dialog.remove()\ is called,
+or your plugin is reloaded.
+  `);
+
+  //// Add your HTML to the DOM
+  document.body.innerHTML = `
+    <style>
+        form {
+            width: 400px;
         }
-    } catch (err) {
-        console.log("ESC dismissed dialog");
-    }
+    </style>
+    <dialog>
+        <form method="dialog">
+            <h1>Hello HTML!</h1>
+            <label>
+                <span>What's your name?</span>
+                <input uxp-quiet="true" type="text" id="name" placeholder="Your name"/>
+            </label>
+            <footer>
+                <button id="cancel">Cancel</button>
+                <button type="submit" id="ok" uxp-variant="cta">OK</button>
+            </footer>
+        </form>
+    </dialog>
+  `;
+
+  //// Get references to DOM elements
+  // Each of these will be used in event handlers below
+  const [dialog, form, cancel, ok, name] = [
+    `dialog`,
+    `form`,
+    "#cancel",
+    "#ok",
+    "#name"
+  ].map(s => document.querySelector(s));
+
+  //// Add event handlers
+  // Close dialog when cancel is clicked.
+  // Note that XD handles the ESC key for you, also returning `reasonCanceled`
+  cancel.addEventListener("click", () => dialog.close("reasonCanceled"));
+
+  // Handle ok button click
+  ok.addEventListener("click", e => handleSubmit(e, dialog, name));
+  // Handle form submit via return key
+  form.onsubmit = e => handleSubmit(e, dialog, name);
+
+  return dialog;
+}
+
+function handleSubmit(e, dialog, name) {
+  // Close the dialog, passing back data
+  dialog.close(name.value);
+  // Prevent further automatic close handlers
+  e.preventDefault();
 }
 
 module.exports = {
-    commands: {
-        menuCommand
-    }
+  commands: {
+    menuCommand
+  }
 };

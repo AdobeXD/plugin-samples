@@ -1,16 +1,16 @@
 {
-    "id": "UI_HTML",
-    "name": "(UI) Hello HTML Plugin",
-    "version": "1.0.0",
-    "host": {
-        "app": "XD",
-        "minVersion": "13.0.0"
-    },
-    "uiEntryPoints": [
-        {
-            "type": "menu",
-            "label": "UI Hello HTML",
-            "commandId": "menuCommand"
-        }
-    ]
+  "id": "UI_HTML",
+  "name": "(UI) HTML Plugin",
+  "version": "1.0.0",
+  "host": {
+    "app": "XD",
+    "minVersion": "13.0.0"
+  },
+  "uiEntryPoints": [
+    {
+      "type": "menu",
+      "label": "UI HTML",
+      "commandId": "menuCommand"
+    }
+  ]
 }
