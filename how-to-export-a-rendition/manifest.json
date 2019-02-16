@@ -1,16 +1,16 @@
 {
-    "id": "HOW_TO_EXPORT_A_RENDITION",
-    "name": "(H2) Export Rendition Plugin",
-    "version": "1.0.0",
-    "host": {
-        "app": "XD",
-        "minVersion": "13.0.0"
-    },
-    "uiEntryPoints": [
-        {
-            "type": "menu",
-            "label": "How to Generate an Export Rendition",
-            "commandId": "exportRendition"
-        }
-    ]
+  "id": "HOW_TO_EXPORT_A_RENDITION",
+  "name": "(H2) How to export a rendition",
+  "version": "1.0.0",
+  "host": {
+    "app": "XD",
+    "minVersion": "13.0.0"
+  },
+  "uiEntryPoints": [
+    {
+      "type": "menu",
+      "label": "How to Export a Rendition",
+      "commandId": "exportRendition"
+    }
+  ]
 }
