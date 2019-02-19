@@ -1,0 +1,16 @@
+{
+    "id": "BANNER_PLUGIN",
+    "name": "Banner plugin",
+    "host": {
+        "app": "XD",
+        "minVersion": "13.0"
+    },
+    "version": "0.0.1",
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Customize Banner",
+            "commandId": "myPluginCommand"
+        }
+    ]
+}
