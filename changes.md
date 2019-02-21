@@ -1,11 +1,43 @@
 # Change Log
 
+## XD Release 17.0.12 (March 2019)
+
+### New API Features
+
+* **[Select & edit across groups](./reference/core/edit-context.md):** Users can now select multiple items that are in different containers at the same time. This has several effects on plugins:
+    * _Do not assume all selected items have the same parent node._ Previously, this was already true in certain special cases -- for example, users could select items that are the immediate
+      children of several different artboards. Now, it can happen in far more cases, so plugins must take extra care to avoid any assumptions about node parents.
+    * _Wider "edit scope" surrounding the selection._ Previously, plugins could edit the selected nodes and all their siblings (with a slightly broader scope as a special case in the "root edit
+      context"). Now, plugins can edit any nodes in the subtree of the common ancestor of all the selected nodes, _if_ those nodes are connected to the common ancestor through a parent chain
+      consisting entirely of plain Groups (or Artboards). See the [edit context documentation](./reference/core/edit-context.md) for details and examples.
+    * _Plugins still cannot edit globally across the entire document at once, even though in very simple testing it may _appear_ that this works. Non-Group containers act as blockades that
+      the edit scope cannot cross - if the selection is outside such a container, you cannot edit inside it; and if the selection is inside such a container, you cannot edit outside it.
+
+### Breaking Changes
+
+No breaking changes.
+
+### Fixes and improvements
+
+No other API changes.
+
+### User-facing plugin features
+
+* **Plugin update notifications:** Users see an in-app notification when any installed plugins have a newer version available in the plugins listing.
+
+### Known Issues
+
+No new known issues. See the [Known Issues page](./known-issues.md) for a comprehensive list of existing known issues.
+
+
+----
+
 ## XD Release 16.0.12 (February 2019)
 
 ### New API Features
 
 * **setTimeout() & friends:** `setTimeout()`, `setInterval()`, `setImmediate()`, and the corresponding `clear*()` methods are now available as global APIs. These APIs _do not_ allow plugins to
-  control animations in the XD document - plugins can still only modify the document as part of an atomic operation while the UI is blocked. But timeout APIs _do_ allow for simple animations in
+  control animations in the XD document -- plugins can still only modify the document as part of an atomic operation while the UI is blocked. But timeout APIs _do_ allow for simple animations in
   your plugin's dialog UI (e.g. a progress indicator), "debouncing" user input, etc. – and they help support web frameworks like React with fewer polyfills needed.
 
 ### Breaking Changes

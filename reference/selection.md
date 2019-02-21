@@ -1,8 +1,28 @@
 <a name="selection"></a>
 
 ## selection
-The `selection` object represents the currently selected set of nodes in the UI. You can set the selection to use it as input
-for [commands](commands.md), or to determine what is left selected for the user when your plugin's edit operation completes.
+The `selection` object represents the currently selected set of nodes in the UI. You can change the selection to use it as input
+for [commands](commands.md), or to control what is left selected for the user when your plugin's edit operation completes.
+
+**Selected items might not all have the same parent node.** For example, the selection could be split between two sibling
+Group nodes, or half the selection could be inside a Group and half inside its parent. Or the selection could be split between
+multiple different artboards along with items on the pasteboard (immediate children of the root node).
+
+Your plugin can only modify nodes in the "neighborhood" of the user's selection, a subset of the scenegraph tree called the
+**_[edit context](/reference/core/edit-context.md)_**. You can only set the selection to other nodes within the edit context.
+The edit context does not update to reflect any changes to the selection until after a plugin operation completes.
+
+**Other restrictions on selection**
+
+* The selection cannot contain both artboards and non-artboards at the same time.
+
+* The selection cannot contain both a node and one of its ancestors at the same time.
+
+* Items that are _locked_ cannot be in the selection. If the user or your plugin attempts to select any locked items, they are
+  automatically filtered into a separate list ([itemsIncludingLocked](#selection-itemsIncludingLocked)) which is generally only used by the Unlock
+  command.
+
+**Accessing the selection**
 
 The current selection state is passed to your _command handler function_ as an argument:
 ```js
@@ -13,20 +33,6 @@ module.exports.commands = { myCommandId: myCommand };
 ```
 
 You can also access this object from the [`scenegraph.selection`](./scenegraph.md#module_scenegraph-selection) property.
-
-The selection can only contain items within the current [_edit context_](/reference/core/edit-context.md):
-- If the user has drilled down into a container node, the container is the current edit context and only its immediate children
-  can be selected.
-- If the user hasn't drilled into any container, the root of the document is the edit context, and the selection may contain any
-  artboard _or_ any combination of the pasteboard's immediate children and one or more artboards' immediate children. The selection
-  cannot contain both artboards and non-artboards at the same time, however.
-
-**Don't assume that all selected items have the same parent node:** in the root edit context, the selection can contain items with
-differing parents (multiple different artboards, as well as the root node).
-
-Items that are _locked_ cannot be in the selection. If the user or your plugin attempts to select any locked items, they are
-automatically filtered into a separate list ([itemsIncludingLocked](#selection-itemsIncludingLocked)) which is generally only used by the Unlock
-command.
 
 **Kind**: object  
 
@@ -45,17 +51,19 @@ command.
 <a name="selection-items"></a>
 
 ### selection.items : <code>!Array&lt;\![SceneNode](scenegraph.md#SceneNode)&gt;</code>
-Array representing the current selection. Empty array if nothing is selected (never null). Never includes locked nodes.
-May include items with different parents (for example, an item in an artboard plus an item on the pasteboard can be selected
-at the same time). Never mixes artboards with other nodes: a selection is either all artboards or all non-artboards.
+Array representing the current selection. Empty array if nothing is selected (never null). _Items might not all have the same
+parent node._ Never includes locked nodes. Never mixes artboards with other nodes: a selection is either all artboards or all
+non-artboards. Never includes any ancestors of any other item in the selection.
 
 As a convenience, the setter also accepts a single node or null as valid input. However, the getter always returns an array.
 
 If the user selects nodes one-by-one, by Shift-clicking, this array lists the nodes in the order they were added to the selection.
 If the user selected by other means, e.g. dragging a marquee, the order has no meaning.
 
-Returns a fresh array each time, so this can be mutated by the caller without interfering with anything. Mutating the array
-does not change the selection - only invoking the 'items' setter changes selection.
+Returns a fresh array each time, so modifying the array returned by the getter does not change the selection -- only invoking
+the 'items' setter changes selection.
+
+The selection can only contain items which are in the current _[edit context](/reference/core/edit-context.md)._
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
 **Example**  
@@ -107,7 +115,18 @@ True if the selection isn’t empty and consists of one or more Artboards. Never
 <a name="selection-editContext"></a>
 
 ### selection.editContext : <code>\![SceneNode](scenegraph.md#SceneNode)</code>
-The context in which selection and edit operations must occur. If the user hasn't drilled into any container node, this value is the document root, and its scope includes all immediate children of the pasteboard (including Artboards), *and* all immediate children of all those Artboards.
+The common ancestor node of all selected items - also the root node of the subtree containing the "[edit context](/reference/core/edit-context.md),"
+which is the scope in which selection and edit operations must occur for the current plugin command. The scope does not
+necessarily cover the entire subtree rooted at the editContext root node -- it may only cover a subset of this tree. See
+edit context documentation page for more details.
+
+If the user hasn't drilled into any container node, this value is the document root.
+
+The value of `editContext` does not change while your plugin is running. However, the `editContext` may change after your plugin
+operation ends:
+- If your plugin changes the value of `selection.items` to include fewer nodes, the edit context may be narrowed.
+- If your plugin has deleted nodes such that the current container is now empty, the edit context will pop up a level and the now-empty
+  container is automatically cleaned up.
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
 **Read only**: true  
@@ -118,6 +137,7 @@ The context in which selection and edit operations must occur. If the user hasn'
 
 ### selection.insertionParent : <code>\![SceneNode](scenegraph.md#SceneNode)</code>
 The preferred parent to insert newly added content into. Takes into account the current edit context as well as the "focused artboard" if in the root context.
+Typically this is the same parent where, for example, XD's shape drawing tools would add items.
 
 **Kind**: instance property of [<code>selection</code>](#selection)  
 **Read only**: true  

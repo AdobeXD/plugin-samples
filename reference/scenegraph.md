@@ -1654,14 +1654,16 @@ repeated as necessary to cover all the grid cells. This is a persistent data bin
 to increase the number of grid cells, items from this sequence will be used to fill the text values of the new cells.
 
 You can call this API from either of _two different edit contexts_:
-- Edit context is the parent node of this RepeatGrid (i.e. a context where the RepeatGrid could be selected)
-- Edit context is the RepeatGrid cell which is the parent of textNode (i.e. a context where textNode could be selected)
+- Edit context where the RepeatGrid node is in scope (where properties of the RepeatGrid node itself could be edited) - e.g.
+  when the RepeatGrid is selected
+- Edit context where textNode is in scope (where properties of the textNode could be edited) - e.g. when textNode is selected
+  or when the user has otherwise drilled down into the grid cell containing it.
 
 **Kind**: instance method of [<code>RepeatGrid</code>](#RepeatGrid)
 
 | Param | Type | Description |
 | --- | --- | --- |
-| textNode | <code>!Text</code> | A Text node exemplar that is an immediate child of one of this RepeatGrid's cells. The data series will be bound to this text node and all corresponding copies of it in the other grid cells. |
+| textNode | <code>!Text</code> | A Text node exemplar that would be in scope for editing if the current edit context was one of this RepeatGrid's cells. The data series will be bound to this text node and all corresponding copies of it in the other grid cells. |
 | textValues | <code>!Array&lt;string&gt;</code> | Array of one or more strings. Empty strings are ignored. |
 
 * * *
@@ -1674,14 +1676,16 @@ repeated as necessary to cover all the grid cells. This is a persistent data bin
 to increase the number of grid cells, items from this sequence will be used to set the image fill in the new cells.
 
 You can call this API from either of _two different edit contexts_:
-- Edit context is the parent node of this RepeatGrid (i.e. a context where the RepeatGrid could be selected)
-- Edit context is the RepeatGrid cell which is the parent of shapeNode (i.e. a context where shapeNode could be selected)
+- Edit context where the RepeatGrid node is in scope (where properties of the RepeatGrid node itself could be edited) - e.g.
+  when the RepeatGrid is selected
+- Edit context where shapeNode is in scope (where properties of the shapeNode could be edited) - e.g. when shapeNode is selected
+  or when the user has otherwise drilled down into the grid cell containing it.
 
 **Kind**: instance method of [<code>RepeatGrid</code>](#RepeatGrid)
 
 | Param | Type | Description |
 | --- | --- | --- |
-| shapeNode | <code>!GraphicNode</code> | A shape node exemplar that is an immediate child of one of this RepeatGrid's cells. The image series will be bound to this node and all corresponding copies of it in the other grid cells. Must be a node type that supports image fills (e.g. Rectangle, but not Text or Line). |
+| shapeNode | <code>!GraphicNode</code> | A shape node exemplar that would be in scope for editing if the current edit context was one of this RepeatGrid's cells. The image series will be bound to this node and all corresponding copies of it in the other grid cells. Must be a node type that supports image fills (e.g. Rectangle, but not Text or Line). |
 | images | <code>!Array&lt;string&gt;</code> | Array of one or more ImageFills. |
 
 * * *
