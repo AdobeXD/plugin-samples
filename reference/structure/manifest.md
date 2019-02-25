@@ -9,21 +9,41 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
     "id": "YOUR_ID_HERE",
     "name": "Name of Your Plugin",
     "version": "0.0.1",
-
     "description": "Description of your plugin.",
-    "icons": [
-        { "width": 96, "height": 96, "path": "images/icon@2x.png" }
+    "summary": "Summary of your plugin",
+    "releaseNotes": "Release note",
+    "keywords": [
+        "utility",
+        "productivity",
+        "automation"
     ],
-
+    "languages": [
+        "en",
+        "de",
+        "fr"
+    ],
+    "website": "https://mywebsite.com",
+    "author": "Your Name",
+    "helpUrl": "https://mywebsite.com/help",
+    "icons": [
+        { "width": 48, "height": 48, "path": "images/icon01x.png" },
+        { "width": 96, "height": 96, "path": "images/icon02x.png" },
+        { "width": 144, "height": 144, "path": "images/icon03x.png" },
+        { "width": 192, "height": 192, "path": "images/icon04x.png" }
+    ],
     "host": {
         "app": "XD",
-        "minVersion": "13.0.0"
+        "minVersion": "13.0.0",
+        "maxVersion": "14.0.0"
     },
-
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Hello World",
+            "label": {
+                "default": "Hellow World",
+                "fr": "Bonjour le monde",
+                "de": "Hallo Welt"
+            },
             "commandId": "helloCommand",
             "shortcut": { "mac": "Cmd+Shift+P", "win": "Ctrl+Shift+P" }
         }
@@ -41,10 +61,17 @@ The top level of the manifest JSON object contains high-level information about 
 Key path | Type | Description
 ---------|------|------------
 `id`     | `string` | Unique identifier for your plugin. You can get your unique ID on the [Adobe I/O Console](https://console.adobe.io/plugins).
-`name`   | `string` | Human-readable name of your plugin displayed in the Plugin Manager listing. (Note: if you're submitting your plugin, this name _must_ match what is in your [I/O Console](https://console.adobe.io/plugins) plugin submission.)
+`name`   | `string` | Human-readable name of your plugin displayed in the Plugin Manager listing. (Note: if you're submitting your plugin, this name _must_ match the plugin name that is in your [I/O Console](https://console.adobe.io/plugins) plugin submission.) The name should be 3 - 45 characters.
 `version`| `string` | Version number of your plugin in `x.y.z` format. *Must be three segments. Each version component must be between `0` and `99`.
-`description` | `string` | Description displayed in the Plugin Manager listing.
-`icons` | `Array<Object>` | Icon(s) displayed in the Plugin Manager listing. Currently, you should supply only a single icon that is 96x96 at 2x scale (XD will automatically downscale it to 48x48 on a 1x display; you cannot provide a second, separate 48x48 image file at this time).
+`description` | `string` | Detailed description displayed in the Plugin Manager listing when "See details" is clicked. The detailed description should be 3 - 1000 characters.
+`summary` | `string` | Short summary displayed in the Plugin Manager listing. Short summary should be 3 - 30 characters.
+`releaseNotes` | `string` | _Optional._ Developer's release notes displayed when "See details" is clicked in the Plugin Mabager listing. The release note should be 3 - 1000 characters.
+`keywords` | `string` | _Optional._ keywords for your plugin. Each keyword should be at least 2 characters and max length of concatenated kewords is 100 charactes excluding commas.
+`languages` | `Array<String>` | Language(s) supported by your plugin. The language must be a two-letter code from [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). Currently, only the following codes are allowed: `en` (english), `de` (german), `fr` (french), `ja` (japanese), `ko` (korean), `zh` (chinense), `es` (spanish), `pt` (brazilian portuguese).
+`website` | `string` | _Optional._ web address for your plugin. The url should follow the standard url format and not exceed 1000 characters.
+`author` | `string` | Plugin author's name. Name should be 3 - 40 characters.
+`helpUrl` | `string` | Web url for your plugin's support/help page. The url should follow the standard url format and not exceed 1000 characters.
+`icons` | `Array<Object>` | Icon(s) displayed in the Plugin Manager listing. png, jpg/jpeg formats are supported. Max file size is 1MB.
 `host.app` | `string` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `"XD"`).
 `host.minVersion` | `string` | Minimum required version of Adobe XD (in `x.y.z` format) that can run this plugin. *Must be three segments* (typically you'll leave all segments set to 0 except for the major version number).
 `host.maxVersion` | `string` | _Optional._ Maximum version of XD (in `x.y.z` format) that can run this plugin. *Must be three segments* as well.
