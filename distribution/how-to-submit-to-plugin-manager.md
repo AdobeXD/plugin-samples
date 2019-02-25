@@ -24,6 +24,10 @@ Before you submit, be sure to go through this checklist of common reasons for re
 - Does your plugin _name_ in your `manifest.json` file match the plugin name you created on the [I/O Console](https://console.adobe.io/plugins)? [Learn more here](/reference/structure/manifest.md#top-level-metadata).
 - Is the plugin `version` number _format_ correct in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata).
 - Have you _increased_ the version number in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata). You _must_ increment your version number _each time you submit your plugin for review_.
+- Have you picked the appropriate keywords for your plugin in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata). 
+- Do you have labels in all supported languages noted in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata). 
+- Do your website and support urls follow the standard url format in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata). 
+- Do all your icons match the respective sizes noted in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata).  
 - Is the plugin `host.minVersion` number and (optionally) `host.maxVersion` number _format_ correct in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata).
 - When packaging your plugin, did you make sure to compress the files (and _not_ the parent folder)? [Learn more here](/distribution/packaging.md#1-compress-your-files-as-a-zip-file).
 - Is the .XDX file less than 25MB in size?
@@ -35,12 +39,9 @@ Answering "no" to any of these questions will get your submission rejected, requ
 
 ## Submit your plugin
 
-You can submit your plugin for review through the I/O Console, where you can provide your packaged plugin, a description of your plugin, plugin icons, and release notes.
+You can submit your plugin for review through the I/O Console, where you can provide your packaged plugin. The I/O console will pass or fail your submission based on its built-in validations. Once your plugin is successfully submitted via the I/O console, our CC Integration review team will review the plugins.
 
 We'll walk you through the workflow below.
-
-> **tip**
-> It's best to compose any copy (like plugin description and release notes) in your favorite text editor, and save it to your machine. Composing copy in a web form always runs the risk of loss, and you never know when you might need your copy later.
 
 ### 1. Read the submission guidelines
 
@@ -53,46 +54,27 @@ To begin the submission for your plugin, visit the [I/O Console](https://console
 
 This will take you to your plugin's Console page, which shows your plugin ID, a download link for your starter project, and a nice blue button that says "Submit For Review".
 
-Click "Submit For Review".
+Before clicking on the "Submit for Review" button, make sure to click on the "Check Plugin Name Availability" button to check the availability of your plugin name written in [your manifest.json file](/reference/structure/manifest.md#top-level-metadata). Note that this plugin name is the one that will be displayed in the Plugin Manager. Do not confuse this name with your project name, which is only visible to you.
 
+When ready, click "Submit For Review".
 
 ### 3. Upload your XD plugin
 
-On this page you can:
+On this page, attach your `.xdx` file and click on "Next". Note that your .XDX file size must be under 25MB to upload it for submission.
 
-1. Verify that the plugin ID in your plugin's manifest matches the one you see in the I/O Console
-1. Upload your packaged plugin
+In the next screen, the I/O Console will process the upload and extract information from your manifest.json file. 
 
-Note that your .XDX file size must be under 25MB to upload it for submission.
+### 4. Review your listing information
 
-> **info**
-> The plugin name you see on this screen is the plugin name that users will see in the plugin manager. This name is not changeable. If you've decided to change the name of your plugin, before you submit you'll need to create a new plugin on the I/O Console, get the new plugin ID that you are issued, add that plugin ID to your plugin's manifest, and repackage the plugin.
+On this page, review the validation results run by the I/O Console on all required fields of [your manifest.json file](/reference/structure/manifest.md#top-level-metadata). Note that all changes have to be maded to your original files. 
 
-### 4. Tell us about your XD plugin
+When all necessary changes are made, re-package your plugin into the `.xdx` format and resubmit the plugin.
 
-On this page you can provide:
+### 5. Submit your plugin
 
-1. Your publisher name
-1. Your support URL or email
-1. A description of your plugin
-1. An icon for your plugin
-
-All information entered on this page will be user-facing, visible in the XD plugin manager.
-
-> **Danger**
->
-> The support page you link must include information on how to get support. There should be a link to support, filing an issue, etc.
->
-> Note: For Github repositories, you should link to a `README.md` file or other markdown file that describes how to file an issue or directly to a new issue submission form. **Do not link directly to your repo's list of issues.**
-
-### 5. Enter your release notes
-
-On this page you can enter optionally release notes for your plugin. Release notes help both users and the CC Integrations Review team know what's new or fixed in your plugin.
-
-Once you're ready to initiate the plugin review, click "Submit".
+If your plugin passed all validation checks by the I/O Console, write notes (if any) to Adobe Reviewers and click on "Submit for Review".
 
 Congratulations!
-
 
 ## CC Integrations Review
 
