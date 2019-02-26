@@ -42,7 +42,7 @@ Replace the JSON object in your manifest with the one below, noting the changes 
     "author": "Your Name",
     "helpUrl": "https://mywebsite.com/help",
     "icons": [
-        { "width": 48, "height": 48, "path": "images/icon01x.png" }
+        { "width": 96, "height": 96, "path": "images/icon.png" }
     ],
     "uiEntryPoints": [
         {
