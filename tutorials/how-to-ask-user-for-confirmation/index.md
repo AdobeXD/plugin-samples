@@ -99,6 +99,16 @@ Be sure to add this to your plugin `manifest.json` as well:
         "minVersion": "13.0.0"
     },
     "version": "1.0.0",
+    "description": "Description of your plugin.",
+    "summary": "Summary of your plugin",
+    "languages": [
+        "en"
+    ],
+    "author": "Your Name",
+    "helpUrl": "https://mywebsite.com/help",
+    "icons": [
+        { "width": 48, "height": 48, "path": "images/icon01x.png" }
+    ],
     "uiEntryPoints": [
         {
             "type": "menu",
@@ -108,6 +118,7 @@ Be sure to add this to your plugin `manifest.json` as well:
     ]
 }
 ```
+Refer to the full documentation of [manifest.json file](/reference/structure/manifest.md#top-level-metadata) to learn more.
 
 ## Next Steps
 

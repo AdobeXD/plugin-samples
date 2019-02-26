@@ -32,6 +32,16 @@ Replace the JSON object in your manifest with the one below, noting the changes 
         "minVersion": "13.0.0"
     },
     "version": "1.0.0",
+    "description": "Description of your plugin.",
+    "summary": "Summary of your plugin",
+    "languages": [
+        "en"
+    ],
+    "author": "Your Name",
+    "helpUrl": "https://mywebsite.com/help",
+    "icons": [
+        { "width": 48, "height": 48, "path": "images/icon01x.png" }
+    ],
     "uiEntryPoints": [
         {
             "type": "menu",
@@ -47,6 +57,7 @@ Replace the JSON object in your manifest with the one below, noting the changes 
 }
 ```
 
+Refer to the full documentation of [manifest.json file](/reference/structure/manifest.md#top-level-metadata) to learn more.
 
 Then, update your `main.js` file, mapping _both_ of the manifest's `commandId` to their respective handler functions.
 
