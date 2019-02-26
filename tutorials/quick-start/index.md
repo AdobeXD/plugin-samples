@@ -81,8 +81,7 @@ In the previous step, you created a file named `manifest.json`. Open that file a
     "author": "Your Name",
     "helpUrl": "https://mywebsite.com/help",
     "icons": [
-        { "width": 48, "height": 48, "path": "images/icon01x.png" },
-        { "width": 96, "height": 96, "path": "images/icon02x.png" }
+        { "width": 48, "height": 48, "path": "images/icon01x.png" }
     ],
     "host": {
         "app": "XD",

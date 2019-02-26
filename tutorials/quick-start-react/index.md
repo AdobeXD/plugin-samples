@@ -130,6 +130,16 @@ In the previous step, you created a file named `manifest.json`. Open that file a
   "id": "QUICKSTART_REACT",
   "name": "Quickstart - React",
   "version": "1.0.0",
+  "description": "Description of your plugin.",
+  "summary": "Summary of your plugin",
+  "languages": [
+    "en"
+  ],
+  "author": "Your Name",
+  "helpUrl": "https://mywebsite.com/help",
+  "icons": [
+    { "width": 48, "height": 48, "path": "images/icon01x.png" }
+  ],
   "host": {
     "app": "XD",
     "minVersion": "13.0.0"
