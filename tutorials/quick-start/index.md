@@ -20,12 +20,12 @@ At the end of the tutorial, we'll suggest some next steps for going deeper with 
 
 ### 0. Get a plugin ID from the I/O Developer Console
 
-Before you start, you'll want to create a plugin on the Adobe I/O Developer Console.
+Before you start, you'll want to create a plugin project on the Adobe I/O Developer Console.
 
 1. [Go to the I/O Console and sign in or sign up](https://console.adobe.io/plugins)
-1. Click "New Plugin"
-1. Give your plugin a unique name and click "Create Plugin"
-1. On the following page, get the 8-character unique plugin ID.
+1. Click "Create Plugin"
+1. Create a plugin project with a unique name and click "Create Plugin". Note that this project name is not public and only visible to you.
+1. On the following page, get the 8-character unique plugin ID in the "Plugin Details" section.
 
 We'll use this plugin ID in one of the next steps.
 
@@ -70,13 +70,24 @@ In the previous step, you created a file named `manifest.json`. Open that file a
 
 ```json
 {
-    "id": "ID_FROM_IO_CONSOLE",
+    "id": "YOUR_ID_HERE",
     "name": "Hello World sample plugin",
+    "version": "0.0.1",
+    "description": "Description of your plugin.",
+    "summary": "Summary of your plugin",
+    "languages": [
+        "en"
+    ],
+    "author": "Your Name",
+    "helpUrl": "https://mywebsite.com/help",
+    "icons": [
+        { "width": 48, "height": 48, "path": "images/icon01x.png" },
+        { "width": 96, "height": 96, "path": "images/icon02x.png" }
+    ],
     "host": {
         "app": "XD",
         "minVersion": "13.0.0"
     },
-    "version": "1.0.0",
     "uiEntryPoints": [
         {
             "type": "menu",
