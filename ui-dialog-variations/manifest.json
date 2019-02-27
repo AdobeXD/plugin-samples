@@ -4,14 +4,24 @@
     "name": "(UI) Dialog Variations",
     "icons": [
         {
-            "width": 512,
-            "height": 512,
-            "path": "icon.png"
+            "width": 48,
+            "height": 48,
+            "path": "images/icon01x.png"
         },
         {
-            "width": 24,
-            "height": 24,
-            "path": "icon-24.png"
+            "width": 96,
+            "height": 96,
+            "path": "images/icon02x.png"
+        },
+        {
+            "width": 144,
+            "height": 144,
+            "path": "images/icon03x.png"
+        },
+        {
+            "width": 192,
+            "height": 192,
+            "path": "images/icon04x.png"
         }
     ],
     "host": {
