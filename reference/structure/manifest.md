@@ -26,7 +26,7 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
     "author": "Your Name",
     "helpUrl": "https://mywebsite.com/help",
     "icons": [
-        { "width": 96, "height": 96, "path": "images/icon.png" },
+        { "width": 48, "height": 48, "path": "images/icon01x.png" },
         { "width": 96, "height": 96, "path": "images/icon02x.png" },
         { "width": 144, "height": 144, "path": "images/icon03x.png" },
         { "width": 192, "height": 192, "path": "images/icon04x.png" }
