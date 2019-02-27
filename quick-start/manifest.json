@@ -6,6 +6,20 @@
         "minVersion": "14.0.0"
     },
     "version": "1.0.0",
+    "description": "Description of your plugin.",
+    "summary": "Summary of your plugin",
+    "languages": [
+        "en"
+    ],
+    "author": "Your Name",
+    "helpUrl": "https://mywebsite.com/help",
+    "icons": [
+        {
+            "width": 96,
+            "height": 96,
+            "path": "images/icon.png"
+        }
+    ],
     "uiEntryPoints": [
         {
             "type": "menu",
