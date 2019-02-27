@@ -26,8 +26,8 @@ Before you submit, be sure to go through this checklist of common reasons for re
 - Have you picked the appropriate keywords for your plugin in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata). 
 - Do you have labels in all supported languages noted in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata). 
 - Do your website and support urls follow the standard url format in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata). 
-- Do you have icons prepared for all required sizes? [Learn more here](/reference/structure/manifest.md#top-level-metadata). 
-- Do all your icons match the respective sizes noted in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata).  
+- ? [Learn more here](/reference/structure/manifest.md#top-level-metadata). 
+- Do you have icons for all 4 required sizes that match the respective sizes noted in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata).  
 - Is the plugin `host.minVersion` number and (optionally) `host.maxVersion` number _format_ correct in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata).
 - If this is not your first time submitting this plugin, have you _increased_ the version number in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata). You _must_ increment your version number _each time you submit your plugin for review_.
 - When packaging your plugin, did you make sure to compress the files (and _not_ the parent folder)? [Learn more here](/distribution/packaging.md#1-compress-your-files-as-a-zip-file).
