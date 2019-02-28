@@ -152,7 +152,7 @@ If you haven’t already done so, launch XD and open a new document. Then naviga
 
 Alternatively, if XD was already open, select _Plugins > Development > Reload Plugins_.
 
-![A rectangle on the artboard](/../images/on-canvas.png)
+![A rectangle on the artboard](/images/on-canvas.png)
 
 Congratulations! You’ve built your first plugin for Adobe XD!
 

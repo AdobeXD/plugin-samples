@@ -315,7 +315,11 @@ function main(selection) {
     return dialog;
   }
 
+<<<<<<< HEAD
   return document.body.appendChild(getDialog()).showModal();
+=======
+    return document.body.appendChild(getDialog()).showModal(); // [6]
+>>>>>>> fb8c4da86763ea2e5b1951900e40d26e399f74e1
 }
 
 module.exports = {
