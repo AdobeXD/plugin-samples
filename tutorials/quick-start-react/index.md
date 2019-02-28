@@ -1,24 +1,24 @@
 # Quick Start - React: Make your first XD plugin with React
 
-While there are many choices when it comes to picking a JavaScript framework to build an XD plugin, we want to cover one of the most popular frameworks, React, first. 
+While there are many choices when it comes to picking a JavaScript framework to build an XD plugin, we want to cover one of the most popular frameworks, React, first.
 
 Once you're done, you'll have a solid grasp of the steps to take when starting to create your own XD plugin with React.
 
 ## Prerequisites
-- Basic knowledge of HTML, CSS, JavaScript, and React
-- A text editor to write your code in (like VSCode, Sublime Text, Bracket, Atom, etc)
-- Reviewed [Quickstart guide](/tutorials/quick-start/index.md)
-- Installed [node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/get-npm)
 
+- Basic knowledge of HTML, CSS, JavaScript, and React
+- A text editor to write your code in (like VSCode, Sublime Text, Brackets, Atom, etc)
+- [Quickstart guide](/tutorials/quick-start/index.md)
+- [node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/get-npm) installed
 
 ## Development Steps
 
 > **Info**
 > Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/quick-start-react).
 
-
 ### 0. Folder structure
-Note that we are going to use [webpack](https://webpack.js.org/) to bundle JavaScript files for usage in XD and [yarn](https://yarnpkg.com/en/) package manager to install dependencies. When you have the right structure, it will look like this:
+
+Note that we are going to use [webpack](https://webpack.js.org/) to bundle JavaScript files for usage in XD and the [yarn](https://yarnpkg.com/en/) package manager to install dependencies. When you have the right structure, it will look like this:
 
 ```
 my-plugin-folder
@@ -32,8 +32,11 @@ my-plugin-folder
 ```
 
 ### 1. Install dependencies
+
 In order to correctly use React in XD, you will have to install dependencies correctly. Follow the steps below:
+
 1. List the required dependencies in `package.json`
+
 ```js
 {
   "name": "helllo_react_jsx",
@@ -62,52 +65,58 @@ In order to correctly use React in XD, you will have to install dependencies cor
   }
 }
 ```
+
 2. List the webpack configurations in `webpack.config.js`
+
 ```js
 module.exports = {
-    entry: "./src/main.jsx",
-    output: {
-        path: __dirname,
-        filename: 'main.js',
-        libraryTarget: "commonjs2"
-    },
-    devtool: "none",
-    module: {
-        rules: [
-            {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                loader: "babel-loader",
-                options: {
-                    plugins: [
-                        "transform-react-jsx"
-                    ]
-                }
-            },
-            {
-                test: /\.css$/,
-                use: ["style-loader", "css-loader"]
-            }
-        ]
-    },
-    externals: {
-        scenegraph: "scenegraph"
-    }
+  entry: "./src/main.jsx",
+  output: {
+    path: __dirname,
+    filename: "main.js",
+    libraryTarget: "commonjs2"
+  },
+  devtool: "none",
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        options: {
+          plugins: ["transform-react-jsx"]
+        }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      }
+    ]
+  },
+  externals: {
+    scenegraph: "scenegraph"
+  }
 };
 ```
-As per [webpack's documentation](https://webpack.js.org/configuration/externals/), 
-> The `externals` configuration option provides a way of excluding dependencies from the output bundles. Instead, the created bundle relies on that dependency to be present in the consumer's environment.  
 
-Note that, in this example, we are excluding `scenegraph` API to be exlcuded from the output bundles since this dependency is present in the XD environment. 
+As per [webpack's documentation](https://webpack.js.org/configuration/externals/),
+
+> The `externals` configuration option provides a way of excluding dependencies from the output bundles. Instead, the created bundle relies on that dependency to be present in the consumer's environment.
+
+Note that, in this example, we are excluding `scenegraph` API to be exlcuded from the output bundles since this dependency is present in the XD environment.
 
 3. Install yarn, if needed
+
 ```
 npm install -g yarn
 ```
+
 4. Install dependencies
+
 ```
 yarn install
 ```
+
 All dependencies are installed and we are good to go!
 
 ### 2. Create your main files
@@ -117,9 +126,9 @@ Now, let's create your plugin files. Open your favorite text editor and create t
 - `manifest.json` is your plugin’s manifest. This file includes information about the plugin, such as its name, the menu item(s) it adds to XD, and so on. [Learn about the manifest here](/reference/structure/manifest.md).
 
 - `src` is your plugin's folder that contains all JavaScript files that are going to be compiled
-    - `main.jsx` is the main file for the plugin
-    - `HelloForm.jsx` is the file that contains the only React component we are going to use. Note that you can have multiple `.jsx` files if needed
-    - `react-shim.js` is a JavaScript file that helps React run smoothly in XD's environment. Further details to follow in a later section
+  - `main.jsx` is the main file for the plugin
+  - `HelloForm.jsx` is the file that contains the only React component we are going to use. Note that you can have multiple `.jsx` files if needed
+  - `react-shim.js` is a JavaScript file that helps React run smoothly in XD's environment. Further details to follow in a later section
 
 ### 3. Edit your plugin’s manifest
 
@@ -132,17 +141,15 @@ In the previous step, you created a file named `manifest.json`. Open that file a
   "version": "1.0.0",
   "description": "Description of your plugin.",
   "summary": "Summary of your plugin",
-  "languages": [
-    "en"
-  ],
+  "languages": ["en"],
   "author": "Your Name",
   "helpUrl": "https://mywebsite.com/help",
   "icons": [
-        { "width": 48, "height": 48, "path": "images/icon01x.png" },
-        { "width": 96, "height": 96, "path": "images/icon02x.png" },
-        { "width": 144, "height": 144, "path": "images/icon03x.png" },
-        { "width": 192, "height": 192, "path": "images/icon04x.png" }
-    ],
+    { "width": 48, "height": 48, "path": "images/icon01x.png" },
+    { "width": 96, "height": 96, "path": "images/icon02x.png" },
+    { "width": 144, "height": 144, "path": "images/icon03x.png" },
+    { "width": 192, "height": 192, "path": "images/icon04x.png" }
+  ],
   "host": {
     "app": "XD",
     "minVersion": "13.0.0"
@@ -157,18 +164,21 @@ In the previous step, you created a file named `manifest.json`. Open that file a
 }
 ```
 
-Be sure to replace the `id` value with the unique plugin ID you get from the I/O Console. 
+Be sure to replace the `id` value with the unique plugin ID you get from the I/O Console.
+
 ```json
 "id": "1234ABCD",
 ```
-If you forgot how to do this, make sure to read [Quickstart guide](/tutorials/quick-start/index.md)
+
+If you forgot how to do this, make sure to read [Quick Start guide](/tutorials/quick-start/index.md)
 
 Reminder: the value of the `commandId` property may be any string; in this case, it's `main`. In the next section, we will see how this string is associated with the code for our plugin.
 
-
 ### 4. Create your plugin’s code
 
-Next, we need to create the JavaScript code for our plugin. As noted in [Quickstart guide](/tutorials/quick-start/index.md), The code lives in a file named `main.js`. This file will be automatically created when webpack compiles all JavaScript files in your `src` folder.
+Next, we need to create the JavaScript code for our plugin. As noted in [Quick Start guide](/tutorials/quick-start/index.md), the code lives in a file named `main.js`. This file will be automatically created when webpack compiles all JavaScript files in your `src` folder.
+
+In this tutorial, the `src` folder will contain the following:
 
 ```
 src
@@ -176,75 +186,94 @@ src
 └── HelloForm.jsx
 └── react-shim.js
 ```
-Now, lets start writing codes in these JavaScript files.
 
-First of all, as noted earlier, we need `react-shim.js` file to make React run without any issue in the XD environment. Paste this code in `react-shim.js`
+Now, lets start writing code in these JavaScript files.
+
+First of all, as noted earlier, we need `react-shim.js` file to make React run without any issue in the XD environment. Paste this code into `react-shim.js`:
+
 ```js
-
 if (window.setTimeout == null) {
-    window.setTimeout = function (fn) { fn() };
+  window.setTimeout = function(fn) {
+    fn();
+  };
 }
 
 if (window.clearTimeout == null) {
-    window.clearTimeout = function () { };
+  window.clearTimeout = function() {};
 }
 
 if (window.cancelAnimationFrame == null) {
-    window.cancelAnimationFrame = function () { };
+  window.cancelAnimationFrame = function() {};
 }
 if (window.requestAnimationFrame == null) {
-    window.requestAnimationFrame = function () {
-        console.log("requestAnimationFrame is not supported yet");
-    }
+  window.requestAnimationFrame = function() {
+    console.log("requestAnimationFrame is not supported yet");
+  };
 }
 if (window.HTMLIFrameElement == null) {
-    window.HTMLIFrameElement = class HTMLIFrameElement { };
+  window.HTMLIFrameElement = class HTMLIFrameElement {};
 }
 ```
-Since XD currently does not currently support `setTimeout`, `clearTimeout`, `cancelAnimationFrame`, `requestAnimationFrame`, and `HTMLIFrameElement`, we create these empty functions and classes to prevent your plugin from crashing.
 
-Secondly, let's create a React component. Paste the following code in `HelloForm.jsx`
+Since XD currently does not currently support `cancelAnimationFrame`, `requestAnimationFrame`, and `HTMLIFrameElement`, we create these empty functions and classes to prevent your plugin from crashing.
+
+As of XD 16, `setTimeout` and `clearTimeout` are [supported in the XD plugin API](/changes.html#xd-release-16012-february-2019), but are still included in the shim for compatibility with older versions of XD.
+
+Next, let's create a React component. Paste the following code in `HelloForm.jsx`:
+
 ```js
-const React = require('react'); // [1]
+const React = require("react"); // [1]
 const { Text, Color } = require("scenegraph"); // [2]
 
-class HelloForm extends React.Component { // [3]
-    constructor(props) { // [4]
-        super(props); 
-        this.state = { name: "" }; // [5]
-        this.onInputChange = (e) => { // [6]
-            this.setState({ name: e.target.value })
-        }
-        this.onDoneClick = (e) => { // [7]
-            const selection = this.props.selection; // [8]
-            const newText = new Text(); // [9]
-            newText.text = this.state.name; 
-            newText.styleRanges = [{ // [10]
-                length: newText.text.length,
-                fill: new Color("#00F"),
-                fontSize: 50
-            }];
-            selection.insertionParent.addChild(newText); // [11]
-            newText.moveInParentCoordinates(100, 100); // [12]
-            props.dialog.close(); // [13]
-        }
-    }
+class HelloForm extends React.Component {
+  // [3]
+  constructor(props) {
+    // [4]
+    super(props);
+    this.state = { name: "" }; // [5]
 
-    render() { // [14]
-        return (
-            <form style={{ width: 300 }} onSubmit={this.onDoneClick}>
-                <h1>React with JSX Components</h1>
-                <label>
-                    <span>What is your name?</span>
-                    <input onChange={this.onInputChange} />
-                </label>
-                <p>{`Hello ${this.state.name}`}</p>
-                <footer>
-                    <button type="submit" uxp-variant="cta">Done</button>
-                </footer>
-            </form>
-        );
-    }
+    this.onInputChange = e => {
+      // [6]
+      this.setState({ name: e.target.value });
+    };
+
+    this.onDoneClick = e => {
+      // [7]
+      const selection = this.props.selection; // [8]
+      const newText = new Text(); // [9]
+      newText.text = this.state.name;
+      newText.styleRanges = [
+        {
+          // [10]
+          length: newText.text.length,
+          fill: new Color("#00F"),
+          fontSize: 50
+        }
+      ];
+      selection.insertionParent.addChild(newText); // [11]
+      newText.moveInParentCoordinates(100, 100); // [12]
+      props.dialog.close(); // [13]
+    };
+  }
+
+  render() {
+    // [14]
+    return (
+      <form style={{ width: 300 }} onSubmit={this.onDoneClick}>
+        <h1>React with JSX Components</h1>
+        <label>
+          <span>What is your name?</span>
+          <input onChange={this.onInputChange} />
+        </label>
+        <p>{`Hello ${this.state.name}`}</p>
+        <footer>
+          <button type="submit" uxp-variant="cta">
+            Done
+          </button>
+        </footer>
+      </form>
+    );
+  }
 }
 
 module.exports = HelloForm; // [16]
@@ -267,40 +296,43 @@ This code does the following:
 13. Closes the dialog
 14. Renders the component. Note that there is an input field to accept user's input and a button for the submission of the input
 
-Lastly, let's create the main `jsx` file, `main.jsx`. Paste the following code in `main.jsx`
+Lastly, let's create the main `jsx` file, `main.jsx`. Paste the following code into `main.jsx`:
+
 ```js
 const reactShim = require("./react-shim"); // [1]
 const React = require("react"); // [2]
-const ReactDOM = require("react-dom"); 
-const App = require("./HelloForm.jsx") // [3]
+const ReactDOM = require("react-dom");
+const App = require("./HelloForm.jsx"); // [3]
 
 function main(selection) {
-    let dialog;
+  let dialog;
 
-    function getDialog() {
-        if (dialog == null) {
-            dialog = document.createElement("dialog"); // [4]
-            ReactDOM.render(<App dialog={dialog} selection={selection} />, dialog); // [5]
-        }
-        return dialog
+  function getDialog() {
+    if (dialog == null) {
+      dialog = document.createElement("dialog"); // [4]
+      ReactDOM.render(<App dialog={dialog} selection={selection} />, dialog); // [5]
     }
+    return dialog;
+  }
 
-    return document.body.appendChild(getDialog()).showModal();
+  return document.body.appendChild(getDialog()).showModal();
 }
 
-module.exports = { // [7]
-    commands: {
-        main
-    }
+module.exports = {
+  // [7]
+  commands: {
+    main
+  }
 };
 ```
+
 This code does the following:
 
 1.  Loads `react-shim.js` to make React run in the XD environment
 2.  Gets reference to `react` and `react-dom` modules installed earlier in the steps
 3.  Imports `HelloForm` component
 4.  Creates the dialog UI
-5.  Renders the imported `HelloForm` component and passes `dialog` and `selection` objects as props. Note that the dialog is reused, so it gets rendered only once. 
+5.  Renders the imported `HelloForm` component and passes `dialog` and `selection` objects as props. Note that the dialog is reused, so it gets rendered only once.
 6.  Loads the modal inside the XD document
 7.  Exports a map object, which associates the JavaScript handler function (`main`) with the `commandId` property declared in the manifest earlier. The command ID must match the `commandId` value declared in your manifest exactly.
 
@@ -320,7 +352,6 @@ Alternatively, if XD was already open, select _Plugins > Development > Reload Pl
 
 ![XD dialog drops down](/../images/tbd.png)
 
-
 Congratulations! You’ve built your first plugin using React!
 
 ## Next Steps
@@ -329,4 +360,3 @@ Congratulations! You’ve built your first plugin using React!
 - Follow our [tutorials](/tutorials/)
 - See working code in our [sample repos on GitHub](https://github.com/AdobeXD/Plugin-Samples)
 - Browse the [API references](/reference/how-to-read.md)
-
