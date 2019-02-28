@@ -31,7 +31,7 @@ Replace the following items in your manifest with the information below:
     "name": "Create Pie Chart sample plugin",
     "host": {
         "app": "XD",
-        "minVersion": "13.0.0"
+        "minVersion": "13.0"
     },
     "version": "1.0.0",
     "description": "Description of your plugin.",

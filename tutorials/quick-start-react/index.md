@@ -152,7 +152,7 @@ In the previous step, you created a file named `manifest.json`. Open that file a
   ],
   "host": {
     "app": "XD",
-    "minVersion": "13.0.0"
+    "minVersion": "13.0"
   },
   "uiEntryPoints": [
     {

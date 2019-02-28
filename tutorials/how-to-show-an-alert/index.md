@@ -109,7 +109,7 @@ Be sure to add this to your plugin `manifest.json` as well:
   "version": "1.0.0",
   "host": {
     "app": "XD",
-    "minVersion": "13.0.0"
+    "minVersion": "13.0"
   },
   "uiEntryPoints": [
     {

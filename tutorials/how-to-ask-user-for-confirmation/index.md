@@ -96,7 +96,7 @@ Be sure to add this to your plugin `manifest.json` as well:
     "name": "Show Confirmation",
     "host": {
         "app": "XD",
-        "minVersion": "13.0.0"
+        "minVersion": "13.0"
     },
     "version": "1.0.0",
     "description": "Description of your plugin.",

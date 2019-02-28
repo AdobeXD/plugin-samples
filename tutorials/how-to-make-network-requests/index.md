@@ -31,7 +31,7 @@ Replace the JSON object in your manifest with the one below, noting the changes 
     "name": "Network IO",
     "host": {
         "app": "XD",
-        "minVersion": "13.0.0"
+        "minVersion": "13.0"
     },
     "version": "1.0.0",
     "description": "Description of your plugin.",
