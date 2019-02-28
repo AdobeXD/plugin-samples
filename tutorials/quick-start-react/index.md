@@ -350,7 +350,7 @@ If you haven’t already done so, launch XD and open a new document. Then naviga
 
 Alternatively, if XD was already open, select _Plugins > Development > Reload Plugins_.
 
-![XD dialog drops down](/../images/tbd.png)
+![XD dialog drops down](/images/react-hello-xd.png)
 
 Congratulations! You’ve built your first plugin using React!
 
