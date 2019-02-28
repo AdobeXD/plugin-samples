@@ -75,7 +75,7 @@ Key path | Type | Description
 `host.app` | `string` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `"XD"`).
 `host.minVersion` | `string` | Minimum required version of the host app (in `x.y` format) that can run this plugin. **Note:** Must be two segments. Typically, you'll leave the minor segment set to `0`, e.g. `16.0`.
 `host.maxVersion` | `string` | _Optional._ Maximum version of host app that can run this plugin. Same formatting as `host.minVersion`.
-`uiEntryPoints` | `Array<MenuItemDefinition | SubmenuDefinition>` | List of objects describing what entries your plugin adds to the _Plugins_ menu in XD. See the next section for details.
+`uiEntryPoints` | `Array<MenuItemDefinition \| SubmenuDefinition>` | List of objects describing what entries your plugin adds to the _Plugins_ menu in XD. See the next section for details.
 
 ## UI entry points array
 
