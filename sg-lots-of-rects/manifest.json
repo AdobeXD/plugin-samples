@@ -7,22 +7,22 @@
       {
          "width": 48,
          "height": 48,
-         "path": "images/icon01x.png"
+         "path": "images/icon@1x.png"
       },
       {
          "width": 96,
          "height": 96,
-         "path": "images/icon02x.png"
+         "path": "images/icon@2x.png"
       },
       {
          "width": 144,
          "height": 144,
-         "path": "images/icon03x.png"
+         "path": "images/icon@3x.png"
       },
       {
          "width": 192,
          "height": 192,
-         "path": "images/icon04x.png"
+         "path": "images/icon@4x.png"
       }
    ],
    "host": {
