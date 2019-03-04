@@ -62,7 +62,7 @@ The I/O Console will then process the upload and extract information from your `
 
 ### 4. Review your listing information
 
-On this page, review the validation results on all required fields of [your manifest.json file](/reference/structure/manifest.md#top-level-metadata).
+On this page, review the validation results on all required fields for [your manifest.json file](/reference/structure/manifest.md#top-level-metadata).
 
 Note that any changes must be made in your original files. When all necessary changes are made, re-package your plugin and upload the plugin again.
 
