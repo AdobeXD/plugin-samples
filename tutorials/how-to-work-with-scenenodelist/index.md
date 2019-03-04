@@ -17,50 +17,24 @@ This sample demonstrates how to work with a SceneNodeList in Adobe XD. The short
 
 First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/tutorials/quick-start).
 
-Replace the JSON object in your manifest with the one below, noting the changes for the following fields:
-
-1. `id`
-1. `name`
-1. `uiEntryPoints` (note how this array contains 2 objects)
+Replace the `uiEntryPoints` field of the manifest with the following:
 
 ```json
-{
-    "id": "ID_FROM_IO_CONSOLE",
-    "name": "SceneNodeList Plugin",
-    "host": {
-        "app": "XD",
-        "minVersion": "13.0"
-    },
-    "version": "1.0.0",
-    "description": "Description of your plugin.",
-    "summary": "Summary of your plugin",
-    "languages": [
-        "en"
-    ],
-    "author": "Your Name",
-    "helpUrl": "https://mywebsite.com/help",
-    "icons": [
-        { "width": 48, "height": 48, "path": "images/icon01x.png" },
-        { "width": 96, "height": 96, "path": "images/icon02x.png" },
-        { "width": 144, "height": 144, "path": "images/icon03x.png" },
-        { "width": 192, "height": 192, "path": "images/icon04x.png" }
-    ],
-    "uiEntryPoints": [
-        {
-            "type": "menu",
-            "label": "Create Elements",
-            "commandId": "createElements"
-        },
-        {
-            "type": "menu",
-            "label": "Filter and Color",
-            "commandId": "filterAndColor"
-        }
-    ]
-}
+"uiEntryPoints": [
+	{
+		"type": "menu",
+		"label": "Create Elements",
+		"commandId": "createElements"
+	},
+	{
+		"type": "menu",
+		"label": "Filter and Color",
+		"commandId": "filterAndColor"
+	}
+]
 ```
 
-Refer to the full documentation of [manifest.json file](/reference/structure/manifest.md#top-level-metadata) to learn more.
+If you're curious about what each entry means, [see the manifest documentation](/reference/structure/manifest.md), where you can also learn about all manifest requirements for a plugin to be published in the XD Plugin Manager.
 
 Then, update your `main.js` file, mapping _both_ of the manifest's `commandId` to their respective handler functions.
 

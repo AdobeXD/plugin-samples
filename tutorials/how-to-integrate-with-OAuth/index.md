@@ -133,7 +133,43 @@ Now you have a running server with an HTTPS endpoint and your Dropbox credential
 
 Now we can get back to the XD plugin side of things!
 
-### 1. Require in XD API dependencies
+### 1. Create plugin scaffold
+
+First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/tutorials/quick-start).
+
+Replace the `uiEntryPoints` field of the manifest with the following:
+
+```json
+"uiEntryPoints": [
+		{
+				"type": "menu",
+				"label": "How to Integrate with OAuth (Must run Server first)",
+				"commandId": "launchOAuth"
+		}
+]
+```
+
+If you're curious about what each entry means, [see the manifest documentation](/reference/structure/manifest.md), where you can also learn about all manifest requirements for a plugin to be published in the XD Plugin Manager.
+
+Then, update your `main.js` file, mapping the manifest's `commandId` to a handler function.
+
+Replace the content of your `main.js` file with the following code (note the presence of the `async` keyword, which we'll look at in a later step):
+
+```js
+async function launchOAuth(selection) {
+    // The body of this function is added later
+}
+
+module.exports = {
+    commands: {
+        launchOAuth
+    }
+};
+```
+
+The remaining steps in this tutorial describe additional edits to the `main.js` file.
+
+### 2. Require in XD API dependencies
 
 For this tutorial, we just need access to two XD scenegraph classes.
 
@@ -146,7 +182,7 @@ const { Text, Color } = require("scenegraph");
 Now the `Text` and `Color` classes are required in and ready to be used.
 
 
-### 2. Store the public URL
+### 3. Store the public URL
 
 Your plugin will also need to know your public URL. Since we used `ngrok` earlier, we'll make a constant with that URL:
 
@@ -157,7 +193,7 @@ const publicUrl = "YOUR-PUBLIC-URL"; 	// e.g. https://476322de.ngrok.io/
 This url will be used to send requests to your server.
 
 
-### 3. Create a variable to store the access token
+### 4. Create a variable to store the access token
 
 Once you receive the access token from your server, you can use the token for API calls as long as the token is stored in memory and the XD session is alive.
 
@@ -168,9 +204,7 @@ let accessToken;
 We'll assign the value later.
 
 
-### 4. Write a helper function for XHR requests
-
-
+### 5. Write a helper function for XHR requests
 
 ```js
 // XHR helper function
@@ -209,20 +243,6 @@ function xhrRequest(url, method) {
 3. On a successful request, the promise is resolved with `req.response`. In any other scenarios, the promise is rejected
 4. If the request was timed out after 6000 miliseconds, the function loops and keeps sending XHR request until the response is received
 5. The function sends the request to the specified `url` with the specified `method`
-
-
-### 5. Create the main plugin function
-
-Note the use of the `async` keyword since this function will have asynchronous calls inside.
-
-```js
-async function launchOAuth(selection) {
-	...
-}
-```
-
-Please see the subsequent steps below to see what goes into this function
-
 
 ### 6. Get the session ID
 

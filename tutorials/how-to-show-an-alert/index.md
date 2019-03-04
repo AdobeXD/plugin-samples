@@ -21,7 +21,30 @@ Other times you'll need to display an _error_ alert, which looks like this:
 > **Info**
 > Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/plugin-samples/tree/master/how-to-display-an-alert).
 
-### 1. Add the "plugin helpers" library
+### 1. Prepare your manifest.json file
+
+First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/tutorials/quick-start).
+
+Replace the `uiEntryPoints` field of the manifest with the following:
+
+```json
+"uiEntryPoints": [
+    {
+      "type": "menu",
+      "label": "How to show an alert",
+      "commandId": "showAlert"
+    },
+    {
+      "type": "menu",
+      "label": "How to show an error",
+      "commandId": "showError"
+    }
+  ]
+```
+
+If you're curious about what each entry means, [see the manifest documentation](/reference/structure/manifest.md), where you can also learn about all manifest requirements for a plugin to be published in the XD Plugin Manager.
+
+### 2. Add the "plugin helpers" library
 
 Creating dialogs can take a lot of boilerplate code, but we've created a small library that makes it simple to display simple dialogs in the form of a "helper" library. This library is located at https://github.com/AdobeXD/plugin-toolkit.
 
@@ -31,7 +54,7 @@ To add the library to your project, you can:
 * Uncompress the zip file after the download completes
 * Copy the `lib` folder to your plugin project
 
-### 2. Require the `dialogs` module in `main.js`
+### 3. Require the `dialogs` module in `main.js`
 
 Add the following to your `main.js`:
 
@@ -41,7 +64,7 @@ const { alert, error } = require("./lib/dialogs.js");
 
 This will import a `alert` function that we can call to display an alert. The `error` function can be used to display the error variation.
 
-### 3. Create a function to display the alert
+### 4. Create a function to display the alert
 
 ```js
 async function showAlert() {
@@ -61,7 +84,7 @@ await alert("Connect to the Internet", //[1]
     "In order to function correctly, this plugin requires access to the Internet. Please connect to a network that has Internet access."); //[2]
 ```
 
-### 4. Create a function to display an error alert
+### 5. Create a function to display an error alert
 
 ```js
 async function showError() {
@@ -87,7 +110,7 @@ await error("Synchronization Failed", //[1]
 
 Note that the we passed several lines of text to `error`, including some markdown-like list items. The `dialogs` module understands a very limited subset of markdown; for more see the [Plugin Toolkit](https://github.com/AdobeXD/plugin-toolkit).
 
-### 5. Create the menu handler
+### 6. Create the menu handler
 
 We need to export a menu handler from the `main.js` file so that XD knows what to do with our plugin:
 
@@ -99,32 +122,7 @@ module.exports = {
     }
 }
 ```
-
-Be sure to add this to your plugin `manifest.json` as well:
-
-```json
-{
-  "id": "ID_FROM_IO_CONSOLE",
-  "name": "(H2) How to show an alert",
-  "version": "1.0.0",
-  "host": {
-    "app": "XD",
-    "minVersion": "13.0"
-  },
-  "uiEntryPoints": [
-    {
-      "type": "menu",
-      "label": "How to show an alert",
-      "commandId": "showAlert"
-    },
-    {
-      "type": "menu",
-      "label": "How to show an error",
-      "commandId": "showError"
-    }
-  ]
-}
-```
+Make sure to your commands match the manifest's `commandId`s written in the first step.
 
 ## Guidelines
 
