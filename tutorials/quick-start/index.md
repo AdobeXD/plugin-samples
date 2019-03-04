@@ -76,12 +76,6 @@ In the previous step, you created a file named `manifest.json`. Open that file a
   "languages": ["en"],
   "author": "Your Name",
   "helpUrl": "https://mywebsite.com/help",
-  "icons": [
-    { "width": 48, "height": 48, "path": "images/icon01x.png" },
-    { "width": 96, "height": 96, "path": "images/icon02x.png" },
-    { "width": 144, "height": 144, "path": "images/icon03x.png" },
-    { "width": 192, "height": 192, "path": "images/icon04x.png" }
-  ],
   "host": {
     "app": "XD",
     "minVersion": "13.0"
@@ -102,7 +96,7 @@ Be sure to replace the `id` value with the unique plugin ID you got from the I/O
 "id": "1234ABCD",
 ```
 
-If you're curious about what each entry means, [see the manifest documentation](/reference/structure/manifest.md).
+If you're curious about what each entry means, [see the manifest documentation](/reference/structure/manifest.md), where you can also learn about all manifest requirements for a plugin to be published in the XD Plugin Manager.
 
 The value of the `commandId` property may be any string; in this case, it's `createRectangle`. In the next section, we will see how this string is associated with the code for our plugin.
 
@@ -113,22 +107,25 @@ Next, we need to create the JavaScript code for our plugin. The code lives in a 
 Paste this code into `main.js`:
 
 ```js
-const { Rectangle, Color } = require("scenegraph"); // [1]
+// [1]
+const { Rectangle, Color } = require("scenegraph");
 
+// [2]
 function rectangleHandlerFunction(selection) {
-  // [2]
-
-  const newElement = new Rectangle(); // [3]
+  // [3]
+  const newElement = new Rectangle();
   newElement.width = 100;
   newElement.height = 50;
   newElement.fill = new Color("Purple");
 
-  selection.insertionParent.addChild(newElement); // [4]
-  newElement.moveInParentCoordinates(100, 100); // [5]
+  // [4]
+  selection.insertionParent.addChild(newElement);
+  // [5]
+  newElement.moveInParentCoordinates(100, 100);
 }
 
+// [6]
 module.exports = {
-  // [6]
   commands: {
     createRectangle: rectangleHandlerFunction
   }
@@ -138,11 +135,11 @@ module.exports = {
 This code does the following:
 
 1.  Gets references to the `Rectangle` and `Color` classes from XD’s `scenegraph` module. There are several different [API modules you can load using `require()`](/reference/core/apis.html).
-2.  Defines our handler function. The handler function will run when the user selects the _Create Rectangle_ menu command in the app's _Plugins_ menu.
-3.  Creates a new `Rectangle` object. There's nothing in it yet! The following lines assign various properties and styles to the rectangle: width, height, and color.
+2.  Defines our handler function. The handler function will run when the user selects the _Plugins > Create Rectangle_ menu item.
+3.  Creates a new `Rectangle` object with width, height, and color properties.
 4.  Adds the `Rectangle` object to the scenegraph at the top-left (coordinates `0, 0`).
 5.  Puts the `Rectangle` object at coordinates `100, 100` within the parent element.
-6.  Exports a map object, which associates the JavaScript handler function (`rectangleHandlerFunction`) with the `commandId` property declared in the manifest earlier. The command ID (the part to the left of the `:` here) must match the `commandId` value declared in your manifest exactly.
+6.  Exports an object, with a `commands` property. The value of `commands` is an object which associates the JavaScript handler function (`rectangleHandlerFunction`) with you manifest's `commandId` property. The command ID property name (here, `createRectangle`) must match the `commandId` value declared in your manifest exactly.
 
 ### 5. Run your plugin
 
