@@ -139,7 +139,7 @@ This code does the following:
 3.  Creates a new `Rectangle` object with width, height, and color properties.
 4.  Adds the `Rectangle` object to the scenegraph at the top-left (coordinates `0, 0`).
 5.  Puts the `Rectangle` object at coordinates `100, 100` within the parent element.
-6.  Exports an object, with a `commands` property. The value of `commands` is an object which associates the JavaScript handler function (`rectangleHandlerFunction`) with you manifest's `commandId` property. The command ID property name (here, `createRectangle`) must match the `commandId` value declared in your manifest exactly.
+6.  Exports an object, with a `commands` property. The value of `commands` is an object which associates the JavaScript handler function (`rectangleHandlerFunction`) with your manifest's `commandId` property. The command ID property name (here, `createRectangle`) must match the `commandId` value declared in your manifest exactly.
 
 ### 5. Run your plugin
 
