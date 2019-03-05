@@ -124,14 +124,14 @@ Ok, you've just made three helper functions. Now we're going to tie them all tog
 Note the use of the `async` keyword at the beginning of the function.
 
 ```js
-async function downloadImage(selection, jsonResponse) {                 // [1]
+async function downloadImage(selection, jsonResponse) {                            // [1]
     try {
-        const photoUrl = jsonResponse.message;                          // [2]
-        const photoObj = await xhrBinary(photoUrl);                     // [3]
-        const tempFolder = await fs.getTemporaryFolder();               // [4]
-        const tempFile = await tempFolder.createFile("tmp");            // [5]
-        await tempFile.write(photoObj, { format: uxp.formats.binary }); // [6]
-        applyImagefill(selection, tempFile);                            // [7]
+        const photoUrl = jsonResponse.message;                                     // [2]
+        const photoObj = await xhrBinary(photoUrl);                                // [3]
+        const tempFolder = await fs.getTemporaryFolder();                          // [4]
+        const tempFile = await tempFolder.createFile("tmp", { overwrite: true });  // [5]
+        await tempFile.write(photoObj, { format: uxp.formats.binary });            // [6]
+        applyImagefill(selection, tempFile);                                       // [7]
     } catch (err) {
         console.log("error")
         console.log(err.message);
