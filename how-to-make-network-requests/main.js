@@ -22,7 +22,7 @@ async function downloadImage(selection, jsonResponse) {
         const photoUrl = jsonResponse.message;
         const photoObj = await xhrBinary(photoUrl);
         const tempFolder = await fs.getTemporaryFolder();
-        const tempFile = await tempFolder.createFile("tmp");
+        const tempFile = await tempFolder.createFile("tmp", { overwrite: true });
         await tempFile.write(photoObj, { format: uxp.formats.binary });
         applyImagefill(selection, tempFile);
     } catch (err) {
