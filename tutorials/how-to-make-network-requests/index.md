@@ -18,31 +18,19 @@ This sample app will show you how to load an image in an XD object (Rectangle or
 
 First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/tutorials/quick-start).
 
-Replace the JSON object in your manifest with the one below, noting the changes for the following fields:
-
-1. `id`
-1. `name`
-1. `uiEntryPoints[0].label`
-1. `uiEntryPoints[0].commandId`
+Replace the `uiEntryPoints` field of the manifest with the following:
 
 ```json
-{
-    "id": "ID_FROM_IO_CONSOLE",
-    "name": "Network IO",
-    "version": "1.0.0",
-    "host": {
-        "app": "XD",
-        "minVersion": "13.0.0"
-    },
-    "uiEntryPoints": [
-        {
-            "type": "menu",
-            "label": "How to make network requests",
-            "commandId": "applyImage"
-        }
-    ]
-}
+"uiEntryPoints": [
+    {
+        "type": "menu",
+        "label": "How to make network requests",
+        "commandId": "applyImage"
+    }
+]
 ```
+
+If you're curious about what each entry means, [see the manifest documentation](/reference/structure/manifest.md), where you can also learn about all manifest requirements for a plugin to be published in the XD Plugin Manager. 
 
 Then, update your `main.js` file, mapping the manifest's `commandId` to a handler function.
 

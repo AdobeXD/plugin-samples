@@ -15,7 +15,25 @@ There are many times when a plugin will need to ask the user whether or not it s
 > **Info**
 > Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/ui-dialog-variations).
 
-### 1. Add the "plugin helpers" library
+### 1. Prepare your manifest.json file
+
+First, edit the manifest file for the plugin you created in our [Quick Start Tutorial](/tutorials/quick-start).
+
+Replace the `uiEntryPoints` field of the manifest with the following:
+
+```json
+"uiEntryPoints": [
+    {
+        "type": "menu",
+        "label": "Confirmation",
+        "commandId": "showConfirm"
+    }
+]
+```
+
+If you're curious about what each entry means, [see the manifest documentation](/reference/structure/manifest.md), where you can also learn about all manifest requirements for a plugin to be published in the XD Plugin Manager.
+
+### 2. Add the "plugin helpers" library
 
 Creating dialogs can take a lot of boilerplate code, but we've created a small library that makes it simple to display simple dialogs in the form of a "helper" library. This library is located at https://github.com/AdobeXD/plugin-toolkit.
 
@@ -25,7 +43,7 @@ To add the library to your project, you can:
 * Uncompress the zip file after the download completes
 * Copy the `lib` folder to your plugin project
 
-### 2. Require the `dialogs` module in `main.js`
+### 3. Require the `dialogs` module in `main.js`
 
 Add the following to your `main.js`:
 
@@ -35,7 +53,7 @@ const { confirm } = require("./lib/dialogs.js");
 
 This will import a `confirm` function that we can call to display a confirmation dialog.
 
-### 3. Create a function to display the confirmation
+### 4. Create a function to display the confirmation
 
 ```js
 async function showConfirm() {
@@ -88,26 +106,7 @@ module.exports = {
 }
 ```
 
-Be sure to add this to your plugin `manifest.json` as well:
-
-```json
-{
-    "id": "ID_FROM_IO_CONSOLE",
-    "name": "Show Confirmation",
-    "host": {
-        "app": "XD",
-        "minVersion": "13.0.0"
-    },
-    "version": "1.0.0",
-    "uiEntryPoints": [
-        {
-            "type": "menu",
-			"label": "Confirmation",
-			"commandId": "showConfirm"
-		}
-    ]
-}
-```
+Make sure to your commands match the manifest's `commandId`s written in the first step.
 
 ## Next Steps
 

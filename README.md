@@ -42,6 +42,7 @@ If you've never worked with JavaScript before, we recommend taking a moment to g
 ##### Optional
 **React**: If you want to push your plugin UI even further, you can put your React skills to use. React is a great option for complex plugins that must manage both state and user interface. Please refer to the following samples for more about how to configure React:
 
+* [quick-start-react](https://github.com/AdobeXD/plugin-samples/tree/master/quick-start-react)
 * [ui-hello-react](https://github.com/AdobeXD/plugin-samples/tree/master/ui-hello-react)
 * [e2e-adobe-stock](https://github.com/AdobeXD/plugin-samples/tree/master/e2e-adobe-stock)
 * [ui-html-playground](https://github.com/AdobeXD/plugin-samples/tree/master/ui-html-playground)
