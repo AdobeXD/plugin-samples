@@ -4,21 +4,37 @@
     "name": "(UI) Dialog Variations",
     "icons": [
         {
-            "width": 512,
-            "height": 512,
-            "path": "icon.png"
+            "width": 48,
+            "height": 48,
+            "path": "images/icon@1x.png"
         },
         {
-            "width": 24,
-            "height": 24,
-            "path": "icon-24.png"
+            "width": 96,
+            "height": 96,
+            "path": "images/icon@2x.png"
+        },
+        {
+            "width": 144,
+            "height": 144,
+            "path": "images/icon@3x.png"
+        },
+        {
+            "width": 192,
+            "height": 192,
+            "path": "images/icon@4x.png"
         }
     ],
     "host": {
         "app": "XD",
-        "minVersion": "13.0.0"
+        "minVersion": "13.0"
     },
     "version": "1.0.0",
+    "description": "Description of your plugin.",
+    "summary": "Summary of your plugin",
+    "languages": [
+        "en"
+    ],
+    "helpUrl": "https://mywebsite.com/help",
     "uiEntryPoints": [
         {
             "type": "menu",
