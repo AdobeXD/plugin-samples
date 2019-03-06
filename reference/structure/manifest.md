@@ -57,25 +57,26 @@ See the sections below to learn more about each key/value field. All fields are 
 ## Top-level metadata
 
 The top level of the manifest JSON object contains high-level information about your plugin.
+develop / publish
 
-Key path | Type | Description
----------|------|------------
-`id`     | `string` | Unique identifier for your plugin. You can get your unique ID on the [Adobe I/O Console](https://console.adobe.io/plugins).
-`name`   | `string` | Human-readable *name of your plugin* displayed in the Plugin Manager listing. The name should be 3 - 45 characters. Must be globally unique among all published plugins. Name availability can be checked on your plugin details page on the [I/O Console](https://console.adobe.io/plugins). **Note:** Your plugin name is independent of the _project name_ you created when getting your plugin ID from the I/O Console. The I/O Console project name is for your reference only, and is managed directly on the I/O Console.
-`version`| `string` | Version number of your plugin in `x.y.z` format. **Note:** Must be three segments. Each version component must be between `0` and `99`.
-`description` | `string` | Detailed description displayed in the Plugin Manager listing when "See details" is clicked. The detailed description should be 3 - 1000 characters.
-`summary` | `string` | Short summary displayed in the Plugin Manager listing. Short summary should be 3 - 30 characters.
-`releaseNotes` | `string` | _Optional._ Description of changes displayed to the user when "See details" is clicked in the Plugin Manager listing. Should be 3 - 1000 characters. Release notes help both your users and the CC Integrations Review team know what's new or fixed in your plugin.
-`keywords` | `Array<String>` | _Optional._ Keywords for your plugin. Each keyword should be at least 2 characters with a max _concatenated keywords_ length of 100 characters, excluding commas.
-`languages` | `Array<String>` | Language(s) supported by your plugin. The language must be a two-letter code from [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). Currently, only the following codes are allowed: `en` (English), `de` (German), `fr` (French), `ja` (Japanese), `ko` (Korean), `zh` (Chinense), `es` (Spanish), `pt` (Brazilian Portuguese). This field will be displayed in the Plugin Manager to users when "See details" is clicked. 
-`website` | `string` | _Optional._ Web address for information about your plugin. The URL should follow the standard URL format and not exceed 1000 characters. This field will be displayed in the Plugin Manager to users when "See details" is clicked. 
-`author` | `string` | Plugin author's name. Name should be 3 - 40 characters. This field will be displayed in the Plugin Manager to users. 
-`helpUrl` | `string` | Web URL for your plugin's support/help page. The URL should follow the standard URL format and not exceed 1000 characters. This field will become visible in the Plugin Manager to users when "See details" is clicked. The support page you link to must include information on how to get support. **Note:** For GitHub repositories, you should link to a `README.md` file or other Markdown file that describes how to file an issue, or link directly to an issue submission form. _Do not link directly to your repo's list of issues._
-`icons` | `Array<Object>` | Icons displayed in the Plugin Manager listing. PNG, JPG/JPEG formats are supported. Max file size is 1MB. The icons will be displayed in the Plugin Manager listing. All four sizes are required - `[48, 96, 144, 192]`.
-`host.app` | `string` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `"XD"`).
-`host.minVersion` | `string` | Minimum required version of the host app (in `x.y` format) that can run this plugin. **Note:** Must be two segments. Typically, you'll leave the minor segment set to `0`, e.g. `16.0`.
-`host.maxVersion` | `string` | _Optional._ Maximum version of host app that can run this plugin. Same formatting as `host.minVersion`.
-`uiEntryPoints` | `Array<MenuItemDefinition` or `Array<SubmenuDefinition>` | List of objects describing what entries your plugin adds to the _Plugins_ menu in XD. See the next section for details.
+Key path | Type | Description | Required
+---------|------|-------------|---------
+`id`     | `string` | Unique identifier for your plugin. You can get your unique ID on the [Adobe I/O Console](https://console.adobe.io/plugins).| develop
+`name`   | `string` | Human-readable *name of your plugin* displayed in the Plugin Manager listing. The name should be 3 - 45 characters. Must be globally unique among all published plugins. Name availability can be checked on your plugin details page on the [I/O Console](https://console.adobe.io/plugins). **Note:** Your plugin name is independent of the _project name_ you created when getting your plugin ID from the I/O Console. The I/O Console project name is for your reference only, and is managed directly on the I/O Console. | develop
+`version`| `string` | Version number of your plugin in `x.y.z` format. **Note:** Must be three segments. Each version component must be between `0` and `99`. | develop
+`description` | `string` | Detailed description displayed in the Plugin Manager listing when "See details" is clicked. The detailed description should be 3 - 1000 characters. | publish
+`summary` | `string` | Short summary displayed in the Plugin Manager listing. Short summary should be 3 - 30 characters. | publish
+`releaseNotes` | `string` | Description of changes displayed to the user when "See details" is clicked in the Plugin Manager listing. Should be 3 - 1000 characters. Release notes help both your users and the CC Integrations Review team know what's new or fixed in your plugin. | optional
+`keywords` | `Array<String>` | Keywords for your plugin. Each keyword should be at least 2 characters with a max _concatenated keywords_ length of 100 characters, excluding commas. | optional
+`languages` | `Array<String>` | Language(s) supported by your plugin. The language must be a two-letter code from [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). Currently, only the following codes are allowed: `en` (English), `de` (German), `fr` (French), `ja` (Japanese), `ko` (Korean), `zh` (Chinense), `es` (Spanish), `pt` (Brazilian Portuguese). This field will be displayed in the Plugin Manager to users when "See details" is clicked.  | publish
+`website` | `string` | Web address for information about your plugin. The URL should follow the standard URL format and not exceed 1000 characters. This field will be displayed in the Plugin Manager to users when "See details" is clicked. | optional
+`author` | `string` | Plugin author's name. Name should be 3 - 40 characters. This field will be displayed in the Plugin Manager to users. | publish
+`helpUrl` | `string` | Web URL for your plugin's support/help page. The URL should follow the standard URL format and not exceed 1000 characters. This field will become visible in the Plugin Manager to users when "See details" is clicked. The support page you link to must include information on how to get support. **Note:** For GitHub repositories, you should link to a `README.md` file or other Markdown file that describes how to file an issue, or link directly to an issue submission form. _Do not link directly to your repo's list of issues._ | publish
+`icons` | `Array<Object>` | Icons displayed in the Plugin Manager listing. PNG, JPG/JPEG formats are supported. Max file size is 1MB. The icons will be displayed in the Plugin Manager listing. All four sizes are required - `[48, 96, 144, 192]`. | publish
+`host.app` | `string` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `"XD"`). | develop
+`host.minVersion` | `string` | Minimum required version of the host app (in `x.y` format) that can run this plugin. **Note:** Must be two segments. Typically, you'll leave the minor segment set to `0`, e.g. `16.0`. | develop
+`host.maxVersion` | `string` | _Optional._ Maximum version of host app that can run this plugin. Same formatting as `host.minVersion`. | develop
+`uiEntryPoints` | `Array<MenuItemDefinition` or `Array<SubmenuDefinition>` | List of objects describing what entries your plugin adds to the _Plugins_ menu in XD. See the next section for details. | develop
 
 ## UI entry points array
 
