@@ -58,7 +58,7 @@ See the sections below to learn more about each key/value field. All fields are 
 
 The top level of the manifest JSON object contains high-level information about your plugin.
 > **Note:** Here are the definitions of the keywords in the "Required" column:
-- Develop - required field for XD to run the plugin. If excluded, XD won't load the plugin
+> - Develop - required field for XD to run the plugin. If excluded, XD won't load the plugin
 - Publish - required field for plugins planned to be submitted in the I/O Console and published in the Plugin Manager
 - Optional - optional field for all plugins
 
