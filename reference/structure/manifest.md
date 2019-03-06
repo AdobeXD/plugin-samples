@@ -61,7 +61,7 @@ develop / publish
 
 Key path | Type | Description | Required
 ---------|------|-------------|---------
-`id`     | `string` | Unique identifier for your plugin. You can get your unique ID on the [Adobe I/O Console](https://console.adobe.io/plugins).| develop
+`id`     | `string` | Unique identifier for your plugin. You can get your unique ID on the [Adobe I/O Console](https://console.adobe.io/plugins).| develop / publish
 `name`   | `string` | Human-readable *name of your plugin* displayed in the Plugin Manager listing. The name should be 3 - 45 characters. Must be globally unique among all published plugins. Name availability can be checked on your plugin details page on the [I/O Console](https://console.adobe.io/plugins). **Note:** Your plugin name is independent of the _project name_ you created when getting your plugin ID from the I/O Console. The I/O Console project name is for your reference only, and is managed directly on the I/O Console. | develop
 `version`| `string` | Version number of your plugin in `x.y.z` format. **Note:** Must be three segments. Each version component must be between `0` and `99`. | develop
 `description` | `string` | Detailed description displayed in the Plugin Manager listing when "See details" is clicked. The detailed description should be 3 - 1000 characters. | publish
