@@ -18,7 +18,7 @@
   "dependencies": {
     "eslint": "^4.19.1",
     "gitbook-plugin-addcssjs": "^1.0.2",
-    "gitbook-plugin-anchorjs": "^2.0.1",
+    "gitbook-plugin-anchorjs": "^2.1.0",
     "gitbook-plugin-bulk-redirect": "^0.2.1",
     "gitbook-plugin-code": "^0.1.0",
     "gitbook-plugin-codesandbox": "^0.1.1",
@@ -36,10 +36,10 @@
     "gitbook-plugin-layout": "0.0.1",
     "gitbook-plugin-lightbox": "^1.1.0",
     "gitbook-plugin-nestedmd": "0.0.1",
-    "gitbook-plugin-page-toc": "^1.1.0",
+    "gitbook-plugin-page-toc": "^1.1.1",
     "gitbook-plugin-pretty-term": "^1.0.2",
     "gitbook-plugin-prism": "^2.4.0",
-    "gitbook-plugin-recently-updated": "^1.0.1",
+    "gitbook-plugin-recently-updated": "^1.0.2",
     "gitbook-plugin-replace": "0.0.1",
     "gitbook-plugin-search-plus": "^1.0.3",
     "gitbook-plugin-simpletabs": "^0.1.1",
@@ -47,8 +47,8 @@
     "gitbook-plugin-todo": "^0.1.3"
   },
   "devDependencies": {
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-plugin-import": "^2.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
     "gh-pages": "^1.2.0",
     "gitbook-cli": "^2.3.2"
   }
