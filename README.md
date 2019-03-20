@@ -1,4 +1,4 @@
-> ** IMPORTANT **
+> **IMPORTANT!**
 >
 > The samples contained within this repository that pertain to panels are using prerelease APIs that will almost certainly change in the future. DO NOT assume that these plugins or the corresponding APIs are final in any way shape or form.
 
