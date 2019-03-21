@@ -1,0 +1,20 @@
+{
+    "name": "Sample Plugin: Create Button Frame",
+    "id": "YOUR_ID_HERE",
+    "version": "1.0.0",
+
+    "description": "Sample plugin code for Adobe XD. Creates a rectangle around the selected text, with fixed padding.",
+
+    "host": {
+        "app": "XD",
+        "minVersion": "18.0"
+    },
+
+    "uiEntryPoints": [
+        {
+            "type": "panel",
+            "label": "Button Frame",
+            "panelId": "buttonFrame"
+        }
+    ]
+}
