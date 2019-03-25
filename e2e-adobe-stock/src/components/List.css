@@ -1,0 +1,43 @@
+
+
+:local(.resultsList) {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+:local(.resultRow) {
+    flex-direction: row;
+    align-content: center;
+    border-radius: 4px;
+    background-color: #F5F5F5; /* without this, the checkboxes don't show up when we scroll! */
+}
+
+:local(.resultRowImageWrapper) {
+    height: 32px;
+    width: 32px;
+    overflow: hidden;
+    display: flex;
+}
+
+:local(.resultRow) img {
+    height: 32px;
+    flex: 0 0 auto;
+    margin: auto auto;
+}
+
+:local(.resultRow) span {
+    flex: 1 1 auto;
+}
+
+:local(.resultRow) button {
+    display: none;
+}
+
+:local(.resultRow):hover {
+    background-color: #EAEAEA;
+}
+
+:local(.resultRow):hover button {
+    display: block;
+}

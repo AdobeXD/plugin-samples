@@ -1,0 +1,45 @@
+:local(.panel) {
+    /* margin: -20px; */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+h1 {
+    display: flex;
+    justify-content: space-between;
+    flex: 0 0 auto;
+}
+
+h1 button {
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    flex: 0 0 auto;
+    align-items: center;
+}
+
+.nogrow {
+    flex: 0 0 auto;
+}
+
+.noshrink {
+    flex: 0 0 auto;
+}
+
+.row {
+    align-items: center;
+}
+
+.row label span {
+    font-size: 100%;
+}
+
+form a:hover {
+    color: red;
+}

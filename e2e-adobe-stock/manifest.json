@@ -2,17 +2,17 @@
     "id": "ADOBE_STOCK_SEARCH",
     "author": "Kerri Shotts",
     "name": "(E2E) Adobe Stock Search",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "host": {
         "app": "XD",
-        "minVersion": "13.0"
+        "minVersion": "18.0"
     },
-    "description": "Description of your plugin.",
-    "summary": "Summary of your plugin",
+    "description": "Search the Adobe stock website and download proofs for your design.",
+    "summary": "Search for inspiration",
     "languages": [
         "en"
     ],
-    "helpUrl": "https://mywebsite.com/help",
+    "helpUrl": "https://stock.adobe.com/",
     "icons": [
         {
             "width": 48,
@@ -37,15 +37,14 @@
     ],
     "uiEntryPoints": [
         {
+            "type": "panel",
+            "label": "Search Adobe Stock...",
+            "panelId": "search"
+        },
+        {
             "type": "menu",
-            "label": "Adobe Stock",
-            "menuItems": [
-                {
-                    "type": "menu",
-                    "label": "Search Adobe Stock...",
-                    "commandId": "search"
-                }
-            ]
+            "label": "Edit Adobe Stock Preferences...",
+            "commandId": "settings"
         }
     ]
 }

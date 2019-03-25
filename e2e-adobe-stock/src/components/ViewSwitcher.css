@@ -1,0 +1,9 @@
+:local(.viewMode) {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+:local(.viewMode) button {
+    margin: 0;
+}
