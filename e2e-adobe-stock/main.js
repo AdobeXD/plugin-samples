@@ -26228,10 +26228,6 @@ class StockSearch extends React.Component {
         this.documentStateChanged = this.documentStateChanged.bind(this);
     }
 
-    componentDidMount() {
-        this.documentStateChanged(__webpack_require__(/*! scenegraph */ "scenegraph").selection);
-    }
-
     documentStateChanged(selection) {
         const { GraphicNode, Artboard, Text } = __webpack_require__(/*! scenegraph */ "scenegraph");
         const possibleFills = selection.items.filter(node => node instanceof GraphicNode && !(node instanceof Artboard || node instanceof Text));
@@ -26598,6 +26594,8 @@ class PanelController {
         if (!this.instance) {
             this.instance = ReactDOM.render(React.createElement(App, { selection: selection }), this.rootNode);
         }
+
+        this.update();
     }
 
     hide(event) {

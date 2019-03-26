@@ -22,6 +22,8 @@ class PanelController {
         if (!this.instance) {
             this.instance = ReactDOM.render(<App selection={selection} />, this.rootNode);
         }
+
+        this.update();
     }
 
     hide(event) {

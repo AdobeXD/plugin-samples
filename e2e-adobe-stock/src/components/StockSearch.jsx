@@ -49,10 +49,6 @@ class StockSearch extends React.Component {
         this.documentStateChanged = this.documentStateChanged.bind(this);
     }
 
-    componentDidMount() {
-        this.documentStateChanged(require("scenegraph").selection);
-    }
-
     documentStateChanged(selection) {
         const { GraphicNode, Artboard, Text } = require('scenegraph');
         const possibleFills = selection.items.filter(node => node instanceof GraphicNode && !(node instanceof Artboard || node instanceof Text));
