@@ -235,7 +235,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "._3ad2qe1vtNd7ehzsMATN_Z {\n    flex: 1 1 auto;\n    display: flex;\n    flex-direction: column;\n}\n\n._2-p7z_FMwnKgT9ivKQ1RlL {\n    margin: 0;\n    justify-content: flex-end;\n    height: 32px;\n}\n\n._1iFezvs9c07pG_D8MU0nIc {\n    display: flex;\n    flex: 0 0 auto;\n    align-items: center;\n    justify-content: flex-end;\n}\n\n._1iFezvs9c07pG_D8MU0nIc div {\n    flex: 1 1 auto;\n}\n\n._1iFezvs9c07pG_D8MU0nIc button {\n    flex: 0 0 auto;\n}", ""]);
+exports.push([module.i, "._3ad2qe1vtNd7ehzsMATN_Z {\n    flex: 1 1 auto;\n    display: flex;\n    flex-direction: column;\n}\n\n._2-p7z_FMwnKgT9ivKQ1RlL {\n    margin: 0;\n    justify-content: flex-end;\n    height: 32px;\n}\n\n._1iFezvs9c07pG_D8MU0nIc {\n    display: flex;\n    flex: 0 0 auto;\n    align-items: center;\n    justify-content: flex-end;\n}\n\n._1iFezvs9c07pG_D8MU0nIc div, ._1iFezvs9c07pG_D8MU0nIc p {\n    flex: 1 1 auto;\n    text-overflow: ellipsis;\n    overflow: hidden;\n    white-space: nowrap;\n}\n\n._1iFezvs9c07pG_D8MU0nIc button {\n    flex: 0 0 auto;\n}", ""]);
 
 // exports
 exports.locals = {
@@ -25598,9 +25598,11 @@ class App extends React.Component {
         };
 
         this.preferencesDialog = React.createRef();
+        this.panel = React.createRef();
 
         this.prefsChanged = this.prefsChanged.bind(this);
         this.showPreferences = this.showPreferences.bind(this);
+        this.documentStateChanged = this.documentStateChanged.bind(this);
 
         this.init();
     }
@@ -25618,6 +25620,12 @@ class App extends React.Component {
         this.preferencesDialog.current.show();
     }
 
+    documentStateChanged(selection) {
+        if (this.panel) {
+            this.panel.current.documentStateChanged(selection);
+        }
+    }
+
     render() {
         const { prefs } = this.state;
         const { selection } = this.props;
@@ -25632,7 +25640,7 @@ class App extends React.Component {
             React.createElement(
                 "panel",
                 { className: styles.panel },
-                React.createElement(StockSearch, { selection: selection, prefs: prefs, onShowPreferences: this.showPreferences })
+                React.createElement(StockSearch, { ref: this.panel, selection: selection, prefs: prefs, onShowPreferences: this.showPreferences })
             ),
             React.createElement(Preferences, { ref: this.preferencesDialog, prefs: prefs, onChange: this.prefsChanged })
         );
@@ -26197,6 +26205,7 @@ const initialState = {
     progress: 0,
     results: [],
     selected: [],
+    possibleFillCount: 0,
     msg: '',
     viewMode: VIEWS.GRID,
     maxResults: '20'
@@ -26216,6 +26225,17 @@ class StockSearch extends React.Component {
         this.selectImage = this.selectImage.bind(this);
         this.viewChanged = this.viewChanged.bind(this);
         this.maxResultsChanged = this.maxResultsChanged.bind(this);
+        this.documentStateChanged = this.documentStateChanged.bind(this);
+    }
+
+    componentDidMount() {
+        this.documentStateChanged(__webpack_require__(/*! scenegraph */ "scenegraph").selection);
+    }
+
+    documentStateChanged(selection) {
+        const { GraphicNode, Artboard, Text } = __webpack_require__(/*! scenegraph */ "scenegraph");
+        const possibleFills = selection.items.filter(node => node instanceof GraphicNode && !(node instanceof Artboard || node instanceof Text));
+        this.setState({ possibleFillCount: possibleFills.length });
     }
 
     maxResultsChanged(e) {
@@ -26382,7 +26402,8 @@ class StockSearch extends React.Component {
             progress,
             msg,
             viewMode,
-            maxResults
+            maxResults,
+            possibleFillCount
         } = this.state;
 
         const canSearch = search && apikey;
@@ -26401,15 +26422,19 @@ class StockSearch extends React.Component {
             React.createElement(
                 'div',
                 { className: styles.commandLine },
-                status === STATUS.WORKING && React.createElement(
+                status === STATUS.WORKING ? React.createElement(
                     'div',
                     null,
                     `${Math.floor(progress)}% complete...`
+                ) : React.createElement(
+                    'p',
+                    null,
+                    `${possibleFillCount} shape(s)`
                 ),
                 React.createElement(
                     'button',
                     { id: 'insert', disabled: !canInsert, onClick: this.insertPhotos, 'uxp-variant': 'cta', editLabel: 'Insert Stock Photos' },
-                    status === STATUS.WORKING ? 'Downloading...' : 'Insert Selected...'
+                    status === STATUS.WORKING ? 'Downloading...' : `Insert ${selected.length} Selected...`
                 )
             ),
             React.createElement(

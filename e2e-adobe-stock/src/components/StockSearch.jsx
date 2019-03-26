@@ -26,6 +26,7 @@ const initialState = {
     progress: 0,
     results: [],
     selected: [],
+    possibleFillCount: 0,
     msg: '',
     viewMode: VIEWS.GRID,
     maxResults: '20',
@@ -45,6 +46,17 @@ class StockSearch extends React.Component {
         this.selectImage = this.selectImage.bind(this);
         this.viewChanged = this.viewChanged.bind(this);
         this.maxResultsChanged = this.maxResultsChanged.bind(this);
+        this.documentStateChanged = this.documentStateChanged.bind(this);
+    }
+
+    componentDidMount() {
+        this.documentStateChanged(require("scenegraph").selection);
+    }
+
+    documentStateChanged(selection) {
+        const { GraphicNode, Artboard, Text } = require('scenegraph');
+        const possibleFills = selection.items.filter(node => node instanceof GraphicNode && !(node instanceof Artboard || node instanceof Text));
+        this.setState({possibleFillCount: possibleFills.length});
     }
 
     maxResultsChanged(e) {
@@ -219,6 +231,7 @@ class StockSearch extends React.Component {
             msg,
             viewMode,
             maxResults,
+            possibleFillCount
         } = this.state;
 
         const canSearch = search && apikey;
@@ -234,11 +247,13 @@ class StockSearch extends React.Component {
                     </div>
                 )}
                 <div className={styles.commandLine}>
-                    {status === STATUS.WORKING && (
+                    {status === STATUS.WORKING ? (
                         <div>{`${Math.floor(progress)}% complete...`}</div>
+                    ): (
+                        <p>{`${possibleFillCount} shape(s)`}</p>
                     )}
                     <button id="insert" disabled={!canInsert} onClick={this.insertPhotos} uxp-variant="cta" editLabel="Insert Stock Photos">
-                        {status === STATUS.WORKING ? 'Downloading...' : 'Insert Selected...'}
+                        {status === STATUS.WORKING ? 'Downloading...' : `Insert ${selected.length} Selected...`}
                     </button>
                 </div>
                 <div className={styles.resultsWrapper}>

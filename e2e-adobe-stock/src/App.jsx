@@ -16,9 +16,11 @@ class App extends React.Component {
         };
 
         this.preferencesDialog = React.createRef();
+        this.panel = React.createRef();
 
         this.prefsChanged = this.prefsChanged.bind(this);
         this.showPreferences = this.showPreferences.bind(this);
+        this.documentStateChanged = this.documentStateChanged.bind(this);
 
         this.init();
     }
@@ -36,6 +38,12 @@ class App extends React.Component {
         this.preferencesDialog.current.show();
     }
 
+    documentStateChanged(selection) {
+        if (this.panel) {
+            this.panel.current.documentStateChanged(selection);
+        }
+    }
+
     render() {
         const { prefs } = this.state;
         const { selection } = this.props;
@@ -49,7 +57,7 @@ class App extends React.Component {
             ) : (
                 <React.Fragment>
                     <panel className={styles.panel}>
-                        <StockSearch selection={selection} prefs={prefs} onShowPreferences={this.showPreferences} />
+                        <StockSearch ref={this.panel} selection={selection} prefs={prefs} onShowPreferences={this.showPreferences} />
                     </panel>
                     <Preferences ref={this.preferencesDialog} prefs={prefs} onChange={this.prefsChanged} />
                 </React.Fragment>

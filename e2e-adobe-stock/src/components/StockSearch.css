@@ -17,8 +17,11 @@
     justify-content: flex-end;
 }
 
-:local(.commandLine) div {
+:local(.commandLine) div, :local(.commandLine) p {
     flex: 1 1 auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 :local(.commandLine) button {
