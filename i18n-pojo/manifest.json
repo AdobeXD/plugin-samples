@@ -1,0 +1,45 @@
+{
+  "id": "i18nPOJO",
+  "name": "Internationalization with a POJO",
+  "version": "1.0.0",
+  "author": "Adobe",
+  "summary": "How to internationalize",
+  "description": "A sample plugin showing how to internationalize with a Plain Ol' JavaScript Object.",
+  "host": {
+    "app": "XD",
+    "minVersion": "13.0"
+  },
+  "icons": [
+    {
+      "width": 48,
+      "height": 48,
+      "path": "images/icon@48.png"
+    },
+    {
+      "width": 96,
+      "height": 96,
+      "path": "images/icon@96.png"
+    },
+    {
+      "width": 144,
+      "height": 144,
+      "path": "images/icon@144.png"
+    },
+    {
+      "width": 192,
+      "height": 192,
+      "path": "images/icon@192.png"
+    }
+  ],
+  "languages": ["en", "ja"],
+  "uiEntryPoints": [
+    {
+      "type": "menu",
+      "label": {
+        "default": "[Sample] Internationalizing a plugin",
+        "ja": "[サンプル] プラグインを多言語対応する方法"
+      },
+      "commandId": "mainCommand"
+    }
+  ]
+}
