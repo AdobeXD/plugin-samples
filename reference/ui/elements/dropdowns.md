@@ -221,4 +221,4 @@ Dropdowns accept a limited amount of styling. You cannot change the following st
 * Dropdowns do not receive keyboard or pointer events.
 * `<select value="…"/>` does not show the value as selected. Instead, get a reference to the element and call `setAttribute("value", …)`.
 * `<option>` tags *must* have a `value` attribute, or referencing the `select`'s `value` property will return `undefined`.
-* `<option>` tags do not support `selected` or `disabled` attributes.
+* `<option>` tags do not support the `disabled` attribute.

@@ -7,6 +7,14 @@
 * **requestAnimationFrame() for UI** -- Complimenting the earlier addition of `setTimeout()` APIs, this new global API makes it easier to use certain UI libraries such as "react-virtualized" with
   fewer polyfills. These APIs _do not_ allow plugins to control animations in the XD document -- plugins can still only modify the document as part of an atomic operation while the UI is blocked.
   But this API does allow for simple animations in your plugin's dialog UI (e.g. a progress indicator).
+* Added `<input type="password" />`
+* Added `<input type="search">`
+* Added Number Input Widget. `<input type="number">` is now a valid input option. It supports UP and DOWN arrow keys to change the value.
+* Implemented pseudo selector `lang`
+* Implemented `(window.)performance` property
+* Implemented checkmarks on checked menu items
+* Added support for `:focus` pseudo-selector
+* Supports sending `FormData` in XHR
 
 ### Breaking Changes
 
@@ -14,10 +22,28 @@
   the first time you launch XD 18.
 * Advance warning: In the _near future_ XD's scenegraph will add at least one new subclass of `GraphicNode` (i.e. a new leaf node shape type). Always be sure to have a default case for unknown
   scenenode types/classes when traversing the scenegraph.
+* In React, checkboxes now trigger `change` events. You should stop using the previous work around as you will likely invoke your `change` handler twice.
+    * The prior workaround was to add a `ref` instead to assign an event handler. `<input type="checkbox" ref={el && el.addEventListener("change", e => /*…*/)} />`
 
 ### Fixes and improvements
 
-No other API changes.
+* It is now possible to set a checkbox to `checked` by using `<input type="checkbox" checked/>`.
+* `<option>` tags do now support `selected` attributes, but do not support `disabled` attributes.
+* When applying HTML using `innerHTML` and friends, inline styles are no longer ignored.
+* Accepting text in Japanese IME also triggers the default button (ENTER is overloaded).
+* Fixed an issue where sometimes the image size is 0 in a plugin.
+* `XMLHttpRequest` throws error with request status 500 for `NSURLConnection` error codes.
+* Misleading error message when `getEntry()` fails.
+* Enforce file format check in `readFromFile`/`writeToFile`.
+* Corrected spacing of text using `lineHeight` property.
+* Fixed handling `selected` attribute of `option` to set default option.
+* Corrected the behavior of `types` argument in `getFileForSaving` API.
+* `parentnode` on `document` returns `null`.
+* Fixed `foreach` for `NodeList`.
+* Node `previousSibling` and `nextSibling` when not set should return `null` and not `undefined`.
+* Fixed for `DOMTokenList` `item` and `contains` method bugs.
+* Fix checkbox issues when using a label.
+
 
 ### User-facing plugin features
 

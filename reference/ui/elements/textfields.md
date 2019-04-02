@@ -174,6 +174,7 @@ Text fields accept a limited amount of styling. You cannot change the following 
 * `disabled`: `disabled`
 * `readonly`: `readonly`
 * `value`
+* `min`, `max`, `step` (Number fields)
 
 ### Unsupported Attributes
 
@@ -191,14 +192,11 @@ Text fields accept a limited amount of styling. You cannot change the following 
 * `capture`
 * `inputmode`
 * `list`
-* `min`
-* `max`
 * `multiple`
 * `pattern`
 * `required`
 * `size`
 * `spellcheck`
-* `step`
 * `tabindex`
 * `usemap`
 
@@ -211,5 +209,5 @@ Text fields accept a limited amount of styling. You cannot change the following 
 * Text fields do not receive pointer events.
 * Validation is not currently supported.
 * The following `input` `type` values are not supported, and will render as a regular text field: `button`, `color`,
-  `date*`, `email`, `file`, `hidden`, `month`, `number`, `password`, `radio`, `reset`, `search`, `submit`, `tel`,
+  `date*`, `email`, `file`, `hidden`, `month`, `radio`, `reset`, `submit`, `tel`,
   `time`, `url`, `week`
