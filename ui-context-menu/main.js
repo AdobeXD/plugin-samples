@@ -4,11 +4,6 @@ let dialog;
 function getDialog() {
     if (dialog == null) {
         function onsubmit(e) {
-            let values = {
-                horizontal: horizontal.value,
-                vertical: vertical.value
-            };
-            console.log("submit: " + JSON.stringify(values))
             dialog.close();
         }
 
@@ -28,8 +23,7 @@ function getDialog() {
             //  no error when menu is not in the dom
             popupMenu.popupAt(e.clientX, e.clientY);
         }
-    
-        let horizontal, vertical;
+
         dialog = (
             h("dialog",
                 h("form", { style: { width: 360 }, onsubmit },
@@ -37,7 +31,7 @@ function getDialog() {
                     h("p", { onclick: showContextMenu }, "Click here for a context menu."),
                     h("footer",
                         h("button", { uxpVariant: "primary", onclick(e) { dialog.close("Cancelled") } }, "Cancel"),
-                        h("button", { uxpVariant: "cta", type:"submit", onclick(e) { onsubmit(); e.preventDefault(); } }, "Done")
+                        h("button", { uxpVariant: "cta", type: "submit", onclick(e) { onsubmit(); e.preventDefault(); } }, "Done")
                     )
                 ),
                 //  the menu MUST be added to the DOM before usage.
