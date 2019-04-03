@@ -46,6 +46,9 @@ function myCommand(selection) {
 
 ## Class hierarchy
 
+Note: Additional subclasses may be added in the future. Always be sure to have a default case for unknown scenenode classes
+when traversing the scenegraph.
+
 * [SceneNode](#SceneNode)
     * [GraphicNode](#GraphicNode)
         * [Artboard](#Artboard)
@@ -60,6 +63,7 @@ function myCommand(selection) {
     * [RepeatGrid](#RepeatGrid)
     * [LinkedGraphic](#LinkedGraphic)
     * [RootNode](#RootNode)
+
 
 ## Typedefs
 

@@ -1,5 +1,66 @@
 # Change Log
 
+## XD Release 18.0.12 (April 2019)
+
+### New API Features
+
+* **Text field controls:**
+    * `<input type="password">`
+    * `<input type="search">` -- displays search icon
+    * `<input type="number">` -- restricted to numeric characters, and Up/Down arrow keys automatically change the value
+* **CSS improvements:**
+    * Inline `style` attributes now work when used with `innerHTML` and friends.
+    * Pseudo-class `:focus`
+    * Pseudo-class `:lang()`
+* **Send `FormData` with XHR** -- This provides an easy way to post data to an endpoint expecting `multipart/form-data`. (But uploading binary files with Blob is not supported yet -- use ArrayBuffer).
+* **requestAnimationFrame() for UI** -- Complimenting the earlier addition of `setTimeout()` APIs, this new global API makes it easier to use certain UI libraries such as "react-virtualized" with
+  fewer polyfills. These APIs _do not_ allow plugins to control animations in the XD document -- plugins can still only modify the document as part of an atomic operation while the UI is blocked.
+  But this API does allow for simple animations in your plugin's dialog UI (e.g. a progress indicator).
+
+### Breaking Changes
+
+* **`develop` folder location change** (Mac only) -- The "Adobe XD CC" folder was renamed to just "Adobe XD." The contents of the `develop` folder will _automatically be moved_ to the new location
+  the first time you launch XD 18.
+* **Checkboxes with React** -- Checkboxes now correctly trigger `change` events in React. The previously recommended workaround (using `ref` to manually assign an event handler) will now cause
+  your `change` handler to get invoked _twice_.
+* Advance warning: In the _near future_ XD's scenegraph will add at least one new subclass of `GraphicNode` (i.e. a new leaf node shape type). Always be sure to have a default case for unknown
+  scenenode types/classes when traversing the scenegraph.
+
+### Fixes and improvements
+
+* **UI control / DOM API fixes:**
+    * It is now possible to set a checkbox to `checked` by using `<input type="checkbox" checked/>`.
+    * `<option>` tags do now support `selected` attributes, but do not support `disabled` attributes.
+    * Accepting text in Japanese IME by presing Enter no longer triggers the default button in a dialog.
+    * Fixed an issue where sometimes the image size is 0 in a plugin.
+    * Corrected spacing of text using `lineHeight` property.
+    * Fixed handling `selected` attribute of `option` to set default option.
+    * `parentNode` on `document` now returns `null` instead of `undefined`
+    * Fixed `forEach` for `NodeList`.
+    * Node `previousSibling` and `nextSibling` when not set should return `null` and not `undefined`.
+    * Fixed for `DOMTokenList` `item` and `contains` method bugs.
+    * Fix checkbox issues when using a label.
+* **Network API fixes:**
+    * `XMLHttpRequest` throws error with request status 500 for `NSURLConnection` error codes.
+* **File API fixes:**
+    * Misleading error message when `getEntry()` fails.
+    * Corrected the behavior of `types` argument in `getFileForSaving` API.
+
+
+### User-facing plugin features
+
+* **Plugin listing displays new fields** -- The `summary`, `languages`, and `website` fields that were recently added to the [manifest](https://adobexdplatform.com/plugin-docs/reference/structure/manifest.html)
+  are now displayed in the Discover/Manage Plugins UI.
+
+### Known Issues
+
+No new known issues. See the [Known Issues page](./known-issues.md) for a comprehensive list of existing known issues.
+
+
+----
+
+# Change Log
+
 ## XD Release 17.0.12 (March 2019)
 
 ### New API Features
@@ -12,6 +73,8 @@
       consisting entirely of plain Groups (or Artboards). See the [edit context documentation](./reference/core/edit-context.md) for details and examples.
     * _Plugins still cannot edit globally across the entire document at once, even though in very simple testing it may _appear_ that this works. Non-Group containers act as blockades that
       the edit scope cannot cross - if the selection is outside such a container, you cannot edit inside it; and if the selection is inside such a container, you cannot edit outside it.
+* **Additional manifest fields required for publishing:** As of March 5, submitting a new or updated plugin for the in-app plugins listing requires providing new `summary`, `author`, and `languages`
+  fields, as well as several additional icon sizes. See [manifest documentation](./reference/structure/manifest.md).
 
 ### Breaking Changes
 

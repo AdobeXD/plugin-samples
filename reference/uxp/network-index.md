@@ -27,13 +27,12 @@ Most of the XHR API surface is supported, including:
 * Event handling
 * Sending text and binary data
     * Text is expected to be UTF8 encoded.
-    * Binary data uses `ArrayBuffer`, not blobs
-    * Sending binary data is not currently supported (but coming)
+    * Binary data must use `ArrayBuffer`, not `Blob`
 
 Unsupported portions of the surface:
 
 * `responseURL`
-* Sending / receiving blobs is not supported
+* Sending / receiving Blobs is not supported
 * Synchronous XHR will throw an error
 
 

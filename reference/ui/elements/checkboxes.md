@@ -134,11 +134,3 @@ Checkboxes accept a limited amount of styling. You cannot change the following s
 
 * Checkboxes do not receive keyboard or pointer events.
 * Checkboxes may fail to render correctly if in a scrollable container. To work around this issue, make sure the containing element has a background color. (`transparent` does not count; macOS only.)
-* It is not currently possible to set a checkbox to `checked` without also passing a value to the attribute. This means `<input type="checkbox" checked/>` will fail to render a checked checkbox. Instead you must use `<input type="checkbox" checked="true" />`
-* In React, checkboxes do not trigger `change` events. You can use a `ref` instead to assign an event handler.
-
-    ```js
-    return (
-        <input type="checkbox" ref={el => el && el.addEventListener("change", e => this.onchecked(e))} />
-    );
-    ```

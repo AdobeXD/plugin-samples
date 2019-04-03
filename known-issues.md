@@ -32,7 +32,6 @@
 
 ### HTML Elements
 
-- It is not currently possible to set a checkbox to `checked` without also passing a value to the attribute. This means `<input type="checkbox" checked/>` will fail to render a checked checkbox. Instead you must use `<input type="checkbox" checked="true" />`
 - `<option>` tags *must* have a `value` attribute, or referencing the `select`'s `value` property will return `undefined`.
 - `<select value="…"/>` does not show the value as selected. Instead, get a reference to the element and call `setAttribute("value", …)`.
 - If you don’t specify a width for your `form`, block elements inside may not take up the entire width. Workaround: always set a width for your `form` elements.
@@ -44,8 +43,7 @@
 - HTML5 input validation is not supported.
 - Images that fail to load will not render any “broken icon” image in place.
 - Input elements do not accept `defaultValue`.
-- `<input type="password" />` is not supported.
-- `<option>` tags do not support `selected` or `disabled` attributes.
+- `<option>` tags do not support `disabled` attributes.
 - `<label for="id"/>` is not supported. Wrap `<label>` around the control instead.
 - `<input type="file" />` is not supported.
 - `<input type="color" />` is not supported.
@@ -54,7 +52,7 @@
 
 - `line-height` is currently implemented incorrectly. This will be fixed in a future release. For now, avoid `line-height`.
 - It is not currently possible to assign multiple border colors to a container.
-- `:focus`, `:active` are not currently supported.
+- `:active` is not currently supported.
 - `baseline` alignment is not currently supported.
 - Full CSS cascade and inheritance is not currently supported.
 - Media queries are not supported.
@@ -70,19 +68,18 @@
 ### DOM
 
 - When a dialog is closed, it is not removed from the DOM. This is per spec. If you want the dialog to be removed from the DOM, you must call `HTMLDialogElement#remove` explicitly.
-- When applying HTML using `innerHTML` and friends, inline styles are ignored. You can, however, supply `<style>` tags and use `class` attributes to assign styles.
 - When applying HTML using `innerHTML`, event handlers and scripts are not parsed. This is by design.
 
 ### Events
 
 - Interactive elements do not support `Pointer%` events
 - `keypress` and `keyup` are not currently supported on macOS.
-- In React, checkboxes do not trigger `change` events. You can use a `ref` instead to assign an event handler. `<input type="checkbox" ref={el && el.addEventListener("change", e => /*…*/)} />`
 
 ## Network I/O
 
 - On macOS, it is not possible to use self-signed certificates with secure Websockets.
 - Websockets do not support extensions.
+- XHR can only send binary content using an ArrayBuffer -- Blob is not supported.
 - XHR does not support cookies.
 - `responseURL` is not supported on XHR
 
