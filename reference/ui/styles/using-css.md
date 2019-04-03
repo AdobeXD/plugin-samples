@@ -98,4 +98,4 @@ XD understands the following CSS selectors:
 
 > **Info**
 >
-> Only `hover`, `focus`, and `lang` are supported.
+> Only `hover`, `focus`, and `lang` pseudo-classes are supported.
