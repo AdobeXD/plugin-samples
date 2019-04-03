@@ -12,7 +12,7 @@
     * Inline `style` attributes now work when used with `innerHTML` and friends.
     * Pseudo-class `:focus`
     * Pseudo-class `:lang()`
-* **Send `FormData` in XHR**
+* **Send `FormData` with XHR** -- This provides an easy way to post data to an endpoint expecting `multipart/form-data`. (But uploading binary files with Blob is not supported yet -- use ArrayBuffer).
 * **requestAnimationFrame() for UI** -- Complimenting the earlier addition of `setTimeout()` APIs, this new global API makes it easier to use certain UI libraries such as "react-virtualized" with
   fewer polyfills. These APIs _do not_ allow plugins to control animations in the XD document -- plugins can still only modify the document as part of an atomic operation while the UI is blocked.
   But this API does allow for simple animations in your plugin's dialog UI (e.g. a progress indicator).

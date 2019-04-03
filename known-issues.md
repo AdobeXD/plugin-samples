@@ -79,6 +79,7 @@
 
 - On macOS, it is not possible to use self-signed certificates with secure Websockets.
 - Websockets do not support extensions.
+- XHR can only send binary content using an ArrayBuffer -- Blob is not supported.
 - XHR does not support cookies.
 - `responseURL` is not supported on XHR
 

@@ -260,5 +260,5 @@ Sends the request. If the request is asynchronous (which is the default), this m
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| [data] | `\*` | <code></code> | A body of data to be sent in the XHR request. This can be:                       A Document, in which case it is serialized before being sent.                       A BodyInit, which as per the Fetch spec can be a Blob, BufferSource, FormData, URLSearchParams, ReadableStream, or USVString object.                       If no value is specified for the body, a default value of null is used.                       The best way to send binary content (e.g. in file uploads) is by using an ArrayBufferView or Blob in conjunction with the send() method. |
+| [data] | `\*` | <code></code> | A body of data to be sent in the XHR request. This can be:                       A Document, in which case it is serialized before being sent.                       A BodyInit, which can be a BufferSource, FormData (without nested files/Blobs), URLSearchParams, ReadableStream, or USVString object.                       If no value is specified for the body, a default value of null is used.                       <br><br>To send binary content (e.g. in file uploads), use an ArrayBufferView in conjunction with the send() method. **Note:** Sending binary data via Blob is not supported yet. |
 
