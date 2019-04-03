@@ -1,6 +1,6 @@
 const { ImageFill } = require("scenegraph");
-const uxp = require("uxp").storage;
-const fs = uxp.localFileSystem;
+const uxp = require("uxp");
+const fs = uxp.storage.localFileSystem;
 
 function applyImage(selection) {
     if (selection.items.length) {
