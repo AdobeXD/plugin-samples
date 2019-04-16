@@ -40,12 +40,17 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
         {
             "type": "menu",
             "label": {
-                "default": "Hellow World",
+                "default": "Hello World",
                 "fr": "Bonjour le monde",
                 "de": "Hallo Welt"
             },
             "commandId": "helloCommand",
             "shortcut": { "mac": "Cmd+Shift+P", "win": "Ctrl+Shift+P" }
+        },
+        {
+            "type": "panel",
+            "label": "Hello World - Panel",
+            "panelId": "helloPanel"
         }
     ]
 }
@@ -80,19 +85,20 @@ Key path | Type | Description | Required
 `host.app` | `string` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `"XD"`). | Develop / Publish
 `host.minVersion` | `string` | Minimum required version of the host app (in `x.y` format) that can run this plugin. <br> **Note:** Must be two segments. Typically, you'll leave the minor segment set to `0`, e.g. `16.0`. | Develop / Publish
 `host.maxVersion` | `string` | Maximum version of host app that can run this plugin. Same formatting as `host.minVersion`. | Optional
-`uiEntryPoints` | `array<object>` | List of objects describing what entries your plugin adds to the _Plugins_ menu in XD. See the next section for details. | Develop / Publish
+`uiEntryPoints` | `array<object>` | List of objects describing what entries your plugin adds to the _Plugins_ menu or panel section in XD. See the next section for details. | Develop / Publish
 
 ## UI entry points array
 
-The `uiEntryPoints` field is an _array_ of objects, and each object must match one of the two formats below. Items appear in the _Plugins_ menu in the same order as they're listed in the `uiEntryPoints` array.
+The `uiEntryPoints` field is an _array_ of objects, and each object must match one of the two formats below. Items with `"type": "menu"` appear in the _Plugins_ menu in the same order as they're listed in the `uiEntryPoints` array and items with `"type": "panel"` appear in the panel section in XD.
 
 ### MenuItemDefinition (executable menu items)
 
 Key | Type | Description
 ----|------|------------
-`type` | `string` | Entry point type. Currently `"menu"` is the only supported value.
+`type` | `string` | Entry point type. Currently `"menu"` and `"panel"` are the only supported values.
 `label` | `string` or `Object` | Label for this menu item that the user will select to run your plugin. May be a single string _or_ an object containing localized strings (see "Menu Localization" below).
-`commandId` | `string` | Identifier that links the menu item to a function in your plugin's JavaScript code. This identifier needs to be unique within your plugin. It can be whatever you like, but it makes sense to succinctly describe what the command will do.
+`commandId` | `string` | Identifier that links the menu item to a function in your plugin's JavaScript code. This identifier needs to be unique within your plugin. It can be whatever you like, but it makes sense to succinctly describe what the command will do. Note that `commandId` and `panelId` are mutually exclusive.
+`panelId` | `string` | Identifier that links the panel instance to a function in your plugin's JavaScript code. This identifier needs to be unique within your plugin. It can be whatever you like, but it makes sense to succinctly describe what the panel will do. Note that `commandId` and `panelId` are mutually exclusive.
 `shortcut` | `Object` | _Optional._ Object defining Mac and Windows keyboard shortcuts for this menu item, formatted as `{"mac": "string", "win": "string"}`. See "Keyboard shortcuts" below for details.
 
 ### SubmenuDefinition (submenu)
@@ -120,7 +126,7 @@ Keyboard shortcuts are defined separately for each platform (as seen in the exam
 
 ## Menu Localization
 
-Plugin menu item labels can be localized to match the rest of XD's UI. Other fields such as `name` and `description` _cannot be localized yet._
+Plugin menu item labels or panel labels can be localized to match the rest of XD's UI. Other fields such as `name` and `description` _cannot be localized yet._
 
 Localized labels are represented as an object containing multiple translations, instead of a single string value:
 
