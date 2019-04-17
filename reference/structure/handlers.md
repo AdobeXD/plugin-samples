@@ -6,7 +6,7 @@ Below, we'll cover some points to help you get oriented with `main.js`.
 
 
 ## Wiring your code to the manifest
-
+The way you link your code with the manifest is different depending on which UI entrypoint your plugin uses. 
 ### Modal
 Your `main.js` file exports a map linking each `commandId` from the manifest to a _handler function_ in your code:
 
@@ -22,7 +22,7 @@ module.exports.commands = {
 
 In this example:
 
-1.  `helloCommand` matches the value of `commandId` in your manifest
+1. `helloCommand` matches the value of `commandId` in your manifest
 1. `sayHello` is the name of your main handler function, so it is mapped to `helloCommand` in your command exports.
 
 ### Panel
