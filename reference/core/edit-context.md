@@ -13,7 +13,9 @@ The current edit context's scope is derived from the current selection:
 
 * The **"edit context root"** is the node which is the closest common ancestor of all the selected nodes. It's typically indicated
   by a soft blue outline in the UI:
+
   <img src="../../images/edit-context-outline.png" alt="screenshot of soft blue outline" />
+
   As a special case, if the edit context root would be an Artboard, it is moved up to the root of the entire scenegraph instead.
 
 * Nodes within this subtree are "in scope" for editing (or selection) _if_ they are connected to the edit context root by a parent

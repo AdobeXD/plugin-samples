@@ -183,8 +183,8 @@ Returns the parent node. Null if this is the root node, or a freshly constructed
 ### *sceneNode.children : <code>\![SceneNodeList](SceneNodeList.md)</code>*
 Returns a list of this node's children. List is length 0 if the node has no children. The first child is lowest in the z order.
 
-This list is _not an Array_, so you must use `at(i)` instead of `[i]` to access children by index. It has a number of Array-like
-methods such as `forEach()` for convenience, however.
+This list is _**not an Array**_, so you must use `at(i)` instead of `[i]` to access children by index. It has a number of Array-like
+methods such as `forEach()` for convenience and improved performance, however.
 
 The list is immutable. Use [removeFromParent](#SceneNode-removeFromParent) and [addChild](#Group-addChild) to add/remove child nodes.
 
@@ -898,6 +898,8 @@ How sharp corners in the shape are rendered: GraphicNode.STROKE_JOIN_BEVEL, STRO
 ### *graphicNode.strokeMiterLimit : <code>number</code>* &gt;= 0
 **Default**: `4`
 
+Expressed as a multiple of stroke width. Only used when [`strokeJoins`](#GraphicNode-strokeJoins) = STROKE_JOIN_MITER.
+
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
 
 * * *
@@ -936,6 +938,9 @@ Ignored unless `strokeDashArray` is non-empty. Shifts the "phase" of the repeati
 
 The node's drop shadow, if any. If there is no shadow applied, this property may be null _or_ `shadow.visible` may be false.
 
+To modify an existing shadow, always be sure to re-invoke the `shadow` setter rather than just changing the Shadow object's properties inline.
+See ["Properties with object values"](/reference/core/properties-with-object-values.md).
+
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
 
 * * *
@@ -947,6 +952,9 @@ The node's drop shadow, if any. If there is no shadow applied, this property may
 
 The node's object blur or background blur settings, if applicable (a node may not have both types of blur at once). If there is no blur
 effect applied, this property may be null _or_ `blur.visible` may be false.
+
+To modify an existing blur, always be sure to re-invoke the `blur` setter rather than just changing the Blur object's properties inline.
+See ["Properties with object values"](/reference/core/properties-with-object-values.md).
 
 **Kind**: instance property of [<code>GraphicNode</code>](#GraphicNode)
 
@@ -1690,7 +1698,7 @@ You can call this API from either of _two different edit contexts_:
 | Param | Type | Description |
 | --- | --- | --- |
 | shapeNode | <code>!GraphicNode</code> | A shape node exemplar that would be in scope for editing if the current edit context was one of this RepeatGrid's cells. The image series will be bound to this node and all corresponding copies of it in the other grid cells. Must be a node type that supports image fills (e.g. Rectangle, but not Text or Line). |
-| images | <code>!Array&lt;string&gt;</code> | Array of one or more ImageFills. |
+| images | <code>!Array&lt;!ImageFill&gt;</code> | Array of one or more ImageFills. |
 
 * * *
 
