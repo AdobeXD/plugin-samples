@@ -8,7 +8,7 @@ The XD Plugin Manager is accessed through the _Plugins_ menu in the app: go to _
 
 In order to make your plugin available in the XD Plugin Manager, you'll need to go through our submission and review process.
 
-## Prerequisite
+## Prerequisites
 
 - [A packaged plugin](/distribution/packaging.md)
 - Edge is not currently supported for the plugin submission workflow. Please use another browser to submit your XD plugin.
