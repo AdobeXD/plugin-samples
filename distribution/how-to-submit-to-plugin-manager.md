@@ -11,6 +11,7 @@ In order to make your plugin available in the XD Plugin Manager, you'll need to 
 ## Prerequisite
 
 - [A packaged plugin](/distribution/packaging.md)
+- Edge is not currently supported for the plugin submission workflow. Please use another browser to submit your XD plugin.
 
 ## Pre-submission checklist
 
