@@ -1237,7 +1237,7 @@ selection.items = [polygon];
 <a name="Polygon-cornerCount"></a>
 
 ### polygon.cornerCount : <code>number</code>
-Number of corners the Polygon has (i.e., a triangle has a cornerCount == 3).
+Number of vertices of a polygon.
 
 **Kind**: instance property of [<code>Polygon</code>](#Polygon)
 
@@ -1652,7 +1652,7 @@ Set strikethrough across all style ranges, or get the strikethrough of the last 
 
 <a name="Text-textTransform"></a>
 
-### text.textTransform : <code>boolean</code>
+### text.textTransform : <code>string</code>
 **Default**: `none`
 **Since**: XD 19
 
@@ -1680,6 +1680,7 @@ It is not currently possible for plugins to *create* a new Symbol definition or 
     * [.addChildAfter(node, relativeTo)](#Group-addChildAfter)
     * [.addChildBefore(node, relativeTo)](#Group-addChildBefore)
     * [.removeAllChildren()](#Group-removeAllChildren)
+    * [.isMaster](#SymbolInstance-isMaster) : <code>boolean</code>
 
 
 * * *
@@ -1691,6 +1692,17 @@ An identifier unique within this document that is shared by all instances of the
 
 **Kind**: instance property of [<code>SymbolInstance</code>](#SymbolInstance)
 **Read only**: true
+
+* * *
+
+<a name="SymbolInstance-isMaster"></a>
+
+### symbolInstance.isMaster : <code>boolean</code>
+Reports if this symbol is a master symbol or not.
+
+**Kind**: instance property of [<code>SymbolInstance</code>](#SymbolInstance)
+**Read only**: true
+
 
 * * *
 
