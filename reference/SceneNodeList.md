@@ -4,9 +4,10 @@
 Represents the children of a scenenode. Typically accessed via the [SceneNode.children](scenegraph.md#SceneNode-children) property.
 
 This is _not an Array_, so you must use [`at(i)`](#SceneNodeList-at) instead of `[i]` to access children by index. It has a
-number of Array-like methods such as [forEach](#SceneNodeList-forEach) for convenience, however.
+number of Array-like methods such as [forEach](#SceneNodeList-forEach) for convenience, however. For best performance, iterate
+the list using these methods rather than repeatedly calling `at()`.
 
-Ordered from lowest z order to highest.
+Items in this list are ordered from lowest z order to highest.
 
 **Kind**: class  
 
@@ -123,6 +124,9 @@ Iterates children until the test returns true for at least one child.
 <a name="SceneNodeList-at"></a>
 
 ### sceneNodeList.at() ⇒ <code>SceneNode</code>
+Note: calling `at()` repeatedly (e.g. in a `for` loop) is not as fast as using SceneNodeList's iteration methods such as `forEach()`,
+`some()`, or `map()`.
+
 **Kind**: instance method of [<code>SceneNodeList</code>](#SceneNodeList)  
 **Returns**: <code>?SceneNode</code> - Child node at the specified index in the list, or null if index is out of bounds.  
 
