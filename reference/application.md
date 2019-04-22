@@ -3,42 +3,43 @@
 ## application
 The `application` module exposes useful information about XD's state, along with APIs for exporting content.
 
-**Example**  
-```js
-// Generate PNG rendition of the selected node
-let application = require("application");
-let fs = require("uxp").storage.localFileSystem;
-let file = await fs.getFileForSaving();
-let shape = selection.items[0];
-let renditions = [{
-     node: shape,
-     outputFile: file,
-     type: application.RenditionType.PNG,
-     scale: 2
-}];
-application.createRenditions(renditions).then(function (results) {
-    // ...do something with outputFiles on disk...
-});
-```
-
-**Example**  
-```js
-let application = require("application");
-console.log("Version:", application.version);        // e.g. "13.0.21.3"
-console.log("XD locale:", application.appLanguage);  // e.g. "en"
-console.log("OS locale:", application.systemLocale); // e.g. "en_US"
-```
-
 * [application](#module_application)
+    * [.editDocument(options, editFunction)](#module_application-editFunction)
     * [.createRenditions(renditions)](#module_application-createRenditions) ⇒ `Promise<Array, string>`
     * [.version](#module_application-version) : <code>string</code>
     * [.appLanguage](#module_application-appLanguage) : <code>string</code>
     * [.systemLocale](#module_application-systemLocale) : <code>string</code>
 
-
 * * *
 
 <a name="module_application-createRenditions"></a>
+
+### application.editDocument(options, editFunction)
+> **Info**
+>
+> This method is only applicable to buliding panel plugins
+Since plugin panels are completely asynchronous, they require a different model for interacting with the scenegraph. There's no way to return a `Promise`, for example, to hold the scenegraph open for changes for the entire duration your panel is visible.
+
+First, it's important to recognize that scenegraph modifications can only occur from user-initiated actions in your plugin. XD tracks user's interaction with your panel UI in order to determine if this is the case, and prepares to allow scenegraph modifications. Therefore, before using `application.editDocument` method, make sure the UI element that tirggers user action have an `id` element added. For example:
+
+```
+<button id="apply">Apply</button>
+```
+
+**Kind**: static method of [<code>application</code>](#module_application)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | Object&lt;EditSettings> | List of options |
+| editFunction | function | Accepts two parameters: `selection` and `documentRoot`|
+
+**Typedef options**
+| Property | Type | Description |
+| --- | --- | --- |
+| editLabel | string | Used as the Undo label in the **Edit** menu. If left empty, the plugin name will be used |
+| mergeId | string | All edits with the same `mergeId` will be grouped as one undo. `selection` change overrides merged edits. |
+
+* * *
 
 ### application.createRenditions(renditions)
 Generate renditions of nodes in the document in a batch. Overwrites any existing files without warning.
@@ -77,6 +78,23 @@ _All rendition settings fields are required_ (for a given rendition type) unless
 | --- | --- | --- |
 | outputFile | !uxp.storage.File | File the rendition was written to (equal to `outputFile` in RenditionSettings) |
 
+**Example**  
+```js
+// Generate PNG rendition of the selected node
+let application = require("application");
+let fs = require("uxp").storage.localFileSystem;
+let file = await fs.getFileForSaving();
+let shape = selection.items[0];
+let renditions = [{
+     node: shape,
+     outputFile: file,
+     type: application.RenditionType.PNG,
+     scale: 2
+}];
+application.createRenditions(renditions).then(function (results) {
+    // ...do something with outputFiles on disk...
+});
+```
 
 * * *
 
@@ -88,6 +106,11 @@ Adobe XD version number in the form "major.minor.patch.build"
 **Kind**: static property of [<code>application</code>](#module_application)  
 **Read only**: true  
 
+**Example**  
+```js
+let application = require("application");
+console.log("Version:", application.version);        // e.g. "13.0.21.3"
+```
 
 * * *
 
@@ -100,7 +123,11 @@ language only, with no region info (e.g. "fr", not "fr_FR").
 
 **Kind**: static property of [<code>application</code>](#module_application)  
 **Read only**: true  
-
+**Example**  
+```js
+let application = require("application");
+console.log("XD locale:", application.appLanguage);  // e.g. "en"
+```
 
 * * *
 
@@ -112,3 +139,8 @@ language *and* region (e.g. "fr_CA" or "en_US").
 
 **Kind**: static property of [<code>application</code>](#module_application)  
 **Read only**: true  
+**Example**  
+```js
+let application = require("application");
+console.log("OS locale:", application.systemLocale); // e.g. "en_US"
+```

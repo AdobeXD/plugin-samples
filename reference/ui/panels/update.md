@@ -11,7 +11,7 @@ function update(selection, documentRoot) {
     }
 }
 ```
-`update` function gives you two parameters, `selection` and `documentRoot`. You can use `selection` to access the current selection and use `documentRoot` to access the root node of the current document. This example checks if the current selection is an instance of Text. If not, the panel will display a warning suggesting user to select a Text node.
+`update` is called whenever the user changes selection or mutates a `node` within that selection. A mutation can be anything, including moves, resizes, etc. Whenever this function is called, it is important to get in and out as quickly as possible -- while this function executes, XD is blocked. Note that `update` comes with two parameters, `selection` and `documentRoot`.
 
 ```js
 module.exports = {

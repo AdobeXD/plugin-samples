@@ -12,7 +12,7 @@ function show(event) {
     event.node.appendChild(rootNode);
 }
 ```
-`show` function gives you one parameter, `event` which comes with one property called `node`. You can use `appendChild` method to attach your UI root node to this. Your UI root node must have an HTML inside.
+`show` function is called when your plugin is made visible to the user. The parameter that is passed includes a `node` property to which you should attach your user interface. If you fail to attach your UI to this node, your UI will not be visible.
 
 ```js
 module.exports = {
