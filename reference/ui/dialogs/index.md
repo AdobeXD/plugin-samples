@@ -225,7 +225,7 @@ A simple "alert" can be used to display a message along with a **Close** button.
 
 ![Example Alert](../assets/helper-alert.png)
 
-E## Error
+### Error
 
 An error "alert" (with a red heading). These are useful for rendering error messages. Just like regular alerts, you cannot customize the button itself.
 
