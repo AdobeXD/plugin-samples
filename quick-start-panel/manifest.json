@@ -1,0 +1,45 @@
+{
+    "id": "QUICK_START_PANEL",
+    "name": "Hello World sample plugin for panel",
+    "host": {
+        "app": "XD",
+        "minVersion": "18.0"
+    },
+    "version": "1.0.0",
+    "description": "Description of your plugin.",
+    "summary": "Summary of your plugin",
+    "languages": [
+        "en"
+    ],
+    "author": "Your Name",
+    "helpUrl": "https://mywebsite.com/help",
+    "icons": [
+        {
+            "width": 48,
+            "height": 48,
+            "path": "images/icon@1x.png"
+        },
+        {
+            "width": 96,
+            "height": 96,
+            "path": "images/icon@2x.png"
+        },
+        {
+            "width": 144,
+            "height": 144,
+            "path": "images/icon@3x.png"
+        },
+        {
+            "width": 192,
+            "height": 192,
+            "path": "images/icon@4x.png"
+        }
+    ],
+    "uiEntryPoints": [
+        {
+            "type": "panel",
+            "label": "Enlarge a Rectangle",
+            "panelId": "enlargeRectangle"
+        }
+    ]
+}
