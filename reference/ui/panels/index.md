@@ -57,28 +57,30 @@ Let's examine a simple panel and how we might create it.
     }
 </style>
 <form method="dialog" id="main">
-<label class="row" id="fldButtonText">
-    <span>Aa</span>
-    <input type="text" id="txtButtonText" value="Text" placeholder="Text" uxp-quiet="true"/>
-</label>
-<div class="row break">
-    <label class="row">
-    <span>↕︎</span>
-    <input type="number" uxp-quiet="true" id="txtV" value="10" placeholder="Vertical padding" />
+    <label class="row" id="fldButtonText">
+        <span>Aa</span>
+        <input type="text" id="txtButtonText" value="Text" placeholder="Text" uxp-quiet="true"/>
     </label>
-    <label class="row">
-    <span>↔︎</span>
-    <input type="number" uxp-quiet="true" id="txtH" value="10" placeholder="Horizontal padding" />
-    </label>
-    <div class="row">
-    <input type="checkbox" checked id="chkColor" />
-    <label class="row" id="fldColor">
-        <input type="text" uxp-quiet="true" id="txtColor" value="#0000FF" placeholder="CSS Color" />
-        <span>🎨</span>
-    </label>
+    <div class="row break">
+        <label class="row">
+            <span>↕︎</span>
+            <input type="number" uxp-quiet="true" id="txtV" value="10" placeholder="Vertical padding" />
+        </label>
+        <label class="row">
+            <span>↔︎</span>
+            <input type="number" uxp-quiet="true" id="txtH" value="10" placeholder="Horizontal padding" />
+        </label>
+        <div class="row">
+            <input type="checkbox" checked id="chkColor" />
+            <label class="row" id="fldColor">
+                <input type="text" uxp-quiet="true" id="txtColor" value="#0000FF" placeholder="CSS Color" />
+                <span>🎨</span>
+            </label>
+        </div>
     </div>
-</div>
-<footer><button id="ok" type="submit" uxp-variant="cta">Apply</button></footer>
+    <footer>
+        <button id="ok" type="submit" uxp-variant="cta">Apply</button>
+    </footer>
 </form>
 ```
 
@@ -224,19 +226,19 @@ As you can see in the example above, everytime user's `selection` changes, your 
 </label>
 <div class="row break">
     <label class="row">
-    <span>↕︎</span>
-    <input type="number" uxp-quiet="true" id="txtV" value="10" placeholder="Vertical padding" />
+        <span>↕︎</span>
+        <input type="number" uxp-quiet="true" id="txtV" value="10" placeholder="Vertical padding" />
     </label>
     <label class="row">
-    <span>↔︎</span>
-    <input type="number" uxp-quiet="true" id="txtH" value="10" placeholder="Horizontal padding" />
+        <span>↔︎</span>
+        <input type="number" uxp-quiet="true" id="txtH" value="10" placeholder="Horizontal padding" />
     </label>
     <div class="row">
-    <input type="checkbox" checked id="chkColor" />
-    <label class="row" id="fldColor">
-        <input type="text" uxp-quiet="true" id="txtColor" value="#0000FF" placeholder="CSS Color" />
-        <span>🎨</span>
-    </label>
+        <input type="checkbox" checked id="chkColor" />
+        <label class="row" id="fldColor">
+            <input type="text" uxp-quiet="true" id="txtColor" value="#0000FF" placeholder="CSS Color" />
+            <span>🎨</span>
+        </label>
     </div>
 </div>
 <footer><button id="ok" type="submit" uxp-variant="cta">Apply</button></footer>
@@ -282,28 +284,28 @@ function create() {
 
         </style>
         <form method="dialog" id="main">
-        <label class="row" id="fldButtonText">
-            <span>Aa</span>
-            <input type="text" id="txtButtonText" value="Text" placeholder="Text" uxp-quiet="true"/>
-        </label>
-        <div class="row break">
-            <label class="row">
-            <span>↕︎</span>
-            <input type="number" uxp-quiet="true" id="txtV" value="10" placeholder="Vertical padding" />
+            <label class="row" id="fldButtonText">
+                <span>Aa</span>
+                <input type="text" id="txtButtonText" value="Text" placeholder="Text" uxp-quiet="true"/>
             </label>
-            <label class="row">
-            <span>↔︎</span>
-            <input type="number" uxp-quiet="true" id="txtH" value="10" placeholder="Horizontal padding" />
-            </label>
-            <div class="row">
-            <input type="checkbox" checked id="chkColor" />
-            <label class="row" id="fldColor">
-                <input type="text" uxp-quiet="true" id="txtColor" value="#0000FF" placeholder="CSS Color" />
-                <span>🎨</span>
-            </label>
+            <div class="row break">
+                <label class="row">
+                    <span>↕︎</span>
+                    <input type="number" uxp-quiet="true" id="txtV" value="10" placeholder="Vertical padding" />
+                </label>
+                <label class="row">
+                    <span>↔︎</span>
+                    <input type="number" uxp-quiet="true" id="txtH" value="10" placeholder="Horizontal padding" />
+                </label>
+                <div class="row">
+                    <input type="checkbox" checked id="chkColor" />
+                    <label class="row" id="fldColor">
+                        <input type="text" uxp-quiet="true" id="txtColor" value="#0000FF" placeholder="CSS Color" />
+                        <span>🎨</span>
+                    </label>
+                </div>
             </div>
-        </div>
-        <footer><button id="ok" type="submit" uxp-variant="cta">Apply</button></footer>
+            <footer><button id="ok" type="submit" uxp-variant="cta">Apply</button></footer>
         </form>
         `
 
