@@ -28,7 +28,6 @@ function create() {
         `
     function exec() {
         const { editDocument } = require("application");
-
         const height = Number(document.querySelector("#txtV").value);
         const width = Number(document.querySelector("#txtH").value);
 
