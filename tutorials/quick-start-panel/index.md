@@ -186,11 +186,11 @@ function create() {
 This code does the following:
 
 1. Creates a `const` called `HTML` and stores an entire HTML which includes the `style` tag, `form` tag, and `p` tag at the highest level. The `form` tag contains a `div` which includes two text input fields and a `foooter` which has a button for users to click on. The `p` tag has a warning text which is used to warn users when they select a non-rectangle node inside the active XD document
-2. Creates a nested function called `exec` which is added as a callback function in step #6
+2. Creates a nested function called `exec` which is added as a callback function in step #11
 3. Gets reference to the `editDocument` method available in the `application` module
 4. Gets user input value from the "height" input element
 5. Gets user input value from the "width" input element
-6. Panel plugins can make edits to the active XD document by using the [`editDocument`](/refernce/application.md) method
+6. Panel plugins can make edits to the active XD document by using the [`editDocument`](/reference/application.md) method
 7. Gets uer's selected node. Some UI logic is added later to ensure this is a rectangle.
 8. Modifies the `width` and `height` of the selected rectangle
 9. Creates a `panel` element in the DOM

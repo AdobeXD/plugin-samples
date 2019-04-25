@@ -33,7 +33,8 @@ First, it's important to recognize that scenegraph modifications can only occur 
 | options | Object&lt;EditSettings> | List of options |
 | editFunction | function | Accepts two parameters: `selection` and `documentRoot`|
 
-**Typedef options**
+**Typedef EditSettings**
+
 | Property | Type | Description |
 | --- | --- | --- |
 | editLabel | string | Used as the Undo label in the **Edit** menu. If left empty, the plugin name will be used |
