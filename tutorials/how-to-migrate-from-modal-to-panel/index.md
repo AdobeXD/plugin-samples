@@ -19,13 +19,13 @@ Note that your plugin structure does not change. Still, the minimum required fil
 
 ![same plugin structure](/images/same-plugin-structure.png)
 
-We are going to take a look at a sample plugin that lets users increase the width and height of the selected rectnagle by inputing pixel vvalues in the UI. As you can imagine, this plugin would make the process more efficient if it were a panel plugin. Let's look at how they look:
+We are going to take a look at a sample plugin that lets users increase the width and height of the selected rectnagle by inputing pixel values in the UI. As you can imagine, this plugin would make the process more efficient if it were a panel plugin. Let's look at how they look:
 
-Modal:
+**Modal**
 
 ![Modal UI example](/images/modal-ui-example.png)
 
-Panel:
+**Panel**
 
 ![Panel UI example](/images/panel-ui-example.png)
 
@@ -269,7 +269,30 @@ function hide(event) {
 ```
 You can use the `event` parameter to remove your UI node. If you don't remove the node, when the panel opens next time, UI will be duplicated.
 
-Now, you have successfully converted your modal plugin to a panel plugin! You can choose to add the `update` function if you want to make your UI dynamically respond to user's selection changes.
+Finally, this part is optional since `update` is an optional function that make your UI dynamically respond to user's selection changes.
+```js
+function update(selection) { // [1]
+    const { Rectangle } = require("scenegraph"); // [2]
+    let form = document.querySelector("form"); // [3]
+    let warning = document.querySelector("#warning"); // [4]
+    if (!selection || !(selection.items[0] instanceof Rectangle)) { // [5]
+        form.style.display = "none";
+        warning.style.display = "inline";
+    } else {
+        warning.style.display = "none";
+        form.style.display = "block";
+    }
+}
+```
+This code does the following:
+1. `update` comes with two parameters, `selection` and `documentRoot`. This example only uses `selection`
+2. Gets reference to the `Rectangle` object imported from the `scenegraph` module
+3. Gets reference to the `form` tag in your HTML
+4. Gets reference to the `p` tag with a warning message
+5. Checks if user has selected anything and the selection is a rectangle. If this validation passes, the form appears and the warning message disappears. If not, a warning message is shown to the user and the form disappears
+
+
+Now, you have successfully converted your modal plugin to a panel plugin!
 
 The complete example can be found in [our Samples repository](https://github.com/AdobeXD/plugin-samples/tree/master/quick-start-panel).
 
