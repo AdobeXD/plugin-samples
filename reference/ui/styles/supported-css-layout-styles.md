@@ -29,6 +29,8 @@ Determines whether the element is displayed and how it affects layout.
 Supported values:
 * `none` - the element is hidden
 * `block` - the element is given 100% width of its container
+* `inline` - Any height and width properties will have no effect
+* `inline-block` - The element itself is formatted as an inline element, but you can apply height and width values
 * `flex` - the element is given 100% width of its container, but controls inside will be laid out according to the flexbox module.
 
 ```js
@@ -97,6 +99,7 @@ Set the position of the element. This style also impacts layout.
 Supported values:
 * `static` - the element is rendered with typical layout.
 * `absolute` - the element is positioned absolutely, relative to its nearest positioned ancestor. The element no longer affects layout.
+* `fixed` - the element positions is fixed
 * `relative` - the element is positioned relatively, and still affects layout.
 
 View on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
@@ -168,3 +171,21 @@ View on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)
 Indicates how a control handles overflow. The long-form `overflow-x` and `overflow-y` properties are also available.
 
 View on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
+
+## z-index
+
+Sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
+
+View on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
+
+## outline
+
+Sets various outline properties in a single declaration: `outline-style`, `outline-width`, and `outline-color`.
+
+View on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/outline)
+
+## object-fit
+
+Sets how the content of a replaced element, such as an `<img>`, should be resized to fit its container.
+
+View on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)

@@ -39,7 +39,10 @@ Specifies the element's background. You can use the following (including their r
     background: url(path/to/image.png);
     background-image: url(path/to/image.png);
     ```
-* Linear Gradient (non-standards compliant)
+* Linear Gradient
+    ```css
+    background: linear-gradient(#e66465, #9198e5);
+    ```
 
 > **Info**
 >
