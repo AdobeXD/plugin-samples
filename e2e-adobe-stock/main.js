@@ -120,7 +120,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "._2_iEmOzYsvPkfTcB_PCxUS {\n    margin: 6px;\n    border-radius: 8px;\n    background-color: #EAEAEA;\n    flex: 0 0 200;\n    overflow: hidden;\n    position: relative;\n}\n\n.xTGEzNQjsx9lrAUnkOxSq {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n    overflow: hidden;\n    flex-basis: 150;\n}\n\n._1wlnx6fZItI_zfDXSwO9uA  {\n    margin: auto;\n}\n\n.UBAN0AhKfmAGagvPQOOva {\n    background-color: #1592E6;\n}\n.UBAN0AhKfmAGagvPQOOva .xTGEzNQjsx9lrAUnkOxSq {\n    opacity: 0.75;\n}\n\n._1ZyBwiSA-bkJA2yS_O2XUC {\n}\n\n._2ljfFjg-6AJpyWWJvKK8hR {\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    margin: 0; /* bug: if using default margins, changing visibility loses them and causes button to shift on selection */\n    display: none;\n}\n\n._2_iEmOzYsvPkfTcB_PCxUS:hover ._2ljfFjg-6AJpyWWJvKK8hR {\n    display: block;\n}", ""]);
+exports.push([module.i, "._2_iEmOzYsvPkfTcB_PCxUS {\n    margin: 6px;\n    border-radius: 8px;\n    background-color: #EAEAEA;\n    flex: 0 0 200;\n    overflow: hidden;\n    position: relative;\n}\n\n.xTGEzNQjsx9lrAUnkOxSq {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n    overflow: hidden;\n    flex-basis: 150;\n}\n\n._1wlnx6fZItI_zfDXSwO9uA  {\n    margin: auto;\n    display: block;\n}\n\n.UBAN0AhKfmAGagvPQOOva {\n    background-color: #1592E6;\n}\n.UBAN0AhKfmAGagvPQOOva .xTGEzNQjsx9lrAUnkOxSq {\n    opacity: 0.75;\n}\n\n._1ZyBwiSA-bkJA2yS_O2XUC {\n}\n\n._2ljfFjg-6AJpyWWJvKK8hR {\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    margin: 0; /* bug: if using default margins, changing visibility loses them and causes button to shift on selection */\n    display: none;\n}\n\n._2_iEmOzYsvPkfTcB_PCxUS:hover ._2ljfFjg-6AJpyWWJvKK8hR {\n    display: block;\n}", ""]);
 
 // exports
 exports.locals = {
@@ -235,10 +235,11 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "._3ad2qe1vtNd7ehzsMATN_Z {\n    flex: 1 1 auto;\n    display: flex;\n    flex-direction: column;\n}\n\n._2-p7z_FMwnKgT9ivKQ1RlL {\n    margin: 0;\n    justify-content: flex-end;\n    height: 32px;\n}\n\n._1iFezvs9c07pG_D8MU0nIc {\n    display: flex;\n    flex: 0 0 auto;\n    align-items: center;\n    justify-content: flex-end;\n}\n\n._1iFezvs9c07pG_D8MU0nIc div, ._1iFezvs9c07pG_D8MU0nIc p {\n    flex: 1 1 auto;\n    text-overflow: ellipsis;\n    overflow: hidden;\n    white-space: nowrap;\n}\n\n._1iFezvs9c07pG_D8MU0nIc button {\n    flex: 0 0 auto;\n}", ""]);
+exports.push([module.i, ".Atk5kQzMcUCez3yKKOA4Y {\n    display: flex;\n    flex-direction: column;\n    height: calc(100vh - 68px);\n    overflow: hidden;\n    padding: 0;\n}\n._3ad2qe1vtNd7ehzsMATN_Z {\n    flex: 1 1 auto;\n    overflow: scroll;\n    display: flex;\n    flex-direction: column;\n    padding-bottom: 32px;\n}\n\n._2-p7z_FMwnKgT9ivKQ1RlL {\n    margin: 0;\n    justify-content: flex-end;\n    height: 32px;\n}\n\n._1iFezvs9c07pG_D8MU0nIc {\n    border-top: 0.5px solid #D8D8D8;\n    padding-top: 4px;\n    /*width: 100%;\n    position: fixed;\n    bottom: 0;*/\n    display: flex;\n    flex: 0 0 auto;\n    align-items: center;\n    justify-content: flex-end;\n    order: 99;\n}\n\n._1iFezvs9c07pG_D8MU0nIc div, ._1iFezvs9c07pG_D8MU0nIc p {\n    flex: 1 1 auto;\n    text-overflow: ellipsis;\n    overflow: hidden;\n    white-space: nowrap;\n}\n\n._1iFezvs9c07pG_D8MU0nIc button {\n    flex: 0 0 auto;\n}", ""]);
 
 // exports
 exports.locals = {
+	"form": "Atk5kQzMcUCez3yKKOA4Y",
 	"resultsWrapper": "_3ad2qe1vtNd7ehzsMATN_Z",
 	"resultsInfo": "_2-p7z_FMwnKgT9ivKQ1RlL",
 	"commandLine": "_1iFezvs9c07pG_D8MU0nIc"
@@ -25621,7 +25622,7 @@ class App extends React.Component {
     }
 
     documentStateChanged(selection) {
-        if (this.panel) {
+        if (this.panel && this.panel.current) {
             this.panel.current.documentStateChanged(selection);
         }
     }
@@ -25695,6 +25696,8 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 const styles = __webpack_require__(/*! ./Card.css */ "./src/components/Card.css");
 
+const DraggableImage = __webpack_require__(/*! ./DraggableImage */ "./src/components/DraggableImage.jsx");
+
 const Card = (_ref = {}) => {
     let {
         selected = false,
@@ -25727,6 +25730,46 @@ const Card = (_ref = {}) => {
 };
 
 module.exports = Card;
+
+/***/ }),
+
+/***/ "./src/components/DraggableImage.jsx":
+/*!*******************************************!*\
+  !*** ./src/components/DraggableImage.jsx ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+// NOTE: THE DRAG AND DROP APIS ARE IN FLUX; DO NOT USE.
+
+function dragStart(event) {
+    const target = event.target;
+    const dataTransfer = event.dataTransfer;
+    const mimeType = target.dataset.dragMimeType || "image/jpg";
+    dataTransfer.effectAllowed = "all";
+    const dragItem = new DataTransferItem();
+    dragItem.set("text/uri-list", target.src);
+    dragItem.set("text/html", `<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><img alt="Image" src="${target.src}"/>`);
+    dataTransfer.items.push(dragItem);
+    dragItem.element = target;
+}
+
+function dragEnd(event) {}
+
+const DraggableImage = (_ref = {}) => {
+    let { src } = _ref,
+        rest = _objectWithoutProperties(_ref, ["src"]);
+
+    return React.createElement("img", _extends({ draggable: "true", onDragStart: dragStart, onDragEnd: dragEnd, src: src }, rest));
+};
+
+module.exports = DraggableImage;
 
 /***/ }),
 
@@ -26020,12 +26063,13 @@ class Preferences extends React.Component {
                     React.createElement(
                         "p",
                         null,
-                        "This plugin requires a valid Adobe Stock API Key. You can set one up at the following link, then paste it in to the field below.",
+                        "This plugin requires a valid Adobe Stock API Key. Get ",
                         React.createElement(
                             "a",
                             { href: "https://console.adobe.io" },
-                            "Get your Adobe Stock API Key"
-                        )
+                            "your Adobe Stock API Key"
+                        ),
+                        " and then paste it in to the field below in order to continue."
                     )
                 ),
                 React.createElement(
@@ -26256,9 +26300,10 @@ class StockSearch extends React.Component {
             status: STATUS.WORKING
         }));
 
-        const { selection, executePanelCommand } = __webpack_require__(/*! scenegraph */ "scenegraph");
+        const { editDocument } = __webpack_require__(/*! application */ "application");
+        const { selection } = __webpack_require__(/*! scenegraph */ "scenegraph");
 
-        executePanelCommand(async () => {
+        editDocument(async () => {
             // non-webpack requires -- see webpack config!
             const storage = __webpack_require__(/*! uxp */ "uxp").storage;
             const fs = storage.localFileSystem;
@@ -26407,7 +26452,7 @@ class StockSearch extends React.Component {
 
         return React.createElement(
             'form',
-            { method: 'dialog', onSubmit: this.doSearch },
+            { method: 'dialog', onSubmit: this.doSearch, 'class': styles.form },
             React.createElement(SearchField, { search: search, onSearchChanged: this.searchChanged, onSearch: this.doSearch, disabled: !canSearch }),
             (status === STATUS.LOADED || status === STATUS.WORKING) && React.createElement(
                 'div',
@@ -26429,7 +26474,7 @@ class StockSearch extends React.Component {
                 ),
                 React.createElement(
                     'button',
-                    { id: 'insert', disabled: !canInsert, onClick: this.insertPhotos, 'uxp-variant': 'cta', editLabel: 'Insert Stock Photos' },
+                    { id: 'insert', disabled: !canInsert, onClick: this.insertPhotos, 'uxp-variant': 'cta', 'uxp-edit-label': 'Insert Stock Photos' },
                     status === STATUS.WORKING ? 'Downloading...' : `Insert ${selected.length} Selected...`
                 )
             ),
@@ -26579,7 +26624,7 @@ class PanelController {
         this.App = App;
         this.instance = null;
         this.rootNode = document.createElement("div");
-        this.rootNode.style.margin = "-14px";
+        this.rootNode.style.margin = "-26px";
         this.attachment = null;
 
         ["show", "hide", "update"].forEach(fn => this[fn] = this[fn].bind(this));
@@ -26847,6 +26892,17 @@ async function search(query, { apikey, locale = "en_US", offset = 0, limit = 20 
 }
 
 module.exports = search;
+
+/***/ }),
+
+/***/ "application":
+/*!******************************!*\
+  !*** external "application" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("application");
 
 /***/ }),
 

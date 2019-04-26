@@ -68,9 +68,7 @@ class Preferences extends React.Component {
                     <hr />
                     <div className={styles.contents}>
                         <p>
-                            This plugin requires a valid Adobe Stock API Key. You can set one up at the following link, then
-                            paste it in to the field below.
-                            <a href="https://console.adobe.io">Get your Adobe Stock API Key</a>
+                            This plugin requires a valid Adobe Stock API Key. Get <a href="https://console.adobe.io">your Adobe Stock API Key</a> and then paste it in to the field below in order to continue.
                         </p>
                     </div>
                     <label className={`row ${styles.apiKeyField}`}>

@@ -16,6 +16,7 @@
 
 :local(.cardHeroImg)  {
     margin: auto;
+    display: block;
 }
 
 :local(.selected) {

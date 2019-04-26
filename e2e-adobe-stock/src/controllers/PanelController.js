@@ -7,7 +7,7 @@ class PanelController {
         this.App = App;
         this.instance = null;
         this.rootNode = document.createElement("div");
-        this.rootNode.style.margin="-14px";
+        this.rootNode.style.margin="-26px";
         this.attachment = null;
 
         ["show", "hide", "update"].forEach(fn => this[fn] = this[fn].bind(this));

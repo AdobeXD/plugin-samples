@@ -1,6 +1,8 @@
 const React = require("react");
 const styles = require("./Card.css");
 
+const DraggableImage = require("./DraggableImage");
+
 const Card = ({
     selected = false,
     src,

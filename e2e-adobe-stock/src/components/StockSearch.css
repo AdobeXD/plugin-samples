@@ -1,7 +1,16 @@
-:local(.resultsWrapper) {
-    flex: 1 1 auto;
+:local(.form) {
     display: flex;
     flex-direction: column;
+    height: calc(100vh - 68px);
+    overflow: hidden;
+    padding: 0;
+}
+:local(.resultsWrapper) {
+    flex: 1 1 auto;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 32px;
 }
 
 :local(.resultsInfo) {
@@ -11,10 +20,16 @@
 }
 
 :local(.commandLine) {
+    border-top: 0.5px solid #D8D8D8;
+    padding-top: 4px;
+    /*width: 100%;
+    position: fixed;
+    bottom: 0;*/
     display: flex;
     flex: 0 0 auto;
     align-items: center;
     justify-content: flex-end;
+    order: 99;
 }
 
 :local(.commandLine) div, :local(.commandLine) p {

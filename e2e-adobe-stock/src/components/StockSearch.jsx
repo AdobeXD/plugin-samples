@@ -77,9 +77,10 @@ class StockSearch extends React.Component {
             status: STATUS.WORKING,
         }));
 
-        const { selection, executePanelCommand } = require("scenegraph");
+        const { editDocument } = require("application");
+        const { selection } = require("scenegraph");
 
-        executePanelCommand( async () => {
+        editDocument( async () => {
             // non-webpack requires -- see webpack config!
             const storage = require('uxp').storage;
             const fs = storage.localFileSystem;
@@ -234,7 +235,7 @@ class StockSearch extends React.Component {
         const canInsert = selected.length > 0 && status !== STATUS.WORKING;
 
         return (
-            <form method="dialog" onSubmit={this.doSearch}>
+            <form method="dialog" onSubmit={this.doSearch} class={styles.form}>
                 <SearchField search={search} onSearchChanged={this.searchChanged} onSearch={this.doSearch} disabled={!canSearch} />
                 {(status === STATUS.LOADED || status === STATUS.WORKING) && (
                     <div className={`${styles.resultsInfo} row nogrow margin`}>
@@ -248,7 +249,7 @@ class StockSearch extends React.Component {
                     ): (
                         <p>{`${possibleFillCount} shape(s)`}</p>
                     )}
-                    <button id="insert" disabled={!canInsert} onClick={this.insertPhotos} uxp-variant="cta" editLabel="Insert Stock Photos">
+                    <button id="insert" disabled={!canInsert} onClick={this.insertPhotos} uxp-variant="cta" uxp-edit-label="Insert Stock Photos">
                         {status === STATUS.WORKING ? 'Downloading...' : `Insert ${selected.length} Selected...`}
                     </button>
                 </div>

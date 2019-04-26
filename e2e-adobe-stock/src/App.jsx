@@ -39,7 +39,7 @@ class App extends React.Component {
     }
 
     documentStateChanged(selection) {
-        if (this.panel) {
+        if (this.panel && this.panel.current) {
             this.panel.current.documentStateChanged(selection);
         }
     }
