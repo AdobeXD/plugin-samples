@@ -140,7 +140,6 @@ function panel() {
   const PANEL_HTML = `
 <style>
   panel {
-    margin: -20px;
   }
   .break {
     flex-wrap: wrap;
@@ -200,7 +199,8 @@ function panel() {
    * The user's intent is based on the current plugin mode, set during selection.
    */
   function exec() {
-    const { selection, executePanelCommand } = require("scenegraph");
+    const { selection } = require("scenegraph");
+    const { editDocument } = require("application");
 
     const vPadding = Number($("#txtV").value);
     const hPadding = Number($("#txtH").value);
@@ -212,26 +212,26 @@ function panel() {
     case MODES.NEW:
       // try to be useful by default! Create a new text node with the user's specified
       // text and then create the rectangle around it.
-      executePanelCommand( () => {
+      editDocument( {editLabel: "Create New Button"} , () => {
         const newText = createText($("#txtButtonText").value, {color: useColor ? cssColor: undefined});
         selection.items = createRectangle(newText,{ hPadding, vPadding, color: useColor ? cssColor : undefined });
         update();
-      }, "Create new button");
+      });
       break;
     case MODES.CREATE:
       // Typical pattern -- user has created a text node -- we just need to create
       // the rectangle
-      executePanelCommand( () => {
+      editDocument( {editLabel: "Create Buttons"} , () => {
         selection.items = selection.items
         .map(item => item).map(node => createRectangle(node, { hPadding, vPadding, color: useColor ? cssColor : undefined}));
         update();
-      }, "Create buttons");
+      });
       break;
     case MODES.UPDATE:
       // oh, the user's re-selected a previously created button. Update it instead.
-      executePanelCommand( () => {
+      editDocument( {editLabel: "Update Buttons"}, () => {
         selection.items.map(item => item).forEach(group => updateRectangle(group, {hPadding, vPadding, color: useColor ? cssColor : undefined}));
-      }, "Update buttons");
+      });
       break;
     }
   }
