@@ -51,8 +51,9 @@ class App extends React.Component {
             },
         }, () => {
             const { r, g, b, a } = this.state.color;
-            const { selection, executePanelCommand, Color } = require("scenegraph");
-            executePanelCommand( () => selection.items.forEach(item => item.fill = new Color(`rgba(${r}, ${g}, ${b}, ${a})`)), "Change Color");
+            const { editDocument } = require("application");
+            const { selection, Color } = require("scenegraph");
+            editDocument({editLabel: "Change Colors"}, () => selection.items.forEach(item => item.fill = new Color(`rgba(${r}, ${g}, ${b}, ${a})`)));
         }
         );
     }

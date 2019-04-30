@@ -25538,8 +25538,9 @@ class App extends React.Component {
             }
         }, () => {
             const { r, g, b, a } = this.state.color;
-            const { selection, executePanelCommand, Color } = __webpack_require__(/*! scenegraph */ "scenegraph");
-            executePanelCommand(() => selection.items.forEach(item => item.fill = new Color(`rgba(${r}, ${g}, ${b}, ${a})`)), "Change Color");
+            const { editDocument } = __webpack_require__(/*! application */ "application");
+            const { selection, Color } = __webpack_require__(/*! scenegraph */ "scenegraph");
+            editDocument({ editLabel: "Change Colors" }, () => selection.items.forEach(item => item.fill = new Color(`rgba(${r}, ${g}, ${b}, ${a})`)));
         });
     }
 
@@ -25813,20 +25814,19 @@ module.exports = Hello;
 
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 const ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-const { selection } = __webpack_require__(/*! scenegraph */ "scenegraph");
 
 class PanelController {
     constructor(App) {
         this.App = App;
         this.instance = null;
         this.rootNode = document.createElement("div");
-        this.rootNode.style.margin = "-14px";
         this.attachment = null;
 
         ["show", "hide", "update"].forEach(fn => this[fn] = this[fn].bind(this));
     }
 
     show(event) {
+        const { selection, root } = __webpack_require__(/*! scenegraph */ "scenegraph");
         const App = this.App;
 
         this.attachment = event.node;
@@ -25836,16 +25836,16 @@ class PanelController {
             this.instance = ReactDOM.render(React.createElement(App, { selection: selection }), this.rootNode);
         }
 
-        this.update();
+        this.update(selection, root);
     }
 
     hide(event) {
         this.attachment.removeChild(this.rootNode);
     }
 
-    update() {
+    update(selection, root) {
         if (this.instance.documentStateChanged) {
-            this.instance.documentStateChanged(selection);
+            this.instance.documentStateChanged(selection, root);
         }
     }
 }
@@ -25909,6 +25909,17 @@ if (window.requestAnimationFrame == null) {
 if (window.HTMLIFrameElement == null) {
     window.HTMLIFrameElement = class HTMLIFrameElement {};
 }
+
+/***/ }),
+
+/***/ "application":
+/*!******************************!*\
+  !*** external "application" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("application");
 
 /***/ }),
 
