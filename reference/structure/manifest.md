@@ -85,11 +85,13 @@ Key path | Type | Description | Required
 `host.app` | `string` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `"XD"`). | Develop / Publish
 `host.minVersion` | `string` | Minimum required version of the host app (in `x.y` format) that can run this plugin. <br> **Note:** Must be two segments. Typically, you'll leave the minor segment set to `0`, e.g. `16.0`. | Develop / Publish
 `host.maxVersion` | `string` | Maximum version of host app that can run this plugin. Same formatting as `host.minVersion`. | Optional
-`uiEntryPoints` | <code>array&lt;MenuItemDefinition &#124; SubmenuDefinition&gt;</code> | List of objects describing what entries your plugin adds to the _Plugins_ menu or panel section in XD. See the next section for details. | Develop / Publish
+`uiEntryPoints` | <code>array&lt;MenuItemDefinition &#124; SubmenuDefinition&gt;</code> | An array of objects describing what entries your plugin adds to the _Plugins_ menu or plugins launchpad in XD. See the next section for details. | Develop / Publish
 
 ## UI entry points array
 
-The `uiEntryPoints` field is an _array_ of objects, and each object must match one of the two formats below. Items with `"type": "menu"` appear in the _Plugins_ menu in the same order as they're listed in the `uiEntryPoints` array and items with `"type": "panel"` appear in the panel section in XD.
+The `uiEntryPoints` field is an _array_ of objects, and each object must match one of the two formats shwon in the tables below. 
+
+Items with `"type": "menu"` appear in the _Plugins_ menu in the same order as they're listed in the `uiEntryPoints` array. Items with `"type": "panel"` appear in the panel section in XD.
 
 _It is strongly encouraged to only add **one** item to `uiEntryPoints`_ -- either one top-level MenuItemDefinition, or one SubmenuDefinition containing multiple submenu items. In either case, this menu
 item should closely match the name of your plugin so it is easy to locate after installing (bear in mind the user may have a bunch of other plugins' entries in this menu already).
@@ -129,7 +131,7 @@ Keyboard shortcuts are defined separately for each platform (as seen in the exam
 
 ## Menu Localization
 
-Plugin menu item labels or panel labels can be localized to match the rest of XD's UI. Other fields such as `name` and `description` _cannot be localized yet._
+Plugin menu item labels or panel labels can be localized to match the rest of XD's UI. Other manifest fields such as `name` and `description` _cannot be localized yet._
 
 Localized labels are represented as an object containing multiple translations, instead of a single string value:
 

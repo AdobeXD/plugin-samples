@@ -1,37 +1,36 @@
 # Supported CSS Layout Styles
 
-* [display](#display)
-* [margin](#margin)
-* [padding](#padding)
-* [width](#width)
-* [height](#height)
-* [max-width](#max-width)
-* [max-height](#max-height)
-* [position](#position)
-* [top](#top)
-* [right](#right)
-* [bottom](#bottom)
-* [left](#left)
-* [align-items](#align-items)
-* [justify-content](#justify-content)
-* [flex-grow](#flex-grow)
-* [flex-basis](#flex-basis)
-* [flex-shrink](#flex-shrink)
-* [flex](#flex)
-* [overflow](#overflow)
-
-
+- [display](#display)
+- [margin](#margin)
+- [padding](#padding)
+- [width](#width)
+- [height](#height)
+- [max-width](#max-width)
+- [max-height](#max-height)
+- [position](#position)
+- [top](#top)
+- [right](#right)
+- [bottom](#bottom)
+- [left](#left)
+- [align-items](#align-items)
+- [justify-content](#justify-content)
+- [flex-grow](#flex-grow)
+- [flex-basis](#flex-basis)
+- [flex-shrink](#flex-shrink)
+- [flex](#flex)
+- [overflow](#overflow)
 
 ## display
 
 Determines whether the element is displayed and how it affects layout.
 
 Supported values:
-* `none` - the element is hidden
-* `block` - the element is given 100% width of its container
-* `inline` - Any height and width properties will have no effect
-* `inline-block` - The element itself is formatted as an inline element, but you can apply height and width values
-* `flex` - the element is given 100% width of its container, but controls inside will be laid out according to the flexbox module.
+
+- `none` - the element is hidden
+- `block` - the element is given 100% width of its container
+- `inline` - Any height and width properties will have no effect
+- `inline-block` - The element itself is formatted as an inline element, but you can apply height and width values
+- `flex` - the element is given 100% width of its container, but controls inside will be laid out according to the flexbox module.
 
 ```js
 const div = document.createElement("div");
@@ -97,10 +96,11 @@ View on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/max-height)
 Set the position of the element. This style also impacts layout.
 
 Supported values:
-* `static` - the element is rendered with typical layout.
-* `absolute` - the element is positioned absolutely, relative to its nearest positioned ancestor. The element no longer affects layout.
-* `fixed` - the element positions is fixed
-* `relative` - the element is positioned relatively, and still affects layout.
+
+- `static` - the element is rendered with typical layout.
+- `absolute` - the element is positioned absolutely, relative to its nearest positioned ancestor. The element no longer affects layout.
+- `fixed` - the element position is fixed
+- `relative` - the element is positioned relatively, and still affects layout.
 
 View on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 
@@ -174,7 +174,7 @@ View on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
 
 ## z-index
 
-Sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
+Sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller z-index.
 
 View on [mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
 
