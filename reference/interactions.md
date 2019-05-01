@@ -21,14 +21,14 @@ allInter.forEach(inter => {
 **Since**: XD 19  
 
 * [interactions](#module_interactions)
-    * [.homeArtboard](#module_interactions) : <code>!{?Artboard}</code>
-    * [.allInteractions](#module_interactions) : <code>{!Array<{triggerNode: !SceneNode, interactions: !Array<!Interaction>}>}</code>
+    * [.homeArtboard](#module_interactions) : <code>?Artboard</code>
+    * [.allInteractions](#module_interactions) : <code>!Array&lt;!{triggerNode:!SceneNode, interactions:!Array&lt;!Interaction&gt;}&gt;</code>
 
 * * *
 
 <a name="module_interactions-homeArtboard"></a>
 
-### *interactions.homeArtboard : <code>!{?Artboard}</code>*
+### *interactions.homeArtboard : <code>?[Artboard](scenegraph.md#Artboard)</code>*
 The home artboard of the interaction model. This is a special designation indicating this is the first artboard to display in a shared prototype.
 
 **Kind**: static property of [<code>interactions</code>](#module_interactions)
@@ -38,7 +38,7 @@ The home artboard of the interaction model. This is a special designation indica
 
 <a name="module_interactions-allInteractions"></a>
 
-### *interactions.allInteractions : <code>{!Array<{triggerNode: !SceneNode, interactions: !Array<!Interaction>}>}</code>*
+### *interactions.allInteractions : <code>!Array&lt;!{triggerNode:!SceneNode, interactions:!Array&lt;!Interaction&gt;}&gt;</code>*
 Get all interactions by serializing the document interactions to JSON. An array of all the interactions is returned.
 
 **Kind**: static property of [<code>interactions</code>](#module_interactions)
