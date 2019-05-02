@@ -104,14 +104,12 @@ Example Format
 <tr>
 
 <td>
-<pre>
 Modal / UI-less
-</pre>
 </td>
 
 <td>
 <pre>
-json
+```json
     "uiEntryPoints": [
         {
             "type": "menu",
@@ -126,6 +124,7 @@ json
             "panelId": "enlargeRectangle"
         }
     ]
+```
 </pre>
 </td>
 
@@ -134,14 +133,12 @@ json
 <tr>
 
 <td>
-<pre>
 Panel
-</pre>
 </td>
 
 <td>
 <pre>
-json
+```json
   "uiEntryPoints": [
         {
             "type": "panel",
@@ -149,6 +146,7 @@ json
             "panelId": "enlargeRectangle"
         }
     ]
+```
 </pre>
 </td>
 
