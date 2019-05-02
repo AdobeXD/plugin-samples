@@ -91,6 +91,17 @@ Key path | Type | Description | Required
 
 The `uiEntryPoints` field is an _array_ of objects, and each object must match one of the two formats shwon in the tables below. 
 
+| Plugin Type | Example Format |
+|-------------|--------------- |
+| Modal / UI-less | `"uiEntryPoints": [`     |
+|                 | `   {`                   |
+|                 | `       "type": "menu",` |
+|                 | `       "label": "Create Rectangle",` |
+|                 | `       "commandId": "createRectangle"` |
+|                 | `   }` |
+|                 | `]` |
+
+
 <table>
 <tr>
 <th>
