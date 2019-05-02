@@ -91,17 +91,6 @@ Key path | Type | Description | Required
 
 The `uiEntryPoints` field is an _array_ of objects, and each object must match one of the two formats shwon in the tables below. 
 
-| Plugin Type | Example Format |
-|-------------|--------------- |
-| Modal / UI-less | `"uiEntryPoints": [`     |
-|                 | `   {`                   |
-|                 | `       "type": "menu",` |
-|                 | `       "label": "Create Rectangle",` |
-|                 | `       "commandId": "createRectangle"` |
-|                 | `   }` |
-|                 | `]` |
-
-
 <table>
 <tr>
 <th>
@@ -115,27 +104,20 @@ Example Format
 <tr>
 
 <td>
+<pre>
 Modal / UI-less
+</pre>
 </td>
 
 <td>
 <pre>
-```json
-    "uiEntryPoints": [
-        {
-            "type": "menu",
-            "label": "Create Rectangle",
-            "commandId": "createRectangle"
-        }
-    ]
-  "uiEntryPoints": [
-        {
-            "type": "panel",
-            "label": "Enlarge a Rectangle",
-            "panelId": "enlargeRectangle"
-        }
-    ]
-```
+"uiEntryPoints": [
+    {
+        "type": "menu",
+        "label": "Create Rectangle",
+        "commandId": "createRectangle"
+    }
+]
 </pre>
 </td>
 
@@ -144,20 +126,20 @@ Modal / UI-less
 <tr>
 
 <td>
+<pre>
 Panel
+</pre>
 </td>
 
 <td>
 <pre>
-```json
-  "uiEntryPoints": [
-        {
-            "type": "panel",
-            "label": "Enlarge a Rectangle",
-            "panelId": "enlargeRectangle"
-        }
-    ]
-```
+"uiEntryPoints": [
+    {
+        "type": "panel",
+        "label": "Enlarge a Rectangle",
+        "panelId": "enlargeRectangle"
+    }
+]
 </pre>
 </td>
 
