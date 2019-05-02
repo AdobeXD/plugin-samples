@@ -1,6 +1,9 @@
 function create() {
     const HTML =
         `<style>
+            .break {
+                flex-wrap: wrap;
+            }
             label.row > span {
                 color: #8E8E8E;
                 width: 20px;
@@ -9,6 +12,11 @@ function create() {
             }
             label.row input {
                 flex: 1 1 auto;
+            }
+            form {
+                width:90%;
+                margin: -20px;
+                padding: 0px;
             }
         </style>
         <form method="dialog" id="main">
