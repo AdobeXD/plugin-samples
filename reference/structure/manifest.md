@@ -91,7 +91,69 @@ Key path | Type | Description | Required
 
 The `uiEntryPoints` field is an _array_ of objects, and each object must match one of the two formats shwon in the tables below. 
 
-Items with `"type": "menu"` appear in the _Plugins_ menu in the same order as they're listed in the `uiEntryPoints` array. Items with `"type": "panel"` appear in the panel section in XD.
+<table>
+<tr>
+<th>
+Plugin Type
+</th>
+<th>
+Example Format
+</th>
+</tr>
+
+<tr>
+
+<td>
+<pre>
+Modal / UI-less
+</pre>
+</td>
+
+<td>
+<pre>
+json
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Create Rectangle",
+            "commandId": "createRectangle"
+        }
+    ]
+  "uiEntryPoints": [
+        {
+            "type": "panel",
+            "label": "Enlarge a Rectangle",
+            "panelId": "enlargeRectangle"
+        }
+    ]
+</pre>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<pre>
+Panel
+</pre>
+</td>
+
+<td>
+<pre>
+json
+  "uiEntryPoints": [
+        {
+            "type": "panel",
+            "label": "Enlarge a Rectangle",
+            "panelId": "enlargeRectangle"
+        }
+    ]
+</pre>
+</td>
+
+</tr>
+</table>
 
 _It is strongly encouraged to only add **one** item to `uiEntryPoints`_ -- either one top-level MenuItemDefinition, or one SubmenuDefinition containing multiple submenu items. In either case, this menu
 item should closely match the name of your plugin so it is easy to locate after installing (bear in mind the user may have a bunch of other plugins' entries in this menu already).

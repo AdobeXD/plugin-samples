@@ -17,15 +17,10 @@ function sayHello(selection, documentRoot) {
   console.log("Hello, world!");
 }
 
-<<<<<<< HEAD
 module.exports = {
     commands: {
         helloCommand: sayHello
     }
-=======
-module.exports.commands = {
-  helloCommand: sayHello
->>>>>>> 248103556d97f36597b76cfc44da4017affd8a94
 };
 ```
 
@@ -59,7 +54,6 @@ function hide(event) {
 function update(selection, documentRoot) {
   yourUpdateHandler();
 }
-<<<<<<< HEAD
 module.exports = {
     panels: {
         yourPanel: {
@@ -68,15 +62,6 @@ module.exports = {
             update
         }
     }
-=======
-
-module.exports.panels = {
-  yourPanel: {
-    show,
-    hide,
-    update
-  }
->>>>>>> 248103556d97f36597b76cfc44da4017affd8a94
 };
 ```
 
