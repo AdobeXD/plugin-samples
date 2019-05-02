@@ -14,7 +14,7 @@ The `application` module exposes useful information about XD's state, along with
 
 <a name="module_application-createRenditions"></a>
 
-### application.editDocument(options, editFunction)
+### application.editDocument(editSettings, editFunction)
 > **Info**
 >
 > This method is only applicable to buliding panel plugins
@@ -30,7 +30,7 @@ First, it's important to recognize that scenegraph modifications can only occur 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| options | Object&lt;EditSettings> | List of options |
+| editSettings | Object&lt;EditSettings> | List of edit settings |
 | editFunction | function | Accepts two parameters: `selection` and `documentRoot`|
 
 **Typedef EditSettings**
