@@ -77,10 +77,12 @@ Get all interactions by serializing the document interactions to JSON. An array 
 | Field Name | Type | Description |
 | --- | --- | --- |
 | triggerNode | Object&lt;scenegraphObject> | The scenegraph node that triggers interactions |
-| interactions | Array&lt;interactionData> | Data about interactions triggered by `triggerNode` |
+| interactions | Array&lt;interactionData> | Data about interactions triggered by `triggerNode` |  
 
 **Typedef interactionData**
-**Example**
+
+**Example**  
+
 ```js
 {
     trigger: { 
@@ -107,10 +109,12 @@ Get all interactions by serializing the document interactions to JSON. An array 
 | action.type | String | Possible values: `goToArtboard`, `overlay`, `speak`, `goBack` |
 | action.destination | Object&lt;scenegraphObject> | The destination scenegraph node |
 | preserveScrollPosition | Boolean | Fixed scroll position indicator |
-| transition | Array&lt;transitionData> | Data about transitions triggerd by `trigger` |
+| transition | Array&lt;transitionData> | Data about transitions triggerd by `trigger` |  
 
-**Typedef transitionData**
-**Example**
+**Typedef transitionData**  
+
+**Example**  
+
 ```js
 { 
     type: 'dissolve',
