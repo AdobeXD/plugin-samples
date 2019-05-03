@@ -41,10 +41,13 @@ The home artboard of the interaction model. This is a special designation indica
 ### *interactions.allInteractions : <code>!Array&lt;!{triggerNode:!SceneNode, interactions:!Array&lt;!Interaction&gt;}&gt;</code>*
 Get all interactions by serializing the document interactions to JSON. An array of all the interactions is returned.
 
-**Kind**: static property of [<code>interactions</code>](#module_interactions)
-**Read only**: true
-**Returns**: `Array<interactionTriggers>`
-**Example**
+**Kind**: static property of [<code>interactions</code>](#module_interactions)  
+
+**Read only**: true  
+
+**Returns**: `Array<interactionTriggers>`  
+
+Example
 ```js
 [ 
     {
@@ -81,7 +84,7 @@ Get all interactions by serializing the document interactions to JSON. An array 
 
 **Typedef interactionData**
 
-**Example**  
+Example 
 
 ```js
 {
@@ -113,7 +116,7 @@ Get all interactions by serializing the document interactions to JSON. An array 
 
 **Typedef transitionData**  
 
-**Example**  
+Example  
 
 ```js
 { 
