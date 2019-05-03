@@ -112,6 +112,7 @@ Let's examine a simple panel and how we might create it:
 ```js
 let rootNode;
 let visible;
+let panel;
 
 function create() {
   if (rootNode) {
@@ -178,7 +179,8 @@ function create() {
 }
 
 function show(event) {
-  event.node.appendChild(create());
+  panel = create();
+  event.node.appendChild(panel);
   visible = true;
 }
 
@@ -301,6 +303,7 @@ As you can see in the example above, everytime the user's `selection` changes, y
 ```js
 let rootNode;
 let visible;
+let panel;
 
 function create() {
   if (rootNode) {
@@ -368,7 +371,8 @@ function create() {
 }
 
 function show(event) {
-  event.node.appendChild(create());
+  panel = create()
+  event.node.appendChild(panel);
   visible = true;
 }
 
@@ -380,7 +384,6 @@ function hide(event) {
 function update(selection, documentRoot) {
   const { Text } = require("scenegraph");
   if (!visible) return;
-  let panel = document.querySelector("panel");
   if (!(selection.items[0] instanceof Text)) {
     panel.innerHTML = `<p>This plugin requires you to select a text in the document. Please select a text.</p>`;
   }
