@@ -6,11 +6,11 @@ The `interactions` module represents all document interactions.
 **Example**  
 ```js
 // Get the home Artboard
-var home = interactions.homeArtboard;
+const home = interactions.homeArtboard;
 console.log(`Home artboard name: ${home.name} guid: ${home.guid}`);
 
 // Get all of the document interactions
-var allInter = interactions.allInteractions;
+const allInter = interactions.allInteractions;
 allInter.forEach(inter => {
      console.log(`triggerNode guid: ${inter.triggerNode.guid}`);
      console.log(`triggerNode Name: ${inter.triggerNode.name}`);
@@ -43,3 +43,83 @@ Get all interactions by serializing the document interactions to JSON. An array 
 
 **Kind**: static property of [<code>interactions</code>](#module_interactions)
 **Read only**: true
+**Returns**: `Array<interactionTriggers>`
+**Example**
+```js
+[ 
+    {
+        triggerNode: 
+            Rectangle ('Rectangle 1') {
+                width: 376, height: 57
+                global X,Y: 1466, 506
+                parent: Artboard ('Home')
+                stroke: ff707070
+                fill: ffffffff
+            },
+        interactions: [
+            [interactionData]
+        ] 
+    },
+    { 
+        triggerNode: 
+            Group ('Left Accessory') {
+                width: 180, height: 44
+                global X,Y: 1469, 21
+                parent: Artboard ('Second')
+                children: [Rectangle, Group]
+            },
+        interactions: [
+            [interactionData]
+        ] 
+    }
+]
+```
+| Field Name | Type | Description |
+| --- | --- | --- |
+| triggerNode | Object&lt;scenegraphObject> | The scenegraph node that triggers interactions |
+| interactions | Array&lt;interactionData> | Data about interactions triggered by `triggerNode` |
+
+**Typedef interactionData**
+**Example**
+```js
+{
+    trigger: { 
+        type: 'tap'
+    },
+    action: {
+        type: 'goToArtboard',
+        destination: 
+            Artboard ('iPhone 6/7/8') {
+                width: 375, height: 667
+                global X,Y: 1040, -14
+                parent: RootNode
+                children: [Group, Group, Group]
+                fill: ffffffff
+            },
+       preserveScrollPosition: false,
+       transition: [transitionData]
+    }
+}
+```
+| Field Name | Type | Description |
+| --- | --- | --- |
+| trigger.type | String | Possible values: `tap`, `voice`, `time`, `drag` |
+| action.type | String | Possible values: `goToArtboard`, `overlay`, `speak`, `goBack` |
+| action.destination | Object&lt;scenegraphObject> | The destination scenegraph node |
+| preserveScrollPosition | Boolean | Fixed scroll position indicator |
+| transition | Array&lt;transitionData> | Data about transitions triggerd by `trigger` |
+
+**Typedef transitionData**
+**Example**
+```js
+{ 
+    type: 'dissolve',
+    easing: 'ease-out',
+    duration: 0.4
+}
+```
+| Field Name | Type | Description |
+| --- | --- | --- |
+| type | String | Possible values: `autoAnimate`, `dissolve`, `push`, `slide`, `none` |
+| easing | String | Possible values: `linear`, `ease-in`, `ease-out`, `ease-in-out`, `wind-up`, `bounce`, `snap` |
+| duration | Number | Time taken for this transition in seconds |
