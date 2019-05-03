@@ -625,7 +625,54 @@ effectively hidden on the canvas.
 ```js
 // Get the interaction triggers for a node
 var interactions = node.triggeredInteractions;
+```  
+
+**Response example**
+
+```js
+{
+    trigger: { 
+        type: 'tap'
+    },
+    action: {
+        type: 'goToArtboard',
+        destination: 
+            Artboard ('iPhone 6/7/8') {
+                width: 375, height: 667
+                global X,Y: 1040, -14
+                parent: RootNode
+                children: [Group, Group, Group]
+                fill: ffffffff
+            },
+       preserveScrollPosition: false,
+       transition: [transitionData]
+    }
+}
 ```
+| Field Name | Type | Description |
+| --- | --- | --- |
+| trigger.type | String | Possible values: `tap`, `voice`, `time`, `drag` |
+| action.type | String | Possible values: `goToArtboard`, `overlay`, `speak`, `goBack` |
+| action.destination | Object&lt;scenegraphObject> | The destination scenegraph node |
+| preserveScrollPosition | Boolean | Fixed scroll position indicator |
+| transition | Array&lt;transitionData> | Data about transitions triggerd by `trigger` |  
+
+**Typedef transitionData**  
+
+Example  
+
+```js
+{ 
+    type: 'dissolve',
+    easing: 'ease-out',
+    duration: 0.4
+}
+```
+| Field Name | Type | Description |
+| --- | --- | --- |
+| type | String | Possible values: `autoAnimate`, `dissolve`, `push`, `slide`, `none` |
+| easing | String | Possible values: `linear`, `ease-in`, `ease-out`, `ease-in-out`, `wind-up`, `bounce`, `snap` |
+| duration | Number | Time taken for this transition in seconds |
 
 * * *
 
