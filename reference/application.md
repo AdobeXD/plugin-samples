@@ -15,12 +15,7 @@ The `application` module exposes useful information about XD's state, along with
 
 <a name="module_application-createRenditions"></a>
 
-<<<<<<< HEAD
 ### application.editDocument(editSettings, editFunction)
-=======
-### application.editDocument(options, editFunction)
-
->>>>>>> 248103556d97f36597b76cfc44da4017affd8a94
 > **Info**
 >
 > This method is only applicable to buliding panel plugins.
@@ -39,17 +34,10 @@ For example:
 
 **Kind**: static method of [<code>application</code>](#module_application)
 
-<<<<<<< HEAD
 | Param | Type | Description |
 | --- | --- | --- |
 | editSettings | Object&lt;EditSettings> | List of edit settings |
 | editFunction | function | Accepts two parameters: `selection` and `documentRoot`|
-=======
-| Param        | Type                    | Description                                            |
-| ------------ | ----------------------- | ------------------------------------------------------ |
-| options      | Object&lt;EditSettings> | List of options                                        |
-| editFunction | function                | Accepts two parameters: `selection` and `documentRoot` |
->>>>>>> 248103556d97f36597b76cfc44da4017affd8a94
 
 **Typedef EditSettings**
 
