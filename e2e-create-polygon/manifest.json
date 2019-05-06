@@ -1,0 +1,45 @@
+{
+    "id": "e2e-create-polygon",
+    "name": "Polygon generator",
+    "host": {
+        "app": "XD",
+        "minVersion": "19.0"
+    },
+    "version": "0.0.1",
+    "description": "Description of your plugin.",
+    "summary": "Summary of your plugin",
+    "languages": [
+        "en"
+    ],
+    "author": "Your Name",
+    "helpUrl": "https://mywebsite.com/help",
+    "icons": [
+        {
+            "width": 48,
+            "height": 48,
+            "path": "images/icon@1x.png"
+        },
+        {
+            "width": 96,
+            "height": 96,
+            "path": "images/icon@2x.png"
+        },
+        {
+            "width": 144,
+            "height": 144,
+            "path": "images/icon@3x.png"
+        },
+        {
+            "width": 192,
+            "height": 192,
+            "path": "images/icon@4x.png"
+        }
+    ],
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Create a polygon",
+            "commandId": "createPolygon"
+        }
+    ]
+}
