@@ -54,6 +54,7 @@ when traversing the scenegraph.
         * [Artboard](#Artboard)
         * [Rectangle](#Rectangle)
         * [Ellipse](#Ellipse)
+        * [Polygon](#Polygon)
         * [Line](#Line)
         * [Path](#Path)
         * [BooleanGroup](#BooleanGroup)
@@ -154,6 +155,7 @@ Base class of all scenegraph nodes. Nodes will always be an instance of some _su
     * *[.placeInParentCoordinates(registrationPoint, parentPoint)](#SceneNode-placeInParentCoordinates)*
     * *[.rotateAround(deltaAngle, rotationCenter)](#SceneNode-rotateAround)*
     * *[.resize(width, height)](#SceneNode-resize)*
+    * *[.triggeredInteractions](#SceneNode-triggeredInteractions) : <code>Array.&lt;!Interaction&gt;</code>*
 
 
 * * *
@@ -606,6 +608,71 @@ may be changed/fixed later.
 let originalBounds = node.localBounds;
 node.resize(originalBounds.width * 2, originalBounds.height);
 ```
+
+* * *
+
+<a name="SceneNode-triggeredInteractions"></a>
+
+### *sceneNode.triggeredInteractions ⇒ <code>Array.&lt;!Interaction&gt;</code>*
+Get all of the trigger interactions of a SceneNode or Artboard. Returned
+as an array of interactions. Includes interactions on nodes that are
+effectively hidden on the canvas. 
+
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)  
+**Read only**: true  
+
+**Example**  
+```js
+// Get the interaction triggers for a node
+var interactions = node.triggeredInteractions;
+```  
+
+**Response example**
+
+```js
+{
+    trigger: { 
+        type: 'tap'
+    },
+    action: {
+        type: 'goToArtboard',
+        destination: 
+            Artboard ('iPhone 6/7/8') {
+                width: 375, height: 667
+                global X,Y: 1040, -14
+                parent: RootNode
+                children: [Group, Group, Group]
+                fill: ffffffff
+            },
+       preserveScrollPosition: false,
+       transition: [transitionData]
+    }
+}
+```
+| Field Name | Type | Description |
+| --- | --- | --- |
+| trigger.type | String | Possible values: `tap`, `voice`, `time`, `drag` |
+| action.type | String | Possible values: `goToArtboard`, `overlay`, `speak`, `goBack` |
+| action.destination | Object&lt;scenegraphObject> | The destination scenegraph node |
+| preserveScrollPosition | Boolean | Fixed scroll position indicator |
+| transition | Array&lt;transitionData> | Data about transitions triggerd by `trigger` |  
+
+**Typedef transitionData**  
+
+Example  
+
+```js
+{ 
+    type: 'dissolve',
+    easing: 'ease-out',
+    duration: 0.4
+}
+```
+| Field Name | Type | Description |
+| --- | --- | --- |
+| type | String | Possible values: `autoAnimate`, `dissolve`, `push`, `slide`, `none` |
+| easing | String | Possible values: `linear`, `ease-in`, `ease-out`, `ease-in-out`, `wind-up`, `bounce`, `snap` |
+| duration | Number | Time taken for this transition in seconds |
 
 * * *
 
@@ -1170,6 +1237,93 @@ True if the Ellipse is a circle (i.e., has a 1:1 aspect ratio).
 
 * * *
 
+<a name="Polygon"></a>
+
+## Polygon
+**Kind**: class
+**Extends**: [<code>GraphicNode</code>](#GraphicNode)
+
+Polygon leaf node shape.
+
+**Example**
+```js
+let polygon = new Polygon();
+polygon.width = 100;
+polygon.height = 25;
+polygon.fill = new Color("red");
+polygon.cornerCount = 5;
+polygon.setAllCornerRadii(10);
+selection.insertionParent.addChild(polygon);
+selection.items = [polygon];
+```
+
+* [Polygon](#Polygon)
+    * [.width](#Polygon-width) : <code>number</code>
+    * [.height](#Polygon-height) : <code>number</code>
+    * [.cornerCount](#Polygon-cornerCount) : <code>number</code>
+    * [.hasRoundedCorners](#Polygon-hasRoundedCorners) : <code>boolean</code>
+    * [.cornerRadii](#Polygon-cornerRadii) : <code>Array.&lt;number&gt;</code>
+    * [.setAllCornerRadii](#Polygon-setAllCornerRadii)
+
+* * *
+
+<a name="Polygon-width"></a>
+
+### polygon.width : <code>number</code>
+**Kind**: instance property of [<code>Polygon</code>](#Polygon)
+
+* * *
+
+<a name="Polygon-height"></a>
+
+### polygon.height : <code>number</code>
+**Kind**: instance property of [<code>Polygon</code>](#Polygon)
+
+* * *
+
+<a name="Polygon-cornerCount"></a>
+
+### polygon.cornerCount : <code>number</code>
+Number of vertices of a polygon.
+
+**Kind**: instance property of [<code>Polygon</code>](#Polygon)
+
+* * *
+
+<a name="Polygon-hasRoundedCorners"></a>
+
+### polygon.hasRoundedCorners : <code>boolean</code>
+True if any of the Polygon's corners is rounded (corner radius > 0).
+
+**Kind**: instance property of [<code>Polygon</code>](#Polygon)
+**Read only**: true
+
+* * *
+
+<a name="Polygon-cornerRadii"></a>
+
+### polygon.cornerRadii : <code>Array.&lt;number&gt;</code> (all numbers >= 0)
+**Default**: `[0,0, ... ,0]`
+
+To set all corners to the same value, use [<code>setAllCornerRadii</code>](#Polygon-setAllCornerRadii).
+
+**Kind**: instance property of [<code>Polygon</code>](#Polygon)
+
+* * *
+
+<a name="Polygon-setAllCornerRadii"></a>
+
+### polygon.setAllCornerRadii(radius)
+Set the rounding radius of all corners of the Polygon to the same value.
+
+**Kind**: instance method of [<code>Polygon</code>](#Polygon)
+
+| Param | Type |
+| --- | --- |
+| radius | <code>number</code> |
+
+* * *
+
 <a name="Line"></a>
 
 ## Line
@@ -1326,6 +1480,8 @@ Text bounds and layout work differently depending on the type of text:
     * [.paragraphSpacing](#Text-paragraphSpacing) : <code>number</code>
     * [.areaBox](#Text-areaBox) : <code>?{width:number, height:number}</code>
     * [.clippedByArea](#Text-clippedByArea) : <code>boolean</code>
+    * [.strikethrough](#Text-strikethrough) : <code>boolean</code>
+    * [.textTransform](#Text-textTransform) : <code>string</code>
 
 
 * * *
@@ -1529,6 +1685,30 @@ Always false for point text. For area text, true if the text does not fit in the
 
 * * *
 
+<a name="Text-strikethrough"></a>
+
+### text.strikethrough : <code>boolean</code>
+**Default**: `false`
+**Since**: XD 19
+
+Set strikethrough across all style ranges, or get the strikethrough of the last style range (strikethrough of all the text if one range covers all the text).  
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
+<a name="Text-textTransform"></a>
+
+### text.textTransform : <code>string</code>
+**Default**: `none`
+**Since**: XD 19
+
+Set textTransform ("none" or "uppercase" or "lowercase" or "titlecase") across all style ranges, or get the textTransform of the last style range.    
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
 <a name="SymbolInstance"></a>
 
 ## SymbolInstance
@@ -1547,6 +1727,7 @@ It is not currently possible for plugins to *create* a new Symbol definition or 
     * [.addChildAfter(node, relativeTo)](#Group-addChildAfter)
     * [.addChildBefore(node, relativeTo)](#Group-addChildBefore)
     * [.removeAllChildren()](#Group-removeAllChildren)
+    * [.isMaster](#SymbolInstance-isMaster) : <code>boolean</code>
 
 
 * * *
@@ -1558,6 +1739,17 @@ An identifier unique within this document that is shared by all instances of the
 
 **Kind**: instance property of [<code>SymbolInstance</code>](#SymbolInstance)
 **Read only**: true
+
+* * *
+
+<a name="SymbolInstance-isMaster"></a>
+
+### symbolInstance.isMaster : <code>boolean</code>
+Reports if this symbol is a master symbol or not.
+
+**Kind**: instance property of [<code>SymbolInstance</code>](#SymbolInstance)
+**Read only**: true
+
 
 * * *
 
