@@ -79,10 +79,10 @@ Example
 ```
 | Field Name | Type | Description |
 | --- | --- | --- |
-| triggerNode | Object&lt;scenegraphObject> | The scenegraph node that triggers interactions |
-| interactions | Array&lt;interactionData> | Data about interactions triggered by `triggerNode` |  
+| triggerNode | !SceneNode | The scenegraph node that triggers interactions |
+| interactions | Array&lt;InteractionData> | Data about interactions triggered by `triggerNode` |  
 
-**Typedef interactionData**
+**Typedef InteractionData**
 
 Example 
 
@@ -110,11 +110,11 @@ Example
 | --- | --- | --- |
 | trigger.type | String | Possible values: `tap`, `voice`, `time`, `drag` |
 | action.type | String | Possible values: `goToArtboard`, `overlay`, `speak`, `goBack` |
-| action.destination | Object&lt;scenegraphObject> | The destination scenegraph node |
+| action.destination | !SceneNode | The destination scenegraph node |
 | preserveScrollPosition | Boolean | Fixed scroll position indicator |
-| transition | Array&lt;transitionData> | Data about transitions triggerd by `trigger` |  
+| transition | Array&lt;TransitionData> | Data about transitions triggerd by `trigger` |  
 
-**Typedef transitionData**  
+**Typedef TransitionData**  
 
 Example  
 
