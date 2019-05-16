@@ -1502,7 +1502,7 @@ the new string's indices unless you explicitly change styleRanges as well.
 
 <a name="Text-styleRanges"></a>
 
-### text.styleRanges : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:\![Color](Color.md), charSpacing:number, underline:boolean}&gt;</code>
+### text.styleRanges : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:\![Color](Color.md), charSpacing:number, underline:boolean, flipY:boolean, textAlign:string, lineSpacing:number, paragraphSpacing: number, areaBox:!{width:number,height:number}, clippedByArea:boolean, strikethrough: boolean, textTransform:string}&gt;</code>
 Array of text ranges and their character style settings. Each range covers a set number of characters in the text content. Ranges
 are contiguous, with each one starting immediately after the previous one. Any characters past the end of the last range use the
 same style as the last range.
