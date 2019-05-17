@@ -22,7 +22,7 @@ allInter.forEach(inter => {
 
 * [interactions](#module_interactions)
     * [.homeArtboard](#module_interactions) : <code>?Artboard</code>
-    * [.allInteractions](#module_interactions) : <code>!Array&lt;!{triggerNode:!SceneNode, interactions:!Array&lt;!Interaction&gt;}&gt;</code>
+    * [.allInteractions](#module_interactions) : <code>!Array&lt;!{triggerNode:!SceneNode, interactions:!Array&lt;!InteractionData&gt;}&gt;</code>
 
 * * *
 
@@ -38,7 +38,7 @@ The home artboard of the interaction model. This is a special designation indica
 
 <a name="module_interactions-allInteractions"></a>
 
-### *interactions.allInteractions : <code>!Array&lt;!{triggerNode:!SceneNode, interactions:!Array&lt;!Interaction&gt;}&gt;</code>*
+### *interactions.allInteractions : <code>!Array&lt;!{triggerNode:!SceneNode, interactions:!Array&lt;!InteractionData&gt;}&gt;</code>*
 Get all interactions by serializing the document interactions to JSON. An array of all the interactions is returned.
 
 **Kind**: static property of [<code>interactions</code>](#module_interactions)  
@@ -106,10 +106,10 @@ Example
 ```
 | Field Name | Type | Description |
 | --- | --- | --- |
-| trigger.type | String | Possible values: `tap`, `voice`, `time`, `drag` |
-| action.type | String | Possible values: `goToArtboard`, `overlay`, `speak`, `goBack` |
+| trigger.type | string | Possible values: `tap`, `voice`, `time`, `drag` |
+| action.type | string | Possible values: `goToArtboard`, `overlay`, `speak`, `goBack` |
 | action.destination | !SceneNode | The destination scenegraph node |
-| preserveScrollPosition | Boolean | Fixed scroll position indicator |
+| preserveScrollPosition | boolean | Fixed scroll position indicator |
 | transition | Array&lt;TransitionData> | Data about transitions triggerd by `trigger` |  
 
 **Typedef TransitionData**  
@@ -125,6 +125,6 @@ Example
 ```
 | Field Name | Type | Description |
 | --- | --- | --- |
-| type | String | Possible values: `autoAnimate`, `dissolve`, `push`, `slide`, `none` |
-| easing | String | Possible values: `linear`, `ease-in`, `ease-out`, `ease-in-out`, `wind-up`, `bounce`, `snap` |
-| duration | Number | Time taken for this transition in seconds |
+| type | string | Possible values: `autoAnimate`, `dissolve`, `push`, `slide`, `none` |
+| easing | string | Possible values: `linear`, `ease-in`, `ease-out`, `ease-in-out`, `wind-up`, `bounce`, `snap` |
+| duration | number | Time taken for this transition in seconds |
