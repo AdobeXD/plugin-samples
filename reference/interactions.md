@@ -110,7 +110,7 @@ Example
 | action.type | string | Possible values: `goToArtboard`, `overlay`, `speak`, `goBack` |
 | action.destination | !SceneNode | The destination scenegraph node |
 | preserveScrollPosition | boolean | Fixed scroll position indicator |
-| transition | Array&lt;TransitionData> | Data about transitions triggerd by `trigger` |  
+| transition | Array&lt;TransitionData> | Data about transitions triggered by `trigger` |
 
 **Typedef TransitionData**  
 
