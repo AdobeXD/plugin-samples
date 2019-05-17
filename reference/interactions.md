@@ -43,9 +43,7 @@ Get all interactions by serializing the document interactions to JSON. An array 
 
 **Kind**: static property of [<code>interactions</code>](#module_interactions)  
 
-**Read only**: true  
-
-**Returns**: `Array<interactionTriggers>`  
+**Read only**: true
 
 Example
 ```js
