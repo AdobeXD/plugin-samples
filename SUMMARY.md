@@ -96,6 +96,7 @@
     * [assets](./reference/assets.md)
     * [clipboard](./reference/clipboard.md)
     * [cloud](./reference/cloud.md)
+    * [interactions](./reference/interactions.md)
     * [commands](./reference/commands.md)
     * [scenegraph](./reference/scenegraph.md)
     * [SceneNodeList](./reference/SceneNodeList.md)
