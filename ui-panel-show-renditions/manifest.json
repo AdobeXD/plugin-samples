@@ -1,0 +1,17 @@
+{
+    "name": "Example Plugin",
+    "id": "YOUR_ID_HERE_",
+    "version": "1.0.0",
+    "description": "Sample panel plugin code for Adobe XD",
+    "host": {
+        "app": "XD",
+        "minVersion": "18.0"
+    },
+    "uiEntryPoints": [
+        {
+            "type": "panel",
+            "label": "Example Panel",
+            "panelId": "example"
+        }
+    ]
+}
