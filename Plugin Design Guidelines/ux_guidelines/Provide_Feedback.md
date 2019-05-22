@@ -15,11 +15,11 @@ Use alert messaging whenever the plugin cannot perform the intended task, dialog
 
 ![Information dialog in XD](../ux_images/Information_Dialog_Xd_example.png)
 
-**UI Pattern**
+### **UI Pattern**
 
 ![Alert Dialog UI Pattern - requirements](../ux_images/Alert_Requirements.png)
 
-### **Content**
+**Content**
 
 > **Header** 
 > Have a clear header that describes the error
@@ -31,11 +31,11 @@ Use alert messaging whenever the plugin cannot perform the intended task, dialog
 > Include at least one modal dismissal button to allow the user to dismiss/close the modal
 
 
-**UI Recommendations**
+### **UI Recommendations**
 
 ![Alert Dialog UI Recommendation](../ux_images/Alert_Recommendations.png)
 
-### **Content**
+**Content**
 
 **Warning icon**
 To help communicate critical information for an error you can include a warning icon next to the header
