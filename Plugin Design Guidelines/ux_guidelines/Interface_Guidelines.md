@@ -147,8 +147,6 @@ You can include a plugin icon to let the user know they are interacting with you
 
 ## Buttons
 
-![Buttons](../ux_images/Buttons.png)
-
 ### Use cases 
 
 **Call to action** 
@@ -162,6 +160,8 @@ The secondary button is for low emphasis. It is meant to be paired with other bu
 
 **Negative**
 The negative button is for high emphasis of negative or destructive actions. It should be used sparingly. It can be displayed either in standard style (visible stroke) or in quiet style.
+
+![Buttons](../ux_images/Buttons.png)
 
 ### UX patterns
 
