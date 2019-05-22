@@ -70,7 +70,9 @@ If your plugin has **one action or workflow shortcut** then the action can be th
 > **Plugin Label** 
 
 > A. Long label names will truncate
+
 > C. The top menu label is the plugin name
+
 > D. Limit the use of emoji’s as part of the label
 
 
