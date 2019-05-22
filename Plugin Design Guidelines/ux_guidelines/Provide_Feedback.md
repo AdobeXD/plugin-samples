@@ -8,7 +8,6 @@ These are the guidelines and best practices on when and how to provide users wit
 
 Alerts are handled through modal dialogs. Here are some best practices and examples for plugin alert messaging. These guidelines cover when and how to clearly communicate alerts to the user, what links to include, and more. 
 
-----------
 ## **Alert Dialogs**
 
 Use alert messaging whenever the plugin cannot perform the intended task, dialogs are persistent until dismissed
