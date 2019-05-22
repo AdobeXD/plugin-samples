@@ -21,9 +21,8 @@ Use alert messaging whenever the plugin cannot perform the intended task, dialog
 
 **Content**
 
-- **Header** 
-
-Have a clear header that describes the error
+**Header** 
+- Have a clear header that describes the error
 
 > **Message**
 > Explain what error was encountered and give a clear actionable solution. Also avoid blaming the user or XD. 
