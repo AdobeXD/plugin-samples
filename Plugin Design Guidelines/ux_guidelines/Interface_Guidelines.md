@@ -54,14 +54,13 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 > **Support-oriented items** - Provide help links, about tutorials or global settings.
 
 > - **Settings** - If the plugin handles default preferences then consider having “plugin settings” as part of the submenu. (ex: export options, spacing rules)
-- **About** - Users can refer back to onboarding materials such as tutorials and guides on how to use the plugin. 
-- **Help** - Provide the user with an external link to help documentation or an email through the submenu.
+> - **About** - Users can refer back to onboarding materials such as tutorials and guides on how to use the plugin. 
+> - **Help** - Provide the user with an external link to help documentation or an email through the submenu.
 
 
-### Top Menu item
+### Top Menu 
 
 **Use Case**
-
 If your plugin has **one action or workflow shortcut** then the action can be the top menu item. 
 
 ![Top Menu Example](../ux_images/Top_Menu_items.png)
@@ -71,8 +70,8 @@ If your plugin has **one action or workflow shortcut** then the action can be th
 > **Plugin Label** 
 
 > A. Long label names will truncate
-C. The top menu label is the plugin name
-D. Limit the use of emoji’s as part of the label
+> C. The top menu label is the plugin name
+> D. Limit the use of emoji’s as part of the label
 
 
 ## Submenu items
