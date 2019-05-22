@@ -145,9 +145,11 @@ You can include a plugin icon to let the user know they are interacting with you
 ----------
 # **Buttons & key commands**
 
-## Use cases 
+## Buttons
 
 ![Buttons](../ux_images/Buttons.png)
+
+### Use cases 
 
 **Call to action** 
 The call to action button communicates strong emphasis and is reserved for encouraging critical actions. There should only be one visible call to action button per section. 
@@ -168,14 +170,14 @@ When horizontal space is limited, button groups stack vertically. They should ap
 The top-level action within a button group should be a call to action, primary, or negative button. The subsequent buttons should always be secondary buttons of the same style (standard or quiet). Don’t combine more than 2 button styles in a button group.
 
 
-## Button labels
+### Button labels
 
 ![Button labels](../ux_images/Buttons_labels.png)
 
 > Button labels should be clear about the intention of the action. Button text should be 1 to 2 words and consider the number of characters.
 
 
-## Key commands
+### Key commands
 ![Key Commands](../ux_images/Key_commands.png)
 
 > **Esc key**
@@ -187,7 +189,7 @@ Executes the primary button action.
 
 ----------
 # **Modal Dialog UI Examples**
-## Step Process
+### Step Process Example
 
 The user has to complete multiple steps before executing the plugin action. Multi step dialogs are good for complex workflows but can be too many clicks for simple actions. 
 
