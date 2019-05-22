@@ -21,7 +21,7 @@ How will user navigate your plugin, what is best entry point and what surface ca
 3. **[Provide Feedback](./ux_guidelines/Provide_Feedback.md)**
 Provide users with feedback as they interact with your plugin, this can be alert & success messaging, permission dialogs or loaders & progress bars to let them know something is running in the background. 
 
-----------
+
 ## UI Resources & Toolkits
 
 UI Resources will have information on UI components, examples and a sticker sheet you can use to build your plugin 
