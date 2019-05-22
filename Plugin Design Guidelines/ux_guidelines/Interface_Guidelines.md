@@ -30,22 +30,18 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 - A keyboard shortcut can be used as an entry point but account for possible shortcut collisions
 
 
-## Entry Point Considerations
+### Entry Point Considerations
 ![No Selection example](../ux_images/Entry_point_Selection.png)
-
 
 **Incompatible selection**
 - As a best practice avoid the “no selection” error if possible. Consider another workflow in this use case. An example is to utilize the clipboard even if the user doesn’t have the right selection. 
 - When a plugin can’t complete an action based on the object selected, then render an information dialog. 
 
 
-----------
 # **Menu bar**
 ![Menu bar example in Xd](../ux_images/Menu_bar_Xd.png)
 
-
-
-### UI Pattern
+### UX Pattern
 ![Menu Bar Best Practices](../ux_images/Menu_bar_reqs.png)
 
 **Content**
@@ -59,11 +55,13 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 > - **Help** - Provide the user with an external link to help documentation or an email through the submenu.
 
 
+## Top Menu 
 
-### Top Menu 
+### **Use Case**
 
-**Use Case**
 If your plugin has **one action or workflow shortcut** then the action can be the top menu item. 
+
+### **UI Pattern**
 
 ![Top Menu Example](../ux_images/Top_Menu_items.png)
 
@@ -80,11 +78,13 @@ If your plugin has **one action or workflow shortcut** then the action can be th
 
 ## Submenu items
 
-![Submenu Example](../ux_images/Sub_Menu_items.png)
-
-**Use Cases**
+### **Use Cases**
 
 if your plugin needs to handle **multiple actions** or **workflow shortcuts** then consider having them in the submenu.
+
+### **UI Pattern**
+
+![Submenu Example](../ux_images/Sub_Menu_items.png)
 
 **Plugin Label** 
 > A. Long label names will truncate
@@ -99,35 +99,31 @@ if your plugin needs to handle **multiple actions** or **workflow shortcuts** th
 ![Submenu don't do example](../ux_images/Sub_Menu_items_Dont.png)
 
 
-----------
 # **Layout**
 
-There are different surface areas a plugin can render, this can vary based on 
-the type of action and amount of context you need to provide your user.
+There are different surface areas a plugin can render, this can vary based on the type of action and amount of context you need to provide your user.
 
 ## Plugin UI
 
 if the plugin is a simple script or doesn’t need a lot of user input then a modal UI is not required. If the user needs to set preferences, choose content or complete a step process before running the plugin then you can use the modal dialog UI. In the use case of alerts such as permission dialogs then UI would be recommended. 
 
-**Modal Dialog -** If the plugin needs to run an action before the user starts a new action then the **modal** would be recommended for that use case. 
+**Modal Dialog** - If the plugin needs to run an action before the user starts a new action then the **modal** would be recommended for that use case. 
 
 **Alert modal dialog** - This can also be used if the plugin needs to alert the user of an error or ask for permission. *(see Alert Dialogs & Messaging)* 
 
 
 ![Plugin UI modal Dialog](../ux_images/Modal_dialog.png)
 
-## 
 
-
-----------
 # **Modal Dialog** 
-![Modal Dialog UI Example](../ux_images/Layout_Xd_modal_dialog.png)
 
-## User interaction 
+### User interaction 
 
 A modal dialog is considered blocking UI - best used when the plugin needs to run an action and the user shouldn’t change selection, since user doesn’t have access to the canvas while using modal dialog UI.
 
-## UI Pattern
+![Modal Dialog UI Example](../ux_images/Layout_Xd_modal_dialog.png)
+
+### UI Pattern
 ![Modal requirements](../ux_images/Modal_Requirement.png)
 
 
