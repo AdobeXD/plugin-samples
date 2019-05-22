@@ -26,12 +26,6 @@ Provide users with feedback as they interact with your plugin, this can be alert
 
 UI Resources will have information on UI components, examples and a sticker sheet you can use to build your plugin 
 
-**Styles**
-![Ex: Color, Typography](ux_images/Text_examples.png)
+**[View Sticker Sheet](./ux_guidelines/Sticker_sheet.md)**
 
-**UI Elements**
-![Ex: Buttons, checkboxes, sliders](ux_images/Buttons.png)
-
-
-**Layout**
-![Ex: Modal Dialogs](ux_images/Modal_dialog.png)
+![Ui Resources](ux_images/Style_examples.png)
