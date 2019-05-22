@@ -92,21 +92,23 @@ Use alert messaging whenever the plugin cannot perform the intended task, dialog
 ## Success Messaging
 
 **Use case**
+
 Use success messaging whenever the plugin successfully completes a task and has **no visual output** on the canvas.
 
-**UI Pattern**
+### **UI Pattern**
 
 ![Success Messaging example](../ux_images/Success_message_example.png)
 
 
 **Content**
-**Header** 
+
+> **Header** 
 Have a clear header for the dialog. 
 
-**Message**
+> **Message**
 Explain what the plugin successfully completed, if it is not visually apparent to the user.
 
-**Dialog Buttons**
+> **Dialog Buttons**
 Include at least one modal dismissal button to allow the user to dismiss/close the modal.
 
 
