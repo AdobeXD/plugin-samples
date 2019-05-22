@@ -31,7 +31,6 @@ Use alert messaging whenever the plugin cannot perform the intended task, dialog
 > Include at least one modal dismissal button to allow the user to dismiss/close the modal
 
 
-
 ### **UI Recommendations**
 
 ![Alert Dialog UI Recommendation](../ux_images/Alert_Recommendations.png)
@@ -67,26 +66,26 @@ Use alert messaging whenever the plugin cannot perform the intended task, dialog
 
 ## Alert Dialog Examples
 
+
  **Incompatible selection**
 
-**Information dialog** - when a plugin can’t complete an action based on the object selected, render an information dialog. 
-
 ![Information Alert example](../ux_images/Alert_Information_example.png)
+
+> **Information dialog** - when a plugin can’t complete an action based on the object selected, render an information dialog. 
 
 
 **Operation failed to complete**
 
-**Error dialog** - when a plugin can’t complete an operation, render an error dialog to let user know the operation failed and why it failed.
-
 ![Information Alert example](../ux_images/Error_alert_example.png)
+
+> **Error dialog** - when a plugin can’t complete an operation, render an error dialog to let user know the operation failed and why it failed.
 
 
 **Network connectivity issue**
 
-**Information dialog** - if plugin is unable to connect to the internet to complete an action, then use a information modal dialog to communicate that to the user.
-
 ![Information Alert example 2](../ux_images/Alert_Information_example_2.png)
 
+> **Information dialog** - if plugin is unable to connect to the internet to complete an action, then use a information modal dialog to communicate that to the user.
 
 
 
