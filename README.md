@@ -42,12 +42,11 @@ For each sample, be sure to read the README as well as code comments. Note that 
 | ui-buttons-galore                   | UI                                              | Uses `document.querySelector` to create these UI elements: different types of buttons                                  | 13.0          |
 | ui-context-menu                     | UI                                              | Uses `h` function to create a context menu with these UI elements: form, footer, button                                | 13.0          |
 | ui-create-chart                     | UI                                              | Uses `h` function to create a menu optimized for generating charts with these UI elements: form, footer, button        | 13.0          |
-| ui-datagrid-react                   | UI                                              | Uses React to create data grids                                                                                        | 13.0          |
+| ui-datagrid-react                   | UI                                              | Uses React to create data grids                                                                                        | 18.0          |
 | ui-dialog-variations                | UI                                              | Demonstrates several different dialog variations                                                                       | 13.0          |
 | ui-hello                            | UI                                              | Simply shows a dialog with "Hello World"                                                                               | 13.0          |
 | ui-hello-h                          | UI                                              | Used `h` function to simply show a dialog with "Hello World"                                                           | 13.0          |
-| ui-hello-react-jsx                  | UI                                              | Used React jsx to simply show a dialog with "Hello World"                                                              | 13.0          |
-| ui-hello-react-raw                  | UI                                              | Used React to simply show a dialog with "Hello World"                                                                  | 13.0          |
+| ui-hello-react                  | UI                                              | Used React jsx to simply show a dialog with "Hello World"                                                              | 18.0          |
 | ui-hello-vue                        | UI                                              | Used Vue to simply show a dialog with "Hello World"                                                                    | 13.0          |
 | ui-html                             | UI                                              | Creates a dialog showing simple UI elements: title, text, input field, and buttons                                     | 13.0          |
 | ui-jquery                           | UI                                              | Used jquery to create a dialog showing simple UI elements: title, text, input field, and buttons                       | 13.0          |
@@ -56,7 +55,7 @@ For each sample, be sure to read the README as well as code comments. Note that 
 | ui-simple-form                      | UI                                              | Shows a simple form with these UI elements: input, textarea, select, button                                            | 13.0          |
 | ui-trello                           | UI                                              | Uses `h` function to create a UI that's suitable for a workflow management plugin like Trello                          | 13.0          |
 | ui-vectorize                        | UI                                              | Uses `h` function to create a simple UI with these UI elements: title, text, button                                    | 13.0          |
-
+| ui-tabs-react                        | UI                                              | Uses React to create a simple UI with tabs                                    | 18.0          |
 ## Recommended development setup
 
 1. Go to the directory that stores your development plugin folder:
