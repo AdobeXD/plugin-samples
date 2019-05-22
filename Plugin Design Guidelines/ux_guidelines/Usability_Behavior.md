@@ -10,6 +10,7 @@ Providing users with examples on how to use the plugin can help your user get th
 ## Onboarding experience
 
 **Onboarding should happen when the user interacts with your plugin for the first time**
+
 Provide examples or tutorials on how to use your plugin, this can be done by using visual or gifs.
 
 ![A plugin onboarding example](../ux_images/Onboarding_BP.png)
