@@ -21,8 +21,8 @@ Use alert messaging whenever the plugin cannot perform the intended task, dialog
 
 **Content**
 
-**Header** 
-- Have a clear header that describes the error
+> **Header** 
+> Have a clear header that describes the error
 
 > **Message**
 > Explain what error was encountered and give a clear actionable solution. Also avoid blaming the user or XD. 
@@ -91,7 +91,7 @@ Use alert messaging whenever the plugin cannot perform the intended task, dialog
 ----------
 ## Success Messaging
 
-**Use case**
+### **Use case**
 
 Use success messaging whenever the plugin successfully completes a task and has **no visual output** on the canvas.
 
@@ -99,17 +99,16 @@ Use success messaging whenever the plugin successfully completes a task and has 
 
 ![Success Messaging example](../ux_images/Success_message_example.png)
 
-
 **Content**
 
- - **Header** 
-Have a clear header for the dialog. 
+> **Header** 
+> Have a clear header for the dialog. 
 
 > **Message**
-Explain what the plugin successfully completed, if it is not visually apparent to the user.
+> Explain what the plugin successfully completed, if it is not visually apparent to the user.
 
 > **Dialog Buttons**
-Include at least one modal dismissal button to allow the user to dismiss/close the modal.
+> Include at least one modal dismissal button to allow the user to dismiss/close the modal.
 
 
 ## Plugin Output
@@ -117,7 +116,7 @@ Include at least one modal dismissal button to allow the user to dismiss/close t
 If a plugin generates output that the user needs to complete a workflow, then the plugin needs to provides that information to the user.
 
 
-![Success Messaging example](../ux_images/Plugin_output.png)
+![Plugin Output Example](../ux_images/Plugin_output.png)
 
 
 **Plugin output in the UI**
@@ -127,35 +126,37 @@ If a plugin generates output that the user needs to complete a workflow, then th
 
 - Avoid having the user go into the developer console to complete their workflow.
 
-**Requirement**
+> **Requirement**
 
-- Plugin output is shown in the UI and prompts the user on the next step.
+> Plugin output is shown in the UI and prompts the user on the next step.
 
-**Example:** Copied onto the clipboard 
-The plugin can add copy to the clipboard and provides the user with instructions through the UI.
+> **Example:** Copied onto the clipboard 
+> The plugin can add copy to the clipboard and provides the user with instructions through the UI.
 
-**Don’t**
+> **Don’t**
 Require users to go into the developer console to complete an action. 
 
 ----------
 ## Permission dialogs
 
-**Use case**
+### **Use case**
+
 Use permission dialogs when being destructive or making modifications.
 
-**UI Pattern**
+### **UI Pattern**
 
 ![Permission Dialog Example](../ux_images/Permission_dialog_example.png)
 
 
 **Content**
-**Header** 
+
+> **Header** 
 Have a clear header for the dialog. 
 
-**Message**
+> **Message**
 Explain the destructive action or modification and ask for the users permission
 
-**Dialog Buttons**
+> **Dialog Buttons**
 Include a modal dismissal button to allow the user to cancel/close the modal and a negative button (red) to highlight that action. 
 
 **Key Commands**
