@@ -178,11 +178,9 @@ The top-level action within a button group should be a call to action, primary, 
 ![Key Commands](../ux_images/Key_commands.png)
 
 > **Esc key**
-
 > Dismisses the dialog. This is equivalent to choosing “Cancel”.
 
 > **Enter key**
-
 > Executes the primary button action. 
 
 ## **Modal Dialog UI Examples**
