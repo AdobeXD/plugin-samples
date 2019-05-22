@@ -13,11 +13,11 @@ Alerts are handled through modal dialogs. Here are some best practices and examp
 
 Use alert messaging whenever the plugin cannot perform the intended task, dialogs are persistent until dismissed
 
-![Information dialog in XD](ux_images/Information_Dialog_Xd_example.png)
+![Information dialog in XD](../ux_images/Information_Dialog_Xd_example.png)
 
 **UI Pattern**
 
-![Alert Dialog UI Pattern - requirements](ux_images/Alert_Requirements.png)
+![Alert Dialog UI Pattern - requirements](../ux_images/Alert_Requirements.png)
 
 
 **Content**
@@ -33,7 +33,7 @@ Include at least one modal dismissal button to allow the user to dismiss/close t
 
 **UI Recommendations**
 
-![Alert Dialog UI Recommendation](ux_images/Alert_Recommendations.png)
+![Alert Dialog UI Recommendation](../ux_images/Alert_Recommendations.png)
 
 
 **Warning icon**
@@ -49,7 +49,7 @@ Provide image/GIF example as part of the dialog, to help users understand the ac
 In the alert messages use language that is easy to understand for the user. 
 
 
-![Messaging example](ux_images/Messaging_example.png)
+![Messaging example](../ux_images/Messaging_example.png)
 
 
 **Examples**
@@ -67,7 +67,7 @@ In the alert messages use language that is easy to understand for the user.
 
  **Incompatible selection**
 
-![Information Alert example](ux_images/Alert_Information_example.png)
+![Information Alert example](../ux_images/Alert_Information_example.png)
 
 
 **Information dialog**
@@ -76,7 +76,7 @@ When a plugin can’t complete an action based on the object selected, render an
 
 **Operation failed to complete**
 
-![Information Alert example](ux_images/Error_alert_example.png)
+![Information Alert example](../ux_images/Error_alert_example.png)
 
 **Error dialog**
 When a plugin can’t complete an operation, render an error dialog to let user know the operation failed and why it failed.
@@ -85,7 +85,7 @@ When a plugin can’t complete an operation, render an error dialog to let user 
 **Network connectivity issue**
 
 
-![Information Alert example 2](ux_images/Alert_Information_example_2.png)
+![Information Alert example 2](../ux_images/Alert_Information_example_2.png)
 
 **Information dialog**
 If plugin is unable to connect to the internet to complete an action, then use a information modal dialog to communicate that to the user.
@@ -100,7 +100,7 @@ Use success messaging whenever the plugin successfully completes a task and has 
 
 **UI Pattern**
 
-![Success Messaging example](ux_images/Success_message_example.png)
+![Success Messaging example](../ux_images/Success_message_example.png)
 
 
 **Content**
@@ -119,7 +119,7 @@ Include at least one modal dismissal button to allow the user to dismiss/close t
 If a plugin generates output that the user needs to complete a workflow, then the plugin needs to provides that information to the user.
 
 
-![Success Messaging example](ux_images/Plugin_output.png)
+![Success Messaging example](../ux_images/Plugin_output.png)
 
 
 **Plugin output in the UI**
@@ -147,7 +147,7 @@ Use permission dialogs when being destructive or making modifications.
 
 **UI Pattern**
 
-![Permission Dialog Example](ux_images/Permission_dialog_example.png)
+![Permission Dialog Example](../ux_images/Permission_dialog_example.png)
 
 
 **Content**
@@ -172,7 +172,7 @@ Dismisses the dialog when the “Cancel” button is in focus
 let the user know when something is happening in the background in the plugin UI. 
 **Determinate**
 
-![Determinate Example](ux_images/Determinate_loader_example.png)
+![Determinate Example](../ux_images/Determinate_loader_example.png)
 
 **Use case**
 If the progress can be reflected on a loader. 
@@ -181,7 +181,7 @@ If the progress can be reflected on a loader.
 
 **Indeterminate**
 
-![Indeterminate Example](ux_images/Indeterminate_loader_example.png)
+![Indeterminate Example](../ux_images/Indeterminate_loader_example.png)
 
 
 **Use case**
