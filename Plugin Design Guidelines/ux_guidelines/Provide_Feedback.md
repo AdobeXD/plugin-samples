@@ -110,7 +110,7 @@ Have a clear header for the dialog.
 **Message**
 Explain what the plugin successfully completed, if it is not visually apparent to the user.
 
-******Dialog Buttons**
+**Dialog Buttons**
 Include at least one modal dismissal button to allow the user to dismiss/close the modal.
 
 
@@ -141,7 +141,7 @@ Require users to go into the developer console to complete an action.
 
 ----------
 ## Permission dialogs
-****
+
 **Use case**
 Use permission dialogs when being destructive or making modifications.
 
@@ -160,7 +160,6 @@ Explain the destructive action or modification and ask for the users permission
 **Dialog Buttons**
 Include a modal dismissal button to allow the user to cancel/close the modal and a negative button (red) to highlight that action. 
 
-
 **Key Commands**
 **Esc key or Enter key**
 Dismisses the dialog when the “Cancel” button is in focus
@@ -170,20 +169,21 @@ Dismisses the dialog when the “Cancel” button is in focus
 ## Loaders & Progress bars
 
 let the user know when something is happening in the background in the plugin UI. 
-**Determinate**
 
-![Determinate Example](../ux_images/Determinate_loader_example.png)
+
+**Determinate**
 
 **Use case**
 If the progress can be reflected on a loader. 
+
+![Determinate Example](../ux_images/Determinate_loader_example.png)
 
 
 
 **Indeterminate**
 
-![Indeterminate Example](../ux_images/Indeterminate_loader_example.png)
-
-
 **Use case**
-If the progress can’t be determined then provide a loader to let the user know something is loading. 
+If the progress can’t be determined then provide a loader to let the user know something is loading.
+
+![Indeterminate Example](../ux_images/Indeterminate_loader_example.png)
 
