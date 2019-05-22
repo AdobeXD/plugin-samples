@@ -24,7 +24,7 @@ Provide users with feedback as they interact with your plugin, this can be alert
 
 ## UI Resources & Toolkits
 
-UI Resources will have information on UI components, examples and a sticker sheet you can use to build your plugin 
+**UI Resources will have information on UI components, examples and a sticker sheet you can use to build your plugin**
 
 **[View Sticker Sheet](./ui_resources/Sticker_sheet.md)**
 
