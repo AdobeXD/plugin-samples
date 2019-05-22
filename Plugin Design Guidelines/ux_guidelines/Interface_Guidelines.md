@@ -38,7 +38,7 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 - When a plugin can’t complete an action based on the object selected, then render an information dialog. 
 
 
-# **Menu bar**
+## **Menu bar**
 ![Menu bar example in Xd](../ux_images/Menu_bar_Xd.png)
 
 ### UX Pattern
@@ -55,7 +55,7 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 > - **Help** - Provide the user with an external link to help documentation or an email through the submenu.
 
 
-## Top Menu 
+### Top Menu 
 
 ### **Use Case**
 
@@ -76,7 +76,7 @@ If your plugin has **one action or workflow shortcut** then the action can be th
 > D. Limit the use of emoji’s as part of the label
 
 
-## Submenu items
+### Submenu items
 
 ### **Use Cases**
 
@@ -103,7 +103,7 @@ if your plugin needs to handle **multiple actions** or **workflow shortcuts** th
 
 There are different surface areas a plugin can render, this can vary based on the type of action and amount of context you need to provide your user.
 
-## Plugin UI
+### Plugin UI
 
 if the plugin is a simple script or doesn’t need a lot of user input then a modal UI is not required. If the user needs to set preferences, choose content or complete a step process before running the plugin then you can use the modal dialog UI. In the use case of alerts such as permission dialogs then UI would be recommended. 
 
@@ -142,10 +142,12 @@ Include a modal dismissal button to allow the user to cancel/close the modal and
 > **Plugin Icon**
 You can include a plugin icon to let the user know they are interacting with your plugin in the modal dialog
 
-----------
-# **Buttons & key commands**
 
-## Buttons
+## **Buttons & key commands**
+
+### Buttons
+
+![Buttons](../ux_images/Buttons.png)
 
 ### Use cases 
 
@@ -160,8 +162,6 @@ The secondary button is for low emphasis. It is meant to be paired with other bu
 
 **Negative**
 The negative button is for high emphasis of negative or destructive actions. It should be used sparingly. It can be displayed either in standard style (visible stroke) or in quiet style.
-
-![Buttons](../ux_images/Buttons.png)
 
 ### UX patterns
 
@@ -192,7 +192,7 @@ The top-level action within a button group should be a call to action, primary, 
 
 
 ----------
-# **Modal Dialog UI Examples**
+## **Modal Dialog UI Examples**
 ### Step Process Example
 
 The user has to complete multiple steps before executing the plugin action. Multi step dialogs are good for complex workflows but can be too many clicks for simple actions. 
