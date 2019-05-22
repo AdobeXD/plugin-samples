@@ -36,31 +36,31 @@ Use alert messaging whenever the plugin cannot perform the intended task, dialog
 
 **Content**
 
-**Warning icon**
-To help communicate critical information for an error you can include a warning icon next to the header
+> **Warning icon**
+> To help communicate critical information for an error you can include a warning icon next to the header
 
-**Help**
-If a plugin has a help page, consider adding it on the **error modal dialog.**
+> **Help**
+> If a plugin has a help page, consider adding it on the **error modal dialog.**
 
-**Visual/tutorials**
-Provide image/GIF example as part of the dialog, to help users understand the actionable solution 
+> **Visual/tutorials**
+> Provide image/GIF example as part of the dialog, to help users understand the actionable solution 
 
-**Messaging**
-In the alert messages use language that is easy to understand for the user. 
+> **Messaging**
+> In the alert messages use language that is easy to understand for the user. 
 
 
 ![Messaging example](../ux_images/Messaging_example.png)
 
-
 **Examples**
-**Update plugin selection** 
-“This plugin works only when shapes are selected on the Artboard, select one or multiple shapes to get started”.
 
-**Unable to share**
-“An error occurred while sharing your project. Please verify the email. address and try again”.
+> **Update plugin selection** 
+> “This plugin works only when shapes are selected on the Artboard, select one or multiple shapes to get started”.
 
-**Network connectivity** 
-“Please connect to WiFi to sync your tasks to your product management tool”.
+> **Unable to share**
+> “An error occurred while sharing your project. Please verify the email. address and try again”.
+
+> **Network connectivity** 
+> “Please connect to WiFi to sync your tasks to your product management tool”.
 
 
 ## Alert Dialog Examples

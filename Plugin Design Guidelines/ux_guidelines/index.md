@@ -3,11 +3,11 @@
 
 Plugin UX guidelines include **UX requirements** and **UX best practices** that will ensure your plugin follows XD user experience patterns. 
 
-![UX Requirement](ux_images/Requirement.png)
+![UX Requirement](../ux_images/Requirement.png)
 
 Requirements highlights **key XD patterns** all plugins need to follow to get approved by Adobe. 
 
-![UX Best Practice](ux_images/BestPractice.png)
+![UX Best Practice](../ux_images/BestPractice.png)
 
 Best practices provide **recommendations** on plugin usability & behavior, user feedback, privacy, and interface guidelines. 
 
@@ -23,9 +23,9 @@ Best practices provide **recommendations** on plugin usability & behavior, user 
 
 **Output** - **what** the user sees after an action is executed
 
-![A plugin workflow](ux_images/Pluginworkflow.png)
+![A plugin workflow](../ux_images/Pluginworkflow.png)
 
-![PLugin Example](ux_images/Plugin_UX_Guidelines_Modal_v1.pdf)
+![PLugin Example](../ux_images/Plugin_UX_Guidelines_Modal_v1.pdf)
 
 
 
