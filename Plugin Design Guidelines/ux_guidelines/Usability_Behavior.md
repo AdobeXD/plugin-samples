@@ -9,7 +9,7 @@ Providing users with examples on how to use the plugin can help your user get th
 
 ## Onboarding experience
 
-** Onboarding should happen when the user interacts with your plugin for the first time **
+**Onboarding should happen when the user interacts with your plugin for the first time**
 
 
 ![A plugin onboarding example](../ux_images/Onboarding_BP.png)
