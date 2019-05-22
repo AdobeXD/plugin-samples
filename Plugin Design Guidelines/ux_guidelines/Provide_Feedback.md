@@ -22,13 +22,13 @@ Use alert messaging whenever the plugin cannot perform the intended task, dialog
 **Content**
 
 > **Header** 
-> Have a clear header that describes the error
+Have a clear header that describes the error
 
 > **Message**
-> Explain what error was encountered and give a clear actionable solution. Also avoid blaming the user or XD. 
+Explain what error was encountered and give a clear actionable solution. Also avoid blaming the user or XD. 
 
 > **Dialog Buttons**
-> Include at least one modal dismissal button to allow the user to dismiss/close the modal
+Include at least one modal dismissal button to allow the user to dismiss/close the modal
 
 
 ### **UI Recommendations**
@@ -115,23 +115,20 @@ Use success messaging whenever the plugin successfully completes a task and has 
 
 If a plugin generates output that the user needs to complete a workflow, then the plugin needs to provides that information to the user.
 
-
-![Plugin Output Example](../ux_images/Plugin_output.png)
-
-
 **Plugin output in the UI**
 
 - In use cases like these the plugin output can be shown in the UI, copied onto the clipboard, populated on the document or generate a file. 
 
-
 - Avoid having the user go into the developer console to complete their workflow.
 
-> **Requirement**
+![Plugin Output Example](../ux_images/Plugin_output.png)
 
+**Requirement**
 > Plugin output is shown in the UI and prompts the user on the next step.
 
 > **Example:** Copied onto the clipboard 
-> The plugin can add copy to the clipboard and provides the user with instructions through the UI.
+
+The plugin can add copy to the clipboard and provides the user with instructions through the UI.
 
 > **Don’t**
 Require users to go into the developer console to complete an action. 
