@@ -55,7 +55,7 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 > - **Help** - Provide the user with an external link to help documentation or an email through the submenu.
 
 
-### Top Menu 
+## Top Menu 
 
 ### **Use Case**
 
@@ -76,7 +76,7 @@ If your plugin has **one action or workflow shortcut** then the action can be th
 > D. Limit the use of emoji’s as part of the label
 
 
-### Submenu items
+## Submenu items
 
 ### **Use Cases**
 
@@ -103,7 +103,7 @@ if your plugin needs to handle **multiple actions** or **workflow shortcuts** th
 
 There are different surface areas a plugin can render, this can vary based on the type of action and amount of context you need to provide your user.
 
-### Plugin UI
+## Plugin UI
 
 if the plugin is a simple script or doesn’t need a lot of user input then a modal UI is not required. If the user needs to set preferences, choose content or complete a step process before running the plugin then you can use the modal dialog UI. In the use case of alerts such as permission dialogs then UI would be recommended. 
 
@@ -116,8 +116,6 @@ if the plugin is a simple script or doesn’t need a lot of user input then a mo
 
 
 ## **Modal Dialog** 
-
-### User interaction 
 
 A modal dialog is considered blocking UI - best used when the plugin needs to run an action and the user shouldn’t change selection, since user doesn’t have access to the canvas while using modal dialog UI.
 
