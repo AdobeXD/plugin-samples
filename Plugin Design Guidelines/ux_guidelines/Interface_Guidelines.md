@@ -115,7 +115,7 @@ if the plugin is a simple script or doesn’t need a lot of user input then a mo
 ![Plugin UI modal Dialog](../ux_images/Modal_dialog.png)
 
 
-# **Modal Dialog** 
+## **Modal Dialog** 
 
 ### User interaction 
 
@@ -128,26 +128,26 @@ A modal dialog is considered blocking UI - best used when the plugin needs to ru
 
 
 **Content**
-**Header** 
-Have a clear header for the dialog. 
+> **Header** 
+
+> Have a clear header for the dialog. 
 e.g. “name of plugin”, “description of workflow”
 
-**Configurable content**
+> **Configurable content**
 This is what the user can interact with before executing the plugin action. 
 
-**Dialog Buttons**
+> **Dialog Buttons**
 Include a modal dismissal button to allow the user to cancel/close the modal and a call to action button (blue) to highlight the primary action. 
 
-**Plugin Icon**
+> **Plugin Icon**
 You can include a plugin icon to let the user know they are interacting with your plugin in the modal dialog
-****
 
 ----------
 # **Buttons & key commands**
 
-![Buttons](../ux_images/Buttons.png)
-
 ## Use cases 
+
+![Buttons](../ux_images/Buttons.png)
 
 **Call to action** 
 The call to action button communicates strong emphasis and is reserved for encouraging critical actions. There should only be one visible call to action button per section. 
@@ -172,16 +172,16 @@ The top-level action within a button group should be a call to action, primary, 
 
 ![Button labels](../ux_images/Buttons_labels.png)
 
-Button labels should be clear about the intention of the action. Button text should be 1 to 2 words and consider the number of characters.
+> Button labels should be clear about the intention of the action. Button text should be 1 to 2 words and consider the number of characters.
 
 
 ## Key commands
 ![Key Commands](../ux_images/Key_commands.png)
 
-**Esc key**
+> **Esc key**
 Dismisses the dialog. This is equivalent to choosing “Cancel”.
 
-**Enter key**
+> **Enter key**
 Executes the primary button action. 
 
 
