@@ -167,18 +167,18 @@ Dismisses the dialog when the “Cancel” button is in focus
 let the user know when something is happening in the background in the plugin UI. 
 
 
-**Determinate**
+### **Determinate**
 
-**Use case**
+> **Use case**
 If the progress can be reflected on a loader. 
 
 ![Determinate Example](../ux_images/Determinate_loader_example.png)
 
 
 
-**Indeterminate**
+### **Indeterminate**
 
-**Use case**
+> **Use case**
 If the progress can’t be determined then provide a loader to let the user know something is loading.
 
 ![Indeterminate Example](../ux_images/Indeterminate_loader_example.png)
