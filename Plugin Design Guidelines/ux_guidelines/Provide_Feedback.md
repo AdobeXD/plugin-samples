@@ -67,11 +67,9 @@ In the alert messages use language that is easy to understand for the user.
 
  **Incompatible selection**
 
+**Information dialog** - when a plugin can’t complete an action based on the object selected, render an information dialog. 
+
 ![Information Alert example](../ux_images/Alert_Information_example.png)
-
-
-**Information dialog**
-When a plugin can’t complete an action based on the object selected, render an information dialog. 
 
 
 **Operation failed to complete**
