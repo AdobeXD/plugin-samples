@@ -147,8 +147,6 @@ You can include a plugin icon to let the user know they are interacting with you
 
 ## Buttons
 
-![Buttons](../ux_images/Buttons.png)
-
 ### Use cases 
 
 **Call to action** 
@@ -163,10 +161,12 @@ The secondary button is for low emphasis. It is meant to be paired with other bu
 **Negative**
 The negative button is for high emphasis of negative or destructive actions. It should be used sparingly. It can be displayed either in standard style (visible stroke) or in quiet style.
 
-**Button Group Overflow**
+![Buttons](../ux_images/Buttons.png)
+
+> **Button Group Overflow**
 When horizontal space is limited, button groups stack vertically. They should appear in ascending order based on importance, with the most critical action at the bottom.
 
-**Use 2 button styles maximum**
+> **Use 2 button styles maximum**
 The top-level action within a button group should be a call to action, primary, or negative button. The subsequent buttons should always be secondary buttons of the same style (standard or quiet). Don’t combine more than 2 button styles in a button group.
 
 
