@@ -1,3 +1,4 @@
+
 # **Interface Guidelines**
 
 These are guidelines and best practices on the surfaces your plugin can use.
@@ -12,8 +13,6 @@ These guidelines provide clarity on the different entry points a plugin can have
 An entry point is how users access your plugin, users can access a plugin through the menu bar or keyboard shortcut.
 
 ### Menu bar
-
-Users can access plugins using the top menu bar in XD and
 
 ![Entry point menu bar example](../ux_images/Menu_bar.png)
 
@@ -44,6 +43,8 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 # **Menu bar**
 ![Menu bar example in Xd](../ux_images/Menu_bar_Xd.png)
 
+
+
 ### UI Pattern
 ![Menu Bar Best Practices](../ux_images/Menu_bar_reqs.png)
 
@@ -58,6 +59,7 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 > - **Help** - Provide the user with an external link to help documentation or an email through the submenu.
 
 
+
 ### Top Menu 
 
 **Use Case**
@@ -67,7 +69,7 @@ If your plugin has **one action or workflow shortcut** then the action can be th
 
 ![Top Menu Labels](../ux_images/Top_Menu_label_examples.png)
 
-> **Plugin Label** 
+**Plugin Label** 
 
 > A. Long label names will truncate
 
@@ -80,21 +82,19 @@ If your plugin has **one action or workflow shortcut** then the action can be th
 
 ![Submenu Example](../ux_images/Sub_Menu_items.png)
 
-****
 **Use Cases**
+
 if your plugin needs to handle **multiple actions** or **workflow shortcuts** then consider having them in the submenu.
 
-
-
 **Plugin Label** 
-A. Long label names will truncate
-B. Top menu label is the plugin name
-C. Submenu labels - action labels should have a descriptive name (i.e: Copy CSS)
-D. When a plugin needs further user action in order to continue, then at the end of the submenu label should use “…”
-E. Limit the use of emoji’s as part of the label
+> A. Long label names will truncate
+> B. Top menu label is the plugin name
+> C. Submenu labels - action labels should have a descriptive name (i.e: Copy CSS)
+> D. When a plugin needs further user action in order to continue, then at the end of the submenu label should use “…”
+> E. Limit the use of emoji’s as part of the label
 
 **Don’t**
-Don’t add multiple actions for one plugin as top-level items.
+> Don’t add multiple actions for one plugin as top-level items.
 
 ![Submenu don't do example](../ux_images/Sub_Menu_items_Dont.png)
 
