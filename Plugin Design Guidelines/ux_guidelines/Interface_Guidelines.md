@@ -10,7 +10,7 @@ These guidelines provide clarity on the different entry points a plugin can have
 
 ## Entry points
 
-An entry point is how users access your plugin, users can access a plugin through the menu bar or keyboard shortcut.
+An entry point is how users access your plugin, users can access a plugin through the menu bar or a keyboard shortcut.
 
 ### Menu bar
 
@@ -93,11 +93,10 @@ if your plugin needs to handle **multiple actions** or **workflow shortcuts** th
 > D. When a plugin needs further user action in order to continue, then at the end of the submenu label should use “…”
 > E. Limit the use of emoji’s as part of the label
 
-**Don’t**
-> Don’t add multiple actions for one plugin as top-level items.
-
 ![Submenu don't do example](../ux_images/Sub_Menu_items_Dont.png)
 
+**Don’t**
+> Don’t add multiple actions for one plugin as top-level items.
 
 # **Layout**
 
@@ -109,7 +108,7 @@ if the plugin is a simple script or doesn’t need a lot of user input then a mo
 
 **Modal Dialog** - If the plugin needs to run an action before the user starts a new action then the **modal** would be recommended for that use case. 
 
-**Alert modal dialog** - This can also be used if the plugin needs to alert the user of an error or ask for permission. *(see Alert Dialogs & Messaging)* 
+**Alert modal dialog** - This can also be used if the plugin needs to alert the user of an error or ask for permission. *[(see Alert Dialogs & Messaging)](./ux_guidelines/Provide_Feedback.md)* 
 
 
 ![Plugin UI modal Dialog](../ux_images/Modal_dialog.png)
