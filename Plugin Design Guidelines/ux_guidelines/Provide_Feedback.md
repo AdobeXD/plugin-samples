@@ -66,22 +66,21 @@ Use alert messaging whenever the plugin cannot perform the intended task, dialog
 
 ## Alert Dialog Examples
 
-
- **Incompatible selection**
+### **Incompatible selection**
 
 ![Information Alert example](../ux_images/Alert_Information_example.png)
 
 > **Information dialog** - when a plugin can’t complete an action based on the object selected, render an information dialog. 
 
 
-**Operation failed to complete**
+### **Operation failed to complete**
 
 ![Information Alert example](../ux_images/Error_alert_example.png)
 
 > **Error dialog** - when a plugin can’t complete an operation, render an error dialog to let user know the operation failed and why it failed.
 
 
-**Network connectivity issue**
+### **Network connectivity issue**
 
 ![Information Alert example 2](../ux_images/Alert_Information_example_2.png)
 
