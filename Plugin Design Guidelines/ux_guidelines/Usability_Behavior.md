@@ -15,6 +15,7 @@ Onboarding should happen when the user interacts with your plugin for the first 
 **Content**
 > Provide examples or tutorials on how to use your plugin, this can be done by using visual or gifs.
 
+**UX Pattern**
 > **A. Plugin Interaction**
 Highlight key interactions to make sure users can get the plugin to work.
 
