@@ -2,7 +2,6 @@
 
 These are guidelines and best practices on the surfaces your plugin can use.
 
-
 ----------
 # **Navigation**
 
@@ -12,21 +11,20 @@ These guidelines provide clarity on the different entry points a plugin can have
 
 An entry point is how users access your plugin, users can access a plugin through the menu bar or keyboard shortcut.
 
-## Menu bar
+### Menu bar
 
 Users can access plugins using the top menu bar in XD and
 
 ![Entry point menu bar example](../ux_images/Menu_bar.png)
 
 
-## Keyboard shortcuts 
+### Keyboard shortcuts 
 
 If you are considering having a shortcut for your plugin, make sure to keep these guidelines in mind. 
 
 ![Keyboard shortcut](../ux_images/Key_board_shortcuts.png)
  
 **Keep in mind** 
-
 - If the user has another plugin with the same shortcut already installed, the new installed plugins shouldn’t expect to have that same shortcut.  
 - Can use a combination of **“Shift” “Alt/Option”** and **“Control”**
 - Keyboard shortcuts are used by **power users**
@@ -38,7 +36,6 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 
 
 **Incompatible selection**
-
 - As a best practice avoid the “no selection” error if possible. Consider another workflow in this use case. An example is to utilize the clipboard even if the user doesn’t have the right selection. 
 - When a plugin can’t complete an action based on the object selected, then render an information dialog. 
 
@@ -47,27 +44,33 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 # **Menu bar**
 ![Menu bar example in Xd](../ux_images/Menu_bar_Xd.png)
 
+### UI Pattern
 ![Menu Bar Best Practices](../ux_images/Menu_bar_reqs.png)
 
 **Content**
-**Plugin actions (entry point)** - Executes a plugin action or open modal.
-**Support-oriented items -** Provide help links, about tutorials or global settings.
 
-- **Settings** - If the plugin handles default preferences then consider having “plugin settings” as part of the submenu. (ex: export options, spacing rules)
+> **Plugin actions (entry point)** - Executes a plugin action or open modal.
+
+> **Support-oriented items** - Provide help links, about tutorials or global settings.
+
+> - **Settings** - If the plugin handles default preferences then consider having “plugin settings” as part of the submenu. (ex: export options, spacing rules)
 - **About** - Users can refer back to onboarding materials such as tutorials and guides on how to use the plugin. 
 - **Help** - Provide the user with an external link to help documentation or an email through the submenu.
 
 
-## Top Menu item
-![Top Menu Example](../ux_images/Top_Menu_items.png)
+### Top Menu item
 
-**Use Cases**
+**Use Case**
+
 If your plugin has **one action or workflow shortcut** then the action can be the top menu item. 
+
+![Top Menu Example](../ux_images/Top_Menu_items.png)
 
 ![Top Menu Labels](../ux_images/Top_Menu_label_examples.png)
 
-**Plugin Label** 
-A. Long label names will truncate
+> **Plugin Label** 
+
+> A. Long label names will truncate
 C. The top menu label is the plugin name
 D. Limit the use of emoji’s as part of the label
 
