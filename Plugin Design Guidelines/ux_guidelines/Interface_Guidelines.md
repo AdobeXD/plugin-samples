@@ -74,7 +74,7 @@ D. Limit the use of emoji’s as part of the label
 
 ## Submenu items
 
-![Submenu Example]ux_images/Sub_Menu_items.png)
+![Submenu Example](../ux_images/Sub_Menu_items.png)
 
 ****
 **Use Cases**
