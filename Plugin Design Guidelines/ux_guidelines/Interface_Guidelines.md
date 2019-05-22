@@ -16,14 +16,14 @@ An entry point is how users access your plugin, users can access a plugin throug
 
 Users can access plugins using the top menu bar in XD and
 
-![Entry point menu bar example](ux_images/Menu_bar.png)
+![Entry point menu bar example](../ux_images/Menu_bar.png)
 
 
 ## Keyboard shortcuts 
 
 If you are considering having a shortcut for your plugin, make sure to keep these guidelines in mind. 
 
-![Keyboard shortcut](ux_images/Key_board_shortcuts.png)
+![Keyboard shortcut](../ux_images/Key_board_shortcuts.png)
  
 **Keep in mind** 
 
@@ -34,7 +34,7 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 
 
 ## Entry Point Considerations
-![No Selection example](ux_images/Entry_point_Selection.png)
+![No Selection example](../ux_images/Entry_point_Selection.png)
 
 
 **Incompatible selection**
@@ -45,9 +45,9 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 
 ----------
 # **Menu bar**
-![Menu bar example in Xd](ux_images/Menu_bar_Xd.png)
+![Menu bar example in Xd](../ux_images/Menu_bar_Xd.png)
 
-![Menu Bar Best Practices](ux_images/Menu_bar_reqs.png)
+![Menu Bar Best Practices](../ux_images/Menu_bar_reqs.png)
 
 **Content**
 **Plugin actions (entry point)** - Executes a plugin action or open modal.
@@ -59,12 +59,12 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 
 
 ## Top Menu item
-![Top Menu Example](ux_images/Top_Menu_items.png)
+![Top Menu Example](../ux_images/Top_Menu_items.png)
 
 **Use Cases**
 If your plugin has **one action or workflow shortcut** then the action can be the top menu item. 
 
-![Top Menu Labels](ux_images/Top_Menu_label_examples.png)
+![Top Menu Labels](../ux_images/Top_Menu_label_examples.png)
 
 **Plugin Label** 
 A. Long label names will truncate
@@ -92,7 +92,7 @@ E. Limit the use of emoji’s as part of the label
 **Don’t**
 Don’t add multiple actions for one plugin as top-level items.
 
-![Submenu don't do example](ux_images/Sub_Menu_items_Dont.png)
+![Submenu don't do example](../ux_images/Sub_Menu_items_Dont.png)
 
 
 ----------
@@ -110,21 +110,21 @@ if the plugin is a simple script or doesn’t need a lot of user input then a mo
 **Alert modal dialog** - This can also be used if the plugin needs to alert the user of an error or ask for permission. *(see Alert Dialogs & Messaging)* 
 
 
-![Plugin UI modal Dialog](ux_images/Modal_dialog.png)
+![Plugin UI modal Dialog](../ux_images/Modal_dialog.png)
 
 ## 
 
 
 ----------
 # **Modal Dialog** 
-![Modal Dialog UI Example](ux_images/Layout_Xd_modal_dialog.png)
+![Modal Dialog UI Example](../ux_images/Layout_Xd_modal_dialog.png)
 
 ## User interaction 
 
 A modal dialog is considered blocking UI - best used when the plugin needs to run an action and the user shouldn’t change selection, since user doesn’t have access to the canvas while using modal dialog UI.
 
 ## UI Pattern
-![Modal requirements](ux_images/Modal_Requirement.png)
+![Modal requirements](../ux_images/Modal_Requirement.png)
 
 
 **Content**
@@ -145,7 +145,7 @@ You can include a plugin icon to let the user know they are interacting with you
 ----------
 # **Buttons & key commands**
 
-![Buttons](ux_images/Buttons.png)
+![Buttons](../ux_images/Buttons.png)
 
 ## Use cases 
 
@@ -170,13 +170,13 @@ The top-level action within a button group should be a call to action, primary, 
 
 ## Button labels
 
-![Button labels](ux_images/Buttons_labels.png)
+![Button labels](../ux_images/Buttons_labels.png)
 
 Button labels should be clear about the intention of the action. Button text should be 1 to 2 words and consider the number of characters.
 
 
 ## Key commands
-![Key Commands](ux_images/Key_commands.png)
+![Key Commands](../ux_images/Key_commands.png)
 
 **Esc key**
 Dismisses the dialog. This is equivalent to choosing “Cancel”.
@@ -191,4 +191,4 @@ Executes the primary button action.
 
 The user has to complete multiple steps before executing the plugin action. Multi step dialogs are good for complex workflows but can be too many clicks for simple actions. 
 
-![Modal dialog step proccess example](ux_images/Modal_Step_example.png)
+![Modal dialog step proccess example](../ux_images/Modal_Step_example.png)
