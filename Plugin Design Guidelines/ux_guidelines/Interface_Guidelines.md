@@ -148,16 +148,16 @@ You can include a plugin icon to let the user know they are interacting with you
 
 ### Use cases 
 
-**Call to action** 
+> **Call to action** 
 The call to action button communicates strong emphasis and is reserved for encouraging critical actions. There should only be one visible call to action button per section. 
 
-**Primary** 
+> **Primary** 
 The primary button is used for medium emphasis. It should be used in place of a call to action button when the action requires less prominence, or if there are multiple primary actions of the same importance on the page. It can be displayed either in standard style (visible stroke) or in quiet style.
 
-**Secondary**
+> **Secondary**
 The secondary button is for low emphasis. It is meant to be paired with other button types to surface less prominent actions, and should never be the sole button in a group. It can be displayed either in standard style (visible stroke) or in quiet style.
 
-**Negative**
+> **Negative**
 The negative button is for high emphasis of negative or destructive actions. It should be used sparingly. It can be displayed either in standard style (visible stroke) or in quiet style.
 
 ### UX patterns
