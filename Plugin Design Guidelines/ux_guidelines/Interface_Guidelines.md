@@ -142,11 +142,9 @@ You can include a plugin icon to let the user know they are interacting with you
 
 ## **Buttons & key commands**
 
-### Buttons
+### Use cases 
 
 ![Buttons](../ux_images/Buttons.png)
-
-### Use cases 
 
 > **Call to action** 
 The call to action button communicates strong emphasis and is reserved for encouraging critical actions. There should only be one visible call to action button per section. 
@@ -187,8 +185,6 @@ The top-level action within a button group should be a call to action, primary, 
 
 > Executes the primary button action. 
 
-
-----------
 ## **Modal Dialog UI Examples**
 ### Step Process Example
 
