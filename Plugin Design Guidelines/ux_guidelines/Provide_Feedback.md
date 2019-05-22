@@ -19,22 +19,23 @@ Use alert messaging whenever the plugin cannot perform the intended task, dialog
 
 ![Alert Dialog UI Pattern - requirements](../ux_images/Alert_Requirements.png)
 
+### **Content**
 
-**Content**
-**Header** 
-Have a clear header that describes the error
+> **Header** 
+> Have a clear header that describes the error
 
-**Message**
-Explain what error was encountered and give a clear actionable solution. Also avoid blaming the user or XD. 
+> **Message**
+> Explain what error was encountered and give a clear actionable solution. Also avoid blaming the user or XD. 
 
-**Dialog Buttons**
-Include at least one modal dismissal button to allow the user to dismiss/close the modal
+> **Dialog Buttons**
+> Include at least one modal dismissal button to allow the user to dismiss/close the modal
 
 
 **UI Recommendations**
 
 ![Alert Dialog UI Recommendation](../ux_images/Alert_Recommendations.png)
 
+### **Content**
 
 **Warning icon**
 To help communicate critical information for an error you can include a warning icon next to the header
@@ -74,19 +75,17 @@ In the alert messages use language that is easy to understand for the user.
 
 **Operation failed to complete**
 
-![Information Alert example](../ux_images/Error_alert_example.png)
+**Error dialog** - when a plugin can’t complete an operation, render an error dialog to let user know the operation failed and why it failed.
 
-**Error dialog**
-When a plugin can’t complete an operation, render an error dialog to let user know the operation failed and why it failed.
+![Information Alert example](../ux_images/Error_alert_example.png)
 
 
 **Network connectivity issue**
 
+**Information dialog** - if plugin is unable to connect to the internet to complete an action, then use a information modal dialog to communicate that to the user.
 
 ![Information Alert example 2](../ux_images/Alert_Information_example_2.png)
 
-**Information dialog**
-If plugin is unable to connect to the internet to complete an action, then use a information modal dialog to communicate that to the user.
 
 
 
