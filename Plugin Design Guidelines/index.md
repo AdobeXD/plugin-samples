@@ -3,32 +3,34 @@
 
 ## Designing a plugin experience
 
-These guidelines will help you define the best user experience for your plugin. Based on your users workflow and the plugin action, different UX guidelines should be considered as you create a plugin.
+These guidelines will help you define the best user experience for your plugin. Based on your users workflow and the plugin action, different UX and UI guidelines should be considered as you create a plugin.
  
 Plugins can interact with the user at different levels, for example, some plugins will have quick actions which in some use cases won’t render UI, and some will include multiple actions that need UI. 
 
 
 ## UX Guidelines
 
-**These guidelines will go over over the [UX requirements and best practices](./ux_guidelines/index.md)**
+### **UX Requirements & UX Best Practices (documentation)**
 
-### 1. **[Usability & Behavior](./ux_guidelines/Usability_Behavior.md)**
+Plugin UX guidelines include **UX requirements** and **UX best practices** that will ensure your plugin follows XD user experience patterns. 
 
-Guide your users as they interact with your plugin, for example when they first interact with your plugin what can they expect and how can they get the most out of your plugin. 
+### UX Requirement
 
-![Onboarding gif](ux_images/Onboarding.gif)
+Requirements highlights **key XD patterns** all plugins need to follow to get approved by Adobe. 
 
-### 2. **[Interface Guidelines](./ux_guidelines/Interface_Guidelines.md)**
+![UX Requirement](../ux_images/Requirement.png)
 
-How will user navigate your plugin, what is best entry point and what surface can your plugin can use.
+> Example of a UX requirement for Alert Dialogs
 
-![Navigation gif](ux_images/Navigation.gif)
 
-### 3. **[Provide Feedback](./ux_guidelines/Provide_Feedback.md)**
+### Best practice
 
-Provide users with feedback as they interact with your plugin, this can be alert & success messaging, permission dialogs or loaders & progress bars to let them know something is running in the background. 
+Best practices provide **recommendations** on plugin usability & behavior, user feedback, privacy, and interface guidelines. 
 
-![Provide feedback gif](ux_images/Feedback.gif)
+![UX Best Practice](../ux_images/BestPractice.png)
+
+> Example of a UX best practice for Alert Dialogs
+
 
 ## UI Resources & Toolkits
 

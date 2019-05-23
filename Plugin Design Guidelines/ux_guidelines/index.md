@@ -1,25 +1,24 @@
-# **UX Requirements & UX Best Practices (documentation)**
+# UX Guidelines
 
+Plugin UX guidelines will include UX requirements and/or UX best practices these will ensure your plugin follows Xd user experience patterns. 
 
-Plugin UX guidelines include **UX requirements** and **UX best practices** that will ensure your plugin follows XD user experience patterns. 
+### 1. **[Usability & Behavior](./ux_guidelines/Usability_Behavior.md)**
 
-## UX Requirement
+Guide your users as they interact with your plugin, for example when they first interact with your plugin what can they expect and how can they get the most out of your plugin. 
 
-Requirements highlights **key XD patterns** all plugins need to follow to get approved by Adobe. 
+![Onboarding gif](ux_images/Onboarding.gif)
 
-![UX Requirement](../ux_images/Requirement.png)
+### 2. **[Interface Guidelines](./ux_guidelines/Interface_Guidelines.md)**
 
-> Example of a UX requirement for Alert Dialogs
+How will user navigate your plugin, what is best entry point and what surface can your plugin can use.
 
+![Navigation gif](ux_images/Navigation.gif)
 
-## Best practice
+### 3. **[Provide Feedback](./ux_guidelines/Provide_Feedback.md)**
 
-Best practices provide **recommendations** on plugin usability & behavior, user feedback, privacy, and interface guidelines. 
+Provide users with feedback as they interact with your plugin, this can be alert & success messaging, permission dialogs or loaders & progress bars to let them know something is running in the background. 
 
-![UX Best Practice](../ux_images/BestPractice.png)
-
-> Example of a UX best practice for Alert Dialogs
-
+![Provide feedback gif](ux_images/Feedback.gif)
 
 
 ## Plugin workflow
