@@ -18,7 +18,7 @@ Plugin UX guidelines include **UX requirements** and **UX best practices** that 
 
 Requirements highlights **key XD patterns** all plugins need to follow to get approved by Adobe. 
 
-![UX Requirement](../ux_images/Requirement.png)
+![UX Requirement](ux_images/Requirement.png)
 
 > Example of a UX requirement for Alert Dialogs
 
@@ -27,7 +27,7 @@ Requirements highlights **key XD patterns** all plugins need to follow to get ap
 
 Best practices provide **recommendations** on plugin usability & behavior, user feedback, privacy, and interface guidelines. 
 
-![UX Best Practice](../ux_images/BestPractice.png)
+![UX Best Practice](ux_images/BestPractice.png)
 
 > Example of a UX best practice for Alert Dialogs
 
