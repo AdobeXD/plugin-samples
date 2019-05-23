@@ -8,7 +8,7 @@ Guide your users as they interact with your plugin, for example when they first 
 
 ![Onboarding gif](../ux_images/Onboarding.gif)
 
-> First time user experience onboarding example 
+> Example: First time user experience onboarding
 
 ### 2. **[Interface Guidelines](Interface_Guidelines.md)**
 
@@ -16,7 +16,7 @@ How will user navigate your plugin, what is best entry point and what surface ca
 
 ![Navigation gif](../ux_images/Navigation.gif)
 
-> Top menu navigation example
+> Example: Top menu navigation 
 
 ### 3. **[Provide Feedback](Provide_Feedback.md)**
 
@@ -24,7 +24,7 @@ Provide users with feedback as they interact with your plugin, this can be alert
 
 ![Provide feedback gif](../ux_images/Feedback.gif)
 
-> Success messaging and progress bar example
+> Example: Success messaging and progress bar
 
 
 ## Plugin workflow
