@@ -34,6 +34,6 @@ Best practices provide **recommendations** on plugin usability & behavior, user 
 
 **UI Resources will have information on UI components, examples and a sticker sheet you can use to build your plugin**
 
-**[View Sticker Sheet](./ui_resources/Sticker_sheet.md)**
-
 ![Ui Resources](ux_images/Style_examples.png)
+
+**[View Sticker Sheet](./ui_resources/Sticker_sheet.md)**
