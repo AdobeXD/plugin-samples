@@ -11,7 +11,7 @@ Requirements highlights **key XD patterns** all plugins need to follow to get ap
 
 > Example of a UX requirement for Alert Dialogs
 
-## Best practices
+## Best practice
 
 Best practices provide **recommendations** on plugin usability & behavior, user feedback, privacy, and interface guidelines. 
 
