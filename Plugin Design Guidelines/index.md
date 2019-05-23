@@ -8,7 +8,7 @@ These guidelines will help you define the best user experience for your plugin. 
 Plugins can interact with the user at different levels, for example, some plugins will have quick actions which in some use cases won’t render UI, and some will include multiple actions that need UI. 
 
 
-## UX Guidelines
+## [UX Guidelines](./ux_guidelines/index.md)
 
 ### **UX Requirements & UX Best Practices (documentation)**
 
