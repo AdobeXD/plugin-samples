@@ -32,7 +32,7 @@ Best practices provide **recommendations** on plugin usability & behavior, user 
 
 ## UI Resources & Toolkits
 
-**UI Resources will have information on UI components, examples and a sticker sheet you can use to build your plugin**
+UI Resources will have information on UI components, examples and a sticker sheet you can use to build your plugin
 
 ![Ui Resources](ux_images/Style_examples.png)
 
