@@ -108,7 +108,7 @@ if the plugin is a simple script or doesn’t need a lot of user input then a mo
 
 **Modal Dialog** - If the plugin needs to run an action before the user starts a new action then the **modal** would be recommended for that use case. 
 
-**Alert modal dialog** - This can also be used if the plugin needs to alert the user of an error or ask for permission. *[(see Alert Dialogs & Messaging)](./ux_guidelines/Provide_Feedback.md)* 
+**Alert modal dialog** - This can also be used if the plugin needs to alert the user of an error or ask for permission. *[(see Alert Dialogs & Messaging)](Provide_Feedback.md)* 
 
 
 ![Plugin UI modal Dialog](../ux_images/Modal_dialog.png)
