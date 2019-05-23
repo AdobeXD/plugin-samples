@@ -10,7 +10,7 @@ Plugins can interact with the user at different levels, for example, some plugin
 
 ## UX Guidelines
 
-**These guidelines will go over the different plugin UX patterns.**
+**These guidelines will go over over the [UX requirements and best practices](./ux_guidelines/index.md)**
 
 ### 1. **[Usability & Behavior](./ux_guidelines/Usability_Behavior.md)**
 
