@@ -24,15 +24,16 @@ Best practices provide **recommendations** on plugin usability & behavior, user 
 
 ## Plugin workflow
 
-**Entry Point - where** your user will first interact with your Plugin (i.e. how it’s triggered or opened)
-
-**Plugin UI** - **how** the user will interact with the plugin once it’s open
-
-**Execute - when** your plugin runs and executes actions
-
-**Output** - **what** the user sees after an action is executed
-
 ![A plugin workflow](../ux_images/Pluginworkflow.png)
+
+> **Entry Point - where** your user will first interact with your Plugin (i.e. how it’s triggered or opened)
+
+> **Plugin UI** - **how** the user will interact with the plugin once it’s open
+
+> **Execute - when** your plugin runs and executes actions
+
+> **Output** - **what** the user sees after an action is executed
+
 
 ![Plugin Example](../ux_images/Plugin_UX_Guidelines_Modal_v1.pdf)
 
