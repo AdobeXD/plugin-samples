@@ -16,16 +16,19 @@ Plugins can interact with the user at different levels, for example, some plugin
 
 Guide your users as they interact with your plugin, for example when they first interact with your plugin what can they expect and how can they get the most out of your plugin. 
 
+![Onboarding gif](ux_images/Onboarding.gif)
+
 ### 2. **[Interface Guidelines](./ux_guidelines/Interface_Guidelines.md)**
 
 How will user navigate your plugin, what is best entry point and what surface can your plugin can use.
 
-![Ui Resources](ux_images/Navigation.gif)
+![Navigation gif](ux_images/Navigation.gif)
 
 ### 3. **[Provide Feedback](./ux_guidelines/Provide_Feedback.md)**
 
 Provide users with feedback as they interact with your plugin, this can be alert & success messaging, permission dialogs or loaders & progress bars to let them know something is running in the background. 
 
+![Provide feedback gif](ux_images/Feedback.gif)
 
 ## UI Resources & Toolkits
 
