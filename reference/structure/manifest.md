@@ -35,7 +35,7 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
     "host": {
         "app": "XD",
         "minVersion": "13.0",
-        "maxVersion": "14.0"
+        "maxVersion": "19.0"
     },
     "uiEntryPoints": [
         {
