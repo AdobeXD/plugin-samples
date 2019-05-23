@@ -18,9 +18,9 @@ Guide your users as they interact with your plugin, for example when they first 
 
 ### 2. **[Interface Guidelines](./ux_guidelines/Interface_Guidelines.md)**
 
-![Ui Resources](ux_images/Navigation.gif)
-
 How will user navigate your plugin, what is best entry point and what surface can your plugin can use.
+
+![Ui Resources](ux_images/Navigation.gif)
 
 ### 3. **[Provide Feedback](./ux_guidelines/Provide_Feedback.md)**
 
