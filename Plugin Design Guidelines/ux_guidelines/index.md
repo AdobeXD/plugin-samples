@@ -18,7 +18,7 @@ How will user navigate your plugin, what is best entry point and what surface ca
 
 Provide users with feedback as they interact with your plugin, this can be alert & success messaging, permission dialogs or loaders & progress bars to let them know something is running in the background. 
 
-![Provide feedback gif](ux_images/Feedback.gif)
+![Provide feedback gif](../ux_images/Feedback.gif)
 
 
 ## Plugin workflow
