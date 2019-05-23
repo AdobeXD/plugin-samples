@@ -5,7 +5,7 @@ Plugin UX guidelines include **UX requirements** and **UX best practices** that 
 
 ## UX Requirement
 
-Requirements highlights **key XD patterns** all plugins need to follow to get approved by Adobe. 
+### Requirements highlights **key XD patterns** all plugins need to follow to get approved by Adobe. 
 
 ![UX Requirement](../ux_images/Requirement.png)
 
