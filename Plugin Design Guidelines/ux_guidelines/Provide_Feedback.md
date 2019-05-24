@@ -157,7 +157,8 @@ Explain the destructive action or modification and ask for the users permission
 Include a modal dismissal button to allow the user to cancel/close the modal and a negative button (red) to highlight that action. 
 
 **Key Commands**
-**Esc key or Enter key**
+
+> **Esc key or Enter key**
 Dismisses the dialog when the “Cancel” button is in focus
 
 
