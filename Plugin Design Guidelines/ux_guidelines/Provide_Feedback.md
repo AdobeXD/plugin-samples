@@ -126,9 +126,9 @@ If a plugin generates output that the user needs to complete a workflow, then th
 **Requirement**
 > Plugin output is shown in the UI and prompts the user on the next step.
 
-> **Example:** Copied onto the clipboard 
+**Example:** Copied onto the clipboard
 
-The plugin can add copy to the clipboard and provides the user with instructions through the UI.
+> The plugin can add copy to the clipboard and provides the user with instructions through the UI.
 
 > **Don’t**
 Require users to go into the developer console to complete an action. 
