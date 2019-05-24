@@ -40,8 +40,10 @@
 
 :local(.slider) input[type=number] {
     flex: 0 0 32px;
+    max-width: 32px;
 }
 
 :local(.slider) input[type=range] {
     flex: 1 1 auto;
+    min-width: 96px !important;
 }
