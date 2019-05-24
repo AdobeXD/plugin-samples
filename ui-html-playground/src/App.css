@@ -1,6 +1,17 @@
-:local(.form) {
+dialog > :local(.form) {
     width: 480px;
     height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.panel {
+    display: flex;
+    flex-direction: column;
+}
+
+div.panel > :local(.form) {
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
 }
@@ -19,8 +30,7 @@
 
 :local(.scrollWrapper) {
     overflow: auto;
-    flex: 1 0 300;
-    height: 300px;
+    flex: 1 0 auto;
     display: flex;
     flex-direction: column;
     border: 1px solid #EAEAEA;
@@ -42,8 +52,7 @@
 }
 
 :local(.html) {
-    flex: 1 0 300;
-    height: 300px;
+    flex: 1 0 auto;
     font-family: Menlo;
 }
 

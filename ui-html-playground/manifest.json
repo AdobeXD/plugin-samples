@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "host": {
         "app": "XD",
-        "minVersion": "13.0"
+        "minVersion": "19.0"
     },
     "description": "Description of your plugin.",
     "summary": "Summary of your plugin",
@@ -51,6 +51,11 @@
                     "commandId": "runPlayground"
                 }
             ]
+        },
+        {
+            "type": "panel",
+            "label": "Edit UXP Pen",
+            "panelId": "editUxpPen"
         }
     ]
 }

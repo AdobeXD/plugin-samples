@@ -1,14 +1,10 @@
-//  temporary stubs required for React. These will not be required as soon as the XD environment provides setTimeout/clearTimeout
-global.setTimeout = function(fn){ fn() }
-global.clearTimeout = function(){};
-global.requestAnimationFrame = (cb) => { cb(); };
+require ("./reactShim");
+const React = require("react");
+const ReactDOM = require("react-dom");
 
-window.HTMLIFrameElement = class{};
+const App = require("./App");
+const PanelController = require("./PanelController");
 
-let React = require("react");
-let ReactDOM = require("react-dom");
-
-const App = require("./App.jsx");
 let html = `<h1>Template</h1>
 <hr />
 <p>Hello World!</p>
@@ -46,13 +42,24 @@ ${html}
     return runDialog;
 }
 
-module.exports = {
+const entryPoints = module.exports = {
     commands: {
         editPlayground: (selection) => {
             return document.appendChild(getDialog(selection)).showModal();
         },
         runPlayground: (selection) => {
             return document.appendChild(getRunDialog(selection)).showModal();
+        },
+    },
+    panels: {
+        editUxpPen: new PanelController(() => <App html={html} onChange={htmlChanged} onSubmit={entryPoints.runPlayground}/>),
+        viewUxpPen: {
+            show(event) {
+                event.node.innerHTML = `<div class="panel">${html}</div>`;
+            },
+            hide(event) {
+                event.node.innerHTML = '';
+            }
         }
     }
 };
