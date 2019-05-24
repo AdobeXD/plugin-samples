@@ -42,6 +42,3 @@ Provide users with feedback as they interact with your plugin, this can be alert
 
 ![Plugin Example](../ux_images/Plugin_UX_Guidelines_Modal_v1.pdf)
 
-
-
---------
