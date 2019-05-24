@@ -99,12 +99,10 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/li
 
 
 // module
-exports.push([module.i, "._1nxuWNi_NVxi5PEec_QhmU {\n    /* margin: -20px; */\n}\n\nform {\n    display: flex;\n    flex-direction: column;\n    flex: 1 1 auto;\n}\n\nh1 {\n    display: flex;\n    justify-content: space-between;\n    flex: 0 0 auto;\n}\n\nh1 button {\n    margin: 0;\n    padding: 0;\n}\n\nfooter {\n    flex: 0 0 auto;\n    align-items: center;\n}\n\n.nogrow {\n    flex: 0 0 auto;\n}\n\n.noshrink {\n    flex: 0 0 auto;\n}\n\n.row {\n    align-items: center;\n}\n\n.row label span {\n    font-size: 100%;\n}\n\nform a:hover {\n    color: red;\n}\n", ""]);
+exports.push([module.i, "form {\n    display: flex;\n    flex-direction: column;\n    flex: 1 1 auto;\n}\n\nh1 {\n    display: flex;\n    justify-content: space-between;\n    flex: 0 0 auto;\n}\n\nh1 button {\n    margin: 0;\n    padding: 0;\n}\n\nfooter {\n    flex: 0 0 auto;\n    align-items: center;\n}\n\n.nogrow {\n    flex: 0 0 auto;\n}\n\n.noshrink {\n    flex: 0 0 auto;\n}\n\n.row {\n    align-items: center;\n}\n\n.row label span {\n    font-size: 100%;\n}\n\n.root.win {\n    --margin: 8px;\n    --margin-negative: -8px;\n    --margin-double: 16px;\n    --button-height: 32px;\n    --panel-body-font-size: 12px;\n    --panel-sub-heading-font-size: 12px;\n    --panel-label-font-size: 12px;\n    --panel-height: calc(100vh - 90px);\n    --panel-footer-height: calc(var(--margin-double) + var(--button-height) );\n    --panel-min-width: 240px;\n}\n\n.root.mac {\n    --margin: 6px;\n    --margin-negative: -6px;\n    --margin-double: 12px;\n    --button-height: 24px;\n    --panel-body-font-size: 10px;\n    --panel-sub-heading-font-size: 10px;\n    --panel-label-font-size: 9px;\n    --panel-height: calc(100vh - 80px);\n    --panel-footer-height: calc(var(--margin-double) + var(--button-height) );\n    --panel-min-width: 194px;\n}\n\n.root {\n    margin: var(--margin-negative);\n    font-size: var(--panel-body-font-size);\n}\n", ""]);
 
 // exports
-exports.locals = {
-	"panel": "_1nxuWNi_NVxi5PEec_QhmU"
-};
+
 
 /***/ }),
 
@@ -120,7 +118,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "._2_iEmOzYsvPkfTcB_PCxUS {\n    margin: 6px;\n    border-radius: 8px;\n    background-color: #EAEAEA;\n    flex: 0 0 200;\n    overflow: hidden;\n    position: relative;\n}\n\n.xTGEzNQjsx9lrAUnkOxSq {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n    overflow: hidden;\n    flex-basis: 150;\n}\n\n._1wlnx6fZItI_zfDXSwO9uA  {\n    margin: auto;\n    display: block;\n}\n\n.UBAN0AhKfmAGagvPQOOva {\n    background-color: #1592E6;\n}\n.UBAN0AhKfmAGagvPQOOva .xTGEzNQjsx9lrAUnkOxSq {\n    opacity: 0.75;\n}\n\n._1ZyBwiSA-bkJA2yS_O2XUC {\n}\n\n._2ljfFjg-6AJpyWWJvKK8hR {\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    margin: 0; /* bug: if using default margins, changing visibility loses them and causes button to shift on selection */\n    display: none;\n}\n\n._2_iEmOzYsvPkfTcB_PCxUS:hover ._2ljfFjg-6AJpyWWJvKK8hR {\n    display: block;\n}", ""]);
+exports.push([module.i, "._2_iEmOzYsvPkfTcB_PCxUS {\n    margin: var(--margin);\n    border-radius: 8px;\n    background-color: #EAEAEA;\n    flex: 0 0 200;\n    overflow: hidden;\n    position: relative;\n    border: 1px solid #DDDDDD;\n}\n\n.xTGEzNQjsx9lrAUnkOxSq {\n    overflow: hidden;\n    flex-basis: 150;\n}\n\n._1wlnx6fZItI_zfDXSwO9uA  {\n    margin: auto;\n    display: block;\n}\n\n.UBAN0AhKfmAGagvPQOOva {\n    background-color: #1592E6;\n}\n.UBAN0AhKfmAGagvPQOOva .xTGEzNQjsx9lrAUnkOxSq {\n    opacity: 0.75;\n}\n\n._1ZyBwiSA-bkJA2yS_O2XUC {\n}\n\n._2ljfFjg-6AJpyWWJvKK8hR {\n    position: absolute;\n    background-color: rgba(255, 255, 255, 0.75);\n    right: var(--margin);\n    bottom: var(--margin);\n    display: none;\n}\n\n._2_iEmOzYsvPkfTcB_PCxUS:hover ._2ljfFjg-6AJpyWWJvKK8hR {\n    display: block;\n}", ""]);
 
 // exports
 exports.locals = {
@@ -155,6 +153,29 @@ exports.locals = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./src/components/IconButton.css":
+/*!*****************************************************************!*\
+  !*** ./node_modules/css-loader!./src/components/IconButton.css ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "._1b6Aa5YIO2zspZqYHFGDcF {\n    border: 1px solid transparent;\n    padding: 4px 8px;\n    border-radius: 4px;\n}\n._1b6Aa5YIO2zspZqYHFGDcF:not([disabled]):hover {\n    border: 1px solid #D0D0D0;\n    background-color: #E8E8E8;\n}\n\n._24j8vduLt_2feA23YoPIM4 {\n    fill: #666;\n    width: 12px;\n    height: 12px;\n}\n\n._1b6Aa5YIO2zspZqYHFGDcF:hover ._24j8vduLt_2feA23YoPIM4 {\n    fill: #333;\n}\n._1b6Aa5YIO2zspZqYHFGDcF[disabled] ._24j8vduLt_2feA23YoPIM4 {\n    fill: #B8B8B8;\n}\n\n._1W6c9loc67YKyNrxv_Z2F5 {\n    background-color: #E8E8E8;\n}", ""]);
+
+// exports
+exports.locals = {
+	"button": "_1b6Aa5YIO2zspZqYHFGDcF",
+	"icon": "_24j8vduLt_2feA23YoPIM4",
+	"selected": "_1W6c9loc67YKyNrxv_Z2F5"
+};
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./src/components/List.css":
 /*!***********************************************************!*\
   !*** ./node_modules/css-loader!./src/components/List.css ***!
@@ -167,13 +188,14 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "\n\n._3B6qEV2JFNH7yM35mrdoT6 {\n    flex: 0 0 auto;\n    display: flex;\n    flex-direction: column;\n}\n\n._2gfWFo14nufmok4YPzGP-I {\n    flex-direction: row;\n    align-content: center;\n    border-radius: 4px;\n    background-color: #F5F5F5; /* without this, the checkboxes don't show up when we scroll! */\n}\n\n.U-EHXjRgh1mjauVX5Hr3l {\n    height: 32px;\n    width: 32px;\n    overflow: hidden;\n    display: flex;\n}\n\n._2gfWFo14nufmok4YPzGP-I img {\n    height: 32px;\n    flex: 0 0 auto;\n    margin: auto auto;\n}\n\n._2gfWFo14nufmok4YPzGP-I span {\n    flex: 1 1 auto;\n}\n\n._2gfWFo14nufmok4YPzGP-I button {\n    display: none;\n}\n\n._2gfWFo14nufmok4YPzGP-I:hover {\n    background-color: #EAEAEA;\n}\n\n._2gfWFo14nufmok4YPzGP-I:hover button {\n    display: block;\n}\n", ""]);
+exports.push([module.i, "\n\n._3B6qEV2JFNH7yM35mrdoT6 {\n    flex: 0 0 auto;\n    display: flex;\n    flex-direction: column;\n}\n\n._2gfWFo14nufmok4YPzGP-I {\n    flex-direction: row;\n    align-content: center;\n    border-radius: 4px;\n    height: 32px;\n    padding: 4px;\n    position: relative;\n}\n\n._2gfWFo14nufmok4YPzGP-I label span {\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    overflow: hidden;\n}\n\n\n.U-EHXjRgh1mjauVX5Hr3l {\n    height: 32px;\n    width: 32px;\n    overflow: hidden;\n    display: flex;\n    flex: 0 0 auto;\n}\n\n.U-EHXjRgh1mjauVX5Hr3l img {\n    margin: auto auto;\n    padding: 0;\n    max-height: 32px;\n}\n\n._2gfWFo14nufmok4YPzGP-I:hover {\n    height: 96px;\n}\n\n._2gfWFo14nufmok4YPzGP-I:hover .U-EHXjRgh1mjauVX5Hr3l {\n    height: 96px;\n    width: 96px;\n}\n\n._2gfWFo14nufmok4YPzGP-I img {\n}\n\n._2gfWFo14nufmok4YPzGP-I:hover .U-EHXjRgh1mjauVX5Hr3l img {\n    max-height: 96px;\n    z-index: 99;\n}\n\n._2gfWFo14nufmok4YPzGP-I span {\n    flex: 1 1 auto;\n}\n\n._36HMtlhQ5eSGdCLPjRyyL1 {\n    margin-right: 4px;\n    z-index: 99;\n    align-self: flex-end;\n}\n\n._2gfWFo14nufmok4YPzGP-I ._36HMtlhQ5eSGdCLPjRyyL1 {\n    display: none;\n}\n\n._2gfWFo14nufmok4YPzGP-I:hover {\n    background-color: #EAEAEA;\n}\n\n._2gfWFo14nufmok4YPzGP-I:hover ._36HMtlhQ5eSGdCLPjRyyL1 {\n    display: block;\n}\n", ""]);
 
 // exports
 exports.locals = {
 	"resultsList": "_3B6qEV2JFNH7yM35mrdoT6",
 	"resultRow": "_2gfWFo14nufmok4YPzGP-I",
-	"resultRowImageWrapper": "U-EHXjRgh1mjauVX5Hr3l"
+	"resultRowImageWrapper": "U-EHXjRgh1mjauVX5Hr3l",
+	"moreInfo": "_36HMtlhQ5eSGdCLPjRyyL1"
 };
 
 /***/ }),
@@ -190,14 +212,15 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "._3Qb-Vm_oH-t8K3-IuTCqph {\n    height: 26px;\n}\n.JUGYhxjUKxyNBBar3FVta {\n    width: 480px;\n}\n.fcGDDGCrynOS8K0nEQF-2 {\n    flex: 0 0 auto;\n}\n._1kAnTKyyF_BSmsbIHTia7T input {\n    flex: 1 1 auto;\n}\n._1kAnTKyyF_BSmsbIHTia7T button {\n    flex: 0 0 auto;\n    width: 32px;\n}", ""]);
+exports.push([module.i, "._3Qb-Vm_oH-t8K3-IuTCqph {\n    height: 26px;\n}\n.JUGYhxjUKxyNBBar3FVta {\n    width: 480px;\n}\n.fcGDDGCrynOS8K0nEQF-2 {\n    flex: 0 0 auto;\n}\n._1kAnTKyyF_BSmsbIHTia7T input {\n    flex: 1 1 auto;\n}\n._1kAnTKyyF_BSmsbIHTia7T ._2lXY17SyNDpw1SZOtBqzqu {\n    flex: 0 0 auto;\n    width: 32px;\n}", ""]);
 
 // exports
 exports.locals = {
 	"logo": "_3Qb-Vm_oH-t8K3-IuTCqph",
 	"form": "JUGYhxjUKxyNBBar3FVta",
 	"contents": "fcGDDGCrynOS8K0nEQF-2",
-	"apiKeyField": "_1kAnTKyyF_BSmsbIHTia7T"
+	"apiKeyField": "_1kAnTKyyF_BSmsbIHTia7T",
+	"eyes": "_2lXY17SyNDpw1SZOtBqzqu"
 };
 
 /***/ }),
@@ -235,7 +258,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".Atk5kQzMcUCez3yKKOA4Y {\n    display: flex;\n    flex-direction: column;\n    height: calc(100vh - 68px);\n    overflow: hidden;\n    padding: 0;\n}\n._3ad2qe1vtNd7ehzsMATN_Z {\n    flex: 1 1 auto;\n    overflow: scroll;\n    display: flex;\n    flex-direction: column;\n    padding-bottom: 32px;\n}\n\n._2-p7z_FMwnKgT9ivKQ1RlL {\n    margin: 0;\n    justify-content: flex-end;\n    height: 32px;\n}\n\n._1iFezvs9c07pG_D8MU0nIc {\n    border-top: 0.5px solid #D8D8D8;\n    padding-top: 4px;\n    /*width: 100%;\n    position: fixed;\n    bottom: 0;*/\n    display: flex;\n    flex: 0 0 auto;\n    align-items: center;\n    justify-content: flex-end;\n    order: 99;\n}\n\n._1iFezvs9c07pG_D8MU0nIc div, ._1iFezvs9c07pG_D8MU0nIc p {\n    flex: 1 1 auto;\n    text-overflow: ellipsis;\n    overflow: hidden;\n    white-space: nowrap;\n}\n\n._1iFezvs9c07pG_D8MU0nIc button {\n    flex: 0 0 auto;\n}", ""]);
+exports.push([module.i, ".Atk5kQzMcUCez3yKKOA4Y {\n    display: flex;\n    flex-direction: column;\n    overflow: hidden;\n    padding: 0;\n    height: var(--panel-height);\n}\n\n._3ad2qe1vtNd7ehzsMATN_Z {\n    flex: 1 1 auto;\n    overflow-x: hidden;\n    overflow-y: scroll;\n    display: flex;\n    flex-direction: column;\n    height: var(--panel-footer-height);\n}\n\n._2-p7z_FMwnKgT9ivKQ1RlL {\n    margin: 0;\n    justify-content: flex-end;\n    height: var(--panel-footer-height);\n}\n\n._1iFezvs9c07pG_D8MU0nIc {\n    border-top: 0.5px solid #D8D8D8;\n    zpadding-top: 4px;\n    /*width: 100%;\n    position: fixed;\n    bottom: 0;*/\n    display: flex;\n    flex: 0 0 auto;\n    align-items: center;\n    justify-content: flex-end;\n    order: 99;\n}\n\n._1iFezvs9c07pG_D8MU0nIc div, ._1iFezvs9c07pG_D8MU0nIc p {\n    flex: 1 1 auto;\n    text-overflow: ellipsis;\n    overflow: hidden;\n    white-space: nowrap;\n}\n\n._1iFezvs9c07pG_D8MU0nIc button {\n    flex: 0 0 auto;\n}", ""]);
 
 // exports
 exports.locals = {
@@ -25652,6 +25675,246 @@ module.exports = App;
 
 /***/ }),
 
+/***/ "./src/assets/dots.svg":
+/*!*****************************!*\
+  !*** ./src/assets/dots.svg ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties(obj, keys) {
+  var target = {};for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
+  }return target;
+}
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_ref => {
+  let {
+    styles = {}
+  } = _ref,
+      props = _objectWithoutProperties(_ref, ["styles"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+    "svg",
+    _extends({ xmlns: "http://www.w3.org/2000/svg", width: "28", height: "28", viewBox: "0 0 28 28" }, props),
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      "defs",
+      null,
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        "clipPath",
+        { id: "a" },
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { d: "M0 0h28v28H0z" })
+      )
+    ),
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      "g",
+      { clipPath: "url(#a)", fill: "#666" },
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", { "data-name": "Ellipse 4", cx: "3", cy: "3", r: "3", transform: "translate(1 11)" }),
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", { "data-name": "Ellipse 5", cx: "3", cy: "3", r: "3", transform: "translate(11 11)" }),
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", { "data-name": "Ellipse 6", cx: "3", cy: "3", r: "3", transform: "translate(21 11)" })
+    )
+  );
+});
+
+/***/ }),
+
+/***/ "./src/assets/eyes.svg":
+/*!*****************************!*\
+  !*** ./src/assets/eyes.svg ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties(obj, keys) {
+  var target = {};for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
+  }return target;
+}
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_ref => {
+  let {
+    styles = {}
+  } = _ref,
+      props = _objectWithoutProperties(_ref, ["styles"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+    "svg",
+    _extends({ xmlns: "http://www.w3.org/2000/svg", width: "28", height: "28", viewBox: "0 0 28 28" }, props),
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { d: "M19 24c.981 0 2.075-.825 3-2.264 1.27-1.977 2-4.797 2-7.736 0-2.938-.73-5.758-2-7.736C21.074 4.825 19.98 4 19 4c-.852 0-1.62.614-2.115 1.128L14 8.132l-2.885-3.004C10.621 4.614 9.853 4 9 4c-.981 0-2.074.825-3 2.264C4.73 8.242 4 11.062 4 14c0 2.939.73 5.759 2 7.736C6.927 23.175 8.02 24 9 24c.853 0 1.621-.614 2.115-1.128L14 19.868l2.885 3.004C17.379 23.386 18.148 24 19 24m0 4c-1.85 0-3.57-.869-5-2.358C12.57 27.132 10.85 28 9 28c-4.97 0-9-6.268-9-14S4.03 0 9 0c1.85 0 3.57.869 5 2.358C15.43.868 17.15 0 19 0c4.97 0 9 6.268 9 14s-4.03 14-9 14z", fill: "#666", "data-name": "Path 5" }),
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { d: "M19 4c-.981 0-2.074.825-3 2.264C14.73 8.24 14 11.06 14 14s.73 5.759 2 7.736C16.927 23.175 18.02 24 19 24c.981 0 2.074-.825 3-2.264 1.27-1.977 2-4.797 2-7.736s-.73-5.759-2-7.736C21.073 4.825 19.98 4 19 4m0-4c4.97 0 9 6.268 9 14s-4.03 14-9 14-9-6.268-9-14 4.03-14 9-14z", fill: "#666", "data-name": "Path 6" }),
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { d: "M6 10a4 4 0 1 1 0 8 4 4 0 0 1 0-8z", fill: "#666", "data-name": "Path 8" }),
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { d: "M16 10a4 4 0 1 1 0 8 4 4 0 0 1 0-8z", fill: "#666", "data-name": "Path 7" })
+  );
+});
+
+/***/ }),
+
+/***/ "./src/assets/grid.svg":
+/*!*****************************!*\
+  !*** ./src/assets/grid.svg ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties(obj, keys) {
+  var target = {};for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
+  }return target;
+}
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_ref => {
+  let {
+    styles = {}
+  } = _ref,
+      props = _objectWithoutProperties(_ref, ["styles"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+    "svg",
+    _extends({ xmlns: "http://www.w3.org/2000/svg", width: "28", height: "28", viewBox: "0 0 28 28" }, props),
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      "defs",
+      null,
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        "clipPath",
+        { id: "a" },
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { d: "M0 0h28v28H0z" })
+      )
+    ),
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      "g",
+      { clipPath: "url(#a)", fill: "#666" },
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { "data-name": "Path 11", d: "M0 0h12v12H0z" }),
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { "data-name": "Path 12", d: "M16 0h12v12H16z" }),
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { "data-name": "Path 13", d: "M0 16h12v12H0z" }),
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { "data-name": "Path 14", d: "M16 16h12v12H16z" })
+    )
+  );
+});
+
+/***/ }),
+
+/***/ "./src/assets/list.svg":
+/*!*****************************!*\
+  !*** ./src/assets/list.svg ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties(obj, keys) {
+  var target = {};for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
+  }return target;
+}
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_ref => {
+  let {
+    styles = {}
+  } = _ref,
+      props = _objectWithoutProperties(_ref, ["styles"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+    "svg",
+    _extends({ xmlns: "http://www.w3.org/2000/svg", width: "28", height: "28", viewBox: "0 0 28 28" }, props),
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      "defs",
+      null,
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        "clipPath",
+        { id: "a" },
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { d: "M0 0h28v28H0z" })
+      )
+    ),
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      "g",
+      { clipPath: "url(#a)", fill: "#666" },
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { "data-name": "Path 10", d: "M0 1h6v6H0z" }),
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { "data-name": "Path 6", d: "M0 21h6v6H0z" }),
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { "data-name": "Path 8", d: "M0 11h6v6H0z" }),
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { "data-name": "Path 9", d: "M10 2h18v4H10z" }),
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { "data-name": "Path 7", d: "M10 12h18v4H10z" }),
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { "data-name": "Path 5", d: "M10 22h18v4H10z" })
+    )
+  );
+});
+
+/***/ }),
+
+/***/ "./src/assets/search.svg":
+/*!*******************************!*\
+  !*** ./src/assets/search.svg ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties(obj, keys) {
+  var target = {};for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
+  }return target;
+}
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_ref => {
+  let {
+    styles = {}
+  } = _ref,
+      props = _objectWithoutProperties(_ref, ["styles"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+    "svg",
+    _extends({ xmlns: "http://www.w3.org/2000/svg", width: "28", height: "28", viewBox: "0 0 28 28" }, props),
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      "defs",
+      null,
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        "clipPath",
+        { id: "a" },
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { d: "M0 0h28v28H0z" })
+      )
+    ),
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      "g",
+      { "data-name": "Group 3", clipPath: "url(#a)" },
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", { "data-name": "Union 1", d: "M-2.17 26.835L8.6 16.065a10.508 10.508 0 1 1 3.148 3.215L1.012 30.017zM17.5 17a6.507 6.507 0 1 0-5.062-2.427l.991.991A6.469 6.469 0 0 0 17.5 17z", fill: "#666" })
+    )
+  );
+});
+
+/***/ }),
+
 /***/ "./src/components/Card.css":
 /*!*********************************!*\
   !*** ./src/components/Card.css ***!
@@ -25694,6 +25957,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const IconButton = __webpack_require__(/*! ./IconButton */ "./src/components/IconButton.jsx");
+const InfoIcon = __webpack_require__(/*! ../assets/dots.svg */ "./src/assets/dots.svg").default;
 const styles = __webpack_require__(/*! ./Card.css */ "./src/components/Card.css");
 
 const DraggableImage = __webpack_require__(/*! ./DraggableImage */ "./src/components/DraggableImage.jsx");
@@ -25718,12 +25983,12 @@ const Card = (_ref = {}) => {
         React.createElement(
             "div",
             { className: styles.cardHero, style: { width } },
-            React.createElement("img", { className: styles.cardHeroImg, style: { height }, src: src }),
-            React.createElement(
-                "button",
-                { onClick: onInfoClick, className: styles.cardHeroInfo, "uxp-variant": "action" },
-                React.createElement("img", { src: "./assets/info.png" })
-            )
+            React.createElement(DraggableImage, { className: styles.cardHeroImg, style: { height }, src: src }),
+            React.createElement(IconButton, {
+                title: "More information...",
+                onClick: onInfoClick,
+                className: styles.cardHeroInfo,
+                icon: InfoIcon })
         ),
         children
     );
@@ -25749,12 +26014,13 @@ const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 // NOTE: THE DRAG AND DROP APIS ARE IN FLUX; DO NOT USE.
 
 function dragStart(event) {
+    console.log("here");
     const target = event.target;
     const dataTransfer = event.dataTransfer;
     const mimeType = target.dataset.dragMimeType || "image/jpg";
     dataTransfer.effectAllowed = "all";
     const dragItem = new DataTransferItem();
-    dragItem.set("text/uri-list", target.src);
+    dragItem.set("text/uri-list", target.src); //file:/// or data:base64,png;asdfasf
     dragItem.set("text/html", `<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><img alt="Image" src="${target.src}"/>`);
     dataTransfer.items.push(dragItem);
     dragItem.element = target;
@@ -25826,6 +26092,7 @@ const Grid = ({ results, selected, onInfoClick, onClick } = {}) => React.createE
         src: thumbnail_url,
         selected: selected.indexOf(idx) > -1,
         onInfoClick: e => {
+            console.log("click");
             onInfoClick && onInfoClick(idx);
             e.stopPropagation();
         },
@@ -25834,6 +26101,64 @@ const Grid = ({ results, selected, onInfoClick, onClick } = {}) => React.createE
 );
 
 module.exports = Grid;
+
+/***/ }),
+
+/***/ "./src/components/IconButton.css":
+/*!***************************************!*\
+  !*** ./src/components/IconButton.css ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader!./IconButton.css */ "./node_modules/css-loader/index.js!./src/components/IconButton.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/IconButton.jsx":
+/*!***************************************!*\
+  !*** ./src/components/IconButton.jsx ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+const styles = __webpack_require__(/*! ./IconButton.css */ "./src/components/IconButton.css");
+
+module.exports = (_ref) => {
+    let { icon: Icon, onClick, disabled, selected, className, title } = _ref,
+        rest = _objectWithoutProperties(_ref, ["icon", "onClick", "disabled", "selected", "className", "title"]);
+
+    return React.createElement(
+        "div",
+        { className: `${styles.button} ${selected ? styles.selected : ""} ${className ? className : ""}`, disabled: disabled, onClick: onClick, title: title },
+        React.createElement(Icon, _extends({ className: styles.icon }, rest))
+    );
+};
 
 /***/ }),
 
@@ -25875,40 +26200,43 @@ if(false) {}
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const IconButton = __webpack_require__(/*! ./IconButton */ "./src/components/IconButton.jsx");
+const DotsIcon = __webpack_require__(/*! ../assets/dots.svg */ "./src/assets/dots.svg").default;
 const styles = __webpack_require__(/*! ./List.css */ "./src/components/List.css");
 
-const List = ({ results, selected, onInfoForImage, onClick } = {}) => React.createElement(
-    'div',
+const List = ({ results, selected, onInfoClick, onClick } = {}) => React.createElement(
+    "div",
     { className: styles.resultsList },
     results.map(({ title, thumbnail_url }, idx) => React.createElement(
-        'label',
+        "div",
         { key: idx, className: `row nogrow ${styles.resultRow}` },
-        React.createElement('input', {
-            type: 'checkbox',
-            defaultChecked: selected.indexOf(idx) > -1,
-            onChange: () => onClick && onClick(idx)
-        }),
         React.createElement(
-            'div',
-            { className: styles.resultRowImageWrapper },
-            React.createElement('img', { src: thumbnail_url })
+            "label",
+            { className: "row nogrow" },
+            React.createElement("input", {
+                type: "checkbox",
+                checked: selected.indexOf(idx) > -1,
+                onChange: () => onClick && onClick(idx)
+            }),
+            React.createElement(
+                "div",
+                { className: styles.resultRowImageWrapper },
+                React.createElement("img", { src: thumbnail_url })
+            ),
+            React.createElement(
+                "span",
+                null,
+                title
+            )
         ),
-        React.createElement(
-            'span',
-            null,
-            title
-        ),
-        React.createElement(
-            'button',
-            {
-                'uxp-variant': 'action',
-                'uxp-quiet': 'true',
-                onClick: e => {
-                    onInfoForImage && onInfoForImage(idx);
-                    e.stopPropagation();
-                } },
-            React.createElement('img', { src: 'assets/dots.png' })
-        )
+        React.createElement(IconButton, {
+            title: "More information",
+            className: styles.moreInfo,
+            icon: DotsIcon,
+            onClick: e => {
+                onInfoClick && onInfoClick(idx);
+                e.stopPropagation();
+            } })
     ))
 );
 
@@ -25988,8 +26316,9 @@ if(false) {}
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
 const styles = __webpack_require__(/*! ./Preferences.css */ "./src/components/Preferences.css");
+const IconButton = __webpack_require__(/*! ./IconButton */ "./src/components/IconButton.jsx");
+const Eyes = __webpack_require__(/*! ../assets/eyes.svg */ "./src/assets/eyes.svg").default;
 
 class Preferences extends React.Component {
 
@@ -26025,7 +26354,7 @@ class Preferences extends React.Component {
     }
 
     show() {
-        this.dialog.current.showModal();
+        document.body.appendChild(this.dialog.current).showModal();
     }
 
     toggleVisibility() {
@@ -26063,7 +26392,7 @@ class Preferences extends React.Component {
                     React.createElement(
                         "p",
                         null,
-                        "This plugin requires a valid Adobe Stock API Key. Get ",
+                        "This plugin requires a valid Adobe Stock API Key. Get\xA0",
                         React.createElement(
                             "a",
                             { href: "https://console.adobe.io" },
@@ -26081,11 +26410,7 @@ class Preferences extends React.Component {
                         "API Key"
                     ),
                     React.createElement("input", { type: showKey ? "text" : "password", placeholder: "API Key", defaultValue: apiKey || prefs.apiKey, ref: this.apiKey }),
-                    React.createElement(
-                        "button",
-                        { title: "Toggle key visibility", "uxp-variant": "action", onClick: this.toggleVisibility, "uxp-selected": showKey.toString() },
-                        "\uD83D\uDC40"
-                    )
+                    React.createElement(IconButton, { className: styles.eyes, icon: Eyes, title: "Toggle key visibility", onClick: this.toggleVisibility, selected: showKey })
                 ),
                 React.createElement(
                     "footer",
@@ -26149,35 +26474,27 @@ if(false) {}
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const IconButton = __webpack_require__(/*! ./IconButton */ "./src/components/IconButton.jsx");
+const SearchIcon = __webpack_require__(/*! ../assets/search.svg */ "./src/assets/search.svg").default;
 
 const styles = __webpack_require__(/*! ./SearchField.css */ "./src/components/SearchField.css");
 
 const Search = ({ search, onSearchChanged, onSearch, disabled = false } = {}) => React.createElement(
-    'div',
-    { className: 'row nogrow' },
+    "div",
+    { className: "row nogrow" },
     React.createElement(
-        'label',
-        { className: 'row' },
-        React.createElement('input', {
+        "label",
+        { className: "row" },
+        React.createElement("input", {
             className: styles.searchInput,
-            type: 'search',
-            'uxp-quiet': 'true',
-            placeholder: 'Search',
+            type: "search",
+            "uxp-quiet": "true",
+            placeholder: "Search",
             defaultValue: search,
             onChange: onSearchChanged
         })
     ),
-    React.createElement(
-        'button',
-        {
-            type: 'submit',
-            onClick: onSearch,
-            'uxp-variant': 'action',
-            disabled: disabled,
-            'uxp-quiet': 'true',
-            title: 'Search' },
-        React.createElement('img', { src: 'assets/search.png' })
-    )
+    React.createElement(IconButton, { icon: SearchIcon, disabled: disabled, onClick: onSearch })
 );
 
 module.exports = Search;
@@ -26232,6 +26549,8 @@ const Card = __webpack_require__(/*! ./Card */ "./src/components/Card.jsx");
 const SearchField = __webpack_require__(/*! ./SearchField */ "./src/components/SearchField.jsx");
 const MaxResultsField = __webpack_require__(/*! ./MaxResultsField */ "./src/components/MaxResultsField.jsx");
 const { ViewSwitcher, VIEWS } = __webpack_require__(/*! ./ViewSwitcher */ "./src/components/ViewSwitcher.jsx");
+const IconButton = __webpack_require__(/*! ./IconButton */ "./src/components/IconButton.jsx");
+const Dots = __webpack_require__(/*! ../assets/dots.svg */ "./src/assets/dots.svg").default;
 const Grid = __webpack_require__(/*! ./Grid */ "./src/components/Grid.jsx");
 const List = __webpack_require__(/*! ./List */ "./src/components/List.jsx");
 
@@ -26452,13 +26771,14 @@ class StockSearch extends React.Component {
 
         return React.createElement(
             'form',
-            { method: 'dialog', onSubmit: this.doSearch, 'class': styles.form },
+            { method: 'dialog', onSubmit: this.doSearch, className: styles.form },
             React.createElement(SearchField, { search: search, onSearchChanged: this.searchChanged, onSearch: this.doSearch, disabled: !canSearch }),
             (status === STATUS.LOADED || status === STATUS.WORKING) && React.createElement(
                 'div',
                 { className: `${styles.resultsInfo} row nogrow margin` },
                 React.createElement(MaxResultsField, { value: maxResults, onChange: this.maxResultsChanged }),
-                React.createElement(ViewSwitcher, { view: viewMode, onChange: this.viewChanged })
+                React.createElement(ViewSwitcher, { view: viewMode, onChange: this.viewChanged }),
+                React.createElement(IconButton, { icon: Dots, onClick: onShowPreferences, title: 'Change Preferences...' })
             ),
             React.createElement(
                 'div',
@@ -26570,6 +26890,9 @@ if(false) {}
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const IconButton = __webpack_require__(/*! ./IconButton */ "./src/components/IconButton.jsx");
+const GridIcon = __webpack_require__(/*! ../assets/grid.svg */ "./src/assets/grid.svg").default;
+const ListIcon = __webpack_require__(/*! ../assets/list.svg */ "./src/assets/list.svg").default;
 
 const styles = __webpack_require__(/*! ./ViewSwitcher.css */ "./src/components/ViewSwitcher.css");
 
@@ -26581,24 +26904,14 @@ const VIEWS = {
 const ViewSwitcher = ({ view = VIEWS.LIST, onChange } = {}) => React.createElement(
     "div",
     { className: styles.viewMode },
-    React.createElement(
-        "button",
-        {
-            onClick: () => onChange && onChange(VIEWS.LIST),
-            "uxp-variant": "action",
-            "uxp-quiet": "true",
-            "uxp-selected": view === VIEWS.LIST ? 'true' : undefined },
-        React.createElement("img", { src: "assets/list.png" })
-    ),
-    React.createElement(
-        "button",
-        {
-            onClick: () => onChange && onChange(VIEWS.GRID),
-            "uxp-variant": "action",
-            "uxp-quiet": "true",
-            "uxp-selected": view === VIEWS.GRID ? 'true' : undefined },
-        React.createElement("img", { src: "assets/grid.png" })
-    )
+    React.createElement(IconButton, {
+        icon: ListIcon,
+        onClick: () => onChange && onChange(VIEWS.LIST),
+        selected: view === VIEWS.LIST }),
+    React.createElement(IconButton, {
+        icon: GridIcon,
+        onClick: () => onChange && onChange(VIEWS.GRID),
+        selected: view === VIEWS.GRID })
 );
 
 module.exports = {
@@ -26618,13 +26931,15 @@ module.exports = {
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 const ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 const { selection } = __webpack_require__(/*! scenegraph */ "scenegraph");
+const os = __webpack_require__(/*! os */ "os");
 
 class PanelController {
     constructor(App) {
         this.App = App;
         this.instance = null;
         this.rootNode = document.createElement("div");
-        this.rootNode.style.margin = "-26px";
+        this.rootNode.className = `root ${os.platform() === "darwin" ? "mac" : "win"}`;
+        //this.rootNode.style.margin="-8px";
         this.attachment = null;
 
         ["show", "hide", "update"].forEach(fn => this[fn] = this[fn].bind(this));
@@ -26679,9 +26994,6 @@ const searchPanel = new PanelController(App);
 module.exports = {
     panels: {
         search: searchPanel
-    },
-    commands: {
-        settings: () => searchPanel.instance.showPreferences()
     }
 };
 
@@ -26867,7 +27179,13 @@ async function search(query, { apikey, locale = "en_US", offset = 0, limit = 20 
         "search_parameters[filters][content_type:vector]": "1",
         "search_parameters[filters][content_type:vector]": "0",
         "search_parameters[filters][content_type:template]": "0",
-        "search_parameters[filters][content_type:3d]": "0"
+        "search_parameters[filters][content_type:3d]": "0",
+        "result_columns[0]": "id",
+        "result_columns[1]": "is_licensed",
+        "result_columns[2]": "title",
+        "result_columns[3]": "thumbnail_url",
+        "result_columns[4]": "thumbnail_width",
+        "result_columns[5]": "thumbnail_height"
     }).map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join("&");
 
     const url = `${API_ROOT}?${queryString}`;
@@ -26883,7 +27201,6 @@ async function search(query, { apikey, locale = "en_US", offset = 0, limit = 20 
             throw new Error(`Server returned ${r.status}`);
         }
         const j = await r.json();
-
         // Stock will have a `files` key in the response; return it as-is
         return j.files;
     } catch (err) {
@@ -26903,6 +27220,17 @@ module.exports = search;
 /***/ (function(module, exports) {
 
 module.exports = require("application");
+
+/***/ }),
+
+/***/ "os":
+/*!*********************!*\
+  !*** external "os" ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("os");
 
 /***/ }),
 

@@ -5,7 +5,7 @@
     "version": "2.0.0",
     "host": {
         "app": "XD",
-        "minVersion": "19.0"
+        "minVersion": "20.0"
     },
     "description": "Search the Adobe stock website and download proofs for your design.",
     "summary": "Search for inspiration",
@@ -38,13 +38,8 @@
     "uiEntryPoints": [
         {
             "type": "panel",
-            "label": "Search Adobe Stock...",
+            "label": "Adobe Stock",
             "panelId": "search"
-        },
-        {
-            "type": "menu",
-            "label": "Edit Adobe Stock Preferences...",
-            "commandId": "settings"
         }
     ]
 }

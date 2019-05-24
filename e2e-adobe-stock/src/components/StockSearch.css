@@ -1,27 +1,29 @@
 :local(.form) {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 68px);
     overflow: hidden;
     padding: 0;
+    height: var(--panel-height);
 }
+
 :local(.resultsWrapper) {
     flex: 1 1 auto;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    padding-bottom: 32px;
+    height: var(--panel-footer-height);
 }
 
 :local(.resultsInfo) {
     margin: 0;
     justify-content: flex-end;
-    height: 32px;
+    height: var(--panel-footer-height);
 }
 
 :local(.commandLine) {
     border-top: 0.5px solid #D8D8D8;
-    padding-top: 4px;
+    zpadding-top: 4px;
     /*width: 100%;
     position: fixed;
     bottom: 0;*/

@@ -1,4 +1,7 @@
 const React = require('react');
+const IconButton = require("./IconButton");
+const GridIcon = require("../assets/grid.svg").default;
+const ListIcon = require("../assets/list.svg").default;
 
 const styles = require("./ViewSwitcher.css");
 
@@ -9,20 +12,16 @@ const VIEWS = {
 
 const ViewSwitcher = ({view = VIEWS.LIST, onChange} = {}) => (
     <div className={styles.viewMode}>
-        <button
+        <IconButton
+            icon={ListIcon}
             onClick={() => onChange && onChange(VIEWS.LIST)}
-            uxp-variant="action"
-            uxp-quiet="true"
-            uxp-selected={view === VIEWS.LIST ? 'true' : undefined}>
-            <img src="assets/list.png" />
-        </button>
-        <button
+            selected={view === VIEWS.LIST}>
+        </IconButton>
+        <IconButton
+            icon={GridIcon}
             onClick={() => onChange && onChange(VIEWS.GRID)}
-            uxp-variant="action"
-            uxp-quiet="true"
-            uxp-selected={view === VIEWS.GRID ? 'true' : undefined}>
-            <img src="assets/grid.png" />
-        </button>
+            selected={view === VIEWS.GRID}>
+        </IconButton>
     </div>
 );
 

@@ -1,6 +1,7 @@
 const React = require("react");
-
 const styles = require("./Preferences.css");
+const IconButton = require("./IconButton");
+const Eyes = require("../assets/eyes.svg").default;
 
 class Preferences extends React.Component {
 
@@ -36,7 +37,7 @@ class Preferences extends React.Component {
     }
 
     show() {
-        this.dialog.current.showModal();
+        document.body.appendChild(this.dialog.current).showModal();
     }
 
     toggleVisibility() {
@@ -68,13 +69,13 @@ class Preferences extends React.Component {
                     <hr />
                     <div className={styles.contents}>
                         <p>
-                            This plugin requires a valid Adobe Stock API Key. Get <a href="https://console.adobe.io">your Adobe Stock API Key</a> and then paste it in to the field below in order to continue.
+                            This plugin requires a valid Adobe Stock API Key. Get&nbsp;<a href="https://console.adobe.io">your Adobe Stock API Key</a> and then paste it in to the field below in order to continue.
                         </p>
                     </div>
                     <label className={`row ${styles.apiKeyField}`}>
                         <span>API Key</span>
                         <input type={showKey ? "text" : "password"} placeholder="API Key" defaultValue={apiKey || prefs.apiKey} ref={this.apiKey} />
-                        <button title="Toggle key visibility" uxp-variant="action" onClick={this.toggleVisibility} uxp-selected={showKey.toString()}>👀</button>
+                        <IconButton className={styles.eyes} icon={Eyes} title="Toggle key visibility" onClick={this.toggleVisibility} selected={showKey} />
                     </label>
                     <footer>
                         <button uxp-variant="secondary" id="close" onClick={this.cancel}>Don't Change</button>

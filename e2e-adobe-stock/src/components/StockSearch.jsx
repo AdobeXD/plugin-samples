@@ -9,6 +9,8 @@ const Card = require('./Card');
 const SearchField = require("./SearchField");
 const MaxResultsField = require("./MaxResultsField");
 const { ViewSwitcher, VIEWS } = require("./ViewSwitcher");
+const IconButton = require("./IconButton");
+const Dots = require("../assets/dots.svg").default;
 const Grid = require("./Grid");
 const List = require("./List");
 
@@ -235,12 +237,13 @@ class StockSearch extends React.Component {
         const canInsert = selected.length > 0 && status !== STATUS.WORKING;
 
         return (
-            <form method="dialog" onSubmit={this.doSearch} class={styles.form}>
+            <form method="dialog" onSubmit={this.doSearch} className={styles.form}>
                 <SearchField search={search} onSearchChanged={this.searchChanged} onSearch={this.doSearch} disabled={!canSearch} />
                 {(status === STATUS.LOADED || status === STATUS.WORKING) && (
                     <div className={`${styles.resultsInfo} row nogrow margin`}>
                         <MaxResultsField value={maxResults} onChange={this.maxResultsChanged} />
                         <ViewSwitcher view={viewMode} onChange={this.viewChanged} />
+                        <IconButton icon={Dots} onClick={onShowPreferences} title="Change Preferences..." />
                     </div>
                 )}
                 <div className={styles.commandLine}>

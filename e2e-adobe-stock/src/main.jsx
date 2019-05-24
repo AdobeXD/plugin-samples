@@ -13,7 +13,4 @@ module.exports = {
     panels: {
         search: searchPanel
     },
-    commands: {
-        settings: () => searchPanel.instance.showPreferences()
-    }
 };

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+  <defs>
+    <clipPath id="clip-info">
+      <rect width="28" height="28"/>
+    </clipPath>
+  </defs>
+  <g id="info" clip-path="url(#clip-info)">
+    <g id="Path_11" data-name="Path 11">
+      <path d="M 14 4 C 8.485979080200195 4 4 8.485979080200195 4 14 C 4 19.51401901245117 8.485979080200195 24 14 24 C 19.51401901245117 24 24 19.51401901245117 24 14 C 24 8.485979080200195 19.51401901245117 4 14 4 M 14 0 C 21.73197937011719 0 28 6.268009185791016 28 14 C 28 21.73197937011719 21.73197937011719 28 14 28 C 6.268009185791016 28 0 21.73197937011719 0 14 C 0 6.268009185791016 6.268009185791016 0 14 0 Z" stroke="none" fill="#666"/>
+    </g>
+    <g id="Path_12" data-name="Path 12" transform="translate(12 6)" fill="#666">
+      <path d="M 3.5 3.5 L 0.5 3.5 L 0.5 0.5 L 3.5 0.5 L 3.5 3.5 Z" fill="#666"/>
+      <path d="M 1 1 L 1 3 L 3 3 L 3 1 L 1 1 M 0 0 L 4 0 L 4 4 L 0 4 L 0 0 Z" stroke="none" fill="#666"/>
+    </g>
+    <g id="Path_13" data-name="Path 13" transform="translate(12 12)" fill="#666">
+      <path d="M 3.5 9.5 L 0.5 9.5 L 0.5 0.5 L 3.5 0.5 L 3.5 9.5 Z" fill="#666"/>
+      <path d="M 1 1 L 1 9 L 3 9 L 3 1 L 1 1 M 0 0 L 4 0 L 4 10 L 0 10 L 0 0 Z" stroke="none" fill="#666"/>
+    </g>
+  </g>
+</svg>

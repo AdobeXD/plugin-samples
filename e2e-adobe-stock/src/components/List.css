@@ -10,27 +10,60 @@
     flex-direction: row;
     align-content: center;
     border-radius: 4px;
-    background-color: #F5F5F5; /* without this, the checkboxes don't show up when we scroll! */
+    height: 32px;
+    padding: 4px;
+    position: relative;
 }
+
+:local(.resultRow) label span {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 
 :local(.resultRowImageWrapper) {
     height: 32px;
     width: 32px;
     overflow: hidden;
     display: flex;
+    flex: 0 0 auto;
+}
+
+:local(.resultRowImageWrapper) img {
+    margin: auto auto;
+    padding: 0;
+    max-height: 32px;
+}
+
+:local(.resultRow):hover {
+    height: 96px;
+}
+
+:local(.resultRow):hover :local(.resultRowImageWrapper) {
+    height: 96px;
+    width: 96px;
 }
 
 :local(.resultRow) img {
-    height: 32px;
-    flex: 0 0 auto;
-    margin: auto auto;
+}
+
+:local(.resultRow):hover :local(.resultRowImageWrapper) img {
+    max-height: 96px;
+    z-index: 99;
 }
 
 :local(.resultRow) span {
     flex: 1 1 auto;
 }
 
-:local(.resultRow) button {
+:local(.moreInfo) {
+    margin-right: 4px;
+    z-index: 99;
+    align-self: flex-end;
+}
+
+:local(.resultRow) :local(.moreInfo) {
     display: none;
 }
 
@@ -38,6 +71,6 @@
     background-color: #EAEAEA;
 }
 
-:local(.resultRow):hover button {
+:local(.resultRow):hover :local(.moreInfo) {
     display: block;
 }

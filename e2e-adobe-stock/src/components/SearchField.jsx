@@ -1,4 +1,6 @@
 const React = require('react');
+const IconButton = require("./IconButton");
+const SearchIcon = require("../assets/search.svg").default;
 
 const styles = require('./SearchField.css');
 
@@ -14,7 +16,7 @@ const Search = ({search, onSearchChanged, onSearch, disabled = false} = {}) => (
                 onChange={onSearchChanged}
             />
         </label>
-        <button
+        {/*<button
             type="submit"
             onClick={onSearch}
             uxp-variant="action"
@@ -22,7 +24,8 @@ const Search = ({search, onSearchChanged, onSearch, disabled = false} = {}) => (
             uxp-quiet="true"
             title="Search">
             <img src="assets/search.png" />
-        </button>
+        </button>*/}
+        <IconButton icon={SearchIcon} disabled={disabled} onClick={onSearch} />
     </div>
 );
 

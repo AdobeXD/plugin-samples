@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+  <defs>
+    <clipPath id="clip-grid">
+      <rect width="28" height="28"/>
+    </clipPath>
+  </defs>
+  <g id="grid" clip-path="url(#clip-grid)">
+    <path id="Path_11" data-name="Path 11" d="M0,0H12V12H0Z" fill="#666"/>
+    <path id="Path_12" data-name="Path 12" d="M0,0H12V12H0Z" transform="translate(16 0)" fill="#666"/>
+    <path id="Path_13" data-name="Path 13" d="M0,0H12V12H0Z" transform="translate(0 16)" fill="#666"/>
+    <path id="Path_14" data-name="Path 14" d="M0,0H12V12H0Z" transform="translate(16 16)" fill="#666"/>
+  </g>
+</svg>

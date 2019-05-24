@@ -10,7 +10,7 @@
 :local(.apiKeyField) input {
     flex: 1 1 auto;
 }
-:local(.apiKeyField) button {
+:local(.apiKeyField) :local(.eyes) {
     flex: 0 0 auto;
     width: 32px;
 }

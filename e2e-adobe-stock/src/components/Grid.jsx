@@ -14,6 +14,7 @@ const Grid = ({ results, selected, onInfoClick, onClick } = {}) => (
                 src={thumbnail_url}
                 selected={selected.indexOf(idx) > -1}
                 onInfoClick={e => {
+                    console.log("click");
                     onInfoClick && onInfoClick(idx);
                     e.stopPropagation();
                 }}
