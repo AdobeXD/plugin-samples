@@ -161,7 +161,6 @@ Include a modal dismissal button to allow the user to cancel/close the modal and
 Dismisses the dialog when the “Cancel” button is in focus
 
 
-----------
 ## Loaders & Progress bars
 
 let the user know when something is happening in the background in the plugin UI. 
