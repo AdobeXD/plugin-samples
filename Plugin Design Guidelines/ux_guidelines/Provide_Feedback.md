@@ -169,17 +169,15 @@ let the user know when something is happening in the background in the plugin UI
 
 ### **Determinate**
 
-> **Use case**
-If the progress can be reflected on a loader. 
-
 ![Determinate Example](../ux_images/Determinate_loader_example.png)
 
+> **Use case**
+If the progress can be reflected on a loader. 
 
 
 ### **Indeterminate**
 
-> **Use case**
-If the progress can’t be determined then provide a loader to let the user know something is loading.
-
 ![Indeterminate Example](../ux_images/Indeterminate_loader_example.png)
 
+> **Use case**
+If the progress can’t be determined then provide a loader to let the user know something is loading.
