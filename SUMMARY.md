@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-* [Overview](./README.md)
+* [**Overview**](./README.md)
 
 * [Quick start](./tutorials/quick-start/index.md)
 * [Quick start - React](./tutorials/quick-start-react/index.md)
