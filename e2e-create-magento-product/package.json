@@ -1,0 +1,14 @@
+{
+  "name": "e2e-create-magento-product",
+  "version": "1.0.0",
+  "description": "This proof of concept sample creates a PNG rendition for the selected artboard and creates a product with the rendition as its image and thumbnail on your Magento instance.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "base64-arraybuffer": "^0.2.0"
+  }
+}

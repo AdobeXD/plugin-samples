@@ -9,5 +9,6 @@ This proof of concept sample creates a PNG rendition for the selected artboard a
 
 ## Usage
 
+1. Run `npm install`
 1. Put your Magento production URL, admin username, and admin password into `config.json`
 1. Run "Plugins > My Magento Plugin"
