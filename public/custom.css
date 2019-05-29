@@ -11,6 +11,13 @@
 .page-inner section.markdown-section {
     overflow-x: auto;
 }
+.chapter {
+    font-weight:bold;
+}
+
+.articles > .chapter{
+    font-weight:normal;
+}
 
 .page-toc {
     position: absolute;

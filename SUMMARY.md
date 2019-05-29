@@ -1,35 +1,33 @@
 # Summary
 
-## Getting Started
-
-* [**Overview**](./README.md)
-
-* [Quick start](./tutorials/quick-start/index.md)
-* [Quick start - React](./tutorials/quick-start-react/index.md)
-* [Debugging plugins](./tutorials/debugging/index.md)
-* [Plugin structure](./reference/structure/index.md)
+* [Quick start](./README.md)
+  * [Quick start](./tutorials/quick-start/index.md)
+  * [Quick start - React](./tutorials/quick-start-react/index.md)
+  * [Debugging plugins](./tutorials/debugging/index.md)
+* [Plugin Development Guidelines](./README.md)
+  * [Plugin structure](./reference/structure/index.md)
   * [Plugin location](./reference/structure/location.md)
   * [Folder structure](./reference/structure/folder-structure.md)
     * [manifest.json](./reference/structure/manifest.md)
     * [main.js](./reference/structure/handlers.md)
+* [Plugin Design Guidelines](./Plugin Design Guidelines/index.md)
+  * [Plugin Design Guidelines](./Plugin Design Guidelines/index.md)
+* [Tutorials](./tutorials/index.md)
+  * [Working with content](./tutorials/content-index.md)
+    * [How to draw lines](./tutorials/how-to-draw-lines/index.md)
+    * [How to create paths](./tutorials/how-to-create-paths/index.md)
+    * [How to style text](./tutorials/how-to-style-text/index.md)
+    * [Working with a SceneNodeList](./tutorials/how-to-work-with-scenenodelist/index.md)
 
-## Tutorials
-* [About the tutorials](./tutorials/index.md)
-* [Working with content](./tutorials/content-index.md)
-  * [How to draw lines](./tutorials/how-to-draw-lines/index.md)
-  * [How to create paths](./tutorials/how-to-create-paths/index.md)
-  * [How to style text](./tutorials/how-to-style-text/index.md)
-  * [Working with a SceneNodeList](./tutorials/how-to-work-with-scenenodelist/index.md)
+  * [Working with I/O](./tutorials/io-index.md)
+    * [How to export a rendition](./tutorials/how-to-export-a-rendition/index.md)
+    * [How to read a file](./tutorials/how-to-read-a-file/index.md)
+    * [How to make network requests](./tutorials/how-to-make-network-requests/index.md)
+    * [How to integrate with OAuth](./tutorials/how-to-integrate-with-OAuth/index.md)
 
-* [Working with I/O](./tutorials/io-index.md)
-  * [How to export a rendition](./tutorials/how-to-export-a-rendition/index.md)
-  * [How to read a file](./tutorials/how-to-read-a-file/index.md)
-  * [How to make network requests](./tutorials/how-to-make-network-requests/index.md)
-  * [How to integrate with OAuth](./tutorials/how-to-integrate-with-OAuth/index.md)
-
-* [Building user interfaces](./tutorials/ui-index.md)
-  * [How to show an alert](./tutorials/how-to-show-an-alert/index.md)
-  * [Asking user for confirmation](./tutorials/how-to-ask-user-for-confirmation/index.md)
+  * [Building user interfaces](./tutorials/ui-index.md)
+    * [How to show an alert](./tutorials/how-to-show-an-alert/index.md)
+    * [Asking user for confirmation](./tutorials/how-to-ask-user-for-confirmation/index.md)
 
 ## Advanced Concepts
 * [About advanced concepts](./reference/index.md)
