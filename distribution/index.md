@@ -3,7 +3,7 @@
 Congratulations on finishing building your plugin! It's totally fine if you built a plugin for yourself, but wouldn't you want other people to use your awesome plugin as well? If so, you are on the right page. Read some of the following pages depending on your need:
 
 * [Packaging your plugin](/reference/how-to-read.html)
-* [Distribution options](/distribution/index.md)
+* [Distribution options](/distribution/options.md)
 * [Publishing your plugin](/distribution/how-to-submit-to-plugin-manager.md)
 * [Marketing your plugin](/distribution/marketing.md)
 * [Deep-linking to your plugin listing](/distribution/how-to-create-deep-links.md)
