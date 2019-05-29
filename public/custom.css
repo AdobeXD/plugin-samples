@@ -11,12 +11,15 @@
 .page-inner section.markdown-section {
     overflow-x: auto;
 }
-.chapter {
-    font-weight:bold;
+.book-summary ul.summary li a:not(.gitbook-link), .book-summary ul.summary li span {
+    color: 	black;
+    font-weight: 500;
 }
 
-.articles > .chapter{
-    font-weight:normal;
+.book-summary ul.summary ul.articles li a, .book-summary ul.summary ul.articles li span {
+    color: 	#787878;
+    font-weight: 400;
+    border-left: 1px solid #E6ECF1;
 }
 
 .page-toc {
