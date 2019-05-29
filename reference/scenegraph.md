@@ -148,6 +148,8 @@ Base class of all scenegraph nodes. Nodes will always be an instance of some _su
     * *[.hasDefaultName](#SceneNode-hasDefaultName) : <code>boolean</code>*
     * *[.locked](#SceneNode-locked) : <code>boolean</code>*
     * *[.markedForExport](#SceneNode-markedForExport) : <code>boolean</code>*
+    * *[.fixedWhenScrolling](#SceneNode-fixedWhenScrolling) : <code>?boolean</code>*
+    * *[.triggeredInteractions](#SceneNode-triggeredInteractions) : <code>!Arrray&lt;!Interaction&gt;</code>*
     * *[.hasLinkedContent](#SceneNode-hasLinkedContent) : <code>boolean</code>*
     * *[.pluginData](#SceneNode-pluginData) : <code>&ast;</code>*
     * *[.removeFromParent()](#SceneNode-removeFromParent)*
@@ -155,8 +157,6 @@ Base class of all scenegraph nodes. Nodes will always be an instance of some _su
     * *[.placeInParentCoordinates(registrationPoint, parentPoint)](#SceneNode-placeInParentCoordinates)*
     * *[.rotateAround(deltaAngle, rotationCenter)](#SceneNode-rotateAround)*
     * *[.resize(width, height)](#SceneNode-resize)*
-    * *[.triggeredInteractions](#SceneNode-triggeredInteractions) : <code>!Arrray&lt;!Interaction&gt;</code>*
-    * *[.fixedWhenScrolling](#SceneNode-fixedWhenScrolling) : <code>?boolean</code>*
 
 
 * * *
@@ -459,6 +459,48 @@ True if the node should be included in the output of _File > Export > Batch_ and
 
 * * *
 
+<a name="SceneNode-fixedWhenScrolling"></a>
+
+### *sceneNode.fixedWhenScrolling : <code>?boolean</code>*
+**Since**: XD 19
+
+True if the node stays in a fixed position while the Artboard's content is scrolling (when viewed in an interactive prototype).
+_Only applicable for nodes whose immediate parent is an Artboard._
+
+For other nodes, this property returns undefined and cannot be set. To determine whether those nodes scroll or remain
+fixed, walk up the parent chain and check this property on the topmost ancestor in the Artboard.
+
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**See**: [Artboard.viewportHeight](#Artboard-viewportHeight)
+
+* * *
+
+<a name="SceneNode-triggeredInteractions"></a>
+
+### *sceneNode.triggeredInteractions : <code>!Arrray&lt;\![Interaction](./interactions.md#Interaction)&gt;</code>*
+**Since**: XD 19
+
+Get all interactions that are triggered by this node in the document's interactive prototype. Each element in the array
+is an [Interaction object](./interactions.md#Interaction) which describes a gesture/event plus the action it produces.
+
+Note: If this node (or one of its ancestors) has `visible` = false, tap and drag interactions on it will not be triggered.
+
+Currently, this API excludes any keyboard/gamepad interactions on this node.
+
+**Example**
+```js
+// Print all the interactions triggered by a node
+node.triggeredInteractions.forEach(interaction => {
+    console.log("Trigger: " + interaction.trigger.type + " -> Action: " + interaction.action.type);
+});
+```
+
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
+**See**: [interactions.allInteractions](./interactions.md#module_interactions-allInteractions)
+
+* * *
+
 <a name="SceneNode-hasLinkedContent"></a>
 
 ### *sceneNode.hasLinkedContent : <code>boolean</code>*
@@ -609,48 +651,6 @@ may be changed/fixed later.
 let originalBounds = node.localBounds;
 node.resize(originalBounds.width * 2, originalBounds.height);
 ```
-
-* * *
-
-<a name="SceneNode-triggeredInteractions"></a>
-
-### *sceneNode.triggeredInteractions : <code>!Arrray&lt;\![Interaction](./interactions.md#Interaction)&gt;</code>*
-**Since**: XD 19
-
-Get all interactions that are triggered by this node in the document's interactive prototype. Each element in the array
-is an [Interaction object](./interactions.md#Interaction) which describes a gesture/event plus the action it produces.
-
-Note: If this node (or one of its ancestors) has `visible` = false, tap and drag interactions on it will not be triggered.
-
-Currently, this API excludes any keyboard/gamepad interactions on this node.
-
-**Example**
-```js
-// Print all the interactions triggered by a node
-node.triggeredInteractions.forEach(interaction => {
-    console.log("Trigger: " + interaction.trigger.type + " -> Action: " + interaction.action.type);
-});
-```
-
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
-**Read only**: true
-**See**: [interactions.allInteractions](./interactions.md#module_interactions-allInteractions)
-
-* * *
-
-<a name="SceneNode-fixedWhenScrolling"></a>
-
-### *sceneNode.fixedWhenScrolling : <code>?boolean</code>*
-**Since**: XD 19
-
-True if the node stays in a fixed position while the Artboard's content is scrolling (when viewed in an interactive prototype).
-_Only applicable for nodes whose immediate parent is an Artboard._
-
-For other nodes, this property returns undefined and cannot be set. To determine whether those nodes scroll or remain
-fixed, walk up the parent chain and check this property on the topmost ancestor in the Artboard.
-
-**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
-**See**: [Artboard.viewportHeight](#Artboard-viewportHeight)
 
 
 * * *
@@ -1283,8 +1283,8 @@ selection.items = [polygon];
     * [.width](#Polygon-width) : <code>number</code>
     * [.height](#Polygon-height) : <code>number</code>
     * [.cornerCount](#Polygon-cornerCount) : <code>number</code>
-    * [.hasRoundedCorners](#Polygon-hasRoundedCorners) : <code>boolean</code>
     * [.cornerRadii](#Polygon-cornerRadii) : <code>!Array&lt;number&gt;</code>
+    * [.hasRoundedCorners](#Polygon-hasRoundedCorners) : <code>boolean</code>
     * [.setAllCornerRadii(radius)](#Polygon-setAllCornerRadii)
 
 
@@ -1324,20 +1324,20 @@ set the size back to the saved values.
 
 * * *
 
-<a name="Polygon-hasRoundedCorners"></a>
+<a name="Polygon-cornerRadii"></a>
 
-### polygon.hasRoundedCorners : <code>boolean</code>
-True if any of the Polygon's corners is rounded (corner radius > 0).
+### polygon.cornerRadii : <code>!Array&lt;number&gt;</code>
+List of corner radius for each corner of the polygon. To set corner radius, use [<code>setAllCornerRadii()</code>](#Polygon-setAllCornerRadii).
 
 **Kind**: instance property of [<code>Polygon</code>](#Polygon)
 **Read only**: true
 
 * * *
 
-<a name="Polygon-cornerRadii"></a>
+<a name="Polygon-hasRoundedCorners"></a>
 
-### polygon.cornerRadii : <code>!Array&lt;number&gt;</code>
-List of corner radius for each corner of the polygon. To set corner radius, use [<code>setAllCornerRadii()</code>](#Polygon-setAllCornerRadii).
+### polygon.hasRoundedCorners : <code>boolean</code>
+True if any of the Polygon's corners is rounded (corner radius > 0).
 
 **Kind**: instance property of [<code>Polygon</code>](#Polygon)
 **Read only**: true
@@ -1509,14 +1509,14 @@ Text bounds and layout work differently depending on the type of text:
     * [.fill](#Text-fill) : <code>Color</code>
     * [.charSpacing](#Text-charSpacing) : <code>number</code>
     * [.underline](#Text-underline) : <code>boolean</code>
+    * [.strikethrough](#Text-strikethrough) : <code>boolean</code>
+    * [.textTransform](#Text-textTransform) : <code>string</code>
     * [.flipY](#Text-flipY) : <code>boolean</code>
     * [.textAlign](#Text-textAlign) : <code>string</code>
     * [.lineSpacing](#Text-lineSpacing) : <code>number</code>
     * [.paragraphSpacing](#Text-paragraphSpacing) : <code>number</code>
     * [.areaBox](#Text-areaBox) : <code>?{width:number, height:number}</code>
     * [.clippedByArea](#Text-clippedByArea) : <code>boolean</code>
-    * [.strikethrough](#Text-strikethrough) : <code>boolean</code>
-    * [.textTransform](#Text-textTransform) : <code>string</code>
 
 
 * * *
@@ -1629,6 +1629,31 @@ range covers all the text).
 
 * * *
 
+<a name="Text-strikethrough"></a>
+
+### text.strikethrough : <code>boolean</code>
+**Default**: `false`
+**Since**: XD 19
+
+Set strikethrough across all style ranges, or get the strikethrough of the last style range (strikethrough of all the text if one
+range covers all the text).
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
+<a name="Text-textTransform"></a>
+
+### text.textTransform : <code>string</code>
+**Default**: `"none"`
+**Since**: XD 19
+
+Set textTransform ("none", "uppercase", "lowercase", or "titlecase") across all style ranges, or get the textTransform of the last style range.
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
 <a name="Text-flipY"></a>
 
 ### text.flipY : <code>boolean</code>
@@ -1720,31 +1745,6 @@ Always false for point text. For area text, true if the text does not fit in the
 
 * * *
 
-<a name="Text-strikethrough"></a>
-
-### text.strikethrough : <code>boolean</code>
-**Default**: `false`
-**Since**: XD 19
-
-Set strikethrough across all style ranges, or get the strikethrough of the last style range (strikethrough of all the text if one
-range covers all the text).
-
-**Kind**: instance property of [<code>Text</code>](#Text)
-
-* * *
-
-<a name="Text-textTransform"></a>
-
-### text.textTransform : <code>string</code>
-**Default**: `"none"`
-**Since**: XD 19
-
-Set textTransform ("none", "uppercase", "lowercase", or "titlecase") across all style ranges, or get the textTransform of the last style range.
-
-**Kind**: instance property of [<code>Text</code>](#Text)
-
-* * *
-
 
 <a name="SymbolInstance"></a>
 
@@ -1775,11 +1775,11 @@ It is not currently possible for plugins to *create* a new component definition 
 
 * [SymbolInstance](#SymbolInstance)
     * [.symbolId](#SymbolInstance-symbolId) : <code>string</code>
+    * [.isMaster](#SymbolInstance-isMaster) : <code>boolean</code>
     * [.addChild(node, index)](#Group-addChild)
     * [.addChildAfter(node, relativeTo)](#Group-addChildAfter)
     * [.addChildBefore(node, relativeTo)](#Group-addChildBefore)
     * [.removeAllChildren()](#Group-removeAllChildren)
-    * [.isMaster](#SymbolInstance-isMaster) : <code>boolean</code>
 
 
 * * *
@@ -1803,8 +1803,8 @@ those changes are synced to all other instances of the component (unless blocked
 **Kind**: instance property of [<code>SymbolInstance</code>](#SymbolInstance)
 **Read only**: true
 
-
 * * *
+
 
 <a name="RepeatGrid"></a>
 

@@ -44,35 +44,6 @@ See [Interaction documentation](#Interaction) below for an example of what an In
     * [Transition](#Transition)
 
 
-* * *
-
-<a name="module_interactions-homeArtboard"></a>
-
-### *interactions.homeArtboard : <code>?Artboard</code>*
-The starting Artboard seen when the interactive prototype is launched.
-
-**Kind**: static property of [<code>interactions</code>](#module_interactions)
-**Read only**: true
-
-**See**: [`Artboard.isHomeArtboard`](./scenegraph.md#Artboard-isHomeArtboard)
-
-
-* * *
-
-<a name="module_interactions-allInteractions"></a>
-
-### *interactions.allInteractions : <code>!Array&lt;!{triggerNode: !SceneNode, interactions: !Array&lt;\![Interaction](#Interaction)&gt;}&gt;</code>*
-Returns a collection of *all* interactions across the entire document, grouped by triggering scenenode. Each entry in this array
-specifies a `triggerNode` and the result of getting [`triggerNode.triggeredInteractions`](./scenegraph.md#SceneNode-triggeredInteractions).
-
-May include interactions that are impossible to trigger because the trigger node (or one of its ancestors) has `visible` = false.
-
-Note: currently, this API excludes all of the document's keyboard/gamepad interactions.
-
-**Kind**: static property of [<code>interactions</code>](#module_interactions)
-**Read only**: true
-
-
 ## Typedefs
 
 <a name="Interaction" id="Interaction"></a>
@@ -185,3 +156,32 @@ Animation style with which `"goToArtboard"` and `"overlay"` actions transition f
 | fromSide | !string | _(If type = "push" or "slide")._ One of: `"L"`, `"R"`, `"T"`, `"B"` |
 | duration | number | Length of animation in seconds. |
 | easing | !string | One of: `"linear"`, `"ease-in"`, `"ease-out"`, `"ease-in-out"`, `"wind-up"`, `"bounce"`, `"snap"` |
+
+
+* * *
+
+<a name="module_interactions-homeArtboard"></a>
+
+### *interactions.homeArtboard : <code>?Artboard</code>*
+The starting Artboard seen when the interactive prototype is launched.
+
+**Kind**: static property of [<code>interactions</code>](#module_interactions)
+**Read only**: true
+
+**See**: [`Artboard.isHomeArtboard`](./scenegraph.md#Artboard-isHomeArtboard)
+
+
+* * *
+
+<a name="module_interactions-allInteractions"></a>
+
+### *interactions.allInteractions : <code>!Array&lt;!{triggerNode: !SceneNode, interactions: !Array&lt;\![Interaction](#Interaction)&gt;}&gt;</code>*
+Returns a collection of *all* interactions across the entire document, grouped by triggering scenenode. Each entry in this array
+specifies a `triggerNode` and the result of getting [`triggerNode.triggeredInteractions`](./scenegraph.md#SceneNode-triggeredInteractions).
+
+May include interactions that are impossible to trigger because the trigger node (or one of its ancestors) has `visible` = false.
+
+Note: currently, this API excludes all of the document's keyboard/gamepad interactions.
+
+**Kind**: static property of [<code>interactions</code>](#module_interactions)
+**Read only**: true
