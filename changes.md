@@ -1,5 +1,39 @@
 # Change Log
 
+## XD Release 19.0.12 (May 2019)
+
+### New API Features
+
+* **[Read prototyping interactions](./reference/interactions.md)** - Read-only access to the interactivity settings in the document (e.g. the blue "wires"
+  seen in XD's prototyping UI).
+* **New [Polygon](./reference/scenegraph.md#Polygon) node type**
+* **UI: Radio button controls** - `<input type="radio">` is now supported.
+
+### Breaking Changes
+
+* **Components & Design Systems** - Symbols are now called Components in XD's UI, and they support resizing and complex overrides. One important consequence
+  of this is that **_sometimes only a subset of your plugin's changes will be applied to the scenegraph_**. When the user is editing the "master" copy of the
+  Component, each individual scenegraph change (e.g. changing a single property on a single node) is automatically synced to other instances of the Component
+  _only if_ a given instance doesn't already have an override of the same property (or a related property). As a result, your plugin's intended changes may
+  only be partially (non-atomically) applied in some Component instances: if your plugin command makes, say, 5 changes to the scenegraph, in some instances
+  only, say, 3 of those changes will actually be applied.
+
+  In many cases, this partial application of your plugin's changes will feel natural to users as an expected consequence of the overrides they have authored.
+  However, you can also choose to mitigate potential confusion by warning users or disabling some editing features while the user is editing a Component
+  "master" by checking [`isMaster`](./reference/scenegraph.md#SymbolInstance-isMaster) on `selection.editContext` and its parent chain. But there is currently
+  no way to force all changes made by your plugin command to be applied atomically (i.e. all or nothing).
+
+### Fixes and improvements
+
+* **Additional Text scenenode styles:** Work with Text nodes and character-style assets using the new strikethrough and text-transform features.
+
+### Known Issues
+
+No new known issues. See the [Known Issues page](./known-issues.md) for a comprehensive list of existing known issues.
+
+
+----
+
 ## XD Release 18.0.12 (April 2019)
 
 ### New API Features
@@ -58,8 +92,6 @@ No new known issues. See the [Known Issues page](./known-issues.md) for a compre
 
 
 ----
-
-# Change Log
 
 ## XD Release 17.0.12 (March 2019)
 
