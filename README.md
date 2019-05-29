@@ -54,6 +54,6 @@ There are lots of ways to journey through the documentation on your way to build
 Here are some highlights you won't want to miss:
 
 1. **Get Started**: To begin, try our [Quick Start tutorial](./tutorials/quick-start/index.md), then follow along with [the API feature tutorials](./tutorials/index.md).
-1. **Go deep**: Read up on [the structure of a plugin](./reference/structure/index.md), expand your reach with [advanced concepts](/reference/index.md), and then dig into the [API reference](/reference/how-to-read.md).
+1. **Go deep**: Learn more about how to build an XD plugin by reading [the plugin development 101](/plugin-development-guidelines/index.md) and then dig into the [API reference](/reference/how-to-read.md).
 1. **See code**: If you prefer to learn from working code, we have a [samples repo on GitHub](https://github.com/AdobeXD/Plugin-Samples) for you to take a look at.
 1. **Join the community**: We want to hear from you, know who you are, keep you up to date with the latest info, and grow together. See our [Community page](/community.md) to learn about how to connect.
