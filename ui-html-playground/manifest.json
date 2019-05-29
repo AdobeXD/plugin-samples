@@ -54,8 +54,13 @@
         },
         {
             "type": "panel",
-            "label": "Edit UXP Pen",
+            "label": "Edit in Panel",
             "panelId": "editUxpPen"
+        },
+        {
+            "type": "panel",
+            "label": "Run as Panel",
+            "panelId": "runPanel"
         }
     ]
 }

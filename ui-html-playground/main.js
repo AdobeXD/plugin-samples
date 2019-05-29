@@ -99,12 +99,13 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/li
 
 
 // module
-exports.push([module.i, "dialog > ._5mVLRTMWdYBBHkn-wZodF {\n    width: 480px;\n    height: 600px;\n    display: flex;\n    flex-direction: column;\n}\n\ndiv.panel {\n    display: flex;\n    flex-direction: column;\n}\n\ndiv.panel > ._5mVLRTMWdYBBHkn-wZodF {\n    flex: 1 1 auto;\n    display: flex;\n    flex-direction: column;\n}\n\n._2Cmne2qmmDtziRUFbFr3Q3 {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    flex: 0 0 auto;\n}\n\n._1fwnD348WPEtOs2Aa-4e82 {\n    flex: 0 0 auto;\n    align-items: center;\n}\n\n.umZ6CBb0ILK1_8fAWRKI2 {\n    overflow: auto;\n    flex: 1 0 auto;\n    display: flex;\n    flex-direction: column;\n    border: 1px solid #EAEAEA;\n    border-radius: 4px;\n    padding: 24px;\n    position: relative;\n}\n\n._3HtZDPiLfml2e0W6xo8Dyo {\n    border: 1px solid #323232;\n    background-color: #666666;\n}\n\n._31xSCcDqt23gWWdiMBrVn9 {\n    background-color: #FFFFFF;\n    border-radius: 8;\n    border: 1px solid #EAEAEA;\n    padding: 32px;\n}\n\n.Ee_ja0SI8dm5rEtcV1CUL {\n    flex: 1 0 auto;\n    font-family: Menlo;\n}\n\n._3OEostfnO7p_I2ye4JVqsW {\n    display: flex;\n    flex-direction: row;\n}\n\n.nqIF4GZ3lnHg5eL-6DerC {\n    appearance: none;\n    border-bottom: 2px transparent;\n}\n\n.nqIF4GZ3lnHg5eL-6DerC[uxp-selected=true] {\n    border-bottom: 2px solid #323232;\n}", ""]);
+exports.push([module.i, "/* normalize for next release of CSS */\n\n/* MAC */\n.uxp-plugin {\n    color: #3F3F3F;\n    font-size: 10px;\n}\n.uxp-plugin h1 {\n    color: #8E8E8E;\n    font-size: 10px;\n}\n.uxp-plugin label span {\n    font-size: 9px;\n    color: #8E8E8E;\n}\n\n/* WIN\n.uxp-plugin {\n    color: #3F3F3F;\n    font-size: 12px;\n}\n.uxp-plugin h1 {\n    color: #8E8E8E;\n    font-size: 12px;\n}\n.uxp-plugin label span {\n    font-size: 12px;\n    color: #8E8E8E;\n}\n*/\n\ndialog > ._5mVLRTMWdYBBHkn-wZodF {\n    width: 480px;\n    height: 600px;\n    display: flex;\n    flex-direction: column;\n}\n\n.root {\n    height: calc(100vh - 90px);\n}\n\n._5mVLRTMWdYBBHkn-wZodF {\n    flex: 1 1 auto;\n    display: flex;\n    flex-direction: column;\n    height: 100%;\n}\n\n._2Cmne2qmmDtziRUFbFr3Q3 {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    flex: 0 0 auto;\n    flex-wrap: wrap;\n}\n\n._5mVLRTMWdYBBHkn-wZodF hr {\n    flex: 0 0 auto;\n}\n\n._3BO6xd7KEh4AQC3qPiA62N {\n    flex: 1 1 auto;\n}\n\n._1fwnD348WPEtOs2Aa-4e82 {\n    flex: 0 0 auto;\n    align-items: center;\n}\n\n.umZ6CBb0ILK1_8fAWRKI2 {\n    overflow: auto;\n    flex: 1 0 auto;\n    display: flex;\n    flex-direction: column;\n    border: 1px solid #EAEAEA;\n    border-radius: 4px;\n    padding: 24px;\n    position: relative;\n}\n\n._3HtZDPiLfml2e0W6xo8Dyo {\n    border: 1px solid #323232;\n    background-color: #666666;\n}\n\n._31xSCcDqt23gWWdiMBrVn9 {\n    background-color: #FFFFFF;\n    border-radius: 8;\n    border: 1px solid #EAEAEA;\n    padding: 32px;\n}\n\n.Ee_ja0SI8dm5rEtcV1CUL {\n    flex: 1 0 auto;\n    font-family: Menlo;\n}\n\n._3OEostfnO7p_I2ye4JVqsW {\n    display: flex;\n    flex-direction: row;\n}\n\n.nqIF4GZ3lnHg5eL-6DerC {\n    appearance: none;\n    border-bottom: 2px transparent;\n}\n\n.nqIF4GZ3lnHg5eL-6DerC[uxp-selected=true] {\n    border-bottom: 2px solid #323232;\n}", ""]);
 
 // exports
 exports.locals = {
 	"form": "_5mVLRTMWdYBBHkn-wZodF",
 	"h1": "_2Cmne2qmmDtziRUFbFr3Q3",
+	"editor": "_3BO6xd7KEh4AQC3qPiA62N",
 	"footer": "_1fwnD348WPEtOs2Aa-4e82",
 	"scrollWrapper": "umZ6CBb0ILK1_8fAWRKI2",
 	"backdrop": "_3HtZDPiLfml2e0W6xo8Dyo",
@@ -300,6 +301,66 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	}
 
 	return to;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/os-browserify/browser.js":
+/*!***********************************************!*\
+  !*** ./node_modules/os-browserify/browser.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+exports.endianness = function () { return 'LE' };
+
+exports.hostname = function () {
+    if (typeof location !== 'undefined') {
+        return location.hostname
+    }
+    else return '';
+};
+
+exports.loadavg = function () { return [] };
+
+exports.uptime = function () { return 0 };
+
+exports.freemem = function () {
+    return Number.MAX_VALUE;
+};
+
+exports.totalmem = function () {
+    return Number.MAX_VALUE;
+};
+
+exports.cpus = function () { return [] };
+
+exports.type = function () { return 'Browser' };
+
+exports.release = function () {
+    if (typeof navigator !== 'undefined') {
+        return navigator.appVersion;
+    }
+    return '';
+};
+
+exports.networkInterfaces
+= exports.getNetworkInterfaces
+= function () { return {} };
+
+exports.arch = function () { return 'javascript' };
+
+exports.platform = function () { return 'browser' };
+
+exports.tmpdir = exports.tmpDir = function () {
+    return '/tmp';
+};
+
+exports.EOL = '\n';
+
+exports.homedir = function () {
+	return '/'
 };
 
 
@@ -21814,6 +21875,8 @@ class App extends React.Component {
         const { dialog, onSubmit } = this.props;
         const { html, view, simulateDialog } = this.state;
 
+        const simDialog = dialog && simulateDialog;
+
         return React.createElement(
             'form',
             { className: styles.form, method: 'dialog', onSubmit: dialog ? dialog.close : onSubmit },
@@ -21824,7 +21887,7 @@ class App extends React.Component {
                 React.createElement(
                     'div',
                     { className: styles.tabs },
-                    view === VIEWS.RESULT && React.createElement(
+                    view === VIEWS.RESULT && dialog && React.createElement(
                         'label',
                         { className: 'row', style: { alignItems: "center" } },
                         React.createElement('input', { type: 'checkbox',
@@ -21850,15 +21913,24 @@ class App extends React.Component {
                 )
             ),
             React.createElement('hr', null),
-            view === VIEWS.HTML ? React.createElement('textarea', {
-                className: `${styles.html} margin`,
-                onKeyDown: this.preventEnter,
-                onChange: this.htmlChanged,
-                defaultValue: html
-            }) : React.createElement(
+            view === VIEWS.HTML ? React.createElement(
+                'label',
+                { className: styles.editor },
+                React.createElement(
+                    'span',
+                    null,
+                    'HTML'
+                ),
+                React.createElement('textarea', {
+                    className: `${styles.html} margin`,
+                    onKeyDown: this.preventEnter,
+                    onChange: this.htmlChanged,
+                    defaultValue: html
+                })
+            ) : React.createElement(
                 'div',
-                { className: `${styles.scrollWrapper} margin ${simulateDialog ? styles.backdrop : ""}` },
-                React.createElement('div', { className: simulateDialog ? styles.dialog : "", ref: el => el && (el.innerHTML = html) })
+                { className: `${styles.scrollWrapper} margin ${simDialog ? styles.backdrop : ""}` },
+                React.createElement('div', { className: simDialog ? styles.dialog : "", ref: el => el && (el.innerHTML = html) })
             ),
             dialog ? React.createElement(
                 'footer',
@@ -21894,27 +21966,29 @@ module.exports = App;
 
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 const ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-//const { selection } = require("scenegraph");
+const { selection } = __webpack_require__(/*! scenegraph */ "scenegraph");
+const os = __webpack_require__(/*! os */ "./node_modules/os-browserify/browser.js");
 
 class PanelController {
-    constructor(renderFn) {
-        this.renderFn = renderFn;
+    constructor(App) {
+        this.App = App;
         this.instance = null;
         this.rootNode = document.createElement("div");
-
-        this.rootNode.style.height = "450px";
-        this.rootNode.className = "panel";
+        this.rootNode.className = `root ${os.platform() === "darwin" ? "mac" : "win"}`;
+        //this.rootNode.style.margin="-8px";
         this.attachment = null;
 
         ["show", "hide", "update"].forEach(fn => this[fn] = this[fn].bind(this));
     }
 
     show(event) {
+        const App = this.App;
+
         this.attachment = event.node;
         this.attachment.appendChild(this.rootNode);
 
         if (!this.instance) {
-            this.instance = ReactDOM.render(this.renderFn(), this.rootNode);
+            this.instance = ReactDOM.render(React.createElement(App, { selection: selection }), this.rootNode);
         }
 
         this.update();
@@ -21925,8 +21999,8 @@ class PanelController {
     }
 
     update() {
-        if (this.instance.documentStateChanged) {
-            this.instance.documentStateChanged();
+        if (this.instance && this.instance.documentStateChanged) {
+            this.instance.documentStateChanged(selection);
         }
     }
 }
@@ -21972,6 +22046,11 @@ function getDialog(selection) {
 function getRunDialog(selection) {
     if (runDialog == null) {
         runDialog = document.createElement("dialog");
+        runDialog.addEventListener("click", evt => {
+            if (evt.target.tagName === "BUTTON") {
+                runDialog.close();
+            }
+        });
     }
     runDialog.innerHTML = `
 <style>
@@ -21986,18 +22065,21 @@ ${html}
     return runDialog;
 }
 
+function editPlayground(selection) {
+    return document.appendChild(getDialog(selection)).showModal();
+}
+function runPlayground(selection) {
+    return document.appendChild(getRunDialog(selection)).showModal();
+}
+
 const entryPoints = module.exports = {
     commands: {
-        editPlayground: selection => {
-            return document.appendChild(getDialog(selection)).showModal();
-        },
-        runPlayground: selection => {
-            return document.appendChild(getRunDialog(selection)).showModal();
-        }
+        editPlayground,
+        runPlayground
     },
     panels: {
-        editUxpPen: new PanelController(() => React.createElement(App, { html: html, onChange: htmlChanged, onSubmit: entryPoints.runPlayground })),
-        viewUxpPen: {
+        editUxpPen: new PanelController(() => React.createElement(App, { html: html, onChange: htmlChanged, onSubmit: runPlayground })),
+        runPanel: {
             show(event) {
                 event.node.innerHTML = `<div class="panel">${html}</div>`;
             },
@@ -22039,6 +22121,17 @@ if (window.requestAnimationFrame == null) {
 if (window.HTMLIFrameElement == null) {
     window.HTMLIFrameElement = class HTMLIFrameElement {};
 }
+
+/***/ }),
+
+/***/ "scenegraph":
+/*!*****************************!*\
+  !*** external "scenegraph" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("scenegraph");
 
 /***/ })
 

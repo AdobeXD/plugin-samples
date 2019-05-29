@@ -2,19 +2,21 @@
     margin: var(--margin);
     border-radius: 8px;
     background-color: #EAEAEA;
-    flex: 0 0 200;
+    flex: 1 1 auto;
+    display: flex;
     overflow: hidden;
-    position: relative;
     border: 1px solid #DDDDDD;
+    position: relative;
 }
 
 :local(.cardHero) {
+    display: flex;
+    flex: 1 1 auto;
     overflow: hidden;
-    flex-basis: 150;
 }
 
 :local(.cardHeroImg)  {
-    margin: auto;
+    margin: auto auto;
     display: block;
 }
 

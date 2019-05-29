@@ -118,7 +118,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "._2_iEmOzYsvPkfTcB_PCxUS {\n    margin: var(--margin);\n    border-radius: 8px;\n    background-color: #EAEAEA;\n    flex: 0 0 200;\n    overflow: hidden;\n    position: relative;\n    border: 1px solid #DDDDDD;\n}\n\n.xTGEzNQjsx9lrAUnkOxSq {\n    overflow: hidden;\n    flex-basis: 150;\n}\n\n._1wlnx6fZItI_zfDXSwO9uA  {\n    margin: auto;\n    display: block;\n}\n\n.UBAN0AhKfmAGagvPQOOva {\n    background-color: #1592E6;\n}\n.UBAN0AhKfmAGagvPQOOva .xTGEzNQjsx9lrAUnkOxSq {\n    opacity: 0.75;\n}\n\n._1ZyBwiSA-bkJA2yS_O2XUC {\n}\n\n._2ljfFjg-6AJpyWWJvKK8hR {\n    position: absolute;\n    background-color: rgba(255, 255, 255, 0.75);\n    right: var(--margin);\n    bottom: var(--margin);\n    display: none;\n}\n\n._2_iEmOzYsvPkfTcB_PCxUS:hover ._2ljfFjg-6AJpyWWJvKK8hR {\n    display: block;\n}", ""]);
+exports.push([module.i, "._2_iEmOzYsvPkfTcB_PCxUS {\n    margin: var(--margin);\n    border-radius: 8px;\n    background-color: #EAEAEA;\n    flex: 1 1 auto;\n    display: flex;\n    overflow: hidden;\n    border: 1px solid #DDDDDD;\n    position: relative;\n}\n\n.xTGEzNQjsx9lrAUnkOxSq {\n    display: flex;\n    flex: 1 1 auto;\n    overflow: hidden;\n}\n\n._1wlnx6fZItI_zfDXSwO9uA  {\n    margin: auto auto;\n    display: block;\n}\n\n.UBAN0AhKfmAGagvPQOOva {\n    background-color: #1592E6;\n}\n.UBAN0AhKfmAGagvPQOOva .xTGEzNQjsx9lrAUnkOxSq {\n    opacity: 0.75;\n}\n\n._1ZyBwiSA-bkJA2yS_O2XUC {\n}\n\n._2ljfFjg-6AJpyWWJvKK8hR {\n    position: absolute;\n    background-color: rgba(255, 255, 255, 0.75);\n    right: var(--margin);\n    bottom: var(--margin);\n    display: none;\n}\n\n._2_iEmOzYsvPkfTcB_PCxUS:hover ._2ljfFjg-6AJpyWWJvKK8hR {\n    display: block;\n}", ""]);
 
 // exports
 exports.locals = {
@@ -25983,7 +25983,7 @@ const Card = (_ref = {}) => {
         React.createElement(
             "div",
             { className: styles.cardHero, style: { width } },
-            React.createElement(DraggableImage, { className: styles.cardHeroImg, style: { height }, src: src }),
+            React.createElement("img", { className: styles.cardHeroImg, style: { height }, src: src }),
             React.createElement(IconButton, {
                 title: "More information...",
                 onClick: onInfoClick,

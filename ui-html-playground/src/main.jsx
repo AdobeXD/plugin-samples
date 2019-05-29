@@ -28,6 +28,11 @@ function getDialog(selection) {
 function getRunDialog(selection) {
     if (runDialog == null) {
         runDialog = document.createElement("dialog");
+        runDialog.addEventListener("click", evt => {
+            if (evt.target.tagName === "BUTTON") {
+                runDialog.close();
+            }
+        });
     }
     runDialog.innerHTML = `
 <style>
@@ -42,18 +47,21 @@ ${html}
     return runDialog;
 }
 
+function editPlayground(selection) {
+    return document.appendChild(getDialog(selection)).showModal();
+}
+function runPlayground(selection) {
+    return document.appendChild(getRunDialog(selection)).showModal();
+}
+
 const entryPoints = module.exports = {
     commands: {
-        editPlayground: (selection) => {
-            return document.appendChild(getDialog(selection)).showModal();
-        },
-        runPlayground: (selection) => {
-            return document.appendChild(getRunDialog(selection)).showModal();
-        },
+        editPlayground,
+        runPlayground,
     },
     panels: {
-        editUxpPen: new PanelController(() => <App html={html} onChange={htmlChanged} onSubmit={entryPoints.runPlayground}/>),
-        viewUxpPen: {
+        editUxpPen: new PanelController(() => <App html={html} onChange={htmlChanged} onSubmit={runPlayground}/>),
+        runPanel: {
             show(event) {
                 event.node.innerHTML = `<div class="panel">${html}</div>`;
             },

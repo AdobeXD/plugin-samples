@@ -75,13 +75,15 @@ class App extends React.Component {
         const { dialog, onSubmit } = this.props;
         const { html, view, simulateDialog } = this.state;
 
+        const simDialog = dialog && simulateDialog;
+
         return (
             <form className={styles.form} method="dialog" onSubmit={dialog ? dialog.close : onSubmit } >
                 <h1 className={styles.h1}>
                     HTML Playground
                     <div className={styles.tabs}>
                         {
-                            view === VIEWS.RESULT && (
+                            view === VIEWS.RESULT && dialog && (
                                 <label className="row" style={{alignItems: "center"}}>
                                     <input type="checkbox"
                                         onChange={this.simulateDialogChanged}
@@ -101,15 +103,18 @@ class App extends React.Component {
                 </h1>
                 <hr />
                 {view === VIEWS.HTML ? (
-                    <textarea
-                        className={`${styles.html} margin`}
-                        onKeyDown={this.preventEnter}
-                        onChange={this.htmlChanged}
-                        defaultValue={html}
-                    ></textarea>
+                    <label className={styles.editor}>
+                        <span>HTML</span>
+                        <textarea
+                            className={`${styles.html} margin`}
+                            onKeyDown={this.preventEnter}
+                            onChange={this.htmlChanged}
+                            defaultValue={html}
+                        ></textarea>
+                    </label>
                 ) : (
-                    <div className={`${styles.scrollWrapper} margin ${simulateDialog ? styles.backdrop : ""}`}>
-                        <div className={simulateDialog ? styles.dialog : ""} ref={el => el && (el.innerHTML = html)} />
+                    <div className={`${styles.scrollWrapper} margin ${simDialog ? styles.backdrop : ""}`}>
+                        <div className={simDialog ? styles.dialog : ""} ref={el => el && (el.innerHTML = html)} />
                     </div>
                 )}
                 {dialog ? (

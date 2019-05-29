@@ -20,7 +20,7 @@ const Card = ({
             style={{ height, width }}
             {...rest}>
             <div className={styles.cardHero} style={{ width }}>
-                <DraggableImage className={styles.cardHeroImg} style={{ height }} src={src} />
+                <img className={styles.cardHeroImg} style={{ height }} src={src} />
                 <IconButton
                     title="More information..."
                     onClick={onInfoClick}

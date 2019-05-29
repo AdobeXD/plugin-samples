@@ -1,26 +1,28 @@
 const React = require("react");
 const ReactDOM = require("react-dom");
-//const { selection } = require("scenegraph");
+const { selection } = require("scenegraph");
+const os = require("os");
 
 class PanelController {
-    constructor(renderFn) {
-        this.renderFn = renderFn;
+    constructor(App) {
+        this.App = App;
         this.instance = null;
         this.rootNode = document.createElement("div");
-
-        this.rootNode.style.height="450px";
-        this.rootNode.className = "panel";
+        this.rootNode.className = `root ${os.platform() === "darwin" ? "mac" : "win"}`;
+        //this.rootNode.style.margin="-8px";
         this.attachment = null;
 
         ["show", "hide", "update"].forEach(fn => this[fn] = this[fn].bind(this));
     }
 
     show(event) {
+        const App = this.App;
+
         this.attachment = event.node;
         this.attachment.appendChild(this.rootNode);
 
         if (!this.instance) {
-            this.instance = ReactDOM.render(this.renderFn(), this.rootNode);
+            this.instance = ReactDOM.render(<App selection={selection} />, this.rootNode);
         }
 
         this.update();
@@ -31,8 +33,8 @@ class PanelController {
     }
 
     update() {
-        if (this.instance.documentStateChanged) {
-            this.instance.documentStateChanged();
+        if (this.instance && this.instance.documentStateChanged) {
+            this.instance.documentStateChanged(selection);
         }
     }
 }
