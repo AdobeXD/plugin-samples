@@ -7,7 +7,6 @@
 * **[Read prototyping interactions](./reference/interactions.md)** - Read-only access to the interactivity settings in the document (e.g. the blue "wires"
   seen in XD's prototyping UI).
 * **New [Polygon](./reference/scenegraph.md#Polygon) node type**
-* **UI: Radio button controls** - `<input type="radio">` is now supported.
 
 ### Breaking Changes
 
@@ -20,12 +19,13 @@
 
   In many cases, this partial application of your plugin's changes will feel natural to users as an expected consequence of the overrides they have authored.
   However, you can also choose to mitigate potential confusion by warning users or disabling some editing features while the user is editing a Component
-  "master" by checking [`isMaster`](./reference/scenegraph.md#SymbolInstance-isMaster) on `selection.editContext` and its parent chain. But there is currently
+  "master" by checking [`isMaster`](./reference/scenegraph.md#SymbolInstance-isMaster) on `selection.editContext` and its parent chain. There is currently
   no way to force all changes made by your plugin command to be applied atomically (i.e. all or nothing).
 
 ### Fixes and improvements
 
-* **Additional Text scenenode styles:** Work with Text nodes and character-style assets using the new strikethrough and text-transform features.
+* **Additional Text scenenode styles:** Work with Text nodes and character-style assets using the new [strikethrough](./reference/scenegraph.md#Text-strikethrough)
+  and [text transform](./reference/scenegraph.md#Text-textTransform) features.
 
 ### Known Issues
 

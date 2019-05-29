@@ -1183,6 +1183,7 @@ If Artboard is scrollable, this is the height of the viewport (e.g. mobile devic
 
 ### artboard.incomingInteractions : <code>!Array&lt;!{ triggerNode: !SceneNode, interactions: !Array&lt;!Interaction&gt; }&gt;</code>
 **Since**: XD 19
+
 Get all interactions whose destination is this artboard (either navigating the entire view, i.e. a `"goToArtboard"` action, or
 showing this artboard as an overlay, i.e. an `"overlay"` action). Each element in the array is an [Interaction object](./interactions.md#Interaction)
 which describes a gesture/event plus the action it produces.
@@ -1202,6 +1203,7 @@ Note: currently, this API excludes any applicable keyboard/gamepad interactions.
 
 ### artboard.isHomeArtboard : <code>boolean</code>
 **Since**: XD 19
+
 True if this is the starting Artboard seen when the interactive prototype is launched.
 
 **Kind**: instance property of [<code>Artboard</code>](#Artboard)
@@ -1308,6 +1310,7 @@ selection.items = [polygon];
 
 ### polygon.cornerCount : <code>number</code> (integer &gt;= 3)
 **Default**: 3
+
 Number of corners (vertices), and also therefore number of sides.
 
 Setting cornerCount on an existing Polygon behaves in one of two different ways:
@@ -1317,8 +1320,8 @@ Setting cornerCount on an existing Polygon behaves in one of two different ways:
 
 This matches how changing the corner count in XD's UI behaves.
 
-To change corner count and be guaranteed the shape will not change size, save its original size, set `cornerCount`, and then
-set the size back to the saved values.
+To change corner count while guaranteeing the shape will not change size, save its original size first, set `cornerCount`, and
+then set the size back to the saved values.
 
 **Kind**: instance property of [<code>Polygon</code>](#Polygon)
 
@@ -1484,9 +1487,9 @@ Text leaf node shape. Text can have a fill and/or stroke, but only a solid-color
 fill will be rejected).
 
 There are two types of Text nodes:
-- Point Text - Expands to fit the full width of the text content. Only uses multiple lines if the text content contains hard line
+- **Point Text** - Expands to fit the full width of the text content. Only uses multiple lines if the text content contains hard line
   breaks ("\n").
-- Area Text - Fixed width and height. Text is automatically wrapped (soft line wrapping) to fit the width. If it does not fit the
+- **Area Text** - Fixed width and height. Text is automatically wrapped (soft line wrapping) to fit the width. If it does not fit the
   height, any remaining text is clipped.
 
 Check whether [<code>areaBox</code>](#Text-areaBox) is null to determine the type of a Text node.
@@ -1500,6 +1503,7 @@ Text bounds and layout work differently depending on the type of text:
 - Area Text - The baseline is at a positive y value in local coordinates, and its local (0, 0) is the top left of the areaBox. Text
   always flows to the right and down from this local origin regardless of justification.
 
+&nbsp;<!-- prevent the bullet list above from running into this one -->
 * [Text](#Text)
     * [.text](#Text-text) : <code>string</code>
     * [.styleRanges](#Text-styleRanges) : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:!Color, charSpacing:number, underline:boolean, strikethrough:boolean, textTransform:string}&gt;</code>
@@ -1667,6 +1671,7 @@ If true, the text is drawn upside down.
 
 ### text.textAlign : <code>string</code>
 **Default**: `ALIGN_LEFT`
+
 Horizontal alignment: Text.ALIGN_LEFT, ALIGN_CENTER, or ALIGN_RIGHT. This setting affects the layout of multiline text, and for point
 text it also affects how the text is positioned relative to its anchor point (x=0 in local coordinates) and what direction the text
 grows when edited by the user.

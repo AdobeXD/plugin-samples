@@ -1,7 +1,7 @@
 <a name="module_interactions"></a>
 
 ## interactions
-The `interactions` module provides global information about the document's interactive prototype mode, including:
+The `interactions` module and related APIs provide _read only_ information about the document's interactive prototype mode, including:
 
 * The blue "wires" seen in XD's prototyping UI, known as "interactions," which specify gestures/events which trigger actions to
   occur in the prototype. Accessible as a single consolidated global listing via this module's [`allInteractions`](#module_interactions-allInteractions) API,
@@ -64,7 +64,7 @@ An interaction consists of a Trigger + Action pair and is attached to a single, 
     },
     action: {
         type: "goToArtboard",
-        destination: <Artboard node>,
+        destination: /* Artboard node */,
         preserveScrollPosition: false,
         transition: {
             type: "dissolve",
@@ -75,7 +75,7 @@ An interaction consists of a Trigger + Action pair and is attached to a single, 
 }
 ```
 
-Note: Interaction objects are _not_ plain JSON, as they may reference scenenodes (as seen above) and other strongly-typed objects.
+Note: Interaction objects are _not_ plain JSON -- they may reference scenenodes (as seen above) and other strongly-typed objects.
 
 <a name="Trigger" id="Trigger"></a>
 
@@ -84,27 +84,27 @@ Event which triggers an interaction.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| type | !string | One of the trigger types listed below. |
+| type | string | One of the trigger types listed below. |
 
-#### "tap"
+##### "tap"
 When the user clicks or taps on a scenenode.
 
-#### "drag"
+##### "drag"
 When the user drags or swipes a scenenode. Can only trigger a `goToArtboard` action with the `autoAnimate` transition style.
 
-#### "time"
+##### "time"
 Once a set amount of time elapses (this trigger type only exists on Artboard nodes). Additional Trigger properties:
 
 | Property | Type | Description |
 | --- | --- | --- |
 | delay | number | Delay time in ms. |
 
-#### "voice"
+##### "voice"
 When the user speaks a specific voice command. Additional Trigger properties:
 
 | Property | Type | Description |
 | --- | --- | --- |
-| speechCommand | !string | Phrase the user speaks to trigger this command. |
+| speechCommand | string | Phrase the user speaks to trigger this command. |
 
 <a name="Action" id="Action"></a>
 
@@ -113,9 +113,9 @@ Action performed when the trigger occurs. Current action types are:
 
 | Property | Type | Description |
 | --- | --- | --- |
-| type | !string | One of the action types listed below. |
+| type | string | One of the action types listed below. |
 
-#### "goToArtboard"
+##### "goToArtboard"
 Navigate the entire screen to view a different artboard. Additional Action properties:
 
 | Property | Type | Description |
@@ -124,7 +124,7 @@ Navigate the entire screen to view a different artboard. Additional Action prope
 | transition | \![Transition](#Transition) | Animation style with which the view transitions from the old Artboard to the new one. |
 | preserveScrollPosition | boolean | If both Artboards are [taller than the viewport](./scenegraph.md#Artboard-viewportHeight), attempts to keep the user's current scroll position the same as in the outgoing artboard. |
 
-#### "overlay"
+##### "overlay"
 Displays a second artboard overlaid on top of the current one. Additional Action properties:
 
 | Property | Type | Description |
@@ -133,17 +133,17 @@ Displays a second artboard overlaid on top of the current one. Additional Action
 | transition | \![Transition](#Transition) | Animation style in which the second Artboard transitions into view. Only certain transition types are allowed for overlays. |
 | overlayTopLeft | `!{x:number, y:number}` | Position of the overlay Artboard, in the current/base Artboard's coordinate space. |
 
-#### "goBack"
-Reverse the last `"goToArtboard"` or `"overlay"` action, replaying whatever transition it used but in reverse.
+##### "goBack"
+Reverse the last `"goToArtboard"` or `"overlay"` action, replaying in reverse whatever transition it used.
 
-#### "speak"
+##### "speak"
 Speak with audio output to the user. Additional Action properties:
 
 | Property | Type | Description |
 | --- | --- | --- |
-| speechOutput | !string | Phrase to speak to the user. |
-| locale | !string | Locale determines the pronounciation and accent of the digital voice. Includes both language *and* region (e.g. "en-us"). |
-| voice | !string | "Persona" of the digital voice to use. Available personas vary by locale. |
+| speechOutput | string | Phrase to speak to the user. |
+| locale | string | Locale determines the pronounciation and accent of the digital voice. Includes both language *and* region (e.g. "en-us"). |
+| voice | string | "Persona" of the digital voice to use. Available personas vary by locale. |
 
 <a name="Transition" id="Transition"></a>
 
@@ -152,10 +152,10 @@ Animation style with which `"goToArtboard"` and `"overlay"` actions transition f
 
 | Property | Type | Description |
 | --- | --- | --- |
-| type | !string | One of: `"autoAnimate"`, `"dissolve"`, `"push"`, `"slide"`, `"none"` |
-| fromSide | !string | _(If type = "push" or "slide")._ One of: `"L"`, `"R"`, `"T"`, `"B"` |
+| type | string | One of: `"autoAnimate"`, `"dissolve"`, `"push"`, `"slide"`, `"none"` |
+| fromSide | string | _(If type = "push" or "slide")._ One of: `"L"`, `"R"`, `"T"`, `"B"` |
 | duration | number | Length of animation in seconds. |
-| easing | !string | One of: `"linear"`, `"ease-in"`, `"ease-out"`, `"ease-in-out"`, `"wind-up"`, `"bounce"`, `"snap"` |
+| easing | string | One of: `"linear"`, `"ease-in"`, `"ease-out"`, `"ease-in-out"`, `"wind-up"`, `"bounce"`, `"snap"` |
 
 
 * * *

@@ -234,7 +234,7 @@ var assets = require("assets"),
         fill: new Color("black"),
         charSpacing: 0,
         lineSpacing: 0,
-        underline: false
+        underline: false,
         strikethrough: false,
         textTransform: "uppercase"
     },
@@ -246,7 +246,7 @@ var assets = require("assets"),
         charSpacing: 0,
         lineSpacing: 0,
         underline: false
-        // ...leaves optional strikethrough & textTransform properties at default values
+        // (leaves optional strikethrough & textTransform properties at default values)
     },
     numAdded = assets.characterStyles.add([
         { style: arialItalic },   // No name provided: uses default name
