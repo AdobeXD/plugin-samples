@@ -1,6 +1,6 @@
 # Technical Reference
 
-Use this section to access the API references, know what are the currently know issues, and learn what is new and what has changed. 
+Use this section to access the API references, know what are the currently known issues, and learn what is new and what has changed. 
 
 * [API references](/reference/how-to-read.html)
 * [Known issues](/known-issues.md)
