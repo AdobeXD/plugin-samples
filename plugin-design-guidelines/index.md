@@ -38,4 +38,4 @@ UI Resources will have information on UI components, examples and a sticker shee
 
 ![Ui Resources](ux_images/Style_examples.png)
 
-**[View Sticker Sheet](./ui_resources/Sticker_sheet.md)**
+> **[View Sticker Sheet](./ui_resources/Sticker_sheet.md)**
