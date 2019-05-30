@@ -59,7 +59,7 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 
 ### **Use Case**
 
-If your plugin has **one action or workflow shortcut** then the action can be the top menu item. 
+If your plugin has **one action or workflow shortcut** then the action will be the top menu item. 
 
 ### **UI Pattern**
 
@@ -80,18 +80,24 @@ If your plugin has **one action or workflow shortcut** then the action can be th
 
 ### **Use Cases**
 
-if your plugin needs to handle **multiple actions** or **workflow shortcuts** then consider having them in the submenu.
+if your plugin needs to handle **multiple actions** or **workflow shortcuts** then they will render as a submenu.
 
 ### **UI Pattern**
 
 ![Submenu Example](../ux_images/Sub_Menu_items.png)
 
 **Plugin Label** 
-> A. Long label names will truncate
-> B. Top menu label is the plugin name
-> C. Submenu labels - action labels should have a descriptive name (i.e: Copy CSS)
-> D. When a plugin needs further user action in order to continue, then at the end of the submenu label should use “…”
-> E. Limit the use of emoji’s as part of the label
+> A. If the plugin has a single submenu item then it will be shown as a Top Menu item
+
+> B. Long label names will truncate
+
+> C. Top menu label is the plugin name
+
+> D. Submenu labels - action labels should have a descriptive name (i.e: Copy CSS)
+
+> E. When a plugin needs further user action in order to continue, then at the end of the submenu label should use “…”
+
+> F. Limit the use of emoji’s as part of the label
 
 ![Submenu don't do example](../ux_images/Sub_Menu_items_Dont.png)
 
