@@ -35,7 +35,7 @@ Security issues shouldn't be reported on this issue tracker. Instead, [file an i
 
 ## Viewing Docs Locally
 
-To view the fully formatted docs as they will appear online, follow these steps:
+To preview the fully formatted docs as they will appear online, follow these steps:
 
 ```bash
 # Setup
@@ -50,3 +50,5 @@ cd _book
 python -m SimpleHTTPServer 8000
 # ...then open http://localhost:8000
 ```
+
+Testing this way is important since formatting that looks fine in your Markdown viewer of choice may be interpreted differently by Gitbook's HTML generator.

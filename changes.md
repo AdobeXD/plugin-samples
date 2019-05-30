@@ -4,13 +4,13 @@
 
 ### New API Features
 
-* **[Read prototyping interactions](./reference/interactions.md)** - Read-only access to the interactivity settings in the document (e.g. the blue "wires"
+* **[Read prototyping interactions](./reference/interactions.md)** -- Read-only access to the interactivity settings in the document (e.g. the blue "wires"
   seen in XD's prototyping UI).
 * **New [Polygon](./reference/scenegraph.md#Polygon) node type**
 
 ### Breaking Changes
 
-* **Components & Design Systems** - Symbols are now called Components in XD's UI, and they support resizing and complex overrides. One important consequence
+* **Components & Design Systems** -- Symbols are now called Components in XD's UI, and they support resizing and complex overrides. One important consequence
   of this is that **_sometimes only a subset of your plugin's changes will be applied to the scenegraph_**. When the user is editing the "master" copy of the
   Component, each individual scenegraph change (e.g. changing a single property on a single node) is automatically synced to other instances of the Component
   _only if_ a given instance doesn't already have an override of the same property (or a related property). As a result, your plugin's intended changes may
@@ -24,8 +24,13 @@
 
 ### Fixes and improvements
 
-* **Additional Text scenenode styles:** Work with Text nodes and character-style assets using the new [strikethrough](./reference/scenegraph.md#Text-strikethrough)
+* **Additional Text scenenode styles** -- Work with Text nodes and style assets using the new [strikethrough](./reference/scenegraph.md#Text-strikethrough)
   and [text transform](./reference/scenegraph.md#Text-textTransform) features.
+
+### User-facing plugin features
+
+* **Plugin listing: View popular & Editor's Choice plugins** -- Use the dropdown at the top of the plugin listing to view the top 10 most popular plugins or
+  the latest featured plugins selected by our review team.
 
 ### Known Issues
 

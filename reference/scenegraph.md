@@ -1321,7 +1321,7 @@ Setting cornerCount on an existing Polygon behaves in one of two different ways:
 This matches how changing the corner count in XD's UI behaves.
 
 To change corner count while guaranteeing the shape will not change size, save its original size first, set `cornerCount`, and
-then set the size back to the saved values.
+then set size back to the saved values.
 
 **Kind**: instance property of [<code>Polygon</code>](#Polygon)
 
