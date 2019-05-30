@@ -40,5 +40,3 @@ Provide users with feedback as they interact with your plugin, this can be alert
 > **Output** - **what** the user sees after an action is executed
 
 
-![Plugin Example](../ux_images/Plugin_UX_Guidelines_Modal_v1.pdf)
-
