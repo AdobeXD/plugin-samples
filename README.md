@@ -1,4 +1,4 @@
-# Creating an Adobe Xd Plugin
+# Creating an Adobe XD Plugin
 
 XD plugins extend the capabilities of [Adobe XD](https://www.adobe.com/products/xd.html) by adding new features to the app, automating workflows, connecting the app to external services, and more.
 
@@ -12,15 +12,15 @@ Now, let’s supercharge the future of design together with XD plugins!
 
 
 ## What can you build?
-Plugins can be a **tools** that help users create or automate their workflow, they can streamline collaboration by allowing users to **import** and**export**, and they can also provide users with external **information**.
+Plugins can be **tools** that help users create or automate their workflow, they can streamline collaboration by allowing users to **import** and **export**, and they can also provide users with external **information**.
 
 The XD plugin APIs enable you to build plugins for a number of use cases, to help you get started here are three points to think about. 
 
 1. **The plugin workflow** - Identify the user stories for your plugin
 2. **Key plugin action** - What are the key interactions for you plugin that would be valuable to your users
-3. **Entry point and UI for your plugin in Xd** - consider the users intention in Xd when interacting with your plugin
+3. **Entry point and UI for your plugin in XD** - consider the users intention in XD when interacting with your plugin
 
-### Users workflow in Xd
+### Users workflow in XD
 
 ![Example of a users workflow with plugins](/images/users_workflow_plugins.png)
 
