@@ -69,7 +69,7 @@ let group = selection.items[0];  // the new Group node is what's selected afterw
 <a name="module_commands-ungroup"></a>
 
 ### commands.ungroup()
-Ungroups any of the selected objects that are ungroupable containers (Groups, Symbols, Repeat Grids, etc.). Equivalent to
+Ungroups any of the selected objects that are ungroupable containers (Group, SymbolInstance, RepeatGrid, etc.). Equivalent to
 _Object > Ungroup_.
 
 **Kind**: static method of [<code>commands</code>](#module_commands)  

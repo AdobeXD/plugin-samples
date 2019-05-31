@@ -32,3 +32,23 @@ you are good to go!
 ## Security Issues
 
 Security issues shouldn't be reported on this issue tracker. Instead, [file an issue to our security experts](https://helpx.adobe.com/security/alertus.html).
+
+## Viewing Docs Locally
+
+To preview the fully formatted docs as they will appear online, follow these steps:
+
+```bash
+# Setup
+npm install
+npm run book:install
+
+# Rebuild HTML content (takes 2-3 minutes)
+npm run book:build
+
+# View HTML from a local webserver (using a file:// URL won't work)
+cd _book
+python -m SimpleHTTPServer 8000
+# ...then open http://localhost:8000
+```
+
+Testing this way is important since formatting that looks fine in your Markdown viewer of choice may be interpreted differently by Gitbook's HTML generator.
