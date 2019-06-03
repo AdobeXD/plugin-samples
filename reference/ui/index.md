@@ -22,3 +22,7 @@ Within an insertion point, you can create rich, custom user interfaces. Read the
 * [Styles](./styles/index.md)
 * [Layout](./layout/index.md)
 * [Elements](./elements/index.md)
+
+## UI Sticker Sheet
+
+[View Sticker Sheet](/plugin-design-guidelines/ui_resources/Sticker_sheet.md)
