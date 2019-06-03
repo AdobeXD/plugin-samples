@@ -1,6 +1,6 @@
 # UX Guidelines
 
-Plugin UX guidelines will include UX requirements and/or UX best practices these will ensure your plugin follows Xd user experience patterns. 
+Plugin UX guidelines will include UX requirements and/or UX best practices these will ensure your plugin follows XD user experience patterns. 
 
 ### 1. **[Usability & Behavior](Usability_Behavior.md)**
 

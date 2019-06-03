@@ -39,7 +39,7 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 
 
 ## **Menu bar**
-![Menu bar example in Xd](../ux_images/Menu_bar_Xd.png)
+![Menu bar example in XD](../ux_images/Menu_bar_Xd.png)
 
 ### UX Pattern
 ![Menu Bar Best Practices](../ux_images/Menu_bar_reqs.png)
