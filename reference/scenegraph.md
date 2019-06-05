@@ -54,6 +54,7 @@ when traversing the scenegraph.
         * [Artboard](#Artboard)
         * [Rectangle](#Rectangle)
         * [Ellipse](#Ellipse)
+        * [Polygon](#Polygon)
         * [Line](#Line)
         * [Path](#Path)
         * [BooleanGroup](#BooleanGroup)
@@ -147,6 +148,8 @@ Base class of all scenegraph nodes. Nodes will always be an instance of some _su
     * *[.hasDefaultName](#SceneNode-hasDefaultName) : <code>boolean</code>*
     * *[.locked](#SceneNode-locked) : <code>boolean</code>*
     * *[.markedForExport](#SceneNode-markedForExport) : <code>boolean</code>*
+    * *[.fixedWhenScrolling](#SceneNode-fixedWhenScrolling) : <code>?boolean</code>*
+    * *[.triggeredInteractions](#SceneNode-triggeredInteractions) : <code>!Arrray&lt;!Interaction&gt;</code>*
     * *[.hasLinkedContent](#SceneNode-hasLinkedContent) : <code>boolean</code>*
     * *[.pluginData](#SceneNode-pluginData) : <code>&ast;</code>*
     * *[.removeFromParent()](#SceneNode-removeFromParent)*
@@ -456,11 +459,53 @@ True if the node should be included in the output of _File > Export > Batch_ and
 
 * * *
 
+<a name="SceneNode-fixedWhenScrolling"></a>
+
+### *sceneNode.fixedWhenScrolling : <code>?boolean</code>*
+**Since**: XD 19
+
+True if the node stays in a fixed position while the Artboard's content is scrolling (when viewed in an interactive prototype).
+_Only applicable for nodes whose immediate parent is an Artboard._
+
+For other nodes, this property returns undefined and cannot be set. To determine whether those nodes scroll or remain
+fixed, walk up the parent chain and check this property on the topmost ancestor in the Artboard.
+
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**See**: [Artboard.viewportHeight](#Artboard-viewportHeight)
+
+* * *
+
+<a name="SceneNode-triggeredInteractions"></a>
+
+### *sceneNode.triggeredInteractions : <code>!Arrray&lt;\![Interaction](./interactions.md#Interaction)&gt;</code>*
+**Since**: XD 19
+
+Get all interactions that are triggered by this node in the document's interactive prototype. Each element in the array
+is an [Interaction object](./interactions.md#Interaction) which describes a gesture/event plus the action it produces.
+
+Note: If this node (or one of its ancestors) has `visible` = false, tap and drag interactions on it will not be triggered.
+
+Currently, this API excludes any keyboard/gamepad interactions on this node.
+
+**Example**
+```js
+// Print all the interactions triggered by a node
+node.triggeredInteractions.forEach(interaction => {
+    console.log("Trigger: " + interaction.trigger.type + " -> Action: " + interaction.action.type);
+});
+```
+
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true
+**See**: [interactions.allInteractions](./interactions.md#module_interactions-allInteractions)
+
+* * *
+
 <a name="SceneNode-hasLinkedContent"></a>
 
 ### *sceneNode.hasLinkedContent : <code>boolean</code>*
 True if the node's appearance comes from a link to an external resource, such as Creative Cloud Libraries or a
-separate XD document (in the case of a Linked Symbol instance).
+separate XD document (in the case of a Linked Component instance).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 **Read only**: true
@@ -476,7 +521,7 @@ Metadata specific to your plugin. Must be a value which can be converted to a JS
 stored metadata on this node.
 
 Metadata is persisted with the document when it is saved. Duplicating a node (including across documents, via copy-paste)
-will duplicate the metadata with it. If the node lies within a Symbol or Repeat Grid, all instances of the node will have
+will duplicate the metadata with it. If the node lies within a Component or Repeat Grid, all instances of the node will have
 identical metadata (changes in one copy will automatically be synced to the other copy). Metadata stored by this plugin
 cannot be accessed by other plugins - each plugin has its own isolated metadata storage.
 
@@ -606,6 +651,7 @@ may be changed/fixed later.
 let originalBounds = node.localBounds;
 node.resize(originalBounds.width * 2, originalBounds.height);
 ```
+
 
 * * *
 
@@ -863,7 +909,7 @@ Thickness in pixels of the stroke.
 <a name="GraphicNode-strokePosition"></a>
 
 ### *graphicNode.strokePosition : <code>string</code>*
-**Default**: `CENTER_STROKE` for most shapes, `INNER_STROKE` for Rectangle & Ellipse
+**Default**: `CENTER_STROKE` for most shapes, `INNER_STROKE` for Rectangle, Ellipse & Polygon
 
 Position of the stroke relative to the shape's path outline: GraphicNode.INNER_STROKE, OUTER_STROKE, or CENTER_STROKE. Ignored by Text and Line, which always render using CENTER_STROKE.
 
@@ -1004,6 +1050,7 @@ selection.items = [rect];
     * [.width](#Rectangle-width) : <code>number</code>
     * [.height](#Rectangle-height) : <code>number</code>
     * [.cornerRadii](#Rectangle-cornerRadii) : <code>!{topLeft:number, topRight:number, bottomRight:number, bottomLeft:number}</code>
+    * [.hasRoundedCorners](#Rectangle-hasRoundedCorners) : <code>boolean</code>
     * [.setAllCornerRadii(radius)](#Rectangle-setAllCornerRadii)
     * [.effectiveCornerRadii](#Rectangle-effectiveCornerRadii) : <code>!{topLeft:number, topRight:number, bottomRight:number, bottomLeft:number}</code>
 
@@ -1062,7 +1109,6 @@ To set the corners to different radius values, use [<code>cornerRadii</code>](#R
 | --- | --- |
 | radius | <code>number</code> |
 
-
 * * *
 
 <a name="Rectangle-effectiveCornerRadii"></a>
@@ -1072,6 +1118,7 @@ The actual corner radius that is rendered may be capped by the size of the recta
 are currently in effect, which may be smaller than the `cornerRadii` values as a result.
 
 **Kind**: instance property of [<code>Rectangle</code>](#Rectangle)
+
 
 * * *
 
@@ -1095,6 +1142,8 @@ Artboard, its parent will automatically be changed accordingly after the edit op
     * [.width](#Artboard-width) : <code>number</code>
     * [.height](#Artboard-height) : <code>number</code>
     * [.viewportHeight](#Artboard-viewportHeight) : <code>?number</code>
+    * [.incomingInteractions](#Artboard-incomingInteractions) : <code>!Array&lt;!{ triggerNode: !SceneNode, interactions: !Array&lt;!Interaction&gt; }&gt;</code>
+    * [.isHomeArtboard](#Artboard-isHomeArtboard) : <code>boolean</code>
     * [.addChild(node, index)](#Group-addChild)
     * [.addChildAfter(node, relativeTo)](#Group-addChildAfter)
     * [.addChildBefore(node, relativeTo)](#Group-addChildBefore)
@@ -1127,6 +1176,39 @@ If Artboard is scrollable, this is the height of the viewport (e.g. mobile devic
 
 **Kind**: instance property of [<code>Artboard</code>](#Artboard)
 **See**: [height](#Artboard-height)
+
+* * *
+
+<a name="Artboard-incomingInteractions"></a>
+
+### artboard.incomingInteractions : <code>!Array&lt;!{ triggerNode: !SceneNode, interactions: !Array&lt;!Interaction&gt; }&gt;</code>
+**Since**: XD 19
+
+Get all interactions whose destination is this artboard (either navigating the entire view, i.e. a `"goToArtboard"` action, or
+showing this artboard as an overlay, i.e. an `"overlay"` action). Each element in the array is an [Interaction object](./interactions.md#Interaction)
+which describes a gesture/event plus the action it produces.
+
+May include interactions that are impossible to trigger because the trigger node (or one of its ancestors) has `visible` = false.
+
+Note: currently, this API excludes any applicable keyboard/gamepad interactions.
+
+**Kind**: instance property of [<code>Artboard</code>](#Artboard)
+**Read only**: true
+**See**: [SceneNode.triggeredInteractions](#SceneNode-triggeredInteractions)
+**See**: [interactions.allInteractions](./interactions.md#module_interactions-allInteractions)
+
+* * *
+
+<a name="Artboard-isHomeArtboard"></a>
+
+### artboard.isHomeArtboard : <code>boolean</code>
+**Since**: XD 19
+
+True if this is the starting Artboard seen when the interactive prototype is launched.
+
+**Kind**: instance property of [<code>Artboard</code>](#Artboard)
+**Read only**: true
+**See**: [interactions.homeArtboard](./interactions.md#module_interactions-homeArtboard)
 
 * * *
 
@@ -1168,7 +1250,116 @@ True if the Ellipse is a circle (i.e., has a 1:1 aspect ratio).
 **Kind**: instance property of [<code>Ellipse</code>](#Ellipse)
 **Read only**: true
 
+
 * * *
+
+<a name="Polygon"></a>
+
+## Polygon
+**Since**: XD 19
+**Kind**: class
+**Extends**: [<code>GraphicNode</code>](#GraphicNode)
+
+Leaf node shape that is a polygon with 3 or more sides. May also have rounded corners. The sides are not necessarily all equal in length:
+this is true only when the Polygon's width and height matches the aspect ratio of a regular (equilateral) polygon with the given number of
+sides.
+
+When unrotated, the Polygon always has its bottommost side as a perfectly horizontal line - with the exception of the 4-sided Polygon, which
+is a diamond shape instead.
+
+Like all shape nodes, has no size, fill, or stroke by default unless you set one.
+
+**Example**
+```js
+// Add a red triangle to the document and select it
+var polygon = new Polygon();
+polygon.cornerCount = 3;
+polygon.width = 50;
+polygon.height = 100;
+polygon.fill = new Color("red");
+selection.insertionParent.addChild(polygon);
+selection.items = [polygon];
+```
+
+* [Polygon](#Polygon)
+    * [.width](#Polygon-width) : <code>number</code>
+    * [.height](#Polygon-height) : <code>number</code>
+    * [.cornerCount](#Polygon-cornerCount) : <code>number</code>
+    * [.cornerRadii](#Polygon-cornerRadii) : <code>!Array&lt;number&gt;</code>
+    * [.hasRoundedCorners](#Polygon-hasRoundedCorners) : <code>boolean</code>
+    * [.setAllCornerRadii(radius)](#Polygon-setAllCornerRadii)
+
+
+* * *
+
+<a name="Polygon-width"></a>
+
+### polygon.width : <code>number</code> &gt; 0
+**Kind**: instance property of [<code>Polygon</code>](#Polygon)
+
+* * *
+
+<a name="Polygon-height"></a>
+
+### polygon.height : <code>number</code> &gt; 0
+**Kind**: instance property of [<code>Polygon</code>](#Polygon)
+
+* * *
+
+<a name="Polygon-cornerCount"></a>
+
+### polygon.cornerCount : <code>number</code> (integer &gt;= 3)
+**Default**: 3
+
+Number of corners (vertices), and also therefore number of sides.
+
+Setting cornerCount on an existing Polygon behaves in one of two different ways:
+* If the shape's aspect ratio gives it equilateral sides, the sides remain equilateral while the size and aspect ratio of the
+  shape is changed to accomodate.
+* Otherwise, the size and aspect ratio of the shape remains unchanged.
+
+This matches how changing the corner count in XD's UI behaves.
+
+To change corner count while guaranteeing the shape will not change size, save its original size first, set `cornerCount`, and
+then set size back to the saved values.
+
+**Kind**: instance property of [<code>Polygon</code>](#Polygon)
+
+* * *
+
+<a name="Polygon-cornerRadii"></a>
+
+### polygon.cornerRadii : <code>!Array&lt;number&gt;</code>
+List of corner radius for each corner of the polygon. To set corner radius, use [<code>setAllCornerRadii()</code>](#Polygon-setAllCornerRadii).
+
+**Kind**: instance property of [<code>Polygon</code>](#Polygon)
+**Read only**: true
+
+* * *
+
+<a name="Polygon-hasRoundedCorners"></a>
+
+### polygon.hasRoundedCorners : <code>boolean</code>
+True if any of the Polygon's corners is rounded (corner radius > 0).
+
+**Kind**: instance property of [<code>Polygon</code>](#Polygon)
+**Read only**: true
+
+* * *
+
+<a name="Polygon-setAllCornerRadii"></a>
+
+### polygon.setAllCornerRadii(radius)
+Set the corner radius of all corners of the Polygon to the same value.
+
+**Kind**: instance method of [<code>Polygon</code>](#Polygon)
+
+| Param | Type |
+| --- | --- |
+| radius | <code>number</code> |
+
+* * *
+
 
 <a name="Line"></a>
 
@@ -1250,6 +1441,7 @@ automatically normalized, so the getter may return a slightly different string t
 
 **Kind**: instance property of [<code>Path</code>](#Path)
 
+
 * * *
 
 <a name="BooleanGroup"></a>
@@ -1295,9 +1487,9 @@ Text leaf node shape. Text can have a fill and/or stroke, but only a solid-color
 fill will be rejected).
 
 There are two types of Text nodes:
-- Point Text - Expands to fit the full width of the text content. Only uses multiple lines if the text content contains hard line
+- **Point Text** - Expands to fit the full width of the text content. Only uses multiple lines if the text content contains hard line
   breaks ("\n").
-- Area Text - Fixed width and height. Text is automatically wrapped (soft line wrapping) to fit the width. If it does not fit the
+- **Area Text** - Fixed width and height. Text is automatically wrapped (soft line wrapping) to fit the width. If it does not fit the
   height, any remaining text is clipped.
 
 Check whether [<code>areaBox</code>](#Text-areaBox) is null to determine the type of a Text node.
@@ -1311,15 +1503,18 @@ Text bounds and layout work differently depending on the type of text:
 - Area Text - The baseline is at a positive y value in local coordinates, and its local (0, 0) is the top left of the areaBox. Text
   always flows to the right and down from this local origin regardless of justification.
 
+&nbsp;<!-- prevent the bullet list above from running into this one -->
 * [Text](#Text)
     * [.text](#Text-text) : <code>string</code>
-    * [.styleRanges](#Text-styleRanges) : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:!Color, charSpacing:number, underline:boolean}&gt;</code>
+    * [.styleRanges](#Text-styleRanges) : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:!Color, charSpacing:number, underline:boolean, strikethrough:boolean, textTransform:string}&gt;</code>
     * [.fontFamily](#Text-fontFamily) : <code>string</code>
     * [.fontStyle](#Text-fontStyle) : <code>string</code>
     * [.fontSize](#Text-fontSize) : <code>number</code>
     * [.fill](#Text-fill) : <code>Color</code>
     * [.charSpacing](#Text-charSpacing) : <code>number</code>
     * [.underline](#Text-underline) : <code>boolean</code>
+    * [.strikethrough](#Text-strikethrough) : <code>boolean</code>
+    * [.textTransform](#Text-textTransform) : <code>string</code>
     * [.flipY](#Text-flipY) : <code>boolean</code>
     * [.textAlign](#Text-textAlign) : <code>string</code>
     * [.lineSpacing](#Text-lineSpacing) : <code>number</code>
@@ -1346,7 +1541,7 @@ the new string's indices unless you explicitly change styleRanges as well.
 
 <a name="Text-styleRanges"></a>
 
-### text.styleRanges : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:\![Color](Color.md), charSpacing:number, underline:boolean}&gt;</code>
+### text.styleRanges : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:\![Color](Color.md), charSpacing:number, underline:boolean, strikethrough:boolean, textTransform:string}&gt;</code>
 Array of text ranges and their character style settings. Each range covers a set number of characters in the text content. Ranges
 are contiguous, with each one starting immediately after the previous one. Any characters past the end of the last range use the
 same style as the last range.
@@ -1438,6 +1633,31 @@ range covers all the text).
 
 * * *
 
+<a name="Text-strikethrough"></a>
+
+### text.strikethrough : <code>boolean</code>
+**Default**: `false`
+**Since**: XD 19
+
+Set strikethrough across all style ranges, or get the strikethrough of the last style range (strikethrough of all the text if one
+range covers all the text).
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
+<a name="Text-textTransform"></a>
+
+### text.textTransform : <code>string</code>
+**Default**: `"none"`
+**Since**: XD 19
+
+Set textTransform ("none", "uppercase", "lowercase", or "titlecase") across all style ranges, or get the textTransform of the last style range.
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
 <a name="Text-flipY"></a>
 
 ### text.flipY : <code>boolean</code>
@@ -1451,6 +1671,7 @@ If true, the text is drawn upside down.
 
 ### text.textAlign : <code>string</code>
 **Default**: `ALIGN_LEFT`
+
 Horizontal alignment: Text.ALIGN_LEFT, ALIGN_CENTER, or ALIGN_RIGHT. This setting affects the layout of multiline text, and for point
 text it also affects how the text is positioned relative to its anchor point (x=0 in local coordinates) and what direction the text
 grows when edited by the user.
@@ -1529,20 +1750,37 @@ Always false for point text. For area text, true if the text does not fit in the
 
 * * *
 
+
 <a name="SymbolInstance"></a>
 
 ## SymbolInstance
 **Kind**: class
 **Extends**: [<code>SceneNode</code>](#SceneNode)
 
-Container node representing one instance of a Symbol. Changes made within a symbol instance are automatically synced to all other
-other instances of the symbol - with certain exceptions, called "overrides."
+Container node representing one instance of a Component (previously known as "Symbols" in XD's UI). Changes made to the contents of a
+SymbolInstance are treated in one of two ways:
 
-It is not currently possible for plugins to *create* a new Symbol definition or a new SymbolInstance node, aside from using
+* If [`isMaster`](#SymbolInstance-isMaster) is **false**: The changes affect _only_ this one instance. This creates an "override":
+  changes made to the corresponding part of the master later will no longer get synced to this particular instance.
+* If [`isMaster`](#SymbolInstance-isMaster) is **true**: The changes are automatically synced to all other other instances of the
+  component - _except_ for instances where the affected nodes have instance-specific overrides. As a result, your plugin's batch
+  of edits **may not be applied atomically** in some instances.
+
+To elaborate: if your plugin command makes edits to more than one property or more than one node as part of a single gesture, and the
+user invokes your plugin while editing a component master, other instances of the component may receive only a _partial application_
+of your plugin's changes. In many cases this will feel like a natural consequence of the overrides the user has created, but if this
+partial application of your plugin's intended changes feels too confusing in your use case, you may opt to warn users or disable some
+of your plugin's functionality when `selection.editContext` is (or is inside of) a component with `isMaster` true.
+
+Note that overrides vary somewhat in granularity. In some but not all cases, overriding one property may also prevent other properties
+on the same node from receiving future updates from the master instance.
+
+It is not currently possible for plugins to *create* a new component definition or a new SymbolInstance node, aside from using
 [commands.duplicate](commands.md#module_commands-duplicate) to clone existing SymbolInstances.
 
 * [SymbolInstance](#SymbolInstance)
     * [.symbolId](#SymbolInstance-symbolId) : <code>string</code>
+    * [.isMaster](#SymbolInstance-isMaster) : <code>boolean</code>
     * [.addChild(node, index)](#Group-addChild)
     * [.addChildAfter(node, relativeTo)](#Group-addChildAfter)
     * [.addChildBefore(node, relativeTo)](#Group-addChildBefore)
@@ -1554,12 +1792,24 @@ It is not currently possible for plugins to *create* a new Symbol definition or 
 <a name="SymbolInstance-symbolId"></a>
 
 ### symbolInstance.symbolId : <code>string</code>
-An identifier unique within this document that is shared by all instances of the same Symbol.
+An identifier unique within this document that is shared by all instances of the same component.
 
 **Kind**: instance property of [<code>SymbolInstance</code>](#SymbolInstance)
 **Read only**: true
 
 * * *
+
+<a name="SymbolInstance-isMaster"></a>
+
+### symbolInstance.isMaster : <code>string</code>
+True if this is the "master" instance of the component, which forms the template for all new instances. When the user edits the master,
+those changes are synced to all other instances of the component (unless blocked by "overrides" -- [see discussion above](#SymbolInstance)).
+
+**Kind**: instance property of [<code>SymbolInstance</code>](#SymbolInstance)
+**Read only**: true
+
+* * *
+
 
 <a name="RepeatGrid"></a>
 

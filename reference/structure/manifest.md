@@ -26,15 +26,16 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
     "author": "Your Name",
     "helpUrl": "https://mywebsite.com/help",
     "icons": [
-        { "width": 48, "height": 48, "path": "images/icon@1x.png" },
-        { "width": 96, "height": 96, "path": "images/icon@2x.png" },
-        { "width": 144, "height": 144, "path": "images/icon@3x.png" },
-        { "width": 192, "height": 192, "path": "images/icon@4x.png" }
+        { "width": 24, "height": 24, "path": "images/icon@1x.png" },
+        { "width": 48, "height": 48, "path": "images/icon@2x.png" },
+        { "width": 96, "height": 96, "path": "images/icon@3x.png" },
+        { "width": 144, "height": 144, "path": "images/icon@4x.png" },
+        { "width": 192, "height": 192, "path": "images/icon@5x.png" }
     ],
     "host": {
         "app": "XD",
         "minVersion": "13.0",
-        "maxVersion": "14.0"
+        "maxVersion": "19.0"
     },
     "uiEntryPoints": [
         {
@@ -81,7 +82,7 @@ Key path | Type | Description | Required
 `website` | `string` | Web address for information about your plugin. <br> This field will be displayed in the Plugin Manager to users when "See details" is clicked. <br>The URL should follow the standard URL format and not exceed 1000 characters.| Optional
 `author` | `string` | Plugin author's name. <br> This field will be displayed in the Plugin Manager to users. <br> Name should be 3 - 40 characters.| Publish
 `helpUrl` | `string` | Web URL for your plugin's support/help page. <br> This field will become visible in the Plugin Manager to users when "See details" is clicked. <br> The support page you link to must include information on how to get support. <br> The URL should follow the standard URL format and not exceed 1000 characters. <br> **Note:** For GitHub repositories, you should link to a `README.md` file or other Markdown file that describes how to file an issue, or link directly to an issue submission form. _Do not link directly to your repo's list of issues._ | Publish
-`icons` | `array<object>` | Icons displayed in the Plugin Manager listing. <br> PNG, JPG/JPEG formats are supported and the max file size for each icon is 1MB. <br> All four sizes are required - `[48, 96, 144, 192]`. | Publish
+`icons` | `array<object>` | Icons displayed in the Plugin Manager listing. <br> PNG, JPG/JPEG formats are supported and the max file size for each icon is 1MB. <br> All five sizes are required - `[24, 48, 96, 144, 192]`. | Publish
 `host.app` | `string` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `"XD"`). | Develop / Publish
 `host.minVersion` | `string` | Minimum required version of the host app (in `x.y` format) that can run this plugin. <br> **Note:** Must be two segments. Typically, you'll leave the minor segment set to `0`, e.g. `16.0`. | Develop / Publish
 `host.maxVersion` | `string` | Maximum version of host app that can run this plugin. Same formatting as `host.minVersion`. | Optional

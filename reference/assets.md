@@ -77,6 +77,8 @@ Character style properties. See documentation for the [Text](scenegraph.md#Text)
 | charSpacing | !number | the character spacing |
 | lineSpacing | !number | the line spacing |
 | underline | !boolean | whether underline is turned on |
+| strikethrough | ?boolean | (**Since**: XD 19) Default false; whether strikethrough is turned on |
+| textTransform | ?string | (**Since**: XD 19) Default "none"; one of "none", "uppercase", "lowercase", or "titlecase" |
 
 
 * * *
@@ -232,7 +234,9 @@ var assets = require("assets"),
         fill: new Color("black"),
         charSpacing: 0,
         lineSpacing: 0,
-        underline: false
+        underline: false,
+        strikethrough: false,
+        textTransform: "uppercase"
     },
     linkTextStyle = {
         fontFamily: "Arial",
@@ -242,9 +246,10 @@ var assets = require("assets"),
         charSpacing: 0,
         lineSpacing: 0,
         underline: false
+        // (leaves optional strikethrough & textTransform properties at default values)
     },
     numAdded = assets.characterStyles.add([
-        { style: arialItalic },   // (no name)
+        { style: arialItalic },   // No name provided: uses default name
         { style: linkTextStyle, name: "Link Text" }
     ]);
 ```
@@ -259,7 +264,9 @@ Delete one or more character style assets from the collection.
 
 Assets with the same character style are removed *even if their names differ*. Assets that already don't exist in the
 collection are silently ignored. All character style properties must be fully specified (no properties are optional).
-Typically you will pass asset objects returned from [`get()`](#module_assets-characterStyles-get) directly to this function.
+
+To avoid ambiguity, pass the exact asset objects returned from [`get()`](#module_assets-characterStyles-get) directly
+to this function.
 
 **Kind**: static method of [<code>characterStyles</code>](#module_assets-characterStyles)
 
