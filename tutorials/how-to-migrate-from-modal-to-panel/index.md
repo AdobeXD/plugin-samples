@@ -128,6 +128,7 @@ Let's first look at the `main.js` file of your modal plugin:
 
 ```js
 const { selection } = require("scenegraph"); // [1]
+let dialog;
 
 function enlargeRectangle() {
   // [2]
@@ -176,12 +177,13 @@ function enlargeRectangle() {
     selectedRectangle.width += width; // [6]
     selectedRectangle.height += height;
   }
-
-  let dialog = document.createElement("dialog"); // [7]
-  dialog.innerHTML = html; // [8]
-  document.appendChild(dialog); // [9]
-  document.querySelector("form").addEventListener("submit", exec); // [10]
-  return dialog.showModal(); // [11]
+  if (!dialog){
+      let dialog = document.createElement("dialog"); // [7]
+      dialog.innerHTML = html; // [8]
+      document.appendChild(dialog); // [9]
+      document.querySelector("form").addEventListener("submit", exec); // [10]
+     }  
+    return dialog.showModal(); // [11]
 }
 
 module.exports = {
