@@ -40,4 +40,4 @@ Best practices provide **recommendations** on plugin usability & behavior, user 
 
 ![UI Components](ux_images/Style_examples.png)
 
-> **[Sticker Sheet](./ui_resources/Sticker_sheet.md)**
+**[Sticker Sheet](./ui_resources/Sticker_sheet.md)**
