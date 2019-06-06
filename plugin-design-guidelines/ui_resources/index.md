@@ -1,6 +1,6 @@
-# UI Resources & Toolkits
+# UI Components & Resources
 
-Plugin UI Resources & Toolkits will provide guidance around the different components you can use to build a plugin UI. It covers the styles, elements and building a layout. For guidance around the design patterns and best practices refer to the [UX guidelines](../ux_guidelines/index.md).
+Plugin UI Components & Resources will provide guidance around the different elements you can use to build a plugin UI. It covers everthing from styles to building a layout. For guidance around the design patterns and best practices refer to the [UX guidelines](../ux_guidelines/index.md).
 
 XD plugins can display UI in the form of modal dialogs, built with JavaScript and a supported subset of HTML and CSS.
 

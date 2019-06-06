@@ -4,20 +4,16 @@
 These are guidelines and best practices on the surfaces your plugin can use.
 
 ----------
-# **Navigation**
+## **Navigation**
 
-These guidelines provide clarity on the different entry points a plugin can have. 
+These guidelines provide clarity on the different entry points a plugin can have. An entry point is how users access your plugin, users can access a plugin through the menu bar or a keyboard shortcut.
 
-## Entry points
-
-An entry point is how users access your plugin, users can access a plugin through the menu bar or a keyboard shortcut.
-
-### Menu bar
+#### Menu bar
 
 ![Entry point menu bar example](../ux_images/Menu_bar.png)
 
 
-### Keyboard shortcuts 
+#### Keyboard shortcuts 
 
 If you are considering having a shortcut for your plugin, make sure to keep these guidelines in mind. 
 
@@ -30,7 +26,7 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 - A keyboard shortcut can be used as an entry point but account for possible shortcut collisions
 
 
-### Entry Point Considerations
+#### Entry Point Considerations
 ![No Selection example](../ux_images/Entry_point_Selection.png)
 
 **Incompatible selection**
@@ -38,10 +34,11 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 - When a plugin can’t complete an action based on the object selected, then render an information dialog. 
 
 
-## **Menu bar**
+### **Menu bar**
 ![Menu bar example in XD](../ux_images/Menu_bar_Xd.png)
 
-### UX Pattern
+**Best practices**
+
 ![Menu Bar Best Practices](../ux_images/Menu_bar_reqs.png)
 
 **Content**
@@ -55,13 +52,13 @@ If you are considering having a shortcut for your plugin, make sure to keep thes
 > - **Help** - Provide the user with an external link to help documentation or an email through the submenu.
 
 
-## Top Menu 
+### Top Menu 
 
-### **Use Case**
+**Use Case**
 
 If your plugin has **one action or workflow shortcut** then the action will be the top menu item. 
 
-### **UI Pattern**
+**Best practices**
 
 ![Top Menu Example](../ux_images/Top_Menu_items.png)
 
@@ -76,13 +73,13 @@ If your plugin has **one action or workflow shortcut** then the action will be t
 > D. Limit the use of emoji’s as part of the label
 
 
-## Submenu items
+### Submenu items
 
-### **Use Cases**
+**Use Cases**
 
 if your plugin needs to handle **multiple actions** or **workflow shortcuts** then they will render as a submenu.
 
-### **UI Pattern**
+**Best practices**
 
 ![Submenu Example](../ux_images/Sub_Menu_items.png)
 
@@ -104,11 +101,11 @@ if your plugin needs to handle **multiple actions** or **workflow shortcuts** th
 **Don’t**
 > Don’t add multiple actions for one plugin as top-level items.
 
-# **Layout**
+## **Layout**
 
 There are different surface areas a plugin can render, this can vary based on the type of action and amount of context you need to provide your user.
 
-## Plugin UI
+### Plugin UI
 
 if the plugin is a simple script or doesn’t need a lot of user input then a modal UI is not required. If the user needs to set preferences, choose content or complete a step process before running the plugin then you can use the modal dialog UI. In the use case of alerts such as permission dialogs then UI would be recommended. 
 
@@ -120,13 +117,14 @@ if the plugin is a simple script or doesn’t need a lot of user input then a mo
 ![Plugin UI modal Dialog](../ux_images/Modal_dialog.png)
 
 
-## **Modal Dialog** 
+#### Modal Dialog
 
 A modal dialog is considered blocking UI - best used when the plugin needs to run an action and the user shouldn’t change selection, since user doesn’t have access to the canvas while using modal dialog UI.
 
 ![Modal Dialog UI Example](../ux_images/Layout_Xd_modal_dialog.png)
 
-### UI Pattern
+**Requirements**
+
 ![Modal requirements](../ux_images/Modal_Requirement.png)
 
 
@@ -146,11 +144,12 @@ Include a modal dismissal button to allow the user to cancel/close the modal and
 You can include a plugin icon to let the user know they are interacting with your plugin in the modal dialog
 
 
-## **Buttons & key commands**
+### **Buttons & Key Commands**
 
-### Use cases 
-
+#### Buttons
 ![Buttons](../ux_images/Buttons.png)
+
+**Use cases** 
 
 > **Call to action** 
 The call to action button communicates strong emphasis and is reserved for encouraging critical actions. There should only be one visible call to action button per section. 
@@ -164,7 +163,7 @@ The secondary button is for low emphasis. It is meant to be paired with other bu
 > **Negative**
 The negative button is for high emphasis of negative or destructive actions. It should be used sparingly. It can be displayed either in standard style (visible stroke) or in quiet style.
 
-### UX patterns
+**Best practices**
 
 > **Button Group Overflow**
 When horizontal space is limited, button groups stack vertically. They should appear in ascending order based on importance, with the most critical action at the bottom.
@@ -173,14 +172,14 @@ When horizontal space is limited, button groups stack vertically. They should ap
 The top-level action within a button group should be a call to action, primary, or negative button. The subsequent buttons should always be secondary buttons of the same style (standard or quiet). Don’t combine more than 2 button styles in a button group.
 
 
-### Button labels
+**Button labels**
 
 ![Button labels](../ux_images/Buttons_labels.png)
 
 > Button labels should be clear about the intention of the action. Button text should be 1 to 2 words and consider the number of characters.
 
 
-### Key commands
+#### Key commands
 ![Key Commands](../ux_images/Key_commands.png)
 
 > **Esc key**
@@ -190,7 +189,7 @@ The top-level action within a button group should be a call to action, primary, 
 > Executes the primary button action. 
 
 ## **Modal Dialog UI Examples**
-### Step Process Example
+#### Step Process Example
 
 The user has to complete multiple steps before executing the plugin action. Multi step dialogs are good for complex workflows but can be too many clicks for simple actions. 
 
