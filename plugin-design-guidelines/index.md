@@ -12,9 +12,7 @@ Plugins can interact with the user at different levels, for example, some plugin
 
 
 ## UX Guidelines 
-**Documentation**
-
-Plugin UX guidelines include **UX requirements** and **UX best practices** that will ensure your plugin follows XD user experience patterns. 
+**Documentation** - Plugin UX guidelines include **UX requirements** and **UX best practices** that will ensure your plugin follows XD user experience patterns. 
 
 ### UX Requirements
 
