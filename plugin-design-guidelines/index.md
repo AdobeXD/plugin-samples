@@ -22,8 +22,7 @@ Requirements highlights **key XD patterns** all plugins need to follow to get ap
 
 ![UX Requirement](ux_images/Requirement.png)
 
-> Example of a UX requirement for Alert Dialogs
-
+Example of a UX requirement for Alert Dialogs
 
 ### Best practices
 
