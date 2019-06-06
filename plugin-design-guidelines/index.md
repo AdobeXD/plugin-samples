@@ -9,7 +9,6 @@ Plugins can interact with the user at different levels, for example, some plugin
 
 
 > [UX Guidelines](./ux_guidelines/index.md) 
-
 > [UI Components & Resources](/reference/ui/index.md)
 
 
@@ -27,7 +26,6 @@ Best practices provide **recommendations** on plugin usability & behavior, user 
 
 ![UX Best Practice](ux_images/BestPractice.png)
 > _Example of a UX best practice for Alert Dialogs_
-
 
 
 ## UI Components & Resources
