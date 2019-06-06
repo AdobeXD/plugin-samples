@@ -14,8 +14,8 @@ The tutorials contained in this section will give you an in-depth look at UI fea
 ## UI Components
 In this section you can see what styles you can use in the UI, how to build a modal layout and the UI elements you can use.
 
-> **Styles**
-> In this section you can learn more about rich styling options in your user interface through a combination of CSS and various classes that are defined for you.
+ **Styles**
+In this section you can learn more about rich styling options in your user interface through a combination of CSS and various classes that are defined for you.
 
 > **Elements**
 > See what elements are fundamental to your user interface.
