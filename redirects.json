@@ -17,8 +17,8 @@
             "to": "devbestpractices/4-file-io.html"
         },
         {
-            "from": "xdpegs/3-network-io.html.html",
-            "to": "devbestpractices/3-network-io.html.html"
+            "from": "xdpegs/3-network-io.html",
+            "to": "devbestpractices/3-network-io.html"
         }
     ]
 }
