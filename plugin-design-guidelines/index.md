@@ -31,7 +31,7 @@ Best practices provide **recommendations** on plugin usability & behavior, user 
 
 ## UI Components & Resources
  
-UI components & resources will have guidance on plugin UI that will help you design your plugin.
+UI components & resources will have guidance on the diffent UI elements you can use to build your plugin.
 
 ![UI Components](ux_images/Style_examples.png)
 
