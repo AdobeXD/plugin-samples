@@ -1,8 +1,24 @@
 {
     "redirects": [
-            {
-                "from": "guides/how-to-package-a-plugin.html",
-                "to": "distribution/packaging.html"
-            }
-        ]
+        {
+            "from": "guides/how-to-package-a-plugin.html",
+            "to": "distribution/packaging.html"
+        },
+        {
+            "from": "xdpegs/1-performance.html",
+            "to": "devbestpractices/1-performance.html"
+        },
+        {
+            "from": "xdpegs/2-scenegraph.html",
+            "to": "devbestpractices/2-scenegraph.html"
+        },
+        {
+            "from": "xdpegs/4-file-io.html",
+            "to": "devbestpractices/4-file-io.html"
+        },
+        {
+            "from": "xdpegs/3-network-io.html.html",
+            "to": "devbestpractices/3-network-io.html.html"
+        }
+    ]
 }
