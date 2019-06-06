@@ -22,7 +22,7 @@ Plugin UX guidelines include **UX requirements** and **UX best practices** that 
 ![UX Requirement](ux_images/Requirement.png)
 > _Example of a UX requirement for Alert Dialogs_
 
-### Best practices
+### UX Best practices
 > Best practices provide **recommendations** on plugin usability & behavior, user feedback, privacy, and interface guidelines. 
 
 ![UX Best Practice](ux_images/BestPractice.png)
