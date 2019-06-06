@@ -16,13 +16,13 @@ Plugins can interact with the user at different levels, for example, some plugin
 ## UX Guidelines 
 Plugin UX guidelines include **UX requirements** and **UX best practices** that will ensure your plugin follows XD user experience patterns. 
 
-#### UX Requirements
+### UX Requirements
 > Requirements highlights **key XD patterns** all plugins need to follow to get approved by Adobe. 
 
 ![UX Requirement](ux_images/Requirement.png)
 > _Example of a UX requirement for Alert Dialogs_
 
-#### Best practices
+### Best practices
 > Best practices provide **recommendations** on plugin usability & behavior, user feedback, privacy, and interface guidelines. 
 
 ![UX Best Practice](ux_images/BestPractice.png)
