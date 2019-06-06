@@ -2,7 +2,7 @@
 
 Plugin UX guidelines will include UX requirements and/or UX best practices these will ensure your plugin follows XD user experience patterns. 
 
-### 1. **[Usability & Behavior](Usability_Behavior.md)**
+### 1. [Usability & Behavior](Usability_Behavior.md)
 
 Guide your users as they interact with your plugin, for example when they first interact with your plugin what can they expect and how can they get the most out of your plugin. 
 
@@ -10,7 +10,7 @@ Guide your users as they interact with your plugin, for example when they first 
 
 > Example: First time user experience onboarding
 
-### 2. **[Interface Guidelines](Interface_Guidelines.md)**
+### 2. [Interface Guidelines](Interface_Guidelines.md)
 
 How will user navigate your plugin, what is best entry point and what surface can your plugin can use.
 
@@ -18,7 +18,7 @@ How will user navigate your plugin, what is best entry point and what surface ca
 
 > Example: Top menu navigation 
 
-### 3. **[Provide Feedback](Provide_Feedback.md)**
+### 3. [Provide Feedback](Provide_Feedback.md)
 
 Provide users with feedback as they interact with your plugin, this can be alert & success messaging, permission dialogs or loaders & progress bars to let them know something is running in the background. 
 

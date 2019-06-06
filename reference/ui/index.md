@@ -1,4 +1,4 @@
-# User Interface Concepts
+# User Interface Components 
 
 While plenty of XD plugins are perfectly suited to run like headless scripts, many plugin creators will want to offer the user a way to interact. XD plugins can display UI in the form of modal dialogs, built with JavaScript and a supported subset of HTML and CSS.
 
