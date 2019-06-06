@@ -8,7 +8,8 @@ These guidelines will help you define the best user experience for your plugin. 
 Plugins can interact with the user at different levels, for example, some plugins will have quick actions which in some use cases won’t render UI, and some will include multiple actions that need UI. 
 
 
-| [UX Guidelines](./ux_guidelines/index.md) | [UI Components & Resources](/reference/ui/index.md) |
+[UX Guidelines](./ux_guidelines/index.md) 
+[UI Components & Resources](/reference/ui/index.md)
 
 
 ## UX Guidelines 
@@ -32,10 +33,11 @@ Best practices provide **recommendations** on plugin usability & behavior, user 
 > Example of a UX best practice for Alert Dialogs
 
 
+
 ## UI Components & Resources
  
  In this section you can find UI component examples and resources such as a sticker sheet that you can use to build your plugin.
 
 ![UI Components](ux_images/Style_examples.png)
 
-> **[View Sticker Sheet](./ui_resources/Sticker_sheet.md)**
+> **[Sticker Sheet](./ui_resources/Sticker_sheet.md)**
