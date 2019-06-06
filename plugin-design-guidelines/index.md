@@ -31,7 +31,7 @@ Best practices provide **recommendations** on plugin usability & behavior, user 
 
 ## UI Components & Resources
  
- In this section you can find UI component examples and resources such as a sticker sheet that you can use to build your plugin.
+UI Components & Resources will have examples and resources that will help you design your plugin.
 
 ![UI Components](ux_images/Style_examples.png)
 
