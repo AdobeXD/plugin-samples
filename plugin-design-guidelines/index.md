@@ -10,7 +10,7 @@ Plugins can interact with the user at different levels, for example, some plugin
 
 > [UX Guidelines](./ux_guidelines/index.md) 
 
-> [UI Components & Resources](/reference/ui_resources/index.md)
+> [UI Components & Resources](./ui_resources/index.md)
 
 
 ## UX Guidelines 
