@@ -14,17 +14,13 @@ The tutorials contained in this section will give you an in-depth look at UI fea
 ## UI Components
 In this section you can see what styles you can use in the UI, how to build a modal layout and the UI elements you can use.
 
-> ### Styles 
-> In this section you can learn more about rich styling options in your user interface through a combination of CSS and various classes that are defined for you.
+ **Styles** - in this section you can learn more about rich styling options in your user interface through a combination of CSS and various classes that are defined for you.
 
-> ### Elements
-> See what elements are fundamental to your user interface.
+**Elements** - see what elements are fundamental to your user interface.
 
-> ### Layout 
-> Learn about the layout modes supported by the XD user interface APIs 
+**Layout** - learn about the layout modes supported by the XD user interface APIs 
 
-> ### Modal
-> A modal dialog is used to display important information and ask for user input. XD Plugins can display user interface in the form of modal dialogs.
+**Modal** - a modal dialog is used to display important information and ask for user input. XD Plugins can display user interface in the form of modal dialogs.
 
 ## Resources
 Use the sticker sheet to design your plugin in XD.

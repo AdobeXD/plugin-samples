@@ -54,7 +54,7 @@
       * [Modal dialogs](./reference/ui/dialogs/index.md)
         * [Showing dialogs](./reference/ui/dialogs/showing.md)
         * [Dismissing dialogs](./reference/ui/dialogs/dismissal.md)
-    * [Resources](./plugin-design-guidelines/ui_resources/Sticker_sheet.md)
+    * [Resources - Sticker Sheet](./plugin-design-guidelines/ui_resources/Sticker_sheet.md)
 * [Step-by-step Tutorials](./tutorials/index.md)
   * [Working with content](./tutorials/content-index.md)
     * [How to draw lines](./tutorials/how-to-draw-lines/index.md)
