@@ -25528,6 +25528,10 @@ const Hello = __webpack_require__(/*! ./components/Hello */ "./src/components/He
 const Clock = __webpack_require__(/*! ./components/Clock */ "./src/components/Clock.jsx");
 const ColorPicker = __webpack_require__(/*! ./components/ColorPicker */ "./src/components/ColorPicker.jsx");
 
+const lorem1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu dui rutrum, congue velit a, auctor nulla. Aenean lacinia.";
+const lorem2 = "Aenean lacinia, leo quis tempus dapibus, sapien lacus efficitur mauris, et tristique eros tortor et mauris. Vivamus nec tellus condimentum, fermentum enim eget, eleifend velit.";
+const lorem3 = "Ut volutpat nulla ac egestas lobortis. Leo quis tempus dapibus.";
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -25588,9 +25592,72 @@ class App extends React.Component {
         return React.createElement(
             'panel',
             { className: styles.panel },
-            React.createElement(Hello, { text: 'Panels!' }),
-            React.createElement(Clock, null),
-            React.createElement(ColorPicker, { r: r, g: g, b: b, a: a, onChange: this.colorChanged })
+            React.createElement(
+                'form',
+                { method: 'dialog', style: { width: 400 } },
+                React.createElement(
+                    'h1',
+                    null,
+                    'H1 Heading, Large Rule, Large Paragraph'
+                ),
+                React.createElement('hr', { className: 'large' }),
+                React.createElement(
+                    'p',
+                    { className: 'large' },
+                    lorem1
+                ),
+                React.createElement(
+                    'p',
+                    { className: 'large' },
+                    lorem3
+                ),
+                React.createElement(
+                    'h2',
+                    null,
+                    'H2 Heading, Normal Rule, Normal Paragraph'
+                ),
+                React.createElement('hr', null),
+                React.createElement(
+                    'p',
+                    null,
+                    lorem1
+                ),
+                React.createElement(
+                    'p',
+                    null,
+                    lorem3
+                ),
+                React.createElement(
+                    'h3',
+                    null,
+                    'H3 Heading, Small Rule, Small Paragraph'
+                ),
+                React.createElement('hr', { className: 'small' }),
+                React.createElement(
+                    'p',
+                    { className: 'small' },
+                    lorem1
+                ),
+                React.createElement(
+                    'p',
+                    { className: 'small' },
+                    lorem3
+                ),
+                React.createElement(
+                    'footer',
+                    null,
+                    React.createElement(
+                        'button',
+                        { 'uxp-variant': 'primary' },
+                        'Cancel'
+                    ),
+                    React.createElement(
+                        'button',
+                        { 'uxp-variant': 'cta' },
+                        'Submit'
+                    )
+                )
+            )
         );
     }
 }

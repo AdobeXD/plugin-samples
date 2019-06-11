@@ -1,0 +1,10 @@
+.xdignore
+.gitignore
+.npmignore
+src/
+node_modules/
+package-lock.json
+package.json
+webpack.config.js
+yarn.lock
+readme.md
