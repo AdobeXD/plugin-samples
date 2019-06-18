@@ -68,6 +68,10 @@ Assets library entry representing a set of text character styles.
 
 Character style properties. See documentation for the [Text](scenegraph.md#Text) node type for more details.
 
+When creating a new character style, all properties are mandatory except those with default values specified here. When deleting
+an existing character style, always pass the exact object returned by [`characterStyles.get()`](#module_assets-characterStyles-get) (with all properties fully
+specified) to avoid any ambiguity.
+
 | Property | Type | Description |
 | --- | --- | --- |
 | fontFamily | !string | the font family |
@@ -79,6 +83,7 @@ Character style properties. See documentation for the [Text](scenegraph.md#Text)
 | underline | !boolean | whether underline is turned on |
 | strikethrough | ?boolean | (**Since**: XD 19) Default false; whether strikethrough is turned on |
 | textTransform | ?string | (**Since**: XD 19) Default "none"; one of "none", "uppercase", "lowercase", or "titlecase" |
+| textScript | ?string | (**Since**: XD 20) Default "none"; one of "none", "superscript", or "subscript" |
 
 
 * * *
@@ -246,7 +251,7 @@ var assets = require("assets"),
         charSpacing: 0,
         lineSpacing: 0,
         underline: false
-        // (leaves optional strikethrough & textTransform properties at default values)
+        // (leaves optional strikethrough, textTransform, & textScript properties at default values)
     },
     numAdded = assets.characterStyles.add([
         { style: arialItalic },   // No name provided: uses default name

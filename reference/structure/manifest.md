@@ -81,31 +81,25 @@ Key path | Type | Description | Required
 `host.app` | `string` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `"XD"`). | Develop / Publish
 `host.minVersion` | `string` | Minimum required version of the host app (in `x.y` format) that can run this plugin. <br> **Note:** Must be two segments. Typically, you'll leave the minor segment set to `0`, e.g. `16.0`. | Develop / Publish
 `host.maxVersion` | `string` | Maximum version of host app that can run this plugin. Same formatting as `host.minVersion`. | Optional
-`uiEntryPoints` | <code>array&lt;MenuItemDefinition &#124; SubmenuDefinition&gt;</code> | Describes the entries your plugin adds to the _Plugins_ menu in XD. See the next section for details. | Develop / Publish
+`uiEntryPoints` | <code>array&lt;[MenuItemDefinition](#MenuItemDefinition)&gt;</code> | Describes the entries your plugin adds to the _Plugins_ menu & "plugin launchpad" sidebar in XD. See the next section for details. | Develop / Publish
 
-## UI entry points array
+## UI entry points
 
-The `uiEntryPoints` field is an _array_ of objects, and each object must match one of the two formats below. Items appear in the _Plugins_ menu in the same order as they're listed in the `uiEntryPoints` array.
+The `uiEntryPoints` field is an _array_ of objects matching the MenuItemDefinition format specified below. These entries appear both in the _Plugins_ menu in the native menubar, and the "plugin launchpad" sidebar panel.
 
-_It is strongly encouraged to only add **one** item to `uiEntryPoints`_ -- either one top-level MenuItemDefinition, or one SubmenuDefinition containing multiple submenu items. In either case, this menu
-item should closely match the name of your plugin so it is easy to locate after installing (bear in mind the user may have a bunch of other plugins' entries in this menu already).
+* If only one entry point is specified, clicking the plugin name in the menu or in the launchpad sidebar runs your plugin command directly. There is no label to specify since the plugin name acts as the label.
 
-### MenuItemDefinition (executable menu items)
+* If multiple entry points are specified, items are automatically grouped into a submenu and into a collapsible section in the launchpad sidebar. The overall submenu/section uses the plugin name as its label, but you
+  must specify a label for each individual MenuItemDefinition. Items appear in the submenu/section in the same order as they're listed in the `uiEntryPoints` array.
+
+### MenuItemDefinition
 
 Key | Type | Description
 ----|------|------------
 `type` | `string` | Entry point type. Currently `"menu"` is the only supported value.
-`label` | `string` or `Object` | Label for this menu item that the user will select to run your plugin. May be a single string _or_ an object containing localized strings (see "Menu Localization" below).
+`label` | <code>?string&#124;[LocaleMap](#menu-localization)</code> | _Required_ if multiple items defined; _ignored_ if only one defined (see above).<br><br> Label for this menu item that the user will select to run your plugin. May be a single string _or_ an object containing localized strings (see "Menu Localization" below).
 `commandId` | `string` | Identifier that links the menu item to a function in your plugin's JavaScript code. This identifier needs to be unique within your plugin. It can be whatever you like, but it makes sense to succinctly describe what the command will do.
 `shortcut` | `Object` | _Optional._ Object defining Mac and Windows keyboard shortcuts for this menu item, formatted as `{"mac": "string", "win": "string"}`. See "Keyboard shortcuts" below for details.
-
-### SubmenuDefinition (submenu)
-
-Key | Type | Description
-----|------|------------
-`type` | `string` | Entry point type. Currently `"menu"` is the only supported value.
-`label` | `string` or `Object` | Label for this submenu. May be a single string _or_ an object containing localized strings (see "Menu Localization" below).
-`menuItems` | `Array<MenuItemDefinition>` | Nested array specifying the menu items this submenu contains. Only a single submenu nesting level is supported, so this array may not contain any `SubmenuDefinition`s itself, only executable `MenuItemDefinition`s.
 
 ### Keyboard shortcuts
 

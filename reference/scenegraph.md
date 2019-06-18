@@ -1506,7 +1506,7 @@ Text bounds and layout work differently depending on the type of text:
 &nbsp;<!-- prevent the bullet list above from running into this one -->
 * [Text](#Text)
     * [.text](#Text-text) : <code>string</code>
-    * [.styleRanges](#Text-styleRanges) : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:!Color, charSpacing:number, underline:boolean, strikethrough:boolean, textTransform:string}&gt;</code>
+    * [.styleRanges](#Text-styleRanges) : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:!Color, charSpacing:number, underline:boolean, strikethrough:boolean, textTransform:string, textScript:string}&gt;</code>
     * [.fontFamily](#Text-fontFamily) : <code>string</code>
     * [.fontStyle](#Text-fontStyle) : <code>string</code>
     * [.fontSize](#Text-fontSize) : <code>number</code>
@@ -1515,6 +1515,7 @@ Text bounds and layout work differently depending on the type of text:
     * [.underline](#Text-underline) : <code>boolean</code>
     * [.strikethrough](#Text-strikethrough) : <code>boolean</code>
     * [.textTransform](#Text-textTransform) : <code>string</code>
+    * [.textScript](#Text-textScript) : <code>string</code>
     * [.flipY](#Text-flipY) : <code>boolean</code>
     * [.textAlign](#Text-textAlign) : <code>string</code>
     * [.lineSpacing](#Text-lineSpacing) : <code>number</code>
@@ -1541,7 +1542,7 @@ the new string's indices unless you explicitly change styleRanges as well.
 
 <a name="Text-styleRanges"></a>
 
-### text.styleRanges : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:\![Color](Color.md), charSpacing:number, underline:boolean, strikethrough:boolean, textTransform:string}&gt;</code>
+### text.styleRanges : <code>!Array&lt;!{length:number, fontFamily:string, fontStyle:string, fontSize:number, fill:\![Color](Color.md), charSpacing:number, underline:boolean, strikethrough:boolean, textTransform:string, textScript:string}&gt;</code>
 Array of text ranges and their character style settings. Each range covers a set number of characters in the text content. Ranges
 are contiguous, with each one starting immediately after the previous one. Any characters past the end of the last range use the
 same style as the last range.
@@ -1653,6 +1654,18 @@ range covers all the text).
 **Since**: XD 19
 
 Set textTransform ("none", "uppercase", "lowercase", or "titlecase") across all style ranges, or get the textTransform of the last style range.
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+
+* * *
+
+<a name="Text-textScript"></a>
+
+### text.textScript : <code>string</code>
+**Default**: `"none"`
+**Since**: XD 20
+
+Set textScript ("none" or "superscript" or "subscript") across all style ranges, or get the textScript of the last style range.
 
 **Kind**: instance property of [<code>Text</code>](#Text)
 
