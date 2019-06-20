@@ -5,17 +5,18 @@
 The `application` module exposes useful information about XD's state, along with APIs for exporting content.
 
 - [application](#module_application)
-  - [.editDocument(options, editFunction)](#module_application-editFunction)
-  - [.createRenditions(renditions)](#module_application-createRenditions) ⇒ `Promise<Array, string>`
-  - [.version](#module_application-version) : <code>string</code>
-  - [.appLanguage](#module_application-appLanguage) : <code>string</code>
-  - [.systemLocale](#module_application-systemLocale) : <code>string</code>
+   - [.editDocument(options, editFunction)](#module_application-editFunction)
+   - [.createRenditions(renditions)](#module_application-createRenditions) ⇒ `Promise<Array, string>`
+   - [.version](#module_application-version) : <code>string</code>
+   - [.appLanguage](#module_application-appLanguage) : <code>string</code>
+   - [.systemLocale](#module_application-systemLocale) : <code>string</code>
 
 ---
 
 <a name="module_application-createRenditions"></a>
 
 ### application.editDocument(editSettings, editFunction)
+
 > **Info**
 >
 > This method is only applicable to buliding panel plugins.
@@ -34,10 +35,10 @@ For example:
 
 **Kind**: static method of [<code>application</code>](#module_application)
 
-| Param | Type | Description |
-| --- | --- | --- |
-| editSettings | Object&lt;EditSettings> | List of edit settings |
-| editFunction | function | Accepts two parameters: `selection` and `documentRoot`|
+| Param        | Type                    | Description                                            |
+| ------------ | ----------------------- | ------------------------------------------------------ |
+| editSettings | Object&lt;EditSettings> | List of edit settings                                  |
+| editFunction | function                | Accepts two parameters: `selection` and `documentRoot` |
 
 **Typedef EditSettings**
 
