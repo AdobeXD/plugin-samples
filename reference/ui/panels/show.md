@@ -1,30 +1,30 @@
 # Showing a Panel
 
-One of the required lifecycle methods for your panel is the `show` function. This function will run when the user click to open your panel.
+The `show` function is the one required lifecycle method for creating a panel. This function will run when the user opens your panel.
 
-The `show` function receives an `event` argument. The `event` argument includes a `node` property. If you fail to attach your UI to this node, your UI will not be visible.
+The `show` function receives an `event` argument. The `event` argument includes a `node` property where you can attach your UI. If you don't attach your UI to this node, your UI will not be visible.
 
 Here is a simple example:
 
 ```js
 function show(event) {
-  const HTML = "YOUR HTML GOES HERE";
-  let rootNode = document.createElement("panel");
-  rootNode.innerHTML = HTML;
+  const content = "<p>Hello, World</p>";
+  const panelContainer = document.createElement("div");
+  panelContainer.innerHTML = content;
 
-  event.node.appendChild(rootNode);
+  event.node.appendChild(panelContainer);
 }
 ```
 
-The `show` function is one of the required functions to be exported from your `main.js` file:
+The `show` function is the one required function to be exported from your `main.js` file when creating a panel:
 
 ```js
 module.exports = {
   panels: {
     example: {
-      show: show,
-      hide: hide,
-      update: update
+      show,
+      hide,
+      update
     }
   }
 };
