@@ -1,5 +1,32 @@
 # Change Log
 
+## XD Release 20.0.12 (June 2019)
+
+### UI Changes
+
+* **"Launchpad" UI and menu structure changes** -- XD 20 introduces a new, easier way for users to run plugins -- the "launchpad" sidebar menu:
+  <div style="background:url(images/launchpad-icon.png); width: 39px; height: 111px; margin-left: 40px" alt="Launchpad icon"></div><!-- works around fancybox plugin breaking image size-->
+
+  This panel lists all installed plugins, with quick access to all the same commands as the Plugins menu. In addition, XD now arranges plugin menu items more cleanly:
+  * Multiple menu items are automatically grouped together into a submenu named after the plugin. There's
+    no longer any need to manually specify submenus.
+  * If your plugin only has a single menu item, it'll still be available directly at the top level of the
+    Plugins menu.
+  * However, _top level menu items always use the name of the plugin._ If your plugin's single menu item had a
+    different label specified, it will be ignored.
+
+### API Improvements
+
+* **Text scenenode super/subscript** -- Work with Text nodes and style assets using the new [textScript](./reference/scenegraph.md#Text-textScript)
+  feature.
+
+### Known Issues
+
+No new known issues. See the [Known Issues page](./known-issues.md) for a comprehensive list of existing known issues.
+
+
+----
+
 ## XD Release 19.0.12 (May 2019)
 
 ### New API Features

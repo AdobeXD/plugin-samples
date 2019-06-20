@@ -4,18 +4,18 @@
 These are the guidelines and best practices on when and how to provide users with feedback as they interact with your plugin.
 
 ----------
-# **Alert Dialogs & Messaging**
+## **Alert Dialogs & Messaging**
 
 Alerts are handled through modal dialogs. Here are some best practices and examples for plugin alert messaging. These guidelines cover when and how to clearly communicate alerts to the user, what links to include, and more. 
 
 
-## **Alert Dialogs**
+### **Alert Dialogs**
 
 Use alert messaging whenever the plugin cannot perform the intended task, dialogs are persistent until dismissed
 
 ![Information dialog in XD](../ux_images/Information_Dialog_Xd_example.png)
 
-### **UI Pattern**
+**UI Pattern**
 
 ![Alert Dialog UI Pattern - requirements](../ux_images/Alert_Requirements.png)
 
@@ -25,13 +25,13 @@ Use alert messaging whenever the plugin cannot perform the intended task, dialog
 Have a clear header that describes the error
 
 > **Message**
-Explain what error was encountered and give a clear actionable solution. Also avoid blaming the user or XD. 
+Explain what error was encountered and give a clear actionable solution. Also, avoid blaming the user or XD. 
 
 > **Dialog Buttons**
 Include at least one modal dismissal button to allow the user to dismiss/close the modal
 
 
-### **UI Recommendations**
+**UI Recommendations**
 
 ![Alert Dialog UI Recommendation](../ux_images/Alert_Recommendations.png)
 
@@ -64,38 +64,37 @@ Include at least one modal dismissal button to allow the user to dismiss/close t
 > “Please connect to WiFi to sync your tasks to your product management tool”.
 
 
-## Alert Dialog Examples
+### Alert Dialog Examples
 
-### **Incompatible selection**
+**Incompatible selection**
 
 ![Information Alert example](../ux_images/Alert_Information_example.png)
 
 > **Information dialog** - when a plugin can’t complete an action based on the object selected, render an information dialog. 
 
 
-### **Operation failed to complete**
+**Operation failed to complete**
 
 ![Information Alert example](../ux_images/Error_alert_example.png)
 
-> **Error dialog** - when a plugin can’t complete an operation, render an error dialog to let user know the operation failed and why it failed.
+> **Error dialog** - when a plugin can’t complete an operation, render an error dialog to let the user know the operation failed and why it failed.
 
-
-### **Network connectivity issue**
+**Network connectivity issue**
 
 ![Information Alert example 2](../ux_images/Alert_Information_example_2.png)
 
-> **Information dialog** - if plugin is unable to connect to the internet to complete an action, then use a information modal dialog to communicate that to the user.
+> **Information dialog** - if the plugin is unable to connect to the internet to complete an action, then use an information modal dialog to communicate that to the user.
 
 
 
 ----------
-## Success Messaging
+### Success Messaging
 
-### **Use case**
+**Use case**
 
 Use success messaging whenever the plugin successfully completes a task and has **no visual output** on the canvas.
 
-### **UI Pattern**
+**UI Pattern**
 
 ![Success Messaging example](../ux_images/Success_message_example.png)
 
@@ -111,13 +110,13 @@ Use success messaging whenever the plugin successfully completes a task and has 
 > Include at least one modal dismissal button to allow the user to dismiss/close the modal.
 
 
-## Plugin Output
+### Plugin Output
 
-If a plugin generates output that the user needs to complete a workflow, then the plugin needs to provides that information to the user.
+If a plugin generates output that the user needs to complete a workflow, then the plugin needs to provide that information to the user.
 
 **Plugin output in the UI**
 
-- In use cases like these the plugin output can be shown in the UI, copied onto the clipboard, populated on the document or generate a file. 
+- In use cases like these, the plugin output can be shown in the UI, copied onto the clipboard, populated on the document or generate a file. 
 
 - Avoid having the user go into the developer console to complete their workflow.
 
@@ -134,13 +133,13 @@ If a plugin generates output that the user needs to complete a workflow, then th
 > Require users to go into the developer console to complete an action. 
 
 ----------
-## Permission dialogs
+### Permission dialogs
 
-### **Use case**
+**Use case**
 
 Use permission dialogs when being destructive or making modifications.
 
-### **UI Pattern**
+**UI Pattern**
 
 ![Permission Dialog Example](../ux_images/Permission_dialog_example.png)
 
@@ -151,7 +150,7 @@ Use permission dialogs when being destructive or making modifications.
 Have a clear header for the dialog. 
 
 > **Message**
-Explain the destructive action or modification and ask for the users permission
+Explain the destructive action or modification and ask for the user's permission
 
 > **Dialog Buttons**
 Include a modal dismissal button to allow the user to cancel/close the modal and a negative button (red) to highlight that action. 
@@ -162,12 +161,12 @@ Include a modal dismissal button to allow the user to cancel/close the modal and
 Dismisses the dialog when the “Cancel” button is in focus
 
 
-## Loaders & Progress bars
+### Loaders & Progress bars
 
 let the user know when something is happening in the background in the plugin UI. 
 
 
-### **Determinate**
+**Determinate**
 
 ![Determinate Example](../ux_images/Determinate_loader_example.png)
 
@@ -175,7 +174,7 @@ let the user know when something is happening in the background in the plugin UI
 If the progress can be reflected on a loader. 
 
 
-### **Indeterminate**
+**Indeterminate**
 
 ![Indeterminate Example](../ux_images/Indeterminate_loader_example.png)
 
