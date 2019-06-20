@@ -40,13 +40,8 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": {
-                "default": "Hello World",
-                "fr": "Bonjour le monde",
-                "de": "Hallo Welt"
-            },
-            "commandId": "helloCommand",
-            "shortcut": { "mac": "Cmd+Shift+P", "win": "Ctrl+Shift+P" }
+            "label": "Hello World - Menu",
+            "commandId": "helloCommand"
         },
         {
             "type": "panel",
@@ -101,10 +96,10 @@ The `uiEntryPoints` field is an _array_ of objects matching the MenuItemDefiniti
 
 Key | Type | Description
 ----|------|------------
-`type` | `string` | Entry point type. Currently `"menu"` and `"panel"` are the only supported values.
-`label` | <code>?string&#124;[LocaleMap](#menu-localization)</code> | _Required_ if multiple items defined; _ignored_ if only one defined (see above).<br><br> Label for this menu item that the user will select to run your plugin. May be a single string _or_ an object 
-`commandId` | `string` | Identifier that links the menu item to a function in your plugin's JavaScript code. This identifier needs to be unique within your plugin. It can be whatever you like, but it makes sense to succinctly describe what the command will do. Note that `commandId` and `panelId` are mutually exclusive.
-`panelId` | `string` | Identifier that links the panel instance to a function in your plugin's JavaScript code. This identifier needs to be unique within your plugin. It can be whatever you like, but it makes sense to succinctly describe what the panel will do. Note that `commandId` and `panelId` are mutually exclusive.
+`type` | `string` | Entry point type. Choose either `"menu"` or `"panel"`.
+`label` | <code>?string&#124;[LocaleMap](#menu-localization)</code> | _Required_ if multiple `MenuItemDefinition` objects defined; _ignored_ if only one defined.<br><br> Label for this menu item that the user will select to run your plugin. May be a single string _or_ an object of localized strings. 
+`commandId` | `string` | For headless and modal-based plugins commands only. Identifier that links the menu item to a function in your plugin's JavaScript code. This identifier needs to be unique within your plugin. It can be whatever you like, but it makes sense to succinctly describe what the command will do. Note that `commandId` and `panelId` are mutually exclusive.
+`panelId` | `string` | For panel(s) provided by a plugin only. Identifier that links the panel instance to an object in your plugin's JavaScript code. This identifier needs to be unique within your plugin. It can be whatever you like, but it makes sense to succinctly describe what the panel will do. Note that `commandId` and `panelId` are mutually exclusive.
 `shortcut` | `Object` | _Optional._ Object defining Mac and Windows keyboard shortcuts for this menu item, formatted as `{"mac": "string", "win": "string"}`. See "Keyboard shortcuts" below for details.
 
 ### Keyboard shortcuts
@@ -124,7 +119,7 @@ Keyboard shortcuts are defined separately for each platform (as seen in the exam
 
 ## Menu Localization
 
-Plugin menu item labels or panel labels can be localized to match the rest of XD's UI. Other manifest fields such as `name` and `description` _cannot be localized yet._
+Plugin menu item labels or panel labels can be localized to match XD's current UI language setting. Other manifest fields such as `name` and `description` _cannot be localized yet._
 
 Localized labels are represented as an object containing multiple translations, instead of a single string value:
 
