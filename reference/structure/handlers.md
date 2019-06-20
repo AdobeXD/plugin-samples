@@ -66,10 +66,10 @@ module.exports = {
 };
 ```
 
-Within `module.exports`, the property name `yourPanel` maps directly to the `panelId` in the manifest. Inside this object are three functions: `show`, `hide`, and `update`. These are plugin lifecycle methods. Only `show` and `hide` are required.
+Within `module.exports`, the property name `yourPanel` maps directly to the `panelId` in the manifest. Inside this object are three functions: `show`, `hide`, and `update`. These are plugin lifecycle methods. Only `show` is required.
 
 - `show`: called when your plugin is made visible to the user. The parameter that is passed includes a `node` property to which you should attach your user interface. If you don't attach your UI to this node, your UI will not be visible.
-- `hide`: called when your plugin is made invisible to the user (when the user navigates to the plugin list, toggles the panel view to another view, or the user invokes a different plugin panel from the _Plugins_ menu). Just like with the `show` lifecycle method, the event parameter that is passed also includes a `node` property. You can choose to remove your UI at this time, or if you prefer to reuse your UI, you can leave it attached. If you do so, be sure to handle `show` properly (i.e., don't attach your UI multiple times, or the user will see duplicates).
+- `hide` (optional): called when your plugin is made invisible to the user (when the user navigates to the plugin list, toggles the panel view to another view, or the user invokes a different plugin panel from the _Plugins_ menu). Just like with the `show` lifecycle method, the event parameter that is passed also includes a `node` property. You can choose to remove your UI at this time, or if you prefer to reuse your UI, you can leave it attached. If you do so, be sure to handle `show` properly (i.e., don't attach your UI multiple times, or the user will see duplicates).
 - `update` (optional): called whenever the user changes their selection or mutates a `node` within that selection. A mutation can be anything, including moves, resizes, etc. Whenever this function is called, it is important to get in and out as quickly as possible—while this function executes, XD is blocked. Note that `update` comes with two parameters, `selection` and `documentRoot`.
 
 ## Contextual arguments
