@@ -3,7 +3,7 @@
     "name": "Hello World sample plugin for panel",
     "host": {
         "app": "XD",
-        "minVersion": "18.0"
+        "minVersion": "21.0"
     },
     "version": "1.0.0",
     "description": "Description of your plugin.",
