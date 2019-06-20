@@ -24,9 +24,9 @@ The `update` function must be exported from your `main.js` file if you decide to
 module.exports = {
   panels: {
     example: {
-      show: show,
-      hide: hide,
-      update: update
+      show,
+      hide,
+      update
     }
   }
 };
