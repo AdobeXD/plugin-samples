@@ -69,7 +69,7 @@ In the previous step, you created a file named `manifest.json`. Open that file a
 ```json
 {
   "id": "YOUR_ID_HERE",
-  "name": "Hello World sample plugin",
+  "name": "Enlarge a Rectangle",
   "version": "0.0.1",
   "description": "Description of your plugin.",
   "summary": "Summary of your plugin",
@@ -132,7 +132,7 @@ Now, let's look at each function in detail, starting with a `create` helper func
 
 #### Create the UI
 
-The `create` function is going to create an HTML `panel` element, insert our markup, and add a click event listner. The function returns our UI in code, but does not display it (we'll get to that next):
+The `create` function is just a helper function we'll make to help us get started. It is going to create an HTML `panel` element, insert our markup, and add a click event listener. The function returns our UI in code, but does not display it (we'll get to that next):
 
 ```js
 function create() {
@@ -157,6 +157,7 @@ function create() {
         padding: 0px;
     }
 </style>
+
 <form method="dialog" id="main">
     <div class="row break">
         <label class="row">
@@ -170,11 +171,11 @@ function create() {
     </div>
     <footer><button id="ok" type="submit" uxp-variant="cta">Apply</button></footer>
 </form>
+
 <p id="warning">This plugin requires you to select a rectangle in the document. Please select a rectangle.</p>
 `;
 
-  function exec() {
-    // [2]
+  function exec() { // [2]
     const { editDocument } = require("application"); // [3]
     const height = Number(document.querySelector("#txtV").value); // [4]
     const width = Number(document.querySelector("#txtH").value); // [5]
@@ -187,36 +188,35 @@ function create() {
     });
   }
 
-  let rootNode = document.createElement("panel"); // [9]
-  rootNode.innerHTML = html; // [10]
-  rootNode.querySelector("form").addEventListener("submit", exec); // [11]
+  let panelContainer = document.createElement("div"); // [9]
+  panelContainer.innerHTML = html; // [10]
+  panelContainer.querySelector("form").addEventListener("submit", exec); // [11]
 
-  return rootNode; // [12]
+  return panelContainer; // [12]
 }
 ```
 
 This code does the following:
 
-1. Creates a `const` called `HTML` and stores your UI markup, including elements for `style`, `form`, and so on. The `form` tag contains a `div` which includes two text input fields and a `foooter` which has a button for users to click on. The `p` tag contains warning text which is used to warn users when they select a non-rectangle node inside the active XD document.
+1. Creates a `const` called `html` for your UI markup, including elements for `style`, `form`, and so on. The `form` tag contains a `div` which includes two text input fields and a `footer` which has a button for users to click on. The `p` tag contains warning text which is used to warn users when they select a non-rectangle node inside the active XD document.
 2. Creates a nested function called `exec`.
-3. Gets reference to the `editDocument` method available in the `application` module.
-4. Gets user input value from the "height" input element
-5. Gets user input value from the "width" input element
-6. Requests to manipulate the active document by using the [`editDocument`](/reference/application.md) method.
+3. Gets a reference to the `editDocument` method available in the `application` module.
+4. Gets user input value from the "height" input element.
+5. Gets user input value from the "width" input element.
+6. Makes a request XD to manipulate the active document by using the [`editDocument`](/reference/application.md) method.
 7. Gets the first currently selected node. (Some UI logic will be added later to ensure this is a rectangle.)
 8. Modifies the `width` and `height` of the selected rectangle.
-9. Creates a `panel` element.
+9. Creates a `div` element to serve as a container for your panel UI.
 10. Attaches the HTML created in step #1.
-11. Adds a submit listener for the form element, attaching the `exec` function created in step #2.
-12. Returns the UI root node to be used in the next step.
+11. Adds a submit listener for the `form` element, attaching the `exec` function created in step #2.
+12. Returns the panel UI container to be used in the next step.
 
 #### Show the UI
 
-Next, let's look at the `show` function. The `show` function is one of the two required functions called _lifecycle methods_ for a panel plugin. The `show` function is called when your plugin is made visible to the user.
+Next, let's look at the `show` function. The `show` function is one of the _lifecycle methods_ for a panel plugin, and the only one that is required. The `show` function is called when your plugin is made visible to the user.
 
 ```js
-// [1]
-function show(event) {
+function show(event) { // [1]
   const { selection } = require("scenegraph"); // [2]
   event.node.appendChild(create()); // [3]
   update(selection); // [4]
@@ -226,40 +226,39 @@ function show(event) {
 This code does the following:
 
 1. The `show` lifecycle method gives you access to an `event` argument which includes a `node` property that you can attach your user interface to.
-2. Gets a reference to the `selection` object imported from the `scenegraph` module.
-3. Adds the UI root node returned from the `create` helper function to `event.node`.
+2. Gets a reference to the `selection` object imported from the `scenegraph` module. The `selection` is whatever the user has currently selected in the XD document.
+3. Adds the panel UI container returned from the `create` helper function to `event.node`.
 4. Updates the plugin UI by using the `update` lifecycle method (we'll look at this later) and passes the `selection` object
 
 #### Remove the UI
 
-The other required lifecycle method for panels is `hide`, which runs when the user either chooeses another panel or clicks on XD's Layers panel or Assets panel.
+One of the optional lifecycle methods for panels is `hide`, which runs when the user navigates away from your panel.
 
 ```js
-// [1]
-function hide(event) {
+function hide(event) { // [1]
   event.node.firstChild.remove(); // [2]
 }
 ```
 
 This code does the following:
 
-1. The `event` argument that is passed includes a `node` property, just like we saw for the `show` lifecycle method
-2. You can choose to remove your UI at this time, or if you prefer to reuse your UI, you can leave it attached. If you do so, be sure to handle `show` properly (i.e., don't attach your UI multiple times, or the user will see duplicates).
+1. The `event` argument that is passed includes a `node` property, just like we saw for the `show` lifecycle method.
+2. You can choose to remove your UI at this time, as shown here, where we remove `event.node.firstChild`, which is the panel UI container `div` that we attached in the previous section.
 
 #### Update your UI
 
-The last lifecycle method, `update`, is an optional function which is called whenever the user changes the selection or mutates a `node` within that selection. A mutation can be anything, including moves, resizes, etc. Whenever this function is called, it is important to get in and out as quickly as possible—while this function executes, XD is blocked.
+The last lifecycle method, `update`, is an optional function which is called whenever the user changes the selection in the XD document or mutates a node within that selection. A mutation can be anything, including moves, resizes, etc.
 
 We'll look at this code below:
 
 ```js
-// [1]
-function update(selection) {
+function update(selection) { // [1]
   const { Rectangle } = require("scenegraph"); // [2]
-  let form = document.querySelector("form"); // [3]
-  let warning = document.querySelector("#warning"); // [4]
-  if (!selection || !(selection.items[0] instanceof Rectangle)) {
-    // [5]
+
+  const form = document.querySelector("form"); // [3]
+  const warning = document.querySelector("#warning"); // [4]
+
+  if (!selection || !(selection.items[0] instanceof Rectangle)) { // [5]
     form.style.display = "none";
     warning.style.display = "inline";
   } else {
@@ -272,9 +271,9 @@ function update(selection) {
 This code does the following:
 
 1. Uses the `selection` argument. `update` provides two arguments, `selection` and `documentRoot`. This example only uses `selection`.
-2. Gets reference to the `Rectangle` object imported from the `scenegraph` module.
-3. Gets reference to the `form` element in your HTML.
-4. Gets reference to the `p` element with the warning message.
+2. Gets a reference to the `Rectangle` object imported from the `scenegraph` module.
+3. Gets a reference to the `form` element in your HTML.
+4. Gets a reference to the `p` element with the warning message in your HTML.
 5. Checks if the user has selected anything and if the selection is a rectangle. If this validation passes, the form appears and the warning message is not shown. If not, the warning message is shown to the user and the form disappears.
 
 #### Export your lifecycle methods
@@ -293,9 +292,9 @@ module.exports = {
 };
 ```
 
-The above code exports an object with a `panels` property. The value of `panels` is also an object with a property that matched the `panelId` from your manifest, in this case `enlargeRectangle`.
+The above code exports an object with a `panels` property. The value of `panels` is also an object with a property that matches the `panelId` from your manifest, in this case `enlargeRectangle`.
 
-Finally, `enlargeRectangle` is an object containing your panel lifecycle methods. Note that the `show` and `hide` lifecycle methods are required for your panel plugin, while the `update` method is optional.
+Finally, `enlargeRectangle` is an object containing your panel lifecycle methods. Note that the `show` lifecycle methods is required for all panel plugins, while the `hide` and `update` methods are optional.
 
 ### 5. Run your plugin
 
