@@ -158,7 +158,7 @@ function createLinesCommand(selection) {            // [1]
 
 After saving all of your changes, reload the plugin in XD and run it. The result should be similar to the following:
 
-![Created lines](/../images/lines.png)
+![Created lines](/images/lines.png)
 
 
 ## Next Steps
