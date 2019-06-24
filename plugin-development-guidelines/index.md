@@ -5,7 +5,7 @@ On this page, we'll give you a quick overview of some basic concepts you need to
 Here are four topics we recommend you get familiar with:
 
 * [Plugin structure](/reference/structure/index.md)
-* [JavaScript and XD plugin APIs](/reference/structure/index.md)
+* [JavaScript and XD plugin APIs](/reference/javascript/index.md)
 * [XD Concepts](/reference/core/index.md)
 * [Development best practices](/devbestpractices/index.md)
 
