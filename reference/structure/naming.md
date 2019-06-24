@@ -2,7 +2,7 @@
 
 In your [manifest.json](/reference/structure/manifest.md), The `uiEntryPoints` field is an array of objects including all UI entry points your plugin has available. All entries listed in this array appear both in the Plugins menu in the native menubar and the "plugin launchpad" sidebar panel. Let's learn how `name` and `label`s show up in XD.
 
-## `name` is used as the top level name
+## Top level name
 
 No matter how many itmes you have in the `uiEntryPoints` array, XD will always use your plugin's name as the top level name for your plugin. For example, if you have "PLUGIN NAME" as your plugin name in your manifest.json file.
 
@@ -14,7 +14,7 @@ XD will display as the top menu item in the native menubar and in the "plugin la
 ![menu plugin name](/images/menu-plugin-name.png)
 ![panel plugin name](/images/panel-plugin-name.png)
 
-## `label` is used as the sub-menu names
+## Sub-menu names
 
 So where do `lable`s show up in XD? For example, if you have a plugin that has two `uiEntryPoints`, one modal and one panel:
 
