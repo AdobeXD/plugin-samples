@@ -4,10 +4,11 @@ A panel is used to display information and options that are persistent and can b
 
 ![Example of a panel](./assets/panel.png)
 
-Panels appear on the left hand side of the app when user clicks on the Plugins icon at the bottom left side. Panels do not prevent user interaction with the underlying document and can listen for the user's selection changes. Panels are dismissed in any one of the following manners:
+Panels appear on the left-hand side of the app when user clicks on the Plugins icon at the bottom-left side. Panels do not prevent user interaction with the underlying document and can listen for the user's selection changes. Panels are dismissed in any one of the following manners:
 
-- The user clicks on the "back arrow" button at the top
+- The user clicks on the "back arrow" button at the top of XD's Plugins panel
 - The user clicks on one of the other options for the left hand side of the app, such as the Layers panel or Assets panel
+- The user runs a different plugin from the _Plugins_ menu
 
 ## Usage
 
@@ -208,7 +209,7 @@ module.exports = {
 
 ## Handling Selection Change
 
-As you can see in the example above, everytime the user's `selection` changes, your third (optional) lifecycle method `update` will trigger. You will have access to both `selection` and `documentRoot` as parameters in the function. This means that your panel can display dynamic content based on what user has selected in the document.
+As you can see in the example above, every time the user's `selection` changes, your third (optional) lifecycle method `update` will trigger. You will have access to both `selection` and `documentRoot` as parameters in the function. This means that your panel can display dynamic content based on what user has selected in the document.
 
 {% tabs sample="Sample", html="HTML", js="JS", react="React" %}
 
