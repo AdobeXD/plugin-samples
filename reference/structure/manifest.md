@@ -85,12 +85,7 @@ Key path | Type | Description | Required
 
 ## UI entry points
 
-The `uiEntryPoints` field is an _array_ of objects matching the MenuItemDefinition format specified below. These entries appear both in the _Plugins_ menu in the native menubar, and the "plugin launchpad" sidebar panel.
-
-* If only one entry point is specified, clicking the plugin name in the menu or in the launchpad sidebar runs your plugin command directly. There is no label to specify since the plugin name acts as the label.
-
-* If multiple entry points are specified, items are automatically grouped into a submenu and into a collapsible section in the launchpad sidebar. The overall submenu/section uses the plugin name as its label, but you
-  must specify a label for each individual MenuItemDefinition. Items appear in the submenu/section in the same order as they're listed in the `uiEntryPoints` array.
+The `uiEntryPoints` field is an _array_ of objects matching the MenuItemDefinition format specified below. These entries appear both in the _Plugins_ menu in the native menubar, and the "plugin launchpad" sidebar panel. See the [Plugin names and labels](/reference/structure/naming.md) page for details on how these entries are displayed.
 
 ### MenuItemDefinition
 
