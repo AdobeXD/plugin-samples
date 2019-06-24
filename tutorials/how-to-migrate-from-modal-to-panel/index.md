@@ -5,6 +5,8 @@ Are you interested in converting your modal plugin to a panel plugin? Keep in mi
 - [Modal dialogs](/reference/ui/dialogs/index.md)
 - [Panels](/reference/ui/panels/index.md)
 
+If you determine your modal-based plugin would be even better as a panel, read on!
+
 ## Prerequisites
 
 - Basic knowledge of HTML, CSS, and JavaScript
@@ -18,9 +20,9 @@ The complete example can be found in [our Samples repository](https://github.com
 
 ## Development Steps
 
-We are going to take a look at a sample plugin that lets users increase the width and height of the selected rectangle by inputing pixel values in the UI. As you can imagine, this plugin would make the process more efficient if it were a panel plugin.
+We are going to take a look at a sample plugin that lets users increase the width and height of the selected rectangle by inputing pixel values in the UI. As you can imagine, this process would be more efficient for the user if the plugin provided UI in a panel.
 
-Let's what this plugin will look like before and after:
+Let's see what this plugin will look like before and after:
 
 **As a modal**
 
@@ -65,7 +67,7 @@ Panel:
 ```js
 "host": {
         "app": "XD",
-        "minVersion": "19.0"
+        "minVersion": "21.0"
 },
 "uiEntryPoints": [
         {
@@ -76,7 +78,7 @@ Panel:
     ]
 ```
 
-As you can see, `host.minVersion` is changed to `19.0` since `19.0` is the earliest version of XD that supports panels. Also, `uiEntryPoints` needs to be updated as well. `type` should be `panel` and `commandId` key needs to be changed to `panelId`.
+As you can see, `host.minVersion` is changed to `21.0` since `21.0` is the earliest version of XD that supports panels. Also, `uiEntryPoints` needs to be updated as well. The `type` key should be changed to `panel` and `commandId` key needs to be changed to `panelId`.
 
 ### 3. Understand the new structure of `main.js`
 
@@ -94,7 +96,7 @@ module.exports = {
 };
 ```
 
-A panel plugin, on the other hand, requires you to export an _object_ with 2 _lifecycle methods_ with named `show` and `hide` and an optional third lifecycle method `update`:
+A panel plugin, on the other hand, expects you to export an _object_ with one required _lifecycle method_ named `show`, and with optional lifecycle methods name `hide` and `update`:
 
 ```js
 function show(event) {
@@ -120,7 +122,7 @@ module.exports = {
 };
 ```
 
-Review the specific of these requirements in the [references](/reference/ui/panels/index.md) before moving on.
+Review the specifics of these panel lifecycle methods in the [references](/reference/ui/panels/index.md) before moving on.
 
 ### 3. Review your modal `main.js` code
 
@@ -130,8 +132,7 @@ Let's first look at the `main.js` file of your modal plugin:
 const { selection } = require("scenegraph"); // [1]
 let dialog;
 
-function enlargeRectangle() {
-  // [2]
+function enlargeRectangle() { // [2]
   const html = `
 <style>
     .break {
@@ -169,25 +170,25 @@ function enlargeRectangle() {
 </form>
 `;
 
-  // [3]
-  function exec() {
+  function exec() { // [3]
     const height = Number(document.querySelector("#txtV").value); // [4]
     const width = Number(document.querySelector("#txtH").value);
     const selectedRectangle = selection.items[0]; // [5]
     selectedRectangle.width += width; // [6]
     selectedRectangle.height += height;
   }
-  if (!dialog){
-      let dialog = document.createElement("dialog"); // [7]
-      dialog.innerHTML = html; // [8]
-      document.appendChild(dialog); // [9]
-      document.querySelector("form").addEventListener("submit", exec); // [10]
-     }  
-    return dialog.showModal(); // [11]
+
+  if (!dialog) {
+    let dialog = document.createElement("dialog"); // [7]
+    dialog.innerHTML = html; // [8]
+    document.appendChild(dialog); // [9]
+    document.querySelector("form").addEventListener("submit", exec); // [10]
+  }  
+
+  return dialog.showModal(); // [11]
 }
 
-module.exports = {
-  // [13]
+module.exports = { // [12]
   commands: {
     enlargeRectangle
   }
@@ -197,7 +198,7 @@ module.exports = {
 This code does the following:
 
 1. Gets reference to the `selection`.
-2. Creates a `const` called `HTML` and stores your UI markup, including elements for `style`, `form`, and so on. The `form` tag contains a `div` which includes two text input fields and a `foooter` which has a button for users to click on. The `p` tag contains warning text which is used to warn users when they select a non-rectangle node inside the active XD document.
+2. Creates a `const` called `html` and stores your UI markup, including elements for `style`, `form`, and so on. The `form` tag contains a `div` which includes two text input fields and a `footer` which has a button for users to click on. The `p` tag contains warning text which is used to warn users when they select a non-rectangle node inside the active XD document.
 3. Creates a nested function called `exec`.
 4. Gets user input value from the "height" and "width" input elements.
 5. Gets the first currently selected node. (Some UI logic will be added later to ensure this is a rectangle.)
@@ -206,13 +207,14 @@ This code does the following:
 8. Attaches the HTML created in step #1.
 9. Attaches the `dialog` element created in step #8 to the DOM.
 10. Adds a submit listener for the form element, attaching the `exec` function created in step #2.
-11. Exports the main function.
+11. Returns a JavaScript Promise which will resolve when the dialog is dismissed by the user.
+12. Exports the main function.
 
 ### 4. Modify the `main.js` file
 
 Let's start modifying code in the `main.js` file.
 
-#### Warn the user
+#### Warn the user about invalid selections
 
 Your HTML markup does not have to change, but let's add a `p` tag to show a warning message if the user has selected a node that's not rectangle:
 
@@ -254,20 +256,20 @@ Now, instead of creating a `dialog`, let's create a `panel` element, insert the 
 You can replace these lines of code:
 
 ```js
-let dialog = document.createElement("dialog"); // [7]
-dialog.innerHTML = html; // [8]
-document.appendChild(dialog); // [9]
-document.querySelector("form").addEventListener("submit", exec); // [10]
-return dialog.showModal(); // [11]
+let dialog = document.createElement("dialog");
+dialog.innerHTML = html;
+document.appendChild(dialog);
+document.querySelector("form").addEventListener("submit", exec);
+return dialog.showModal();
 ```
 
 ... with this:
 
 ```js
-let rootNode = document.createElement("panel");
-rootNode.innerHTML = html;
-rootNode.querySelector("form").addEventListener("submit", exec);
-event.node.appendChild(rootNode);
+let panelContainer = document.createElement("panel");
+panelContainer.innerHTML = html;
+panelContainer.querySelector("form").addEventListener("submit", exec);
+event.node.appendChild(panelContainer);
 ```
 
 If you're wondering where the `event` object in that last line came from, we'll have a look at that in the next section.
@@ -332,7 +334,7 @@ function show(event) {
 
 #### Your `hide` lifecycle method: tidying up
 
-Next, let's add the `hide` function, which runs when the panel UI becomes invisible:
+Next, let's add the optional `hide` lifecycle method, which runs when the panel UI becomes invisible:
 
 ```js
 function hide(event) {
@@ -344,18 +346,18 @@ You can use the `event` parameter to remove your UI from the DOM. If you don't r
 
 #### Your `update` lifecycle method: staying aware as the user works
 
-This part is optional since `update` is an optional lifecycle method that allows your plugin to dynamically respond to the user's selection changes.
+The `update` function is another optional lifecycle method that allows your plugin to dynamically respond to the user's selection changes.
 
 We'll break this code down below:
 
 ```js
-function update(selection) {
-  // [1]
+function update(selection) { // [1]
   const { Rectangle } = require("scenegraph"); // [2]
-  let form = document.querySelector("form"); // [3]
-  let warning = document.querySelector("#warning"); // [4]
-  if (!selection || !(selection.items[0] instanceof Rectangle)) {
-    // [5]
+  
+  const form = document.querySelector("form"); // [3]
+  const warning = document.querySelector("#warning"); // [4]
+
+  if (!selection || !(selection.items[0] instanceof Rectangle)) { // [5]
     form.style.display = "none";
     warning.style.display = "inline";
   } else {
