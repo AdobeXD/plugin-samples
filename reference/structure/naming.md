@@ -52,8 +52,8 @@ This behavior is expected when you have two or more items in the `uiEntryPoints`
 
 Since there is only one item in the `uiEntryPoints` array, XD will ignore the `label` and display the plugin's name as the top menu item.
 
-![menu plugin name](/images/menu-plugin-name.png)
-![panel plugin name](/images/panel-plugin-name.png)
+![menu plugin one label](/images/menu-plugin-one-label.png)
+![panel plugin one label](/images/panel-plugin-one-label.png)
 
 This exception is applied to prevent user confusion and to promote the most ideal user experience.
 
