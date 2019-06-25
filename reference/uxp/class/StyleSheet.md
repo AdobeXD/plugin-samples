@@ -2,29 +2,31 @@
 <a name="stylesheet" id="stylesheet"></a>
 
 ## StyleSheet
-**Kind**: global class  
+
+**Category**: browser, cssom
+
+**See**: https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet
 
 * [StyleSheet](#stylesheet)
-    * _instance_
-        * [.href](#stylesheet-href) : `string`
-    * _static_
-        * [.StyleSheet](#stylesheet-stylesheet)
-            * [new StyleSheet()](#new-stylesheet-stylesheet-new)
+    * [new StyleSheet()](#new-stylesheet-new)
+    * [.href](#stylesheet-href) : `DOMString`
+    * [.type](#stylesheet-type) : `DOMString`
 
+<a name="new-stylesheet-new" id="new-stylesheet-new"></a>
+
+### new StyleSheet()
+Represents a single style sheet. **INCOMPLETE**
 
 <a name="stylesheet-href" id="stylesheet-href"></a>
 
-### styleSheet.href : `string`
-**Kind**: instance property of [`StyleSheet`](#stylesheet)  
-**Read only**: true  
+### styleSheet.href : `DOMString`
 
-<a name="stylesheet-stylesheet" id="stylesheet-stylesheet"></a>
+**Read only**
 
-### StyleSheet.StyleSheet
-**Kind**: static class of [`StyleSheet`](#stylesheet)  
+<a name="stylesheet-type" id="stylesheet-type"></a>
 
-<a name="new-stylesheet-stylesheet-new" id="new-stylesheet-stylesheet-new"></a>
+### styleSheet.type : `DOMString`
 
-#### new StyleSheet()
-Creates an instance of StyleSheet.
+**Default**: <code>undefined</code>
 
+**Read only**

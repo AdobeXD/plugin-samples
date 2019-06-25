@@ -1,57 +1,42 @@
 
 <a name="cssstylerule" id="cssstylerule"></a>
 
-## CSSStyleRule ⇐ [`CSSRule`](#cssrule)
-**Kind**: global class  
-**Extends**: [`CSSRule`](#cssrule)  
+## CSSStyleRule
 
-* [CSSStyleRule](#cssstylerule) ⇐ [`CSSRule`](#cssrule)
-    * _instance_
-        * [.type](#cssstylerule-type)
-        * [.selectorText](#cssstylerule-selectortext) : `string`
-        * [.style](#cssstylerule-style)
-        * [.parentStyleSheet](#cssstylerule-parentstylesheet)
-    * _static_
-        * [.CSSStyleRule](#cssstylerule-cssstylerule)
-            * [new CSSStyleRule(cssRuleList, styleRule)](#new-cssstylerule-cssstylerule-new)
+**Extends**: [`CSSRule`](#cssrule)
 
+**Category**: browser, cssom
+
+**See**: https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule
+
+* [CSSStyleRule](#CSSStyleRule)
+    * [.type](#cssstylerule-type)
+    * [.selectorText](#cssstylerule-selectortext) : `string`
+    * [.style](#CSSStyleRule+style) : [`CSSStyleDeclaration`](#cssstyledeclaration)
+    * [.parentStyleSheet](#CSSStyleRule+parentStyleSheet) : [`CSSStyleSheet`](#cssstylesheet)
 
 <a name="cssstylerule-type" id="cssstylerule-type"></a>
 
 ### cssStyleRule.type
-**Kind**: instance property of [`CSSStyleRule`](#cssstylerule)  
-**Read only**: true  
+Returns the type of the CSS Rule
+
+**Read only**
 
 <a name="cssstylerule-selectortext" id="cssstylerule-selectortext"></a>
 
 ### cssStyleRule.selectorText : `string`
-**Kind**: instance property of [`CSSStyleRule`](#cssstylerule)  
+Selector text
 
 <a name="cssstylerule-style" id="cssstylerule-style"></a>
 
-### cssStyleRule.style
-**Kind**: instance property of [`CSSStyleRule`](#cssstylerule)  
-**Read only**: true  
+### cssStyleRule.style : [`CSSStyleDeclaration`](#cssstyledeclaration)
+Get the style declaration itself
+
+**Read only**
 
 <a name="cssstylerule-parentstylesheet" id="cssstylerule-parentstylesheet"></a>
 
-### cssStyleRule.parentStyleSheet
-**Kind**: instance property of [`CSSStyleRule`](#cssstylerule)  
-**Read only**: true  
+### cssStyleRule.parentStyleSheet : [`CSSStyleSheet`](#cssstylesheet)
+Get the parent style sheet
 
-<a name="cssstylerule-cssstylerule" id="cssstylerule-cssstylerule"></a>
-
-### CSSStyleRule.CSSStyleRule
-**Kind**: static class of [`CSSStyleRule`](#cssstylerule)  
-
-<a name="new-cssstylerule-cssstylerule-new" id="new-cssstylerule-cssstylerule-new"></a>
-
-#### new CSSStyleRule(cssRuleList, styleRule)
-Creates an instance of CSSStyleRule.
-
-
-| Param | Type |
-| --- | --- |
-| cssRuleList | `\*` | 
-| styleRule | `\*` | 
-
+**Read only**

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "_cp-uxp": "cp -r ../../torq-native/torq-native/build/docs/js/* ./reference/uxp",
     "book:install": "gitbook install . $@",
     "book:build": "gitbook --timing --log=debug --debug build . $@",
     "book:build:epub": "gitbook --log=debug --debug epub . $@",
