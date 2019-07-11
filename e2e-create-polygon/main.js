@@ -44,7 +44,7 @@ function createPolygon() {
             <footer><button id="ok" type="submit" uxp-variant="cta">Apply</button></footer>
         </form>
         `
-    function exec() {
+    function insertPolygon() {
         const { selection, Polygon, Color } = require("scenegraph")
         const width = Number(document.querySelector("#width").value);
         const height = Number(document.querySelector("#height").value);
@@ -63,7 +63,7 @@ function createPolygon() {
         dialog = document.createElement("dialog");
         dialog.innerHTML = html;
         document.appendChild(dialog);
-        document.querySelector("form").addEventListener("submit", exec);
+        document.querySelector("form").addEventListener("submit", insertPolygon);
     }
     return dialog.showModal()
 }

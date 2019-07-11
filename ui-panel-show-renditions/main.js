@@ -34,13 +34,13 @@ function create() {
             <footer><button id="ok" type="submit" uxp-variant="cta">Export</button></footer>
         </form>
         `
-    function exec() {
+    function log() {
         console.log(`exporting: ${selection.items.map(node => node.name)}`)
     }
 
     let rootNode = document.createElement("panel");
     rootNode.innerHTML = HTML;
-    rootNode.querySelector("form").addEventListener("submit", exec);
+    rootNode.querySelector("form").addEventListener("submit", log);
 
     return rootNode;
 }
