@@ -1,3 +1,6 @@
+const { selection } = require("scenegraph")
+let panel;
+
 function create() {
     const HTML =
         `<style>
@@ -13,10 +16,11 @@ function create() {
             label.row input {
                 flex: 1 1 auto;
             }
-            form {
-                width:90%;
-                margin: -20px;
-                padding: 0px;
+            .show {
+                display: block;
+            }
+            .hide {
+                display: none;
             }
         </style>
         <form method="dialog" id="main">
@@ -46,33 +50,31 @@ function create() {
         })
     }
 
-    let rootNode = document.createElement("panel");
-    rootNode.innerHTML = HTML;
-    rootNode.querySelector("form").addEventListener("submit", increaseRectangleSize);
+    panel = document.createElement("div");
+    panel.innerHTML = HTML;
+    panel.querySelector("form").addEventListener("submit", increaseRectangleSize);
 
-    return rootNode;
+    return panel;
 }
 
 function show(event) {
-    const { selection } = require("scenegraph")
-    event.node.appendChild(create());
-    update(selection);
+    if (!panel) event.node.appendChild(create());
 }
 
 function hide(event) {
-    event.node.firstChild.remove()
+    // This function triggers when the panel is hidden by user
 }
 
-function update(selection) {
+function update() {
     const { Rectangle } = require("scenegraph");
     let form = document.querySelector("form");
     let warning = document.querySelector("#warning");
     if (!selection || !(selection.items[0] instanceof Rectangle)) {
-        form.style.display = "none";
-        warning.style.display = "inline";
+        form.className = "show";
+        warning.className = "hide";
     } else {
-        warning.style.display = "none";
-        form.style.display = "block";
+        form.className = "hide";
+        warning.className = "show";
     }
 }
 

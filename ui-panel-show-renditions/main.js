@@ -1,6 +1,7 @@
 const application = require("application");
 const fs = require("uxp").storage;
 const { selection } = require("scenegraph")
+let panel;
 let renditionTimer;
 
 function create() {
@@ -20,11 +21,6 @@ function create() {
                 margin: auto;
                 margin-bottom: 10px;
             }
-            form {
-                width:90%;
-                margin: -20px;
-                padding: 0px;
-            }
         </style>
         <form method="dialog" id="main">
             <div class="parent">
@@ -38,20 +34,19 @@ function create() {
         console.log(`exporting: ${selection.items.map(node => node.name)}`)
     }
 
-    let rootNode = document.createElement("panel");
-    rootNode.innerHTML = HTML;
-    rootNode.querySelector("form").addEventListener("submit", log);
+    panel = document.createElement("div");
+    panel.innerHTML = HTML;
+    panel.querySelector("form").addEventListener("submit", log);
 
-    return rootNode;
+    return panel;
 }
 
 function show(event) {
-    event.node.appendChild(create());
-    update(selection);
+    if (!panel) event.node.appendChild(create());
 }
 
 function hide(event) {
-    event.node.firstChild.remove()
+
 }
 
 async function update() {
