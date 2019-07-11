@@ -1814,7 +1814,7 @@ An identifier unique within this document that is shared by all instances of the
 
 <a name="SymbolInstance-isMaster"></a>
 
-### symbolInstance.isMaster : <code>string</code>
+### symbolInstance.isMaster : <code>boolean</code>
 True if this is the "master" instance of the component, which forms the template for all new instances. When the user edits the master,
 those changes are synced to all other instances of the component (unless blocked by "overrides" -- [see discussion above](#SymbolInstance)).
 

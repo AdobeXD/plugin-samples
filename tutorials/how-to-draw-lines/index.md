@@ -112,7 +112,7 @@ A couple of things to note:
 In this step, we'll build out the main function, `createLinesCommand`, that we added in the first step. Each of the numbered comments are explained below the code:
 
 ```js
-function createLinesCommand(selection) {    // [1]
+function createLinesCommand(selection) {            // [1]
 
     let lines = [];                                 // [2]
 
@@ -135,8 +135,8 @@ function createLinesCommand(selection) {    // [1]
         selection.editContext.addChild(line)        // [4.vii]
     });
 
-    selection.items = lines;                        // [11]
-    commands.group();                               // [12]
+    selection.items = lines;                        // [5]
+    commands.group();                               // [6]
 }
 ```
 
@@ -151,14 +151,14 @@ function createLinesCommand(selection) {    // [1]
     1. Set the width of the stroke using `strokeWidth` property.
     1. Append the line object into the `lines` array.
     1. Insert the line into the edit context using the `selection.editContext.addChild` method.  This step adds the line to the document's scenegraph.
-11. Now that all of the `Line` objects have been added to the scenegraph, set the document's current selection to be those `Line` objects.
-12. Use the `group` command to combine all of the currently-selected objects (the `Line` objects) into a single group object.
+5. Now that all of the `Line` objects have been added to the scenegraph, set the document's current selection to be those `Line` objects.
+6. Use the `group` command to combine all of the currently-selected objects (the `Line` objects) into a single group object.
 
 ### 6. Run the plugin
 
 After saving all of your changes, reload the plugin in XD and run it. The result should be similar to the following:
 
-![Created lines](/../images/lines.png)
+![Created lines](/images/lines.png)
 
 
 ## Next Steps
