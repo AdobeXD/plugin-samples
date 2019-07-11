@@ -34,7 +34,7 @@ function create() {
         </form>
         <p id="warning">This plugin requires you to select a rectangle in the document. Please select a rectangle.</p>
         `
-    function exec() {
+    function increaseRectangleSize() {
         const { editDocument } = require("application");
         const height = Number(document.querySelector("#txtV").value);
         const width = Number(document.querySelector("#txtH").value);
@@ -48,7 +48,7 @@ function create() {
 
     let rootNode = document.createElement("panel");
     rootNode.innerHTML = HTML;
-    rootNode.querySelector("form").addEventListener("submit", exec);
+    rootNode.querySelector("form").addEventListener("submit", increaseRectangleSize);
 
     return rootNode;
 }
