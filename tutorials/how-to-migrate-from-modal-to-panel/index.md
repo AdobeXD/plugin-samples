@@ -170,7 +170,7 @@ function enlargeRectangle() { // [2]
 </form>
 `;
 
-  function exec() { // [3]
+  function increaseRectangleSize() { // [3]
     const height = Number(document.querySelector("#txtV").value); // [4]
     const width = Number(document.querySelector("#txtH").value);
     const selectedRectangle = selection.items[0]; // [5]
@@ -182,7 +182,7 @@ function enlargeRectangle() { // [2]
     let dialog = document.createElement("dialog"); // [7]
     dialog.innerHTML = html; // [8]
     document.appendChild(dialog); // [9]
-    document.querySelector("form").addEventListener("submit", exec); // [10]
+    document.querySelector("form").addEventListener("submit", increaseRectangleSize); // [10]
   }  
 
   return dialog.showModal(); // [11]
@@ -199,14 +199,14 @@ This code does the following:
 
 1. Gets reference to the `selection`.
 2. Creates a `const` called `html` and stores your UI markup, including elements for `style`, `form`, and so on. The `form` tag contains a `div` which includes two text input fields and a `footer` which has a button for users to click on. The `p` tag contains warning text which is used to warn users when they select a non-rectangle node inside the active XD document.
-3. Creates a nested function called `exec`.
+3. Creates a nested function called `increaseRectangleSize`.
 4. Gets user input value from the "height" and "width" input elements.
 5. Gets the first currently selected node. (Some UI logic will be added later to ensure this is a rectangle.)
 6. Modifies the `width` and `height` of the selected rectangle.
 7. Creates a `dialog` element.
 8. Attaches the HTML created in step #1.
 9. Attaches the `dialog` element created in step #8 to the DOM.
-10. Adds a submit listener for the form element, attaching the `exec` function created in step #2.
+10. Adds a submit listener for the form element, attaching the `increaseRectangleSize` function created in step #2.
 11. Returns a JavaScript Promise which will resolve when the dialog is dismissed by the user.
 12. Exports the main function.
 
@@ -251,7 +251,7 @@ See the [`editDocument`](/reference/application.md) reference for further inform
 
 #### Make a panel element
 
-Now, instead of creating a `dialog`, let's create a `panel` element, insert the HTML, and add an event listener with the `exec` function attached.
+Now, instead of creating a `dialog`, let's create a `panel` element, insert the HTML, and add an event listener with the `increaseRectangleSize` function attached.
 
 You can replace these lines of code:
 
@@ -259,7 +259,7 @@ You can replace these lines of code:
 let dialog = document.createElement("dialog");
 dialog.innerHTML = html;
 document.appendChild(dialog);
-document.querySelector("form").addEventListener("submit", exec);
+document.querySelector("form").addEventListener("submit", increaseRectangleSize);
 return dialog.showModal();
 ```
 
@@ -268,7 +268,7 @@ return dialog.showModal();
 ```js
 let panelContainer = document.createElement("panel");
 panelContainer.innerHTML = html;
-panelContainer.querySelector("form").addEventListener("submit", exec);
+panelContainer.querySelector("form").addEventListener("submit", increaseRectangleSize);
 event.node.appendChild(panelContainer);
 ```
 
@@ -312,7 +312,7 @@ function show(event) {
 <p id="warning">This plugin requires you to select a rectangle in the document. Please select a rectangle.</p>
 `;
 
-  function exec() {
+  function increaseRectangleSize() {
     const { editDocument } = require("application");
 
     const height = Number(document.querySelector("#txtV").value);
@@ -327,7 +327,7 @@ function show(event) {
 
   let rootNode = document.createElement("panel");
   rootNode.innerHTML = HTML;
-  rootNode.querySelector("form").addEventListener("submit", exec);
+  rootNode.querySelector("form").addEventListener("submit", increaseRectangleSize);
   event.node.appendChild(rootNode);
 }
 ```

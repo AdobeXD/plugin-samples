@@ -175,7 +175,7 @@ function create() {
 <p id="warning">This plugin requires you to select a rectangle in the document. Please select a rectangle.</p>
 `;
 
-  function exec() { // [2]
+  function increaseRectangleSize() { // [2]
     const { editDocument } = require("application"); // [3]
     const height = Number(document.querySelector("#txtV").value); // [4]
     const width = Number(document.querySelector("#txtH").value); // [5]
@@ -190,7 +190,7 @@ function create() {
 
   let panelContainer = document.createElement("div"); // [9]
   panelContainer.innerHTML = html; // [10]
-  panelContainer.querySelector("form").addEventListener("submit", exec); // [11]
+  panelContainer.querySelector("form").addEventListener("submit", increaseRectangleSize); // [11]
 
   return panelContainer; // [12]
 }
@@ -199,7 +199,7 @@ function create() {
 This code does the following:
 
 1. Creates a `const` called `html` for your UI markup, including elements for `style`, `form`, and so on. The `form` tag contains a `div` which includes two text input fields and a `footer` which has a button for users to click on. The `p` tag contains warning text which is used to warn users when they select a non-rectangle node inside the active XD document.
-2. Creates a nested function called `exec`.
+2. Creates a nested function called `increaseRectangleSize`.
 3. Gets a reference to the `editDocument` method available in the `application` module.
 4. Gets user input value from the "height" input element.
 5. Gets user input value from the "width" input element.
@@ -208,7 +208,7 @@ This code does the following:
 8. Modifies the `width` and `height` of the selected rectangle.
 9. Creates a `div` element to serve as a container for your panel UI.
 10. Attaches the HTML created in step #1.
-11. Adds a submit listener for the `form` element, attaching the `exec` function created in step #2.
+11. Adds a submit listener for the `form` element, attaching the `increaseRectangleSize` function created in step #2.
 12. Returns the panel UI container to be used in the next step.
 
 #### Show the UI
