@@ -283,6 +283,8 @@ Note that the `show` and `hide` lifecycle methods for panel-based plugins receiv
 Here is our complete `show` method for this plugin:
 
 ```js
+let panel;
+
 function show(event) {
   const html = `
 <style>
@@ -294,6 +296,12 @@ function show(event) {
     }
     label.row input {
         flex: 1 1 auto;
+    }
+    .show {
+        display: block;
+    }
+    .hide {
+        display: none;
     }
 </style>
 <form method="dialog" id="main">
@@ -325,10 +333,12 @@ function show(event) {
     });
   }
 
-  let rootNode = document.createElement("panel");
-  rootNode.innerHTML = HTML;
-  rootNode.querySelector("form").addEventListener("submit", increaseRectangleSize);
-  event.node.appendChild(rootNode);
+  if (!panel) {
+      panel = document.createElement("div");
+      panel.innerHTML = HTML;
+      panel.querySelector("form").addEventListener("submit", increaseRectangleSize);
+      event.node.appendChild(panel);
+  }
 }
 ```
 
@@ -338,11 +348,9 @@ Next, let's add the optional `hide` lifecycle method, which runs when the panel 
 
 ```js
 function hide(event) {
-  event.node.firstChild.remove();
+  // This function triggers when the panel is hidden by user
 }
 ```
-
-You can use the `event` parameter to remove your UI from the DOM. If you don't remove the node, when the panel opens next time, UI will be duplicated.
 
 #### Your `update` lifecycle method: staying aware as the user works
 
@@ -358,18 +366,18 @@ function update(selection) { // [1]
   const warning = document.querySelector("#warning"); // [4]
 
   if (!selection || !(selection.items[0] instanceof Rectangle)) { // [5]
-    form.style.display = "none";
-    warning.style.display = "inline";
+      form.className = "show";
+      warning.className = "hide";
   } else {
-    warning.style.display = "none";
-    form.style.display = "block";
+      form.className = "hide";
+      warning.className = "show";
   }
 }
 ```
 
 This code does the following:
 
-1. Uses the `selection` argument. `update` provides two arguments, `selection` and `documentRoot`. This example only uses `selection`.
+1. Uses the `selection` argument. `update` provides two arguments, `selection` and `root`. This example only uses `selection`.
 2. Gets reference to the `Rectangle` object imported from the `scenegraph` module.
 3. Gets reference to the `form` element in your HTML.
 4. Gets reference to the `p` element with the warning message.

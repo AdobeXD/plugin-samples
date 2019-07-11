@@ -2,10 +2,10 @@
 
 The `update` function is one of the optional lifecycle method for panels. This function will run when the user either changes the selection or modifies a node within the current selection. A mutation can be anything, including moves, resizes, etc.
 
-The `update` function receives `selection` and `documentRoot` arguments:
+The `update` function receives `selection` and `root` arguments:
 
 ```js
-function update(selection, documentRoot) {
+function update(selection, root) {
   const { Text } = require("scenegraph");
 
   if (!(selection.items[0] instanceof Text)) {

@@ -9,10 +9,10 @@ Here is a simple example:
 ```js
 function show(event) {
   const content = "<p>Hello, World</p>";
-  const panelContainer = document.createElement("div");
-  panelContainer.innerHTML = content;
+  const panel = document.createElement("div");
+  panel.innerHTML = content;
 
-  event.node.appendChild(panelContainer);
+  event.node.appendChild(panel);
 }
 ```
 

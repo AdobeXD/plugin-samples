@@ -135,6 +135,8 @@ Now, let's look at each function in detail, starting with a `create` helper func
 The `create` function is just a helper function we'll make to help us get started. It is going to create an HTML `panel` element, insert our markup, and add a click event listener. The function returns our UI in code, but does not display it (we'll get to that next):
 
 ```js
+let panel;
+
 function create() {
   // [1]
   const html = `
@@ -155,6 +157,12 @@ function create() {
         width:90%;
         margin: -20px;
         padding: 0px;
+    }
+    .show {
+        display: block;
+    }
+    .hide {
+        display: none;
     }
 </style>
 
@@ -188,11 +196,11 @@ function create() {
     });
   }
 
-  let panelContainer = document.createElement("div"); // [9]
-  panelContainer.innerHTML = html; // [10]
-  panelContainer.querySelector("form").addEventListener("submit", increaseRectangleSize); // [11]
+  panel = document.createElement("div"); // [9]
+  panel.innerHTML = html; // [10]
+  panel.querySelector("form").addEventListener("submit", increaseRectangleSize); // [11]
 
-  return panelContainer; // [12]
+  return panel; // [12]
 }
 ```
 
@@ -217,18 +225,14 @@ Next, let's look at the `show` function. The `show` function is one of the _life
 
 ```js
 function show(event) { // [1]
-  const { selection } = require("scenegraph"); // [2]
-  event.node.appendChild(create()); // [3]
-  update(selection); // [4]
+  if (!panel) event.node.appendChild(create()); // [2]
 }
 ```
 
 This code does the following:
 
 1. The `show` lifecycle method gives you access to an `event` argument which includes a `node` property that you can attach your user interface to.
-2. Gets a reference to the `selection` object imported from the `scenegraph` module. The `selection` is whatever the user has currently selected in the XD document.
-3. Adds the panel UI container returned from the `create` helper function to `event.node`.
-4. Updates the plugin UI by using the `update` lifecycle method (we'll look at this later) and passes the `selection` object
+2. Adds the panel UI container returned from the `create` helper function to `event.node` if `panel` does not exist in the dom already.
 
 #### Remove the UI
 
@@ -236,14 +240,13 @@ One of the optional lifecycle methods for panels is `hide`, which runs when the 
 
 ```js
 function hide(event) { // [1]
-  event.node.firstChild.remove(); // [2]
+  // This function triggers when the panel is hidden by user
 }
 ```
 
 This code does the following:
 
 1. The `event` argument that is passed includes a `node` property, just like we saw for the `show` lifecycle method.
-2. You can choose to remove your UI at this time, as shown here, where we remove `event.node.firstChild`, which is the panel UI container `div` that we attached in the previous section.
 
 #### Update your UI
 
@@ -259,11 +262,11 @@ function update(selection) { // [1]
   const warning = document.querySelector("#warning"); // [4]
 
   if (!selection || !(selection.items[0] instanceof Rectangle)) { // [5]
-    form.style.display = "none";
-    warning.style.display = "inline";
+    form.className = "show";
+    warning.className = "hide";
   } else {
-    warning.style.display = "none";
-    form.style.display = "block";
+    form.className = "hide";
+    warning.className = "show";
   }
 }
 ```

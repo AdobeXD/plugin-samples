@@ -111,15 +111,10 @@ Let's examine a simple panel and how we might create it:
 {% content "js" %}
 
 ```js
-let rootNode;
 let visible;
 let panel;
 
 function create() {
-  if (rootNode) {
-    return rootNode;
-  }
-
   const HTML = `<style>
             .break {
                 flex-wrap: wrap;
@@ -173,14 +168,14 @@ function create() {
         </form>
         `;
 
-  rootNode = document.createElement("panel");
-  rootNode.innerHTML = HTML;
+  panel = document.createElement("div");
+  panel.innerHTML = HTML;
 
-  return rootNode;
+  return panel;
 }
 
 function show(event) {
-  panel = create();
+  if (!panel) panel = create();
   event.node.appendChild(panel);
   visible = true;
 }
@@ -189,7 +184,7 @@ function hide(event) {
   visible = false;
 }
 
-function update(selection, documentRoot) {
+function update(selection, root) {
   if (!visible) return;
   console.log(selection.items);
 }
@@ -209,7 +204,7 @@ module.exports = {
 
 ## Handling Selection Change
 
-As you can see in the example above, every time the user's `selection` changes, your third (optional) lifecycle method `update` will trigger. You will have access to both `selection` and `documentRoot` as parameters in the function. This means that your panel can display dynamic content based on what user has selected in the document.
+As you can see in the example above, every time the user's `selection` changes, your third (optional) lifecycle method `update` will trigger. You will have access to both `selection` and `root` as parameters in the function. This means that your panel can display dynamic content based on what user has selected in the document.
 
 {% tabs sample="Sample", html="HTML", js="JS", react="React" %}
 
@@ -302,15 +297,10 @@ As you can see in the example above, every time the user's `selection` changes, 
 {% content "js" %}
 
 ```js
-let rootNode;
 let visible;
 let panel;
 
 function create() {
-  if (rootNode) {
-    return rootNode;
-  }
-
   const HTML = `<style>
             .break {
                 flex-wrap: wrap;
@@ -365,14 +355,14 @@ function create() {
         </form>
         `;
 
-  rootNode = document.createElement("panel");
-  rootNode.innerHTML = HTML;
+  panel = document.createElement("div");
+  panel.innerHTML = HTML;
 
-  return rootNode;
+  return panel;
 }
 
 function show(event) {
-  panel = create()
+  if(!panel) panel = create()
   event.node.appendChild(panel);
   visible = true;
 }
@@ -382,7 +372,7 @@ function hide(event) {
   visible = false;
 }
 
-function update(selection, documentRoot) {
+function update(selection, root) {
   const { Text } = require("scenegraph");
   if (!visible) return;
   if (!(selection.items[0] instanceof Text)) {
