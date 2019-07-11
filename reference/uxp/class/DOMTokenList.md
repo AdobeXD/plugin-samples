@@ -4,13 +4,10 @@
 ## DOMTokenList
 DOMTokenList supports the ClassList and other token list functionality
 
-**Kind**: global class  
-**Access**: public  
 **See**
 
 - https://dom.spec.whatwg.org/#interface-domtokenlist
 - https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList
-
 
 * [DOMTokenList](#domtokenlist)
     * [.length](#domtokenlist-length)
@@ -18,63 +15,58 @@ DOMTokenList supports the ClassList and other token list functionality
     * [.add(...tokens)](#domtokenlist-add)
     * [.remove(...tokens)](#domtokenlist-remove)
     * [.replace(oldToken, newToken)](#domtokenlist-replace)
-    * [.toggle(token, force)](#domtokenlist-toggle) ⇒ `boolean`
-    * [.item(index)](#domtokenlist-item) ⇒ `string`
-    * [.contains(token)](#domtokenlist-contains) ⇒ `boolean`
-    * [.supports(token)](#domtokenlist-supports) ⇒ `boolean`
-
+    * [.toggle(token, force)](#domtokenlist-toggle)
+    * [.item(index)](#domtokenlist-item)
+    * [.contains(token)](#domtokenlist-contains)
+    * [.supports(token)](#domtokenlist-supports)
 
 <a name="domtokenlist-length" id="domtokenlist-length"></a>
 
 ### domTokenList.length
 Returns the number of tokens in the list
 
-**Kind**: instance property of [`DOMTokenList`](#domtokenlist)  
-**Read only**: true  
-**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-length  
+**Read only**
+
+**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-length
 
 <a name="domtokenlist-value" id="domtokenlist-value"></a>
 
 ### domTokenList.value
 The serialized string value of the token list
 
-**Kind**: instance property of [`DOMTokenList`](#domtokenlist)  
-**Read only**: true  
-**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-value  
+**Read only**
+
+**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-value
 
 <a name="domtokenlist-add" id="domtokenlist-add"></a>
 
 ### domTokenList.add(...tokens)
 Adds the specified tokens to the token list. If the token is already present, no error is thrown.
 
-**Kind**: instance method of [`DOMTokenList`](#domtokenlist)  
 **Throws**:
 
-- [`DOMException`](#domexception) 
+- [`DOMException`](#domexception)
 
-**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-add  
+**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-add
 
 | Param | Type |
 | --- | --- |
-| ...tokens | `string` | 
-
+| ...tokens | `string` |
 
 <a name="domtokenlist-remove" id="domtokenlist-remove"></a>
 
 ### domTokenList.remove(...tokens)
 Removes the specified items from the token list. If the token is not present, no error is thrown.
 
-**Kind**: instance method of [`DOMTokenList`](#domtokenlist)  
 **Throws**:
 
-- [`DOMException`](#domexception) 
+- [`DOMException`](#domexception)
 
-**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-remove  
+**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-remove
 
 | Param | Type |
 | --- | --- |
-| ...tokens | `string` | 
-
+| ...tokens | `string` |
 
 <a name="domtokenlist-replace" id="domtokenlist-replace"></a>
 
@@ -82,22 +74,20 @@ Removes the specified items from the token list. If the token is not present, no
 Replaces an old token with a new token. If the old token doesn't exist,
 no action occurs, and `false` is returned.
 
-**Kind**: instance method of [`DOMTokenList`](#domtokenlist)  
 **Throws**:
 
-- [`DOMException`](#domexception) 
+- [`DOMException`](#domexception)
 
-**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-replace  
+**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-replace
 
 | Param | Type |
 | --- | --- |
-| oldToken | `any` | 
-| newToken | `any` | 
-
+| oldToken | `any` |
+| newToken | `any` |
 
 <a name="domtokenlist-toggle" id="domtokenlist-toggle"></a>
 
-### domTokenList.toggle(token, force) ⇒ `boolean`
+### domTokenList.toggle(token, force)
 Toggles a token within the list. If `force` is not present, then the following
 rules are applied:
 
@@ -109,64 +99,65 @@ If `force` is supplied, then:
 * if `true`, the token is added
 * if `false`, the token is removed
 
-**Kind**: instance method of [`DOMTokenList`](#domtokenlist)  
-**Returns**: `boolean` - if the token exists in the last after the operation  
+**Returns**: `boolean` - if the token exists in the last after the operation
+
 **Throws**:
 
-- [`DOMException`](#domexception) 
+- [`DOMException`](#domexception)
 
-**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-toggle  
+**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-toggle
 
 | Param | Type |
 | --- | --- |
-| token | `string` | 
-| force | `boolean` | 
-
+| token | `string` |
+| force | `boolean` |
 
 <a name="domtokenlist-item" id="domtokenlist-item"></a>
 
-### domTokenList.item(index) ⇒ `string`
+### domTokenList.item(index)
 Return the item at the specified index, or `null` if the index is out-of-range
 
-**Kind**: instance method of [`DOMTokenList`](#domtokenlist)  
-**Returns**: `string` - the item at the index, or null if index is out of range  
-**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-item  
+**Returns**: `string` - the item at the index, or null if index is out of range
+
+**Throws**:
+
+- [`DOMException`](#domexception)
+
+**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-item
 
 | Param | Type |
 | --- | --- |
-| index | `number` | 
-
+| index | `number` |
 
 <a name="domtokenlist-contains" id="domtokenlist-contains"></a>
 
-### domTokenList.contains(token) ⇒ `boolean`
+### domTokenList.contains(token)
 Returns whether the token is in the list or not.
 
-**Kind**: instance method of [`DOMTokenList`](#domtokenlist)  
-**Returns**: `boolean` - if `true`, the token is in the list, otherwise it isn't  
+**Returns**: `boolean` - if `true`, the token is in the list, otherwise it isn't
+
 **Throws**:
 
-- [`DOMException`](#domexception) 
+- [`DOMException`](#domexception)
 
-**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-contains  
+**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-contains
 
 | Param | Type |
 | --- | --- |
-| token | `any` | 
-
+| token | `any` |
 
 <a name="domtokenlist-supports" id="domtokenlist-supports"></a>
 
-### domTokenList.supports(token) ⇒ `boolean`
+### domTokenList.supports(token)
 Returns `true` if the token is acceptable to the list; otherwise returns `false`.
 If `false` is returned, passing the token would throw an error when calling
 any other method.
 
-**Kind**: instance method of [`DOMTokenList`](#domtokenlist)  
-**Returns**: `boolean` - if `true`, the token is acceptable when calling other methods  
-**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-supports  
+**Returns**: `boolean` - if `true`, the token is acceptable when calling other methods
+
+**See**: https://dom.spec.whatwg.org/#dom-domtokenlist-supports
 
 | Param | Type |
 | --- | --- |
-| token | `string` | 
+| token | `string` |
 
