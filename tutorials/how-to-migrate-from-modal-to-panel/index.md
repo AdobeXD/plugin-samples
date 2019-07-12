@@ -366,11 +366,12 @@ function update(selection) { // [1]
   const warning = document.querySelector("#warning"); // [4]
 
   if (!selection || !(selection.items[0] instanceof Rectangle)) { // [5]
-      form.className = "show";
-      warning.className = "hide";
-  } else {
       form.className = "hide";
       warning.className = "show";
+      
+  } else {
+      form.className = "show";
+      warning.className = "hide";
   }
 }
 ```
