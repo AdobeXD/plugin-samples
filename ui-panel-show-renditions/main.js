@@ -7,9 +7,6 @@ let renditionTimer;
 function create() {
     const HTML =
         `<style>
-            .parent {
-                margin-left: 20%;
-            }
             .container {
                 display:flex;
                 flex-wrap: wrap;

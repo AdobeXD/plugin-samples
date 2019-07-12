@@ -70,11 +70,11 @@ function update() {
     let form = document.querySelector("form");
     let warning = document.querySelector("#warning");
     if (!selection || !(selection.items[0] instanceof Rectangle)) {
-        form.className = "show";
-        warning.className = "hide";
-    } else {
         form.className = "hide";
         warning.className = "show";
+    } else {
+        form.className = "show";
+        warning.className = "hide";
     }
 }
 
