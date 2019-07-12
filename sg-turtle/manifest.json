@@ -15,24 +15,29 @@
     "helpUrl": "https://mywebsite.com/help",
     "icons": [
         {
+            "width": 24,
+            "height": 24,
+            "path": "images/icon@1x.png"
+        },
+        {
             "width": 48,
             "height": 48,
-            "path": "images/icon@1x.png"
+            "path": "images/icon@2x.png"
         },
         {
             "width": 96,
             "height": 96,
-            "path": "images/icon@2x.png"
+            "path": "images/icon@3x.png"
         },
         {
             "width": 144,
             "height": 144,
-            "path": "images/icon@3x.png"
+            "path": "images/icon@4x.png"
         },
         {
             "width": 192,
             "height": 192,
-            "path": "images/icon@4x.png"
+            "path": "images/icon@5x.png"
         }
     ],
     "uiEntryPoints": [

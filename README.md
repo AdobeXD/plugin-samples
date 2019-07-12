@@ -16,10 +16,11 @@ For each sample, be sure to read the README as well as code comments. Note that 
 | ----------------------------------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | --------------- |
 | e2e-adobe-stock                     | UI, Network I/O (Fetch)                             | Lets users use End-to-end Adobe Stock Photo Search                                                                     | 13.0          |
 | e2e-colorize-text                   | UI, Scenegraph, ScenenodeList                       | Provides several text color utilities                                                                                  | 13.0          |
+| e2e-create-polygon                   | UI, Scenegraph, ScenenodeList                       | Lets users create a custom polygon                                                                                  | 19.0          |
 | e2e-customize-banner                     | UI, Scenegraph                           | Provides a simple UI that lets user create custom sized banners                                                                     | 13.0          |
 | e2e-stock-chart                     | UI, File I/O, Scenegraph, Network I/O (Fetch)   | Draws a line chart of the picked stock quote                                                                           | 13.0          |
 | quick-start                         | Scenegraph                                      | Creates a rectangle object and inserts it into the artboard                                                            | 13.0          |
-| quick-start-react                   | Scenegraph                                      | Creates a rectangle object and inserts it into the artboard (using React)                                              | 13.0          |
+| quick-start-react                   | Scenegraph                                      | Creates a rectangle object and inserts it into the artboard (using React)                                              | 18.0          |
 | how-to-show-an-alert                | UI                                              | Demonstrates how to show an alert and an error dialog                                                                  | 13.0          |
 | how-to-create-path-objects          | Scenegraph                                      | Demonstrates how to create shapes using path objects                                                                   | 13.0          |
 | how-to-draw-lines                   | Scenegraph                                      | Demonstrates how to create line objects                                                                                | 13.0          |
@@ -29,6 +30,7 @@ For each sample, be sure to read the README as well as code comments. Note that 
 | how-to-make-network-requests        | Network I/O (XHR , Fetch), Scenegraph           | Demonstrates how to make network requests                                                                              | 13.0          |
 | how-to-style-text                   | Scenegraph                                      | Demonstrates how to create text nodes with styled text                                                                 | 13.0          |
 | how-to-work-with-scenenodelist      | Scenegraph                                      | Demonstrates how to create various objects and use scenenode list to filter and color                                  | 13.0          |
+| i18n-pojo      | UI, Application(appLanguage)                                      | Demonstrates how to localize your plugin                                  | 13.0          |
 | sg-chart-generator                  | Scenegraph, Commands                            | Demonstrates how to generate pie charts and bar charts                                                                 | 13.0          |
 | sg-dummy-data                       | Scenegraph, Commands                            | Demonstrates how to generate random data                                                                               | 13.0          |
 | sg-dynamic-button                   | Scenegraph, Commands                            | Updates a frame shape to wrap a text element exactly with a specified amount of padding                                | 13.0          |
@@ -44,12 +46,11 @@ For each sample, be sure to read the README as well as code comments. Note that 
 | ui-buttons-galore                   | UI                                              | Uses `document.querySelector` to create these UI elements: different types of buttons                                  | 13.0          |
 | ui-context-menu                     | UI                                              | Uses `h` function to create a context menu with these UI elements: form, footer, button                                | 13.0          |
 | ui-create-chart                     | UI                                              | Uses `h` function to create a menu optimized for generating charts with these UI elements: form, footer, button        | 13.0          |
-| ui-datagrid-react                   | UI                                              | Uses React to create data grids                                                                                        | 13.0          |
+| ui-datagrid-react                   | UI                                              | Uses React to create data grids                                                                                        | 18.0          |
 | ui-dialog-variations                | UI                                              | Demonstrates several different dialog variations                                                                       | 13.0          |
 | ui-hello                            | UI                                              | Simply shows a dialog with "Hello World"                                                                               | 13.0          |
 | ui-hello-h                          | UI                                              | Used `h` function to simply show a dialog with "Hello World"                                                           | 13.0          |
-| ui-hello-react-jsx                  | UI                                              | Used React jsx to simply show a dialog with "Hello World"                                                              | 13.0          |
-| ui-hello-react-raw                  | UI                                              | Used React to simply show a dialog with "Hello World"                                                                  | 13.0          |
+| ui-hello-react                  | UI                                              | Used React jsx to simply show a dialog with "Hello World"                                                              | 18.0          |
 | ui-hello-vue                        | UI                                              | Used Vue to simply show a dialog with "Hello World"                                                                    | 13.0          |
 | ui-html                             | UI                                              | Creates a dialog showing simple UI elements: title, text, input field, and buttons                                     | 13.0          |
 | ui-jquery                           | UI                                              | Used jquery to create a dialog showing simple UI elements: title, text, input field, and buttons                       | 13.0          |
@@ -58,7 +59,7 @@ For each sample, be sure to read the README as well as code comments. Note that 
 | ui-simple-form                      | UI                                              | Shows a simple form with these UI elements: input, textarea, select, button                                            | 13.0          |
 | ui-trello                           | UI                                              | Uses `h` function to create a UI that's suitable for a workflow management plugin like Trello                          | 13.0          |
 | ui-vectorize                        | UI                                              | Uses `h` function to create a simple UI with these UI elements: title, text, button                                    | 13.0          |
-
+| ui-tabs-react                        | UI                                              | Uses React to create a simple UI with tabs                                    | 18.0          |
 ## Recommended development setup
 
 1. Go to the directory that stores your development plugin folder:
