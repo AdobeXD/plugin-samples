@@ -1,13 +1,29 @@
 # Available APIs
 
-Adobe XD provides several APIs to you, via the `require` method. You can also import your own modules and files using `require`.
+Adobe XD provides several categories of APIs:
 
-## Principal API modules
+* **[APIs for interacting with XD itself](#xd-specific-apis)**, especially its document model, the **scenegraph**
+
+* The **UXP runtime**, which provides all the capabilities that aren't XD-specific:
+    * A [_browser-like_ HTML and CSS engine](../uxp/ui-index.md) which drives actual XD _native UI components_ -- it is **not** a complete browser engine, but lets you build your UI using familiar web APIs and frameworks.
+    * [Network APIs](../uxp/network-index.md) similar to the web standard XHR, `fetch`, and WebSocket found in browsers.
+    * The [`storage` API](../uxp/storage-index.md), offering sandboxed filesystem access.
+
+* The usual **[core JavaScript language APIs](../javascript/javascript-support.md)** you see in all JS runtimes, such as `setTimeout()` and `Date`.
+
+* A simple **[module-loader `require()` API](../javascript/javascript-support.md#can-i-use-require)**
+
+Read below for **how to access** XD and UXP APIs...
+
+
+## XD-specific APIs
+
+Most XD APIs are accessed by loading a module via `require()`, but some are passed directly to your plugin's handler functions.
 
 * [selection](../selection.md) - Indicates the selected nodes and related context
     * This object is passed as an argument to your command handler function (see above)
 * [scenegraph](../scenegraph.md) - APIs available on document nodes
-    * Normally you can use these APIs by simply accessing the arguments passed to your command's handler function
+    * Typically you use scenegraph objects by simply accessing the arguments passed to your command's handler function
       (`selection` and `documentRoot`).
     * To create _new_ nodes in the document, load this module explicitly to access the constructor functions:
       ```js
@@ -15,18 +31,19 @@ Adobe XD provides several APIs to you, via the `require` method. You can also im
       let node = new Rectangle();
       ```
 * [commands](../commands.md) - Invoke commands to change the document structure and perform other complex operations.
-    * Load this module explicitly: `let commands = require("commands");`
+    * `let commands = require("commands");`
 * [interactions](../interactions.md) - Data model for interactive prototyping features (also accessible from scenegraph nodes).
-    * Load this module explicitly: `let interactions = require("interactions");`
-* [storage](../uxp/storage-index.md) - Read and write files on disk
-    * Load this module explicitly: `const fs = require("uxp").storage.localFileSystem;`
-* [Network](../uxp/network-index.md) - Use browser-style `XMLHttpRequest`, `fetch()`, and `WebSocket` APIs to access the network.
-    * These APIs are in the global namespace, so you can use them without any `require()` statements
+    * `let interactions = require("interactions");`
 * [application](../application.md) - Version and locale information, and APIs for exporting content.
-    * Load this module explicitly: `let application = require("application");`
+    * `let application = require("application");`
 * [clipboard](../clipboard.md) - Copy text to the clipboard.
-    * Load this module explicitly: `let clipboard = require("clipboard");`
+    * `let clipboard = require("clipboard");`
 
-## Helper classes
 
-* [SceneNodeList](../SceneNodeList.md) - This is the type of the `children` property on scenenodes
+## UXP
+
+* HTML DOM APIs -- access just as in a browser, via the global `document`. Each plugin in XD gets its own `document` tree.
+
+* Network APIs -- access just as in a browser, via the global classes `XMLHttpRequest` and `WebSocket`, and the global function `fetch()`
+
+* Storage APIs -- access via `const fs = require("uxp").storage.localFileSystem;`
