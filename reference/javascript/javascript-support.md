@@ -51,6 +51,4 @@ const someLib = require("somelib");  // no package.json lookup
 
 ## Can I use npm packages or Node.js APIs?
 
-You may be able to use some npm packages without modification, but chances are good that you’ll need to use webpack or rollup in order to generate a bundle.
-
-Node.js APIs themselves are not supported.
+XD's plugin sandbox does not include most Node.js APIs, such as unrestricted filesystem access or the ability to spawn external processes. Npm packages that only depend on the core JavaScript language APIs can work in XD, but because XD's `require()` differs (see above), you will likely have to use webpack or rollup in order to generate a single-file bundle first.
