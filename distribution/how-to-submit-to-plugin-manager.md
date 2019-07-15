@@ -30,7 +30,7 @@ Before you submit, be sure to go through this checklist of common reasons for re
 - If this is not your first time submitting this plugin, have you _increased_ the version number in your `manifest.json` file? [Learn more here](/reference/structure/manifest.md#top-level-metadata). You _must_ increment your version number (typically, the patch version; e.g, `1.0.0` → `1.0.1`) _each time you submit your plugin for review_.
 - When packaging your plugin, did you make sure to compress the files (and _not_ the parent folder)? [Learn more here](/distribution/packaging.md#1-compress-your-files-as-a-zip-file).
 - Is the .XDX file less than 50MB in size?
-- Did you verify the .XDX install on your machaine when you double-click it?
+- Did you verify the .XDX install on your machine when you double-click it?
 - After installing, did you verify that the plugin runs when you select its command(s) from XD's _Plugins_ menu?
 
 Answering "no" to any of these questions will get your submission rejected, requiring you to address the issue in your plugin and submit again.
