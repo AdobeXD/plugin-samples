@@ -160,4 +160,7 @@
 * [Joining Our Community](./community.md)
   * [Code of conduct](./CODE_OF_CONDUCT.md)
   * [How to contribute](./CONTRIBUTING.md)
+* [Migrations](./migrations.md)
+  * [UXP 2 to 3](./migrations/uxp-2-to-3.md)
+  * [Porting Modals to Panels](./tutorials/how-to-migrate-from-modal-to-panel/index.md)
 * [Plugin API roadmap](./plugin-api-roadmap.md)
