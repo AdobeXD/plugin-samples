@@ -162,5 +162,5 @@
   * [How to contribute](./CONTRIBUTING.md)
 * [Migrations](./migrations.md)
   * [UXP 2 to 3](./migrations/uxp-2-to-3.md)
-  * [Porting Modals to Panels](./tutorials/how-to-migrate-from-modal-to-panel/index.md)
+  * [Porting Modals to Panels](./migrations/how-to-migrate-from-modal-to-panel.md)
 * [Plugin API roadmap](./plugin-api-roadmap.md)

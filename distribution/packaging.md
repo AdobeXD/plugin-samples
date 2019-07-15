@@ -20,7 +20,7 @@ Select all files within your plugin's parent folder. On both macOS and Windows y
 | macOS         | _Right-click > Compress # items_ |
 | Windows       | _Right-click > Send to > Compressed (zipped) folder_ |
 
-If you plan to distribute via the XD plugin manager, your .ZIP file **must be less than 25MB in size**. You'll only be able to submit for review if your file is under the size limit.
+If you plan to distribute via the XD plugin manager, your .ZIP file **must be less than 25MB in size and contain fewer than 3,000 files**. You'll only be able to submit for review if your file is under these limits.
 
 > **Danger**
 >
