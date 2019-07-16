@@ -2,100 +2,68 @@
 <a name="cssstyledeclaration" id="cssstyledeclaration"></a>
 
 ## CSSStyleDeclaration
-**Kind**: global class
+
+**Category**: browser, cssom
+
+**See**: https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration
 
 * [CSSStyleDeclaration](#cssstyledeclaration)
-    * _instance_
-        * [.length](#cssstyledeclaration-length)
-        * [.parentRule](#cssstyledeclaration-parentrule)
-        * [.cssFloat](#cssstyledeclaration-cssfloat)
-        * [.cssFloat](#cssstyledeclaration-cssfloat)
-        * [.item(index)](#cssstyledeclaration-item) ⇒ `\*`
-        * [.getPropertyValue(property)](#cssstyledeclaration-getpropertyvalue) ⇒ `\*`
-        * [.setProperty(property, value, [priority])](#cssstyledeclaration-setproperty)
-        * [.removeProperty(property)](#cssstyledeclaration-removeproperty)
-    * _static_
-        * [.CSSStyleDeclaration](#cssstyledeclaration-cssstyledeclaration)
-            * [new CSSStyleDeclaration(style, parentRule)](#new-cssstyledeclaration-cssstyledeclaration-new)
-
+    * [.length](#cssstyledeclaration-length)
+    * [.parentRule](#CSSStyleDeclaration+parentRule) : [`CSSStyleRule`](#cssstylerule)
+    * [.item(index)](#cssstyledeclaration-item)
+    * [.getPropertyValue(property)](#cssstyledeclaration-getpropertyvalue)
+    * [.setProperty(property, value, [priority])](#cssstyledeclaration-setproperty)
+    * [.removeProperty(property)](#cssstyledeclaration-removeproperty)
 
 <a name="cssstyledeclaration-length" id="cssstyledeclaration-length"></a>
 
 ### cssStyleDeclaration.length
-**Kind**: instance property of [`CSSStyleDeclaration`](#cssstyledeclaration)
-**Read only**: true
+Number of properties in this style declaration
+
+**Read only**
 
 <a name="cssstyledeclaration-parentrule" id="cssstyledeclaration-parentrule"></a>
 
-### cssStyleDeclaration.parentRule
-**Kind**: instance property of [`CSSStyleDeclaration`](#cssstyledeclaration)
-**Read only**: true
+### cssStyleDeclaration.parentRule : [`CSSStyleRule`](#cssstylerule)
+Get the parent style rule
 
-<a name="cssstyledeclaration-cssfloat" id="cssstyledeclaration-cssfloat"></a>
-
-### cssStyleDeclaration.cssFloat
-**Kind**: instance property of [`CSSStyleDeclaration`](#cssstyledeclaration)
-
-<a name="cssstyledeclaration-cssfloat" id="cssstyledeclaration-cssfloat"></a>
-
-### cssStyleDeclaration.cssFloat
-**Kind**: instance property of [`CSSStyleDeclaration`](#cssstyledeclaration)
+**Read only**
 
 <a name="cssstyledeclaration-item" id="cssstyledeclaration-item"></a>
 
-### cssStyleDeclaration.item(index) ⇒ `\*`
-**Kind**: instance method of [`CSSStyleDeclaration`](#cssstyledeclaration)
+### cssStyleDeclaration.item(index)
+Return the property name at the specified index.
 
 | Param | Type |
 | --- | --- |
-| index | `\*` |
-
+| index | `number` |
 
 <a name="cssstyledeclaration-getpropertyvalue" id="cssstyledeclaration-getpropertyvalue"></a>
 
-### cssStyleDeclaration.getPropertyValue(property) ⇒ `\*`
-**Kind**: instance method of [`CSSStyleDeclaration`](#cssstyledeclaration)
+### cssStyleDeclaration.getPropertyValue(property)
+Returns the value of the specified property
 
 | Param | Type |
 | --- | --- |
-| property | `\*` |
-
+| property | `DOMString` |
 
 <a name="cssstyledeclaration-setproperty" id="cssstyledeclaration-setproperty"></a>
 
 ### cssStyleDeclaration.setProperty(property, value, [priority])
-**Kind**: instance method of [`CSSStyleDeclaration`](#cssstyledeclaration)
+Set the property value
 
 | Param | Type | Default |
 | --- | --- | --- |
-| property | `\*` |  |
-| value | `\*` |  |
-| [priority] | `string` | <code>&quot;\&quot;\&quot;&quot;</code> |
-
+| property | `DOMString` |  |
+| value | `DOMString` |  |
+| [priority] | `string` | <code>&quot;&quot;</code> |
 
 <a name="cssstyledeclaration-removeproperty" id="cssstyledeclaration-removeproperty"></a>
 
 ### cssStyleDeclaration.removeProperty(property)
-**Kind**: instance method of [`CSSStyleDeclaration`](#cssstyledeclaration)
+Remove the specified property
 
 | Param | Type |
 | --- | --- |
-| property | `\*` |
-
-
-<a name="cssstyledeclaration-cssstyledeclaration" id="cssstyledeclaration-cssstyledeclaration"></a>
-
-### CSSStyleDeclaration.CSSStyleDeclaration
-**Kind**: static class of [`CSSStyleDeclaration`](#cssstyledeclaration)
-
-<a name="new-cssstyledeclaration-cssstyledeclaration-new" id="new-cssstyledeclaration-cssstyledeclaration-new"></a>
-
-#### new CSSStyleDeclaration(style, parentRule)
-Creates an instance of CSSStyleDeclaration.
-
-
-| Param | Type |
-| --- | --- |
-| style | `\*` |
-| parentRule | `\*` |
+| property | `DOMString` |
 

@@ -123,7 +123,7 @@ Style Rule           | Unsupported Values
                      | `safe`
                      | `unsafe`
                      | `normal`
-                     | `baseline` (*)
+                     | `baseline`
                      | `first`
                      | `last`
 `align-self`         | `start`
@@ -133,7 +133,7 @@ Style Rule           | Unsupported Values
                      | `safe`
                      | `unsafe`
                      | `normal`
-                     | `baseline` (*)
+                     | `baseline`
                      | `first`
                      | `last`
 `place-content`      | No support

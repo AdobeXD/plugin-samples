@@ -42,7 +42,7 @@ To preview the fully formatted docs as they will appear online, follow these ste
 npm install
 npm run book:install
 
-# Rebuild HTML content (takes 2-3 minutes)
+# Rebuild HTML content (takes 3-5 minutes)
 npm run book:build
 
 # View HTML from a local webserver (using a file:// URL won't work)

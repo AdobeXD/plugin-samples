@@ -3,6 +3,8 @@
 
 ## storage
 
+**Category**: uxp, io, file
+
 * [storage](#module-storage)
     * [.Entry](#module-storage-entry)
         * [.name](#module-storage-entry-name) : `string`

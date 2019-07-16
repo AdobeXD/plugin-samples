@@ -1,5 +1,60 @@
 # Change Log
 
+## XD Release 21.0.12 (July 2019)
+
+XD 21 adds major updates: the ability to **show panel UI**, and the much-improved **UXP 3 CSS & layout engine**.
+
+_The new layout engine likely constitutes a **breaking change** for any plugin with UI_ -- read below for details.
+
+### Plugin Panel UI
+
+* Plugins can now display UI persistently in a side panel. More information:
+    * [How to define a panel](./reference/structure/handlers.md#panel)
+    * [Panel overview / reference](./reference/ui/panels/index.md)
+    * [Panel Quick Start tutorial](./tutorials/quick-start-panel/index.md)
+    * [Migrating from dialogs to panels](./migrations/how-to-migrate-from-modal-to-panel.md)
+* A new default stylesheet is provided for plugin UI that renders inside a plugin. This means that UI that renders in one manner in a modal dialog may not render in the same exact manner in a panel.
+
+### UXP 3 HTML/CSS changes
+
+In order to gain access to most of these features, your plugin must _opt-in_ to the UXP 3.1 layout engine by changing the `minVersion` in your `manifest.json`:
+
+```json
+    "host": {
+        "minVersion": "21.0"
+    }
+```
+
+> **NOTE:** Without this change, your plugin will run in [backwards-compatibility mode](./migrations/uxp-2-to-3.md).
+
+* **Layout engine**
+    * **Inline layout** -- You now have the ability to write code like `<p>This is <a href="...">a link</a></p>` and have the link render _inline_ with the rest of the text
+    * **Layout now defaults to inline** (no longer flexbox) -- _This may break existing plugin UI code:_ now `span` elements will render with `inline`, `button`s will render as `inline-block`, etc.
+    * **`overflow` defaults to `visible`** (no longer `hidden`), per the web specification -- _This may break existing plugin UI code._
+    * `object-fit` -- to control the size of images
+    * `z-index`
+* **SVG UI elements**
+* **New UI controls**
+    * Radio buttons -- `<input type="radio" />`
+    * Progress bars & spinners -- `<progress>`
+* **CSS improvements**
+    * `linear-gradient()`
+    * `outline`
+    * More units! -- UXP now understands `rem`, `em`, `px`, `pt`, `vh`, `vw`, `cm`, `in`, etc. **NOTE:** UXP will now start ignoring values (other than `0`) that don't specify any units, which can break older plugin UI code.
+    * CSS Variables -- easily apply themes and other layout to your plugin.
+    * More pseudo-selectors -- `:lang` and `:focus`
+    * `calc()` -- For example, `width: calc(100% - 9px)`. Note that you can mix units, just like you can on the web.
+    * Inheritance -- The CSS parser now understands `initial`, `unset`, and `inherit`. You can also use `!important` to override styles (although you should use this as a last resort).
+    * Default styles are now easier to override as the specificity in the default stylesheet has been reduced.
+* **Keyboard focus** -- Setting `tab-index` to `0` will now cause any element to be focusable. You can **not** yet control the tab order.
+
+### Known Issues
+
+See the [Known Issues page](./known-issues.md) for a comprehensive list of existing known issues.
+
+
+----
+
 ## XD Release 20.0.12 (June 2019)
 
 ### UI Changes

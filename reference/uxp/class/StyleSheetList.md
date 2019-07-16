@@ -2,25 +2,34 @@
 <a name="stylesheetlist" id="stylesheetlist"></a>
 
 ## StyleSheetList
-**Kind**: global class  
+
+**Category**: browser, cssom
+
+**See**: https://developer.mozilla.org/en-US/docs/Web/API/StyleSheetList
 
 * [StyleSheetList](#stylesheetlist)
-    * [.length](#stylesheetlist-length)
-    * [.item(index)](#stylesheetlist-item) ⇒ [`StyleSheet`](#stylesheet)
+    * [new StyleSheetList()](#new-stylesheetlist-new)
+    * [.length](#stylesheetlist-length) : `number`
+    * [.item(index)](#StyleSheetList+item)
 
+<a name="new-stylesheetlist-new" id="new-stylesheetlist-new"></a>
+
+### new StyleSheetList()
+An array-like list of stylesheets.
 
 <a name="stylesheetlist-length" id="stylesheetlist-length"></a>
 
-### styleSheetList.length
-**Kind**: instance property of [`StyleSheetList`](#stylesheetlist)  
-**Read only**: true  
+### styleSheetList.length : `number`
+The number of stylesheets
+
+**Read only**
 
 <a name="stylesheetlist-item" id="stylesheetlist-item"></a>
 
-### styleSheetList.item(index) ⇒ [`StyleSheet`](#stylesheet)
-**Kind**: instance method of [`StyleSheetList`](#stylesheetlist)  
+### styleSheetList.item(index)
+Return the stylesheet at the specified index
 
 | Param | Type |
 | --- | --- |
-| index | `\*` | 
+| index | `number` |
 

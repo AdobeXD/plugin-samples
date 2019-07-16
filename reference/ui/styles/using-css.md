@@ -31,7 +31,7 @@ See the [available styles](../../uxp/namespace/css.md) for more information on w
 >
 > Not every element supports every style — especially interactive elements.
 
-## Supported Selectors
+# Supported Selectors
 
 XD understands the following CSS selectors:
 
@@ -99,3 +99,33 @@ XD understands the following CSS selectors:
 > **Info**
 >
 > Only `hover`, `focus`, and `lang` pseudo-classes are supported.
+
+# Supported Functions
+
+Following CSS functions can be used:
+
+* var()
+    ```css
+    :root {
+        --main-bg-color: pink;
+    }
+
+    body {
+        background-color: var(--main-bg-color);
+    }
+    ```
+
+* calc()
+    ```css
+    input {
+        padding: 2px;
+        display: block;
+        width: calc(100% - 1em);
+    }
+
+    #formbox {
+        width: calc(100% / 6);
+        border: 1px solid black;
+        padding: 4px;
+    }
+    ```

@@ -1,3 +1,6 @@
+> **warning**
+> Please refrain from using `position: fixed` if you are building a [panel](/reference/ui/panels/index.md) plugin. Currently, there is a bug that allows panels to put elements outside the panel boundaries. This will break your panel plugin in a future release when the bug is fixed.
+
 # Relative and Absolute Positioning
 
 You can use relative and absolute positioning to indicate _exactly_ where elements are to be positioned. Relative positioning allows you to shift an element from its originally calculated position whereas absolute positioning takes the element out of the layout flow entirely, and allows you to position the element anywhere.

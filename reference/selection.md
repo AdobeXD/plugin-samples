@@ -29,7 +29,11 @@ The current selection state is passed to your _command handler function_ as an a
 function myCommand(selection, documentRoot) {
     console.log(selection.items.length + " items are selected");
 }
-module.exports.commands = { myCommandId: myCommand };
+module.exports = {
+    commands: {
+        myCommandId: myCommand
+    }
+};
 ```
 
 You can also access this object from the [`scenegraph.selection`](./scenegraph.md#module_scenegraph-selection) property.
