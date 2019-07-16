@@ -1,27 +1,7 @@
-# Hiding a Panel
+# Panel hide() callback
 
-One of the optional lifecycle methods for panels is the `hide` function. The `hide` function is called when your plugin is made invisible to the user (when the user navigates to the plugin list, toggles the panel view to another view, or the user invokes a different plugin panel from the _Plugins_ menu).
+The `hide()` function is an _optional_ lifecycle method in [panel objects](../../structure/handlers.md#panel). XD calls `hide()` each time your plugin panel is hidden -- if the user navigates back to the overall plugin list view, toggles to show a different plugin's panel UI, or closes the left-land sidebar altogether. (`hide()` is not called when the window is closed or XD is quitting, however).
 
-The `hide` function receives an `event` argument. The `event` argument includes the `node` property where your UI is attached:
+The `event` argument provides the same `event.node` object as was passed to your `show()` callback earlier.
 
-```js
-function hide(event) {
-  event.node.firstChild.remove();
-}
-```
-
-You can choose to remove your UI at the time `hide` is called, or if you prefer to reuse your UI, you can leave it attached. If you do so, be sure to handle `show` properly (i.e., don't attach your UI multiple times, or the user will see duplicates).
-
-The `hide` function is optional and can be exported from your `main.js` file:
-
-```js
-module.exports = {
-  panels: {
-    example: {
-      show,
-      hide,
-      update
-    }
-  }
-};
-```
+You can choose to remove your UI at the time `hide` is called, or if you prefer to reuse your UI, you can leave it attached. See the [`show()` documentation page](./show.md) for examples of both approaches.

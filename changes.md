@@ -2,49 +2,58 @@
 
 ## XD Release 21.0.12 (July 2019)
 
-### UI Changes
+XD 21 adds major updates: the ability to **show panel UI**, and the much-improved **UXP 3 CSS & layout engine**.
 
-* Display changes should no longer cause random crashes.
-* Plugins can now display persistent UI in the plugin panel. More information: [Panel Quick Start](./tutorials/quick-start-panel/index.md), [Migrating from Modals to Panels](./tutorials/how-to-migrate-from-modal-to-panel/index.md), [Panel Reference](./reference/ui/panels/index.md).
+_The new layout engine likely constitutes a **breaking change** for any plugin with UI_ -- read below for details.
 
-### XD API Changes
+### Plugin Panel UI
 
+* Plugins can now display UI persistently in a side panel. More information:
+    * [How to define a panel](./reference/structure/handlers.md#panel)
+    * [Panel overview / reference](./reference/ui/panels/index.md)
+    * [Panel Quick Start tutorial](./tutorials/quick-start-panel/index.md)
+    * [Migrating from dialogs to panels](./tutorials/how-to-migrate-from-modal-to-panel/index.md).
 * A new default stylesheet is provided for plugin UI that renders inside a plugin. This means that UI that renders in one manner in a modal dialog may not render in the same exact manner in a panel.
-* Default styles are now easier to override as the specificity in the default stylesheet has been reduced.
 
+### UXP 3 HTML/CSS changes
 
-### UXP API Changes
+In order to gain access to most of these features, your plugin must _opt-in_ to the UXP 3.1 layout engine by changing the `minVersion` in your `manifest.json`:
 
-UXP provides several common APIs to XD, including File I/O, Networking, and the User Interface layer. XD 21 now ships with version 3.1 , and as such, there are lots of new features you can take advantage of. In order to gain access to these features, your plugin must _opt-in_ to the UXP 3.1 layout by changing the `host.minVersion` key in the `manifest.json`:
-
-```js
-{
+```json
     "host": {
         "minVersion": "21.0"
     }
-}
 ```
 
 > **NOTE:** Without this change, your plugin will run in [backwards-compatibility mode](./migrations/uxp-2-to-3.md).
 
-* **Inline layout**. This means you now have the ability to write code like `<p>This is <a href="...">a link</a></p>` and have the link render _inline_ with the rest of the text. This is **huge**, but it can also create a tremendous impact on your plugin's layout as _the default layout for an HTML element_ now more closely aligns with the Web specification. This means that `span` elements will render with `inline`, `button`s will render as `inline-block`, etc. This means that some elements may no longer render as they did in the previous version of UXP.
-* **CSS Variables**. You can now use CSS variables to help apply themes and other layout to your plugin.
-* **`calc`**. You can use `calc` to calculate lengths in your CSS. For example, `width: calc(100% - 9px)`. Note that you can mix units, just like you can on the web.
-* **Units**! The previous version of UXP understood `px` and `%`, but this version understands nearly all of them. You can use `rem`, `em`, `px`, `pt`, `vh`, `vw`, `cm`, `in`, etc. **NOTE:** If you previously didn't specify units in your CSS, you should start. Values (other than `0`) without units will be ignored.
-* **Fixed positioning**. `position: fixed` is now technically supported, but _should not be used in panels_. It can be used in dialogs to anchor your element to a fixed position in its container, regardless of scrolling position. This is most useful for plugins that want to live within a panel. **KNOWN ISSUE:** Do not use in panels, as it is possible for a plugin to partially escape the normal bounds of a panel when using `position: fixed`. This will be addressed in the future, but the fix **will break** your plugins in the future.
-* **z-index**. You can now stack your element using `z-index`.
-* **Additional property values**: The CSS parser now understands `initial`, `unset`, and `inherit`. You can also use `!important` to override styles (although you should use this as a last resort).
-* **Linear gradient support**: You can now use the CSS syntax for linear gradients.
-* **Outline support**: You can assign an outline to your elements with the `outline` rule.
-* **object-fit**: You can use `object-fit` to better control the size of images and other elements,.
-* **New pseudo-selectors**: `:lang` and `:focus` are now available.
-* **Tab index, v1**: Setting `tab-index` to `0` will now cause any element to be focusable. You can **not** yet control the tab order.
-* **Improved default for `overflow`**: `overflow` now defaults to `visible`, not `hidden`, as per the web specification.
-
+* **Layout engine**
+    * **Inline layout** -- You now have the ability to write code like `<p>This is <a href="...">a link</a></p>` and have the link render _inline_ with the rest of the text
+    * **Layout now defaults to inline** (no longer flexbox) -- This has a tremendous impact on pre-existing plugin UI code: now `span` elements will render with `inline`, `button`s will render as `inline-block`, etc.
+    * **`overflow` defaults to `visible`** (no longer `hidden`), as per the web specification
+    * `object-fit` -- to control the size of images
+    * `z-index`
+* **SVG UI elements**
+* **New UI controls**
+    * Radio buttons -- `<input type="radio" />`
+    * Progress bars & spinners -- `<progress>`
+* **CSS improvements**
+    * `linear-gradient()`
+    * `outline`
+    * More units! -- UXP now understands `rem`, `em`, `px`, `pt`, `vh`, `vw`, `cm`, `in`, etc. **NOTE:** UXP will now start ignoring values (other than `0`) that don't specify any units, which can break older plugin UI code.
+    * CSS Variables -- easily apply themes and other layout to your plugin.
+    * More pseudo-selectors -- `:lang` and `:focus`
+    * `calc()` -- For example, `width: calc(100% - 9px)`. Note that you can mix units, just like you can on the web.
+    * Inheritance -- The CSS parser now understands `initial`, `unset`, and `inherit`. You can also use `!important` to override styles (although you should use this as a last resort).
+    * Default styles are now easier to override as the specificity in the default stylesheet has been reduced.
+* _Basic_ **Tab index** support: Setting `tab-index` to `0` will now cause any element to be focusable. You can **not** yet control the tab order.
 
 ### Known Issues
 
 See the [Known Issues page](./known-issues.md) for a comprehensive list of existing known issues.
+
+
+----
 
 ## XD Release 20.0.12 (June 2019)
 

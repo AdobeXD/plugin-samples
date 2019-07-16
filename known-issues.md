@@ -2,9 +2,7 @@
 
 ## General Issues
 
-- When TABbing between controls on the XD Start page, focus may appear to be lost. It isn't, and continued TABbing will refocus the editable controls.
-- Some icons may be blurry in the plugin panel. Be sure to include 24px, 48px, 96px, 144px, and 192px in your plugin bundle and manifest.
-- Some icons may be missing in the plugin panel. This is the case if no icons are specified in your plugin's manifest.
+- Icons may be blurry or missing in the plugin panel if you don't include the full set of 24px, 48px, 96px, 144px, and 192px sizes in your plugin bundle and manifest.
 - Developer/Side-loading Specific
   - Plugin menus and handlers may not be in-sync across documents during development
     - If someone modifies a plugin's files on disk while XD is running, and then opens more windows in XD, any windows that were open before reflect the old version of the plugin while windows that were opened later reflect the new version of the plugin. The menu bar will always reflect the old version of the plugin regardless of which window is current.
@@ -32,7 +30,7 @@
 - It is not possible to trigger the emoji selector in a text field on macOS.
 - Many SVGs are known to render in odd ways in the UI. These issues will be addressed in the future, but we would love to hear your reports of any SVGs that don't work, and how you fixed it.
 - When tabbing in a scroll view, the scroll view is not automatically scrolled to ensure the target control is in view (macOS Only).
-- When using `<input type="radio" />`, be sure to include a `name` attribute if you want radio buttons to be exclusive. If you forget, you'll get different behavior on macOS and Windows 10. On macOS, radio buttons will not be exclusive to each other just because they are in the same container, whereas on Windows 10, radio buttons _will_ be exclusive within the same container. As such, you should _always_ use `name` to determine radio button exclusivity.
+- When using `<input type="radio" />`, be sure to include a `name` attribute. If you forget, you'll get different behavior on macOS and Windows 10. On macOS, radio buttons will not be exclusive to each other just because they are in the same container, whereas on Windows 10, radio buttons _will_ be exclusive within the same container. As such, you should _always_ use `name` to determine radio button exclusivity.
 - Emojis are rendered in the font color on Windows 10, instead of using the emoji's colors.
 - When a control in a panel is disabled and enabled, it is no longer reachable via TAB. This may also impact controls added *after* a panel is shown for the first time.
 

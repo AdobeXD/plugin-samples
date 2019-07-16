@@ -1,8 +1,8 @@
 # UXP 2 to 3
 
-XD 20 and below utilized UXP version 2. In XD 21, we're shipping a new version of UXP: Version 3.1. This version is a _huge_ release, and comes with lots of new features of which you'll want to take advantage.
+XD 20 and below utilized UXP version 2. In XD 21, we're shipping a new version: UXP 3.1. This version is a _huge_ release, and comes with lots of new features of which you'll want to take advantage.
 
-Because the new features in UXP 3.1 are so large, we also introduced a backwards-compatibility mode. _All plugins use backwards-compatibility mode by default_, unless the plugin explicitly opts out. This helps to ensure that most plugins won't suddenly change their appearance and have broken layouts.
+Because the new features in UXP 3.1 are so large, we also introduced a backwards-compatibility mode. _All plugins use backwards-compatibility mode by default_, unless the plugin explicitly opts into UXP 3 by updating its declared `minVersion`. This helps to ensure that most plugins won't suddenly change their appearance and have broken layouts.
 
 > **Info**
 >

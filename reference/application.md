@@ -2,54 +2,68 @@
 
 ## application
 
-The `application` module exposes useful information about XD's state, along with APIs for exporting content.
+The `application` module exposes APIs for exporting content, initiating edits from panel UI, and getting version / locale info.
 
-- [application](#module_application)
-   - [.editDocument(options, editFunction)](#module_application-editFunction)
-   - [.createRenditions(renditions)](#module_application-createRenditions) ⇒ `Promise<Array, string>`
-   - [.version](#module_application-version) : <code>string</code>
-   - [.appLanguage](#module_application-appLanguage) : <code>string</code>
-   - [.systemLocale](#module_application-systemLocale) : <code>string</code>
+* [application](#module_application)
+   * [.editDocument(options, editFunction) | (editFunction)](#module_application-editDocument)
+   * [.createRenditions(renditions)](#module_application-createRenditions) ⇒ `Promise<Array, string>`
+   * [.version](#module_application-version) : <code>string</code>
+   * [.appLanguage](#module_application-appLanguage) : <code>string</code>
+   * [.systemLocale](#module_application-systemLocale) : <code>string</code>
+
 
 ---
 
-<a name="module_application-createRenditions"></a>
+<a name="module_application-editDocument"></a>
 
-### application.editDocument(editSettings, editFunction)
+### *application.editDocument(options, editFunction) | (editFunction)*
 
-> **Info**
->
-> This method is only applicable to buliding panel plugins.
+Call `editDocument()` from a **plugin panel UI** event listener to initiate an [edit operation](./core/lifecycle.md#edit-operations) batch in order to modify the XD document. This API is irrelevant for plugin menu item commands, which are wrapped in an edit batch automatically.
 
-Since panel-based plugins are completely asynchronous, they require a different model for interacting with the scenegraph. There's no way to return a `Promise`, for example, to hold the scenegraph open for changes for the entire duration your panel is visible.
+XD calls the `editFunction()` synchronously (before `editDocument()` returns). This function is treated the same as a [menu command handler](./structure/handlers.md#command):
+* It is passed two arguments, the selection and the root node of the scenegraph
+* It can return a Promise to extend the duration of the edit asynchronously
 
-Scenegraph modifications can only occur from user-initiated actions in your plugin. XD determines if an action was initiated by the user via your plugin's UI, and if so, prepares to allow scenegraph modifications.
+You can _only_ call `editDocument()` in response to a user action, such as a button `"click"` event or a text input's `"input"` event. This generally means you must call it while a UI event handler is on the call stack.
 
-XD makes this determination by watching HTML elements that have an `id` attribute, so you'll need to have an `id` for any element the user will use to trigger an action that will alter the scenegraph.
-
-For example:
-
-```
-<button id="apply">Apply</button>
-```
+For UI events that often occur in rapid-fire clusters, such as dragging a slider or pressing keys in a text field, XD tries to smartly merge consecutive edits into a single atomic Undo step. See the `mergeId` option below to customize this behavior.
 
 **Kind**: static method of [<code>application</code>](#module_application)
 
-| Param        | Type                    | Description                                            |
-| ------------ | ----------------------- | ------------------------------------------------------ |
-| editSettings | Object&lt;EditSettings> | List of edit settings                                  |
-| editFunction | function                | Accepts two parameters: `selection` and `documentRoot` |
+| Param   | Type          | Description                                                         |
+| ------- | ------------- | ------------------------------------------------------------------- |
+| options | EditSettings= | Optional settings object (see below). This argument can be omitted. |
+| editFunction | !function(!Selection, !RootNode):?Promise | Function which performs your plugin's edits to the scenegraph. |
 
 **Typedef EditSettings**
 
-| Property  | Type   | Description                                                                                               |
-| --------- | ------ | --------------------------------------------------------------------------------------------------------- |
-| editLabel | string | Used as the Undo label in the **Edit** menu. If left empty, the plugin name will be used.                 |
-| mergeId   | string | All edits with the same `mergeId` will be grouped as one undo. `selection` change overrides merged edits. |
+| Property  | Type    | Description                                                                                               |
+| --------- | ------- | --------------------------------------------------------------------------------------------------------- |
+| editLabel | ?string | Used as the Undo label in the **Edit** menu. If unspecified, XD uses the `uxp-edit-label` attribute on the DOM node which the user interacted with, and if that does not exist then the plugin's name will be used. |
+| mergeId   | ?string | If two consecutive edits to the same selection have the same `mergeId`, they are flattened together into one Undo step. If unspecified, for "high frequency" UI events (see above), XD treats the originating DOM node as a unique identifier for merging; for other UI events, merging is disabled. |
+
+**Example**
+```js
+let Color = require("scenegraph").Color;
+let application = require("application");
+
+let panelButton = document.querySelector("panel #myButton");
+
+// When button is clicked, set selected item's fill to solid red
+panelButton.addEventListener("click", event => {
+    application.editDocument(selection => {
+        selection.items[0].fill = new Color("red");
+    });
+});
+```
+
+> **Info**
+> For comparison, plugin [menu command handlers](structure/handlers.md#command) are effectively run as if they were passed to `editDocument()` with `editLabel` set to the menu item's label and `mergeId` set to null.
+
 
 ---
 
-### application.createRenditions(renditions)
+### *application.createRenditions(renditions)*
 
 Generate renditions of nodes in the document in a batch. Overwrites any existing files without warning.
 
@@ -88,11 +102,11 @@ _All rendition settings fields are required_ (for a given rendition type) unless
 | outputFile | !uxp.storage.File | File the rendition was written to (equal to `outputFile` in RenditionSettings) |
 
 **Example**
-
 ```js
 // Generate PNG rendition of the selected node
 let application = require("application");
 let fs = require("uxp").storage.localFileSystem;
+
 let file = await fs.getFileForSaving();
 let shape = selection.items[0];
 let renditions = [
@@ -108,11 +122,12 @@ application.createRenditions(renditions).then(function(results) {
 });
 ```
 
+
 ---
 
 <a name="module_application-version"></a>
 
-### _application.version : <code>string</code>_
+### *application.version : <code>string</code>*
 
 Adobe XD version number in the form "major.minor.patch.build"
 
@@ -120,17 +135,16 @@ Adobe XD version number in the form "major.minor.patch.build"
 **Read only**: true
 
 **Example**
-
 ```js
-let application = require("application");
 console.log("Version:", application.version); // e.g. "13.0.21.3"
 ```
+
 
 ---
 
 <a name="module_application-appLanguage"></a>
 
-### _application.appLanguage : <code>string</code>_
+### *application.appLanguage : <code>string</code>*
 
 Current language the application UI is using. This may not equal the user's OS locale setting: it is the closest
 locale _supported by XD_ - use this when you want your plugin's UI to be consistent with XD's UI. Specifies
@@ -138,27 +152,26 @@ language only, with no region info (e.g. "fr", not "fr_FR").
 
 **Kind**: static property of [<code>application</code>](#module_application)  
 **Read only**: true  
-**Example**
 
+**Example**
 ```js
-let application = require("application");
 console.log("XD locale:", application.appLanguage); // e.g. "en"
 ```
+
 
 ---
 
 <a name="module_application-systemLocale"></a>
 
-### _application.systemLocale : <code>string</code>_
+### *application.systemLocale : <code>string</code>*
 
 User's OS-wide locale setting. May not match the XD UI, since XD does not support all world languages. Includes both
 language _and_ region (e.g. "fr_CA" or "en_US").
 
 **Kind**: static property of [<code>application</code>](#module_application)  
 **Read only**: true  
-**Example**
 
+**Example**
 ```js
-let application = require("application");
 console.log("OS locale:", application.systemLocale); // e.g. "en_US"
 ```

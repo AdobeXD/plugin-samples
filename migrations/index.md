@@ -1,6 +1,6 @@
 # How to migrate from modal to panel
 
-Are you interested in converting your modal plugin to a panel plugin? Keep in mind that not every modal plugin is a good fit for this change. If you are curious about what differences exist, take a look at the docs for each UI entrypoint:
+Are you interested in converting your plugin's modal dialog box UI into a panel UI? Keep in mind that not every modal dialog flow is a good fit for this change. If you are curious about what differences exist, take a look at the docs for each UI entrypoint:
 
 - [Modal dialogs](/reference/ui/dialogs/index.md)
 - [Panels](/reference/ui/panels/index.md)
@@ -20,7 +20,7 @@ The complete example can be found in [our Samples repository](https://github.com
 
 ## Development Steps
 
-We are going to take a look at a sample plugin that lets users increase the width and height of the selected rectangle by inputing pixel values in the UI. As you can imagine, this process would be more efficient for the user if the plugin provided UI in a panel.
+We are going to take a look at a sample plugin that lets users increase the width and height of the selected rectangle by inputting pixel values in the UI. As you can imagine, this process would be more efficient for the user if the plugin provided UI in a panel.
 
 Let's see what this plugin will look like before and after:
 
@@ -82,7 +82,7 @@ As you can see, `host.minVersion` is changed to `21.0` since `21.0` is the earli
 
 ### 3. Understand the new structure of `main.js`
 
-A modal plugin needs one function to be exported:
+A modal-dialog command needs one function to be exported:
 
 ```js
 function enlargeRectangle() {
@@ -96,7 +96,7 @@ module.exports = {
 };
 ```
 
-A panel plugin, on the other hand, expects you to export an _object_ with one required _lifecycle method_ named `show`, and with optional lifecycle methods name `hide` and `update`:
+Plugin panel UI, on the other hand, requires you to export an _object_ with one required _lifecycle method_ named `show`, and with optional lifecycle methods name `hide` and `update`:
 
 ```js
 function show(event) {
@@ -122,11 +122,11 @@ module.exports = {
 };
 ```
 
-Review the specifics of these panel lifecycle methods in the [references](/reference/ui/panels/index.md) before moving on.
+Review the specifics of these panel lifecycle methods in the [panel-object API reference](/reference/structure/handlers.md#panel) before moving on.
 
 ### 3. Review your modal `main.js` code
 
-Let's first look at the `main.js` file of your modal plugin:
+Let's first look at the `main.js` file of your original modal-dialog plugin:
 
 ```js
 const { selection } = require("scenegraph"); // [1]
@@ -216,7 +216,7 @@ Let's start modifying code in the `main.js` file.
 
 #### Warn the user about invalid selections
 
-Your HTML markup does not have to change, but let's add a `p` tag to show a warning message if the user has selected a node that's not rectangle:
+Your HTML markup does not have to change, but let's add a `p` tag to show a warning message if the user has selected a node that's not a rectangle:
 
 ```html
 <p id="warning">
@@ -229,25 +229,19 @@ Unlike modal UI, panel UI can stay open and persistent, optionally updating in r
 
 #### Request to make changes to the scenegraph
 
-Panel plugins are asynchronous and they require a special function to hold the scenegraph open when your plugin wants to make changes to the document.
+Unlike menu commands, which have just a single entry point the user can trigger to run the command, panel plugins have many different ways that the user can interact with their DOM elements to trigger an action. As a result, your panel UI event handlers must call special function when you want to make changes to the XD document.
 
-Your plugin can request to make edits to the document with the `application.editDocument` method:
+Any part of your panel that makes changes to the scenegraph needs to be wrapped in an [`application.editDocument`](/reference/application.md#module_application-editDocument) call:
 
 ```js
 const { editDocument } = require("application");
-```
 
-Any part of your code that makes changes to the scenegraph needs to be wrapped in an `editDocument` call:
-
-```js
 editDocument({ editLabel: "Increase rectangle size" }, function(selection) {
   const selectedRectangle = selection.items[0];
   selectedRectangle.width += width;
   selectedRectangle.height += height;
 });
 ```
-
-See the [`editDocument`](/reference/application.md) reference for further information.
 
 #### Make a panel element
 

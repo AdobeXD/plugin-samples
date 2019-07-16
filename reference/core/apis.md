@@ -34,7 +34,7 @@ Most XD APIs are accessed by loading a module via `require()`, but some are pass
     * `let commands = require("commands");`
 * [interactions](../interactions.md) - Data model for interactive prototyping features (also accessible from scenegraph nodes).
     * `let interactions = require("interactions");`
-* [application](../application.md) - Version and locale information, and APIs for exporting content.
+* [application](../application.md) - APIs for exporting content, initiating edits from panel UI, and getting version / locale info.
     * `let application = require("application");`
 * [clipboard](../clipboard.md) - Copy text to the clipboard.
     * `let clipboard = require("clipboard");`

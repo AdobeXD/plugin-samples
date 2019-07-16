@@ -1,8 +1,11 @@
-# Updating a Panel
+# Panel update() callback
 
-The `update` function is one of the optional lifecycle method for panels. This function will run when the user either changes the selection or modifies a node within the current selection. A mutation can be anything, including moves, resizes, etc.
+The `update()` function is an _optional_ lifecycle method in [panel objects](../../structure/handlers.md#panel). XD calls `update()` whenever your panel UI content should be refreshed:
+* When the user changes the selection
+* When the user modifies a node within the current selection. This can include actions such as move, resize, changing fill color, etc.
+* When your panel is reopened after having been closed
 
-The `update` function receives `selection` and `root` arguments:
+The `update` function receives [`selection` and `root` arguments](../../structure/handlers.md#contextual-arguments):
 
 ```js
 function update(selection, root) {
@@ -16,18 +19,4 @@ function update(selection, root) {
 
 Note that the example code above assumes you created a reference to the panel markup `panelContainer` at the global level when the panel was created.
 
-Whenever the `update` function is called, it is important to get in and out as quickly as possible—while this function executes, XD is blocked. 
-
-The `update` function must be exported from your `main.js` file if you decide to use it:
-
-```js
-module.exports = {
-  panels: {
-    example: {
-      show,
-      hide,
-      update
-    }
-  }
-};
-```
+Whenever the `update` function is called, it is important to get in and out as quickly as possible since it's triggered for essentially every user action in XD while your panel is open.

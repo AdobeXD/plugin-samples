@@ -9,6 +9,7 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
     "id": "YOUR_ID_HERE",
     "name": "Name of Your Plugin",
     "version": "0.0.1",
+
     "description": "Description of your plugin.",
     "summary": "Summary of your plugin",
     "releaseNotes": "Release note",
@@ -37,15 +38,16 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
         "minVersion": "13.0",
         "maxVersion": "19.0"
     },
+
     "uiEntryPoints": [
         {
             "type": "menu",
-            "label": "Hello World - Menu",
+            "label": "Hello World Command",
             "commandId": "helloCommand"
         },
         {
             "type": "panel",
-            "label": "Hello World - Panel",
+            "label": "Hello World Panel",
             "panelId": "helloPanel"
         }
     ]
@@ -85,21 +87,25 @@ Key path | Type | Description | Required
 
 ## UI entry points
 
-The `uiEntryPoints` field is an _array_ of objects matching the MenuItemDefinition format specified below. These entries appear both in the _Plugins_ menu in the native menubar, and the "plugin launchpad" sidebar panel. See the [Plugin names and labels](/reference/structure/naming.md) page for details on how these entries are displayed.
+The `uiEntryPoints` field is an _array_ of objects matching the MenuItemDefinition format specified below. These entries appear both in the _Plugins_ menu in the native menubar, and the "plugin launchpad" sidebar panel. See [Plugin menu structure](/reference/structure/menu-structure.md) for details on how these entries are displayed.
+
+Each entry point specifies either `commandId` _or_ `panelId`, to create either a direct-action command or a panel show/hide command.
 
 ### MenuItemDefinition
 
 Key | Type | Description
 ----|------|------------
-`type` | `string` | Entry point type. Choose either `"menu"` or `"panel"`.
-`label` | <code>?string&#124;[LocaleMap](#menu-localization)</code> | _Required_ if multiple `MenuItemDefinition` objects defined; _ignored_ if only one defined.<br><br> Label for this menu item that the user will select to run your plugin. May be a single string _or_ an object of localized strings. 
-`commandId` | `string` | For headless and modal-based plugins commands only. Identifier that links the menu item to a function in your plugin's JavaScript code. This identifier needs to be unique within your plugin. It can be whatever you like, but it makes sense to succinctly describe what the command will do. Note that `commandId` and `panelId` are mutually exclusive.
-`panelId` | `string` | For panel(s) provided by a plugin only. Identifier that links the panel instance to an object in your plugin's JavaScript code. This identifier needs to be unique within your plugin. It can be whatever you like, but it makes sense to succinctly describe what the panel will do. Note that `commandId` and `panelId` are mutually exclusive.
-`shortcut` | `Object` | _Optional._ Object defining Mac and Windows keyboard shortcuts for this menu item, formatted as `{"mac": "string", "win": "string"}`. See "Keyboard shortcuts" below for details.
+`type` | `string` | Entry point type: either `"menu"` or `"panel"`.
+`label` | <code>?string&#124;[LocaleMap](#menu-localization)</code> | _Required_ if multiple `MenuItemDefinition` objects defined; _ignored_ if only one defined.<br><br> Label for this menu item that the user will select to run your plugin. May be a single string _or_ a dictionary of localized strings. 
+`commandId` | `string` | Specify `commandId` to create a menu item that runs plugin code directly -- either a headless command, or a command with modal dialog box UI. This identifier links the menu item to a [_handler function_](./handlers.md#command) in your plugin's JavaScript code. This identifier needs to be unique within your plugin. Don't specify `commandId` and `panelId` at the same time.
+`panelId` | `string` | Specify `panelId` to create a menu item that opens panel UI for your plugin. This identifier links the menu item to a [_panel definition_ object](./handlers.md#panel) in your plugin's JavaScript code. This identifier needs to be unique within your plugin. Don't specify `commandId` and `panelId` at the same time.
+`shortcut` | `Object` | _Optional._ Object defining Mac and Windows keyboard shortcuts for this menu item. See "Keyboard shortcuts" below for details.
 
 ### Keyboard shortcuts
 
-Keyboard shortcuts are defined separately for each platform (as seen in the example at the top of this tutorial). Each definition is a string that follows this syntax:
+**Example:** `"shortcut": { "mac": "Cmd+Shift+P", "win": "Ctrl+Shift+P" }`
+
+Keyboard shortcuts are defined separately for each platform. Each definition is a string that follows this syntax:
 
 * One or more modifier keys, in any order, each one followed by `"+"`
     * _Mac:_ modifiers may be `Cmd`, `Ctrl`, `Opt` / `Alt`, or `Shift`. Shortcut _must_ contain at least one of `Cmd` or `Ctrl`.

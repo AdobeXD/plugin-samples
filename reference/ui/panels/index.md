@@ -111,7 +111,6 @@ Let's examine a simple panel and how we might create it:
 {% content "js" %}
 
 ```js
-let visible;
 let panel;
 
 function create() {
@@ -175,17 +174,18 @@ function create() {
 }
 
 function show(event) {
-  if (!panel) panel = create();
-  event.node.appendChild(panel);
-  visible = true;
+  // create panel the first time it's shown
+  if (!panel) {
+    panel = create();
+    event.node.appendChild(panel);
+  }
 }
 
 function hide(event) {
-  visible = false;
+  // in this example, we don't need to do anything when XD hides our panel
 }
 
 function update(selection, root) {
-  if (!visible) return;
   console.log(selection.items);
 }
 
@@ -201,6 +201,8 @@ module.exports = {
 ```
 
 {% endtabs %}
+
+Note: you can either reuse your panel's UI nodes, or destroy and recreate the panel each time it's closed. For examples of both approaches, see the [detailed documentation on the `show()` method](./show.md).
 
 ## Handling Selection Change
 
@@ -297,7 +299,6 @@ As you can see in the example above, every time the user's `selection` changes, 
 {% content "js" %}
 
 ```js
-let visible;
 let panel;
 
 function create() {
@@ -362,21 +363,21 @@ function create() {
 }
 
 function show(event) {
-  if(!panel) panel = create()
-  event.node.appendChild(panel);
-  visible = true;
+  // create panel the first time it's shown
+  if (!panel) {
+    panel = create();
+    event.node.appendChild(panel);
+  }
 }
 
 function hide(event) {
-  event.node.firstChild.remove();
-  visible = false;
+  // in this example, we don't need to do anything when XD hides our panel
 }
 
 function update(selection, root) {
   const { Text } = require("scenegraph");
-  if (!visible) return;
   if (!(selection.items[0] instanceof Text)) {
-    panel.innerHTML = `<p>This plugin requires you to select a text in the document. Please select a text.</p>`;
+    panel.innerHTML = `<p>Please select a text object.</p>`;
   }
 }
 

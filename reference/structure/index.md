@@ -6,4 +6,4 @@ In this section, we'll tell you all about how plugins are structured. These tuto
 
 - [Plugin Location and Name](./location.md)
 - [Folder Structure](./folder-structure.md)
-- [Plugin Names and Labels](./naming.md)
+- [Plugin Menu Structure](./menu-structure.md)

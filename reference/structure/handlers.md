@@ -1,20 +1,43 @@
 # The `main.js` file
 
-All plugins must have a `main.js` file, which serves as the entry point for execution of your JavaScript code. This file is where all the fun happens!
+Every _UI entry point_ you declare in [`manifest.json`](./manifest.md) must be fulfilled by a definition exported from your `main.js` module.
 
-Below, we'll cover some points to help you get oriented with `main.js`.
-
-## Wiring your code to the manifest
-
-The way you link your code with the manifest is different depending on which UI entry point your plugin uses.
-
-### For modal dialogs and headless scripts
-
-Your `main.js` file exports a map linking each `commandId` from the manifest to a _handler function_ in your code:
+_Exporting_ happens by setting the value of `module.exports`:
 
 ```js
+module.exports = {
+    commands: {
+        // definitions for each commandId in manifest go here
+    },
+    panels: {
+        // definitions for each panelId in manifest go here
+    },
+};
+```
+
+The details of what you need to export are different depending on the type of UI entry point. One plugin may use multiple types of UI entry points.
+
+
+<a name="command"></a>
+## Direct-action commands (`commandId`)
+
+`exports.commands` is a map linking each `commandId` from the manifest to a JS _handler function_ in your code.
+
+Manifest:
+```json
+"uiEntryPoints": [
+    {
+        "type": "menu",
+        "label": "Hello World Command",
+        "commandId": "helloCommand"
+    }
+]
+```
+
+main.js:
+```js
 function sayHello(selection, documentRoot) {
-  console.log("Hello, world!");
+    console.log("Hello, world!");
 }
 
 module.exports = {
@@ -24,40 +47,52 @@ module.exports = {
 };
 ```
 
-In this example:
+Notice how the exported map object makes the connection from manifest to code:
 
-1. `helloCommand` matches the value of `commandId` in your manifest
-1. `sayHello` is the name of your main handler function, so it is mapped to `helloCommand` in your command exports.
+1. The `commandId` from the manifest, `helloCommand`, is the _key_
+2. The handler function, `sayHello`, is the _value_ that the key maps to
 
-### For panels
+The handler is called each time the command is invoked, and XD passes it [two arguments providing useful context](#contextual-arguments). Your handler function can [show UI in a dialog box](../ui/dialogs/index.md) and/or [edit the XD document](../core/lifecycle.md#edit-operations).
 
-Your `main.js` file exports a map linking each `panelId` from the manifest to an _object of lifecycle functions_ in your code:
 
+<a name="panel"></a>
+## Panel UI (`panelId`)
+
+`exports.panels` is a map linking each `panelId` from the manifest to a JS _panel object_ in your code.
+
+Manifest:
+```json
+"uiEntryPoints": [
+    {
+        "type": "panel",
+        "label": "Hello World Panel",
+        "panelId": "helloPanel"
+    }
+]
+```
+
+main.js:
 ```js
 function show(event) {
-  const createPanel = function() {
-    const PANEL_HTML = `
-            <form method="dialog" id="main">
-            </form>
-        `;
     let dom = document.createElement("panel");
-    dom.innerHTML = PANEL_HTML;
-    return dom;
-  };
-  event.node.appendChild(createPanel());
+    dom.innerHTML = `
+        <form method="dialog" id="main">
+        </form>
+    `;
+    event.node.appendChild(dom);
 }
 
 function hide(event) {
-  event.node.firstChild.remove();
+    event.node.firstChild.remove();
 }
 
 function update(selection, documentRoot) {
-  yourUpdateHandler();
+    // ...update panel DOM based on selection...
 }
 
 module.exports = {
     panels: {
-        yourPanel: {
+        helloPanel: {
             show,
             hide,
             update
@@ -66,25 +101,32 @@ module.exports = {
 };
 ```
 
-Within `module.exports`, the property name `yourPanel` maps directly to the `panelId` in the manifest. Inside this object are three functions: `show`, `hide`, and `update`. These are plugin lifecycle methods. Only `show` is required.
+Notice how the exported map object makes the connection from manifest to code:
 
-- `show`: called when your plugin is made visible to the user. The parameter that is passed includes a `node` property to which you should attach your user interface. If you don't attach your UI to this node, your UI will not be visible.
-- [`hide` (optional)](../ui/panels/hide.md): called when your plugin is made invisible to the user.
-- `update` (optional): called whenever the user changes their selection or mutates a `node` within that selection. A mutation can be anything, including moves, resizes, etc. Whenever this function is called, it is important to get in and out as quickly as possible—while this function executes, XD is blocked. Note that `update` comes with two parameters, `selection` and `documentRoot`.
+1. The `panelId` from the manifest, `helloPanel`, is the _key_
+2. An object with three methods (`show()`, `hide()`, and `update()`) is the _value_ that the key maps to
+
+The panel object implements this interface:
+
+- [`show()` (required)](../ui/panels/show.md): called when your panel is made visible to the user. To populate the panel with UI elements, add DOM nodes to the `event.node` root node that is provided.
+
+- [`hide()` (optional)](../ui/panels/hide.md): called when your panel is hidden/closed.
+
+- [`update` (optional)](../ui/panels/update.md): called whenever panel UI content should be updated. This includes when the panel is is shown, when the selection changes, or when the selected objects are mutated (move, resize, fill color change, etc.). This function should execute quickly since it's triggered for essentially every user action in XD while your panel is open. XD passes `update()` [two arguments providing useful context](#contextual-arguments).
+
+Typically, you'll attach UI event listeners to the DOM nodes in your panel, and these event listeners may [edit the XD document using an `application.editDocument()` operation](../core/lifecycle.md#edit-operations).
+
 
 ## Contextual arguments
 
-The handler function (in the above example, `sayHello`) receives two contextual arguments from XD:
+The handler function for commands (`sayHello()` above) and the `update()` function for panels are both called with two arguments that provide useful context about XD's current state:
 
-- The current [selection](../selection.md) state
-- The root node of the entire document (see [scenegraph > RootNode](../scenegraph.md#rootnode))
+- The current [selection state](../selection.md)
+- The [root node of the document's scenegraph](../scenegraph.md#rootnode)
 
-The argument names `selection` and `documentRoot` are arbitrary, but are considered convention. We use those names throughout our documentation.
+The argument names `selection` and `documentRoot` seen in the code samples above are arbitrary, but you'll see this naming convention used throughout our documentation.
+
 
 ## Accessing app APIs
 
-See [Available APIs](../core/apis.md) to learn about how to access the APIs that XD provides you with. Most APIs are loaded using `require()`, but a few can be accessed directly as globals.
-
-## Loading libraries and other JavaScript files
-
-You can learn about including further JavaScript files in our [JavaScript concepts section on using `require`](/reference/javascript/javascript-support.html#can-i-use-require).
+XD calls _into_ your plugin code via the above exports. To call into XD's APIs from your plugin code, see [Accessing APIs](../core/apis.md).
