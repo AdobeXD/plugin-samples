@@ -113,8 +113,6 @@ function create() {}
 
 function show(event) {}
 
-function hide(event) {}
-
 function update(selection) {}
 
 module.exports = {
@@ -234,19 +232,7 @@ This code does the following:
 1. The `show` lifecycle method gives you access to an `event` argument which includes a `node` property that you can attach your user interface to.
 2. Adds the panel UI container returned from the `create` helper function to `event.node` if `panel` does not exist in the dom already.
 
-#### Remove the UI
-
-One of the optional lifecycle methods for panels is `hide`, which runs when the user navigates away from your panel.
-
-```js
-function hide(event) { // [1]
-  // This function triggers when the panel is hidden by user
-}
-```
-
-This code does the following:
-
-1. The `event` argument that is passed includes a `node` property, just like we saw for the `show` lifecycle method.
+You can also optionally provide a `hide` lifecycle method for your panel, but we don't need to for this example.
 
 #### Update your UI
 
@@ -288,7 +274,6 @@ module.exports = {
   panels: {
     enlargeRectangle: {
       show,
-      hide,
       update
     }
   }
