@@ -12,7 +12,7 @@ _The new layout engine likely constitutes a **breaking change** for any plugin w
     * [How to define a panel](./reference/structure/handlers.md#panel)
     * [Panel overview / reference](./reference/ui/panels/index.md)
     * [Panel Quick Start tutorial](./tutorials/quick-start-panel/index.md)
-    * [Migrating from dialogs to panels](./tutorials/how-to-migrate-from-modal-to-panel/index.md)
+    * [Migrating from dialogs to panels](./migrations/how-to-migrate-from-modal-to-panel.md)
 * A new default stylesheet is provided for plugin UI that renders inside a plugin. This means that UI that renders in one manner in a modal dialog may not render in the same exact manner in a panel.
 
 ### UXP 3 HTML/CSS changes
