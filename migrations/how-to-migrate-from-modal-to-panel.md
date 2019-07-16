@@ -26,11 +26,11 @@ Let's see what this plugin will look like before and after:
 
 **As a modal**
 
-![Modal UI example](../../images/modal-ui-example.png)
+![Modal UI example](/images/modal-ui-example.png)
 
 **As a panel**
 
-![Panel UI example](../../images/panel-ui-example.png)
+![Panel UI example](/images/panel-ui-example.png)
 
 Now, let's go through the steps of converting a modal plugin to a panel-based plugin.
 
@@ -38,7 +38,7 @@ Now, let's go through the steps of converting a modal plugin to a panel-based pl
 
 Note that your plugin structure does not change. Just like with modal plugins, the minimum required files for your panel plugin to work are `main.js` and `manifest.json`.
 
-![Same plugin structure](../../images/same-plugin-structure.png)
+![Same plugin structure](/images/same-plugin-structure.png)
 
 You might have more files than this, depending on how you have structured your plugin.
 
