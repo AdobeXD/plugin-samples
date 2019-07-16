@@ -208,13 +208,13 @@ Note: you can either reuse your panel's UI nodes, or destroy and recreate the pa
 
 As you can see in the example above, every time the user's `selection` changes, your (optional) lifecycle method `update` will trigger. You will have access to both `selection` and `root` as parameters in the function. This means that your panel can display dynamic content based on what user has selected in the document.
 
-{% tabs sample-selection="Sample", html-selection="HTML", js-selection="JS" %}
+{% tabs sampleselection="Sample", htmlselection="HTML", jsselection="JS" %}
 
-{% content "sample-selection" %}
+{% content "sampleselection" %}
 
 ![Error message](./assets/error.png)
 
-{% content "htmlhtml-selection" %}
+{% content "htmlselection" %}
 
 ```html
 <style>
@@ -296,7 +296,7 @@ As you can see in the example above, every time the user's `selection` changes, 
 </form>
 ```
 
-{% content "js-selection" %}
+{% content "jsselection" %}
 
 ```js
 let panel;
