@@ -1,0 +1,5 @@
+:local(.hello) {
+    letter-spacing: 1px;
+    color: #B8B8B8;
+    border-bottom: 1px solid #B8B8B8;
+}

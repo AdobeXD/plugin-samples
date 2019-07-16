@@ -1,0 +1,46 @@
+:local(.form) {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
+    height: var(--panel-height);
+}
+
+:local(.resultsWrapper) {
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    height: var(--panel-footer-height);
+}
+
+:local(.resultsInfo) {
+    margin: 0;
+    justify-content: flex-end;
+    height: var(--panel-footer-height);
+}
+
+:local(.commandLine) {
+    border-top: 0.5px solid #D8D8D8;
+    zpadding-top: 4px;
+    /*width: 100%;
+    position: fixed;
+    bottom: 0;*/
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: flex-end;
+    order: 99;
+}
+
+:local(.commandLine) div, :local(.commandLine) p {
+    flex: 1 1 auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+:local(.commandLine) button {
+    flex: 0 0 auto;
+}

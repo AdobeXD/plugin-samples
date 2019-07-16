@@ -1,0 +1,49 @@
+:local(.wrapper) {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+:local(.color) {
+    flex: 0 0 64px;
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 64px;
+    height: 64px;
+    margin-right: 8px;
+}
+
+:local(.picker) {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-width: 170px;
+}
+
+.uxp-plugin :local(.slider) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+:local(.slider) span {
+    flex: 0 0 auto;
+}
+:local(.slider) span:first-child {
+    flex: 0 0 16px;
+}
+:local(.slider) span:last-child {
+    flex: 0 0 16px;
+}
+
+:local(.slider) input[type=number] {
+    flex: 0 0 32px;
+    max-width: 32px;
+}
+
+:local(.slider) input[type=range] {
+    flex: 1 1 auto;
+    min-width: 96px !important;
+}

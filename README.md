@@ -1,3 +1,7 @@
+> **IMPORTANT!**
+>
+> The samples contained within this repository that pertain to panels are using prerelease APIs that will almost certainly change in the future. DO NOT assume that these plugins or the corresponding APIs are final in any way shape or form.
+
 # Plugin Samples
 
 This repository contains a library of sample XD plugins to help you on your journey. You can use these samples to learn more about how to build plugins for Adobe XD.

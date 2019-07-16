@@ -1,0 +1,45 @@
+{
+    "id": "UI_PANEL_HELLO_REACT",
+    "author": "Kerri Shotts",
+    "name": "(UI) UI Panel Hello React",
+    "version": "2.0.0",
+    "host": {
+        "app": "XD",
+        "minVersion": "20.0"
+    },
+    "description": "Simple Hello World React Panel",
+    "summary": "Hello World React Panel",
+    "languages": [
+        "en"
+    ],
+    "helpUrl": "https://github.com/AdobeXD/",
+    "icons": [
+        {
+            "width": 48,
+            "height": 48,
+            "path": "images/icon@1x.png"
+        },
+        {
+            "width": 96,
+            "height": 96,
+            "path": "images/icon@2x.png"
+        },
+        {
+            "width": 144,
+            "height": 144,
+            "path": "images/icon@3x.png"
+        },
+        {
+            "width": 192,
+            "height": 192,
+            "path": "images/icon@4x.png"
+        }
+    ],
+    "uiEntryPoints": [
+        {
+            "type": "panel",
+            "label": "Hello Panel",
+            "panelId": "hello"
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+form {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+h1 {
+    display: flex;
+    justify-content: space-between;
+    flex: 0 0 auto;
+}
+
+h1 button {
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    flex: 0 0 auto;
+    align-items: center;
+}
+
+.nogrow {
+    flex: 0 0 auto;
+}
+
+.noshrink {
+    flex: 0 0 auto;
+}
+
+.row {
+    align-items: center;
+}
+
+.row label span {
+    font-size: 100%;
+}
+
+.root.win {
+    --margin: 8px;
+    --margin-negative: -8px;
+    --margin-double: 16px;
+    --button-height: 32px;
+    --panel-body-font-size: 12px;
+    --panel-sub-heading-font-size: 12px;
+    --panel-label-font-size: 12px;
+    --panel-height: calc(100vh - 90px);
+    --panel-footer-height: calc(var(--margin-double) + var(--button-height) );
+    --panel-min-width: 240px;
+}
+
+.root.mac {
+    --margin: 6px;
+    --margin-negative: -6px;
+    --margin-double: 12px;
+    --button-height: 24px;
+    --panel-body-font-size: 10px;
+    --panel-sub-heading-font-size: 10px;
+    --panel-label-font-size: 9px;
+    --panel-height: calc(100vh - 80px);
+    --panel-footer-height: calc(var(--margin-double) + var(--button-height) );
+    --panel-min-width: 194px;
+}
+
+.root {
+    margin: var(--margin-negative);
+    font-size: var(--panel-body-font-size);
+}

@@ -1,8 +1,50 @@
-:local(.form) {
+/* normalize for next release of CSS */
+
+/* MAC */
+.uxp-plugin {
+    color: #3F3F3F;
+    font-size: 10px;
+}
+.uxp-plugin h1 {
+    color: #8E8E8E;
+    font-size: 10px;
+}
+.uxp-plugin label span {
+    font-size: 9px;
+    color: #8E8E8E;
+}
+
+/* WIN
+.uxp-plugin {
+    color: #3F3F3F;
+    font-size: 12px;
+}
+.uxp-plugin h1 {
+    color: #8E8E8E;
+    font-size: 12px;
+}
+.uxp-plugin label span {
+    font-size: 12px;
+    color: #8E8E8E;
+}
+*/
+
+dialog > :local(.form) {
     width: 480px;
     height: 600px;
     display: flex;
     flex-direction: column;
+}
+
+.root {
+    height: calc(100vh - 90px);
+}
+
+:local(.form) {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 :local(.h1) {
@@ -10,6 +52,15 @@
     justify-content: space-between;
     align-items: center;
     flex: 0 0 auto;
+    flex-wrap: wrap;
+}
+
+:local(.form) hr {
+    flex: 0 0 auto;
+}
+
+:local(.editor) {
+    flex: 1 1 auto;
 }
 
 :local(.footer) {
@@ -19,8 +70,7 @@
 
 :local(.scrollWrapper) {
     overflow: auto;
-    flex: 1 0 300;
-    height: 300px;
+    flex: 1 0 auto;
     display: flex;
     flex-direction: column;
     border: 1px solid #EAEAEA;
@@ -42,8 +92,7 @@
 }
 
 :local(.html) {
-    flex: 1 0 300;
-    height: 300px;
+    flex: 1 0 auto;
     font-family: Menlo;
 }
 

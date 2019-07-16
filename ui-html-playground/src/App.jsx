@@ -28,6 +28,14 @@ class App extends React.Component {
         );
     }
 
+    componentDidUpdate(nextProps) {
+        if (this.state.html !== nextProps.html) {
+            this.setState(() => {
+                html: nextProps.html
+            });
+        }
+    }
+
     htmlChanged(e) {
         const val = e.target.value;
         this.setState(state => ({
@@ -64,21 +72,22 @@ class App extends React.Component {
     }
 
     render() {
-        const { dialog } = this.props;
+        const { dialog, onSubmit } = this.props;
         const { html, view, simulateDialog } = this.state;
 
+        const simDialog = dialog && simulateDialog;
+
         return (
-            <form className={styles.form} method="dialog" onSubmit={dialog.close} >
+            <form className={styles.form} method="dialog" onSubmit={dialog ? dialog.close : onSubmit } >
                 <h1 className={styles.h1}>
                     HTML Playground
                     <div className={styles.tabs}>
                         {
-                            view === VIEWS.RESULT && (
-                                <label class="row" style={{alignItems: "center"}}>
+                            view === VIEWS.RESULT && dialog && (
+                                <label className="row" style={{alignItems: "center"}}>
                                     <input type="checkbox"
                                         onChange={this.simulateDialogChanged}
                                         checked={simulateDialog}
-                                        ref={el => el && (el.onchange = this.simulateDialogChanged)}
                                         />
                                     <span style={{fontWeight: 'normal'}} >Dialog</span>
                                 </label>
@@ -94,22 +103,34 @@ class App extends React.Component {
                 </h1>
                 <hr />
                 {view === VIEWS.HTML ? (
-                    <textarea
-                        className={`${styles.html} margin`}
-                        onKeyDown={this.preventEnter}
-                        onChange={this.htmlChanged}
-                        defaultValue={html}
-                    ></textarea>
+                    <label className={styles.editor}>
+                        <span>HTML</span>
+                        <textarea
+                            className={`${styles.html} margin`}
+                            onKeyDown={this.preventEnter}
+                            onChange={this.htmlChanged}
+                            defaultValue={html}
+                        ></textarea>
+                    </label>
                 ) : (
-                    <div className={`${styles.scrollWrapper} margin ${simulateDialog ? styles.backdrop : ""}`}>
-                        <div className={simulateDialog ? styles.dialog : ""} ref={el => el && (el.innerHTML = html)} />
+                    <div className={`${styles.scrollWrapper} margin ${simDialog ? styles.backdrop : ""}`}>
+                        <div className={simDialog ? styles.dialog : ""} ref={el => el && (el.innerHTML = html)} />
                     </div>
                 )}
-                <footer className={styles.footer}>
-                    <button type="submit" uxp-variant="cta">
-                        Close
-                    </button>
-                </footer>
+                {dialog ? (
+                    <footer className={styles.footer}>
+                        <button type="submit" uxp-variant="cta">
+                            Close
+                        </button>
+                    </footer>
+                ) : (
+                    <footer className={styles.footer}>
+                        <button type="submit" uxp-variant="cta">
+                            Run
+                        </button>
+                    </footer>
+                )
+                }
             </form>
         );
     }

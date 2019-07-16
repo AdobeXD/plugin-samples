@@ -1,21 +1,23 @@
 :local(.cardWrapper) {
-    margin: 6px;
+    margin: var(--margin);
     border-radius: 8px;
     background-color: #EAEAEA;
-    flex: 0 0 200;
+    flex: 1 1 auto;
+    display: flex;
     overflow: hidden;
+    border: 1px solid #DDDDDD;
     position: relative;
 }
 
 :local(.cardHero) {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    display: flex;
+    flex: 1 1 auto;
     overflow: hidden;
-    flex-basis: 150;
 }
 
 :local(.cardHeroImg)  {
-    margin: auto;
+    margin: auto auto;
+    display: block;
 }
 
 :local(.selected) {
@@ -30,9 +32,9 @@
 
 :local(.cardHeroInfo) {
     position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 0; /* bug: if using default margins, changing visibility loses them and causes button to shift on selection */
+    background-color: rgba(255, 255, 255, 0.75);
+    right: var(--margin);
+    bottom: var(--margin);
     display: none;
 }
 

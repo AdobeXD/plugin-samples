@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+  <defs>
+    <clipPath id="clip-search">
+      <rect width="28" height="28"/>
+    </clipPath>
+  </defs>
+  <g id="search" clip-path="url(#clip-search)">
+    <g id="Group_3" data-name="Group 3" transform="translate(-0.5)">
+      <path id="Union_1" data-name="Union 1" d="M.5,26.835,11.27,16.065a10.508,10.508,0,1,1,3.148,3.215L3.682,30.017ZM20.17,17a6.507,6.507,0,1,0-5.062-2.427l.991.991A6.469,6.469,0,0,0,20.17,17Z" transform="translate(-2.17 0)" fill="#666"/>
+    </g>
+  </g>
+</svg>

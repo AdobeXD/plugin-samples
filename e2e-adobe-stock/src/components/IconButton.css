@@ -1,0 +1,26 @@
+:local(.button) {
+    border: 1px solid transparent;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+:local(.button):not([disabled]):hover {
+    border: 1px solid #D0D0D0;
+    background-color: #E8E8E8;
+}
+
+:local(.icon) {
+    fill: #666;
+    width: 12px;
+    height: 12px;
+}
+
+:local(.button):hover :local(.icon) {
+    fill: #333;
+}
+:local(.button)[disabled] :local(.icon) {
+    fill: #B8B8B8;
+}
+
+:local(.selected) {
+    background-color: #E8E8E8;
+}

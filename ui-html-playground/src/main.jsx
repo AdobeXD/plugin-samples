@@ -1,14 +1,10 @@
-//  temporary stubs required for React. These will not be required as soon as the XD environment provides setTimeout/clearTimeout
-global.setTimeout = function(fn){ fn() }
-global.clearTimeout = function(){};
-global.requestAnimationFrame = (cb) => { cb(); };
+require ("./reactShim");
+const React = require("react");
+const ReactDOM = require("react-dom");
 
-window.HTMLIFrameElement = class{};
+const App = require("./App");
+const PanelController = require("./PanelController");
 
-let React = require("react");
-let ReactDOM = require("react-dom");
-
-const App = require("./App.jsx");
 let html = `<h1>Template</h1>
 <hr />
 <p>Hello World!</p>
@@ -32,6 +28,11 @@ function getDialog(selection) {
 function getRunDialog(selection) {
     if (runDialog == null) {
         runDialog = document.createElement("dialog");
+        runDialog.addEventListener("click", evt => {
+            if (evt.target.tagName === "BUTTON") {
+                runDialog.close();
+            }
+        });
     }
     runDialog.innerHTML = `
 <style>
@@ -46,13 +47,27 @@ ${html}
     return runDialog;
 }
 
-module.exports = {
+function editPlayground(selection) {
+    return document.appendChild(getDialog(selection)).showModal();
+}
+function runPlayground(selection) {
+    return document.appendChild(getRunDialog(selection)).showModal();
+}
+
+const entryPoints = module.exports = {
     commands: {
-        editPlayground: (selection) => {
-            return document.appendChild(getDialog(selection)).showModal();
-        },
-        runPlayground: (selection) => {
-            return document.appendChild(getRunDialog(selection)).showModal();
+        editPlayground,
+        runPlayground,
+    },
+    panels: {
+        editUxpPen: new PanelController(() => <App html={html} onChange={htmlChanged} onSubmit={runPlayground}/>),
+        runPanel: {
+            show(event) {
+                event.node.innerHTML = `<div class="panel">${html}</div>`;
+            },
+            hide(event) {
+                event.node.innerHTML = '';
+            }
         }
     }
 };

@@ -1,5 +1,9 @@
 const React = require("react");
+const IconButton = require("./IconButton");
+const InfoIcon = require("../assets/dots.svg").default;
 const styles = require("./Card.css");
+
+const DraggableImage = require("./DraggableImage");
 
 const Card = ({
     selected = false,
@@ -17,9 +21,11 @@ const Card = ({
             {...rest}>
             <div className={styles.cardHero} style={{ width }}>
                 <img className={styles.cardHeroImg} style={{ height }} src={src} />
-                <button onClick={onInfoClick} className={styles.cardHeroInfo} uxp-variant="action">
-                    <img src="./assets/info.png" />
-                </button>
+                <IconButton
+                    title="More information..."
+                    onClick={onInfoClick}
+                    className={styles.cardHeroInfo}
+                    icon={InfoIcon}/>
             </div>
             {children}
         </div>
