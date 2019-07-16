@@ -4,7 +4,11 @@
 
 XD 21 adds major updates: the ability to **show panel UI**, and the much-improved **UXP 3 CSS & layout engine**.
 
-_The new layout engine likely constitutes a **breaking change** for any plugin with UI_ -- read below for details.
+> **Danger**
+>
+> _The new layout engine likely constitutes a **breaking change** for any plugin with UI_ -- read below for details.
+
+Also note that this release has an issue where transactions being wrapped by `editDocument` is _not_ enforced. This will be fixed in an upcoming patch version, so you will want to continue wrapping scenegraph changes from panels in `editDocument` so that your plugin isn't broken when we release the fix.
 
 ### Plugin Panel UI
 
@@ -33,6 +37,8 @@ In order to gain access to most of these features, your plugin must _opt-in_ to 
     * **`overflow` defaults to `visible`** (no longer `hidden`), per the web specification -- _This may break existing plugin UI code._
     * `object-fit` -- to control the size of images
     * `z-index`
+    * Improvements to `position`, including correct `absolute` semantics.
+      * **WARNING**: Technically `position: fixed` is supported. However, _you should not use it_ in your plugin panels because there are some bugs that will be fixed in a future update that will break if your plugin uses `position: fixed`.
 * **SVG UI elements**
 * **New UI controls**
     * Radio buttons -- `<input type="radio" />`

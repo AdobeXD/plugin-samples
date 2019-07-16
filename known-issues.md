@@ -49,6 +49,8 @@
 - `<label for="id"/>` is not supported. Wrap `<label>` around the control instead.
 - `<input type="file" />` is not supported.
 - `<input type="color" />` is not supported.
+- Using unitless values in `width` and `height` attributes are not supported in UXP 3.1. Use `px`, or CSS styles.
+- `<label>` uses `inline-flex` layout semantics in UXP 3.1 mode, with `flex-wrap: wrap` enabled. If you need to prevent wrapping, use `flex-wrap: nowrap` on these elements. Note that the default layout behavior is now _horizontal_ not _vertical_.
 
 ### Layout
 
@@ -75,6 +77,7 @@
 - The bottom border may not always render with the same width as the other borders.
 - Underlines may render very thin.
 - `calc` only works for length properties. Using `calc` for a color will not work.
+- If you need to override an anchor link color, use `a[href]` as the selector to override it.
 
 ### DOM
 
