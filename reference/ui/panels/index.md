@@ -206,9 +206,9 @@ Note: you can either reuse your panel's UI nodes, or destroy and recreate the pa
 
 ## Handling Selection Change
 
-As you can see in the example above, every time the user's `selection` changes, your third (optional) lifecycle method `update` will trigger. You will have access to both `selection` and `root` as parameters in the function. This means that your panel can display dynamic content based on what user has selected in the document.
+As you can see in the example above, every time the user's `selection` changes, your (optional) lifecycle method `update` will trigger. You will have access to both `selection` and `root` as parameters in the function. This means that your panel can display dynamic content based on what user has selected in the document.
 
-{% tabs sample="Sample", html="HTML", js="JS", react="React" %}
+{% tabs sample="Sample", html="HTML", js="JS" %}
 
 {% content "sample" %}
 
@@ -391,6 +391,10 @@ module.exports = {
   }
 };
 ```
+
+{% endtabs %}
+
+## Further Reading
 
 Refer to the panel lifecycle method documentation to learn more about these methods:
 

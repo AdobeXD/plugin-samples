@@ -33,7 +33,7 @@ For UI events that often occur in rapid-fire clusters, such as dragging a slider
 | Param   | Type          | Description                                                         |
 | ------- | ------------- | ------------------------------------------------------------------- |
 | options | EditSettings= | Optional settings object (see below). This argument can be omitted. |
-| editFunction | !function(!Selection, !RootNode):?Promise | Function which performs your plugin's edits to the scenegraph. |
+| editFunction | !function(!Selection, !RootNode):?Promise | Function which will perform your plugin's edits to the scenegraph. |
 
 **Typedef EditSettings**
 
@@ -62,6 +62,8 @@ panelButton.addEventListener("click", event => {
 
 
 ---
+
+<a name="module_application-createRenditions"></a>
 
 ### *application.createRenditions(renditions)*
 

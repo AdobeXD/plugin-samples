@@ -12,7 +12,7 @@ _The new layout engine likely constitutes a **breaking change** for any plugin w
     * [How to define a panel](./reference/structure/handlers.md#panel)
     * [Panel overview / reference](./reference/ui/panels/index.md)
     * [Panel Quick Start tutorial](./tutorials/quick-start-panel/index.md)
-    * [Migrating from dialogs to panels](./tutorials/how-to-migrate-from-modal-to-panel/index.md).
+    * [Migrating from dialogs to panels](./tutorials/how-to-migrate-from-modal-to-panel/index.md)
 * A new default stylesheet is provided for plugin UI that renders inside a plugin. This means that UI that renders in one manner in a modal dialog may not render in the same exact manner in a panel.
 
 ### UXP 3 HTML/CSS changes
@@ -29,8 +29,8 @@ In order to gain access to most of these features, your plugin must _opt-in_ to 
 
 * **Layout engine**
     * **Inline layout** -- You now have the ability to write code like `<p>This is <a href="...">a link</a></p>` and have the link render _inline_ with the rest of the text
-    * **Layout now defaults to inline** (no longer flexbox) -- This has a tremendous impact on pre-existing plugin UI code: now `span` elements will render with `inline`, `button`s will render as `inline-block`, etc.
-    * **`overflow` defaults to `visible`** (no longer `hidden`), as per the web specification
+    * **Layout now defaults to inline** (no longer flexbox) -- _This may break existing plugin UI code:_ now `span` elements will render with `inline`, `button`s will render as `inline-block`, etc.
+    * **`overflow` defaults to `visible`** (no longer `hidden`), per the web specification -- _This may break existing plugin UI code._
     * `object-fit` -- to control the size of images
     * `z-index`
 * **SVG UI elements**
@@ -46,7 +46,7 @@ In order to gain access to most of these features, your plugin must _opt-in_ to 
     * `calc()` -- For example, `width: calc(100% - 9px)`. Note that you can mix units, just like you can on the web.
     * Inheritance -- The CSS parser now understands `initial`, `unset`, and `inherit`. You can also use `!important` to override styles (although you should use this as a last resort).
     * Default styles are now easier to override as the specificity in the default stylesheet has been reduced.
-* _Basic_ **Tab index** support: Setting `tab-index` to `0` will now cause any element to be focusable. You can **not** yet control the tab order.
+* **Keyboard focus** -- Setting `tab-index` to `0` will now cause any element to be focusable. You can **not** yet control the tab order.
 
 ### Known Issues
 

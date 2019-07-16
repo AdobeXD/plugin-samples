@@ -43,7 +43,7 @@ Edit operations can only occur via user-initiated actions in your plugin: invoki
 
 #### Edit operation duration
 * An edit operation begins when:
-    * a) Your plugin's menu [command handler](../structure/handlers.md) is called (this is automatically wrapped in an edit operation)
+    * a) Your plugin's menu [command handler](../structure/handlers.md#command) is called (this is automatically wrapped in an edit operation)
     * a) Your plugin's panel UI code explicitly [calls `application.editDocument()`](#initiating-an-edit-operation-from-panel-ui)
 * If the edit code returns synchronously, the edit operation is done as soon as it returns.
 * If the edit code returns a Promise, the edit operation continues asynchronously until the Promise completes. _The user can't do anything else in XD_ until the operation completes, so normally you'd only return a Promise if your plugin has a dialog box open that the user is interacting with or that is showing a progress indicator.

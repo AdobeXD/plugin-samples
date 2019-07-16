@@ -2,7 +2,7 @@
 
 ## General Issues
 
-- Icons may be blurry or missing in the plugin panel if you don't include the full set of 24px, 48px, 96px, 144px, and 192px sizes in your plugin bundle and manifest.
+- Icons may be blurry or missing in the plugin panel if you don't include the full set of sizes (24px, 48px, 96px, 144px, 192px) in your plugin bundle and manifest.
 - Developer/Side-loading Specific
   - Plugin menus and handlers may not be in-sync across documents during development
     - If someone modifies a plugin's files on disk while XD is running, and then opens more windows in XD, any windows that were open before reflect the old version of the plugin while windows that were opened later reflect the new version of the plugin. The menu bar will always reflect the old version of the plugin regardless of which window is current.
