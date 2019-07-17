@@ -1,11 +1,7 @@
-//  temporary shim until setTimeout is added to XD
-global.setTimeout = (fn) => { fn() }
-global.clearTimeout = (fn) => {}
-
 const $ = require("./jquery");
 
 async function menuCommand() {
-    const dialog = $( `
+    const dialog = $(`
 <dialog id="myDialog">
     <form method="dialog" style="width:300;">
         <h1>Hello!</h1>
@@ -24,7 +20,7 @@ async function menuCommand() {
 
     $(document.body).append(dialog);
     const form = document.querySelector("form");
-    form.style.width="300px";
+    form.style.width = "300px";
 
     $("#cancel").on("click", () => {
         dialog.close();
