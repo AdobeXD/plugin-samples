@@ -19,10 +19,10 @@
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-    min-width: 170px;
 }
 
-.uxp-plugin :local(.slider) {
+:local(.slider) {
+    flex-wrap: nowrap;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -45,5 +45,10 @@
 
 :local(.slider) input[type=range] {
     flex: 1 1 auto;
-    min-width: 96px !important;
+}
+
+@media screen and (max-width: 260px) {
+    :local(.slider) input[type=range] {
+        display: none;
+    }
 }
