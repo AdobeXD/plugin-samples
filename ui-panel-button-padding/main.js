@@ -139,57 +139,44 @@ function panel() {
   // drop. THIS WILL CHANGE IN THE FUTURE!
   const PANEL_HTML = `
 <style>
-  panel {
-  }
   .break {
     flex-wrap: wrap;
   }
-  label.row > * {
-    margin: 3px 0;
-  }
   label.row > span {
-    color: #8E8E8E;
     width: 20px;
     text-align: right;
-    font-size: 9px;
   }
   label.row input {
     flex: 1 1 auto;
+    min-width: 64px;
   }
-  label.row input[type=number] {
-    flex-basis: 32px;
+  label.row input[type=number], #fldColor input {
+    flex-basis: 64px;
   }
   div input[type=checkbox] {
     flex: 0 0 20px;
   }
-  form footer > * {
-    position: relative;
-    left: 8px;
-  }
-
 </style>
 <form method="dialog" id="main">
-  <label class="row" id="fldButtonText">
+  <label id="fldButtonText">
       <span>Aa</span>
       <input type="text" id="txtButtonText" value="Text" placeholder="Text" uxp-quiet="true"/>
   </label>
-  <div class="row break">
-    <label class="row">
+    <label>
       <span>↕︎</span>
       <input type="number" uxp-quiet="true" id="txtV" value="10" placeholder="Vertical padding" />
     </label>
-    <label class="row">
+    <label>
       <span>↔︎</span>
       <input type="number" uxp-quiet="true" id="txtH" value="10" placeholder="Horizontal padding" />
     </label>
     <div class="row">
       <input type="checkbox" checked id="chkColor" />
-      <label class="row" id="fldColor">
+      <label id="fldColor">
         <input type="text" uxp-quiet="true" id="txtColor" value="#0000FF" placeholder="CSS Color" />
         <span>🎨</span>
       </label>
     </div>
-  </div>
   <footer><button id="ok" type="submit" uxp-variant="cta">Apply</button></footer>
 </form>
 `;
@@ -242,7 +229,7 @@ function panel() {
   function create() {
     if (rootNode) { return rootNode; }
 
-    rootNode = document.createElement("panel");
+    rootNode = document.createElement("div");
     rootNode.innerHTML = PANEL_HTML;
 
     $("form").addEventListener("submit", exec);
