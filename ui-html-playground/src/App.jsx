@@ -68,6 +68,7 @@ class App extends React.Component {
     preventEnter(e) {
         if (e.keyCode === 13) {
             e.preventDefault();
+            e.stopPropagation();
         }
     }
 
