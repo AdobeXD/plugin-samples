@@ -1,18 +1,21 @@
 const React = require("react");
 const ReactDOM = require("react-dom");
+const { selection } = require("scenegraph");
+const os = require("os");
 
 class PanelController {
     constructor(App) {
         this.App = App;
         this.instance = null;
         this.rootNode = document.createElement("div");
+        this.rootNode.className = `root ${os.platform() === "darwin" ? "mac" : "win"}`;
+        //this.rootNode.style.margin="-8px";
         this.attachment = null;
 
         ["show", "hide", "update"].forEach(fn => this[fn] = this[fn].bind(this));
     }
 
     show(event) {
-        const { selection, root } = require("scenegraph");
         const App = this.App;
 
         this.attachment = event.node;
@@ -22,16 +25,16 @@ class PanelController {
             this.instance = ReactDOM.render(<App selection={selection} />, this.rootNode);
         }
 
-        this.update(selection, root);
+        this.update();
     }
 
     hide(event) {
         this.attachment.removeChild(this.rootNode);
     }
 
-    update(selection, root) {
-        if (this.instance.documentStateChanged) {
-            this.instance.documentStateChanged(selection, root);
+    update() {
+        if (this.instance && this.instance.documentStateChanged) {
+            this.instance.documentStateChanged(selection);
         }
     }
 }
