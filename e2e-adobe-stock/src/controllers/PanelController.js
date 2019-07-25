@@ -33,7 +33,7 @@ class PanelController {
     }
 
     update() {
-        if (this.instance.documentStateChanged) {
+        if (this.instance && this.instance.documentStateChanged) {
             this.instance.documentStateChanged(selection);
         }
     }

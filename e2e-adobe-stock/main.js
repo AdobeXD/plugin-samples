@@ -99,10 +99,12 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/li
 
 
 // module
-exports.push([module.i, "form {\n    display: flex;\n    flex-direction: column;\n    flex: 1 1 auto;\n}\n\nh1 {\n    display: flex;\n    justify-content: space-between;\n    flex: 0 0 auto;\n}\n\nh1 button {\n    margin: 0;\n    padding: 0;\n}\n\nfooter {\n    flex: 0 0 auto;\n    align-items: center;\n}\n\n.nogrow {\n    flex: 0 0 auto;\n}\n\n.noshrink {\n    flex: 0 0 auto;\n}\n\n.row {\n    align-items: center;\n}\n\n.row label span {\n    font-size: 100%;\n}\n\n.root.win {\n    --margin: 8px;\n    --margin-negative: -8px;\n    --margin-double: 16px;\n    --button-height: 32px;\n    --panel-body-font-size: 12px;\n    --panel-sub-heading-font-size: 12px;\n    --panel-label-font-size: 12px;\n    --panel-height: calc(100vh - 90px);\n    --panel-footer-height: calc(var(--margin-double) + var(--button-height) );\n    --panel-min-width: 240px;\n}\n\n.root.mac {\n    --margin: 6px;\n    --margin-negative: -6px;\n    --margin-double: 12px;\n    --button-height: 24px;\n    --panel-body-font-size: 10px;\n    --panel-sub-heading-font-size: 10px;\n    --panel-label-font-size: 9px;\n    --panel-height: calc(100vh - 80px);\n    --panel-footer-height: calc(var(--margin-double) + var(--button-height) );\n    --panel-min-width: 194px;\n}\n\n.root {\n    margin: var(--margin-negative);\n    font-size: var(--panel-body-font-size);\n}\n", ""]);
+exports.push([module.i, "/*\nform {\n    display: flex;\n    flex-direction: column;\n    flex: 1 1 auto;\n}\n\nh1 {\n    display: flex;\n    justify-content: space-between;\n    flex: 0 0 auto;\n}\n\nh1 button {\n    margin: 0;\n    padding: 0;\n}\n\nfooter {\n    flex: 0 0 auto;\n    align-items: center;\n}\n*/\n.nogrow {\n    flex: 0 0 auto;\n}\n\n.noshrink {\n    flex: 0 0 auto;\n}\n\n.row {\n    align-items: center;\n}\n\n.row label span {\n    font-size: 100%;\n}\n\n.root.win {\n    --margin: 8px;\n    --margin-negative: -8px;\n    --margin-double: 16px;\n    --button-height: 32px;\n    --panel-body-font-size: 12px;\n    --panel-sub-heading-font-size: 12px;\n    --panel-label-font-size: 12px;\n    --panel-height: calc(100vh - 90px);\n    --panel-footer-height: calc(var(--margin) + var(--button-height) );\n    --panel-min-width: 240px;\n}\n\n.root.mac {\n    --margin: 6px;\n    --margin-negative: -6px;\n    --margin-double: 12px;\n    --button-height: 24px;\n    --panel-body-font-size: 10px;\n    --panel-sub-heading-font-size: 10px;\n    --panel-label-font-size: 9px;\n    --panel-height: calc(100vh - 80px);\n    --panel-footer-height: calc(var(--margin) + var(--button-height) );\n    --panel-min-width: 194px;\n}\n\n.root {\n    margin: 0 var(--margin-negative);\n    font-size: var(--panel-body-font-size);\n    height: 100%;\n}\n\nbody {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    height: 100%;\n}\n\n._1nxuWNi_NVxi5PEec_QhmU {\n    height: 100%;\n}", ""]);
 
 // exports
-
+exports.locals = {
+	"panel": "_1nxuWNi_NVxi5PEec_QhmU"
+};
 
 /***/ }),
 
@@ -258,7 +260,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".Atk5kQzMcUCez3yKKOA4Y {\n    display: flex;\n    flex-direction: column;\n    overflow: hidden;\n    padding: 0;\n    height: var(--panel-height);\n}\n\n._3ad2qe1vtNd7ehzsMATN_Z {\n    flex: 1 1 auto;\n    overflow-x: hidden;\n    overflow-y: scroll;\n    display: flex;\n    flex-direction: column;\n    height: var(--panel-footer-height);\n}\n\n._2-p7z_FMwnKgT9ivKQ1RlL {\n    margin: 0;\n    justify-content: flex-end;\n    height: var(--panel-footer-height);\n}\n\n._1iFezvs9c07pG_D8MU0nIc {\n    border-top: 0.5px solid #D8D8D8;\n    zpadding-top: 4px;\n    /*width: 100%;\n    position: fixed;\n    bottom: 0;*/\n    display: flex;\n    flex: 0 0 auto;\n    align-items: center;\n    justify-content: flex-end;\n    order: 99;\n}\n\n._1iFezvs9c07pG_D8MU0nIc div, ._1iFezvs9c07pG_D8MU0nIc p {\n    flex: 1 1 auto;\n    text-overflow: ellipsis;\n    overflow: hidden;\n    white-space: nowrap;\n}\n\n._1iFezvs9c07pG_D8MU0nIc button {\n    flex: 0 0 auto;\n}", ""]);
+exports.push([module.i, ".Atk5kQzMcUCez3yKKOA4Y {\n    display: flex;\n    flex-direction: column;\n    overflow: hidden;\n    padding: 0;\n    height: 100%;\n}\n\n._3ad2qe1vtNd7ehzsMATN_Z {\n    flex: 1 1 auto;\n    overflow-x: hidden;\n    overflow-y: scroll;\n    display: flex;\n    flex-direction: column;\n}\n\n._2-p7z_FMwnKgT9ivKQ1RlL {\n    margin: 0;\n    justify-content: flex-end;\n}\n\n._1iFezvs9c07pG_D8MU0nIc {\n    border-top: 0.5px solid #D8D8D8;\n    display: flex;\n    flex: 0 0 auto;\n    align-items: center;\n    justify-content: flex-end;\n    order: 99;\n    padding-top: 24px;\n}\n\n._1iFezvs9c07pG_D8MU0nIc div, ._1iFezvs9c07pG_D8MU0nIc p {\n    flex: 1 1 auto;\n    text-overflow: ellipsis;\n    overflow: hidden;\n    white-space: nowrap;\n    margin-top: 0;\n    margin-bottom: 0;\n}\n\n._1iFezvs9c07pG_D8MU0nIc button {\n    flex: 0 0 auto;\n    margin-top: 0;\n    margin-bottom: 0;\n}", ""]);
 
 // exports
 exports.locals = {
@@ -25662,7 +25664,7 @@ class App extends React.Component {
             React.Fragment,
             null,
             React.createElement(
-                "panel",
+                "div",
                 { className: styles.panel },
                 React.createElement(StockSearch, { ref: this.panel, selection: selection, prefs: prefs, onShowPreferences: this.showPreferences })
             ),
@@ -26963,7 +26965,7 @@ class PanelController {
     }
 
     update() {
-        if (this.instance.documentStateChanged) {
+        if (this.instance && this.instance.documentStateChanged) {
             this.instance.documentStateChanged(selection);
         }
     }
