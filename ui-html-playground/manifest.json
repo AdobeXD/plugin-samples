@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "host": {
         "app": "XD",
-        "minVersion": "19.0"
+        "minVersion": "21.0"
     },
     "description": "Description of your plugin.",
     "summary": "Summary of your plugin",
