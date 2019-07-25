@@ -56,9 +56,9 @@ class App extends React.Component {
                 </div>
             ) : (
                 <React.Fragment>
-                    <panel className={styles.panel}>
+                    <div className={styles.panel}>
                         <StockSearch ref={this.panel} selection={selection} prefs={prefs} onShowPreferences={this.showPreferences} />
-                    </panel>
+                    </div>
                     <Preferences ref={this.preferencesDialog} prefs={prefs} onChange={this.prefsChanged} />
                 </React.Fragment>
             )

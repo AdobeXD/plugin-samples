@@ -1,3 +1,4 @@
+/*
 form {
     display: flex;
     flex-direction: column;
@@ -19,7 +20,7 @@ footer {
     flex: 0 0 auto;
     align-items: center;
 }
-
+*/
 .nogrow {
     flex: 0 0 auto;
 }
@@ -45,7 +46,7 @@ footer {
     --panel-sub-heading-font-size: 12px;
     --panel-label-font-size: 12px;
     --panel-height: calc(100vh - 90px);
-    --panel-footer-height: calc(var(--margin-double) + var(--button-height) );
+    --panel-footer-height: calc(var(--margin) + var(--button-height) );
     --panel-min-width: 240px;
 }
 
@@ -58,11 +59,25 @@ footer {
     --panel-sub-heading-font-size: 10px;
     --panel-label-font-size: 9px;
     --panel-height: calc(100vh - 80px);
-    --panel-footer-height: calc(var(--margin-double) + var(--button-height) );
+    --panel-footer-height: calc(var(--margin) + var(--button-height) );
     --panel-min-width: 194px;
 }
 
 .root {
-    margin: var(--margin-negative);
+    margin: 0 var(--margin-negative);
     font-size: var(--panel-body-font-size);
+    height: 100%;
+}
+
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+}
+
+:local(.panel) {
+    height: 100%;
 }

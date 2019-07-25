@@ -3,7 +3,7 @@
     flex-direction: column;
     overflow: hidden;
     padding: 0;
-    height: var(--panel-height);
+    height: 100%;
 }
 
 :local(.resultsWrapper) {
@@ -12,26 +12,21 @@
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    height: var(--panel-footer-height);
 }
 
 :local(.resultsInfo) {
     margin: 0;
     justify-content: flex-end;
-    height: var(--panel-footer-height);
 }
 
 :local(.commandLine) {
     border-top: 0.5px solid #D8D8D8;
-    zpadding-top: 4px;
-    /*width: 100%;
-    position: fixed;
-    bottom: 0;*/
     display: flex;
     flex: 0 0 auto;
     align-items: center;
     justify-content: flex-end;
     order: 99;
+    padding-top: 24px;
 }
 
 :local(.commandLine) div, :local(.commandLine) p {
@@ -39,8 +34,12 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 :local(.commandLine) button {
     flex: 0 0 auto;
+    margin-top: 0;
+    margin-bottom: 0;
 }
