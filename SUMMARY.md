@@ -139,7 +139,7 @@
           * [MessageEvent](./reference/uxp/class/MessageEvent.md)
           * [PointerEvent](./reference/uxp/class/PointerEvent.md)
           * [ProgressEvent](./reference/uxp/class/ProgressEvent.md)
-    * [Host](./reference/xd-index.md)
+    * [XD specific](./reference/xd-index.md)
       * [scenegraph](./reference/scenegraph.md)
         * [SceneNodeList](./reference/SceneNodeList.md)
         * [Color](./reference/Color.md)
