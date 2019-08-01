@@ -227,7 +227,10 @@ The default stylesheet in UXP 3 is different from that provided by UXP 2 and bac
 _Most_ of the differences in the default stylesheet are due to the presence of the panel insertion point for your plugins. Modal dialogs styling is generally the same. However, there are a few differences that might cause changes in your layout:
 
 * `<label>` is now rendered using `display: inline-flex` by default. This means form elements without a `row` or `column` class will render with the label to the left of the element instead of the label above the element.
+  * `<label>` will also _wrap_ if the width of the parent is too narrow. If you want to restrict this wrapping, you can apply `flex-wrap: nowrap` to the element. In the future, `<label>` will more closely match the web standard.
+  * `<label>` no longer needs the `row` class to lay out horizontally.
 * Styles are applied with _less_ specificity. This means it is easier to override the styling of an `<h2>`, for example.
+    * One place this may cause issues is that anchor colors are applied to anchors only with `href` attributes. If you need to override this color, use `a[href]` as the selector.
 
 ## Quick Feature Summary
 
