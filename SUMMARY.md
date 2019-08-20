@@ -31,7 +31,7 @@
     * [4.0 File I/O](./devbestpractices/4-file-io.md)
 * [Plugin Design Guidelines](./plugin-design-guidelines/index.md)
   * [UX Guidelines](./plugin-design-guidelines/ux_guidelines/index.md)
-    * [Usability Behavior](./plugin-design-guidelines/ux_guidelines/Usability_Behavior.md)
+    * [Usability & Behavior](./plugin-design-guidelines/ux_guidelines/Usability_Behavior.md)
     * [Interface Guidelines](./plugin-design-guidelines/ux_guidelines/Interface_Guidelines.md)
     * [Provide Feedback](./plugin-design-guidelines/ux_guidelines/Provide_Feedback.md)
   * [UI Components & Resources](./plugin-design-guidelines/ui_resources/index.md)
