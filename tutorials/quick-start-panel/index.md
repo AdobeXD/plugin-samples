@@ -119,7 +119,6 @@ module.exports = {
   panels: {
     enlargeRectangle: {
       show,
-      hide,
       update
     }
   }
