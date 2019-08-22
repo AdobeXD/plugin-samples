@@ -6,5 +6,6 @@ There are two main types of APIs you can use to create your XD plugin. While Uni
 - [Host APIs](xd-index.md)
 
 ![UXP and host APIs](/images/uxpandhost.png)
+For more information on how UXP and host APIs work together, refer to [Accessing APIs](/reference/core/apis.md).
 
 Read ["How to read the reference documentation"](/reference/how-to-read.md) to learn how to read symbols inside the docs.
