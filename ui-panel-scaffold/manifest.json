@@ -2,14 +2,23 @@
   "name": "Sample Plugin: Panel Scaffold",
   "id": "YOUR_ID_HERE",
   "version": "1.0.0",
-
   "description": "Sample plugin code for Adobe XD.",
-
   "host": {
     "app": "XD",
     "minVersion": "19.0"
   },
-
+  "icons": [
+    {
+      "width": 24,
+      "height": 24,
+      "path": "images/icon@1x.png"
+    },
+    {
+      "width": 48,
+      "height": 48,
+      "path": "images/icon@2x.png"
+    }
+  ],
   "uiEntryPoints": [
     {
       "type": "panel",
