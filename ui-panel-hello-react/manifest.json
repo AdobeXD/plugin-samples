@@ -15,24 +15,14 @@
     "helpUrl": "https://github.com/AdobeXD/",
     "icons": [
         {
-            "width": 48,
-            "height": 48,
+            "width": 24,
+            "height": 24,
             "path": "images/icon@1x.png"
         },
         {
-            "width": 96,
-            "height": 96,
+            "width": 48,
+            "height": 48,
             "path": "images/icon@2x.png"
-        },
-        {
-            "width": 144,
-            "height": 144,
-            "path": "images/icon@3x.png"
-        },
-        {
-            "width": 192,
-            "height": 192,
-            "path": "images/icon@4x.png"
         }
     ],
     "uiEntryPoints": [
