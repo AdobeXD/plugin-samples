@@ -66,7 +66,7 @@ For each sample, be sure to read the README as well as code comments. Note that 
 
 1. Go to the directory that stores your development plugin folder:
 
-   - Mac: `~/Library/Application\ Support/Adobe/Adobe\ XD\ CC/`
+   - Mac: `~/Library/Application\ Support/Adobe/Adobe\ XD/`
    - Windows: `C:\Users\%USERNAME%\AppData\Local\Packages\Adobe.CC.XD_adky2gkssdxte\LocalState\`
 
 2. Rename the `develop` directory, if it already exists:
