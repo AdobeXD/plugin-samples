@@ -24,24 +24,14 @@
   "main": "main.js",
   "icons": [
     {
-      "path": "images/pluginIcon1.png",
+      "width": 24,
+      "height": 24,
+      "path": "images/icon@1x.png"
+    },
+    {
       "width": 48,
-      "height": 48
-    },
-    {
-      "path": "images/pluginIcon2.png",
-      "width": 96,
-      "height": 96
-    },
-    {
-      "path": "images/pluginIcon3.png",
-      "width": 144,
-      "height": 144
-    },
-    {
-      "path": "images/pluginIcon4.png",
-      "width": 192,
-      "height": 192
+      "height": 48,
+      "path": "images/icon@2x.png"
     }
   ],
   "version": "1.0.0",
