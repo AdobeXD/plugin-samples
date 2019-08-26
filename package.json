@@ -42,7 +42,7 @@
     "gitbook-plugin-prism": "^2.4.0",
     "gitbook-plugin-recently-updated": "^1.0.4",
     "gitbook-plugin-replace": "0.0.1",
-    "gitbook-plugin-search-plus": "^1.0.3",
+    "gitbook-plugin-search-plus": "^1.0.4-alpha-3",
     "gitbook-plugin-simpletabs": "^0.1.1",
     "gitbook-plugin-styled-blockquotes": "^1.1.4",
     "gitbook-plugin-todo": "^0.1.3"
