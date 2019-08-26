@@ -1922,7 +1922,7 @@ gitbook-plugin-collapse@^1.0.5:
   dependencies:
     npm "^5.8.0"
 
-gitbook-plugin-components@0.0.3:
+gitbook-plugin-components@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/gitbook-plugin-components/-/gitbook-plugin-components-0.0.3.tgz#dc2be575efce56e7969e43390272c048a4840e72"
   integrity sha1-3Cvlde/OVueWnkM5AnLASKSEDnI=
@@ -1960,7 +1960,7 @@ gitbook-plugin-github-buttons@^3.0.0:
   resolved "https://registry.yarnpkg.com/gitbook-plugin-github-buttons/-/gitbook-plugin-github-buttons-3.0.0.tgz#0a57c9266514fe059b8084520d3b984424db6be1"
   integrity sha512-Lqbsw+FRMPtJH/aj8Cz5JwsjQigAMiSNPKKp/SGsHr5KVzAIbjsBJNIjrKAtuagKboXnj8mqY5a5VLcQPt0tGQ==
 
-gitbook-plugin-github-tables@0.0.2:
+gitbook-plugin-github-tables@^0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/gitbook-plugin-github-tables/-/gitbook-plugin-github-tables-0.0.2.tgz#4981eb015830796239c6e668f0abe84096c5e7bb"
   integrity sha1-SYHrAVgweWI5xuZo8KvoQJbF57s=
@@ -1980,7 +1980,7 @@ gitbook-plugin-image-captions@^3.1.0:
     cheerio "^0.22.0"
     q "^1.4.1"
 
-gitbook-plugin-layout@0.0.1:
+gitbook-plugin-layout@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/gitbook-plugin-layout/-/gitbook-plugin-layout-0.0.1.tgz#575ae39a521f911edbcaab9d4579031ad326b088"
   integrity sha1-V1rjmlIfkR7byqudRXkDGtMmsIg=
@@ -1993,7 +1993,7 @@ gitbook-plugin-lightbox@^1.1.0:
     cheerio "^1.0.0-rc.2"
     uuid "^3.3.2"
 
-gitbook-plugin-nestedmd@0.0.1:
+gitbook-plugin-nestedmd@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/gitbook-plugin-nestedmd/-/gitbook-plugin-nestedmd-0.0.1.tgz#bd10299e2340ac57938fd5b0b020147fed42c175"
   integrity sha1-vRApniNArFeTj9WwsCAUf+1CwXU=
@@ -2028,7 +2028,7 @@ gitbook-plugin-recently-updated@^1.0.4:
     lodash.groupby "^4.6.0"
     lodash.map "^4.6.0"
 
-gitbook-plugin-replace@0.0.1:
+gitbook-plugin-replace@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/gitbook-plugin-replace/-/gitbook-plugin-replace-0.0.1.tgz#995e11965e896ddcc5961722f3ea8f66e86e56db"
   integrity sha1-mV4Rll6JbdzFlhci8+qPZuhuVts=
