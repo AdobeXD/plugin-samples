@@ -2830,6 +2830,13 @@ latest-version@^3.0.0:
   dependencies:
     package-json "^4.0.0"
 
+latest@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/latest/-/latest-0.2.0.tgz#ea47eb8f4b2bb0cf91716efaa896c2e16237587b"
+  integrity sha1-6kfrj0srsM+RcW76qJbC4WI3WHs=
+  dependencies:
+    npm "^2.5.1"
+
 lazy-property@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/lazy-property/-/lazy-property-1.0.0.tgz#84ddc4b370679ba8bd4cdcfa4c06b43d57111147"
@@ -3814,7 +3821,7 @@ npm@5.1.0:
     wrappy "~1.0.2"
     write-file-atomic "~2.1.0"
 
-npm@^2.1.12:
+npm@^2.1.12, npm@^2.5.1:
   version "2.15.12"
   resolved "https://registry.yarnpkg.com/npm/-/npm-2.15.12.tgz#df7c3ed5a277c3f9d4b5d819b05311d10a200ae6"
   integrity sha1-33w+1aJ3w/nUtdgZsFMR0QogCuY=
