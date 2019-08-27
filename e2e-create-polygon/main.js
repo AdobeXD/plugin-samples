@@ -1,4 +1,6 @@
+
 let dialog;
+const commands = require("commands");
 function createPolygon() {
     const html = `
         <style>
@@ -20,6 +22,10 @@ function createPolygon() {
         <form method="dialog" id="main">
             <title class="title"> Create a polygon </title>
             <div class="row break">
+                <label class="row">
+                    <span>Number of Polygons</span>
+                    <input type="number" uxp-quiet="true" id="number" value="3" placeholder="Number of Polygons" />
+                </label>
                 <label class="row">
                     <span>Width</span>
                     <input type="number" uxp-quiet="true" id="width" value="150" placeholder="Width" />
@@ -45,12 +51,14 @@ function createPolygon() {
         </form>
         `
     function insertPolygon() {
-        const { selection, Polygon, Color } = require("scenegraph")
-        const width = Number(document.querySelector("#width").value);
-        const height = Number(document.querySelector("#height").value);
-        const sides = Number(document.querySelector("#sides").value);
-        const radii = Number(document.querySelector("#radii").value);
-        const color = document.querySelector("#color").value.toLowerCase();
+        const { selection, Polygon, Color } = require("scenegraph");
+        const number = Number(document.querySelector("#number").value),
+            width = Number(document.querySelector("#width").value),
+            height = Number(document.querySelector("#height").value),
+            sides = Number(document.querySelector("#sides").value),
+            radii = Number(document.querySelector("#radii").value),
+            color = document.querySelector("#color").value.toLowerCase();
+
         let polygon = new Polygon();
         polygon.width = width;
         polygon.height = height;
@@ -58,6 +66,15 @@ function createPolygon() {
         polygon.cornerCount = sides;
         polygon.setAllCornerRadii(radii);
         selection.insertionParent.addChild(polygon);
+        selection.items = [polygon];
+        if (number > 1) {
+            for (let i = 0; i < number - 1; i++) {
+                commands.duplicate();
+                let clone = selection.items[0],
+                    {height} = clone.localBounds;
+                clone.moveInParentCoordinates( 0 , height + 20);
+            }
+        }
     }
     if (!dialog) {
         dialog = document.createElement("dialog");
