@@ -6,13 +6,6 @@
     "app": "XD",
     "minVersion": "13.0"
   },
-  "description": "Description of your plugin.",
-  "summary": "Summary of your plugin",
-  "languages": [
-    "en"
-  ],
-  "author": "Your Name",
-  "helpUrl": "https://mywebsite.com/help",
   "icons": [
     {
       "width": 24,

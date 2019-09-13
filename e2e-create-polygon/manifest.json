@@ -6,13 +6,6 @@
         "minVersion": "19.0"
     },
     "version": "0.0.1",
-    "description": "Description of your plugin.",
-    "summary": "Summary of your plugin",
-    "languages": [
-        "en"
-    ],
-    "author": "Your Name",
-    "helpUrl": "https://mywebsite.com/help",
     "icons": [
         {
             "width": 24,

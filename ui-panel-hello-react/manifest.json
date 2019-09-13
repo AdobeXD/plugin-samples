@@ -7,12 +7,6 @@
         "app": "XD",
         "minVersion": "21.0"
     },
-    "description": "Simple Hello World React Panel",
-    "summary": "Hello World React Panel",
-    "languages": [
-        "en"
-    ],
-    "helpUrl": "https://github.com/AdobeXD/",
     "icons": [
         {
             "width": 24,

@@ -2,7 +2,6 @@
     "name": "Panel Rendition Example",
     "id": "PANEL_RENDITION",
     "version": "1.0.0",
-    "description": "Sample panel plugin code for Adobe XD",
     "host": {
         "app": "XD",
         "minVersion": "21.0"

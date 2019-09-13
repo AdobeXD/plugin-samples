@@ -2,18 +2,11 @@
     "id": "COLORIZE_TEXT",
     "author": "Kerri Shotts",
     "name": "(E2E) Colorize Text",
-    "icon": "icon.png",
     "host": {
         "app": "XD",
         "minVersion": "13.0"
     },
     "version": "1.0.0",
-    "description": "Description of your plugin.",
-    "summary": "Summary of your plugin",
-    "languages": [
-        "en"
-    ],
-    "helpUrl": "https://mywebsite.com/help",
     "icons": [
         {
             "width": 24,

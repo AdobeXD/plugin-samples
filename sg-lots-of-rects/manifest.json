@@ -2,7 +2,6 @@
    "name": "Draw Lots of Rectangles",
    "id": "00000000",
    "version": "1.0.0",
-   "description": "Sample plugin for Adobe XD...",
    "icons": [
       {
          "width": 24,
@@ -19,12 +18,6 @@
       "app": "XD",
       "minVersion": "13.0"
    },
-   "summary": "Summary of your plugin",
-   "languages": [
-      "en"
-   ],
-   "author": "Your Name",
-   "helpUrl": "https://mywebsite.com/help",
    "uiEntryPoints": [
       {
          "type": "menu",

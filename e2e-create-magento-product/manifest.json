@@ -1,27 +1,4 @@
 {
-  "summary": "Brief summary, 3-30 characters",
-  "website": "https://mywebsite.com",
-  "keywords": [
-    "array",
-    "of",
-    "keywords",
-    "min 2 characters per keyword",
-    "max total length 100 characters"
-  ],
-  "languages": [
-    "en",
-    "de",
-    "fr",
-    "ja",
-    "ko",
-    "zh",
-    "es",
-    "pt"
-  ],
-  "author": "No more than 40 characters",
-  "description": "This describes the plugin. If included it must contain at least 3 characters and no more than 1000 characters.",
-  "helpUrl": "https://mywebsite.com/help",
-  "main": "main.js",
   "icons": [
     {
       "width": 24,
@@ -35,7 +12,6 @@
     }
   ],
   "version": "1.0.0",
-  "releaseNotes": "Release notes for the plugin version, at least 3 characters and no more than 1000 characters",
   "name": "Imagine Test Project",
   "host": {
     "app": "XD",
