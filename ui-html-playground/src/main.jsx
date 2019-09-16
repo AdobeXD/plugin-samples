@@ -63,7 +63,7 @@ const entryPoints = module.exports = {
         editUxpPen: new PanelController(() => <App html={html} onChange={htmlChanged} onSubmit={runPlayground}/>),
         runPanel: {
             show(event) {
-                event.node.innerHTML = `<div class="panel">${html}</div>`;
+                event.node.innerHTML = `${html}`;
             },
             hide(event) {
                 event.node.innerHTML = '';

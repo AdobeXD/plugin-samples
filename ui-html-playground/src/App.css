@@ -31,6 +31,7 @@ dialog > :local(.form) {
 
 :local(.editor) {
     flex: 1 1 auto;
+    flex-direction: column;
 }
 
 :local(.footer) {
@@ -64,6 +65,8 @@ dialog > :local(.form) {
 :local(.html) {
     flex: 1 0 auto;
     font-family: Menlo;
+    appearance: none;
+    width: 100%;
 }
 
 :local(.tabs) {

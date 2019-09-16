@@ -99,7 +99,7 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/li
 
 
 // module
-exports.push([module.i, "\ndialog > ._5mVLRTMWdYBBHkn-wZodF {\n    width: 480px;\n    height: 600px;\n    display: flex;\n    flex-direction: column;\n}\n\n.root {\n    height: calc(100vh - 90px);\n}\n\n._5mVLRTMWdYBBHkn-wZodF {\n    flex: 1 1 auto;\n    display: flex;\n    flex-direction: column;\n    height: 100%;\n}\n\n._2Cmne2qmmDtziRUFbFr3Q3 {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    flex: 0 0 auto;\n    flex-wrap: wrap;\n}\n\n._5mVLRTMWdYBBHkn-wZodF hr {\n    flex: 0 0 auto;\n}\n\n._3BO6xd7KEh4AQC3qPiA62N {\n    flex: 1 1 auto;\n}\n\n._1fwnD348WPEtOs2Aa-4e82 {\n    flex: 0 0 auto;\n    align-items: center;\n}\n\n.umZ6CBb0ILK1_8fAWRKI2 {\n    overflow: auto;\n    flex: 1 0 auto;\n    display: flex;\n    flex-direction: column;\n    border: 1px solid #EAEAEA;\n    border-radius: 4px;\n    padding: 24px;\n    position: relative;\n}\n\n._3HtZDPiLfml2e0W6xo8Dyo {\n    border: 1px solid #323232;\n    background-color: #666666;\n}\n\n._31xSCcDqt23gWWdiMBrVn9 {\n    background-color: #FFFFFF;\n    border-radius: 8;\n    border: 1px solid #EAEAEA;\n    padding: 32px;\n}\n\n.Ee_ja0SI8dm5rEtcV1CUL {\n    flex: 1 0 auto;\n    font-family: Menlo;\n}\n\n._3OEostfnO7p_I2ye4JVqsW {\n    display: flex;\n    flex-direction: row;\n}\n\n.nqIF4GZ3lnHg5eL-6DerC {\n    appearance: none;\n    border-bottom: 2px transparent;\n}\n\n.nqIF4GZ3lnHg5eL-6DerC[uxp-selected=true] {\n    border-bottom: 2px solid #323232;\n}", ""]);
+exports.push([module.i, "\ndialog > ._5mVLRTMWdYBBHkn-wZodF {\n    width: 480px;\n    height: 600px;\n    display: flex;\n    flex-direction: column;\n}\n\n.root {\n    height: calc(100vh - 90px);\n}\n\n._5mVLRTMWdYBBHkn-wZodF {\n    flex: 1 1 auto;\n    display: flex;\n    flex-direction: column;\n    height: 100%;\n}\n\n._2Cmne2qmmDtziRUFbFr3Q3 {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    flex: 0 0 auto;\n    flex-wrap: wrap;\n}\n\n._5mVLRTMWdYBBHkn-wZodF hr {\n    flex: 0 0 auto;\n}\n\n._3BO6xd7KEh4AQC3qPiA62N {\n    flex: 1 1 auto;\n    flex-direction: column;\n}\n\n._1fwnD348WPEtOs2Aa-4e82 {\n    flex: 0 0 auto;\n    align-items: center;\n}\n\n.umZ6CBb0ILK1_8fAWRKI2 {\n    overflow: auto;\n    flex: 1 0 auto;\n    display: flex;\n    flex-direction: column;\n    border: 1px solid #EAEAEA;\n    border-radius: 4px;\n    padding: 24px;\n    position: relative;\n}\n\n._3HtZDPiLfml2e0W6xo8Dyo {\n    border: 1px solid #323232;\n    background-color: #666666;\n}\n\n._31xSCcDqt23gWWdiMBrVn9 {\n    background-color: #FFFFFF;\n    border-radius: 8;\n    border: 1px solid #EAEAEA;\n    padding: 32px;\n}\n\n.Ee_ja0SI8dm5rEtcV1CUL {\n    flex: 1 0 auto;\n    font-family: Menlo;\n    appearance: none;\n    width: 100%;\n}\n\n._3OEostfnO7p_I2ye4JVqsW {\n    display: flex;\n    flex-direction: row;\n}\n\n.nqIF4GZ3lnHg5eL-6DerC {\n    appearance: none;\n    border-bottom: 2px transparent;\n}\n\n.nqIF4GZ3lnHg5eL-6DerC[uxp-selected=true] {\n    border-bottom: 2px solid #323232;\n}", ""]);
 
 // exports
 exports.locals = {
@@ -22082,7 +22082,7 @@ const entryPoints = module.exports = {
         editUxpPen: new PanelController(() => React.createElement(App, { html: html, onChange: htmlChanged, onSubmit: runPlayground })),
         runPanel: {
             show(event) {
-                event.node.innerHTML = `<div class="panel">${html}</div>`;
+                event.node.innerHTML = `${html}`;
             },
             hide(event) {
                 event.node.innerHTML = '';
@@ -22099,16 +22099,6 @@ const entryPoints = module.exports = {
   \**************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
-
-if (window.setTimeout == null) {
-    window.setTimeout = function (fn) {
-        fn();
-    };
-}
-
-if (window.clearTimeout == null) {
-    window.clearTimeout = function () {};
-}
 
 //  this is a temporary shim for the latest versions of react.
 if (window.cancelAnimationFrame == null) {
