@@ -9,34 +9,14 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
     "id": "YOUR_ID_HERE",
     "name": "Name of Your Plugin",
     "version": "0.0.1",
-
-    "description": "Description of your plugin.",
-    "summary": "Summary of your plugin",
-    "releaseNotes": "Release note",
-    "keywords": [
-        "utility",
-        "productivity",
-        "automation"
-    ],
-    "languages": [
-        "en",
-        "de",
-        "fr"
-    ],
-    "website": "https://mywebsite.com",
-    "author": "Your Name",
-    "helpUrl": "https://mywebsite.com/help",
     "icons": [
         { "width": 24, "height": 24, "path": "images/icon@1x.png" },
-        { "width": 48, "height": 48, "path": "images/icon@2x.png" },
-        { "width": 96, "height": 96, "path": "images/icon@3x.png" },
-        { "width": 144, "height": 144, "path": "images/icon@4x.png" },
-        { "width": 192, "height": 192, "path": "images/icon@5x.png" }
+        { "width": 48, "height": 48, "path": "images/icon@2x.png" }
     ],
     "host": {
         "app": "XD",
         "minVersion": "13.0",
-        "maxVersion": "19.0"
+        "maxVersion": "22.0"
     },
 
     "uiEntryPoints": [
