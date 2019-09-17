@@ -61,10 +61,6 @@ function show(event) {
     if (!panel) event.node.appendChild(create());
 }
 
-function hide(event) {
-    // This function triggers when the panel is hidden by user
-}
-
 function update() {
     const { Rectangle } = require("scenegraph");
     let form = document.querySelector("form");
@@ -83,7 +79,6 @@ module.exports = {
     panels: {
         enlargeRectangle: {
             show,
-            hide,
             update
         }
     }
