@@ -28,25 +28,36 @@ All plugins are reviewed by our CC Integrations Review team. Make sure to thorou
 
 To begin the submission for your plugin, visit the [Developer Console](https://console.adobe.io/plugins) and select your plugin from your list of plugin projects.
 
-This will take you to your plugin's details page, which shows your plugin ID, a download link for your starter project, and a blue button that says "Submit for Review".
+This will take you to your plugin's details page, which shows your plugin ID, a download link for your starter project, and button that says "Distribute".
 
-Before clicking on the "Submit for Review" button, make sure to click on the "Check Plugin Name Availability" button to check the availability of your plugin name, which you have indicated in [your manifest.json file](/reference/structure/manifest.md#top-level-metadata). Note that this plugin name is the one that will be displayed in the XD Plugin Manager. Do not confuse this name with your Developer Console _project name_, which is only visible to you and is managed directly on the Console.
+![Distribute your plugin](/images/submit.png)
+
+Before clicking on the "Submit for Review" button, make sure to read [the submission checklist](/distribution/submission-checklist.md). This is the same checklist that our review team uses to determine to whether reject or approve your plugin.
 
 When ready, click "Submit For Review".
 
-### 3. Upload your XD plugin
+### 3. Submit plugin for review - Listing Information
+The "Submit plugin for review" page has two tabs: "Listing information" and "Plugin file". As the first step, you are asked to provide some facts about you, the publisher, and your plugin. 
 
-On this page, attach your .XDX file and click on "Next". Note that your .XDX file size must be under 50MB to upload it for submission.
+![Publisher and plugin info](/images/plugin-and-publisher-info.png)
 
-The Developer Console will then process the upload and extract information from your `manifest.json` file.
+Next, indicate whether your plugin requires installations of another application or use of a third party service. Also, include release notes for this version. This information will be displayed in the plugin manager to help users onboard your plugin.
 
-### 4. Review your listing information
+![Publisher and plugin info](/images/connect-and-version-details.png)
 
-On this page, review the validation results on all required fields for [your manifest.json file](/reference/structure/manifest.md#top-level-metadata).
+Next, you are asked to provide three plugin icons (`48 * 48`, `96 * 96`, and `192 * 192`). These icons will be used for display in the Plugin Manager listing. Note that, separately, you are required to include two additional images (`24 * 24`, `48 * 48`) in your plugin and includ them in [the manifest](https://adobexdplatform.com/plugin-docs/reference/structure/manifest.html).
 
-Note that any changes must be made in your original files. When all necessary changes are made, re-package your plugin and upload the plugin again.
+Now you can provide your plugin's screenshots to be included in the Plugin Manager listing. Please take a look at [the screenshot requirements](https://adobexdplatform.com/plugin-docs/distribution/how-to-submit-to-plugin-manager.html). 
 
-### 5. Submit your plugin
+![Note to reviewer](/images/note-to-reviewers.png)
+
+Finally, if you have any message for our reviewers, write them here.
+
+### 4. Submit plugin for review - Plugin File
+
+Once you are done with providing some information about your plugin, icons, and screenshots, you will be asked to attach your plugin file. Make sure to properly [package your plugin](/distribution/packaging.md) into an `.xdx` file. 
+
+
 
 If your plugin passed all validation checks by the Developer Console, write notes (if any) to the CC Integrations Review team and click on "Submit for Review".
 
