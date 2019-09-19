@@ -28,7 +28,7 @@ If you distribute a .XDX file, installation is as simple as one double-click.
 > - Outlook fails silently; the message disappears into the void, without being delivered to the recipient.
 > - Gmail notifies the sender that the message will be blocked.
 > 
-> If you also have the same listing in the Plugin Manager, make sure the `id` and `name` fields in the manifest match the same fields in the Plugin Manager listing.
+> If you also have the same listing in the Plugin Manager, make sure the `name` field in the manifest matches the same field in the Plugin Manager listing. If there is a discrepancy, the name in the Plugin Manager will be used.
 
 
 ## Next steps
