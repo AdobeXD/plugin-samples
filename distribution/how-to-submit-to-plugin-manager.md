@@ -45,7 +45,7 @@ Next, indicate whether your plugin requires installations of another application
 
 ![Publisher and plugin info](/images/connect-and-version-details.png)
 
-Next, you are asked to provide three plugin icons (`48 * 48`, `96 * 96`, and `192 * 192`). These icons will be used for display in the Plugin Manager listing. Note that, separately, you are required to include two additional images (`24 * 24`, `48 * 48`) in your plugin and includ them in [the manifest](/reference/structure/manifest.md).
+Next, you are asked to provide three plugin icons (`48 * 48`, `96 * 96`, and `192 * 192`). These icons will be used for display in the Plugin Manager listing. Note that, separately, you are required to include two additional images (`24 * 24`, `48 * 48`) in your plugin and include them in [the manifest](/reference/structure/manifest.md). These icons can be different from the ones that you use in Console and they will be used to show icons in the plugins panel.
 
 Now you can provide your plugin's screenshots to be included in the Plugin Manager listing. Please take a look at [the screenshot requirements](https://adobexdplatform.com/plugin-docs/distribution/how-to-submit-to-plugin-manager.html). 
 
