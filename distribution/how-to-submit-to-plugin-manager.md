@@ -32,12 +32,12 @@ This will take you to your plugin's details page, which shows your plugin ID, a 
 
 ![Distribute your plugin](/images/submit.png)
 
-Before clicking on the "Submit for Review" button, make sure to read [the submission checklist](/distribution/submission-checklist.md). This is the same checklist that our review team uses to determine to whether reject or approve your plugin.
+Before clicking on the "Submit for Review" button, make sure to read [the submission checklist](/distribution/submission-checklist.md). This is the same checklist that our review team uses to determine whether to reject or approve your plugin.
 
 When ready, click "Submit For Review".
 
 ### 3. Submit plugin for review - Listing Information
-The "Submit plugin for review" page has two tabs: "Listing information" and "Plugin file". As the first step, you are asked to provide some facts about you, the publisher, and your plugin. 
+The "Submit plugin for review" page has two tabs: "Listing information" and "Plugin file". As the first step, you are asked to provide some facts about you, the publisher, and your plugin. Make sure that the plugin name in your [manifest file](/reference/structure/manifest.md) and the plugin name you provide here match.
 
 ![Publisher and plugin info](/images/plugin-and-publisher-info.png)
 
@@ -45,7 +45,7 @@ Next, indicate whether your plugin requires installations of another application
 
 ![Publisher and plugin info](/images/connect-and-version-details.png)
 
-Next, you are asked to provide three plugin icons (`48 * 48`, `96 * 96`, and `192 * 192`). These icons will be used for display in the Plugin Manager listing. Note that, separately, you are required to include two additional images (`24 * 24`, `48 * 48`) in your plugin and includ them in [the manifest](https://adobexdplatform.com/plugin-docs/reference/structure/manifest.html).
+Next, you are asked to provide three plugin icons (`48 * 48`, `96 * 96`, and `192 * 192`). These icons will be used for display in the Plugin Manager listing. Note that, separately, you are required to include two additional images (`24 * 24`, `48 * 48`) in your plugin and includ them in [the manifest](/reference/structure/manifest.md).
 
 Now you can provide your plugin's screenshots to be included in the Plugin Manager listing. Please take a look at [the screenshot requirements](https://adobexdplatform.com/plugin-docs/distribution/how-to-submit-to-plugin-manager.html). 
 
@@ -57,15 +57,13 @@ Finally, if you have any message for our reviewers, write them here.
 
 Once you are done with providing some information about your plugin, icons, and screenshots, you will be asked to attach your plugin file. Make sure to properly [package your plugin](/distribution/packaging.md) into an `.xdx` file. 
 
-
-
-If your plugin passed all validation checks by the Developer Console, write notes (if any) to the CC Integrations Review team and click on "Submit for Review".
+If your plugin passed all validation checks by the Developer Console, the "Submit" button will be activated for you to click.
 
 Congratulations! We can't wait for you to join our growing community of published plugins.
 
 ## CC Integrations Review
 
-After you submit, the CC Integrations Review team will review your plugin. Depending on current submission volume, it can take up to 10 business days before you hear a response. Thank you for being patient with us.
+After you submit, the CC Integrations Review team will review your plugin. Depending on current submission volume, it can take up to 10 business days before you hear a response. Thank you for being patient with us. Note that the same [submission checklist](/distribution/submission-checklist.md) will be used by our reviewers to determine whether to reject or approve your plugin.
 
 Once your submission has been reviewed, we’ll reach out letting you know if it has been approved or rejected, and provide any next steps.
 
