@@ -15,8 +15,7 @@ The manifest is where you include metadata about your plugin. Simply put, the ma
     ],
     "host": {
         "app": "XD",
-        "minVersion": "13.0",
-        "maxVersion": "22.0"
+        "minVersion": "21.0"
     },
 
     "uiEntryPoints": [
@@ -50,9 +49,9 @@ Key path | Type | Description | Required
 `id`     | `string` | Unique identifier for your plugin. You can get your unique ID on the [Adobe I/O Console](https://console.adobe.io/plugins).| Develop / Publish
 `name`   | `string` | The name should be 3 - 45 characters. <br> **Note:** We recommend your plugin name matches the _project name_ you created when getting your plugin ID from the I/O Console. | Develop / Publish
 `version`| `string` | Version number of your plugin in `x.y.z` format. <br>Version must be three segments and each version component must be between `0` and `99`. | Develop / Publish
-`icons` | `array<object>` | Icons displayed in the Plugin Manager listing. <br> PNG, JPG/JPEG formats are supported and the max file size for each icon is 1MB. <br> Two sizes are required - `[24, 48]`. | Publish
+`icons` | `array<object>` | Icons displayed in XD's plugins panel. <br> PNG, JPG/JPEG formats are supported and the max file size for each icon is 1MB. <br> Two sizes are required - `[24, 48]`. <br> **Note:** Icons for XD's Plugin Manager are uploaded directly via the I/O Console, not included within your plugin itself. See our ["Publishing your plugin" guide](../../distribution/how-to-submit-to-plugin-manager.md) to learn more. | Publish
 `host.app` | `string` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `"XD"`). | Develop / Publish
-`host.minVersion` | `string` | Minimum required version of the host app (in `x.y` format) that can run this plugin. <br> **Note:** Must be two segments. Typically, you'll leave the minor segment set to `0`, e.g. `16.0`. | Develop / Publish
+`host.minVersion` | `string` | Minimum required version of the host app (in `x.y` format) that can run this plugin. The lowest valid version for headless and modal plugins is `13.0`. The lower valide version for panel plugins is `21.0`. <br> **Note:** The version number must be two segments. Typically, you'll leave the minor segment set to `0`, e.g. `16.0`. | Develop / Publish
 `host.maxVersion` | `string` | Maximum version of host app that can run this plugin. Same formatting as `host.minVersion`. | Optional
 `uiEntryPoints` | <code>array&lt;[MenuItemDefinition](#MenuItemDefinition)&gt;</code> | Describes the entries your plugin adds to the _Plugins_ menu & "plugin launchpad" sidebar in XD. See the next section for details. | Develop / Publish
 
@@ -68,8 +67,8 @@ Key | Type | Description
 ----|------|------------
 `type` | `string` | Entry point type: either `"menu"` or `"panel"`.
 `label` | <code>?string&#124;[LocaleMap](#menu-localization)</code> | _Required_ if multiple `MenuItemDefinition` objects defined; _ignored_ if only one defined.<br><br> Label for this menu item that the user will select to run your plugin. May be a single string _or_ a dictionary of localized strings. 
-`commandId` | `string` | Specify `commandId` to create a menu item that runs plugin code directly -- either a headless command, or a command with modal dialog box UI. This identifier links the menu item to a [_handler function_](./handlers.md#command) in your plugin's JavaScript code. This identifier needs to be unique within your plugin. Don't specify `commandId` and `panelId` at the same time.
-`panelId` | `string` | Specify `panelId` to create a menu item that opens panel UI for your plugin. This identifier links the menu item to a [_panel definition_ object](./handlers.md#panel) in your plugin's JavaScript code. This identifier needs to be unique within your plugin. Don't specify `commandId` and `panelId` at the same time.
+`commandId` | `string` | Specify `commandId` to create a menu item that runs plugin code directly -- either a headless command, or a command with modal dialog UI. This identifier links the menu item to a [_handler function_](./handlers.md#command) in your plugin's JavaScript code. This identifier needs to be unique within your plugin. Don't specify `commandId` and `panelId` at the same time.
+`panelId` | `string` | Specify `panelId` to create a menu item that opens panel UI for your plugin. This identifier links the menu item to a [_panel definition object_](./handlers.md#panel) in your plugin's JavaScript code. This identifier needs to be unique within your plugin. Don't specify `commandId` and `panelId` at the same time.
 `shortcut` | `Object` | _Optional._ Object defining Mac and Windows keyboard shortcuts for this menu item. See "Keyboard shortcuts" below for details.
 
 ### Keyboard shortcuts
