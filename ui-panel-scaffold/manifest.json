@@ -2,7 +2,6 @@
   "name": "Sample Plugin: Panel Scaffold",
   "id": "YOUR_ID_HERE",
   "version": "1.0.0",
-  "description": "Sample plugin code for Adobe XD.",
   "host": {
     "app": "XD",
     "minVersion": "19.0"

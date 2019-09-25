@@ -7,12 +7,6 @@
         "app": "XD",
         "minVersion": "21.0"
     },
-    "description": "Search the Adobe stock website and download proofs for your design.",
-    "summary": "Search for inspiration",
-    "languages": [
-        "en"
-    ],
-    "helpUrl": "https://stock.adobe.com/",
     "icons": [
         {
             "width": 24,

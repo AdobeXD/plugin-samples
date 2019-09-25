@@ -1,18 +1,11 @@
 {
     "id": "UI_HTML_PLAYGROUND",
-    "author": "Kerri Shotts",
     "name": "(UI) HTML Playground",
     "version": "1.0.0",
     "host": {
         "app": "XD",
         "minVersion": "21.0"
     },
-    "description": "Description of your plugin.",
-    "summary": "Summary of your plugin",
-    "languages": [
-        "en"
-    ],
-    "helpUrl": "https://mywebsite.com/help",
     "icons": [
         {
             "width": 24,

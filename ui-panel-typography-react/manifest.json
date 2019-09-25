@@ -1,18 +1,11 @@
 {
     "id": "UI_PANEL_TYPOGRAPHY_REACT",
-    "author": "Kris Nye",
     "name": "(UI) UI Panel Typography React",
     "version": "2.0.0",
     "host": {
         "app": "XD",
         "minVersion": "20.0"
     },
-    "description": "Simple React Panel Typography Test",
-    "summary": "React Panel Typography Test",
-    "languages": [
-        "en"
-    ],
-    "helpUrl": "https://github.com/AdobeXD/",
     "icons": [
         {
             "width": 24,
