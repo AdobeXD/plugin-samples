@@ -163,6 +163,7 @@
 * [Sharing Your Plugin](./distribution/index.md)
   * [Packaging your plugin](./distribution/packaging.md)
   * [Distribution options](./distribution/options.md)
+  * [Submission checklist](./distribution/submission-checklist.md)
   * [Publishing your plugin](./distribution/how-to-submit-to-plugin-manager.md)
   * [Marketing your plugin](./distribution/marketing.md)
   * [Deep-linking to your plugin listing](./distribution/how-to-create-deep-links.md)
