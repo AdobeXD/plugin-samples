@@ -58,7 +58,7 @@ Next, you are asked to provide three plugin icons (48 x 48 px, 96 x 96 px, and 1
 > **Info**
 > Note that, separately, you are required to include additional icons in your plugin package and include them in [the manifest](/reference/structure/manifest.md). These icons can be different from the ones that you use in Console and they will be used to show icons in the plugins panel within the application.
 
-You must also provide at least one screenshot of your plugin, which will be included in your Plugin Manager listing when published. Please take a look at [the screenshot requirements](https://adobexdplatform.com/plugin-docs/distribution/how-to-submit-to-plugin-manager.html). 
+You must also provide at least one screenshot of your plugin, which will be included in your Plugin Manager listing when published.
 
 ![Publisher and plugin info](/images/plugin-icons-and-screenshots.png)
 
