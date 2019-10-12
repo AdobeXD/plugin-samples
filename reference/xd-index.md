@@ -9,4 +9,4 @@ XD specific APIs enable developers to extend XD specific features. Using these A
 - [cloud](/reference/cloud.md)
 - [interactions](/reference/interactions.md)
 - [commands](/reference/commands.md)
-- [viewport](/reference/ciewport.md)
+- [viewport](/reference/viewport.md)
