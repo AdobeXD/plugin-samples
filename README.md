@@ -19,7 +19,7 @@ We’ll keep things simple in this Quick Start tutorial. Once you’re done, you
 
 [Start coding](/tutorials/quick-start/index.md)
 
-<img src="/images/design@2x.png">
+<img src="/images/kit@2x.png">
 
 ### Design using the xd plugin ui kit
 
