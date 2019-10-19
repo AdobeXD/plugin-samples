@@ -75,7 +75,8 @@ An interaction consists of a Trigger + Action pair and is attached to a single, 
 }
 ```
 
-Note: Interaction objects are _not_ plain JSON -- they may reference scenenodes (as seen above) and other strongly-typed objects.
+> **Tip**
+> Note: Interaction objects are _not_ plain JSON -- they may reference scenenodes (as seen above) and other strongly-typed objects.
 
 <a name="Trigger" id="Trigger"></a>
 
@@ -85,6 +86,10 @@ Event which triggers an interaction.
 | Property | Type | Description |
 | --- | --- | --- |
 | type | string | One of the trigger types listed below. |
+
+> **Tip**
+> Note: Additional trigger types may be added in the future. Always be sure to have a default case for unknown triggers when
+> working with Interaction objects.
 
 ##### "tap"
 When the user clicks or taps on a scenenode.
@@ -109,11 +114,15 @@ When the user speaks a specific voice command. Additional Trigger properties:
 <a name="Action" id="Action"></a>
 
 ### Typedef Action
-Action performed when the trigger occurs. Current action types are:
+Action performed when the trigger occurs.
 
 | Property | Type | Description |
 | --- | --- | --- |
 | type | string | One of the action types listed below. |
+
+> **Tip**
+> Note: Additional action types may be added in the future. Always be sure to have a default case for unknown actions when
+> working with Interaction objects.
 
 ##### "goToArtboard"
 Navigate the entire screen to view a different artboard. Additional Action properties:

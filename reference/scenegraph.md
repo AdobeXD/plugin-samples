@@ -46,8 +46,9 @@ function myCommand(selection) {
 
 ## Class hierarchy
 
-Note: Additional subclasses may be added in the future. Always be sure to have a default case for unknown scenenode classes
-when traversing the scenegraph.
+> **Tip**
+> Note: Additional subclasses may be added in the future. Always be sure to have a default case for unknown scenenode classes
+> when traversing the scenegraph.
 
 * [SceneNode](#SceneNode)
     * [GraphicNode](#GraphicNode)

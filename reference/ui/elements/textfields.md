@@ -116,6 +116,15 @@ Default text value here
 
 -->
 
+## Behavior
+
+##### In panel UI
+* When the user presses Escape or Enter in a text field, keyboard focus is sent back to the design canvas. You can prevent this by calling `preventDefault()` on the `keydown` event.
+* To return keyboard focus to the design canvas programmatically, call `blur()` on whichever text field in your panel UI is currently focused.
+
+##### In dialog boxes
+* Pressing Escape in any text field closes the dialog, resolving `showModal()`'s Promise with the string `"reasonCanceled"`. This cannot be prevented.
+
 ## Guidelines
 
 ##### Include a Label

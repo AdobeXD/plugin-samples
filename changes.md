@@ -1,6 +1,41 @@
 # Change Log
 
-## XD Release 21.0.12 (July 2019)
+XD Release 23.1.32 (October 2019)
+-------------------------------------
+
+### New plugin listing process
+Information shown in the plugin listing has moved out of `manifest.json` and is instead provided online when you submit a plugin to the listing.
+
+* Submitting a plugin also now requires at least one _screenshot image_.
+* Icons seen in the Plugin Manager list must be provided online during submission, but icons seen in the Plugins side panel must still be part of the plugin package folder.
+* As of XD 23, the Plugin Manager UI ignores description, author, links, etc. in `manifest.json`. Submitting to the public listing is now the _only_ way to display this info in Plugin Manager. See [updated manifest documentation](./reference/structure/manifest.md).
+* As of September 24, submitting a new or updated plugin to the public listing requires supplying all these details via the developer submission portal online. See [How to submit to Plugin Manager](distribution/how-to-submit-to-plugin-manager.md).
+
+### Smaller fixes and improvements
+* Clarified that `editDocument()` does not support the `mergeId` option for UI events that are not "high frequency."
+* Can `preventDefault()` on Esc or Enter in text fields to prevent the default action of sending focus back to the canvas.
+* Fixed bug with setting opacity of BooleanGroup nodes.
+* Plugin Manager UI shows plugins that were disabled because they're incompatible with the current version of XD, with tooltip explaining why.
+
+
+----
+
+XD Release 22.0.12 (August 2019)
+----------------------------------
+
+After a stabilization period, plugins using panel UI are now published in the Plugin Manager listing!
+
+### Fixes and improvements
+
+* Fixed bugs related to `editDocument()` usage (also fixed in XD 21.1.12).
+* PUT/POST requests on Windows were including an unwanted `Transfer-Encoding` header, which interfered with uploading data to services like Amazon S3.
+* Plugins can now copy text to the clipboard in response to a panel UI DOM event without needing to call `editDocument()`.
+
+
+----
+
+XD Release 21.0.12 (July 2019)
+----------------------------------
 
 XD 21 adds major updates: the ability to **show panel UI**, and the much-improved **UXP 3 CSS & layout engine**.
 
@@ -61,7 +96,8 @@ See the [Known Issues page](./known-issues.md) for a comprehensive list of exist
 
 ----
 
-## XD Release 20.0.12 (June 2019)
+XD Release 20.0.12 (June 2019)
+----------------------------------
 
 ### UI Changes
 
@@ -88,7 +124,8 @@ No new known issues. See the [Known Issues page](./known-issues.md) for a compre
 
 ----
 
-## XD Release 19.0.12 (May 2019)
+XD Release 19.0.12 (May 2019)
+----------------------------------
 
 ### New API Features
 
@@ -127,7 +164,8 @@ No new known issues. See the [Known Issues page](./known-issues.md) for a compre
 
 ----
 
-## XD Release 18.0.12 (April 2019)
+XD Release 18.0.12 (April 2019)
+----------------------------------
 
 ### New API Features
 
@@ -186,7 +224,8 @@ No new known issues. See the [Known Issues page](./known-issues.md) for a compre
 
 ----
 
-## XD Release 17.0.12 (March 2019)
+XD Release 17.0.12 (March 2019)
+----------------------------------
 
 ### New API Features
 
@@ -220,7 +259,8 @@ No new known issues. See the [Known Issues page](./known-issues.md) for a compre
 
 ----
 
-## XD Release 16.0.12 (February 2019)
+XD Release 16.0.12 (February 2019)
+----------------------------------
 
 ### New API Features
 
@@ -243,7 +283,8 @@ No new known issues. See the [Known Issues page](./known-issues.md) for a compre
 
 ----
 
-## XD Release 15.0.12 (January 2019)
+XD Release 15.0.12 (January 2019)
+----------------------------------
 
 ### New API Features
 
@@ -275,7 +316,8 @@ See the [Known Issues page](./known-issues.md) for a comprehensive list of exist
 
 ----
 
-## XD Release 14.0.42 (December 2018)
+XD Release 14.0.42 (December 2018)
+----------------------------------
 
 ### New API Features
 
@@ -309,6 +351,7 @@ No new known issues. See the [Known Issues page](./known-issues.md) for a compre
 
 ----
 
-## XD Release 13.0.12 (October 2018)
+XD Release 13.0.12 (October 2018)
+----------------------------------
 
-This was the first release of Adobe XD featuring a public API for in-app plugins!
+First release of Adobe XD featuring a public API for in-app plugins!

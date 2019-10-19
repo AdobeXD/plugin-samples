@@ -51,7 +51,7 @@ The "Submit plugin for review" page has two tabs: "Listing information" and "Plu
 
 Next, indicate whether your plugin requires installations of another application or use of a third party service. Also, include release notes for this version. This information will be displayed in the plugin manager to help users onboard your plugin.
 
-![Publisher and plugin info](/images/connect-and-version-details.png)
+![Connection and version info](/images/connect-and-version-details.png)
 
 Next, you are asked to provide three plugin icons (48 x 48 px, 96 x 96 px, and 192 x 192 px). These icons will be used for display in the Plugin Manager listing.
 
@@ -60,7 +60,7 @@ Next, you are asked to provide three plugin icons (48 x 48 px, 96 x 96 px, and 1
 
 You must also provide at least one screenshot of your plugin, which will be included in your Plugin Manager listing when published.
 
-![Publisher and plugin info](/images/plugin-icons-and-screenshots.png)
+![Icon and screenshot info](/images/plugin-icons-and-screenshots.png)
 
 Finally, if you have a message for our reviewers, write it here. 
 

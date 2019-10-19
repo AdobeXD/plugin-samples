@@ -6,6 +6,7 @@ The `cloud` module lets you get information about shared prototypes and design s
 **Example**
 ```js
 // Get prototypes data
+const cloud = require("cloud");
 var sharedArtifacts = cloud.getSharedArtifacts();
 var prototypes = sharedArtifacts.filter(artifact => (artifact.type === cloud.ArtifactType.PROTOTYPE));
 prototypes.forEach(artifact => {
@@ -16,6 +17,7 @@ prototypes.forEach(artifact => {
 **Example**
 ```js
 // Get design specs data
+const cloud = require("cloud");
 var sharedArtifacts = cloud.getSharedArtifacts();
 var specs = sharedArtifacts.filter(artifact => (artifact.type === cloud.ArtifactType.SPECS));
 specs.forEach(artifact => {
@@ -64,7 +66,7 @@ Properties common to both types.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| type | ArtifactType | Set to `ArtifactType.PROTOTYPE` |
+| type | ArtifactType | Type of shared artifact |
 | url | string | URL to view in browser |
 | name | string | Name of shared artifact (often, but not always, matches the document name) |
 | accessLevel | AccessLevel | Level of access protection |
