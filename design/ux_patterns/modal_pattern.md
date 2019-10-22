@@ -40,7 +40,7 @@ Include a modal dismissal button to allow the user to cancel/close the modal and
 
 ## Best Practices
 
-**Plugin Icon**. 
+**Plugin Icon**.  
 You can include a plugin icon to let the user know they are interacting with your plugin in the modal dialog
 
  <br />
