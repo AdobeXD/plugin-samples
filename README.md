@@ -6,11 +6,17 @@ Shape the future of experience design on Adobe XD’s open platform by creating 
 
 <br />
 
+<object>
 <a href="/develop.md"><object style="width: 100%" type="image/png" data="/images/develop@3x.png">placeholder</object></a>
+</object>
 
+<object>
 <a href="/plugin-design-guidelines/index.md"><object style="width: 100%" type="image/png" data="/images/design@3x.png">placeholder</object></a>
+</object>
 
+<object>
 <a href="/distribution/index.md"><object style="width: 100%" type="image/png" data="/images/share@3x.png">placeholder</object></a>
+</object>
 
 <br />
 
@@ -52,5 +58,9 @@ We’ve got a lot of stuff planned for the future of Plugin APIs on the Adobe XD
 
 <br />
 
+<object>
 <a href="/distribution/index.md"><object style="width: 100%" type="image/png" data="/images/dev-community@3x.png">placeholder</object></a>
+</object>
+<object>
 <a href="/distribution/index.md"><object style="width: 100%" type="image/png" data="/images/user-community@3x.png">placeholder</object></a>
+</object>
