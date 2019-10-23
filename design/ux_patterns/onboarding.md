@@ -27,19 +27,3 @@ Provide examples or tutorials on how to use your plugin, this can be done by usi
 
 > **D. Help**  
 > Provide access to the help external link or documentation in the main navigation of your plugin or in error modal dialogs to allow them to troubleshoot.
-
-
-
-# UX Patterns
-
-User Experience patterns will provide guidence on how to interact with your plugin users within XD, this will highlight UX requirements and best practices.
-
-> [View UX Patterns](/ux_patterns/index.md)
-
- <br />
- 
-# User Interface
-
-UI Resources will have information on UI components, examples and a sticker sheet you can use to build your plugin 
-
-> [View User Interface](/user_interface/index.md)
