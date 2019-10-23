@@ -17,11 +17,11 @@ Provide examples or tutorials on how to use your plugin, this can be done by usi
 **A. Plugin Interaction**  
 Highlight key interactions to make sure users can get the plugin to work.
 
-**A. Login experience**  
+**B. Login experience**  
 They need to log in or sign up for a service to use your plugin, guide them through the sign-up process.
 
-**A. Authentication**  
+**C. Authentication**  
 If the plugin needs an API key or other account information, provide clear instructions on how they can get that information or provide a link.
 
-**A. Help**  
+**D. Help**  
 Provide access to the help external link or documentation in the main navigation of your plugin or in error modal dialogs to allow them to troubleshoot.
