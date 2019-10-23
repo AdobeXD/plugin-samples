@@ -11,8 +11,6 @@ These are guidelines and best practices on how to guide your users as they inter
  
 # Best practices
 
-Learn more about the types of Adobe XD plugins you can build.
-
 **Content**  
 Provide examples or tutorials on how to use your plugin, this can be done by using visual or gifs.
 
