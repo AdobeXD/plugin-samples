@@ -81,7 +81,7 @@ F. Limit the use of emoji’s as part of the label
 
  <br />
 
-#Keyboard shortcuts
+# Keyboard shortcuts
 
 If you are considering having a shortcut for your plugin, make sure to keep these guidelines in mind. 
 
