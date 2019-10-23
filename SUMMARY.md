@@ -166,7 +166,7 @@
       * [show() callback](./reference/ui/panels/show.md)
       * [hide() callback](./reference/ui/panels/hide.md)
       * [update() callback](./reference/ui/panels/update.md)
-    * [UI kit Design GitHub Repo](./plugin-design-guidelines/ui_resources/Sticker_sheet.md)
+    * [UI kit Design GitHub Repo](./design/user-interface/sticker_sheet.md)
 * [Share](./distribution/index.md)
   * [Packaging your plugin](./distribution/packaging.md)
   * [Distribution options](./distribution/options.md)
