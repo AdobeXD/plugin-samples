@@ -29,7 +29,7 @@ These guidelines provide clarity on the different entry points a plugin can have
 
 ### UX Requirements 
 
-**Plugin actions (entry point)**  
+**Plugin actions**  
 Executes a plugin action or open modal.
 
 
