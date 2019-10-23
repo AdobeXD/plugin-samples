@@ -21,7 +21,7 @@ Plugins can interact with the user at different levels, for example, some plugin
 
 Learn more about the types of Adobe XD plugins you can build.
 
-![Panels and modals](ux_images/Design_xd_plugins_1.png)
+![Panels and modals](ux-images/Design-xd-plugins-1.png)
 
 **Plugins Panel (Non-Blocking UI)**  
 This surface is best used when the user should have access to the canvas while using the plugin.
@@ -35,7 +35,7 @@ This surface is best used when the plugin needs to run an action and the user sh
 
 User Experience patterns will provide guidence on how to interact with your plugin users within XD, this will highlight UX requirements and best practices.
 
-> [View UX Patterns](/ux_patterns/index.md)
+> [View UX Patterns](/ux-patterns/index.md)
 
  <br />
  

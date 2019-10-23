@@ -9,7 +9,7 @@ This section has recommendations when using a Plugins Panel - Non-Blocking UI. I
 
 
 
-![XD frame example with panel](../ux_images/Panel_XDapplication_frame.png)
+![XD frame example with panel](../ux-images/Panel-XDapplication-frame.png)
 
 ----------
  <br />
@@ -18,7 +18,7 @@ This section has recommendations when using a Plugins Panel - Non-Blocking UI. I
 
 MacOS example
 
-![Panel specs and requirements](../ux_images/Panel_pattern_1.png)
+![Panel specs and requirements](../ux-images/Panel-pattern-1.png)
 
 ### Specs
 
@@ -44,12 +44,12 @@ If the plugin needs to refresh for the user to see new information then provide 
 
 # Plugin launch pad and UI
 ### Launch Pad - built-in 
-![Panel launch pad example](../ux_images/Panel_pattern_2.png)
+![Panel launch pad example](../ux-images/Panel-pattern-2.png)
 
 
 
 ### Panel UI
-![Panel UI example](../ux_images/Panel_pattern_3.png)
+![Panel UI example](../ux-images/Panel-pattern-3.png)
 
  <br />
 
@@ -60,7 +60,7 @@ If the plugin needs to refresh for the user to see new information then provide 
 Don’t block all of the UI. If the plugin has other other plugin actions that are not dependent on a selection, then users should be able to interact those actions. 
 
 
-![Selection based actions don't example](../ux_images/Panel_pattern_4.png)
+![Selection based actions don't example](../ux-images/Panel-pattern-4.png)
 
 ### Do
 
@@ -70,7 +70,7 @@ Add a selection prompt in the UI to let the user know what they need to select t
 
 This also allows users to see and understand the UI before they start using the plugin. 
 
-![Selection based actions do example](../ux_images/Panel_pattern_5.png)
+![Selection based actions do example](../ux-images/Panel-pattern-5.png)
 
 
 
@@ -85,7 +85,7 @@ Use cases where the user needs to input a lot of data than allow for a cancel ac
 In some use cases let the user know what has been selected by rendering a preview or if they have multiple items selected let them know in the panel UI.
 
 
-![Objects selected example](../ux_images/Panel_pattern_6.png)
+![Objects selected example](../ux-images/Panel-pattern-6.png)
 
 
 ### Importing object on the canvas
@@ -100,7 +100,7 @@ Avoid dropping an artboard on top of other artboards.
 - Move viewport to object on the canvas
 - Select the new object 
 
-![import objects example](../ux_images/Panel_pattern_7.png)
+![import objects example](../ux-images/Panel-pattern-7.png)
 
 
 
@@ -110,7 +110,7 @@ If the plugin is running an action, then let the user know by providing UI eleme
 
 This can also be a great opportunity to brand your empty states. 
 
-![Running an action and providing feedback example](../ux_images/Panel_pattern_8.png)
+![Running an action and providing feedback example](../ux-images/Panel-pattern-8.png)
 
  <br />
 
@@ -119,13 +119,13 @@ This can also be a great opportunity to brand your empty states.
 Since the user can resize the panel, content should adjust to accomodate for scrolling, responsiveness and footer actions. 
 
 ### Scrolling
-![Panel Scrolling behaviors example](../ux_images/Panel_pattern_9.png)
+![Panel Scrolling behaviors example](../ux-images/Panel-pattern-9.png)
 
 
 ### Responsiveness
-![Responsiveness behaviors example](../ux_images/Panel_pattern_10.png)
+![Responsiveness behaviors example](../ux-images/Panel-pattern-10.png)
 
 
 ### Footer
-![Panel Footer example](../ux_images/Panel_pattern_11.png)
+![Panel Footer example](../ux-images/Panel-pattern-11.png)
 

@@ -15,17 +15,17 @@ These guidelines provide clarity on the different entry points a plugin can have
 
 ### Menu bar
 
-![Menu example in XD](../ux_images/Menu_bar_Xd.png)
+![Menu example in XD](../ux-images/Menu-bar-Xd.png)
 
 ### Plugin Launch pad 
 
-![Panel launch pad example in XD](../ux_images/navigation_plugin_launchpad_1.png)
+![Panel launch pad example in XD](../ux-images/navigation-plugin-launchpad-1.png)
 
  <br />
 
 # Menu architecture - Top menu and Submenu items
 
-![Menu requirements](../ux_images/Menu_bar_reqs.png)
+![Menu requirements](../ux-images/Menu-bar-reqs.png)
 
 ### UX Requirements 
 
@@ -49,12 +49,12 @@ Provide the user with an external link to help documentation or an email through
 **Don't**  
 Don’t add multiple actions for one plugin as top-level items.
 
-![Don't add multiple actions for one plugin at a top level](../ux_images/navigation_dont_4.png)
+![Don't add multiple actions for one plugin at a top level](../ux-images/navigation-dont-4.png)
 
 
 ### Top Menu
 
-![Top menu example in the menu bar](../ux_images/Top_Menu_items.png)
+![Top menu example in the menu bar](../ux-images/Top-Menu-items.png)
 
 **Use Case**  
 If your plugin has one action or workflow shortcut then the action will be the top menu item. 
@@ -66,7 +66,7 @@ C. Limit the use of emoji’s as part of the label
 
 
 ### Submenu items
-![Submenu example in the menu bar](../ux_images/Sub_Menu_items.png)
+![Submenu example in the menu bar](../ux-images/Sub-Menu-items.png)
 
 **Use Cases**  
 if your plugin needs to handle multiple actions or workflow shortcuts then they will render as a submenu.
@@ -85,7 +85,7 @@ F. Limit the use of emoji’s as part of the label
 
 If you are considering having a shortcut for your plugin, make sure to keep these guidelines in mind. 
 
-![Keyboard shortcut example in the menu](../ux_images/Key_board_shortcuts.png)
+![Keyboard shortcut example in the menu](../ux-images/Key-board-shortcuts.png)
 
 ### Best practices
 

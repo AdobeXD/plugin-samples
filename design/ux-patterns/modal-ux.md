@@ -6,7 +6,7 @@ This section will have recommendations when using a Modal Dialog -  Blocking UI.
 - Modal Dialog UI
 - Dialog Buttons and Key Commands
 
-![Example of Modal](../ux_images/Modal_UX_1_Example.png)
+![Example of Modal](../ux-images/Modal-UX-1-Example.png)
 
 ----------
 
@@ -16,7 +16,7 @@ This section will have recommendations when using a Modal Dialog -  Blocking UI.
 
 ## MacOS example
 
-![Modal Specs](../ux_images/Modal_UX_2_Specs.png)
+![Modal Specs](../ux-images/Modal-UX-2-Specs.png)
 
 ## Specs
 
@@ -49,15 +49,15 @@ You can include a plugin icon to let the user know they are interacting with you
 
 ## Modal dialog plugin UI
 
-![Modal Dialog](../ux_images/Modal_UX_3_Modal_Dialog.png)
+![Modal Dialog](../ux-images/Modal-UX-3-Modal-Dialog.png)
 
 ## Step process three buttons
 
-![Step Process](../ux_images/Modal_UX_4_Step_Process.png)
+![Step Process](../ux-images/Modal-UX-4-Step-Process.png)
 
 ## Step process loader
 
-![Loader](../ux_images/Modal_UX_5_Loader.png)
+![Loader](../ux-images/Modal-UX-5-Loader.png)
 
  <br />
 
@@ -65,7 +65,7 @@ You can include a plugin icon to let the user know they are interacting with you
 
 ## Buttons
 
-![Buttons](../ux_images/Modal_UX_6_Buttons.png)
+![Buttons](../ux-images/Modal-UX-6-Buttons.png)
 
 **Use cases**. 
 **Call to action**  
@@ -94,7 +94,7 @@ The top-level action within a button group should be a call to action, primary, 
 
 Button labels should be clear about the intention of the action. Button text should be 1 to 2 words and consider the number of characters.
 
-![Button labels](../ux_images/Modal_UX_7_Button_Labels.png)
+![Button labels](../ux-images/Modal-UX-7-Button-Labels.png)
 
 ## Key Commands
 
@@ -104,4 +104,4 @@ Dismisses the dialog. This is equivalent to choosing “Cancel”.
 **Enter key**  
 Executes the primary button action.
 
-![Key commands](../ux_images/Modal_UX_8_Key_Commands.png)
+![Key commands](../ux-images/Modal-UX-8-Key-Commands.png)

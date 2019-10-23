@@ -14,9 +14,9 @@ Provide users with feedback as they interact with your plugin, this can be alert
 
 When the user is interacting with the plugin for the first time for example in the onboarding or login screen, including the plugin logo will help the user identify the plugin in the future. 
 
-![Panel branding example](../ux_images/Branding_1.png)
+![Panel branding example](../ux-images/Branding-1.png)
 
-![modal branding example](../ux_images/Branding_2.png)
+![modal branding example](../ux-images/Branding-2.png)
 
  <br />
 
@@ -24,7 +24,7 @@ When the user is interacting with the plugin for the first time for example in t
 
 Customizing the UI to include brand colors, will help users distinguish your plugin from native UI in XD. 
 
-![Panel customization example](../ux_images/Branding_3.png)
+![Panel customization example](../ux-images/Branding-3.png)
 
-![Modal customization example](../ux_images/Branding_4.png)
+![Modal customization example](../ux-images/Branding-4.png)
 

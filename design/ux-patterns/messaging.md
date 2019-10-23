@@ -12,26 +12,26 @@ These are the guidelines and best practices on when and how to provide users wit
 Provide users with feedback as they interact with your plugin, this can be alert and success messaging, permission dialogs or loaders and progress bars to let them know something is running in the background. Below is a guide to help determine where to render plugin messages.
 
 
-![Plugin Messaging flow chart](../ux_images/Messaging_1.png)
+![Plugin Messaging flow chart](../ux-images/Messaging-1.png)
 
 ----------
  <br />
 
 # Examples
 
-![Operation failed to complete](../ux_images/Error_alert_example.png)
+![Operation failed to complete](../ux-images/Error-alert-example.png)
 
 **Operation failed to complete**  
 Error dialog - when a plugin can’t complete an operation, render an error dialog to let the user know the operation failed and why it failed.
 
 
-![Network connectivity issue](../ux_images/Alert_Information_example_2.png)
+![Network connectivity issue](../ux-images/Alert-Information-example-2.png)
 
 **Network connectivity issue**  
 Information dialog - if the plugin is unable to connect to the internet to complete an action, then use an information modal dialog to communicate that to the user.
 
 
-![Message example](../ux_images/Messaging_example.png)
+![Message example](../ux-images/Messaging-example.png)
 
 **Unable to share**  
 “An error occurred while sharing your project. Please verify the email. address and try again”.
@@ -46,7 +46,7 @@ Information dialog - if the plugin is unable to connect to the internet to compl
 **Use case**  
 Use alert messaging whenever the plugin cannot perform the intended task, dialogs are persistent until dismissed
 
-![Aler dialog requirements](../ux_images/Alert_Requirements.png)
+![Aler dialog requirements](../ux-images/Alert-Requirements.png)
 
 ### UX Requirements
 
@@ -59,7 +59,7 @@ Explain what error was encountered and give a clear actionable solution. Also, a
 **Dialog buttons**  
 Include at least one modal dismissal button to allow the user to dismiss/close the modal
 
-![Alert Dialog Best Practices](../ux_images/Alert_Recommendations.png)
+![Alert Dialog Best Practices](../ux-images/Alert-Recommendations.png)
 
 ### Best practices
 
@@ -82,7 +82,7 @@ In the alert messages use language that is easy to understand for the user.
 **Use case**  
 Use success messaging whenever the plugin successfully completes a task and has no visual output on the canvas.
 
-![Alert Success Dialog example](../ux_images/Alert_Requirements.png)
+![Alert Success Dialog example](../ux-images/Alert-Requirements.png)
 
 ### UX Requirements
 
@@ -102,7 +102,7 @@ Include at least one modal dismissal button to allow the user to dismiss/close t
 **Use case**  
 If a plugin generates output that the user needs to complete a workflow, then the plugin needs to provide that information to the user.
 
-![Plugin output example](../ux_images/Plugin_output.png)
+![Plugin output example](../ux-images/Plugin-output.png)
 
 ### UX Requirements
 
@@ -122,7 +122,7 @@ Require users to go into the developer console to complete an action.
 **Use case**  
 Use permission dialogs when being destructive or making modifications.
 
-![Permission dialog example](../ux_images/Permission_dialog_example.png)
+![Permission dialog example](../ux-images/Permission-dialog-example.png)
 
 ### UX Requirements
 
@@ -147,12 +147,12 @@ Let the user know when something is happening in the background in the plugin UI
 **Use case**  
 Use case If the progress can be reflected on a loader. 
 
-![Determinate example](../ux_images/Determinate_loader_example.png)
+![Determinate example](../ux-images/Determinate-loader-example.png)
 
 
 ### Indeterminate
 **Use case**  
 If the progress can’t be determined then provide a loader to let the user know something is loading.
 
-![Indeterminate example](../ux_images/Indeterminate_loader_example.png)
+![Indeterminate example](../ux-images/Indeterminate-loader-example.png)
 

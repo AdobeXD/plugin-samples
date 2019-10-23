@@ -5,7 +5,7 @@ These are guidelines and best practices on how to guide your users as they inter
 ----------
  <br />
 
-![Onboarding modal example](../ux_images/Onboarding_BP.png)
+![Onboarding modal example](../ux-images/Onboarding-BP.png)
 
  <br />
  
