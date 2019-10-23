@@ -21,6 +21,8 @@ Plugins can interact with the user at different levels, for example, some plugin
 
 Learn more about the types of Adobe XD plugins you can build.
 
+![Panel customization example](/ux_images/Design_xd_plugins_1.png)
+
 **Plugins Panel (Non-Blocking UI)**  
 This surface is best used when the user should have access to the canvas while using the plugin.
 
