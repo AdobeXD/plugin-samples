@@ -139,7 +139,7 @@
     * [Onboarding](./design/ux_patterns/onboarding.md)
     * [Navigation](./design/ux_patterns/navigation.md)
     * [Messaging](./design/ux_patterns/messaging.md)
-    * [Branding](./design/ux_patterns/onboarding.md)
+    * [Branding](./design/ux_patterns/branding.md)
   * [User Interface](./design/user_interface/index.md)
     * [Styles](./reference/ui/styles/index.md)
       * [Color](./reference/ui/styles/color.md)
