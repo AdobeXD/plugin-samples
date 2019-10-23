@@ -43,4 +43,4 @@ User Experience patterns will provide guidence on how to interact with your plug
 
 UI Resources will have information on UI components, examples and a sticker sheet you can use to build your plugin 
 
-> [View User Interface](/user_interface/index.md)
+> [View User Interface](/user-interface/index.md)
