@@ -55,6 +55,7 @@
     "tunnel-agent": "^0.6.0"
   },
   "devDependencies": {
+    "broken-link-checker-local": "^0.2.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "gh-pages": "^2.1.1",
