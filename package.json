@@ -12,7 +12,8 @@
     "book:build:pdf": "gitbook --log=debug --debug pdf . $@",
     "book:watch": "gitbook --log=debug --debug serve . $@",
     "book:publish:github": "gh-pages -d _book",
-    "book:publish:mirror": "gh-pages -d _book -o mirror"
+    "book:publish:mirror": "gh-pages -d _book -o mirror",
+    "test:404": "blcl ./_book -ro"
   },
   "author": "",
   "license": "MIT",
