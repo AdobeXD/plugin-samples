@@ -35,7 +35,7 @@ This surface is best used when the plugin needs to run an action and the user sh
 
 User Experience patterns will provide guidence on how to interact with your plugin users within XD, this will highlight UX requirements and best practices.
 
-> [View UX Patterns](/ux-patterns/index.md)
+> [View UX Patterns](ux-patterns/index.md)
 
  <br />
  
@@ -43,4 +43,4 @@ User Experience patterns will provide guidence on how to interact with your plug
 
 UI Resources will have information on UI components, examples and a sticker sheet you can use to build your plugin 
 
-> [View User Interface](/user-interface/index.md)
+> [View User Interface](user-interface/index.md)
