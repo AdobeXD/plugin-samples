@@ -72,6 +72,7 @@
             * [DocumentFragment](./reference/uxp/class/DocumentFragment.md)
             * [DOMException](./reference/uxp/class/DOMException.md)
             * [DOMTokenList](./reference/uxp/class/DOMTokenList.md)
+            * [Element](./reference/uxp/class/Element.md)
             * [NamedNodeMap](./reference/uxp/class/NamedNodeMap.md)
             * [Node](./reference/uxp/class/Node.md)
             * [NodeList](./reference/uxp/class/NodeList.md)
