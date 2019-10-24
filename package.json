@@ -13,7 +13,8 @@
     "book:watch": "gitbook --log=debug --debug serve . $@",
     "book:publish:github": "gh-pages -d _book",
     "book:publish:mirror": "gh-pages -d _book -o mirror",
-    "test:404": "blcl ./_book -ro"
+    "test:404": "npm run _test:404 --silent",
+    "_test:404": "blcl ./_book -ro; exit 0"
   },
   "author": "",
   "license": "MIT",
