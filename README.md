@@ -11,7 +11,7 @@ Shape the future of design by creating plugins for yourself, your team, or the w
 </object>
 
 <object>
-<a href="/plugin-design-guidelines/index.md"><object style="width: 100%" type="image/png" data="/images/design@3x.png">placeholder</object></a>
+<a href="/design/index.md"><object style="width: 100%" type="image/png" data="/images/design@3x.png">placeholder</object></a>
 </object>
 
 <object>

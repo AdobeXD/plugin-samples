@@ -3,7 +3,7 @@
 Dialogs can be dismissed in the following ways:
 
 * Manually, by the user pressing the ESC key
-* Programmatically, by calling [`HTMLDialogElement#close`](../../uxp/class/HTMLDialogElement#htmldialogelement-close) with an optional return value.
+* Programmatically, by calling [`HTMLDialogElement#close`](../../uxp/class/HTMLDialogElement.md#htmldialogelement-close) with an optional return value.
 
 You can listen for the _default_ gesture (typically [ENTER]) by registering for the `submit` event on the `form`:
 
