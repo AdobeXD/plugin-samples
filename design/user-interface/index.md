@@ -7,7 +7,7 @@ XD plugins can display UI in the form of modal dialogs, built with JavaScript an
 The tutorials contained in this section will give you an in-depth look at UI features available to your plugin through the API.
 
 ----------
-### Documentation
+## Documentation
 
 In this section you can see what styles you can use in the UI, how to build a modal layout and the UI elements you can use.
 
