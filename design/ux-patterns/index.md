@@ -13,17 +13,17 @@ UX Patterns will include UX requirements and/or UX best practices these will ens
 
  <br />
  
-# Documentation
+## Documentation
 
-### Specs and UX Requirements
+#### Specs and UX Requirements
 
-Requirements highlights key XD patterns all plugins need to follow to get approved by Adobe. 
+Requirements highlight key XD patterns all plugins need to follow to get approved by Adobe. 
 
 ![Example of specs and UX requirements](../ux-images/UX-Patterns-1-Specs.png)
 
-### Best practices
+#### Best practices
 
-Best practices provides recommendations on plugin usability and behavior, user feedback, privacy and interface guidelines. 
+Best practices provide recommendations on plugin usability and behavior, user feedback, privacy, and interface guidelines. 
 
 ![Example of a UX best practice](../ux-images/UX-Patterns-2-Best-Practices.png)
 

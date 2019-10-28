@@ -17,7 +17,7 @@ Provide users with feedback as they interact with your plugin, this can be alert
 ----------
  <br />
 
-# Examples
+## Examples
 
 ![Operation failed to complete](../ux-images/Error-alert-example.png)
 
@@ -41,14 +41,14 @@ Information dialog - if the plugin is unable to connect to the internet to compl
   
  <br />
 
-# Alerts
+## Alerts
 
 **Use case**  
 Use alert messaging whenever the plugin cannot perform the intended task, dialogs are persistent until dismissed
 
 ![Aler dialog requirements](../ux-images/Alert-Requirements.png)
 
-### UX Requirements
+#### UX Requirements
 
 **Header**  
 Have a clear header that describes the error
@@ -61,13 +61,13 @@ Include at least one modal dismissal button to allow the user to dismiss/close t
 
 ![Alert Dialog Best Practices](../ux-images/Alert-Recommendations.png)
 
-### Best practices
+#### Best practices
 
 **Warning icon**  
 To help communicate critical information for an error you can include a warning icon next to the header
 
 **Help**  
-If a plugin has a help page, consider adding it on the error modal dialog.
+If a plugin has a help page, consider adding it to the error modal dialog.
 
 **Visual/tutorials**  
 Provide image/GIF example as part of the dialog, to help users understand the actionable solution
@@ -77,14 +77,14 @@ In the alert messages use language that is easy to understand for the user.
  
  <br />
 
-# Success
+## Success
 
 **Use case**  
 Use success messaging whenever the plugin successfully completes a task and has no visual output on the canvas.
 
 ![Alert Success Dialog example](../ux-images/Alert-Requirements.png)
 
-### UX Requirements
+#### UX Requirements
 
 **Header**  
 Have a clear header for the dialog.
@@ -97,14 +97,14 @@ Include at least one modal dismissal button to allow the user to dismiss/close t
 
  <br />
 
-# Output
+## Output
 
 **Use case**  
 If a plugin generates output that the user needs to complete a workflow, then the plugin needs to provide that information to the user.
 
 ![Plugin output example](../ux-images/Plugin-output.png)
 
-### UX Requirements
+#### UX Requirements
 
 **Plugin output**  
 In use cases like these, the plugin output can be shown in the UI, copied onto the clipboard, populated on the document or generate a file.
@@ -117,14 +117,14 @@ Require users to go into the developer console to complete an action.
 
  <br />
 
-# Permission dialogs
+## Permission dialogs
 
 **Use case**  
 Use permission dialogs when being destructive or making modifications.
 
 ![Permission dialog example](../ux-images/Permission-dialog-example.png)
 
-### UX Requirements
+#### UX Requirements
 
 **Header**   
 Have a clear header for the dialog.
@@ -140,17 +140,17 @@ Esc key or Enter key Dismisses the dialog when the “Cancel” button is in foc
 
  <br />
   
-# Loaders and Progress bars
+## Loaders and Progress bars
 Let the user know when something is happening in the background in the plugin UI. 
 
-### Determinate
+#### Determinate
 **Use case**  
 Use case If the progress can be reflected on a loader. 
 
 ![Determinate example](../ux-images/Determinate-loader-example.png)
 
 
-### Indeterminate
+#### Indeterminate
 **Use case**  
 If the progress can’t be determined then provide a loader to let the user know something is loading.
 

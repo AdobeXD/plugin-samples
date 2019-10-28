@@ -10,7 +10,7 @@ Provide users with feedback as they interact with your plugin, this can be alert
 ----------
  <br />
 
-# Onboarding and branding
+## Onboarding and branding
 
 When the user is interacting with the plugin for the first time for example in the onboarding or login screen, including the plugin logo will help the user identify the plugin in the future. 
 
@@ -20,7 +20,7 @@ When the user is interacting with the plugin for the first time for example in t
 
  <br />
 
-# Customized plugin UI
+## Customized plugin UI
 
 Customizing the UI to include brand colors, will help users distinguish your plugin from native UI in XD. 
 
