@@ -12,7 +12,7 @@ An XD-specific namespace that provides access to various methods that aren't spe
 A representation of binary data that can be transferred safely over the internet.
 
 ## Clipboard
-A temporary storage location that the user can utilize to save or retrieve text or other snippets on command. Adobe XD [provides an API](./reference/clipboard) for accessing the clipboard.
+A temporary storage location that the user can utilize to save or retrieve text or other snippets on command. Adobe XD [provides an API](./reference/clipboard.md) for accessing the clipboard.
 
 ## Class
 A template (of sorts) used to instantiate objects. An instance has the same instance methods and properties as specified in the class.

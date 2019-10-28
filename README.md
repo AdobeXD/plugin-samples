@@ -2,7 +2,7 @@
 
 **Bring new features and capabilities to XD**
 
-Shape the future of experience design on Adobe XD’s open platform by creating plugins for yourself, your team, or the world. When you’re ready to share a plugin for all Adobe XD users, submit it for review through the I/O Console. After review, you’ll be published in the XD Plugin Manager.
+Shape the future of design by creating plugins for yourself, your team, or the world. To share a plugin for all XD users, submit it to Adobe. After review, you’ll be published in the XD Plugin Manager.
 
 <br />
 
@@ -11,7 +11,7 @@ Shape the future of experience design on Adobe XD’s open platform by creating 
 </object>
 
 <object>
-<a href="/plugin-design-guidelines/index.md"><object style="width: 100%" type="image/png" data="/images/design@3x.png">placeholder</object></a>
+<a href="/design/index.md"><object style="width: 100%" type="image/png" data="/images/design@3x.png">placeholder</object></a>
 </object>
 
 <object>

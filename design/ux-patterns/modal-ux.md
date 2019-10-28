@@ -6,29 +6,28 @@ This section will have recommendations when using a Modal Dialog -  Blocking UI.
 - Modal Dialog UI
 - Dialog Buttons and Key Commands
 
-![Example of Modal](../ux_images/Modal_UX_1_Example.png)
+![Example of Modal](../ux-images/Modal-UX-1-Example.png)
 
 ----------
 
  <br />
 
-# Specs and UX Requirements
+## Specs and UX Requirements
 
-## MacOS example
+### MacOS example
 
-![Modal Specs](../ux_images/Modal_UX_2_Specs.png)
+![Modal Specs](../ux-images/Modal-UX-2-Specs.png)
 
-## Specs
+### Specs
 
 **Padding**  
-The modal will have padding built-in (ex: MacOS modal will 
-have a 40px padding). Additional padding shouldn’t be added.
+The modal will have padding built-in (ex: MacOS modal will have a 40px padding). Additional padding shouldn’t be added.
 
 **Configurable content**  
 This is what the user can interact with before executing the plugin action. 
 
 
-## UX Requirements
+### UX Requirements
 
 **Header**  
 Have a clear header for the dialog. e.g. “name of plugin”, “description of workflow”
@@ -38,34 +37,34 @@ Have a clear header for the dialog. e.g. “name of plugin”, “description of
 Include a modal dismissal button to allow the user to cancel/close the modal and a call to action button (blue) to highlight the primary action. 
 
 
-## Best Practices
+### Best Practices
 
 **Plugin Icon**.  
 You can include a plugin icon to let the user know they are interacting with your plugin in the modal dialog
 
  <br />
 
-# Modal Dialog UI
+## Modal Dialog UI
 
-## Modal dialog plugin UI
+### Modal dialog plugin UI
 
-![Modal Dialog](../ux_images/Modal_UX_3_Modal_Dialog.png)
+![Modal Dialog](../ux-images/Modal-UX-3-Modal-Dialog.png)
 
-## Step process three buttons
+### Step process three buttons
 
-![Step Process](../ux_images/Modal_UX_4_Step_Process.png)
+![Step Process](../ux-images/Modal-UX-4-Step-Process.png)
 
-## Step process loader
+### Step process loader
 
-![Loader](../ux_images/Modal_UX_5_Loader.png)
+![Loader](../ux-images/Modal-UX-5-Loader.png)
 
  <br />
 
 # Dialog buttons and key commands
 
-## Buttons
+### Buttons
 
-![Buttons](../ux_images/Modal_UX_6_Buttons.png)
+![Buttons](../ux-images/Modal-UX-6-Buttons.png)
 
 **Use cases**. 
 **Call to action**  
@@ -78,9 +77,9 @@ The primary button is used for medium emphasis. It should be used in place of a 
 The secondary button is for low emphasis. It is meant to be paired with other button types to surface less prominent actions, and should never be the sole button in a group. It can be displayed either in standard style (visible stroke) or in quiet style.
 
 **Negative**  
-The negative button is for high emphasis of negative or destructive actions. It should be used sparingly. It can be displayed either in standard style (visible stroke) or in quiet style.
+The negative button is for high emphasis on negative or destructive actions. It should be used sparingly. It can be displayed either in standard style (visible stroke) or in quiet style.
 
-## Best practice
+### Best practice
 
 **Button Group Overflow**  
 When horizontal space is limited, button groups stack vertically. 
@@ -90,13 +89,13 @@ at the bottom.
 **Use 2 button styles maximum**  
 The top-level action within a button group should be a call to action, primary, or negative button. The subsequent buttons should always be secondary buttons of the same style (standard or quiet). Don’t combine more than 2 button styles in a button group.
 
-## Button labels
+### Button labels
 
 Button labels should be clear about the intention of the action. Button text should be 1 to 2 words and consider the number of characters.
 
-![Button labels](../ux_images/Modal_UX_7_Button_Labels.png)
+![Button labels](../ux-images/Modal-UX-7-Button-Labels.png)
 
-## Key Commands
+### Key Commands
 
 **Esc key**  
 Dismisses the dialog. This is equivalent to choosing “Cancel”.
@@ -104,4 +103,4 @@ Dismisses the dialog. This is equivalent to choosing “Cancel”.
 **Enter key**  
 Executes the primary button action.
 
-![Key commands](../ux_images/Modal_UX_8_Key_Commands.png)
+![Key commands](../ux-images/Modal-UX-8-Key-Commands.png)

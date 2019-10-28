@@ -138,5 +138,5 @@ It's important to know _when_ to show an alert because they do obstruct the user
 Other than `alert` and `error`, there are other useful dialog helpers that you might be interested in.
 
 - [How to ask for confirmation](/tutorials/how-to-ask-user-for-confirmation/)
-- [User Interface Concepts](/reference/ui/)
+- [User Interface design](/design/user-interface/)
 - [Other samples](https://github.com/AdobeXD/plugin-samples)

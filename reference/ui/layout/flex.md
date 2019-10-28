@@ -4,7 +4,7 @@ The flexible box layout module is a layout system provided in CSS, which is sign
 
 The flexible box module specification is quite large, and covering the entire specification is out-of-scope for this reference. If you want _all_ the details, please refer to the following documentation:
 
-* [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-to-flexbox/)
+* [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * [Basic concepts of flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
 * [CSS Flexible Box Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout)
 * [CSS Flexible Box Layout Module Level 1 (W3C Specification)](https://www.w3.org/TR/css-flexbox-1/)
