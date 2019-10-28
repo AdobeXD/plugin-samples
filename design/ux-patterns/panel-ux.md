@@ -14,13 +14,13 @@ This section has recommendations when using a Plugins Panel - Non-Blocking UI. I
 ----------
  <br />
 
-# Specs and UX Requirements
+## Specs and UX Requirements
 
 MacOS example
 
 ![Panel specs and requirements](../ux-images/Panel-pattern-1.png)
 
-### Specs
+#### Specs
 
 **Plugin icon (your app icon)**  
 The plugin panel UI will include a plugin icon at the top of the panel next to the plugin name. 
@@ -28,8 +28,7 @@ The plugin panel UI will include a plugin icon at the top of the panel next to t
 **Padding**  
 The panel will have padding built-in (ex: MacOS panel will have a 12px padding). Additional padding shouldn’t be added.
 
-
-### UX Requirements
+#### UX Requirements
 
 **Navigation**  
 If the user is drilling down multiple panels, then provide a way for them to navigate back
@@ -42,8 +41,8 @@ If the plugin needs to refresh for the user to see new information then provide 
 
  <br />
 
-# Plugin launch pad and UI
-### Launch Pad - built-in 
+## Plugin launch pad and UI
+#### Launch Pad - built-in 
 ![Panel launch pad example](../ux-images/Panel-pattern-2.png)
 
 
@@ -53,16 +52,16 @@ If the plugin needs to refresh for the user to see new information then provide 
 
  <br />
 
-# Contextual Feedback
-### Selection based actions
-### Don’t
+## Contextual Feedback
+#### Selection based actions
+#### Don’t
 
 Don’t block all of the UI. If the plugin has other other plugin actions that are not dependent on a selection, then users should be able to interact those actions. 
 
 
 ![Selection based actions don't example](../ux-images/Panel-pattern-4.png)
 
-### Do
+#### Do
 
 Only disable the actions that are not available, so the user can still interact with other parts of the UI.
 
@@ -74,7 +73,7 @@ This also allows users to see and understand the UI before they start using the 
 
 
 
-### Object selected
+#### Object selected
 
 Reflect the actions available based on the selection. 
 
@@ -88,7 +87,7 @@ In some use cases let the user know what has been selected by rendering a previe
 ![Objects selected example](../ux-images/Panel-pattern-6.png)
 
 
-### Importing object on the canvas
+#### Importing object on the canvas
 
 Provide the user with feedback when the plugin has rendered a new object on the canvas. 
 
@@ -104,7 +103,7 @@ Avoid dropping an artboard on top of other artboards.
 
 
 
-### Running an action and providing feedback
+#### Running an action and providing feedback
 
 If the plugin is running an action, then let the user know by providing UI elements such as a progress indicator. 
 
@@ -118,14 +117,14 @@ This can also be a great opportunity to brand your empty states.
 
 Since the user can resize the panel, content should adjust to accomodate for scrolling, responsiveness and footer actions. 
 
-### Scrolling
+#### Scrolling
 ![Panel Scrolling behaviors example](../ux-images/Panel-pattern-9.png)
 
 
-### Responsiveness
+#### Responsiveness
 ![Responsiveness behaviors example](../ux-images/Panel-pattern-10.png)
 
 
-### Footer
+#### Footer
 ![Panel Footer example](../ux-images/Panel-pattern-11.png)
 
