@@ -21,8 +21,7 @@ This section will have recommendations when using a Modal Dialog -  Blocking UI.
 ## Specs
 
 **Padding**  
-The modal will have padding built-in (ex: MacOS modal will 
-have a 40px padding). Additional padding shouldn’t be added.
+The modal will have padding built-in (ex: MacOS modal will have a 40px padding). Additional padding shouldn’t be added.
 
 **Configurable content**  
 This is what the user can interact with before executing the plugin action. 
@@ -78,7 +77,7 @@ The primary button is used for medium emphasis. It should be used in place of a 
 The secondary button is for low emphasis. It is meant to be paired with other button types to surface less prominent actions, and should never be the sole button in a group. It can be displayed either in standard style (visible stroke) or in quiet style.
 
 **Negative**  
-The negative button is for high emphasis of negative or destructive actions. It should be used sparingly. It can be displayed either in standard style (visible stroke) or in quiet style.
+The negative button is for high emphasis on negative or destructive actions. It should be used sparingly. It can be displayed either in standard style (visible stroke) or in quiet style.
 
 ## Best practice
 

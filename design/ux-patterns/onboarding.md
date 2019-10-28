@@ -9,7 +9,7 @@ These are guidelines and best practices on how to guide your users as they inter
 
  <br />
  
-# Best practices
+## Best practices
 
 **Content**  
 Provide examples or tutorials on how to use your plugin, this can be done by using visual or gifs.

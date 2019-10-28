@@ -6,34 +6,33 @@ These guidelines provide clarity on the different entry points a plugin can have
 - Menu architecture - Top menu and Submenu items
 - Keyboard shortcuts
 
-
 ----------
 
  <br />
  
-# Entry Points
+## Entry Points
 
-### Menu bar
+#### Menu bar
 
 ![Menu example in XD](../ux-images/Menu-bar-Xd.png)
 
-### Plugin Launch pad 
+#### Plugin Launch pad 
 
 ![Panel launch pad example in XD](../ux-images/navigation-plugin-launchpad-1.png)
 
  <br />
 
-# Menu architecture - Top menu and Submenu items
+## Menu architecture - Top menu and Submenu items
 
 ![Menu requirements](../ux-images/Menu-bar-reqs.png)
 
-### UX Requirements 
+#### UX Requirements 
 
 **Plugin actions**  
 Executes a plugin action or open modal.
 
 
-### Best practices
+#### Best practices
 **Support-oriented items**  
 Provide help links, about tutorials or global settings.
 
@@ -52,7 +51,7 @@ Don’t add multiple actions for one plugin as top-level items.
 ![Don't add multiple actions for one plugin at a top level](../ux-images/navigation-dont-4.png)
 
 
-### Top Menu
+#### Top Menu
 
 ![Top menu example in the menu bar](../ux-images/Top-Menu-items.png)
 
@@ -65,7 +64,7 @@ B. The top menu label is the plugin name
 C. Limit the use of emoji’s as part of the label
 
 
-### Submenu items
+#### Submenu items
 ![Submenu example in the menu bar](../ux-images/Sub-Menu-items.png)
 
 **Use Cases**  
@@ -81,13 +80,13 @@ F. Limit the use of emoji’s as part of the label
 
  <br />
 
-# Keyboard shortcuts
+## Keyboard shortcuts
 
 If you are considering having a shortcut for your plugin, make sure to keep these guidelines in mind. 
 
 ![Keyboard shortcut example in the menu](../ux-images/Key-board-shortcuts.png)
 
-### Best practices
+#### Best practices
 
 If the user has another plugin with the same shortcut already installed, the new installed plugins shouldn’t expect to have that same shortcut.
 

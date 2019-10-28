@@ -8,7 +8,6 @@ This section has recommendations when using a Plugins Panel - Non-Blocking UI. I
 - Adaptive layout
 
 
-
 ![XD frame example with panel](../ux-images/Panel-XDapplication-frame.png)
 
 ----------
@@ -34,7 +33,7 @@ The panel will have padding built-in (ex: MacOS panel will have a 12px padding).
 If the user is drilling down multiple panels, then provide a way for them to navigate back
 
 **Login and Logout**  
-If the user has to login then provide a way for them to logout through the plugin UI
+If the user has to login then provide a way for them to log out through the plugin UI
 
 **Refresh**  
 If the plugin needs to refresh for the user to see new information then provide a way for the user to refresh/sync through the plugin UI
@@ -47,7 +46,7 @@ If the plugin needs to refresh for the user to see new information then provide 
 
 
 
-### Panel UI
+#### Panel UI
 ![Panel UI example](../ux-images/Panel-pattern-3.png)
 
  <br />
@@ -56,7 +55,7 @@ If the plugin needs to refresh for the user to see new information then provide 
 #### Selection based actions
 #### Don’t
 
-Don’t block all of the UI. If the plugin has other other plugin actions that are not dependent on a selection, then users should be able to interact those actions. 
+Don’t block all of the UI. If the plugin has other plugin actions that are not dependent on a selection, then users should be able to interact with those actions. 
 
 
 ![Selection based actions don't example](../ux-images/Panel-pattern-4.png)
@@ -115,7 +114,7 @@ This can also be a great opportunity to brand your empty states.
 
 # Adaptive Layouts
 
-Since the user can resize the panel, content should adjust to accomodate for scrolling, responsiveness and footer actions. 
+Since the user can resize the panel, content should adjust to accommodate for scrolling, responsiveness and footer actions. 
 
 #### Scrolling
 ![Panel Scrolling behaviors example](../ux-images/Panel-pattern-9.png)
