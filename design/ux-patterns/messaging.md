@@ -153,7 +153,7 @@ Information dialog - if the plugin is unable to connect to the internet to compl
 **Network connectivity**  
 “Please connect to WiFi to sync your tasks to your product management tool”.
 
-### Panel UI messaging
+#### Panel UI messaging
 
 ![Panel Messaging example](../ux-images/panel-messaging-example.png)
   
