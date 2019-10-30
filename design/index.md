@@ -8,9 +8,7 @@ Plugins can interact with the user at different levels, for example, some plugin
 
  <br />
  
-# Plugins in XD
-
-### Specs and UX Requirements
+## Plugins in XD
 
 Learn more about the types of Adobe XD plugins you can build.
 
@@ -24,16 +22,16 @@ This surface is best used when the plugin needs to run an action and the user sh
 
  <br />
 
-# UX Patterns
+## UX Patterns
 
 User Experience patterns will provide guidence on how to interact with your plugin users within XD, this will highlight UX requirements and best practices.
 
-> [View UX Patterns](ux-patterns/index.md)
+[View UX Patterns](ux-patterns/index.md)
 
  <br />
  
-# User Interface
+## User Interface
 
 UI Resources will have information on UI components, examples and a sticker sheet you can use to build your plugin 
 
-> [View User Interface](user-interface/index.md)
+[View User Interface](user-interface/index.md)
