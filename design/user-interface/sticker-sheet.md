@@ -5,7 +5,7 @@ This sticker sheet will cover the different UI surfaces available to plugins. It
 
 ---
 
-**Plugin UI Kits - available in the sticker sheet**
+**Plugin UI kits available in the sticker sheet**
 
 ![MacOS UI Kit](../ux-images/Plugin-MacOS-UIKit.png)
 ![Windows UI Kit](../ux-images/Plugin-UWP-UIKit.png)
