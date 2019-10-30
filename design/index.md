@@ -14,9 +14,10 @@ Plugins can interact with the user at different levels, for example, some plugin
 
 Learn more about the types of Adobe XD plugins you can build.
 
-| **Plugins Panel**   | **Modal Dialog**   | **No UI**   |
-|---------------------------------------|----------------------------------|----------------------------------|
-| Non-Blocking UI - this surface is best used when the user should have access to the canvas while using the plugin.   | Blocking UI - this surface is best used when the plugin needs to run an action and the user shouldn’t modify or change selection of objects on the canvas.   |  Plugin action runs - if the plugin doesn't require any additional user inpupt then it can run the action  |
+| **Plugins Panel**   | **Modal Dialog**   |
+|---------------------------------------|----------------------------------|
+| Non-Blocking UI - this surface is best used when the user should have access to the canvas while using the plugin.   | Blocking UI - this surface is best used when the plugin needs to run an action and the user shouldn’t modify or change selection of objects on the canvas.   | 
+
 
  <br />
 
