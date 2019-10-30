@@ -10,9 +10,10 @@ Plugins can interact with the user at different levels, for example, some plugin
  
 ## Plugins in XD
 
-![Plugin entry points and UI](ux-images/Design-xd-plugins-1.png)
+#### Learn more about the types of Adobe XD plugins you can build.
 
-Learn more about the types of Adobe XD plugins you can build.
+
+![Plugin entry points and UI](ux-images/Design-xd-plugins-1.png)
 
 | **Plugins Panel**   | **Modal Dialog**   |
 |---------------------------------------|----------------------------------|
