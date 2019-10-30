@@ -2,7 +2,7 @@
 
 This section has recommendations when using a Plugins Panel - Non-Blocking UI. If the user needs to have access to the canvas then the plugin panel would be the best option, since it’s contextual to the users selection and allows the user to modify items on their canvas while interacting with the plugin UI. 
 
-- UX Requirements and Specs
+- Overview
 - Plugin Launch Pad and UI
 - Contextual Feedback
 - Adaptive layout
@@ -13,7 +13,7 @@ This section has recommendations when using a Plugins Panel - Non-Blocking UI. I
 ----------
  <br />
 
-## UX Requirements and Specs
+## Overview
 
 MacOS example
 
