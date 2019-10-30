@@ -2,7 +2,7 @@
 
 This section will have recommendations when using a Modal Dialog -  Blocking UI. If the plugin needs to run an action before the user starts a new action then the modal would be recommended for that use case. 
 
-- Specs and UX Requirements
+- UX Requirements and Specs
 - Modal Dialog UI
 - Dialog Buttons and Key Commands
 
@@ -12,7 +12,7 @@ This section will have recommendations when using a Modal Dialog -  Blocking UI.
 
  <br />
 
-## Specs and UX Requirements
+## UX Requirements and Specs
 
 ### MacOS example
 
