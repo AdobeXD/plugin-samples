@@ -143,15 +143,14 @@ Esc key or Enter key Dismisses the dialog when the “Cancel” button is in foc
 ## Loaders and Progress bars
 Let the user know when something is happening in the background in the plugin UI. 
 
-#### Determinate
-**Use case**  
+#### Best practices
+
+**Determinate use case**  
 Use case If the progress can be reflected on a loader. 
 
 ![Determinate example](../ux-images/Determinate-loader-example.png)
 
-
-#### Indeterminate
-**Use case**  
+**Indeterminate use case**  
 If the progress can’t be determined then provide a loader to let the user know something is loading.
 
 ![Indeterminate example](../ux-images/Indeterminate-loader-example.png)

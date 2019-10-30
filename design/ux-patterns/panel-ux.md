@@ -112,7 +112,7 @@ This can also be a great opportunity to brand your empty states.
 
  <br />
 
-# Adaptive Layouts
+## Adaptive Layouts
 
 Since the user can resize the panel, content should adjust to accommodate for scrolling, responsiveness and footer actions. 
 

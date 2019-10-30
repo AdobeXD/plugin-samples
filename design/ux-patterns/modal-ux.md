@@ -60,7 +60,7 @@ You can include a plugin icon to let the user know they are interacting with you
 
  <br />
 
-# Dialog buttons and key commands
+## Dialog buttons and key commands
 
 ### Buttons
 
