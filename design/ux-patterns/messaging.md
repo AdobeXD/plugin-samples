@@ -2,12 +2,12 @@
 
 These are the guidelines and best practices on when and how to provide users with feedback as they interact with your plugin.
 
-- Examples
 - Alerts
 - Success
 - Output
 - Permission dialogs
 - Loaders and Progress bars
+- Examples
 
 Provide users with feedback as they interact with your plugin, this can be alert and success messaging, permission dialogs or loaders and progress bars to let them know something is running in the background. Below is a guide to help determine where to render plugin messages.
 
@@ -15,30 +15,6 @@ Provide users with feedback as they interact with your plugin, this can be alert
 ![Plugin Messaging flow chart](../ux-images/Messaging-1.png)
 
 ----------
- <br />
-
-## Examples
-
-![Operation failed to complete](../ux-images/Error-alert-example.png)
-
-**Operation failed to complete**  
-Error dialog - when a plugin can’t complete an operation, render an error dialog to let the user know the operation failed and why it failed.
-
-
-![Network connectivity issue](../ux-images/Alert-Information-example-2.png)
-
-**Network connectivity issue**  
-Information dialog - if the plugin is unable to connect to the internet to complete an action, then use an information modal dialog to communicate that to the user.
-
-
-![Message example](../ux-images/Messaging-example.png)
-
-**Unable to share**  
-“An error occurred while sharing your project. Please verify the email. address and try again”.
-
-**Network connectivity**  
-“Please connect to WiFi to sync your tasks to your product management tool”.
-  
  <br />
 
 ## Alerts
@@ -154,4 +130,32 @@ Use case If the progress can be reflected on a loader.
 If the progress can’t be determined then provide a loader to let the user know something is loading.
 
 ![Indeterminate example](../ux-images/Indeterminate-loader-example.png)
+
+## Examples
+
+![Operation failed to complete](../ux-images/Error-alert-example.png)
+
+**Operation failed to complete**  
+Error dialog - when a plugin can’t complete an operation, render an error dialog to let the user know the operation failed and why it failed.
+
+
+![Network connectivity issue](../ux-images/Alert-Information-example-2.png)
+
+**Network connectivity issue**  
+Information dialog - if the plugin is unable to connect to the internet to complete an action, then use an information modal dialog to communicate that to the user.
+
+
+![Message example](../ux-images/Messaging-example.png)
+
+**Unable to share**  
+“An error occurred while sharing your project. Please verify the email. address and try again”.
+
+**Network connectivity**  
+“Please connect to WiFi to sync your tasks to your product management tool”.
+
+### Panel UI messaging
+
+![Panel Messaging example](../ux-images/panel-messaging-example.png)
+  
+
 
