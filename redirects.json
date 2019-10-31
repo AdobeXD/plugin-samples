@@ -1,6 +1,22 @@
 {
     "redirects": [
         {
+            "from": "plugin-design-guidelines/ui_resources/Sticker_sheet.html",
+            "to": "design/user-interface/sticker-sheet.html"
+        },
+        {
+            "from": "plugin-design-guidelines/index.html",
+            "to": "design/index.html"
+        },
+        {
+            "from": "plugin-design-guidelines/ux_guidelines/index.html",
+            "to": "design/ux-patterns/index.html"
+        },
+        {
+            "from": "plugin-design-guidelines/ui_resources/index.html",
+            "to": "design/user-interface/index.html"
+        },
+        {
             "from": "guides/how-to-package-a-plugin.html",
             "to": "distribution/packaging.html"
         },
