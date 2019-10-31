@@ -4,43 +4,33 @@ These guidelines will help you define the best user experience for your plugin. 
 
 Plugins can interact with the user at different levels, for example, some plugins will have quick actions which in some use cases won’t render UI, and some will include multiple actions that need UI. 
 
-- Panel UX
-- Modal UX
-- Onboarding
-- Navigation
-- Messaging
-- Branding
-
 ----------
 
  <br />
  
-# Plugins in XD
+## Plugins in XD
 
-### Specs and UX Requirements
+**Learn more about the types of Adobe XD plugins you can build.**
 
-Learn more about the types of Adobe XD plugins you can build.
 
-![Panels and modals](ux-images/Design-xd-plugins-1.png)
+![Plugin entry points and UI](ux-images/Design-xd-plugins-1.png)
 
-**Plugins Panel (Non-Blocking UI)**  
-This surface is best used when the user should have access to the canvas while using the plugin.
-
-**Modal Dialog (Blocking UI)**  
-This surface is best used when the plugin needs to run an action and the user shouldn’t modify or change selection of objects on the canvas.
+| **Plugins Panel**   | **Modal Dialog**   |
+|---------------------------------------|----------------------------------|
+| Non-Blocking UI - this surface is best used when the user should have access to the canvas while using the plugin.   | Blocking UI - this surface is best used when the plugin needs to run an action and the user shouldn’t modify or change selection of objects on the canvas.   | 
 
  <br />
 
-# UX Patterns
+## UX Patterns
 
 User Experience patterns will provide guidence on how to interact with your plugin users within XD, this will highlight UX requirements and best practices.
 
-> [View UX Patterns](ux-patterns/index.md)
+[View UX Patterns](ux-patterns/index.md)
 
  <br />
  
-# User Interface
+## User Interface
 
 UI Resources will have information on UI components, examples and a sticker sheet you can use to build your plugin 
 
-> [View User Interface](user-interface/index.md)
+[View User Interface](user-interface/index.md)
