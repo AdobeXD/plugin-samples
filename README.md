@@ -20,7 +20,7 @@ Shape the future of design by creating plugins for yourself, your team, or the w
 
 <br />
 
-<object style="width: 100%" type="image/png" data="/images/code@2x.svg">placeholder</object>
+<object style="width: 100%" type="image/png" data="/images/code@3x.png">placeholder</object>
 
 **Quick start: create your first plugin**
 
@@ -30,7 +30,7 @@ We’ll keep things simple in this Quick Start tutorial. Once you’re done, you
 
 <br />
 
-<object style="width: 100%" type="image/png" data="/images/kit@3x.png">placeholder</object>
+<object style="width: 100%" type="image/png" data="/images/kit-new@3x.png">placeholder</object>
 
 **Design using the XD plugin UI kit**
 
@@ -40,7 +40,7 @@ XD plugins are used by designers around the world who expect great experiences. 
 
 <br />
 
-<object style="width: 100%" type="image/png" data="/images/manage@3x.png">placeholder</object>
+<object style="width: 100%" type="image/png" data="/images/manage-new@3x.png">placeholder</object>
 
 **Manage your plugin project**
 
