@@ -11,6 +11,7 @@ Shape the future of design by creating plugins for yourself, your team, or the w
 <a href="/distribution/index.md"><img alt="Share: Submission checklist, packaging, and marketing" src="/images/share@3x.png" class="plain" style="width: 100%"/></a>
 
 <br />
+
 <br />
 
 <img alt="Quick start: create your first plugin" src="/images/code@3x.png" class="plain" style="width: 100%"/>
