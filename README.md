@@ -6,21 +6,15 @@ Shape the future of design by creating plugins for yourself, your team, or the w
 
 <br />
 
-<object>
-<a href="/develop.md"><object style="width: 100%" type="image/png" data="/images/develop@3x.png">placeholder</object></a>
-</object>
+<a href="/develop.md"><img alt="Develop: API documentation, code tutorials, and samples" src="/images/develop@3x.png" class="plain" style="width: 100%"/></a>
 
-<object>
-<a href="/design/index.md"><object style="width: 100%" type="image/png" data="/images/design@3x.png">placeholder</object></a>
-</object>
+<a href="/design/index.md"><img alt="Design: UX patterns, UI elements, and design guidelines" src="/images/design@3x.png" class="plain" style="width: 100%"/></a>
 
-<object>
-<a href="/distribution/index.md"><object style="width: 100%" type="image/png" data="/images/share@3x.png">placeholder</object></a>
-</object>
+<a href="/distribution/index.md"><img alt="Share: Submission checklist, packaging, and marketing" src="/images/share@3x.png" class="plain" style="width: 100%"/></a>
 
 <br />
 
-<object style="width: 100%" type="image/png" data="/images/code@3x.png">placeholder</object>
+<img alt="Quick start: create your first plugin" src="/images/code@3x.png" class="plain" style="width: 100%"/>
 
 **Quick start: create your first plugin**
 
@@ -30,7 +24,7 @@ We’ll keep things simple in this Quick Start tutorial. Once you’re done, you
 
 <br />
 
-<object style="width: 100%" type="image/png" data="/images/kit-new@3x.png">placeholder</object>
+<img alt="Design using the XD plugin UI kit" src="/images/kit-new@3x.png" class="plain" style="width: 100%"/>
 
 **Design using the XD plugin UI kit**
 
@@ -40,7 +34,7 @@ XD plugins are used by designers around the world who expect great experiences. 
 
 <br />
 
-<object style="width: 100%" type="image/png" data="/images/manage-new@3x.png">placeholder</object>
+<img alt="Manage your plugin project" src="/images/manage-new@3x.png" class="plain" style="width: 100%"/>
 
 **Manage your plugin project**
 
@@ -58,9 +52,6 @@ We’ve got a lot of stuff planned for the future of Plugin APIs on the Adobe XD
 
 <br />
 
-<object>
-<a href="/distribution/index.md"><object style="width: 100%" type="image/png" data="/images/dev-community@3x.png">placeholder</object></a>
-</object>
-<object>
-<a href="/distribution/index.md"><object style="width: 100%" type="image/png" data="/images/user-community@3x.png">placeholder</object></a>
-</object>
+<a href="/distribution/index.md"><img alt="XD Plugin API developer community" src="/images/XD-plugin-api-community.png" class="plain" style="width: 100%"/></a>
+
+<a href="/distribution/index.md"><img alt="Adobe XD user community" src="/images/user-community@3x.png" class="plain" style="width: 100%"/></a>
