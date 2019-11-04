@@ -30,7 +30,7 @@ We’ll keep things simple in this Quick Start tutorial. Once you’re done, you
 
 XD plugins are used by designers around the world who expect great experiences. Download the XD plugin UI kit to start crafting your own XD plugin experience.
 
-**[Download]()**
+**[Download](https://github.com/AdobeXD/plugin-design-assets/blob/master/Sticker_sheet_XD_plugins.xd?raw=true)**
 
 <br />
 
