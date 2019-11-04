@@ -12,8 +12,6 @@ Shape the future of design by creating plugins for yourself, your team, or the w
 
 <br />
 
-<br />
-
 <img alt="Quick start: create your first plugin" src="/images/code@3x.png" class="plain" style="width: 100%"/>
 
 **Quick start: create your first plugin**
