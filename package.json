@@ -12,7 +12,9 @@
     "book:build:pdf": "gitbook --log=debug --debug pdf . $@",
     "book:watch": "gitbook --log=debug --debug serve . $@",
     "book:publish:github": "gh-pages -d _book",
-    "book:publish:mirror": "gh-pages -d _book -o mirror"
+    "book:publish:mirror": "gh-pages -d _book -o mirror",
+    "test:404": "npm run _test:404 --silent",
+    "_test:404": "/bin/sh ./scripts/404-test.sh"
   },
   "author": "",
   "license": "MIT",
@@ -30,7 +32,7 @@
     "gitbook-plugin-dashing": "^0.3.0",
     "gitbook-plugin-devops": "^1.0.3",
     "gitbook-plugin-expandable-chapters-interactive": "^0.1.0",
-    "gitbook-plugin-fancybox": "^3.0.1",
+    "gitbook-plugin-fancybox": "https://github.com/AdobeXD/gitbook-plugin-fancybox.git",
     "gitbook-plugin-github-buttons": "^3.0.0",
     "gitbook-plugin-github-tables": "^0.0.2",
     "gitbook-plugin-highlight": "^2.0.3",
@@ -55,6 +57,7 @@
     "tunnel-agent": "^0.6.0"
   },
   "devDependencies": {
+    "broken-link-checker-local": "^0.2.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "gh-pages": "^2.1.1",

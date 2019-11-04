@@ -20,7 +20,7 @@ In order to make your plugin available in the XD Plugin Manager, you'll need to 
 
 ## Submit your plugin
 
-You can submit your plugin for review through the I/O Developer Console, the same place you got your [unique plugin ID for your manifest](reference/structure/manifest.md).
+You can submit your plugin for review through the I/O Developer Console, the same place you got your [unique plugin ID for your manifest](/reference/structure/manifest.md).
 
 On the I/O Console, you can provide your packaged plugin. The I/O Console will automatically validate your package and its [manifest file](/reference/structure/manifest.md). Then, you will be asked to provide more information about your plugin on the Console. 
 
@@ -88,4 +88,4 @@ Once your submission has been reviewed, we’ll reach out letting you know if it
 
 ## Marketing your plugin
 
-No matter how you plan to distribute, be sure to see our [plugin marketing guide](./marketing) to learn about the ins-and-outs of marketing an Adobe XD plugin.
+No matter how you plan to distribute, be sure to see our [plugin marketing guide](./marketing.md) to learn about the ins-and-outs of marketing an Adobe XD plugin.

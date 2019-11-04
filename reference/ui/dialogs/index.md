@@ -257,7 +257,7 @@ Prompts display a single line text field in addition to a message and two button
 
 You should always strive to provide a good user experience with a modal dialog. That means providing easy access to dismissive buttons, avoiding dark patterns, and ensuring that your dialog doesn't block the user from forward progress in their work.
 
-You should definitely read up on the [experience guidelines](../../../xdpegs/5-ui.md) to learn more about what to do and what not to do.
+You should definitely read up on our [UX patterns for modals](/design/ux-patterns/modal-ux.md) to learn more about what to do and what not to do.
 
 ##### When to Use Dialogs
 

@@ -5,7 +5,7 @@ Use this section to access the API references, know what are the currently known
 * [API references](/reference/how-to-read.html)
 * [Known issues](/known-issues.md)
 * [Change log](/changes.md)
-* [Glossary](GLOSSARY.md)
+* [Glossary](../GLOSSARY.md)
 
 Here are some of the recommended next steps for you:
 

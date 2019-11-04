@@ -1,43 +1,55 @@
-# Creating an Adobe XD Plugin
+# Plugin APIs
 
-XD plugins extend the capabilities of [Adobe XD](https://www.adobe.com/products/xd.html) by adding new features to the app, automating workflows, connecting the app to external services, and more.
+**Bring new features and capabilities to XD**
 
-On this page, we'll give you a quick overview of **what you can build** and **how to get started**.
+Shape the future of design by creating plugins for yourself, your team, or the world. To share a plugin for all XD users, submit it to Adobe. After review, you’ll be published in the XD Plugin Manager.
 
-From there, you can **choose your own adventure**: build a "Hello, World" plugin in our [Quick Start tutorial](./tutorials/quick-start/index.md), follow our [tutorials](/tutorials/index.md), try code-complete [sample plugins](https://github.com/AdobeXD/plugin-samples), or browse the [API references](/reference/how-to-read.md).
+<a href="/develop.md"><img alt="Develop: API documentation, code tutorials, and samples" src="/images/develop@3x.png" class="plain" style="width: 100%"/></a>
 
-Oh, and be sure to [join the developer community](/community.md) while you're here! We want you to say hi (we'll say hi back).
+<a href="/design/index.md"><img alt="Design: UX patterns, UI elements, and design guidelines" src="/images/design@3x.png" class="plain" style="width: 100%"/></a>
 
-Now, let’s supercharge the future of design together with XD plugins!
+<a href="/distribution/index.md"><img alt="Share: Submission checklist, packaging, and marketing" src="/images/share@3x.png" class="plain" style="width: 100%"/></a>
 
+<br />
 
-## What can you build?
-Plugins can be **tools** that help users create or automate their workflow, they can streamline collaboration by allowing users to **import** and **export**, and they can also provide users with external **information**.
+<img alt="Quick start: create your first plugin" src="/images/code@3x.png" class="plain" style="width: 100%"/>
 
-The XD plugin APIs enable you to build plugins for a number of use cases, to help you get started here are three points to think about. 
+**Quick start: create your first plugin**
 
-1. **The plugin workflow** - Identify the user stories for your plugin
-2. **Key plugin action** - What are the key interactions for you plugin that would be valuable to your users
-3. **Entry point and UI for your plugin in XD** - consider the users intention in XD when interacting with your plugin
+We’ll keep things simple in this Quick Start tutorial. Once you’re done, you’ll have a solid grasp of how to start creating your own XD plugin. We’ll also give you some next steps for learning more.
 
-### Users workflow in XD
+**[Start coding](/tutorials/quick-start/index.md)**
 
-![Example of a users workflow with plugins](/images/users_workflow_plugins.png)
+<br />
 
-## Getting Started
+<img alt="Design using the XD plugin UI kit" src="/images/kit-new@3x.png" class="plain" style="width: 100%"/>
 
+**Design using the XD plugin UI kit**
 
-There are lots of ways to journey through the documentation on your way to building the next great XD plugin. If you're just getting started, we recommend following the left-hand navigation on this site from top to bottom (or until you're ready to plot your own course!).
+XD plugins are used by designers around the world who expect great experiences. Download the XD plugin UI kit to start crafting your own XD plugin experience.
 
-Here are some highlights you won't want to miss:
+**[Download](https://github.com/AdobeXD/plugin-design-assets/blob/master/Sticker_sheet_XD_plugins.xd?raw=true)**
 
-1. **Get Started**: To begin, try our [Quick Start tutorial](./tutorials/quick-start/index.md), then follow along with [the API feature tutorials](./tutorials/index.md).
-1. **Go deep**: Learn more about how to build an XD plugin by reading [the plugin development 101](/plugin-development-guidelines/index.md) and then dig into the [API reference](/reference/how-to-read.md).
-1. **See code**: If you prefer to learn from working code, we have a [samples repo on GitHub](https://github.com/AdobeXD/Plugin-Samples) for you to take a look at.
-1. **Plugin Design Guidelines**: If you want to design a great plugin, we can provide guidance around [UX best practices and requirements](/plugin-design-guidelines/index.md) for plugins
-1. **Join the community**: We want to hear from you, know who you are, keep you up to date with the latest info, and grow together. See our [Community page](/community.md) to learn about how to connect.
+<br />
 
-| **Develop**     |   **Design**
-| ------------- | -------------
-| You can learn more about the API surfaces available to you in our tutorials, as well as in our API References. | You can learn more about the UX/UI of a plugin and the different guidelines to follow as you create your plugin.
-| [Plugin Development 101](/plugin-development-guidelines/index.md) | [Plugin Design Guidelines](/plugin-design-guidelines/index.md) |
+<img alt="Manage your plugin project" src="/images/manage-new@3x.png" class="plain" style="width: 100%"/>
+
+**Manage your plugin project**
+
+Whether you’re getting your unique plugin ID, submitting your finished plugin for review, or updating your XD Plugin Manager listing, the I/O Developer Console is the place to manage your plugin project.
+
+**[Visit the I/O console](https://console.adobe.io)**
+
+<br />
+
+**Plugin API roadmap**
+
+We’ve got a lot of stuff planned for the future of Plugin APIs on the Adobe XD platform, and we’ve built out a roadmap.
+
+**[View Trello board](https://trello.com/b/WFKmCVaz/xd-extensibility-roadmap)**
+
+<br />
+
+<a href="https://forums.adobexdplatform.com/c/xd"><img alt="XD Plugin API developer community" src="/images/XD-plugin-api-community.png" class="plain" style="width: 100%"/></a>
+
+<a href="https://adobexd.uservoice.com/forums/353007-adobe-xd-feature-requests?category_id=368995"><img alt="Adobe XD user community" src="/images/user-community@3x.png" class="plain" style="width: 100%"/></a>

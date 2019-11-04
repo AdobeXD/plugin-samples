@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:200,300,400,700");
+
 .book {
     height: calc(100% - 128px);
 }
@@ -64,16 +66,34 @@
     height: 2px;
 }
 
-.markdown-section img {
+
+.markdown-section img:not(.plain) {
     border: 1px solid #ddd;
     border-radius: 4px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
-
+    
     width: 80%;
     margin: 0 10%;
     padding: 2.5%;
-
+    
     background-color: white;
+}
+
+.markdown-section a img:not(.plain) {
+    border: none !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 2.5%
+}
+
+.markdown-section img.plain + figcaption {
+    display: none;
+}
+
+.markdown-section figure img.plain {
+    margin: -1.5em 0px !important;
+    padding: 2.5% 0;
 }
 
 .markdown-section .glossary-term {

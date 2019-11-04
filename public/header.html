@@ -1,100 +1,119 @@
-  <!-- privacy management via evidon -->
-  <link rel="stylesheet" type="text/css" href="https://wwwimages2.adobe.com/etc/beagle/public/globalnav/adobe-privacy/latest/privacy.min.css">
-  <script defer src="https://wwwimages2.adobe.com/etc/beagle/public/globalnav/adobe-privacy/latest/privacy.min.js"></script>
-  <script defer>
-    function createTrackerID() {
-      let fmt = 'xxxxxxxx-xxxx-4xxx-1xxx-xxxxxxxxxxxx';
-      return fmt.split("").map(function (c) {
-        if (c === 'x') {
-          return Math.floor(Math.random() * 16).toString(16);
-        } else {
-          return c;
-        }
-      }).join("");
-    }
-
-    let INGEST_ENDPOINT = "https://cc-api-data.adobe.io/ingest";
-    let TRACKER_KEY = "xdplatform";
-    let ENVIRONMENT = "prod";
-    let tracker;
-    let evidonTimer = setTimeout(track, 500);
-
-    /* report page hit IF we have privacy consent from the user */
-    window.addEventListener("adobePrivacy:PrivacyConsent", function () {
-
-      // check if the user has a cookie
-      let cookies = document.cookie.split(';');
-      let trackerCookie = cookies.filter(function (v) {
-        return v.trim().substr(0, TRACKER_KEY.length + 1) === TRACKER_KEY + '=';
-      });
-      if (trackerCookie.length > 0) {
-        tracker = trackerCookie[0].split("=")[1];
+<!-- privacy management via evidon -->
+<link rel="stylesheet" type="text/css"
+  href="https://wwwimages2.adobe.com/etc/beagle/public/globalnav/adobe-privacy/latest/privacy.min.css">
+<script defer
+  src="https://wwwimages2.adobe.com/etc/beagle/public/globalnav/adobe-privacy/latest/privacy.min.js"></script>
+<script defer>
+  function createTrackerID() {
+    let fmt = 'xxxxxxxx-xxxx-4xxx-1xxx-xxxxxxxxxxxx';
+    return fmt.split("").map(function (c) {
+      if (c === 'x') {
+        return Math.floor(Math.random() * 16).toString(16);
       } else {
-        tracker = createTrackerID();
-        document.cookie = TRACKER_KEY + "=" + tracker;
+        return c;
       }
+    }).join("");
+  }
 
-      clearInterval(evidonTimer);
-      track();
+  let INGEST_ENDPOINT = "https://cc-api-data.adobe.io/ingest";
+  let TRACKER_KEY = "xdplatform";
+  let ENVIRONMENT = "prod";
+  let tracker;
+  let evidonTimer = setTimeout(track, 500);
 
-      if (typeof gitbook !== "undefined") {
-        gitbook.events.on("page.change", () => track());
-      }
+  /* report page hit IF we have privacy consent from the user */
+  window.addEventListener("adobePrivacy:PrivacyConsent", function () {
+
+    // check if the user has a cookie
+    let cookies = document.cookie.split(';');
+    let trackerCookie = cookies.filter(function (v) {
+      return v.trim().substr(0, TRACKER_KEY.length + 1) === TRACKER_KEY + '=';
     });
-
-    function track() {
-
-      // track the page hit
-      let req = new XMLHttpRequest();
-      req.open("POST", INGEST_ENDPOINT);
-
-      req.setRequestHeader("Content-Type", "application/json");
-      req.setRequestHeader("X-API-Key", "xdplatform-web-service");
-
-      // (Note: we don't care about errors here)
-
-      let data = {
-        "events": [{
-          "project": "xdplatform-web-service",
-          "environment": ENVIRONMENT,
-          "time": new Date().toISOString(),
-          "ingesttype": "dunamis",
-          "data": {
-            "event.workflow": "XD",
-            "event.category": "WEB",
-            "event.subcategory": "VIEW",
-            "event.type": "render",
-            "event.type": "page",
-            "event.pagename": location.hostname + location.pathname,
-            "event.user_guid": tracker || createTrackerID(), // fall back to random ID (in case of no evidon)
-            "event.user_agent": navigator.userAgent,
-            "event.language": navigator.language,
-            "event.url": location.href,
-            "event.referrer": document.referrer,
-            "source.name": "XD Platform",
-            "source.platform": "Web"
-          }
-        }]
-      };
-
-      req.send(JSON.stringify(data));
-
+    if (trackerCookie.length > 0) {
+      tracker = trackerCookie[0].split("=")[1];
+    } else {
+      tracker = createTrackerID();
+      document.cookie = TRACKER_KEY + "=" + tracker;
     }
-  </script>
 
-<header style="border-bottom: 1px solid #ddd; height: 96px; display: flex; flex-direction: row; align-items: center;">
-  <a href="/" style="height: 48px; width: 48px; margin: 0px 24px 24px; position: relative; top: 14px;">
-  <img src="/plugin-docs/images/xd-logo.png" style="height: 48px; width: 48px;"></a>
-<h1 style="font-size: 24px; margin-top: 10px;"><a href="/">Adobe XD Platform</a></h1>
-<ul style="list-style: none; margin-top: 18px;">
-    <li style="display: inline-block; margin-right: 24px; font-size: 14px;"><a href="/plugin-docs/" style="color: rgb(255, 38, 190); font-weight: bold; text-decoration: none;">Overview</a></li>
-    <li style="display: inline-block; margin-right: 24px; font-size: 14px;"><a href="/plugin-docs/tutorials/quick-start" style="color: rgb(255, 38, 190); font-weight: bold; text-decoration: none;">Quick
-            Start</a></li>
-    <li style="display: inline-block; margin-right: 24px; font-size: 14px;"><a href="/plugin-docs/reference/how-to-read.html" style="color: rgb(255, 38, 190); font-weight: bold; text-decoration: none;">API
-            Reference</a></li>
-    <li style="display: inline-block; margin-right: 24px; font-size: 14px;"><a href="https://github.com/AdobeXD/plugin-samples" target="_blank" style="color: rgb(255, 38, 190); font-weight: bold; text-decoration: none;">Samples</a></li>
-    <li style="display: inline-block; margin-right: 24px; font-size: 14px;"><a href="/plugin-docs/community.html" style="color: rgb(255, 38, 190); font-weight: bold; text-decoration: none;">Community</a></li>
-    <li style="display: inline-block; margin-right: 24px; font-size: 14px;"><a target="_blank" href="https://console.adobe.io/plugins" style="color: rgb(255, 38, 190); font-weight: bold; text-decoration: none;">Submit
-            Plugin</a></li>
-</ul>
+    clearInterval(evidonTimer);
+    track();
+
+    if (typeof gitbook !== "undefined") {
+      gitbook.events.on("page.change", () => track());
+    }
+  });
+
+  function track() {
+
+    // track the page hit
+    let req = new XMLHttpRequest();
+    req.open("POST", INGEST_ENDPOINT);
+
+    req.setRequestHeader("Content-Type", "application/json");
+    req.setRequestHeader("X-API-Key", "xdplatform-web-service");
+
+    // (Note: we don't care about errors here)
+
+    let data = {
+      "events": [{
+        "project": "xdplatform-web-service",
+        "environment": ENVIRONMENT,
+        "time": new Date().toISOString(),
+        "ingesttype": "dunamis",
+        "data": {
+          "event.workflow": "XD",
+          "event.category": "WEB",
+          "event.subcategory": "VIEW",
+          "event.type": "render",
+          "event.type": "page",
+          "event.pagename": location.hostname + location.pathname,
+          "event.user_guid": tracker || createTrackerID(), // fall back to random ID (in case of no evidon)
+          "event.user_agent": navigator.userAgent,
+          "event.language": navigator.language,
+          "event.url": location.href,
+          "event.referrer": document.referrer,
+          "source.name": "XD Platform",
+          "source.platform": "Web"
+        }
+      }]
+    };
+
+    req.send(JSON.stringify(data));
+
+  }
+</script>
+
+<header
+  style="padding-left: 5%; border-bottom: 1px solid #ddd; height: 96px; display: flex; flex-direction: row; align-items: center;">
+  <a href="https://adobexdplatform.com/"
+    style="height: 32px; width: 32px; margin: 0px 12px 24px 0px; position: relative; top: 14px;">
+    <img src="/images/xd-logo.png" style="height: 32px; width: 32px; margin-left: 0"></a>
+  <h1
+    style="color: black; margin-top: 17px; margin-bottom: 14px; font-size: 18px; font-weight: bold; font-family: roboto">
+    <a href="https://adobexdplatform.com/">Adobe XD
+      Platform</a></h1>
+  <ul style="list-style: none; margin-top: 14px;">
+    <li style="display: inline-block; list-style: none; text-align: -webkit-match-parent; margin-right: 23px; ">
+      <a href="https://adobexdplatform.com/plugin-docs/"
+        style="color: black; text-decoration: none; font-family: roboto, medium; font-size: 15px; font-weight:400;">Plugin
+        APIs</a>
+    </li>
+    <li style="display: inline-block; list-style: none; text-align: -webkit-match-parent; margin-right: 23px; ">
+      <a href="https://adobexdplatform.com/cloud-content-api-docs/"
+        style="color: black; text-decoration: none; font-family: roboto, medium; font-size: 15px; font-weight:400;">Cloud
+        Content
+        APIs</a></li>
+    <li style="display: inline-block; list-style: none; text-align: -webkit-match-parent; margin-right: 23px;">
+      <a href="https://adobexdplatform.com/community-and-support/"
+        style="color: black; text-decoration: none; font-family: roboto, medium; font-size: 15px; font-weight:400;">Community
+        &
+        Support</a></li>
+  </ul>
+  <!-- <a style="margin-left:auto; margin-right:10%;" href="https://console.adobe.io/plugins">
+<button type="button" class="console-btn coral-btn coral-btn-cta"> I/O Developer Console</button>
+</a> -->
 </header>
+<!-- <div class="divider">
+<p class="divider-text">Community and Support</p>
+</div> -->

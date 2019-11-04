@@ -26,4 +26,4 @@ Within an insertion point, you can create rich, custom user interfaces. Read the
 
 ## UI Sticker Sheet
 
-[View Sticker Sheet](/plugin-design-guidelines/ui_resources/Sticker_sheet.md)
+[View Sticker Sheet](/design/user-interface/sticker-sheet.md)
