@@ -4,14 +4,13 @@
 
 Shape the future of design by creating plugins for yourself, your team, or the world. To share a plugin for all XD users, submit it to Adobe. After review, you’ll be published in the XD Plugin Manager.
 
-<br />
-
 <a href="/develop.md"><img alt="Develop: API documentation, code tutorials, and samples" src="/images/develop@3x.png" class="plain" style="width: 100%"/></a>
 
 <a href="/design/index.md"><img alt="Design: UX patterns, UI elements, and design guidelines" src="/images/design@3x.png" class="plain" style="width: 100%"/></a>
 
 <a href="/distribution/index.md"><img alt="Share: Submission checklist, packaging, and marketing" src="/images/share@3x.png" class="plain" style="width: 100%"/></a>
 
+<br />
 <br />
 
 <img alt="Quick start: create your first plugin" src="/images/code@3x.png" class="plain" style="width: 100%"/>
