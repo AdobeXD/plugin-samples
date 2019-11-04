@@ -4,8 +4,6 @@
 
 Shape the future of design by creating plugins for yourself, your team, or the world. To share a plugin for all XD users, submit it to Adobe. After review, you’ll be published in the XD Plugin Manager.
 
-<br />
-
 <a href="/develop.md"><img alt="Develop: API documentation, code tutorials, and samples" src="/images/develop@3x.png" class="plain" style="width: 100%"/></a>
 
 <a href="/design/index.md"><img alt="Design: UX patterns, UI elements, and design guidelines" src="/images/design@3x.png" class="plain" style="width: 100%"/></a>
@@ -52,6 +50,6 @@ We’ve got a lot of stuff planned for the future of Plugin APIs on the Adobe XD
 
 <br />
 
-<a href="/distribution/index.md"><img alt="XD Plugin API developer community" src="/images/XD-plugin-api-community.png" class="plain" style="width: 100%"/></a>
+<a href="https://forums.adobexdplatform.com/c/xd"><img alt="XD Plugin API developer community" src="/images/XD-plugin-api-community.png" class="plain" style="width: 100%"/></a>
 
-<a href="/distribution/index.md"><img alt="Adobe XD user community" src="/images/user-community@3x.png" class="plain" style="width: 100%"/></a>
+<a href="https://adobexd.uservoice.com/forums/353007-adobe-xd-feature-requests?category_id=368995"><img alt="Adobe XD user community" src="/images/user-community@3x.png" class="plain" style="width: 100%"/></a>
