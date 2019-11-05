@@ -33,7 +33,7 @@ specs.forEach(artifact => {
 ### Enums
 
 <dl>
-<dt><a name="ArtifactType"></a> ArtifactType : </dt><dd><code>PROTOTYPE, SPECS</code> - Type of shared artifact: interactive prototype or developer-focused specs view</dd>
+<dt><a name="ArtifactType"></a> ArtifactType : </dt><dd><code>PROTOTYPE, SPECS</code> - Type of shared artifact: interactive prototype only, or developer-focused specs view (which may <i>also</i> include access to an interactive prototype view)</dd>
 
 <dt><a name="TargetPlatform"></a> TargetPlatform : </dt><dd><code>WEB, IOS, ANDROID</code> - Target platform for published design specs</dd>
 
@@ -86,7 +86,7 @@ Interactive prototype view generated via "Share for Review."
 
 **Typedef SpecsArtifact**
 
-Developer-oriented specs view generated via "Share for Development."
+Developer-oriented specs view generated via "Share for Development." This may _also_ allow viewing the document as an interactive prototype, with default settings (`fullscreenInPage: false` and `hotspotHints: true`).
 
 | Property | Type | Description |
 | --- | --- | --- |

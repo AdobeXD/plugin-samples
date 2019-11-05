@@ -486,7 +486,7 @@ is an [Interaction object](./interactions.md#Interaction) which describes a gest
 
 Note: If this node (or one of its ancestors) has `visible` = false, tap and drag interactions on it will not be triggered.
 
-Currently, this API excludes any keyboard/gamepad interactions on this node.
+Currently, this API excludes any keyboard/gamepad, hover, and state-transition interactions on this node.
 
 **Example**
 ```js

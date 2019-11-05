@@ -1,5 +1,47 @@
 # Change Log
 
+XD Release 24.0.22 (November 2019)
+-------------------------------------
+
+### New XD Features
+
+[Read more about XD's biggest release of the year here](https://theblog.adobe.com/xd-november-2019-update-coediting-more/).
+
+* **Live Co-editing _beta_**
+    * Plugin [edit operations](./reference/core/lifecycle.md#edit-operations) (`editDocument()` or menu commands) are still fully atomic. Outside those blocks, edits from a remote user can come in at any time, just like edits from the local user could. Edits made by remote users will trigger a plugin panel's `update()` method, just the same as edits made by the local user.
+    * If a plugin edit conflicts with a remote user's edit that started slightly sooner, the plugin edit will get cleanly reverted (in favor of the other user's edit) _after_ the plugin operation has fully completed.
+    * Remote updates are paused in a known-good document state while a plugin edit is in progress (including the lifespan of any modal dialogs), so the scenegraph state won't change while your code is in the middle of processing it. Similarly, updates made by the plugin are sent atomically to remote users once the entire plugin edit operation has finished.
+
+* **Component states & interactions**
+    * For each Component instance, only the currently active state is visible in the scenegraph hierarchy. Content in other, non-visible states is not accessible to plugins yet.
+    * Hover and state-change interactions are not exposed to plugins yet, but will be in the future. If your plugin is reading interactions/prototyping data, be sure to always have a default case if your code encounters unexpected types.
+    * Reminder: a single scenenode can return multiple interactions from [`node.triggeredInteractions`](./reference/scenegraph.md#SceneNode-triggeredInteractions). This was possible before in some cases, but is allowed in more cases now (for example, one node can have a click/tap trigger, a drag trigger, *and* a hover trigger).
+
+* **New Plugin Manager UI**
+    * Users can rate plugins on a 5-star rating scale.
+    * Users can sort by popularity or rating, filter by category, and easily share deep links to a specific plugin.
+    * Each plugin listing now displays one or more screenshots (see "New plugin listing process" below for how to add these).
+    * If you have a plugin in development *and* an installed plugin with the same id, Plugin Manager now shows both for clarity. You can still only enable one of them at a time, though.
+
+* **Sharing enhancements**
+    * The [`cloud.getSharedArtifacts()` API](./reference/cloud.md#module_cloud-getSharedArtifacts) may now return an arbitrary number of shared links, and there may be more than one link of the same type (e.g. multiple specs links).
+    * The distinction between link types has blurred a bit: links that are `ArtifactType.SPECS` may _also_ include access to an interactive prototype view, just like links of type `ArtifactType.PROTOTYPE`.
+
+### Smaller fixes and improvements
+* Fixed issue where `shell.openExternal()` was allowing plugins to launch non-Web URL protocols in a way that only worked on Mac. Full cross-platform support for doing this will be added in the future.
+* CSS / DOM event improvements in UXP plugin UI -- including support for text input color, img `srcset`, and online/offline events. [Read more](https://medium.com/adobetech/whats-new-for-developers-in-adobe-xd-24-max-release-5cee8e3eea6f#7b2e).
+* Fixed text descender clipping in plugin UI on Mac.
+* Plugin panels now include the plugin's icons in the panel header, next to your plugin's name.
+
+### Known Issues
+* Live Co-editing is still a beta feature. Performance and reliability will not be comparable to other aspects of XD yet.
+    * Plugins that edit a large number of objects at once may not work reliably when using Live Co-editing.
+    * If the user makes multiple consecutive edits using a plugin, some of the edits may get erroneously reverted when using Live Co-editing.
+    * Plugin dialog boxes that a user leaves open for a long time may not work correctly when using Live Co-editing.
+    * Users may be unable to undo edits made by a plugin when using Live Co-editing.
+* Hover and state-transition interactions are not returned to plugins yet when requesting the list of interactions on a scenenode or the entire document.
+
+
 XD Release 23.1.32 (October 2019)
 -------------------------------------
 
@@ -16,6 +58,7 @@ Information shown in the plugin listing has moved out of `manifest.json` and is 
 * Can `preventDefault()` on Esc or Enter in text fields to prevent the default action of sending focus back to the canvas.
 * Fixed bug with setting opacity of BooleanGroup nodes.
 * Plugin Manager UI shows plugins that were disabled because they're incompatible with the current version of XD, with tooltip explaining why.
+* Several fixes to UI layout & CSS handling -- [details here](https://medium.com/adobetech/whats-new-for-developers-in-adobe-xd-23-october-release-ed7cb04b6e2f).
 
 
 ----

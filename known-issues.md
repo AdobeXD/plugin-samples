@@ -18,7 +18,7 @@
   - In the past, XD's renderer would fail asserts (possibly even crash) with 0-size objects. I couldn't repro that any more, but unless we're covering it well as an officially supported case, it could easily regress again. There are some other minor bugs though, e.g. sharing fails if you have any 0-width/height artboards and bitmap export fails if any of the top-level items you're trying to export are 0-width/height.
 - Longer plugin command names may be truncated in the menu on Windows
   - Workaround: keep your plugin command names short!
-- Keypress / gamepad interactions are not returned to plugins yet when requesting the list of interactions on a scenenode or the entire document.
+- Keypress/gamepad, hover, and state-transition interactions are not returned to plugins yet when requesting the list of interactions on a scenenode or the entire document.
 
 ## Assets Panel
 
