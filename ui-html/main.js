@@ -34,13 +34,24 @@ or your plugin is reloaded.
   //// Add your HTML to the DOM
   document.body.innerHTML = `
     <style>
-        form {
+        dialog {
             width: 400px;
+        }
+        h1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            overflow: hidden;
         }
     </style>
     <dialog>
         <form method="dialog">
-            <h1>Hello HTML!</h1>
+            <h1><span>Hello HTML!</span><img class="icon" src="images/icon@1x.png"></h1>
+            <hr />
             <label>
                 <span>What's your name?</span>
                 <input uxp-quiet="true" type="text" id="name" placeholder="Your name"/>

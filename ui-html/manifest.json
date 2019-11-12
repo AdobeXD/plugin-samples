@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "host": {
     "app": "XD",
-    "minVersion": "13.0"
+    "minVersion": "21.0"
   },
   "icons": [
     {
@@ -21,7 +21,6 @@
   "uiEntryPoints": [
     {
       "type": "menu",
-      "label": "UI HTML",
       "commandId": "menuCommand"
     }
   ]
