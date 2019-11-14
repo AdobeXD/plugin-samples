@@ -1,14 +1,16 @@
 async function menuCommand() {
-  // Get and show the dialog
+  // Get the dialog element
   const dialog = getDialog();
+  // Show the dialog and get a result when the user closes it
   const result = await dialog.showModal();
 
-  // Exit if the user cancels the modal
-  if (result === "reasonCanceled")
-    return console.log("User clicked cancel or escape.");
-
-  // Exit on user completion of task
-  return console.log(`Your name is ${result}`);
+  if (result === "reasonCanceled") {
+    // Exit if the user cancels the modal
+    return console.log("User clicked cancel or escape.\n");
+  } else {
+    // Exit on user completion of task
+    return console.log(`Your name is ${result}.\n`);
+  }
 }
 
 function getDialog() {
@@ -16,20 +18,18 @@ function getDialog() {
   let dialog = document.querySelector("dialog");
 
   if (dialog) {
-    console.log("Dialog already loaded in DOM. Reusing...");
+    console.log("Dialog already loaded in DOM. Reusing...\n");
     return dialog;
+  } else {
+    // Otherwise, create and return a new dialog
+    return createDialog();
   }
-
-  // Otherwise, create and return a new dialog
-  return createDialog();
 }
 
 function createDialog() {
-  console.log(`
-Adding dialog to DOM. 
-This will remain in the DOM until \`dialog.remove()\ is called,
-or your plugin is reloaded.
-  `);
+  console.log(
+    "Adding dialog to DOM.\nIt will remain in the DOM until you call `dialog.remove()`, or your plugin is reloaded by XD.\n"
+  );
 
   //// Add your HTML to the DOM
   document.body.innerHTML = `
@@ -67,16 +67,16 @@ or your plugin is reloaded.
   //// Get references to DOM elements
   // Each of these will be used in event handlers below
   const [dialog, form, cancel, ok, name] = [
-    `dialog`,
-    `form`,
+    "dialog",
+    "form",
     "#cancel",
     "#ok",
     "#name"
   ].map(s => document.querySelector(s));
 
   //// Add event handlers
-  // Close dialog when cancel is clicked.
-  // Note that XD handles the ESC key for you, also returning `reasonCanceled`
+  // Close dialog when cancel is clicked, with an optional return value.
+  // Note that XD handles the ESC key for you, also returning "reasonCanceled"
   cancel.addEventListener("click", () => dialog.close("reasonCanceled"));
 
   // Handle ok button click
