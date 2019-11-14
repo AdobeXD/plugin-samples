@@ -4,30 +4,29 @@
   https://adobexdplatform.com/plugin-docs/reference/application
 */
 const { appLanguage } = require("application");
-/* 
-  Get the array of languages you support from your manifest.
-  Ex: ["en", "ja"]
-*/
-const supportedLanguages = require("./manifest.json").languages;
+
 /*
   Get your localized strings from a separate strings file.
-  Ex: {en: {//...}, ja: {//...}}
+  Ex: {"en": {//...}, "ja": {//...}}
 */
 const strings = require("./strings.json");
 
 /*
-  The main command here simply serves to show the dialog,
-  and capture resulting data, if any.
+  Get your supported languages in an array.
+  Ex: ["en", "ja"]
+*/
+const supportedLanguages = Object.keys(strings);
+
+/*
+  The main command here simply serves to create and show the dialog,
+  then resolve the async function when the user closes the dialog.
 */
 async function mainCommand() {
   const dialog = createDialog();
 
-  const result = await dialog.showModal();
-  if (result === "reasonCanceled") return;
+  await dialog.showModal();
 
-  console.log("Exited with OK!");
-
-  return;
+  return dialog.remove();
 }
 
 function createDialog() {
@@ -52,30 +51,31 @@ function createDialog() {
         width: 400px;
       }
     </style>
-    <dialog id="dialog">
+    <dialog>
       <form method="dialog">
         <h1>${strings[uiLang].h1}</h1>
+        <hr />
         <p>${strings[uiLang].p}</p>
         <footer>
-          <button uxp-variant="primary" id="cancel-button">${
-            strings[uiLang].cancelButton
-          }</button>
-          <button type="submit" uxp-variant="cta" id="ok-button">${
-            strings[uiLang].okButton
-          }</button>
+          <button type="submit" id="ok" uxp-variant="cta">${strings[uiLang].okButton}</button>
         </footer>
       </form>
     </dialog>
   `;
 
-  // Event handlers
-  const cancelButton = document.querySelector("#cancel-button");
-  cancelButton.addEventListener("click", e => dialog.close("reasonCanceled"));
+  const [dialog, form, ok] = ["dialog", "form", "#ok"].map(s => {
+    return document.querySelector(s);
+  });
 
-  const dialog = document.querySelector("#dialog");
-  dialog.addEventListener("close", e => dialog.remove());
+  ok.addEventListener("click", e => handleSubmit(e, dialog));
+  form.onsubmit = e => handleSubmit(e, dialog);
 
   return dialog;
+}
+
+function handleSubmit(e, dialog) {
+  dialog.close();
+  e.preventDefault();
 }
 
 module.exports = {
