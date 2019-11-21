@@ -5,8 +5,6 @@ To ensure users know they are interacting with your plugin, include branding thr
 - Onboarding and branding
 - Customized plugin UI
 
-Provide users with feedback as they interact with your plugin, this can be alert and success messaging, permission dialogs or loaders and progress bars to let them know something is running in the background. Below is a guide to help determine where to render plugin messages.
-
 ----------
  <br />
 
