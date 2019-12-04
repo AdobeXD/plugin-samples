@@ -10,6 +10,7 @@ The `application` module exposes APIs for exporting content, initiating edits fr
    * [.version](#module_application-version) : <code>string</code>
    * [.appLanguage](#module_application-appLanguage) : <code>string</code>
    * [.systemLocale](#module_application-systemLocale) : <code>string</code>
+   * [.activeDocument](#module_application-activeDocument) : <code>string</code>
 
 
 ---
@@ -176,4 +177,24 @@ language _and_ region (e.g. "fr_CA" or "en_US").
 **Example**
 ```js
 console.log("OS locale:", application.systemLocale); // e.g. "en_US"
+```
+
+
+---
+
+<a name="module_application-activeDocument"></a>
+
+### *application.activeDocument : <code>string</code>*
+
+Represents the active document. Provides the document guid and current saved name.
+
+**Kind**: static property of [<code>application</code>](#module_application)  
+**Read only**: true  
+
+**Example**
+```js
+var application = require("application");
+let documentInfo = application.activeDocument;
+console.log(“Document title: ” + documentInfo.name);
+console.log(“Document unique Id: ” + documentInfo.guid);
 ```
