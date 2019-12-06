@@ -1276,8 +1276,10 @@ Like all shape nodes, has no size, fill, or stroke by default unless you set one
 ```js
 // Add a red triangle to the document and select it
 var polygon = new Polygon();
-polygon.cornerCount = 3;
-polygon.width = 50;
+polygon.cornerCount = 5;
+polygon.starRatio = 55;
+polygon.setAllCornerRadii(15);
+polygon.width = 100;
 polygon.height = 100;
 polygon.fill = new Color("red");
 selection.insertionParent.addChild(polygon);
@@ -1291,6 +1293,7 @@ selection.items = [polygon];
     * [.cornerRadii](#Polygon-cornerRadii) : <code>!Array&lt;number&gt;</code>
     * [.hasRoundedCorners](#Polygon-hasRoundedCorners) : <code>boolean</code>
     * [.setAllCornerRadii(radius)](#Polygon-setAllCornerRadii)
+    * [.starRatio](#Polygon-starRatio) : <code>number</code>
 
 
 * * *
@@ -1360,6 +1363,24 @@ Set the corner radius of all corners of the Polygon to the same value.
 | Param | Type |
 | --- | --- |
 | radius | <code>number</code> |
+
+* * *
+
+<a name="Polygon-starRatio"></a>
+
+### polygon.starRatio : <code>number</code> (number >= 1 && <= 100)
+The star ratio percentage.
+
+Ratio, expressed as a percentage, used to determine how much of a star is this polygon,
+with values ranging between 1 and 100 percent.
+A value of 100 percent gives us a star that looks like a convex polygon, while a value of
+1 percent should give us something similar to lines drawn from the center.
+
+The star inner vertices are placed on a circle. The ratio is the percentage of that circle
+from the inscribed circle of the polygon formed from the star outer vertices.
+
+**Kind**: instance property of [<code>Polygon</code>](#Polygon)
+**Since**: XD 26
 
 * * *
 
