@@ -195,8 +195,8 @@ Represents the active document. Provides the document guid and current saved nam
 
 | Property   | Type              | Description                                        |
 | ---------- | ----------------- | ---------------------------------------------------|
-| name       | ?string           | Document name as displayed in the document window. |
-| guid       | ?string           | Unique document identifier that does not change.   |
+| name       | string            | Document name as displayed in the document window. |
+| guid       | string            | Unique document identifier that does not change.   |
 
 **Example**
 ```js
