@@ -10,7 +10,7 @@ The `application` module exposes APIs for exporting content, initiating edits fr
    * [.version](#module_application-version) : <code>string</code>
    * [.appLanguage](#module_application-appLanguage) : <code>string</code>
    * [.systemLocale](#module_application-systemLocale) : <code>string</code>
-   * [.activeDocument](#module_application-activeDocument) : <code>string</code>
+   * [.activeDocument](#module_application-activeDocument) : <code>DocumentInfo</code>
 
 
 ---
@@ -184,12 +184,19 @@ console.log("OS locale:", application.systemLocale); // e.g. "en_US"
 
 <a name="module_application-activeDocument"></a>
 
-### *application.activeDocument : <code>string</code>*
+### *application.activeDocument : <code>DocumentInfo</code>*
 
 Represents the active document. Provides the document guid and current saved name.
 
 **Kind**: static property of [<code>application</code>](#module_application)  
 **Read only**: true  
+
+**Typedef DocumentInfo**
+
+| Property   | Type              | Description                                        |
+| ---------- | ----------------- | ---------------------------------------------------|
+| name       | string            | Document name as displayed in the document window. |
+| guid       | string            | Unique document identifier that does not change.   |
 
 **Example**
 ```js
