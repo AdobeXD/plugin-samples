@@ -1,5 +1,14 @@
 # Change Log
 
+XD Release 25.1.12 (December 2019)
+-------------------------------------
+
+XD 25 is a minor bug-fix release with no new features for end users. But it adds two small improvements for plugins:
+
+* New [`application.activeDocument` API](./reference/application.md#module_application-activeDocument) providing information about the document.
+* Fixed bug where `scenegraph.root.guid` did not return a valid guid; it now returns the same value as `application.activeDocument.guid`.
+
+
 XD Release 24.0.22 (November 2019)
 -------------------------------------
 
@@ -71,7 +80,7 @@ After a stabilization period, plugins using panel UI are now published in the Pl
 ### Fixes and improvements
 
 * Fixed bugs related to `editDocument()` usage (also fixed in XD 21.1.12).
-* PUT/POST requests on Windows were including an unwanted `Transfer-Encoding` header, which interfered with uploading data to services like Amazon S3.
+* PUT/POST requests on Windows were including an unwanted `Transfer-Encoding` header, which interfered with uploading data to services like Amazon S3 (e.g. giving you errors related to `Content-Length`).
 * Plugins can now copy text to the clipboard in response to a panel UI DOM event without needing to call `editDocument()`.
 
 

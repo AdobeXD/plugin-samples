@@ -186,22 +186,26 @@ console.log("OS locale:", application.systemLocale); // e.g. "en_US"
 
 ### *application.activeDocument : <code>DocumentInfo</code>*
 
-Represents the active document. Provides the document guid and current saved name.
+Information about the document which this instance of the plugin is attached to.
+
+> **Tip**
+> _This does **not** indicate the frontmost "active" document window in the XD application._
+> In XD, each document window [loads a separate copy of your plugin](./core/lifecycle.md#plugin-loading). When a given instance of your plugin calls this API, you will always receive information about the document that this instance of the plugin is attached to, even if it's not the active window.
 
 **Kind**: static property of [<code>application</code>](#module_application)  
 **Read only**: true  
 
 **Typedef DocumentInfo**
 
-| Property   | Type              | Description                                        |
-| ---------- | ----------------- | ---------------------------------------------------|
-| name       | string            | Document name as displayed in the document window. |
-| guid       | string            | Unique document identifier that does not change.   |
+| Property   | Type       | Description                                         |
+| ---------- | ---------- | --------------------------------------------------- |
+| name       | string     | Document name as displayed in the titlebar. For untitled documents, this will be a localized string such as "Untitled-1." |
+| guid       | string     | *Semi*-unique document identifier. Duplicating an .xd file on disk will result in two files with the same GUID. Duplicating a document via "Save As" will change its GUID; thus two *cloud* documents will never have the same GUID. The GUID of an Untitled document doesn't change when it is saved for the first time. <br><br>This returns the same value as `scenegraph.root.guid`. |
 
 **Example**
 ```js
-var application = require("application");
+let application = require("application");
 let documentInfo = application.activeDocument;
-console.log(“Document title: ” + documentInfo.name);
-console.log(“Document unique Id: ” + documentInfo.guid);
+console.log("Document title: " + documentInfo.name);
+console.log("Document ID: " + documentInfo.guid);
 ```

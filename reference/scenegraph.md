@@ -167,6 +167,8 @@ Base class of all scenegraph nodes. Nodes will always be an instance of some _su
 ### *sceneNode.guid : <code>string</code>*
 Returns a unique identifier for this node that stays the same when the file is closed & reopened, or if the node is moved to a different part of the document. Cut-Paste will result in a new guid, however.
 
+The GUID of the [root node](#module_scenegraph-root) changes if the document is duplicated via Save As. See [`application.activeDocument.guid`](./application.md#module_application-activeDocument) for details.
+
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 **Read only**: true
 
