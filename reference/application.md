@@ -10,7 +10,7 @@ The `application` module exposes APIs for exporting content, initiating edits fr
    * [.version](#module_application-version) : <code>string</code>
    * [.appLanguage](#module_application-appLanguage) : <code>string</code>
    * [.systemLocale](#module_application-systemLocale) : <code>string</code>
-   * [.activeDocument](#module_application-activeDocument) : <code>DocumentInfo</code>
+   * [.activeDocument](#module_application-activeDocument) : <code>!DocumentInfo</code>
 
 
 ---
@@ -184,7 +184,7 @@ console.log("OS locale:", application.systemLocale); // e.g. "en_US"
 
 <a name="module_application-activeDocument"></a>
 
-### *application.activeDocument : <code>DocumentInfo</code>*
+### *application.activeDocument : <code>!DocumentInfo</code>*
 
 Information about the document which this instance of the plugin is attached to.
 

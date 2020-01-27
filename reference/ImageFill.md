@@ -31,6 +31,7 @@ selection.items[0].fill = fill;
     * [.isLinkedContent](#ImageFill-isLinkedContent) : <code>boolean</code>
 
 
+<a name="new_ImageFill_new"></a>
 ## ImageFill()
 
 | Param | Type | Description |

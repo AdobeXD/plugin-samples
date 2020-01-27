@@ -190,7 +190,7 @@ specifies a `triggerNode` and the result of getting [`triggerNode.triggeredInter
 
 May include interactions that are impossible to trigger because the trigger node (or one of its ancestors) has `visible` = false.
 
-Note: currently, this API excludes all of the document's keyboard/gamepad, hover, and state-transition interactions.
+Note: currently, this API excludes all of the document's keyboard/gamepad, hover, and component state-transition interactions.
 
 **Kind**: static property of [<code>interactions</code>](#module_interactions)
 **Read only**: true
