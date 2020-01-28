@@ -2,78 +2,89 @@
 
 Bugs happen! In this tutorial, you will learn how to debug your Adobe XD plugin.
 
-## Prerequisite
+### Prerequisite
 
 At least one plugin in your `develop` folder (you can create one using our [Quick Start tutorial](/tutorials/quick-start)).
 
+### Debugging Options
 
-## Debugging Steps
+There are two ways you can debug an XD plugin:
 
-During development, if your plugin is misbehaving, there are few things you can do to investigate the problem.
-
-### 1. Look for errors in the developer console
-
-You can see error messages your plugin may be causing with the XD developer console.
-
-The developer console can be opened from the _Plugins_ menu: _Plugins > Development > Developer Console_.
+* For **quick, simple debugging**, [use the Developer Console built into XD](#quick-debugging-with-developer-console)
+* For **in-depth debugging**, set up your plugin for [debugging with Chrome DevTools](#debugging-with-chrome-devtools-beta) _(beta)_
 
 
-### 2. Try reloading the plugins
+## Quick debugging with Developer Console
 
-You can reload all plugins in your `develop` folder from the _Plugins_ menu: _Plugins > Development > Reload Plugins_.
+### 1. Check the Developer Console
 
-There's also a handy keyboard shortcut:
+In XD, click _Plugins > Development > Developer Console_.
+
+This displays information similar to what you'd find in the JS debugger's console view:
+* Any `console.log()` output from your plugin
+* Any error messages from XD due to plugin misbehavior, or failure to load a plugin
+* Stack traces if your code throws an uncaught exception
+
+The console output for _all_ installed XD plugins is mixed together in one single view here.
+
+### 2. Reload your plugin after making fixes
+
+You can easily iterate on your plugin code without heaving to restart XD. Click _Plugins > Development > Reload Plugins_ to reload all plugins in your `develop` folder. This will reflect any changes in [manifest.json](/reference/structure/manifest.md) in addition to any changes to your JS code.
+
+There's also a handy keyboard shortcut to make reloading easier:
 
 | Platform      | Keyboard shortcut  |
 | ------------- | -------------      |
 | macOS         | Shift-Cmd-R        |
 | Windows       | Ctrl-Shift-R       |
 
-If there are any errors blocking the plugin from loading, they will appear in the developer console on reload:
+If there are any errors blocking the plugin from loading, they will appear in the Developer Console on reload:
 
-![reload-error.png](/images/reload-error.png)
+![Error during reload](/images/reload-error.png)
 
-### 3. Try logging messages to the developer console
 
-The example code below does not appear to be creating the "Hello!" text as expected.
+## Debugging with Chrome DevTools _(beta)_
 
-Let's try adding a "start message" and an "end message" into `sayHello()` to double-check that the code is starting and running all the way to the end:
+### 1. Enable debugging on your plugin
 
-```js
-function sayHello(selection) {
-  console.log("sayHello started!");         // log a message
+Navigate to the root folder of your plugin and **create a `debug.json` file**:
 
-  const el = new Text();
-  el.text = "Hello!";
-  el.styleRanges = [
-    {
-      length: el.text.length,
-      fill: new Color("#FFFFFF")
-    }
-  ];
-
-  selection.insertionParent.addChild(el);
-  el.moveInParentCoordinates(100, 100);
-
-  console.log("sayHello ran to the end!");  // log a message
+```json
+{
+    "port": 9345,
+    "breakOnStart": false
 }
 ```
 
-Your `console.log` messages will appear in the developer console:
+* Debugging is only supported for plugins in the **`develop` folder** (not plugins installed from the Plugin Manager UI).
+* Specify any port number you want.
+* Advanced: Set `breakOnStart` to true if you want the debugger to immediately pause on the first line of code in your plugin the moment it starts loading. This is useful since you won't have a chance to open DevTools _before_ this moment to set breakpoints before that initial code runs.
 
-![start-message](/images/start-message.png)
+### 2. Launch Chrome DevTools
 
-It looks like the function is running... maybe there is another problem.
+1. Windows only: _before_ launching XD, open an admin command prompt and run `CheckNetIsolation LoopbackExempt -is -n="Adobe.CC.XD.adky2gkssdxte"` -- do this _each time_ you want to debug a plugin.
+2. Open Google Chrome and navigate to **`chrome://inspect`** _(you must use Chrome)_
+3. One-time setup: ensure "Discover Network Targets" is enabled. Click the Configure button next to this and add `localhost:9345` (or whatever port number your `debug.json` file used).
+4. Click the "inspect" link under your plugin's ID.
 
-![wrong-color](/images/wrong-color.png)
+### Beta: What works, what doesn't
 
-Oops, the fill color set by the plugin is `#FFFFFF`, which is white: the same color as this artboard's background.
+Currently, you **can**...
+* Set breakpoints, pause & step through code, inspect the values of variables
+* View objects and run code in the Console view
+* View and edit the DOM structure of your plugin's UXP UI
 
-You can verify this with a `console.log` message:
+Most other DevTools features are not supported and may behave erratically if you attempt to use them.
 
-```js
-console.log("el fill color =" + el.fill);  // OUTPUT HERE
-```
+**Important caveats:**
+* XD may be unstable while debugging a plugin. Don't debug when you have important XD documents open.
+* Error messages are often _missing_ from the DevTools Console. Use the Developer Console within XD (see "Quick debugging" above) to be sure you are not missing any important information.
+* XD will be partially frozen while paused on a JS breakpoint. Don't try to interact with XD while paused.
+* You may see a blank white panel to the left of the DevTools UI. Ignore this, as it does nothing.
+* If debugging exposes any private fields and methods, do not attempt to use them. Plugins referring to private APIs will be rejected or removed from XD's plugin listing.
+
+Read the [known issues](/known-issues.md#debugging) for more details.
+
 
 ## Next Steps
 

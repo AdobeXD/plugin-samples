@@ -1,5 +1,44 @@
 # Change Log
 
+XD Release 26.0.12 (January 2020)
+-------------------------------------
+
+### Drag & drop
+UXP now supports the [HTML5 Drag & Drop specification](https://html.spec.whatwg.org/multipage/dnd.html) for _some specific use cases_:
+
+* **Drag & drop within your plugin's UI**
+    * On the drag source in your UI, set the `draggable` attribute _and_ define a `dragstart` event handler that stores whatever data you want via `dataTransfer.setData()`.
+    * On the drop target in your UI, defined `dragenter`, `dragover`, and `drop` event handlers that react appropriately.
+* **Drag from plugin panel UI into XD document**
+    * Only bitmap images, SVG content, or text can be dropped into the document.
+    * Provide the mimetype `text/uri-list` and populate it only with local file paths (see [`File.nativePath`](./reference/uxp/module/storage.md#module-storage-entry-nativepath)) and/or `data:` image URIs.
+    * This will behave exactly the same as if the user had dropped files onto XD -- dropping an image onto a shape will use it as a mask, dropping multiline text onto a Repeat Grid text node will populate each grid cell with each line from the text content, etc.
+* It is not yet supported to drag content _onto_ your plugin from an outside source (e.g. dropping files on your plugin UI, or dragging images from another app into your plugin UI).
+
+For more, [see this **sample plugin code**](https://github.com/AdobeXD/plugin-samples/tree/shotts/xd-26-prerelease/ui-panel-simple-drag-and-drop).
+
+### Debugging with Chrome DevTools _(beta)_
+You can now use the Chrome DevTools UI (CDT) to debug your JS code -- and _to a limited extent_, inspect your UI DOM structure. **Read the updated [debugging tutorial](./tutorials/debugging/index.md)** for details.
+
+**What works:**
+* Set breakpoints, pause & stop through code, inspect the values of variables
+* View objects and run code in the Console view
+* View and edit the "HTML" DOM structure of your plugin's UXP UI
+
+**Important caveats:**
+* XD may be unstable while debugging a plugin. Don't debug when you have important XD documents open.
+* If you leave CDT on the Elements view, XD will crash the next time you open it. If this happens, keep CDT open after XD crashes and switch to a different tab. Then close CDT, restart XD, and begin debugging again.
+* Debugging on Windows requires some extra steps run with admin rights -- see tutorial for details.
+* Many features in the Elements tab do not work. You can view DOM structure, and view limited CSS information but not edit CSS rules. The "Select an element" button does nothing.
+* Error messages are often _missing_ from the Console view. Use the _Plugins > Development > Developer Console_ view in XD to be sure you are not missing any important information.
+* Other DevTools features such as the Network or Profiling tabs are not supported and may behave erratically if you attempt to use them.
+* XD will be partially frozen while paused on a JS breakpoint. Don't try to interact with XD while paused.
+* You may see a blank white panel to the left of the DevTools UI. Ignore this, as it does nothing.
+
+### Other API updates
+* Polygon scenenodes can now take on a star shape - see [`Polygon.starRatio`](./reference/scenegraph.md#Polygon-starRatio)
+
+
 XD Release 25.1.12 (December 2019)
 -------------------------------------
 
