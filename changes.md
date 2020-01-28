@@ -15,7 +15,7 @@ UXP now supports the [HTML5 Drag & Drop specification](https://html.spec.whatwg.
     * This will behave exactly the same as if the user had dropped files onto XD -- dropping an image onto a shape will use it as a mask, dropping multiline text onto a Repeat Grid text node will populate each grid cell with each line from the text content, etc.
 * It is not yet supported to drag content _onto_ your plugin from an outside source (e.g. dropping files on your plugin UI, or dragging images from another app into your plugin UI).
 
-For more, [see this **sample plugin code**](https://github.com/AdobeXD/plugin-samples/tree/shotts/xd-26-prerelease/ui-panel-simple-drag-and-drop).
+For more, [see this **sample plugin code**](https://github.com/AdobeXD/plugin-samples/tree/master/ui-panel-simple-drag-and-drop).
 
 ### Debugging with Chrome DevTools _(beta)_
 You can now use the Chrome DevTools UI (CDT) to debug your JS code -- and _to a limited extent_, inspect your UI DOM structure. **Read the updated [debugging tutorial](./tutorials/debugging/index.md)** for details.
