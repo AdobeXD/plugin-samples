@@ -89,6 +89,12 @@
 - Interactive elements do not support `Pointer%` events
 - `keypress` and `keyup` are not currently supported on macOS.
 
+### Drag & Drop
+
+- `drag` and `dragexit` are not supported, although other HTML5 drag/drop events do work.
+- Images and text are not implicitly draggable, unlike in HTML. You must provide a `dragstart` handler that calls `event.dataTransfer.setData()`.
+- Dragging files or other content _onto_ your plugin UI from an outside source is not supported.
+
 ## Network I/O
 
 - On macOS, it is not possible to use self-signed certificates with secure Websockets.
@@ -100,3 +106,18 @@
 ## File I/O
 
 - `Blob` is not supported. Use `ArrayBuffer` instead.
+
+## Debugging
+
+* XD may be unstable while debugging a plugin. Don't debug when you have important XD documents open.
+* Debugging on Windows requires some extra steps run with admin rights -- see [tutorial](/tutorials/debugging/index.md) for details.
+* Elements tab:
+    - If you leave CDT on the Elements tab, XD will crash the next time you open it. If this happens, keep CDT open after XD crashes and switch to a different tab. Then close CDT, restart XD, and begin debugging again.
+    - The CSS pane on the right is missing some data and cannot be used to edit CSS.
+    - Selecting/hovering elements does not highlight the corresponding region in the XD UI.
+    - The "Select an element" button does nothing.
+* Error messages are often missing from the Console view. Use the _Plugins > Development > Developer Console_ view in XD to be sure you are not missing any important information.
+* Other DevTools features such as the Network or Profiling tabs are not supported and may behave erratically if you attempt to use them.
+* XD will be partially frozen while paused on a JS breakpoint. Don't try to interact with XD while paused.
+* You may see a blank white panel to the left of the DevTools UI. Ignore this, as it does nothing.
+* If debugging exposes any private fields and methods, do not attempt to use them. Plugins referring to private APIs will be rejected or removed from XD's plugin listing.

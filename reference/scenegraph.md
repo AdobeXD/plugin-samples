@@ -1263,25 +1263,34 @@ True if the Ellipse is a circle (i.e., has a 1:1 aspect ratio).
 **Kind**: class
 **Extends**: [<code>GraphicNode</code>](#GraphicNode)
 
-Leaf node shape that is a polygon with 3 or more sides. May also have rounded corners. The sides are not necessarily all equal in length:
+Leaf node shape that is either a convex polygon _or_ a star shape. May have rounded corners. The sides are not necessarily all equal in length:
 this is true only when the Polygon's width and height matches the aspect ratio of a regular (equilateral) polygon with the given number of
 sides.
 
-When unrotated, the Polygon always has its bottommost side as a perfectly horizontal line - with the exception of the 4-sided Polygon, which
+When unrotated, a non-star Polygon always has its bottommost side as a perfectly horizontal line - with the exception of the 4-sided Polygon, which
 is a diamond shape instead.
 
 Like all shape nodes, has no size, fill, or stroke by default unless you set one.
 
 **Example**
 ```js
-// Add a red triangle to the document and select it
+// Add a red triangle to the document
 var polygon = new Polygon();
 polygon.cornerCount = 3;
 polygon.width = 50;
 polygon.height = 100;
 polygon.fill = new Color("red");
 selection.insertionParent.addChild(polygon);
-selection.items = [polygon];
+
+// Add a blue 5-pointed star with rounded corners
+var polygon = new Polygon();
+polygon.cornerCount = 5;
+polygon.starRatio = 55;
+polygon.setAllCornerRadii(4);
+polygon.width = 100;
+polygon.height = 95;
+polygon.fill = new Color("blue");
+selection.insertionParent.addChild(polygon);
 ```
 
 * [Polygon](#Polygon)
@@ -1291,6 +1300,7 @@ selection.items = [polygon];
     * [.cornerRadii](#Polygon-cornerRadii) : <code>!Array&lt;number&gt;</code>
     * [.hasRoundedCorners](#Polygon-hasRoundedCorners) : <code>boolean</code>
     * [.setAllCornerRadii(radius)](#Polygon-setAllCornerRadii)
+    * [.starRatio](#Polygon-starRatio) : <code>number</code>
 
 
 * * *
@@ -1314,12 +1324,14 @@ selection.items = [polygon];
 ### polygon.cornerCount : <code>number</code> (integer &gt;= 3)
 **Default**: 3
 
-Number of corners (vertices), and also therefore number of sides.
+For a non-star shape, defines the number of corners (vertices), and also therefore number of sides. For a star shape, defines the
+number of star points -- there will be twice as many corners in total (the tips of the points _plus_ all the inside corners
+between the points).
 
-Setting cornerCount on an existing Polygon behaves in one of two different ways:
+Setting `cornerCount` on an existing Polygon behaves in one of two different ways:
 * If the shape's aspect ratio gives it equilateral sides, the sides remain equilateral while the size and aspect ratio of the
-  shape is changed to accomodate.
-* Otherwise, the size and aspect ratio of the shape remains unchanged.
+  shape are automatically changed as needed.
+* Otherwise, the size and aspect ratio of the shape remain unchanged.
 
 This matches how changing the corner count in XD's UI behaves.
 
@@ -1360,6 +1372,21 @@ Set the corner radius of all corners of the Polygon to the same value.
 | Param | Type |
 | --- | --- |
 | radius | <code>number</code> |
+
+* * *
+
+<a name="Polygon-starRatio"></a>
+
+### polygon.starRatio : <code>number</code> (1.0 to 100.0)
+**Default**: `100`
+**Since**: XD 26
+
+Determines how prominent the shape's star points are. The default value of 100 is a normal convex polygon (not a star at all).
+For a star shape, consider that the outer vertices at the tips of the points all lie on a circle and the inner vertices
+between the points all lie on a second, smaller circle. The `starRatio` is the ratio of the smaller circle's diameter to the
+outer circle's diameter, expressed as a percentage.
+
+**Kind**: instance property of [<code>Polygon</code>](#Polygon)
 
 * * *
 
