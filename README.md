@@ -55,6 +55,7 @@ For each sample, be sure to read the README as well as code comments. Note that 
 | ui-panel-hello-react             | UI                                              | Makes real-time changes to the color of the selected object based on user's input in the panel plugin                         | 21.0          |
 | ui-panel-scaffold             | UI                                              | Demonstrates the structure of a panel plugin. There is no functionality of this plugin                        | 21.0          |
 | ui-panel-show-renditions             | UI                                        | Creates renditions of the selected items and display them in the panel                        | 21.0          |
+| ui-panel-simple-drag-and-drop        | UI, Scenegraph |  Demonstrates drag and drop on to XD canvas | 26.0 |
 | ui-panel-typography-react             | UI                                        | Demonstrates various typography inside the panel UI                        | 21.0          |
 | ui-playground                       | UI                                              | Shows all the controls in a playground                                                                                 | 13.0          |
 | ui-rename-artoboards                | UI                                              | Shows a sample UI for a plugin that renames artboards                                                                  | 13.0          |
