@@ -136,6 +136,7 @@ Base class of all scenegraph nodes. Nodes will always be an instance of some _su
     * *[.selected](#SceneNode-selected) : <code>boolean</code>*
     * *[.visible](#SceneNode-visible) : <code>boolean</code>*
     * *[.opacity](#SceneNode-opacity) : <code>number</code>*
+    * *[.blendMode](#SceneNode-blendMode) : <code>string</code>*
     * *[.transform](#SceneNode-transform) : <code>!Matrix</code>*
     * *[.translation](#SceneNode-translation) : <code>!{x:number, y:number}</code>*
     * *[.rotation](#SceneNode-rotation) : <code>number</code>*
@@ -253,6 +254,21 @@ False if this node has been hidden by the user (eyeball toggle in Layers panel).
 
 ### *sceneNode.opacity : <code>number</code>* (0.0 - 1.0)
 Node's opacity setting. The overall visual opacity seen in the document is determined by combining this value with the opacities of the node's entire parent chain, as well as the opacity settings of its fill/stroke properties if this is a leaf node.
+
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+
+* * *
+
+<a name="SceneNode-blendMode"></a>
+
+### *sceneNode.blendMode : <code>string</code>*
+**Default**: `BLEND_MODE_PASSTHROUGH`
+**Since**: XD 27
+
+Blend mode determines how a node is composited onto the content below it.
+
+_Note:_ for leaf nodes (GraphicNode), the XD UI may show leaf nodes as blend mode "Normal" even when the underlying value is `BLEND_MODE_PASSTHROUGH`. This is because "Pass Through" and "Normal" are essentially equivalent for leaf nodes -- they only differ
+in appearance when a node has children.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 
