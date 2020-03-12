@@ -13,7 +13,10 @@ The `interactions` module and related APIs provide _read only_ information about
 * Properties that affect Artboard scrolling behavior: Artboard [`viewportHeight`](./scenegraph.md#Artboard-viewportHeight) and
   node [`fixedWhenScrolling`](./scenegraph.md#SceneNode-fixedWhenScrolling).
 
-**Since**: XD 19
+> **Tip**
+> Interactions are a **fast-changing area** in XD. APIs here have a higher likelihood of becoming deprecated, or lagging behind new XD features, than other parts of XD's plugin APIs.
+
+**Since**: XD 19+ (some APIs added later)
 
 **Example**
 ```js
@@ -190,7 +193,8 @@ specifies a `triggerNode` and the result of getting [`triggerNode.triggeredInter
 
 May include interactions that are impossible to trigger because the trigger node (or one of its ancestors) has `visible` = false.
 
-Note: currently, this API excludes all of the document's keyboard/gamepad, hover, and component state-transition interactions.
+> **Tip**
+> Currently, this API excludes some types of interactions: keypress/gamepad, scrolling, hover, component state transitions, or non-speech audio playback.
 
 **Kind**: static property of [<code>interactions</code>](#module_interactions)
 **Read only**: true

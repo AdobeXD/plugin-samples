@@ -92,6 +92,7 @@ These classes are not scenenode types, but are used extensively in the scenegrap
 
 * [selection](#module_scenegraph-selection) : \![<code>Selection</code>](./selection.md)
 * [root](#module_scenegraph-root) : \![<code>RootNode</code>](#RootNode)
+* [getNodeByGUID(guid)](#module_scenegraph-getNodeByGUID) ⇒ `?SceneNode`
 
 
 * * *
@@ -105,7 +106,6 @@ Object representing the current selection state and [edit context](./core/edit-c
 **Read only**: true
 **Since**: XD 14
 
-
 * * *
 
 <a name="module_scenegraph-root"></a>
@@ -116,6 +116,37 @@ Root node of the current document's scenegraph. Also available as the second arg
 **Kind**: static property of [<code>scenegraph</code>](#module_scenegraph)
 **Read only**: true
 **Since**: XD 14
+
+* * *
+
+<a name="module_scenegraph-getNodeByGUID"></a>
+
+### *scenegraph.getNodeByGUID(guid)*
+**Since**: XD 28
+
+Returns the scenenode in this document that has the given [node GUID](#SceneNode-guid). Returns undefined if no such node exists connected
+to the scenegraph tree (detached/orphan nodes will not be found). This provides a fast way of persistently remembering a node across plugin
+operations and even across document open/closes.
+
+**Kind**: static method of [<code>scenegraph</code>](#module_scenegraph)
+**Returns**: `?SceneNode`
+
+| Param   | Type    | Description   |
+| ------- | ------- | ------------- |
+| guid    | string  | SceneNode GUID -- must be all lowercase, as returned by the [`guid` getter](#SceneNode-guid). |
+
+**Example**
+```js
+let node = scenegraph.selection.items[0];
+let guid = node.guid;
+
+// ...later on:
+let sameNode = scenegraph.getNodeByGUID(guid);
+if (sameNode) {
+    // ^ Always check if node still exists - user may have deleted it
+    console.log("Found node again!", sameNode);
+}
+```
 
 
 * * *
@@ -166,9 +197,13 @@ Base class of all scenegraph nodes. Nodes will always be an instance of some _su
 <a name="SceneNode-guid"></a>
 
 ### *sceneNode.guid : <code>string</code>*
-Returns a unique identifier for this node that stays the same when the file is closed & reopened, or if the node is moved to a different part of the document. Cut-Paste will result in a new guid, however.
+Returns a unique identifier for this node that stays the same when the file is closed & reopened, or if the node is moved to a different part of the document. Cut-Paste will result in a new GUID, however.
+
+The GUID is guaranteed unique _within_ the current document, but _other_ documents may contain the same GUID value. For example, if the user makes a copy of an XD file, both files will use the same GUIDs.
 
 The GUID of the [root node](#module_scenegraph-root) changes if the document is duplicated via Save As. See [`application.activeDocument.guid`](./application.md#module_application-activeDocument) for details.
+
+Node objects can be destroyed and recreated during operations such as Undo/Redo, so if you need to store a reference to a node even between operations in the _same_ session, it's best to store the GUID and then retrieve the node later via [`getNodeByGuid()`](#module_scenegraph-getNodeByGUID).
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 **Read only**: true
@@ -267,8 +302,16 @@ Node's opacity setting. The overall visual opacity seen in the document is deter
 
 Blend mode determines how a node is composited onto the content below it.
 
+One of: `SceneNode.BLEND_MODE_PASSTHROUGH`, `BLEND_MODE_NORMAL`, `BLEND_MODE_MULTIPLY`, `BLEND_MODE_DARKEN`, `BLEND_MODE_COLOR_BURN`, `BLEND_MODE_LIGHTEN`, `BLEND_MODE_SCREEN`, `BLEND_MODE_COLOR_DODGE`, `BLEND_MODE_OVERLAY`, `BLEND_MODE_SOFT_LIGHT`,
+`BLEND_MODE_HARD_LIGHT`, `BLEND_MODE_DIFFERENCE`, `BLEND_MODE_EXCLUSION`, `BLEND_MODE_HUE`, `BLEND_MODE_SATURATION`, `BLEND_MODE_COLOR`, `BLEND_MODE_LUMINOSITY`.
+
 _Note:_ for leaf nodes (GraphicNode), the XD UI may show leaf nodes as blend mode "Normal" even when the underlying value is `BLEND_MODE_PASSTHROUGH`. This is because "Pass Through" and "Normal" are essentially equivalent for leaf nodes -- they only differ
 in appearance when a node has children.
+
+**Example**
+```js
+node.blendMode = scenegraph.SceneNode.BLEND_MODE_LUMINOSITY;
+```
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 
@@ -504,7 +547,7 @@ is an [Interaction object](./interactions.md#Interaction) which describes a gest
 
 Note: If this node (or one of its ancestors) has `visible` = false, tap and drag interactions on it will not be triggered.
 
-Currently, this API excludes any keyboard/gamepad, hover, and component state-transition interactions on this node.
+Currently, this API excludes some types of interactions: keypress/gamepad, scrolling, hover, component state transitions, or non-speech audio playback.
 
 **Example**
 ```js

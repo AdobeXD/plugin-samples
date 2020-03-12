@@ -45,9 +45,10 @@ You can also access this object from the [`scenegraph.selection`](./scenegraph.m
     * [.itemsIncludingLocked](#selection-itemsIncludingLocked) : <code>!Array&lt;!SceneNode&gt;</code>
     * [.hasArtwork](#selection-hasArtwork) : <code>boolean</code>
     * [.hasArtboards](#selection-hasArtboards) : <code>boolean</code>
-    * [.editContext](#selection-editContext) : <code>!SceneNode</code>
     * [.insertionParent](#selection-insertionParent) : <code>!SceneNode</code>
     * [.focusedArtboard](#selection-focusedArtboard) : <code>?Artboard</code>
+    * [.editContext](#selection-editContext) : <code>!SceneNode</code>
+    * [.isInEditContext(node)](#selection-isInEditContext) ⇒ `boolean`
 
 
 * * *
@@ -116,27 +117,6 @@ True if the selection isn’t empty and consists of one or more Artboards. Never
 
 * * *
 
-<a name="selection-editContext"></a>
-
-### selection.editContext : <code>\![SceneNode](scenegraph.md#SceneNode)</code>
-The common ancestor node of all selected items - also the root node of the subtree containing the "[edit context](/reference/core/edit-context.md),"
-which is the scope in which selection and edit operations must occur for the current plugin command. The scope does not
-necessarily cover the entire subtree rooted at the editContext root node -- it may only cover a subset of this tree. See
-edit context documentation page for more details.
-
-If the user hasn't drilled into any container node, this value is the document root.
-
-The value of `editContext` does not change while your plugin is running. However, the `editContext` may change after your plugin
-operation ends:
-- If your plugin changes the value of `selection.items` to include fewer nodes, the edit context may be narrowed.
-- If your plugin has deleted nodes such that the current container is now empty, the edit context will pop up a level and the now-empty
-  container is automatically cleaned up.
-
-**Kind**: instance property of [<code>selection</code>](#selection)  
-**Read only**: true  
-
-* * *
-
 <a name="selection-insertionParent"></a>
 
 ### selection.insertionParent : <code>\![SceneNode](scenegraph.md#SceneNode)</code>
@@ -160,3 +140,39 @@ The artboard the user is currently most focused on (via recent selection or edit
 
 * * *
 
+<a name="selection-editContext"></a>
+
+### selection.editContext : <code>\![SceneNode](scenegraph.md#SceneNode)</code>
+The common ancestor node of all selected items - also the root node of the subtree containing the "[edit context](/reference/core/edit-context.md),"
+which is the scope in which selection and edit operations must occur for the current plugin command. The scope does not
+necessarily cover the entire subtree rooted at the editContext root node -- it may only cover a subset of this tree. See
+edit context documentation page for more details.
+
+If the user hasn't drilled into any container node, this value is the document root.
+
+The value of `editContext` does not change while your plugin is running. However, the `editContext` may change after your plugin
+operation ends:
+- If your plugin changes the value of `selection.items` to include fewer nodes, the edit context may be narrowed.
+- If your plugin has deleted nodes such that the current container is now empty, the edit context will pop up a level and the now-empty
+  container is automatically cleaned up.
+
+**Kind**: instance property of [<code>selection</code>](#selection)  
+**Read only**: true  
+
+* * *
+
+<a name="selection-isInEditContext"></a>
+
+### *selection.isInEditContext(node)*
+**Since**: XD 28
+
+Returns true if the node is accessible for editing in the scope of the current edit context.
+If false, the node cannot be edited given the user's current selection.
+Nodes that are currently selected are always in the current edit context.
+
+**Kind**: instance method of [<code>selection</code>](#selection)  
+**Returns**: `boolean`
+
+| Param  | Type    |
+| -------| ------- |
+| node   | !SceneNode |

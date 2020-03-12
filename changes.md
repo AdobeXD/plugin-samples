@@ -1,5 +1,21 @@
 # Change Log
 
+XD Release 28.0.12 (March 2020)
+-------------------------------------
+XD 28 is a minor update for plugin developers:
+
+* `SceneNode.BLEND_MODE_*` constants for use with the [`SceneNode.blendMode`](./reference/scenegraph.md#SceneNode-blendMode) property (which was introduced in XD 27).
+* Quickly look up a scenenode by its GUID with [`scenegraph.getNodeByGUID()`](./reference/scenegraph.md#module_scenegraph-getNodeByGUID).
+* Easily check if a scenenode is currently in scope for editing with [`isInEditContext()`](./reference/selection.md#selection-isInEditContext).
+
+### Known Issues
+* XD 28 introduces two new types of interaction actions: audio-file playback, and "scroll to" actions. Interactions using these features are not visible to plugins yet (*speech*
+  playback interactions *are* exposed though). See the [interactions API documentation](./reference/interactions.md#module_interactions-allInteractions) for a complete list of
+  which interaction types are & aren't exposed to plugins at this time.
+
+[Read more about XD 28 new features for end users on the Adobe blog](https://theblog.adobe.com/xd-march-2020-audio-prototyping-anchor-links-more).
+
+
 XD Release 27.0.12 (February 2020)
 -------------------------------------
 XD 27 is a minor update for plugin developers, with one new added API:
