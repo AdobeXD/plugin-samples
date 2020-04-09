@@ -4,21 +4,15 @@ While plenty of XD plugins are perfectly suited to run like headless scripts, ma
 
 The tutorials contained in this section will get you on your way to building plugin UI well-suited for XD utilizing the [Plugin Toolkit](https://github.com/AdobeXD/plugin-toolkit) library. Before continuing, please ensure that you install the tooklit in your project, as follows:
 
-* Click the "Clone or Download" button on the right side of the [Plugin Toolkit](https://github.com/AdobeXD/plugin-toolkit) page
-* Uncompress the zip file after the download completes
-* Copy the `lib` folder to your plugin project
+- Click the "Clone or Download" button on the right side of the [Plugin Toolkit](https://github.com/AdobeXD/plugin-toolkit) page
+- Uncompress the zip file after the download completes
+- Copy the `lib` folder to your plugin project
 
 Now you're ready to display simple messages to your users!
 
-* [How to show an alert](./how-to-show-an-alert/index.md)
-* [How to ask user for confirmation](./how-to-ask-user-for-confirmation/index.md)
-
+- [How to show an alert](./how-to-show-an-alert/index.md)
+- [How to ask user for confirmation](./how-to-ask-user-for-confirmation/index.md)
 
 ## More complex UI
 
-There are a lot of ways to render more complex UI. You can review the following material to learn more:
-
-* [User Interface Concepts](/reference/ui/index.md)
-* [User Interface elements](/reference/ui/elements/index.md)
-* [User Interface Layout](/reference/ui/layout/index.md)
-* [All about Dialogs](/reference/ui/dialogs/index.md)
+There are a lot of ways to render more complex UI. Check out our [plugin design documentation](../design/index.md) to learn more about UX patterns and creating UI.
