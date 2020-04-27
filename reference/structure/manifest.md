@@ -46,7 +46,7 @@ The top level of the manifest JSON object contains high-level information about 
 
 Key path | Type | Description | Required
 ---------|------|-------------|---------
-`id`     | `string` | Unique identifier for your plugin. You can get your unique ID on the [Adobe I/O Console](https://console.adobe.io/plugins).| Develop / Publish
+`id`     | `string` | Unique identifier for your plugin. You can get your unique ID on the [Adobe I/O Console](https://console.adobe.io/projects).| Develop / Publish
 `name`   | `string` | The name should be 3 - 45 characters. <br> **Note:** We recommend your plugin name matches the _project name_ you created when getting your plugin ID from the I/O Console. | Develop / Publish
 `version`| `string` | Version number of your plugin in `x.y.z` format. <br>Version must be three segments and each version component must be between `0` and `99`. | Develop / Publish
 `icons` | `array<object>` | Icons displayed in XD's plugins panel. <br> PNG, JPG/JPEG formats are supported and the max file size for each icon is 1MB. <br> Two sizes are required - `[24, 48]`. <br> **Note:** Icons for XD's Plugin Manager are uploaded directly via the I/O Console, not included within your plugin itself. See our ["Publishing your plugin" guide](../../distribution/how-to-submit-to-plugin-manager.md) to learn more. | Publish

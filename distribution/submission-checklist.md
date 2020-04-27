@@ -9,7 +9,7 @@ This document will give you an idea of what we’re checking for during the revi
 
 ## Plugin listing information
 
-Plugin listing information is the content that users will see in the XD Plugin Manager when browsing your listing. Unless otherwise noted, this is information that you will input and maintain on the [Adobe I/O Console](https://console.adobe.io/plugins).
+Plugin listing information is the content that users will see in the XD Plugin Manager when browsing your listing. Unless otherwise noted, this is information that you will input and maintain on the [Adobe I/O Console](https://console.adobe.io/projects).
 
 In this section, we’ll go over what we’re checking for to ensure that your plugin listing is complete, correct, and in line with Adobe’s standards.
 

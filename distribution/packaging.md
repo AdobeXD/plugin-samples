@@ -24,7 +24,7 @@ If you plan to distribute via the XD plugin manager, your .ZIP file **must be le
 
 > **Danger**
 >
-> You should not compress the plugin's _parent_ folder. Instead, compress the _contents_ of the parent folder. Failure to do so will likely cause a rejection when submitting to the [I/O Console](https://console.adobe.io/plugins).
+> You should not compress the plugin's _parent_ folder. Instead, compress the _contents_ of the parent folder. Failure to do so will likely cause a rejection when submitting to the [I/O Console](https://console.adobe.io/projects).
 
 
 ### 2. Rename the .ZIP extension to .XDX

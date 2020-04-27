@@ -34,7 +34,7 @@ All plugins are reviewed by our CC Integrations Review team. Make sure to thorou
 
 ### 2. Begin your submission
 
-To begin the submission for your plugin, visit the [Developer Console](https://console.adobe.io/plugins) and select your plugin from your list of plugin projects.
+To begin the submission for your plugin, visit the [Developer Console](https://console.adobe.io/projects) and select your plugin from your list of plugin projects.
 
 This will take you to your plugin's "Project Overview" page, which shows your plugin ID, a download link for your starter project, and more. 
 
