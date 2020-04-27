@@ -21,8 +21,9 @@ At the end of the tutorial, we'll suggest some next steps for going deeper with 
 Before you start, you'll want to create a plugin project on the Adobe I/O Developer Console.
 
 1. [Go to the I/O Console and sign in or sign up](https://console.adobe.io/projects)
-1. Click "Create Plugin"
-1. Create a plugin project by giving it a project name and clicking "Create Plugin". Note that this project name is not public; it is only visible to you and can be changed directly on the Console later.
+1. Click "Create Empty Project"
+1. Create a plugin project by clicking "Add XD Plugin"
+1. Giving it a project name. Note that this project name is not public; it is only visible to you and can be changed directly on the Console later.
 1. On the following page, get the 8-character unique plugin ID in the "Plugin Details" section.
 1. Optionally on the same page, download the starter project, which contains a functioning Hello, World sample plugin.
 
