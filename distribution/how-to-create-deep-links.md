@@ -23,7 +23,7 @@ https://xd.adobelanding.com/en/xd-plugin-download/?
 
 These parameters are appended to the base URL:
 
-`name`- This parameter refers to your unique plugin ID which can be retrieved from the [Adobe I/O Console](https://console.adobe.io/plugins)
+`name`- This parameter refers to your unique plugin ID which can be retrieved from the [Adobe Developer Console](https://console.adobe.io/projects)
 
 ![Console displaying plugin ID](/images/console.png)
 
