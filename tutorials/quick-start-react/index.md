@@ -158,14 +158,14 @@ In the previous step, you created a file named `manifest.json`. Open that file a
 }
 ```
 
-Be sure to replace the `id` value with the unique plugin ID you get from the I/O Console.
+Be sure to replace the `id` value with the unique plugin ID you get from the Adobe Developer Console.
 
 ```json
 "id": "1234ABCD",
 ```
 
 > **Info**
-> Make sure to read [Quick Start tutorial](/tutorials/quick-start/index.md) to learn how to get your unique plugin ID from the I/O Console.
+> Make sure to read [Quick Start tutorial](/tutorials/quick-start/index.md) to learn how to get your unique plugin ID from the Adobe Developer Console.
 
 If you're curious about what each entry in the manifest means, [see the manifest documentation](/reference/structure/manifest.md), where you can also learn about all manifest requirements for a plugin to be published in the XD Plugin Manager.
 

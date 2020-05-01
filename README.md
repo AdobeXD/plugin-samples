@@ -36,9 +36,9 @@ XD plugins are used by designers around the world who expect great experiences. 
 
 **Manage your plugin project**
 
-Whether you’re getting your unique plugin ID, submitting your finished plugin for review, or updating your XD Plugin Manager listing, the I/O Developer Console is the place to manage your plugin project.
+Whether you’re getting your unique plugin ID, submitting your finished plugin for review, or updating your XD Plugin Manager listing, the Adobe Developer Console is the place to manage your plugin project.
 
-**[Visit the I/O console](https://console.adobe.io)**
+**[Visit the Adobe Developer Console](https://console.adobe.io)**
 
 <br />
 

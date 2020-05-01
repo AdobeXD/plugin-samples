@@ -42,14 +42,14 @@ The top level of the manifest JSON object contains high-level information about 
 > **Info**
 > Here are the definitions of the keywords in the "Required" column:
 > - Develop - required field for XD to run the plugin. If excluded, XD won't load the plugin
-> - Publish - required field for plugins to be submitted in the I/O Console and published in the Plugin Manager
+> - Publish - required field for plugins to be submitted in the Adobe Developer Console and published in the Plugin Manager
 
 Key path | Type | Description | Required
 ---------|------|-------------|---------
-`id`     | `string` | Unique identifier for your plugin. You can get your unique ID on the [Adobe I/O Console](https://console.adobe.io/projects).| Develop / Publish
-`name`   | `string` | The name should be 3 - 45 characters. <br> **Note:** We recommend your plugin name matches the _project name_ you created when getting your plugin ID from the I/O Console. | Develop / Publish
+`id`     | `string` | Unique identifier for your plugin. You can get your unique ID on the [Adobe Developer Console](https://console.adobe.io/projects).| Develop / Publish
+`name`   | `string` | The name should be 3 - 45 characters. <br> **Note:** We recommend your plugin name matches the _project name_ you created when getting your plugin ID from the Adobe Developer Console. | Develop / Publish
 `version`| `string` | Version number of your plugin in `x.y.z` format. <br>Version must be three segments and each version component must be between `0` and `99`. | Develop / Publish
-`icons` | `array<object>` | Icons displayed in XD's plugins panel. <br> PNG, JPG/JPEG formats are supported and the max file size for each icon is 1MB. <br> Two sizes are required - `[24, 48]`. <br> **Note:** Icons for XD's Plugin Manager are uploaded directly via the I/O Console, not included within your plugin itself. See our ["Publishing your plugin" guide](../../distribution/how-to-submit-to-plugin-manager.md) to learn more. | Publish
+`icons` | `array<object>` | Icons displayed in XD's plugins panel. <br> PNG, JPG/JPEG formats are supported and the max file size for each icon is 1MB. <br> Two sizes are required - `[24, 48]`. <br> **Note:** Icons for XD's Plugin Manager are uploaded directly via the Adobe Developer Console, not included within your plugin itself. See our ["Publishing your plugin" guide](../../distribution/how-to-submit-to-plugin-manager.md) to learn more. | Publish
 `host.app` | `string` | Indicates that this is a plugin for Adobe XD (currently, the only valid value here is `"XD"`). | Develop / Publish
 `host.minVersion` | `string` | Minimum required version of the host app (in `x.y` format) that can run this plugin. The lowest valid version for headless and modal plugins is `13.0`. The lowest valid version for panel plugins is `21.0`. <br> **Note:** The version number must be two segments. Typically, you'll leave the minor segment set to `0`, e.g. `16.0`. | Develop / Publish
 `host.maxVersion` | `string` | Maximum version of host app that can run this plugin. Same formatting as `host.minVersion`. | Optional

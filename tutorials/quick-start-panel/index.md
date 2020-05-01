@@ -16,11 +16,11 @@ At the end of the tutorial, we'll suggest some next steps for going deeper with 
 > **Info**
 > Complete code for this plugin can be found [on GitHub](https://github.com/AdobeXD/Plugin-Samples/tree/master/quick-start-panel).
 
-### 0. Get a plugin ID from the I/O Developer Console
+### 0. Get a plugin ID from the Adobe Developer Console
 
-Before you start, you'll want to create a plugin project on the Adobe I/O Developer Console.
+Before you start, you'll want to create a plugin project on the Adobe Adobe Developer Console.
 
-1. [Go to the I/O Console and sign in or sign up](https://console.adobe.io/projects)
+1. [Go to the Adobe Developer Console and sign in or sign up](https://console.adobe.io/projects)
 1. Click "Create Empty Project"
 1. Create a plugin project by clicking "Add XD Plugin"
 1. Give it a project name. Note that this project name is not public; it is only visible to you and can be changed directly on the Console later.
@@ -91,7 +91,7 @@ In the previous step, you created a file named `manifest.json`. Open that file a
 }
 ```
 
-Be sure to replace the `id` value with the unique plugin ID you got from the I/O Console in the first step:
+Be sure to replace the `id` value with the unique plugin ID you got from the Adobe Developer Console in the first step:
 
 ```json
 "id": "1234ABCD",

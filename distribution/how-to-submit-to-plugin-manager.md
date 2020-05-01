@@ -20,9 +20,9 @@ In order to make your plugin available in the XD Plugin Manager, you'll need to 
 
 ## Submit your plugin
 
-You can submit your plugin for review through the I/O Developer Console, the same place you got your [unique plugin ID for your manifest](/reference/structure/manifest.md).
+You can submit your plugin for review through the Adobe Developer Console, the same place you got your [unique plugin ID for your manifest](/reference/structure/manifest.md).
 
-On the I/O Console, you can provide your packaged plugin. The I/O Console will automatically validate your package and its [manifest file](/reference/structure/manifest.md). Then, you will be asked to provide more information about your plugin on the Console. 
+On the Adobe Developer Console, you can provide your packaged plugin. The Adobe Developer Console will automatically validate your package and its [manifest file](/reference/structure/manifest.md). Then, you will be asked to provide more information about your plugin on the Console. 
 
 If everything looks good, you can then submit your plugin and our CC Integrations Review team will review it. 
 
@@ -73,7 +73,7 @@ Finally, if you have a message for our reviewers, write it here.
 
 Once you have provided all required information about your plugin, including icons and screenshots, you will be asked to attach your plugin package. Make sure to properly [package your plugin](/distribution/packaging.md) into an `.xdx` file. 
 
-When your plugin passes all validation checks by the I/O Console, the "Submit" button will be activated for you to click.
+When your plugin passes all validation checks by the Adobe Developer Console, the "Submit" button will be activated for you to click.
 
 Congratulations on your submission! We can't wait to have a look at what you've created!
 
