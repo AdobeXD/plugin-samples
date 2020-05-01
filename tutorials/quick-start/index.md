@@ -18,7 +18,7 @@ At the end of the tutorial, we'll suggest some next steps for going deeper with 
 
 ### 0. Get a plugin ID from the Adobe Developer Console
 
-Before you start, you'll want to create a plugin project on the Adobe Adobe Developer Console.
+Before you start, you'll want to create a plugin project on the Adobe Developer Console.
 
 1. [Go to the Adobe Developer Console and sign in or sign up](https://console.adobe.io/projects)
 1. Click "Create Empty Project"
