@@ -119,6 +119,7 @@
           * [Shadow](./reference/Shadow.md)
           * [Blur](./reference/Blur.md)
           * [selection](./reference/selection.md)
+          * [PerPluginStorage](./reference/PerPluginStorage.md)
         * [application](./reference/application.md)
         * [assets](./reference/assets.md)
         * [clipboard](./reference/clipboard.md)

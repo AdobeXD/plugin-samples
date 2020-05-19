@@ -24,6 +24,7 @@ selection.items[0].fill = fill;
 * [ImageFill](#ImageFill)
     * [new ImageFill(fileOrDataURI)](#new_ImageFill_new)
     * [.clone()](#ImageFill-clone) ⇒ <code>!ImageFill</code>
+    * [.assetId](#ImageFill-assetId) : <code>string</code>
     * [.scaleBehavior](#ImageFill-scaleBehavior) : <code>string</code>
     * [.naturalWidth](#ImageFill-naturalWidth) : <code>number</code>
     * [.naturalHeight](#ImageFill-naturalHeight) : <code>number</code>
@@ -48,6 +49,19 @@ Returns a new copy of this ImageFill.
 
 **Kind**: instance method of [<code>ImageFill</code>](#ImageFill)
 **Returns**: <code>!ImageFill</code>
+
+
+* * *
+
+<a name="ImageFill-assetId"></a>
+
+### *imageFill.assetId : <code>string</code>*
+**Since**: XD 29
+
+A unique identifier for the image asset used by this ImageFill. May be shared by other ImageFills, including those with different cropping, size,
+rotation, or mirroring. If identical images are imported into XD from separate sources, they may have different `assetId`s however.
+
+**Kind**: instance property of [<code>ImageFill</code>](#ImageFill)
 
 
 * * *

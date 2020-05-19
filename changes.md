@@ -1,5 +1,48 @@
 # Change Log
 
+XD Release 29.0.32 (May 2020)
+-------------------------------------
+
+### New API features
+* **[Read & modify Responsive Resize constraints](./reference/scenegraph.md#SceneNode-horizontalConstraints)**
+* **[Set metadata readable by other plugins](./reference/scenegraph.md#SceneNode-sharedPluginData)**
+* [Check if two nodes share the same raster image asset](./reference/ImageFill.md#ImageFill-assetId)
+
+### UXP upgrade
+The common plugin runtime has been upgraded to UXP 3.4.4, bringing a range of new features and bug fixes:
+
+New features:
+* **`HTMLElement.innerText` property**
+* Custom text field styling using `appearance: none`
+* `HTMLElement.scrollTo()` method
+* SVG `<polygon>` and `<polyline>`
+* Get version of the UXP runtime & version of your own plugin via `require("uxp").versions.uxp` / `.versions.plugin`
+* Limited support for CustomElementRegistry (using `is` but not using custom HTML tags; Web Components APIs such as `attachShadow()` remain unsupported)
+* `HTMLImageElement.complete` flag
+
+Bug fixes:
+* Fixed a crash when drag operations started
+* The data transfer is initiated properly at the start of the `dragend` event
+* Fixed the resolution of image URLs to plugin:, plugin-data, plugin-temp for UWP
+* Fixed a bug where context menus didn’t stay open
+* Fixed improper word breaking in certain edge cases
+* Improved stack trace length limitations
+
+### Breaking API changes
+
+* `ImageFill.toString()` has changed: it no longer includes the full path of the originally imported file, and adds image dimensions to aid in debugging console logs.
+
+### Known Issues
+
+* MouseEvent `clientX`/`clientY` and `offsetX`/`offsetY` values are incorrect (and always have been) -- these values will probably change in the _next_ XD release.
+
+### Plugin submission process
+
+* The "Adobe I/O Console" has been renamed "Adobe Developer Console," with a new link: https://console.adobe.io/projects
+* Preview how your listing will look in XD before submitting it for review.
+* Publish updates at a specific time of your choosing by opting out of instant publishing when your plugin submission is approved.
+
+
 XD Release 28.0.12 (March 2020)
 -------------------------------------
 XD 28 is a minor update for plugin developers:

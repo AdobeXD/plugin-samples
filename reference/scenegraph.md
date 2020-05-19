@@ -183,8 +183,13 @@ Base class of all scenegraph nodes. Nodes will always be an instance of some _su
     * *[.markedForExport](#SceneNode-markedForExport) : <code>boolean</code>*
     * *[.fixedWhenScrolling](#SceneNode-fixedWhenScrolling) : <code>?boolean</code>*
     * *[.triggeredInteractions](#SceneNode-triggeredInteractions) : <code>!Arrray&lt;!Interaction&gt;</code>*
+    * *[.horizontalConstraints](#SceneNode-horizontalConstraints) : <code>?{position:string, size:string}</code>*
+    * *[.verticalConstraints](#SceneNode-verticalConstraints) : <code>?{position:string, size:string}</code>*
+    * *[.hasCustomConstraints](#SceneNode-hasCustomConstraints) : <code>boolean</code>*
+    * *[.resetToAutoConstraints()](#SceneNode-resetToAutoConstraints)*
     * *[.hasLinkedContent](#SceneNode-hasLinkedContent) : <code>boolean</code>*
     * *[.pluginData](#SceneNode-pluginData) : <code>&ast;</code>*
+    * *[.sharedPluginData](#SceneNode-sharedPluginData) : <code>!PerPluginStorage</code>*
     * *[.removeFromParent()](#SceneNode-removeFromParent)*
     * *[.moveInParentCoordinates(deltaX, deltaY)](#SceneNode-moveInParentCoordinates)*
     * *[.placeInParentCoordinates(registrationPoint, parentPoint)](#SceneNode-placeInParentCoordinates)*
@@ -489,6 +494,8 @@ For an overview of node bounding boxes & coordinate systems, see [Coordinate spa
 ### *sceneNode.name : <code>string</code>*
 Node name as seen in the Layers panel. Also used as filename during Export.
 
+Setting this property will cause [`hasDefaultName`](#SceneNode-hasDefaultName) to become false.
+
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 
 * * *
@@ -563,6 +570,93 @@ node.triggeredInteractions.forEach(interaction => {
 
 * * *
 
+<a name="SceneNode-horizontalConstraints"></a>
+
+### *sceneNode.horizontalConstraints : <code>?{position:string, size:string}</code>*
+**Since**: XD 29
+
+Horizontal dynamic-layout settings used with the Responsive Resize feature. Setting this only determines how the node is updated when its parent is resized -- it does not change the node's current size or position.
+
+| Property  | Type  | Description  |
+| --------- | ----- | ------------ |
+| horizontalConstraints.position | string | Horizontal position anchoring, one of `SceneNode.FIXED_LEFT`, `FIXED_RIGHT`, `FIXED_BOTH` or `POSITION_PROPORTIONAL`.<br><br>`FIXED_BOTH` sets fixed left & right offsets, so it always implies `size: SIZE_RESIZES` (similar to setting both `left` & `right` in CSS).<br><br>`POSITION_PROPORTIONAL` holds node position at a fixed percentage of the parent's width -- the same positioning behavior you'd get if Responsive Resize is turned off entirely. |
+| horizontalConstraints.size     | string | Horizontal sizing behavior, either `SceneNode.SIZE_FIXED` or `SceneNode.SIZE_RESIZES`.<br><br>`SIZE_FIXED` cannot be used with `position: FIXED_BOTH`, since it is impossible to fix both left & right edges without resizing when the parent resizes.<br><br>`SIZE_RESIZES` can be used with any `position` setting. With `position: FIXED_BOTH`, the node's size always equals the parent's size minus the fixed left & right offsets. With other position settings, the node's size maintains a fixed percentage of the parent's size. |
+
+Both fields *must* be provided together when setting this property.
+
+Returns undefined if node's parent is a container where Responsive Resize is unavailable:
+* Certain containers such as RepeatGrid and the pasteboard (scenegraph root) do not support Responsive Resize.
+* Container may have Responsive Resize layout explicitly turned off (see [`dynamicLayout` flag](#Group-dynamicLayout)).
+
+Attempting to set this property when Responsive Resize is unavailable results in an error.
+
+Setting this property will cause [`hasCustomConstraints`](#SceneNode-hasCustomConstraints) to become true.
+
+**Example**
+```js
+let node = selection.items[0];
+node.horizontalConstraints = { position: scenegraph.SceneNode.FIXED_LEFT, size: scenegraph.SceneNode.SIZE_FIXED };
+```
+
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+
+* * *
+
+<a name="SceneNode-verticalConstraints"></a>
+
+### *sceneNode.verticalConstraints : <code>?{position:string, size:string}</code>*
+**Since**: XD 29
+
+Vertical dynamic-layout settings used with the Responsive Resize feature. Setting this only determines how the node is updated when its parent is resized -- it does not change the node's current size or position.
+
+| Property  | Type  | Description  |
+| --------- | ----- | ------------ |
+| verticalConstraints.position | string | Vertical position anchoring, one of `SceneNode.FIXED_TOP`, `FIXED_BOTTOM`, `FIXED_BOTH` or `POSITION_PROPORTIONAL`.<br><br>For details, see [`horizontalConstraints`](#SceneNode-horizontalConstraints) above. |
+| verticalConstraints.size     | string | Vertical sizing behavior, either `SceneNode.SIZE_FIXED` or `SceneNode.SIZE_RESIZES`.<br><br>For details, see [`horizontalConstraints`](#SceneNode-horizontalConstraints) above. |
+
+Both fields *must* be provided together when setting this property.
+
+See [`horizontalConstraints`](#SceneNode-horizontalConstraints) above for other important notes.
+
+**Example**
+```js
+let node = selection.items[0];
+node.verticalConstraints = { position: scenegraph.SceneNode.FIXED_TOP, size: scenegraph.SceneNode.SIZE_RESIZES };
+```
+
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+
+* * *
+
+<a name="SceneNode-hasCustomConstraints"></a>
+
+### *sceneNode.hasCustomConstraints : <code>boolean</code>*
+**Since**: XD 29
+
+True if this node's Responsive Resize layout settings, which are normally automatically inferred by XD, have been overridden with specific desired values. Constraints on a node are either all overridden, or all automatic -- never mixed.
+
+If false, each time the parent resizes XD will automatically guess the best layout settings to used based on the current size & position of this node within its parent. You can use the [`horizontalConstraints`](#SceneNode-horizontalConstraints) and [`verticalConstraints`](#SceneNode-verticalConstraints) getters to check what computed settings XD would use based on the node's current size & position.
+
+Automatically becomes true any time you set `horizontalConstraints` or `verticalConstraints`. To reset to false, call [`resetToAutoConstraints()`](#SceneNode-resetToAutoConstraints).
+
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+**Read only**: true _(but is modified indirectly; see above)_
+
+* * *
+
+<a name="SceneNode-resetToAutoConstraints"></a>
+
+### *sceneNode.resetToAutoConstraints()*
+**Since**: XD 29
+
+Erase any overridden Responsive Resize layout settings, restoring the default behavior where XD will automatically guess the best layout settings for this node the next time its parent is resized. This function does not change the node's *current* size & position, however.
+
+Calling this will cause [`hasCustomConstraints`](#SceneNode-hasCustomConstraints) to become false.
+
+**Kind**: instance method of [<code>SceneNode</code>](#SceneNode)
+
+* * *
+
 <a name="SceneNode-hasLinkedContent"></a>
 
 ### *sceneNode.hasLinkedContent : <code>boolean</code>*
@@ -584,11 +678,31 @@ stored metadata on this node.
 
 Metadata is persisted with the document when it is saved. Duplicating a node (including across documents, via copy-paste)
 will duplicate the metadata with it. If the node lies within a Component or Repeat Grid, all instances of the node will have
-identical metadata (changes in one copy will automatically be synced to the other copy). Metadata stored by this plugin
-cannot be accessed by other plugins - each plugin has its own isolated metadata storage.
+identical metadata (changes in one copy will automatically be synced to the other copy).
 
 To store general metadata for the document overall, set pluginData on the [root](#module_scenegraph-root) node of the scenegraph. Metadata on
 the root node can be changed from _any_ edit context.
+
+Metadata stored in pluginData cannot be accessed by other plugins -- each plugin has its own isolated storage. To share metadata
+with other plugins, use [`sharedPluginData`](#SceneNode-sharedPluginData).
+
+**Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
+
+* * *
+
+<a name="SceneNode-sharedPluginData"></a>
+
+### *sceneNode.sharedPluginData : \![<code>PerPluginStorage</code>](PerPluginStorage.md)*
+**Since**: XD 29
+
+Metadata storage accessible by other plugins, separated into silos by plugin ID. Your plugin can read & write the storage for its own plugin ID,
+but storage for other plugin IDs is *read-only*. This property returns a [PerPluginStorage API object](PerPluginStorage.md).
+
+*Each* scenenode has its own metadata storage. To store general metadata that is not specific to one scenenode, use `sharedPluginData` on the
+[document's scenegraph root](scenegraph.md#module_scenegraph-root).
+
+Metadata is persisted with the document when it is saved. See [`pluginMetadata`](#SceneNode-pluginData) for info on how metadata is duplicated when nodes are
+copied or synced.
 
 **Kind**: instance property of [<code>SceneNode</code>](#SceneNode)
 
@@ -778,6 +892,7 @@ let group = selection.items[0];  // selection has been set to the new Group node
     * [.addChildAfter(node, relativeTo)](#Group-addChildAfter)
     * [.addChildBefore(node, relativeTo)](#Group-addChildBefore)
     * [.removeAllChildren()](#Group-removeAllChildren)
+    * [.dynamicLayout](#Group-dynamicLayout) : ?boolean
     * [.mask](#Group-mask) : ?[<code>SceneNode</code>](#SceneNode)
 
 * * *
@@ -835,6 +950,24 @@ Removes all children from this node. Equivalent to calling removeFromParent() on
 
 **Kind**: instance method of [<code>Group</code>](#Group) and other container nodes
 
+
+* * *
+
+<a name="Group-dynamicLayout"></a>
+
+### group.dynamicLayout : ?boolean
+**Since:** XD 29
+
+If true, Responsive Resize is enabled, and this node's children will use an intelligent layout algorithm whenever this node is resized.
+
+Returns undefined on node types that do not support Responsive Resize (such as RepeatGrid; see [`horizontalConstraints`](#SceneNode-horizontalConstraints) docs for a
+complete list). Attempting to set this property on such node types results in an error.
+
+**Kind**: instance property of [<code>Group</code>](#Group)
+
+**See**:
+* [horizontalConstraints](#SceneNode-horizontalConstraints)
+* [verticalConstraints](#SceneNode-verticalConstraints)
 
 * * *
 
@@ -1210,6 +1343,7 @@ Artboard, its parent will automatically be changed accordingly after the edit op
     * [.addChildAfter(node, relativeTo)](#Group-addChildAfter)
     * [.addChildBefore(node, relativeTo)](#Group-addChildBefore)
     * [.removeAllChildren()](#Group-removeAllChildren)
+    * [.dynamicLayout](#Group-dynamicLayout) : ?boolean
 
 
 * * *
@@ -1887,6 +2021,7 @@ It is not currently possible for plugins to *create* a new component definition 
     * [.addChildAfter(node, relativeTo)](#Group-addChildAfter)
     * [.addChildBefore(node, relativeTo)](#Group-addChildBefore)
     * [.removeAllChildren()](#Group-removeAllChildren)
+    * [.dynamicLayout](#Group-dynamicLayout) : ?boolean
 
 
 * * *
