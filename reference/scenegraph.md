@@ -534,7 +534,7 @@ True if the node should be included in the output of _File > Export > Batch_ and
 **Since**: XD 19
 
 True if the node stays in a fixed position while the Artboard's content is scrolling (when viewed in an interactive prototype).
-_Only applicable for nodes whose immediate parent is an Artboard._
+_Only applicable for nodes whose immediate parent is an Artboard_ -- this does not apply to content inside a ScrollableGroup!
 
 For other nodes, this property returns undefined and cannot be set. To determine whether those nodes scroll or remain
 fixed, walk up the parent chain and check this property on the topmost ancestor in the Artboard.
@@ -975,6 +975,8 @@ complete list). Attempting to set this property on such node types results in an
 
 ### group.mask : ?[<code>SceneNode</code>](#SceneNode)
 The mask shape applied to this group, if any. This object is also present in the group's `children` list. Though it has no direct visual appearance of its own, the mask affects the entire group's appearance by clipping all its other content.
+
+The `localBounds`, `globalBounds`, and `globalDrawBounds` of a Masked Group are based on the bounds of the mask shape alone, regardless of whether the content is larger than the mask or even if the content doesn't fill the mask area completely.
 
 **Kind**: instance property of [<code>Group</code>](#Group)
 **Read only**: true
