@@ -866,6 +866,10 @@ Groups and other containers cannot be created directly using scenenode construct
 scenegraph (you can't add subtrees all at once) nor can you add an empty Group and then add children to it (can't add nodes outside
 the scope of the current _edit context_). Instead, to create Groups and other nested structures, use [commands](commands.md).
 
+Plain Groups (as well as some other node types, like SymbolInstances) can have dynamic layout features enabled such as padding and
+stack layouts. These are sometimes referred to as Content-Aware Groups or Stack containers, but ultimately these appear in the API as
+plain Group nodes. They do not carry the same edit-context restrictions as Masked Groups or other special node types.
+
 In a Mask Group, the mask shape is included in the group's `children` list, at the top of the z order. It is not visible - only its
 path outline is used, for clipping the group.
 
