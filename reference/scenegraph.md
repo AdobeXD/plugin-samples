@@ -63,6 +63,7 @@ function myCommand(selection) {
     * [Group](#Group)
     * [SymbolInstance](#SymbolInstance)
     * [RepeatGrid](#RepeatGrid)
+    * [ScrollableGroup](#ScrollableGroup)
     * [LinkedGraphic](#LinkedGraphic)
     * [RootNode](#RootNode)
 
@@ -2192,6 +2193,56 @@ You can call this API from either of _two different edit contexts_:
 | --- | --- | --- |
 | shapeNode | <code>!GraphicNode</code> | A shape node exemplar that would be in scope for editing if the current edit context was one of this RepeatGrid's cells. The image series will be bound to this node and all corresponding copies of it in the other grid cells. Must be a node type that supports image fills (e.g. Rectangle, but not Text or Line). |
 | images | <code>!Array&lt;!ImageFill&gt;</code> | Array of one or more ImageFills. |
+
+* * *
+
+<a name="ScrollableGroup"></a>
+
+## ScrollableGroup
+**Since:** XD 30
+**Kind**: class
+**Extends**: [<code>SceneNode</code>](#SceneNode)
+
+ScrollableGroup nodes are content that users can interactively scroll around. Content is viewed through a {@link viewport},
+with everything else clipped. If a ScrollableGroup is set to only scroll on one axis, on the other axis the viewport is
+automatically sized to exactly fit the bounds of the content so nothing is clipped.
+
+The scroll distance range is defined by a _scrollable area_ rectangle which is the union of the viewport and the bounds of all
+the content. This can include some blank space, if the content is initially positioned not filling the entire viewport.
+
+* [ScrollableGroup](#ScrollableGroup)
+    * [.scrollingType](#ScrollableGroup-scrollingType) : <code>string</code>
+    * [.viewport](#ScrollableGroup-viewport) : <code>{! {viewportWidth: number, offsetX: number} | {viewportHeight: number, offsetY: number} |
+         {viewportWidth: number, offsetX: number, viewportHeight: number, offsetY: number} }</code>
+
+* * *
+
+<a name="ScrollableGroup-scrollingType"></a>
+
+### repeatGrid.scrollingType : <code>string</code>
+The type of scrolling: one of ScrollableGroup.VERTICAL, HORIZONTAL and PANNING.
+        PANNING enables scrolling on both axes.
+
+**Kind**: instance property of [<code>ScrollableGroup</code>](#ScrollableGroup)
+
+* * *
+
+<a name="ScrollableGroup-viewport"></a>
+
+### ScrollableGroup.viewport : <code>string</code>
+The viewport is a rectangle whose bounds are defined explicitly on scrolling axes and fit automatically to the
+content on non-scrolling axes:
+* On a scrolling axis, the bounds are specified in {@link core/coordinate-spaces-and-units.md local coordinates}
+using the `viewport` values specified here.
+* On a non-scrolling axis, the bounds are automatically calculated to exactly fit the content (just like the blue
+selection rectangle seen when you select a plain Group).
+
+For example, if scrollingType == VERTICAL, the top of the viewport is `viewport.offsetY` in the ScrollableGroup's
+local coordinates, the bottom of the viewport is `viewport.offsetY + viewport.viewportHeight` in local coordinates,
+and horizontally there is no viewport clipping -- the entire current {@link localBounds} range is visible. The
+`viewport` object will only contain `offsetY` and `viewportHeight` properties in this case.
+
+**Kind**: instance property of [<code>ScrollableGroup</code>](#ScrollableGroup)
 
 * * *
 
