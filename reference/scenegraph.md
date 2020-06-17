@@ -2219,7 +2219,7 @@ the content. This can include some blank space, if the content is initially posi
 
 <a name="ScrollableGroup-scrollingType"></a>
 
-### repeatGrid.scrollingType : <code>string</code>
+### ScrollableGroup.scrollingType : <code>string</code>
 The type of scrolling: one of ScrollableGroup.VERTICAL, HORIZONTAL and PANNING.
         PANNING enables scrolling on both axes.
 
