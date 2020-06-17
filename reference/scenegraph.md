@@ -2229,8 +2229,7 @@ The type of scrolling: one of ScrollableGroup.VERTICAL, HORIZONTAL and PANNING.
 
 <a name="ScrollableGroup-viewport"></a>
 
-### ScrollableGroup.viewport : <code>!{viewportWidth: number, offsetX: number} | {viewportHeight: number, offsetY: number} |
-         {viewportWidth: number, offsetX: number, viewportHeight: number, offsetY: number}}</code>
+### ScrollableGroup.viewport : <code>!{viewportWidth: number, offsetX: number} | {viewportHeight: number, offsetY: number} | {viewportWidth: number, offsetX: number, viewportHeight: number, offsetY: number}}</code>
 The viewport is a rectangle whose bounds are defined explicitly on scrolling axes and fit automatically to the
 content on non-scrolling axes:
 * On a scrolling axis, the bounds are specified in {@link core/coordinate-spaces-and-units.md local coordinates}
