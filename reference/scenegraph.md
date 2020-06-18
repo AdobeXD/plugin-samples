@@ -2203,7 +2203,7 @@ You can call this API from either of _two different edit contexts_:
 **Kind**: class
 **Extends**: [<code>SceneNode</code>](#SceneNode)
 
-ScrollableGroup nodes are content that users can interactively scroll around. Content is viewed through a {@link viewport},
+ScrollableGroup nodes are content that users can interactively scroll around. Content is viewed through a [viewport](#ScrollableGroup-viewport),
 with everything else clipped. If a ScrollableGroup is set to only scroll on one axis, on the other axis the viewport is
 automatically sized to exactly fit the bounds of the content so nothing is clipped.
 
@@ -2232,14 +2232,14 @@ The type of scrolling: one of ScrollableGroup.VERTICAL, HORIZONTAL and PANNING.
 ### ScrollableGroup.viewport : <code>!{viewportWidth: number, offsetX: number} | {viewportHeight: number, offsetY: number} | {viewportWidth: number, offsetX: number, viewportHeight: number, offsetY: number}}</code>
 The viewport is a rectangle whose bounds are defined explicitly on scrolling axes and fit automatically to the
 content on non-scrolling axes:
-* On a scrolling axis, the bounds are specified in {@link core/coordinate-spaces-and-units.md local coordinates}
+* On a scrolling axis, the bounds are specified in [local coordinates](/reference/core/coordinate-spaces-and-units.md)
 using the `viewport` values specified here.
 * On a non-scrolling axis, the bounds are automatically calculated to exactly fit the content (just like the blue
 selection rectangle seen when you select a plain Group).
 
 For example, if scrollingType == VERTICAL, the top of the viewport is `viewport.offsetY` in the ScrollableGroup's
 local coordinates, the bottom of the viewport is `viewport.offsetY + viewport.viewportHeight` in local coordinates,
-and horizontally there is no viewport clipping -- the entire current {@link localBounds} range is visible. The
+and horizontally there is no viewport clipping -- the entire current [localBounds](#SceneNode-localBounds) range is visible. The
 `viewport` object will only contain `offsetY` and `viewportHeight` properties in this case.
 
 **Kind**: instance property of [<code>ScrollableGroup</code>](#ScrollableGroup)
