@@ -1,5 +1,17 @@
 # Change Log
 
+XD Release 30.0.12 (June 2020)
+-------------------------------------
+
+### New features
+* **Scrollable Groups** -- Plugins will see a new [ScrollableGroup](./reference/scenegraph.md#ScrollableGroup) node type and can read the scroll direction(s) and viewport size. Plugins cannot yet create a ScrollableGroup or modify its viewport, however.
+
+### Known Issues
+* **Content Aware Stacks** -- Some plugin actions, such as changing a node's position or its Responsive Resize constraints, may be ignored or behave unexpectedly when the node's parent is a Group with Stack layout enabled. Plugins cannot yet create, read, or modify Stack layout settings on a Group.
+
+* MouseEvent `clientX`/`clientY` and `offsetX`/`offsetY` values are incorrect (and always have been) -- these values will probably change in the _next_ XD release, so do not rely on them.
+
+
 XD Release 29.0.32 (May 2020)
 -------------------------------------
 
@@ -34,7 +46,7 @@ Bug fixes:
 
 ### Known Issues
 
-* MouseEvent `clientX`/`clientY` and `offsetX`/`offsetY` values are incorrect (and always have been) -- these values will probably change in the _next_ XD release.
+* MouseEvent `clientX`/`clientY` and `offsetX`/`offsetY` values are incorrect (and always have been) -- these values will change in a near-future XD release, so do not rely on them.
 
 ### Plugin submission process
 

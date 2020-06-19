@@ -63,6 +63,7 @@ function myCommand(selection) {
     * [Group](#Group)
     * [SymbolInstance](#SymbolInstance)
     * [RepeatGrid](#RepeatGrid)
+    * [ScrollableGroup](#ScrollableGroup)
     * [LinkedGraphic](#LinkedGraphic)
     * [RootNode](#RootNode)
 
@@ -534,7 +535,7 @@ True if the node should be included in the output of _File > Export > Batch_ and
 **Since**: XD 19
 
 True if the node stays in a fixed position while the Artboard's content is scrolling (when viewed in an interactive prototype).
-_Only applicable for nodes whose immediate parent is an Artboard._
+_Only applicable for nodes whose immediate parent is an Artboard_ -- this does not apply to content inside a ScrollableGroup!
 
 For other nodes, this property returns undefined and cannot be set. To determine whether those nodes scroll or remain
 fixed, walk up the parent chain and check this property on the topmost ancestor in the Artboard.
@@ -866,6 +867,10 @@ Groups and other containers cannot be created directly using scenenode construct
 scenegraph (you can't add subtrees all at once) nor can you add an empty Group and then add children to it (can't add nodes outside
 the scope of the current _edit context_). Instead, to create Groups and other nested structures, use [commands](commands.md).
 
+Plain Groups (as well as some other node types, like SymbolInstances) can have dynamic layout features enabled such as padding and
+stack layouts. These are sometimes referred to as Content-Aware Groups or Stack containers, but ultimately these appear in the API as
+plain Group nodes. They do not carry the same edit-context restrictions as Masked Groups or other special node types.
+
 In a Mask Group, the mask shape is included in the group's `children` list, at the top of the z order. It is not visible - only its
 path outline is used, for clipping the group.
 
@@ -975,6 +980,8 @@ complete list). Attempting to set this property on such node types results in an
 
 ### group.mask : ?[<code>SceneNode</code>](#SceneNode)
 The mask shape applied to this group, if any. This object is also present in the group's `children` list. Though it has no direct visual appearance of its own, the mask affects the entire group's appearance by clipping all its other content.
+
+The `localBounds`, `globalBounds`, and `globalDrawBounds` of a Masked Group are based on the bounds of the mask shape alone, regardless of whether the content is larger than the mask or even if the content doesn't fill the mask area completely.
 
 **Kind**: instance property of [<code>Group</code>](#Group)
 **Read only**: true
@@ -2186,6 +2193,56 @@ You can call this API from either of _two different edit contexts_:
 | --- | --- | --- |
 | shapeNode | <code>!GraphicNode</code> | A shape node exemplar that would be in scope for editing if the current edit context was one of this RepeatGrid's cells. The image series will be bound to this node and all corresponding copies of it in the other grid cells. Must be a node type that supports image fills (e.g. Rectangle, but not Text or Line). |
 | images | <code>!Array&lt;!ImageFill&gt;</code> | Array of one or more ImageFills. |
+
+* * *
+
+<a name="ScrollableGroup"></a>
+
+## ScrollableGroup
+**Since:** XD 30
+**Kind**: class
+**Extends**: [<code>SceneNode</code>](#SceneNode)
+
+ScrollableGroup nodes are content that users can interactively scroll around. Content is viewed through a [viewport](#ScrollableGroup-viewport),
+with everything else clipped. If a ScrollableGroup is set to only scroll on one axis, on the other axis the viewport is
+automatically sized to exactly fit the bounds of the content so nothing is clipped.
+
+The scroll distance range is defined by a _scrollable area_ rectangle which is the union of the viewport and the bounds of all
+the content. This can include some blank space, if the content is initially positioned not filling the entire viewport.
+
+* [ScrollableGroup](#ScrollableGroup)
+    * [.scrollingType](#ScrollableGroup-scrollingType) : <code>string</code>
+    * [.viewport](#ScrollableGroup-viewport) : <code>{! {viewportWidth: number, offsetX: number} | {viewportHeight: number, offsetY: number} |
+         {viewportWidth: number, offsetX: number, viewportHeight: number, offsetY: number} }</code>
+
+* * *
+
+<a name="ScrollableGroup-scrollingType"></a>
+
+### ScrollableGroup.scrollingType : <code>string</code>
+The type of scrolling: one of ScrollableGroup.VERTICAL, HORIZONTAL and PANNING.
+        PANNING enables scrolling on both axes.
+
+**Kind**: instance property of [<code>ScrollableGroup</code>](#ScrollableGroup)
+
+* * *
+
+<a name="ScrollableGroup-viewport"></a>
+
+### ScrollableGroup.viewport : <code>!{viewportWidth: number, offsetX: number} | {viewportHeight: number, offsetY: number} | {viewportWidth: number, offsetX: number, viewportHeight: number, offsetY: number}}</code>
+The viewport is a rectangle whose bounds are defined explicitly on scrolling axes and fit automatically to the
+content on non-scrolling axes:
+* On a scrolling axis, the bounds are specified in [local coordinates](/reference/core/coordinate-spaces-and-units.md)
+using the `viewport` values specified here.
+* On a non-scrolling axis, the bounds are automatically calculated to exactly fit the content (just like the blue
+selection rectangle seen when you select a plain Group).
+
+For example, if scrollingType == VERTICAL, the top of the viewport is `viewport.offsetY` in the ScrollableGroup's
+local coordinates, the bottom of the viewport is `viewport.offsetY + viewport.viewportHeight` in local coordinates,
+and horizontally there is no viewport clipping -- the entire current [localBounds](#SceneNode-localBounds) range is visible. The
+`viewport` object will only contain `offsetY` and `viewportHeight` properties in this case.
+
+**Kind**: instance property of [<code>ScrollableGroup</code>](#ScrollableGroup)
 
 * * *
 
