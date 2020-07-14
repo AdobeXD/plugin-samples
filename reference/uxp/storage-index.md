@@ -47,7 +47,7 @@ await anotherFile.write(contents);
 You can create new files inside a folder you have access to:
 
 ```js
-const newFile = await folder.createEntry("examples.txt", {overwrite: true});
+const newFile = await folder.createFile("examples.txt", {overwrite: true});
 newFile.write("Hello, world!");
 ```
 

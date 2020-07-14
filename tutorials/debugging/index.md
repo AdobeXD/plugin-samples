@@ -62,7 +62,7 @@ Navigate to the root folder of your plugin and **create a `debug.json` file**:
 
 ### 2. Launch Chrome DevTools
 
-1. Windows only: _before_ launching XD, open an admin command prompt and run `CheckNetIsolation LoopbackExempt -is -n="Adobe.CC.XD.adky2gkssdxte"` -- do this _each time_ you want to debug a plugin.
+1. Windows only: _before_ launching XD, open an admin command prompt and run `CheckNetIsolation LoopbackExempt -is -n="Adobe.CC.XD_adky2gkssdxte"` -- do this _each time_ you want to debug a plugin.
 2. Open Google Chrome and navigate to **`chrome://inspect`** _(you must use Chrome)_
 3. One-time setup: ensure "Discover Network Targets" is enabled. Click the Configure button next to this and add `localhost:9345` (or whatever port number your `debug.json` file used).
 4. Click the "inspect" link under your plugin's ID.

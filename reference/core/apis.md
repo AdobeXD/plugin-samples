@@ -18,7 +18,7 @@ Read below for **how to access** XD and UXP APIs...
 
 ## XD-specific APIs
 
-Most XD APIs are accessed by loading a module via `require()`, but some are passed directly to your plugin's handler functions.
+Most XD APIs are accessed by loading a module via `require()`, but some are passed directly to your plugin's handler functions. See the [XD specific APIs page](../xd-index.md) for a full list of modules. Below are some examples of modules available via the API:
 
 * [selection](../selection.md) - Indicates the selected nodes and related context
     * This object is passed as an argument to your command handler function (see above)

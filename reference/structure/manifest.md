@@ -90,7 +90,7 @@ Keyboard shortcuts are defined separately for each platform. Each definition is 
 
 ## Menu Localization
 
-Plugin menu item labels or panel labels can be localized to match XD's current UI language setting. Other manifest fields such as `name` and `description` _cannot be localized yet._
+Plugin menu item labels or panel labels can be localized to match XD's current UI language setting. Other manifest fields such as `name` _cannot be localized yet._
 
 Localized labels are represented as an object containing multiple translations, instead of a single string value:
 

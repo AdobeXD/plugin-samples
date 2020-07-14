@@ -59,7 +59,7 @@ When you're done making changes:
 
 ```bash
 # Rebuild HTML content
- npm run test:404
+npm run book:build
 
 # Check for 404s
 npm run test:404 # See notes below about this
