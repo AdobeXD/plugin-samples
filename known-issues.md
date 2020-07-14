@@ -88,6 +88,7 @@
 
 - Interactive elements do not support `Pointer%` events
 - `keypress` and `keyup` are not currently supported on macOS.
+- Mouse event `clientX`/`Y` & `offsetX`/`Y` properties have incorrect values. They will change in the near future -- do not rely on these properties right now.
 
 ### Drag & Drop
 
