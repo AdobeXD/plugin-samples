@@ -177,6 +177,9 @@ Animation style with which `"goToArtboard"` and `"overlay"` actions transition f
 ### *interactions.homeArtboard : <code>?Artboard</code>*
 The starting Artboard seen when the interactive prototype is launched.
 
+**Since**: XD 32 
+In case there are multiple home artboards, this API returns only the top-left artboard among all of those home artboards.
+
 **Kind**: static property of [<code>interactions</code>](#module_interactions)
 **Read only**: true
 
