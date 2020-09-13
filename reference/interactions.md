@@ -171,9 +171,9 @@ Animation style with which `"goToArtboard"` and `"overlay"` actions transition f
 | duration | number | Length of animation in seconds. |
 | easing | string | One of: `"linear"`, `"ease-in"`, `"ease-out"`, `"ease-in-out"`, `"wind-up"`, `"bounce"`, `"snap"` |
 
-<a name="flowInfo" id="flowInfo"></a>
+<a name="FlowInfo" id="FlowInfo"></a>
 
-### Typedef flowInfo
+### Typedef FlowInfo
 Information related to a particular flow
 
 | Property | Type | Description |
