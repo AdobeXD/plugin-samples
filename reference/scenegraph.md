@@ -1410,6 +1410,7 @@ Note: currently, this API excludes any applicable keyboard/gamepad interactions.
 True if this is the starting Artboard seen when the interactive prototype is launched.
 
 **Since**: XD 32
+
 In case there are multiple interactive prototype experiences (flows), implying multiple home artboards, this API returns true only for the top-left artboard among all of those home artboards.
 
 **Kind**: instance property of [<code>Artboard</code>](#Artboard)
