@@ -1,5 +1,13 @@
 # Change Log
 
+XD Release 33.0.12 (September 2020)
+-------------------------------------
+
+### New APIs
+
+The [flows](./reference/interactions.md#module_interactions-flows) API Returns an array of [FlowInfo] for all flows across the entire document.
+
+
 XD Release 32.0.12 (August 2020)
 -------------------------------------
 

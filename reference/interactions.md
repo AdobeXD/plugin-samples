@@ -39,12 +39,14 @@ See [Interaction documentation](#Interaction) below for an example of what an In
 
 * [interactions](#module_interactions)
     * [.homeArtboard](#module_interactions-homeArtboard) : <code>?Artboard</code>
+    * [.flows](#module_interactions-flows) : <code>!Array&lt;FlowInfo&gt;</code>
     * [.allInteractions](#module_interactions-allInteractions) : <code>!Array&lt;!{triggerNode: !SceneNode, interactions: !Array&lt;!Interaction&gt;}&gt;</code>
 * Typedefs:
     * [Interaction](#Interaction)
     * [Trigger](#Trigger)
     * [Action](#Action)
     * [Transition](#Transition)
+    * [FlowInfo](#FlowInfo)
 
 
 ## Typedefs
@@ -169,6 +171,18 @@ Animation style with which `"goToArtboard"` and `"overlay"` actions transition f
 | duration | number | Length of animation in seconds. |
 | easing | string | One of: `"linear"`, `"ease-in"`, `"ease-out"`, `"ease-in-out"`, `"wind-up"`, `"bounce"`, `"snap"` |
 
+<a name="flowInfo" id="flowInfo"></a>
+
+### Typedef flowInfo
+A `flow` or a `design flow` can be defined as a series or set of artboards starting from one artboard (called a home artboard), which are connected to other artboards or screens via wires or interactions.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| name | string | User gesture or other event which will trigger the action. |
+| homeArtboard | \![Artboard](./scenegraph.md#Artboard) | Artboard from which a particular flow or a prototype experience begins |
+| url | string | URL is the latest published link associated with a particular flow and can be `null` in case no link is published for that flow |
+
+NOTE: All `url` returned via {@link interactions#flows} are related to published flows and are usually a subset of the URLs returned via {@link cloud#getSharedArtifacts}. However, the reverse may or may not always hold true.
 
 * * *
 
@@ -186,6 +200,20 @@ In case there are multiple interactive prototype experiences (flows), implying m
 
 **See**: [`Artboard.isHomeArtboard`](./scenegraph.md#Artboard-isHomeArtboard)
 
+
+* * *
+
+<a name="module_interactions-flows"></a>
+
+### *interactions.flows : <code>!Array&lt;flowInfo</code>*
+Returns a collection of information on *all* flows across the entire document.
+
+**Since**: XD 33 
+
+A document can have zero or multiple (one or more than one) flows and can therefore have zero or multiple home artboards. Each entry in the return array represents a `FlowInfo` object.
+
+**Kind**: static property of [<code>interactions</code>](#FlowInfo)
+**Read only**: true
 
 * * *
 
