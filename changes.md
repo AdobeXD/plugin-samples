@@ -5,7 +5,7 @@ XD Release 32.0.12 (August 2020)
 
 ### New feature
 * **Multiple Flows** -- Designers can now author multiple prototype or interaction flows in a single document. For any document that includes multiple flow support the 
-[HomeArtboard](./reference/interactions.md#interactions-homeArtboard) API will return the most upper left artboard and [isHomeArtBoard](./reference/SceneNode.md#SceneNode-isHomeArtBoard) will only return `true` for the most upper left artboard.
+[HomeArtboard](./reference/interactions.md#homeArtboard) API will return the most upper left artboard and [isHomeArtBoard](./reference/scenegraph.md#Artboard-isHomeArtBoard) will only return `true` for the most upper left artboard.
 
 
 XD Release 30.0.12 (June 2020)
