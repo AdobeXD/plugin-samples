@@ -8,7 +8,7 @@ The `interactions` module and related APIs provide _read only_ information about
   or you can access information from specific nodes in the scenegraph via [`SceneNode.triggeredInteractions`](./scenegraph.md#SceneNode-triggeredInteractions)
   and [`Artboard.incomingInteractions`](./scenegraph.md#Artboard-incomingInteractions).
 
-* Which artboard the prototype experience begins on: [`homeArtboard`](#module_interactions-homeArtboard).
+* Designers can author multiple prototype or interaction flows in a single document and publish unique shareable links for each flow. Developers can access all document flows using the [`flows`](#module_interactions-flows) API. With multiple flow support the [`homeArtboard`](#module_interactions-homeArtboard) API is being deprecated as XD no longer has a single home artboard restriction.
 
 * Properties that affect Artboard scrolling behavior: Artboard [`viewportHeight`](./scenegraph.md#Artboard-viewportHeight) and
   node [`fixedWhenScrolling`](./scenegraph.md#SceneNode-fixedWhenScrolling).
@@ -189,7 +189,9 @@ NOTE: All `url` returned via [flows](#module_interactions-flows) are related to 
 <a name="module_interactions-homeArtboard"></a>
 
 ### *interactions.homeArtboard : <code>?Artboard</code>*
-The starting Artboard seen when the interactive prototype is launched.
+The starting Artboard seen when the interactive prototype is launched. 
+
+**Deprecated**: XD 33 - Please use [`flows`](#module_interactions-flows) which supports multple flows. 
 
 **Since**: XD 32 
 
@@ -206,9 +208,10 @@ In case there are multiple interactive prototype experiences (flows), implying m
 <a name="module_interactions-flows"></a>
 
 ### *interactions.flows : <code>!Array&lt;\![FlowInfo](#FlowInfo)&gt;</code>*
-Returns a collection of information on *all* flows across the entire document.
 
 **Since**: XD 33 
+
+Returns a collection of information on *all* flows across the entire document.
 
 A `flow` is a series or set of artboards starting from one artboard (called a home artboard), which are connected to other artboards or screens via wires or interactions. A document can have zero or multiple (one or more than one) flows and can therefore have zero or multiple home artboards. Each entry in the return array represents a `FlowInfo` object.
 

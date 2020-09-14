@@ -1405,6 +1405,8 @@ Note: currently, this API excludes any applicable keyboard/gamepad interactions.
 <a name="Artboard-isHomeArtboard"></a>
 
 ### artboard.isHomeArtboard : <code>boolean</code>
+**Deprecated**: XD 33 - Please use [`flows`](./interactions.md#module_interactions-flows) which supports multple flows.
+
 **Since**: XD 19
 
 True if this is the starting Artboard seen when the interactive prototype is launched.
