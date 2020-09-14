@@ -178,9 +178,9 @@ Information related to a particular flow
 
 | Property | Type | Description |
 | --- | --- | --- |
-| name | string | User gesture or other event which will trigger the action. |
-| homeArtboard | \![Artboard](./scenegraph.md#Artboard) | Artboard from which a particular flow or a prototype experience begins |
-| url | string | URL is the latest published link associated with a particular flow and can be `null` in case no link is published for that flow |
+| name | string | Auto-generated or user-defined label for a particular flow. |
+| homeArtboard | \![Artboard](./scenegraph.md#Artboard) | Artboard from which a particular flow or a prototype experience begins. |
+| url | string | URL is the latest published link associated with a particular flow and can be `null` in case no link is published for that flow. |
 
 NOTE: All `url` returned via [flows](#module_interactions-flows) are related to published flows and are usually a subset of the URLs returned via [getSharedArtifacts](./cloud.md#module_cloud-getSharedArtifacts). However, the reverse may or may not always hold true.
 
