@@ -1,6 +1,14 @@
 # Change Log
 
-XD Release 32.0.12 (August 2020)
+XD Release 33.0.12 (September 2020)
+-------------------------------------
+
+### New API features
+
+[Read multiple flows](./reference/interactions.md#module_interactions-flows)
+
+
+XD Release 32.0.22 (August 2020)
 -------------------------------------
 
 ### New feature

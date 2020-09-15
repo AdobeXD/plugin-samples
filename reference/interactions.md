@@ -8,7 +8,7 @@ The `interactions` module and related APIs provide _read only_ information about
   or you can access information from specific nodes in the scenegraph via [`SceneNode.triggeredInteractions`](./scenegraph.md#SceneNode-triggeredInteractions)
   and [`Artboard.incomingInteractions`](./scenegraph.md#Artboard-incomingInteractions).
 
-* Which artboard the prototype experience begins on: [`homeArtboard`](#module_interactions-homeArtboard).
+* Designers can author multiple prototype or interaction flows in a single document and publish unique shareable links for each flow. Developers can access all document flows using the [`flows`](#module_interactions-flows) API. With multiple flow support the [`homeArtboard`](#module_interactions-homeArtboard) API is being deprecated as XD no longer has a single home artboard restriction.
 
 * Properties that affect Artboard scrolling behavior: Artboard [`viewportHeight`](./scenegraph.md#Artboard-viewportHeight) and
   node [`fixedWhenScrolling`](./scenegraph.md#SceneNode-fixedWhenScrolling).
@@ -39,12 +39,14 @@ See [Interaction documentation](#Interaction) below for an example of what an In
 
 * [interactions](#module_interactions)
     * [.homeArtboard](#module_interactions-homeArtboard) : <code>?Artboard</code>
+    * [.flows](#module_interactions-flows) : <code>!Array&lt;!FlowInfo&gt;</code>
     * [.allInteractions](#module_interactions-allInteractions) : <code>!Array&lt;!{triggerNode: !SceneNode, interactions: !Array&lt;!Interaction&gt;}&gt;</code>
 * Typedefs:
     * [Interaction](#Interaction)
     * [Trigger](#Trigger)
     * [Action](#Action)
     * [Transition](#Transition)
+    * [FlowInfo](#FlowInfo)
 
 
 ## Typedefs
@@ -169,13 +171,27 @@ Animation style with which `"goToArtboard"` and `"overlay"` actions transition f
 | duration | number | Length of animation in seconds. |
 | easing | string | One of: `"linear"`, `"ease-in"`, `"ease-out"`, `"ease-in-out"`, `"wind-up"`, `"bounce"`, `"snap"` |
 
+<a name="FlowInfo" id="FlowInfo"></a>
+
+### Typedef FlowInfo
+Information related to a particular flow
+
+| Property | Type | Description |
+| --- | --- | --- |
+| name | string | Auto-generated or user-defined label for a particular flow. |
+| homeArtboard | \![Artboard](./scenegraph.md#Artboard) | Artboard from which a particular flow or a prototype experience begins. |
+| url | string | URL is the latest published link associated with a particular flow and can be `null` in case no link is published for that flow. |
+
+NOTE: All `url` returned via [flows](#module_interactions-flows) are related to published flows and are usually a subset of the URLs returned via [getSharedArtifacts](./cloud.md#module_cloud-getSharedArtifacts). However, the reverse may or may not always hold true.
 
 * * *
 
 <a name="module_interactions-homeArtboard"></a>
 
 ### *interactions.homeArtboard : <code>?Artboard</code>*
-The starting Artboard seen when the interactive prototype is launched.
+The starting Artboard seen when the interactive prototype is launched. 
+
+**Deprecated**: XD 33 - Please use [`flows`](#module_interactions-flows) which supports multple flows. 
 
 **Since**: XD 32 
 
@@ -186,6 +202,21 @@ In case there are multiple interactive prototype experiences (flows), implying m
 
 **See**: [`Artboard.isHomeArtboard`](./scenegraph.md#Artboard-isHomeArtboard)
 
+
+* * *
+
+<a name="module_interactions-flows"></a>
+
+### *interactions.flows : <code>!Array&lt;\![FlowInfo](#FlowInfo)&gt;</code>*
+
+**Since**: XD 33 
+
+Returns a collection of information on *all* flows across the entire document.
+
+A `flow` is a series or set of artboards starting from one artboard (called a home artboard), which are connected to other artboards or screens via wires or interactions. A document can have zero or multiple (one or more than one) flows and can therefore have zero or multiple home artboards. Each entry in the return array represents a `FlowInfo` object.
+
+**Kind**: static property of [<code>interactions</code>](#module_interactions)
+**Read only**: true
 
 * * *
 
