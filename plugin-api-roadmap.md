@@ -1,6 +1,6 @@
 # Plugin API Roadmap
 
-We've got a lot of stuff planned for the future of the Adobe XD platform, and we've built out a roadmap. Take a look around, and if you've got a suggestion for an API feature, please make a request on [the Adobe XD Platform forums](https://forums.adobexdplatform.com/c/api-feedback/feature-requests).
+We've got a lot of stuff planned for the future of the Adobe XD platform, and we've built out a roadmap. Take a look around, and if you've got a suggestion for an API feature, please make a request on [the Adobe XD Platform forums](https://forums.creativeclouddeveloper.com/tags/c/adobe-xd/xd/8/feature-request).
 
 > **Tip**
 >

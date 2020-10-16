@@ -50,6 +50,6 @@ We’ve got a lot of stuff planned for the future of Plugin APIs on the Adobe XD
 
 <br />
 
-<a href="https://forums.adobexdplatform.com/c/xd"><img alt="XD Plugin API developer community" src="/images/XD-plugin-api-community.png" class="plain" style="width: 100%"/></a>
+<a href="https://forums.creativeclouddeveloper.com/c/adobe-xd/xd/8"><img alt="XD Plugin API developer community" src="/images/XD-plugin-api-community.png" class="plain" style="width: 100%"/></a>
 
 <a href="https://adobexd.uservoice.com/forums/353007-adobe-xd-feature-requests?category_id=368995"><img alt="Adobe XD user community" src="/images/user-community@3x.png" class="plain" style="width: 100%"/></a>
