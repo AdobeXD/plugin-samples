@@ -1722,13 +1722,22 @@ Which boolean operation is used to generate the path: BooleanGroup.PATH_OP_ADD, 
 Text leaf node shape. Text can have a fill and/or stroke, but only a solid-color fill is allowed (gradient or image
 fill will be rejected).
 
-There are two types of Text nodes:
+There are three types of Text nodes:
 - **Point Text** - Expands to fit the full width of the text content. Only uses multiple lines if the text content contains hard line
   breaks ("\n").
 - **Area Text** - Fixed width and height. Text is automatically wrapped (soft line wrapping) to fit the width. If it does not fit the
   height, any remaining text is clipped.
 
-Check whether [<code>areaBox</code>](#Text-areaBox) is null to determine the type of a Text node.
+**Since**: XD 34
+- **Auto-height Text** - Fixed width. Text is automatically wrapped (soft line wrapping) to fit the width. The height is expanded to match all the text lines. 
+
+**Since**: XD 34
+
+Use [<code>layoutBox</code>](#Text-layoutBox) to determine the type of a text node.
+
+**Deprecated**: XD 34
+
+Check whether [<code>areaBox</code>](#Text-areaBox) is null to determine if the type of a Text node.
 
 Text bounds and layout work differently depending on the type of text:
 - Point Text - The baseline is at y=0 in the node's local coordinate system. Horizontally, local x=0 is the _anchor point_ that the
@@ -1736,8 +1745,8 @@ Text bounds and layout work differently depending on the type of text:
   the horizontal centerpoint of the text. The bounding box leaves enough space for descenders, uppercase letters, and accent marks,
   even if the current string does not contain any of those characters. This makes aligning text based on its bounds behave more
   consistently.
-- Area Text - The baseline is at a positive y value in local coordinates, and its local (0, 0) is the top left of the areaBox. Text
-  always flows to the right and down from this local origin regardless of justification.
+
+- Area Text / Auto-height text - The baseline is at a positive y value in local coordinates, and its local (0, 0) is the top left of _anchor point_ the areaBox. Text always flows to the right and down from this local origin regardless of justification.
 
 &nbsp;<!-- prevent the bullet list above from running into this one -->
 * [Text](#Text)
@@ -1757,6 +1766,7 @@ Text bounds and layout work differently depending on the type of text:
     * [.lineSpacing](#Text-lineSpacing) : <code>number</code>
     * [.paragraphSpacing](#Text-paragraphSpacing) : <code>number</code>
     * [.areaBox](#Text-areaBox) : <code>?{width:number, height:number}</code>
+    * [.layoutBox](#Text-layoutBox) : <code>{type:string, ?width:number, ?height:number}</code>
     * [.clippedByArea](#Text-clippedByArea) : <code>boolean</code>
 
 
@@ -1977,7 +1987,10 @@ fixed while the font size changes, shifting the spacing's proportional relations
 <a name="Text-areaBox"></a>
 
 ### text.areaBox : <code>?{width:number, height:number}</code>
-Null for point text. For area text, specifies the size of the rectangle within which text is wrapped and clipped.
+**Deprecated**: XD 34 - Please use [`layoutBox`](#Text-layoutBox) which supports all text types.
+
+Null for point text and starting with XD 34 null for auto height text. 
+For area text, specifies the size of the rectangle within which text is wrapped and clipped.
 
 Changing point text to area text or vice versa will change the origin / anchor point of the text, thus changing its localBounds,
 but it will also automatically change the node's transform so its globalBounds and boundsInParent origins remain unchanged.
@@ -1989,10 +2002,33 @@ wrapping's appearance exactly.
 
 * * *
 
+<a name="Text-layoutBox"></a>
+
+### text.layoutBox : <code>{type:string, ?width:number, ?height:number}</code>
+**Since**: XD 34
+
+Type: Text.POINT (for point text also referred as auto width), FIXED_HEIGHT (for area text also referred as fixed size) or AUTO_HEIGHT (for the new auto height text)
+
+Width: number between 0-999999. This is ignored and can be omitted for Text.POINT
+
+Height: number between 0-999999. This is ignored and can be omitted for Text.POINT and Text.AUTO_HEIGHT
+
+Changing POINT text to FIXED_HEIGHT or AUTO_HEIGHT text or vice versa will change the origin / anchor point of the text, thus changing its localBounds, but it will also automatically change the node's transform so its `globalBounds` and `boundsInParent` origins remain unchanged.
+
+Changing FIXED_HEIGHT or AUTO_HEIGHT text to POINT text will automatically insert hard line break ("\n") into the text to match the previous line wrapping's appearance exactly.
+
+Changing from FIXED_HEIGHT to AUTO_HEIGHT text will automatically change the height of the bounds to match the height of the total text (can be a no-op).
+
+Changing from AUTO_HEIGHT to FIXED_HEIGHT text will not change the bounds, transform or origin (no-op).
+
+**Kind**: instance property of [<code>Text</code>](#Text)
+* * *
+
 <a name="Text-clippedByArea"></a>
 
 ### text.clippedByArea : <code>boolean</code>
-Always false for point text. For area text, true if the text does not fit in the content box and its bottom is being clipped.
+Always false for point text and, starting with XD 34, false for auto height text. 
+For area text, true if the text does not fit in the content box and its bottom is being clipped.
 
 **Kind**: instance property of [<code>Text</code>](#Text)
 **Read only**: true

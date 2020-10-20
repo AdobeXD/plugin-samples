@@ -1,5 +1,12 @@
 # Change Log
 
+XD Release 34.0.12 (October 2020)
+-------------------------------------
+
+### New feature
+* **Auto Height Text** -- This new "auto height" text node type will adjust (grow/shrink) its height so that it always fits the content inside. Content changes, style changes and area width changes will make the area text height resize accordingly. A new text [layoutBox](./reference/scenegraph.md#Text-layoutBox) API will return the type of text node and the text frame width and/or height contraints if applicable. This API should be used instead of the text [areaBox](./reference/scenegraph.md#Text-areaBox) API going forward.
+
+
 XD Release 33.0.12 (September 2020)
 -------------------------------------
 
