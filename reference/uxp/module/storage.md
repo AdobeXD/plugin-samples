@@ -39,6 +39,10 @@
         * [.getPluginFolder()](#module-storage-filesystemprovider-getpluginfolder) ⇒ `Promise.<Folder>`
         * [.getFsUrl(entry)](#module-storage-filesystemprovider-getfsurl) ⇒ `URL`
         * [.getNativePath(entry)](#module-storage-filesystemprovider-getnativepath) ⇒ `string`
+        * [.createSessionToken(entry)](#module-storage-filesystemprovider-createsessiontoken) ⇒ `string`
+        * [.getEntryForSessionToken(token)](#module-storage-filesystemprovider-getentryforsessiontoken) ⇒ `Entry`
+        * [.createPersistentToken(entry)](#module-storage-filesystemprovider-createpersistenttoken) ⇒ `Promise<string>`
+        * [.getEntryForPersistentToken(token)](#module-storage-filesystemprovider-getentryforpersistenttoken) ⇒ `Promise<Entry>`
     * [.Folder](#module-storage-folder) ⇐ `Entry`
         * [.getEntries()](#module-storage-folder-getentries) ⇒ `Promise.<Array.<Entry>>`
         * [.createFile(name, options)](#module-storage-folder-createfile) ⇒ `Promise.<File>`
@@ -637,6 +641,109 @@ Returns the platform native file system path of given entry.
 | Param | Type |
 | --- | --- |
 | entry | `Entry` |
+
+<a name="module-storage-filesystemprovider-createsessiontoken" id="module-storage-filesystemprovider-createsessiontoken"></a>
+
+### createSessionToken(entry)
+Returns a token suitable for use with certain host-specific APIs. This
+token is valid only for the current plugin session. As such, it is of no use if you
+serialize the token to persistent storage, as the token will be invalid in the future.
+
+**Returns**: `string` - the session token for the given entry  
+
+| Param | Type |
+| --- | --- |
+| entry | `Entry` | 
+
+**Example**  
+```js
+const fs = require('uxp').storage.localFileSystem;
+let entry = await fs.getFileForOpening();
+let token = fs.createSessionToken(entry);
+```
+
+
+<a name="module-storage-filesystemprovider-getentryforsessiontoken" id="module-storage-filesystemprovider-getentryforsessiontoken"></a>
+
+### getEntryForSessionToken(token)
+Returns the file system Entry that corresponds to the session token obtained from
+`createSessionToken`. If an entry cannot be found that matches the token, then a
+`Reference Error: token is not defined` error is thrown.
+
+**Returns**: `Entry` - the corresponding entry for the session token  
+
+| Param | Type |
+| --- | --- |
+| token | `string` | 
+
+
+
+<a name="module-storage-filesystemprovider-createpersistenttoken" id="module-storage-filesystemprovider-createpersistenttoken"></a>
+
+### createPersistentToken(entry)
+Returns a token suitable for use with host-specific APIs (such as Xd), or
+for storing a persistent reference to an entry (useful if you want to only ask for
+permission to access a file or folder once). A persistent token is not guaranteed
+to last forever -- certain scenarios can cause the token to longer work (including
+moving files, changing permissions, or OS-specific limitations). If a persistent
+token cannot be reused, you'll get an error at the time of use.
+
+**Returns**: `string` - the persistent token for the given entry  
+
+| Param | Type |
+| --- | --- |
+| entry | `Entry` | 
+
+**Example**  
+```js
+const fs = require('uxp').storage.localFileSystem;
+let entry = await fs.getFileForOpening();
+let token = fs.createPersistentToken(entry);
+localStorage.setItem("persistent-file", token);
+```
+
+
+<a name="module-storage-filesystemprovider-getentryforpersistenttoken" id="module-storage-filesystemprovider-getentryforpersistenttoken"></a>
+
+### getEntryForPersistentToken(token)
+Returns the file system Entry that corresponds to the persistent token obtained from
+`createPersistentToken`. If an entry cannot be found that matches the token, then a
+`Reference Error: token is not defined` error is thrown.
+
+> Retrieving an entry for a persistent token does _not_ guarantee that the
+entry is valid for use. You'll need to properly handle the case where the entry no
+longer exists on the disk, or the permissions have changed by catching the appropriate
+errors. If that occurs, the suggested practice is to prompt the user for the entry
+again and store the new token.
+
+**Returns**: `Entry` - the corresponding entry for the persistent token  
+
+| Param | Type |
+| --- | --- |
+| token | `string` | 
+
+**Example**  
+```js
+const fs = require('uxp').storage.localFileSystem;
+let entry, contents, tries = 3, success = false;
+while (tries > 0) {
+    try {
+        entry = await fs.getEntryForPersistentToken(localStorage.getItem("persistent-file"));
+        contents = await entry.read();
+        tries = 0;
+        success = true;
+    } catch (err) {
+        entry = await fs.getFileForOpening();
+        localStorage.setItem("persistent-token", await fs.createPersistentToken(entry));
+        tries--;
+    }
+}
+if (!success) {
+    // fail gracefully somehow
+}
+```
+
+
 
 
 <a name="module-storage-folder" id="module-storage-folder"></a>
