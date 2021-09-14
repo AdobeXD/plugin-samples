@@ -22,6 +22,6 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "set-value": "^3.0.1"
+    "set-value": "^4.0.1"
   }
 }
