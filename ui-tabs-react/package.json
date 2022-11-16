@@ -17,7 +17,7 @@
     "nodemon": "^1.19.1",
     "style-loader": "^0.22.0",
     "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "@adobe/xd-plugin-toolkit-react": "*",
